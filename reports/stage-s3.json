@@ -1,0 +1,9 @@
+{
+  "stage": "S3",
+  "status": "blocked",
+  "blockers": [
+    "待服务重启后的刷新恢复、多页、到点及故障实机核验"
+  ],
+  "checkedAt": "2026-10-29T13:00:06.329Z",
+  "nextStage": null
+}

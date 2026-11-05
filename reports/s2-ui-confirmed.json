@@ -1,0 +1,26 @@
+{
+    "stage":  "S2",
+    "status":  "user_confirmed",
+    "confirmedAt":  "2026-10-29T09:33:09.0214072Z",
+    "exactUserMessage":  "S2已验，进入S3",
+    "sourceHashes":  {
+                         "static/index.html":  "7c6f00bd33f5fa1686ff36b99f67c7fbd62db73ddd4fb1d262b1be326ec63236",
+                         "static/main.mjs":  "cee2894cdbfd6d7ceb931287cf3a010e17af9e0f47e6699819308040f0494674",
+                         "static/s2.css":  "76936121b6324f9ac97780c1a77ec21047df472cc389f33678cde29e6c4e1ca6",
+                         "static/core/model.js":  "01e4eee0e913c2931c6e34f36c3c6376ee012d0bf84f5018594c5d1f8d097cac",
+                         "static/core/player.js":  "30563744ba8930bdaca335e2f994af89434ab74486370ce68366bbccc454f531",
+                         "static/core/app.mjs":  "6ce0fd868aeac3013668a7b91e12a43e9f1987a59136c2c5c0229fb0b43efa1d",
+                         "static/core/dom.mjs":  "9031cb298777b02058f7a1440ff9e1cea44a6bae17c2062d338517e5757361ef",
+                         "static/core/store.mjs":  "95da4ffc641b4df16f6c5c02fd195fad7db473f57662429a96aa25d6f13679c9",
+                         "static/core/story-state.mjs":  "c46e78586b6d5a1d7968218d0fec3114881ca1a0911174c16807da080eb4dfc0",
+                         "static/core/catalog.mjs":  "172e7f1ab85c4de524dc2d1e4cf0b9b7ea66bb6109d69cf90a22c262ef5e75a2",
+                         "static/modules/story.mjs":  "134499887f9b5d1e372bfc4c3085a4c6ccb051346588a2d8bcbd68b2a46f444a",
+                         "static/modules/dialogue.mjs":  "9e90b8c1349bffdc97e1ff820df4dafb5b2b90c7789f61a7c07a549ad852014f",
+                         "static/modules/game.mjs":  "7078e437a19d5bc54a4875fd414fbd753f0b93603b8642bb84a6377fe88fa134",
+                         "static/modules/summary.mjs":  "ecc0431fb11533cc941b6ad858ed6057e29f74fca7dac8b7472c4df6b8f238c8",
+                         "static/content/catalog.json":  "e99a225f7d1683a417552460977702ecb03abbd4a56569f16273b239299aef95",
+                         "static/content/picnic.json":  "f1cae902bdb17b866d63866bb94323e0f3a99fc1164064d595631954d8c448e0",
+                         "static/content/tidy.json":  "13848c30f6d04c9b4d4b0de21f628503821a922675ee4cdc776cc81e166491b6"
+                     },
+    "provenance":  "User confirms S2 browser validation in this conversation; no assistant visual/audio claim."
+}

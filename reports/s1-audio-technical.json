@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "technicalOnly": true,
+  "results": [
+    {
+      "id": "picnic.story.1.intro.audio",
+      "sha256": "fd8d95872c90aadf24d423eab865aaf3782ba6853d25828f1f6be8ea7f838f7f",
+      "codec": 1,
+      "channels": 1,
+      "rate": 22050,
+      "byteRate": 44100,
+      "bits": 16,
+      "duration": 3.9740589569160996
+    },
+    {
+      "id": "picnic.story.1.item.audio",
+      "sha256": "4b3635cc1657f1285362d505cee72b35d3a02097a22128211bf83712e59a633f",
+      "codec": 1,
+      "channels": 1,
+      "rate": 22050,
+      "byteRate": 44100,
+      "bits": 16,
+      "duration": 5.0791383219954644
+    },
+    {
+      "id": "picnic.dialogue.1.question.audio",
+      "sha256": "5e8a4f3d1fc10a4ff50c4884ad2e118a73368017bc1520e48ad199078d7bb570",
+      "codec": 1,
+      "channels": 1,
+      "rate": 22050,
+      "byteRate": 44100,
+      "bits": 16,
+      "duration": 2.4692063492063494
+    },
+    {
+      "id": "picnic.dialogue.1.reply.1.audio",
+      "sha256": "b5bca9727f8c5b7cd34349db169c3a2126d62569a14b6dc16abf648f05bf82e3",
+      "codec": 1,
+      "channels": 1,
+      "rate": 22050,
+      "byteRate": 44100,
+      "bits": 16,
+      "duration": 2.414331065759637
+    },
+    {
+      "id": "picnic.dialogue.1.reply.1.follow.audio",
+      "sha256": "e5337ace3f268a30be9011f26a6ad9f355521b4d565aeb9d706dfe56817a4b3b",
+      "codec": 1,
+      "channels": 1,
+      "rate": 22050,
+      "byteRate": 44100,
+      "bits": 16,
+      "duration": 1.9143310657596373
+    },
+    {
+      "id": "picnic.dialogue.1.reply.2.audio",
+      "sha256": "34b8d61ec9b6a95a6d9bed70bdd19aa0588ac12993ababfbb61e623236052c4b",
+      "codec": 1,
+      "channels": 1,
+      "rate": 22050,
+      "byteRate": 44100,
+      "bits": 16,
+      "duration": 2.7193197278911563
+    },
+    {
+      "id": "picnic.dialogue.1.reply.2.follow.audio",
+      "sha256": "d9a4b95cd5d7e71079eaa95f81a9a1cb7de1e3c0c59872a64054b00f20312c65",
+      "codec": 1,
+      "channels": 1,
+      "rate": 22050,
+      "byteRate": 44100,
+      "bits": 16,
+      "duration": 3.7392290249433104
+    },
+    {
+      "id": "picnic.dialogue.1.reply.3.audio",
+      "sha256": "8a1dd8f87508dd27b15c49a9a6451568708f516658701cd5a05e9ae742a56fdd",
+      "codec": 1,
+      "channels": 1,
+      "rate": 22050,
+      "byteRate": 44100,
+      "bits": 16,
+      "duration": 2.3043083900226757
+    },
+    {
+      "id": "picnic.dialogue.1.reply.3.follow.audio",
+      "sha256": "476dd5edffd3d53ecec3b9e020432c547453403f2bc47a5f93d57cbcc199e64b",
+      "codec": 1,
+      "channels": 1,
+      "rate": 22050,
+      "byteRate": 44100,
+      "bits": 16,
+      "duration": 4.3690702947845805
+    },
+    {
+      "id": "picnic.apple.audio",
+      "sha256": "85fb8690579ff2df094b2df500a454ae7f1cb2c176a972ad48305b8a4bd1245b",
+      "codec": 1,
+      "channels": 1,
+      "rate": 22050,
+      "byteRate": 44100,
+      "bits": 16,
+      "duration": 1.5493877551020407
+    }
+  ],
+  "errors": [],
+  "listeningReview": "pending",
+  "rightsReview": "pending"
+}

@@ -1,0 +1,1053 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "park",
+  "contentVersion": "0.1.0",
+  "status": "draft",
+  "compatibleFrom": [],
+  "title": "和 Momo 逛公园",
+  "stickerId": "park.sticker",
+  "learning": {
+    "goal": "观察和指认自然事物，轮流游戏",
+    "function": "I can see … / Your turn.",
+    "revisit": [
+      "ball",
+      "help"
+    ]
+  },
+  "assets": [
+    {
+      "id": "park.momo",
+      "kind": "image",
+      "path": "illustrations/momo.svg"
+    },
+    {
+      "id": "park.bunny",
+      "kind": "image",
+      "path": "illustrations/bunny.svg"
+    },
+    {
+      "id": "park.wave",
+      "kind": "image",
+      "path": "illustrations/wave.svg"
+    },
+    {
+      "id": "park.tree.image",
+      "kind": "image",
+      "path": "illustrations/tree.svg"
+    },
+    {
+      "id": "park.tree.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.tree.audio.wav",
+      "text": "tree",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.flower.image",
+      "kind": "image",
+      "path": "illustrations/flower.svg"
+    },
+    {
+      "id": "park.flower.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.flower.audio.wav",
+      "text": "flower",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.bird.image",
+      "kind": "image",
+      "path": "illustrations/bird.svg"
+    },
+    {
+      "id": "park.bird.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.bird.audio.wav",
+      "text": "bird",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.ball.image",
+      "kind": "image",
+      "path": "illustrations/ball.svg"
+    },
+    {
+      "id": "park.ball.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.ball.audio.wav",
+      "text": "ball",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.story.1.image",
+      "kind": "image",
+      "path": "illustrations/scenes/park-1.svg"
+    },
+    {
+      "id": "park.story.1.intro.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.story.1.intro.audio.wav",
+      "text": "We walk into the park with our grown-up.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.story.1.item.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.story.1.item.audio.wav",
+      "text": "A tall tree gives us a shady spot.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.story.2.image",
+      "kind": "image",
+      "path": "illustrations/scenes/park-2.svg"
+    },
+    {
+      "id": "park.story.2.intro.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.story.2.intro.audio.wav",
+      "text": "Lulu finds a flower beside the path.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.story.2.item.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.story.2.item.audio.wav",
+      "text": "We look closely and leave it growing.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.story.3.image",
+      "kind": "image",
+      "path": "illustrations/scenes/park-3.svg"
+    },
+    {
+      "id": "park.story.3.intro.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.story.3.intro.audio.wav",
+      "text": "A bird sings above our heads.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.story.3.item.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.story.3.item.audio.wav",
+      "text": "We stop and listen under the tree.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.story.4.image",
+      "kind": "image",
+      "path": "illustrations/scenes/park-4.svg"
+    },
+    {
+      "id": "park.story.4.intro.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.story.4.intro.audio.wav",
+      "text": "Momo rolls a ball to Lulu.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.story.4.item.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.story.4.item.audio.wav",
+      "text": "Lulu rolls it back. Now it is your turn!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.story.5.image",
+      "kind": "image",
+      "path": "illustrations/scenes/park-5.svg"
+    },
+    {
+      "id": "park.story.5.intro.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.story.5.intro.audio.wav",
+      "text": "Our ball rolls beside the path.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.story.5.item.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.story.5.item.audio.wav",
+      "text": "We stay together and ask our grown-up for help.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.1.question.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.1.question.audio.wav",
+      "text": "What can you see above us?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.1.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.1.reply.1.audio.wav",
+      "text": "I can see a tree.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.1.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.1.reply.1.follow.audio.wav",
+      "text": "Its leaves make a shady spot for us.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.1.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.1.reply.2.audio.wav",
+      "text": "Let us look together.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.1.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.1.reply.2.follow.audio.wav",
+      "text": "Look up beside me. There are green leaves.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.2.question.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.2.question.audio.wav",
+      "text": "Shall we look at this flower?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.2.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.2.reply.1.audio.wav",
+      "text": "Yes! Leave it growing.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.2.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.2.reply.1.follow.audio.wav",
+      "text": "We can enjoy it without picking it.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.2.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.2.reply.2.audio.wav",
+      "text": "Let us look from here.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.2.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.2.reply.2.follow.audio.wav",
+      "text": "This is a good place to look.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.3.question.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.3.question.audio.wav",
+      "text": "Can you hear the bird?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.3.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.3.reply.1.audio.wav",
+      "text": "Yes! Up in the tree.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.3.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.3.reply.1.follow.audio.wav",
+      "text": "Let us stay quiet and listen.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.3.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.3.reply.2.audio.wav",
+      "text": "Please wait. I am listening.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.3.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.3.reply.2.follow.audio.wav",
+      "text": "We can listen together for a moment.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.4.question.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.4.question.audio.wav",
+      "text": "Would you like to roll the ball?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.4.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.4.reply.1.audio.wav",
+      "text": "Yes! My turn, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.4.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.4.reply.1.follow.audio.wav",
+      "text": "Here comes the ball. Roll it back when ready.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.4.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.4.reply.2.audio.wav",
+      "text": "You go first.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.4.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.4.reply.2.follow.audio.wav",
+      "text": "I will roll it gently towards you.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.5.question.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.5.question.audio.wav",
+      "text": "Our ball rolled away. What can we do?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.5.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.5.reply.1.audio.wav",
+      "text": "Ask our grown-up for help.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.5.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.5.reply.1.follow.audio.wav",
+      "text": "We will stay here together while they help.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.5.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.5.reply.2.audio.wav",
+      "text": "Please stay with me.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.5.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.5.reply.2.follow.audio.wav",
+      "text": "I will stay beside you.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.6.question.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.6.question.audio.wav",
+      "text": "What shall we say before we leave?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.6.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.6.reply.1.audio.wav",
+      "text": "Goodbye, bird!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.6.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.6.reply.1.follow.audio.wav",
+      "text": "We can visit the park another day.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.6.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.6.reply.2.audio.wav",
+      "text": "Goodbye, tree and flower!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.dialogue.6.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.dialogue.6.reply.2.follow.audio.wav",
+      "text": "Thank you for a lovely afternoon.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    }
+  ],
+  "words": [
+    {
+      "id": "en.tree.plant",
+      "text": "tree",
+      "cn": "树",
+      "image": "park.tree.image",
+      "audio": "park.tree.audio"
+    },
+    {
+      "id": "en.flower.plant",
+      "text": "flower",
+      "cn": "花",
+      "image": "park.flower.image",
+      "audio": "park.flower.audio"
+    },
+    {
+      "id": "en.bird.animal",
+      "text": "bird",
+      "cn": "小鸟",
+      "image": "park.bird.image",
+      "audio": "park.bird.audio"
+    },
+    {
+      "id": "en.ball.toy",
+      "text": "ball",
+      "cn": "球",
+      "image": "park.ball.image",
+      "audio": "park.ball.audio"
+    }
+  ],
+  "modules": {
+    "story": [
+      {
+        "id": "park.story.1",
+        "title": "1. 大树下的阴凉",
+        "templateId": "daily-life",
+        "illustration": "park.story.1.image",
+        "characters": [
+          "park.momo",
+          "park.bunny"
+        ],
+        "mainWord": "en.tree.plant",
+        "hotspots": [
+          {
+            "word": "en.tree.plant",
+            "x": 0.7,
+            "y": 0.6
+          }
+        ],
+        "translation": "我们和大人一起到公园，大树下有一片阴凉。",
+        "segments": [
+          {
+            "id": "park.story.1.intro",
+            "text": "We walk into the park with our grown-up.",
+            "audio": "park.story.1.intro.audio"
+          },
+          {
+            "id": "park.story.1.item",
+            "text": "A tall tree gives us a shady spot.",
+            "audio": "park.story.1.item.audio"
+          }
+        ]
+      },
+      {
+        "id": "park.story.2",
+        "title": "2. 留给大家看的花",
+        "templateId": "daily-life",
+        "illustration": "park.story.2.image",
+        "characters": [
+          "park.momo",
+          "park.bunny"
+        ],
+        "mainWord": "en.flower.plant",
+        "hotspots": [
+          {
+            "word": "en.flower.plant",
+            "x": 0.7,
+            "y": 0.6
+          }
+        ],
+        "translation": "Lulu 发现路边的花，我们凑近看看，让它继续生长。",
+        "segments": [
+          {
+            "id": "park.story.2.intro",
+            "text": "Lulu finds a flower beside the path.",
+            "audio": "park.story.2.intro.audio"
+          },
+          {
+            "id": "park.story.2.item",
+            "text": "We look closely and leave it growing.",
+            "audio": "park.story.2.item.audio"
+          }
+        ]
+      },
+      {
+        "id": "park.story.3",
+        "title": "3. 是谁在唱歌",
+        "templateId": "daily-life",
+        "illustration": "park.story.3.image",
+        "characters": [
+          "park.momo",
+          "park.bunny"
+        ],
+        "mainWord": "en.bird.animal",
+        "hotspots": [
+          {
+            "word": "en.bird.animal",
+            "x": 0.7,
+            "y": 0.6
+          }
+        ],
+        "translation": "头顶有小鸟唱歌，我们停在树下听一听。",
+        "segments": [
+          {
+            "id": "park.story.3.intro",
+            "text": "A bird sings above our heads.",
+            "audio": "park.story.3.intro.audio"
+          },
+          {
+            "id": "park.story.3.item",
+            "text": "We stop and listen under the tree.",
+            "audio": "park.story.3.item.audio"
+          }
+        ]
+      },
+      {
+        "id": "park.story.4",
+        "title": "4. 轮到你啦",
+        "templateId": "daily-life",
+        "illustration": "park.story.4.image",
+        "characters": [
+          "park.momo",
+          "park.bunny"
+        ],
+        "mainWord": "en.ball.toy",
+        "hotspots": [
+          {
+            "word": "en.ball.toy",
+            "x": 0.7,
+            "y": 0.6
+          }
+        ],
+        "translation": "Momo 把球滚给 Lulu，Lulu 滚回来，现在轮到你啦。",
+        "segments": [
+          {
+            "id": "park.story.4.intro",
+            "text": "Momo rolls a ball to Lulu.",
+            "audio": "park.story.4.intro.audio"
+          },
+          {
+            "id": "park.story.4.item",
+            "text": "Lulu rolls it back. Now it is your turn!",
+            "audio": "park.story.4.item.audio"
+          }
+        ]
+      },
+      {
+        "id": "park.story.5",
+        "title": "5. 球滚远了",
+        "templateId": "daily-life",
+        "illustration": "park.story.5.image",
+        "characters": [
+          "park.momo",
+          "park.bunny"
+        ],
+        "mainWord": "en.ball.toy",
+        "hotspots": [
+          {
+            "word": "en.ball.toy",
+            "x": 0.7,
+            "y": 0.6
+          }
+        ],
+        "translation": "球滚到路边，我们留在一起，请大人帮忙拿回来。",
+        "segments": [
+          {
+            "id": "park.story.5.intro",
+            "text": "Our ball rolls beside the path.",
+            "audio": "park.story.5.intro.audio"
+          },
+          {
+            "id": "park.story.5.item",
+            "text": "We stay together and ask our grown-up for help.",
+            "audio": "park.story.5.item.audio"
+          }
+        ]
+      }
+    ],
+    "dialogue": [
+      {
+        "id": "park.dialogue.1",
+        "cn": "你能看见我们上方有什么？",
+        "question": [
+          {
+            "id": "park.dialogue.1.question",
+            "text": "What can you see above us?",
+            "audio": "park.dialogue.1.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "park.dialogue.1.reply.1",
+            "text": "I can see a tree.",
+            "cn": "我能看见一棵树。",
+            "image": "park.tree.image",
+            "audio": "park.dialogue.1.reply.1.audio",
+            "followUp": [
+              {
+                "id": "park.dialogue.1.reply.1.follow",
+                "text": "Its leaves make a shady spot for us.",
+                "audio": "park.dialogue.1.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "park.dialogue.1.reply.2",
+            "text": "Let us look together.",
+            "cn": "我们一起看看。",
+            "image": "park.tree.image",
+            "audio": "park.dialogue.1.reply.2.audio",
+            "followUp": [
+              {
+                "id": "park.dialogue.1.reply.2.follow",
+                "text": "Look up beside me. There are green leaves.",
+                "audio": "park.dialogue.1.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "park.dialogue.2",
+        "cn": "我们看看这朵花好吗？",
+        "question": [
+          {
+            "id": "park.dialogue.2.question",
+            "text": "Shall we look at this flower?",
+            "audio": "park.dialogue.2.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "park.dialogue.2.reply.1",
+            "text": "Yes! Leave it growing.",
+            "cn": "好呀，让它继续长。",
+            "image": "park.flower.image",
+            "audio": "park.dialogue.2.reply.1.audio",
+            "followUp": [
+              {
+                "id": "park.dialogue.2.reply.1.follow",
+                "text": "We can enjoy it without picking it.",
+                "audio": "park.dialogue.2.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "park.dialogue.2.reply.2",
+            "text": "Let us look from here.",
+            "cn": "我们在这里看吧。",
+            "image": "park.flower.image",
+            "audio": "park.dialogue.2.reply.2.audio",
+            "followUp": [
+              {
+                "id": "park.dialogue.2.reply.2.follow",
+                "text": "This is a good place to look.",
+                "audio": "park.dialogue.2.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "park.dialogue.3",
+        "cn": "你能听见小鸟吗？",
+        "question": [
+          {
+            "id": "park.dialogue.3.question",
+            "text": "Can you hear the bird?",
+            "audio": "park.dialogue.3.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "park.dialogue.3.reply.1",
+            "text": "Yes! Up in the tree.",
+            "cn": "能，在树上。",
+            "image": "park.bird.image",
+            "audio": "park.dialogue.3.reply.1.audio",
+            "followUp": [
+              {
+                "id": "park.dialogue.3.reply.1.follow",
+                "text": "Let us stay quiet and listen.",
+                "audio": "park.dialogue.3.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "park.dialogue.3.reply.2",
+            "text": "Please wait. I am listening.",
+            "cn": "等等，我在听。",
+            "image": "park.bird.image",
+            "audio": "park.dialogue.3.reply.2.audio",
+            "followUp": [
+              {
+                "id": "park.dialogue.3.reply.2.follow",
+                "text": "We can listen together for a moment.",
+                "audio": "park.dialogue.3.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "park.dialogue.4",
+        "cn": "你想滚球吗？",
+        "question": [
+          {
+            "id": "park.dialogue.4.question",
+            "text": "Would you like to roll the ball?",
+            "audio": "park.dialogue.4.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "park.dialogue.4.reply.1",
+            "text": "Yes! My turn, please.",
+            "cn": "想，请轮到我。",
+            "image": "park.ball.image",
+            "audio": "park.dialogue.4.reply.1.audio",
+            "followUp": [
+              {
+                "id": "park.dialogue.4.reply.1.follow",
+                "text": "Here comes the ball. Roll it back when ready.",
+                "audio": "park.dialogue.4.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "park.dialogue.4.reply.2",
+            "text": "You go first.",
+            "cn": "你先来。",
+            "image": "park.ball.image",
+            "audio": "park.dialogue.4.reply.2.audio",
+            "followUp": [
+              {
+                "id": "park.dialogue.4.reply.2.follow",
+                "text": "I will roll it gently towards you.",
+                "audio": "park.dialogue.4.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "park.dialogue.5",
+        "cn": "球滚远了，我们怎么办？",
+        "question": [
+          {
+            "id": "park.dialogue.5.question",
+            "text": "Our ball rolled away. What can we do?",
+            "audio": "park.dialogue.5.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "park.dialogue.5.reply.1",
+            "text": "Ask our grown-up for help.",
+            "cn": "请大人帮忙。",
+            "image": "park.ball.image",
+            "audio": "park.dialogue.5.reply.1.audio",
+            "followUp": [
+              {
+                "id": "park.dialogue.5.reply.1.follow",
+                "text": "We will stay here together while they help.",
+                "audio": "park.dialogue.5.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "park.dialogue.5.reply.2",
+            "text": "Please stay with me.",
+            "cn": "请陪着我。",
+            "image": "park.ball.image",
+            "audio": "park.dialogue.5.reply.2.audio",
+            "followUp": [
+              {
+                "id": "park.dialogue.5.reply.2.follow",
+                "text": "I will stay beside you.",
+                "audio": "park.dialogue.5.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "park.dialogue.6",
+        "cn": "离开前我们说什么呢？",
+        "question": [
+          {
+            "id": "park.dialogue.6.question",
+            "text": "What shall we say before we leave?",
+            "audio": "park.dialogue.6.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "park.dialogue.6.reply.1",
+            "text": "Goodbye, bird!",
+            "cn": "再见，小鸟！",
+            "image": "park.bird.image",
+            "audio": "park.dialogue.6.reply.1.audio",
+            "followUp": [
+              {
+                "id": "park.dialogue.6.reply.1.follow",
+                "text": "We can visit the park another day.",
+                "audio": "park.dialogue.6.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "park.dialogue.6.reply.2",
+            "text": "Goodbye, tree and flower!",
+            "cn": "再见，大树和花朵！",
+            "image": "park.tree.image",
+            "audio": "park.dialogue.6.reply.2.audio",
+            "followUp": [
+              {
+                "id": "park.dialogue.6.reply.2.follow",
+                "text": "Thank you for a lovely afternoon.",
+                "audio": "park.dialogue.6.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "game": {
+      "type": "listen-pack",
+      "title": "听一听，找找公园里的朋友",
+      "instructions": "先完整听完要找的词，再点对应图片。可以重听、请人示范、跳过或结束。",
+      "questions": [
+        {
+          "id": "park.game.1",
+          "target": "en.tree.plant",
+          "options": [
+            "en.tree.plant",
+            "en.flower.plant",
+            "en.bird.animal",
+            "en.ball.toy"
+          ]
+        },
+        {
+          "id": "park.game.2",
+          "target": "en.flower.plant",
+          "options": [
+            "en.tree.plant",
+            "en.flower.plant",
+            "en.bird.animal",
+            "en.ball.toy"
+          ]
+        },
+        {
+          "id": "park.game.3",
+          "target": "en.bird.animal",
+          "options": [
+            "en.tree.plant",
+            "en.flower.plant",
+            "en.bird.animal",
+            "en.ball.toy"
+          ]
+        },
+        {
+          "id": "park.game.4",
+          "target": "en.ball.toy",
+          "options": [
+            "en.tree.plant",
+            "en.flower.plant",
+            "en.bird.animal",
+            "en.ball.toy"
+          ]
+        }
+      ]
+    },
+    "summary": [
+      "en.tree.plant",
+      "en.flower.plant",
+      "en.bird.animal",
+      "en.ball.toy"
+    ]
+  }
+}

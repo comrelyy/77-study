@@ -1,0 +1,166 @@
+{
+  "stage": "S5",
+  "generatedAt": "2026-11-03T00:39:05.356Z",
+  "fingerprint": "592749427698e9e120e7c2ad3b0d0ed64f6e49eb3926af595abf9ac5889769ea",
+  "status": "blocked",
+  "blockers": [
+    "缺少当前版本的实机验收记录",
+    "正式发布清单为空",
+    "首发主题尚未就绪：dressing",
+    "首发主题尚未就绪：washing",
+    "首发主题尚未就绪：breakfast",
+    "首发主题尚未就绪：cooking",
+    "首发主题尚未就绪：tidy",
+    "首发主题尚未就绪：picnic",
+    "首发主题尚未就绪：park",
+    "首发主题尚未就绪：transport",
+    "首发主题尚未就绪：shopping",
+    "首发主题尚未就绪：weather",
+    "首发主题尚未就绪：gardening",
+    "首发主题尚未就绪：bedtime",
+    "情景尚未正式批准发布：picnic",
+    "picnic 内容发布审校未通过（65 项）：status: draft cannot be released",
+    "当前是不限时开发模式，正式发布前需恢复发布模式并重新验收"
+  ],
+  "scenes": [
+    {
+      "id": "picnic",
+      "title": "和 Momo 去野餐",
+      "status": "draft",
+      "contentVersion": "0.4.0",
+      "released": false,
+      "missingAssets": []
+    },
+    {
+      "id": "tidy",
+      "title": "和 Momo 整理玩具",
+      "status": "draft",
+      "contentVersion": "0.5.0",
+      "released": false,
+      "missingAssets": []
+    },
+    {
+      "id": "dressing",
+      "title": "和 Momo 准备出门",
+      "status": "draft",
+      "contentVersion": "0.2.0",
+      "released": false,
+      "missingAssets": []
+    },
+    {
+      "id": "washing",
+      "title": "和 Momo 洗漱啦",
+      "status": "draft",
+      "contentVersion": "0.2.0",
+      "released": false,
+      "missingAssets": []
+    },
+    {
+      "id": "breakfast",
+      "title": "和 Momo 吃早餐",
+      "status": "draft",
+      "contentVersion": "0.2.0",
+      "released": false,
+      "missingAssets": []
+    },
+    {
+      "id": "park",
+      "title": "和 Momo 逛公园",
+      "status": "draft",
+      "contentVersion": "0.2.0",
+      "released": false,
+      "missingAssets": []
+    },
+    {
+      "id": "shopping",
+      "title": "和 Momo 逛小商店",
+      "status": "draft",
+      "contentVersion": "0.2.0",
+      "released": false,
+      "missingAssets": []
+    },
+    {
+      "id": "bedtime",
+      "title": "和 Momo 道晚安",
+      "status": "draft",
+      "contentVersion": "0.2.0",
+      "released": false,
+      "missingAssets": []
+    },
+    {
+      "id": "cooking",
+      "title": "和 Momo 一起做点心",
+      "status": "draft",
+      "contentVersion": "0.1.0",
+      "released": false,
+      "missingAssets": []
+    },
+    {
+      "id": "transport",
+      "title": "和 Momo 坐公共汽车",
+      "status": "draft",
+      "contentVersion": "0.1.0",
+      "released": false,
+      "missingAssets": []
+    },
+    {
+      "id": "weather",
+      "title": "和 Momo 看天气",
+      "status": "draft",
+      "contentVersion": "0.1.0",
+      "released": false,
+      "missingAssets": []
+    },
+    {
+      "id": "gardening",
+      "title": "和 Momo 照顾小花",
+      "status": "draft",
+      "contentVersion": "0.1.0",
+      "released": false,
+      "missingAssets": []
+    }
+  ],
+  "matrix": [
+    {
+      "id": "layout",
+      "label": "Chrome桌面及窄屏布局、鼠标、键盘焦点与按钮可达"
+    },
+    {
+      "id": "audio",
+      "label": "四模块本地声音、暂停继续、文本一致、音量语速及素材来源"
+    },
+    {
+      "id": "background",
+      "label": "切到后台立即停止声音和计时，回来不自动播放"
+    },
+    {
+      "id": "close",
+      "label": "异常关页后恢复已确认进度，未确认项有明确提示"
+    },
+    {
+      "id": "midnight",
+      "label": "隔离测试库跨日记录正确，设备日期倒退有提示"
+    },
+    {
+      "id": "multiTab",
+      "label": "两个页面同时活动受到约束，旧页面不能继续提交"
+    },
+    {
+      "id": "failure",
+      "label": "隔离服务断线、响应丢失、重试不重复记录"
+    },
+    {
+      "id": "offline",
+      "label": "断开外网但保留本机服务，四模块声音与玩法可用"
+    },
+    {
+      "id": "unlimited",
+      "label": "开发模式超过8分钟及15分钟仍能进入四模块并保存回答"
+    },
+    {
+      "id": "exit",
+      "label": "任意环节随时退出，立即停声且真实保存，不自动进入下一模块"
+    }
+  ],
+  "familyTrial": "pending-voluntary-observation"
+}

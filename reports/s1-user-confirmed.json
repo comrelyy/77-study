@@ -1,0 +1,40 @@
+{
+    "stage":  "S1",
+    "schemaVersion":  1,
+    "status":  "user_confirmed",
+    "confirmedAt":  "2026-10-29T07:07:59.1632951Z",
+    "contentVersion":  "0.1.0",
+    "exactUserMessage":  "完成，直接进入S2阶段的开发",
+    "provenance":  "User completion statement in this conversation. Detailed review form was not imported; no assistant listening or rights assessment is claimed.",
+    "sourceHashes":  {
+                         "docs/INTERACTION_CONTRACT.md":  "dbe5ff29f64043b677464a8681697f07c4e08ef79b063b859b9b347781b8b63e",
+                         "docs/S1_FLOW_SPEC.md":  "13689ad122bff7747f4bd5836c554c0abf30a606c0452c93f4ca3458e5bf754c",
+                         "static/dev/model.js":  "4b2838f619a372f3fa1b464bbc21eac5e6e8e4fd163d6450923d064eb7f09017",
+                         "static/dev/player.js":  "30563744ba8930bdaca335e2f994af89434ab74486370ce68366bbccc454f531",
+                         "static/dev/prototype.js":  "54bd1721de3e14c2002662df86f8a2a7bb12910c21bffb561903eaf2f89114be",
+                         "static/dev/prototype.css":  "c27e957983a4756cb8cae555875c409995e112e4d5f614e11c2d76cb87ef34c7",
+                         "static/dev/index.html":  "50203ec96dadad7d457d6ecfa05c4378ca5a62774a3973b3461549941472be1b",
+                         "static/style.css":  "46db6903cff4fac54eb05e299651095d388319ac658ceb5c5074139db0e1ca79",
+                         "static/theme.css":  "8d6ee5830cb2ad4d6f5d42ff4a296b0950ea87f02f4fd5c894af46ff0433b882",
+                         "static/sketch.css":  "cb19c3339d25d6db541db9c01499e15f5b1b0db52797fdebabeaed064a563716",
+                         "static/dev/content/picnic.json":  "f1cae902bdb17b866d63866bb94323e0f3a99fc1164064d595631954d8c448e0",
+                         "static/dev/content/tidy.json":  "13848c30f6d04c9b4d4b0de21f628503821a922675ee4cdc776cc81e166491b6",
+                         "static/dev/review-core.js":  "c3f584c177a476ba18690eadacf7a277377c770e7d042c8f633cd44978833464",
+                         "static/dev/review-page.js":  "712d8c00f5206a7e38bf0ca230adb22d47148025f4c54888c920c934b862f02c",
+                         "static/dev/review.html":  "9adb4a45fa10129ed574b52b493a4e9ed4e55aa095f88e6073bb6e884e9f5dd2",
+                         "static/dev/review.css":  "6fe588602910d31de504d621b8cdda78c36a066f350e02c70205445116c93456",
+                         "static/audio/s1-sample-manifest.json":  "30d9738b0afba3de83857929a10ada7325380aaad25706c45f631a098f98efdd"
+                     },
+    "sampleHashes":  {
+                         "picnic.story.1.intro.audio":  "fd8d95872c90aadf24d423eab865aaf3782ba6853d25828f1f6be8ea7f838f7f",
+                         "picnic.story.1.item.audio":  "4b3635cc1657f1285362d505cee72b35d3a02097a22128211bf83712e59a633f",
+                         "picnic.dialogue.1.question.audio":  "5e8a4f3d1fc10a4ff50c4884ad2e118a73368017bc1520e48ad199078d7bb570",
+                         "picnic.dialogue.1.reply.1.audio":  "b5bca9727f8c5b7cd34349db169c3a2126d62569a14b6dc16abf648f05bf82e3",
+                         "picnic.dialogue.1.reply.1.follow.audio":  "e5337ace3f268a30be9011f26a6ad9f355521b4d565aeb9d706dfe56817a4b3b",
+                         "picnic.dialogue.1.reply.2.audio":  "34b8d61ec9b6a95a6d9bed70bdd19aa0588ac12993ababfbb61e623236052c4b",
+                         "picnic.dialogue.1.reply.2.follow.audio":  "d9a4b95cd5d7e71079eaa95f81a9a1cb7de1e3c0c59872a64054b00f20312c65",
+                         "picnic.dialogue.1.reply.3.audio":  "8a1dd8f87508dd27b15c49a9a6451568708f516658701cd5a05e9ae742a56fdd",
+                         "picnic.dialogue.1.reply.3.follow.audio":  "476dd5edffd3d53ecec3b9e020432c547453403f2bc47a5f93d57cbcc199e64b",
+                         "picnic.apple.audio":  "85fb8690579ff2df094b2df500a454ae7f1cb2c176a972ad48305b8a4bd1245b"
+                     }
+}

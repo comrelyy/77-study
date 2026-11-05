@@ -1,0 +1,1272 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "weather",
+  "contentVersion": "0.1.0",
+  "status": "draft",
+  "compatibleFrom": [],
+  "title": "和 Momo 看天气",
+  "stickerId": "weather.sticker",
+  "learning": {
+    "goal": "观察天气变化、调整计划、表达失落与想法",
+    "function": "I can see … / Let us …",
+    "revisit": [
+      "cloud",
+      "wait"
+    ]
+  },
+  "assets": [
+    {
+      "id": "weather.momo",
+      "kind": "image",
+      "path": "illustrations/momo.svg"
+    },
+    {
+      "id": "weather.bunny",
+      "kind": "image",
+      "path": "illustrations/bunny.svg"
+    },
+    {
+      "id": "weather.wave",
+      "kind": "image",
+      "path": "illustrations/wave.svg"
+    },
+    {
+      "id": "weather.sun.image",
+      "kind": "image",
+      "path": "illustrations/sun.svg"
+    },
+    {
+      "id": "weather.sun.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.sun.audio.wav",
+      "text": "sun",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.cloud.image",
+      "kind": "image",
+      "path": "illustrations/cloud.svg"
+    },
+    {
+      "id": "weather.cloud.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.cloud.audio.wav",
+      "text": "cloud",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.rain.image",
+      "kind": "image",
+      "path": "illustrations/rain.svg"
+    },
+    {
+      "id": "weather.rain.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.rain.audio.wav",
+      "text": "rain",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.umbrella.image",
+      "kind": "image",
+      "path": "illustrations/umbrella.svg"
+    },
+    {
+      "id": "weather.umbrella.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.umbrella.audio.wav",
+      "text": "umbrella",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.1.question.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.1.question.audio.wav",
+      "text": "What can you see outside?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.1.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.1.reply.1.audio.wav",
+      "text": "I can see the sun.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.1.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.1.reply.1.follow.audio.wav",
+      "text": "Let us look at the rest of the sky.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.1.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.1.reply.2.audio.wav",
+      "text": "A cloud is coming.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.1.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.1.reply.2.follow.audio.wav",
+      "text": "Watch how it moves.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.2.question.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.2.question.audio.wav",
+      "text": "What does that cloud look like?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.2.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.2.reply.1.audio.wav",
+      "text": "A little boat!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.2.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.2.reply.1.follow.audio.wav",
+      "text": "I can imagine that too.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.2.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.2.reply.2.audio.wav",
+      "text": "A sleepy turtle!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.2.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.2.reply.2.follow.audio.wav",
+      "text": "We can have different ideas.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.3.question.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.3.question.audio.wav",
+      "text": "What is tapping the window?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.3.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.3.reply.1.audio.wav",
+      "text": "It is rain.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.3.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.3.reply.1.follow.audio.wav",
+      "text": "We may need a different plan.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.3.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.3.reply.2.audio.wav",
+      "text": "Let us listen together.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.3.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.3.reply.2.follow.audio.wav",
+      "text": "Tiny drops are tapping the glass.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.4.question.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.4.question.audio.wav",
+      "text": "What could we bring for the rain?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.4.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.4.reply.1.audio.wav",
+      "text": "An umbrella, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.4.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.4.reply.1.follow.audio.wav",
+      "text": "Ask our grown-up to help you open it.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.4.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.4.reply.2.audio.wav",
+      "text": "Let us stay inside.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.4.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.4.reply.2.follow.audio.wav",
+      "text": "We can tell a story while we wait.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.5.question.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.5.question.audio.wav",
+      "text": "You wanted to go out. How do you feel?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.5.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.5.reply.1.audio.wav",
+      "text": "I feel disappointed.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.5.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.5.reply.1.follow.audio.wav",
+      "text": "I understand. I can sit with you.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.5.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.5.reply.2.audio.wav",
+      "text": "Tell me a story, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.5.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.5.reply.2.follow.audio.wav",
+      "text": "Let us make up a rainy-day story.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.6.question.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.6.question.audio.wav",
+      "text": "The rain has stopped. What shall we do?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.6.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.6.reply.1.audio.wav",
+      "text": "Check with our grown-up first.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.6.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.6.reply.1.follow.audio.wav",
+      "text": "Then we can decide together.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.6.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.6.reply.2.audio.wav",
+      "text": "Finish our story first!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.dialogue.6.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.dialogue.6.reply.2.follow.audio.wav",
+      "text": "Yes. There is no hurry.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.fox",
+      "kind": "image",
+      "path": "illustrations/fox.svg"
+    },
+    {
+      "id": "weather.turtle",
+      "kind": "image",
+      "path": "illustrations/turtle.svg"
+    },
+    {
+      "id": "weather.story.1.image",
+      "kind": "image",
+      "path": "illustrations/scenes/weather-1.svg"
+    },
+    {
+      "id": "weather.story.1.intro.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.1.intro.audio.wav",
+      "text": "Momo and Lulu want to play outside.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.1.item.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.1.item.audio.wav",
+      "text": "I can see the sun!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.1.reply.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.1.reply.audio.wav",
+      "text": "Let us look at the whole sky.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.2.image",
+      "kind": "image",
+      "path": "illustrations/scenes/weather-2.svg"
+    },
+    {
+      "id": "weather.story.2.intro.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.2.intro.audio.wav",
+      "text": "A cloud drifts across the sky.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.2.item.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.2.item.audio.wav",
+      "text": "That cloud looks like a little boat.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.2.reply.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.2.reply.audio.wav",
+      "text": "I think it looks like a turtle!",
+      "language": "en-US",
+      "role": "fox",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.3.image",
+      "kind": "image",
+      "path": "illustrations/scenes/weather-3.svg"
+    },
+    {
+      "id": "weather.story.3.intro.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.3.intro.audio.wav",
+      "text": "Little drops tap the window.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.3.item.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.3.item.audio.wav",
+      "text": "Is that rain?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.3.reply.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.3.reply.audio.wav",
+      "text": "Yes. Let us change our plan.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.4.image",
+      "kind": "image",
+      "path": "illustrations/scenes/weather-4.svg"
+    },
+    {
+      "id": "weather.story.4.intro.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.4.intro.audio.wav",
+      "text": "Fifi runs towards the door.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.4.item.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.4.item.audio.wav",
+      "text": "Wait! Where is your umbrella?",
+      "language": "en-US",
+      "role": "turtle",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.4.reply.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.4.reply.audio.wav",
+      "text": "Thank you. I nearly forgot it.",
+      "language": "en-US",
+      "role": "fox",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.5.image",
+      "kind": "image",
+      "path": "illustrations/scenes/weather-5.svg"
+    },
+    {
+      "id": "weather.story.5.intro.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.5.intro.audio.wav",
+      "text": "The friends stay inside while it rains.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.5.item.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.5.item.audio.wav",
+      "text": "I wanted to play outside.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.5.reply.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.5.reply.audio.wav",
+      "text": "I know. Shall we tell a rainy-day story?",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.6.image",
+      "kind": "image",
+      "path": "illustrations/scenes/weather-6.svg"
+    },
+    {
+      "id": "weather.story.6.intro.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.6.intro.audio.wav",
+      "text": "The rain stops and sunlight returns.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.6.item.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.6.item.audio.wav",
+      "text": "The sun is back!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.6.reply.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.6.reply.audio.wav",
+      "text": "Let us check with our grown-up before we go.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.game.image",
+      "kind": "image",
+      "path": "illustrations/scenes/weather-game.svg"
+    }
+  ],
+  "words": [
+    {
+      "id": "en.sun.nature",
+      "text": "sun",
+      "cn": "太阳",
+      "image": "weather.sun.image",
+      "audio": "weather.sun.audio"
+    },
+    {
+      "id": "en.cloud.weather",
+      "text": "cloud",
+      "cn": "云",
+      "image": "weather.cloud.image",
+      "audio": "weather.cloud.audio"
+    },
+    {
+      "id": "en.rain.weather",
+      "text": "rain",
+      "cn": "雨",
+      "image": "weather.rain.image",
+      "audio": "weather.rain.audio"
+    },
+    {
+      "id": "en.umbrella.object",
+      "text": "umbrella",
+      "cn": "雨伞",
+      "image": "weather.umbrella.image",
+      "audio": "weather.umbrella.audio"
+    }
+  ],
+  "modules": {
+    "story": [
+      {
+        "id": "weather.story.1",
+        "title": "1. 先看看窗外",
+        "templateId": "daily-life",
+        "illustration": "weather.story.1.image",
+        "characters": [
+          "weather.momo",
+          "weather.bunny"
+        ],
+        "mainWord": "en.sun.nature",
+        "hotspots": [
+          {
+            "word": "en.sun.nature",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "Momo 看见太阳，想出门玩。Lulu 提议把整个天空都看一看。",
+        "segments": [
+          {
+            "id": "weather.story.1.intro",
+            "text": "Momo and Lulu want to play outside.",
+            "speaker": "narrator",
+            "audio": "weather.story.1.intro.audio"
+          },
+          {
+            "id": "weather.story.1.item",
+            "text": "I can see the sun!",
+            "speaker": "momo",
+            "audio": "weather.story.1.item.audio"
+          },
+          {
+            "id": "weather.story.1.reply",
+            "text": "Let us look at the whole sky.",
+            "speaker": "bunny",
+            "audio": "weather.story.1.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "weather.story.2",
+        "title": "2. 云慢慢飘来了",
+        "templateId": "daily-life",
+        "illustration": "weather.story.2.image",
+        "characters": [
+          "weather.momo",
+          "weather.fox"
+        ],
+        "mainWord": "en.cloud.weather",
+        "hotspots": [
+          {
+            "word": "en.cloud.weather",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "一朵云飘过，Momo 觉得像小船，Fifi 觉得像小乌龟，两人各有想象。",
+        "segments": [
+          {
+            "id": "weather.story.2.intro",
+            "text": "A cloud drifts across the sky.",
+            "speaker": "narrator",
+            "audio": "weather.story.2.intro.audio"
+          },
+          {
+            "id": "weather.story.2.item",
+            "text": "That cloud looks like a little boat.",
+            "speaker": "momo",
+            "audio": "weather.story.2.item.audio"
+          },
+          {
+            "id": "weather.story.2.reply",
+            "text": "I think it looks like a turtle!",
+            "speaker": "fox",
+            "audio": "weather.story.2.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "weather.story.3",
+        "title": "3. 窗上有小雨点",
+        "templateId": "daily-life",
+        "illustration": "weather.story.3.image",
+        "characters": [
+          "weather.momo",
+          "weather.bunny"
+        ],
+        "mainWord": "en.rain.weather",
+        "hotspots": [
+          {
+            "word": "en.rain.weather",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "窗上传来小雨点的声音。两人发现下雨了，决定调整出门计划。",
+        "segments": [
+          {
+            "id": "weather.story.3.intro",
+            "text": "Little drops tap the window.",
+            "speaker": "narrator",
+            "audio": "weather.story.3.intro.audio"
+          },
+          {
+            "id": "weather.story.3.item",
+            "text": "Is that rain?",
+            "speaker": "momo",
+            "audio": "weather.story.3.item.audio"
+          },
+          {
+            "id": "weather.story.3.reply",
+            "text": "Yes. Let us change our plan.",
+            "speaker": "bunny",
+            "audio": "weather.story.3.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "weather.story.4",
+        "title": "4. 雨伞还没拿",
+        "templateId": "daily-life",
+        "illustration": "weather.story.4.image",
+        "characters": [
+          "weather.turtle",
+          "weather.fox"
+        ],
+        "mainWord": "en.umbrella.object",
+        "hotspots": [
+          {
+            "word": "en.umbrella.object",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "Fifi 想跑到门口，Toto 提醒雨伞还没拿。Fifi 停下来找伞。",
+        "segments": [
+          {
+            "id": "weather.story.4.intro",
+            "text": "Fifi runs towards the door.",
+            "speaker": "narrator",
+            "audio": "weather.story.4.intro.audio"
+          },
+          {
+            "id": "weather.story.4.item",
+            "text": "Wait! Where is your umbrella?",
+            "speaker": "turtle",
+            "audio": "weather.story.4.item.audio"
+          },
+          {
+            "id": "weather.story.4.reply",
+            "text": "Thank you. I nearly forgot it.",
+            "speaker": "fox",
+            "audio": "weather.story.4.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "weather.story.5",
+        "title": "5. 下雨也能听故事",
+        "templateId": "daily-life",
+        "illustration": "weather.story.5.image",
+        "characters": [
+          "weather.momo",
+          "weather.bunny"
+        ],
+        "mainWord": "en.rain.weather",
+        "hotspots": [
+          {
+            "word": "en.rain.weather",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "Momo 没能出门有点失落，Lulu 先听朋友说完，再邀请一起讲雨天故事。",
+        "segments": [
+          {
+            "id": "weather.story.5.intro",
+            "text": "The friends stay inside while it rains.",
+            "speaker": "narrator",
+            "audio": "weather.story.5.intro.audio"
+          },
+          {
+            "id": "weather.story.5.item",
+            "text": "I wanted to play outside.",
+            "speaker": "momo",
+            "audio": "weather.story.5.item.audio"
+          },
+          {
+            "id": "weather.story.5.reply",
+            "text": "I know. Shall we tell a rainy-day story?",
+            "speaker": "bunny",
+            "audio": "weather.story.5.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "weather.story.6",
+        "title": "6. 天气还会变",
+        "templateId": "daily-life",
+        "illustration": "weather.story.6.image",
+        "characters": [
+          "weather.momo",
+          "weather.bunny"
+        ],
+        "mainWord": "en.sun.nature",
+        "hotspots": [
+          {
+            "word": "en.sun.nature",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "雨停了，阳光重新出现。两人先和大人确认，再决定是否出门。",
+        "segments": [
+          {
+            "id": "weather.story.6.intro",
+            "text": "The rain stops and sunlight returns.",
+            "speaker": "narrator",
+            "audio": "weather.story.6.intro.audio"
+          },
+          {
+            "id": "weather.story.6.item",
+            "text": "The sun is back!",
+            "speaker": "momo",
+            "audio": "weather.story.6.item.audio"
+          },
+          {
+            "id": "weather.story.6.reply",
+            "text": "Let us check with our grown-up before we go.",
+            "speaker": "bunny",
+            "audio": "weather.story.6.reply.audio"
+          }
+        ]
+      }
+    ],
+    "dialogue": [
+      {
+        "id": "weather.dialogue.1",
+        "cn": "你在窗外看到了什么？",
+        "question": [
+          {
+            "id": "weather.dialogue.1.question",
+            "text": "What can you see outside?",
+            "audio": "weather.dialogue.1.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "weather.dialogue.1.reply.1",
+            "text": "I can see the sun.",
+            "cn": "我看到了太阳。",
+            "image": "weather.sun.image",
+            "audio": "weather.dialogue.1.reply.1.audio",
+            "followUp": [
+              {
+                "id": "weather.dialogue.1.reply.1.follow",
+                "text": "Let us look at the rest of the sky.",
+                "audio": "weather.dialogue.1.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "weather.dialogue.1.reply.2",
+            "text": "A cloud is coming.",
+            "cn": "一朵云飘来了。",
+            "image": "weather.cloud.image",
+            "audio": "weather.dialogue.1.reply.2.audio",
+            "followUp": [
+              {
+                "id": "weather.dialogue.1.reply.2.follow",
+                "text": "Watch how it moves.",
+                "audio": "weather.dialogue.1.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "weather.dialogue.2",
+        "cn": "那朵云看起来像什么？",
+        "question": [
+          {
+            "id": "weather.dialogue.2.question",
+            "text": "What does that cloud look like?",
+            "audio": "weather.dialogue.2.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "weather.dialogue.2.reply.1",
+            "text": "A little boat!",
+            "cn": "一只小船！",
+            "image": "weather.cloud.image",
+            "audio": "weather.dialogue.2.reply.1.audio",
+            "followUp": [
+              {
+                "id": "weather.dialogue.2.reply.1.follow",
+                "text": "I can imagine that too.",
+                "audio": "weather.dialogue.2.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "weather.dialogue.2.reply.2",
+            "text": "A sleepy turtle!",
+            "cn": "一只打瞌睡的小乌龟！",
+            "image": "weather.cloud.image",
+            "audio": "weather.dialogue.2.reply.2.audio",
+            "followUp": [
+              {
+                "id": "weather.dialogue.2.reply.2.follow",
+                "text": "We can have different ideas.",
+                "audio": "weather.dialogue.2.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "weather.dialogue.3",
+        "cn": "是什么在敲窗户？",
+        "question": [
+          {
+            "id": "weather.dialogue.3.question",
+            "text": "What is tapping the window?",
+            "audio": "weather.dialogue.3.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "weather.dialogue.3.reply.1",
+            "text": "It is rain.",
+            "cn": "是雨。",
+            "image": "weather.rain.image",
+            "audio": "weather.dialogue.3.reply.1.audio",
+            "followUp": [
+              {
+                "id": "weather.dialogue.3.reply.1.follow",
+                "text": "We may need a different plan.",
+                "audio": "weather.dialogue.3.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "weather.dialogue.3.reply.2",
+            "text": "Let us listen together.",
+            "cn": "我们一起听听。",
+            "image": "weather.rain.image",
+            "audio": "weather.dialogue.3.reply.2.audio",
+            "followUp": [
+              {
+                "id": "weather.dialogue.3.reply.2.follow",
+                "text": "Tiny drops are tapping the glass.",
+                "audio": "weather.dialogue.3.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "weather.dialogue.4",
+        "cn": "下雨出门可以带什么？",
+        "question": [
+          {
+            "id": "weather.dialogue.4.question",
+            "text": "What could we bring for the rain?",
+            "audio": "weather.dialogue.4.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "weather.dialogue.4.reply.1",
+            "text": "An umbrella, please.",
+            "cn": "请带上雨伞。",
+            "image": "weather.umbrella.image",
+            "audio": "weather.dialogue.4.reply.1.audio",
+            "followUp": [
+              {
+                "id": "weather.dialogue.4.reply.1.follow",
+                "text": "Ask our grown-up to help you open it.",
+                "audio": "weather.dialogue.4.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "weather.dialogue.4.reply.2",
+            "text": "Let us stay inside.",
+            "cn": "我们先待在屋里。",
+            "image": "weather.rain.image",
+            "audio": "weather.dialogue.4.reply.2.audio",
+            "followUp": [
+              {
+                "id": "weather.dialogue.4.reply.2.follow",
+                "text": "We can tell a story while we wait.",
+                "audio": "weather.dialogue.4.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "weather.dialogue.5",
+        "cn": "你本来想出门，现在感觉怎样？",
+        "question": [
+          {
+            "id": "weather.dialogue.5.question",
+            "text": "You wanted to go out. How do you feel?",
+            "audio": "weather.dialogue.5.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "weather.dialogue.5.reply.1",
+            "text": "I feel disappointed.",
+            "cn": "我有点失望。",
+            "image": "weather.rain.image",
+            "audio": "weather.dialogue.5.reply.1.audio",
+            "followUp": [
+              {
+                "id": "weather.dialogue.5.reply.1.follow",
+                "text": "I understand. I can sit with you.",
+                "audio": "weather.dialogue.5.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "weather.dialogue.5.reply.2",
+            "text": "Tell me a story, please.",
+            "cn": "请给我讲个故事。",
+            "image": "weather.cloud.image",
+            "audio": "weather.dialogue.5.reply.2.audio",
+            "followUp": [
+              {
+                "id": "weather.dialogue.5.reply.2.follow",
+                "text": "Let us make up a rainy-day story.",
+                "audio": "weather.dialogue.5.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "weather.dialogue.6",
+        "cn": "雨停了，我们做什么呢？",
+        "question": [
+          {
+            "id": "weather.dialogue.6.question",
+            "text": "The rain has stopped. What shall we do?",
+            "audio": "weather.dialogue.6.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "weather.dialogue.6.reply.1",
+            "text": "Check with our grown-up first.",
+            "cn": "先问问大人。",
+            "image": "weather.sun.image",
+            "audio": "weather.dialogue.6.reply.1.audio",
+            "followUp": [
+              {
+                "id": "weather.dialogue.6.reply.1.follow",
+                "text": "Then we can decide together.",
+                "audio": "weather.dialogue.6.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "weather.dialogue.6.reply.2",
+            "text": "Finish our story first!",
+            "cn": "先讲完我们的故事！",
+            "image": "weather.cloud.image",
+            "audio": "weather.dialogue.6.reply.2.audio",
+            "followUp": [
+              {
+                "id": "weather.dialogue.6.reply.2.follow",
+                "text": "Yes. There is no hurry.",
+                "audio": "weather.dialogue.6.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "game": {
+      "type": "scene-find",
+      "title": "在天气观察角里找一找",
+      "instructions": "先听完英语，再在大图里找对应物品。可以重听、请朋友示范或跳过。",
+      "illustration": "weather.game.image",
+      "hotspots": [
+        {
+          "word": "en.sun.nature",
+          "x": 0.18,
+          "y": 0.2
+        },
+        {
+          "word": "en.cloud.weather",
+          "x": 0.74,
+          "y": 0.22
+        },
+        {
+          "word": "en.rain.weather",
+          "x": 0.32,
+          "y": 0.68
+        },
+        {
+          "word": "en.umbrella.object",
+          "x": 0.79,
+          "y": 0.76
+        }
+      ],
+      "questions": [
+        {
+          "id": "weather.game.1",
+          "target": "en.sun.nature",
+          "options": [
+            "en.sun.nature",
+            "en.cloud.weather",
+            "en.rain.weather",
+            "en.umbrella.object"
+          ]
+        },
+        {
+          "id": "weather.game.2",
+          "target": "en.cloud.weather",
+          "options": [
+            "en.sun.nature",
+            "en.cloud.weather",
+            "en.rain.weather",
+            "en.umbrella.object"
+          ]
+        },
+        {
+          "id": "weather.game.3",
+          "target": "en.rain.weather",
+          "options": [
+            "en.sun.nature",
+            "en.cloud.weather",
+            "en.rain.weather",
+            "en.umbrella.object"
+          ]
+        },
+        {
+          "id": "weather.game.4",
+          "target": "en.umbrella.object",
+          "options": [
+            "en.sun.nature",
+            "en.cloud.weather",
+            "en.rain.weather",
+            "en.umbrella.object"
+          ]
+        }
+      ]
+    },
+    "summary": [
+      "en.sun.nature",
+      "en.cloud.weather",
+      "en.rain.weather",
+      "en.umbrella.object"
+    ]
+  },
+  "interaction": {
+    "gameAfterDialogue": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "separateGameEntry": false
+  }
+}

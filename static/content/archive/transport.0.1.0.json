@@ -1,0 +1,1263 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "transport",
+  "contentVersion": "0.1.0",
+  "status": "draft",
+  "compatibleFrom": [],
+  "title": "和 Momo 坐公共汽车",
+  "stickerId": "transport.sticker",
+  "learning": {
+    "goal": "按顺序等车乘车、检查物品与表达需要",
+    "function": "Is this …? / Wait, please.",
+    "revisit": [
+      "bag",
+      "wait"
+    ]
+  },
+  "assets": [
+    {
+      "id": "transport.momo",
+      "kind": "image",
+      "path": "illustrations/momo.svg"
+    },
+    {
+      "id": "transport.bunny",
+      "kind": "image",
+      "path": "illustrations/bunny.svg"
+    },
+    {
+      "id": "transport.wave",
+      "kind": "image",
+      "path": "illustrations/wave.svg"
+    },
+    {
+      "id": "transport.bus.image",
+      "kind": "image",
+      "path": "illustrations/bus.svg"
+    },
+    {
+      "id": "transport.bus.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.bus.audio.wav",
+      "text": "bus",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.ticket.image",
+      "kind": "image",
+      "path": "illustrations/ticket.svg"
+    },
+    {
+      "id": "transport.ticket.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.ticket.audio.wav",
+      "text": "ticket",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.bag.image",
+      "kind": "image",
+      "path": "illustrations/bag.svg"
+    },
+    {
+      "id": "transport.bag.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.bag.audio.wav",
+      "text": "bag",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.seat.image",
+      "kind": "image",
+      "path": "illustrations/seat.svg"
+    },
+    {
+      "id": "transport.seat.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.seat.audio.wav",
+      "text": "seat",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.1.question.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.1.question.audio.wav",
+      "text": "Is our bus here yet?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.1.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.1.reply.1.audio.wav",
+      "text": "Not yet. Let us wait.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.1.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.1.reply.1.follow.audio.wav",
+      "text": "We can wait together at the stop.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.1.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.1.reply.2.audio.wav",
+      "text": "Please stay with me.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.1.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.1.reply.2.follow.audio.wav",
+      "text": "I will stay beside you.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.2.question.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.2.question.audio.wav",
+      "text": "Where is your ticket?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.2.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.2.reply.1.audio.wav",
+      "text": "In my bag.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.2.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.2.reply.1.follow.audio.wav",
+      "text": "Check the small pocket.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.2.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.2.reply.2.audio.wav",
+      "text": "Please help me look.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.2.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.2.reply.2.follow.audio.wav",
+      "text": "Take your time. We can look together.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.3.question.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.3.question.audio.wav",
+      "text": "The bus is here. Have we got everything?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.3.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.3.reply.1.audio.wav",
+      "text": "Our bag and ticket!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.3.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.3.reply.1.follow.audio.wav",
+      "text": "Now we can go with our grown-up.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.3.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.3.reply.2.audio.wav",
+      "text": "Wait for my bag, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.3.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.3.reply.2.follow.audio.wav",
+      "text": "We can wait while you pick it up.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.4.question.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.4.question.audio.wav",
+      "text": "Is this seat free?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.4.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.4.reply.1.audio.wav",
+      "text": "Yes. Sit here, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.4.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.4.reply.1.follow.audio.wav",
+      "text": "Thank you. We can sit beside each other.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.4.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.4.reply.2.audio.wav",
+      "text": "Let us ask first.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.4.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.4.reply.2.follow.audio.wav",
+      "text": "Good idea. Ask before we sit.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.5.question.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.5.question.audio.wav",
+      "text": "Where can we keep our bag?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.5.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.5.reply.1.audio.wav",
+      "text": "Beside our feet.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.5.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.5.reply.1.follow.audio.wav",
+      "text": "Then the aisle will stay clear.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.5.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.5.reply.2.audio.wav",
+      "text": "Help me move it, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.5.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.5.reply.2.follow.audio.wav",
+      "text": "We can move it together.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.6.question.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.6.question.audio.wav",
+      "text": "The bus has stopped. Shall we leave?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.6.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.6.reply.1.audio.wav",
+      "text": "Yes, with our grown-up.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.6.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.6.reply.1.follow.audio.wav",
+      "text": "Take your bag and ticket with you.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.6.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.6.reply.2.audio.wav",
+      "text": "Please wait for me.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.dialogue.6.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.dialogue.6.reply.2.follow.audio.wav",
+      "text": "We will stay together.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.fox",
+      "kind": "image",
+      "path": "illustrations/fox.svg"
+    },
+    {
+      "id": "transport.turtle",
+      "kind": "image",
+      "path": "illustrations/turtle.svg"
+    },
+    {
+      "id": "transport.story.1.image",
+      "kind": "image",
+      "path": "illustrations/scenes/transport-1.svg"
+    },
+    {
+      "id": "transport.story.1.intro.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.1.intro.audio.wav",
+      "text": "Momo and Lulu arrive at the bus stop.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.1.item.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.1.item.audio.wav",
+      "text": "Is our bus here yet?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.1.reply.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.1.reply.audio.wav",
+      "text": "Not yet. Let us wait together.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.2.image",
+      "kind": "image",
+      "path": "illustrations/scenes/transport-2.svg"
+    },
+    {
+      "id": "transport.story.2.intro.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.2.intro.audio.wav",
+      "text": "Momo looks inside the bag.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.2.item.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.2.item.audio.wav",
+      "text": "I cannot find my ticket.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.2.reply.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.2.reply.audio.wav",
+      "text": "Check the small pocket. Take your time.",
+      "language": "en-US",
+      "role": "turtle",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.3.image",
+      "kind": "image",
+      "path": "illustrations/scenes/transport-3.svg"
+    },
+    {
+      "id": "transport.story.3.intro.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.3.intro.audio.wav",
+      "text": "The bus arrives at the stop.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.3.item.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.3.item.audio.wav",
+      "text": "Our bus is here! Let us go!",
+      "language": "en-US",
+      "role": "fox",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.3.reply.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.3.reply.audio.wav",
+      "text": "Wait. We need our bag too.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.4.image",
+      "kind": "image",
+      "path": "illustrations/scenes/transport-4.svg"
+    },
+    {
+      "id": "transport.story.4.intro.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.4.intro.audio.wav",
+      "text": "The friends step onto the bus with their grown-up.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.4.item.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.4.item.audio.wav",
+      "text": "Is this seat free?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.4.reply.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.4.reply.audio.wav",
+      "text": "Yes. Let us sit beside each other.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.5.image",
+      "kind": "image",
+      "path": "illustrations/scenes/transport-5.svg"
+    },
+    {
+      "id": "transport.story.5.intro.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.5.intro.audio.wav",
+      "text": "A bag is in the aisle.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.5.item.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.5.item.audio.wav",
+      "text": "Where can I put my bag?",
+      "language": "en-US",
+      "role": "fox",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.5.reply.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.5.reply.audio.wav",
+      "text": "Keep it beside your feet. Leave the aisle clear.",
+      "language": "en-US",
+      "role": "turtle",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.6.image",
+      "kind": "image",
+      "path": "illustrations/scenes/transport-6.svg"
+    },
+    {
+      "id": "transport.story.6.intro.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.6.intro.audio.wav",
+      "text": "The bus stops at their destination.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.6.item.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.6.item.audio.wav",
+      "text": "Our stop! Bag and ticket ready?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.6.reply.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.6.reply.audio.wav",
+      "text": "Ready. Let us leave with our grown-up.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.game.image",
+      "kind": "image",
+      "path": "illustrations/scenes/transport-game.svg"
+    }
+  ],
+  "words": [
+    {
+      "id": "en.bus.vehicle",
+      "text": "bus",
+      "cn": "公共汽车",
+      "image": "transport.bus.image",
+      "audio": "transport.bus.audio"
+    },
+    {
+      "id": "en.ticket.travel",
+      "text": "ticket",
+      "cn": "车票",
+      "image": "transport.ticket.image",
+      "audio": "transport.ticket.audio"
+    },
+    {
+      "id": "en.bag.container",
+      "text": "bag",
+      "cn": "袋子",
+      "image": "transport.bag.image",
+      "audio": "transport.bag.audio"
+    },
+    {
+      "id": "en.seat.furniture",
+      "text": "seat",
+      "cn": "座位",
+      "image": "transport.seat.image",
+      "audio": "transport.seat.audio"
+    }
+  ],
+  "modules": {
+    "story": [
+      {
+        "id": "transport.story.1",
+        "title": "1. 一起去等车",
+        "templateId": "daily-life",
+        "illustration": "transport.story.1.image",
+        "characters": [
+          "transport.momo",
+          "transport.bunny"
+        ],
+        "mainWord": "en.bus.vehicle",
+        "hotspots": [
+          {
+            "word": "en.bus.vehicle",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "Momo 和 Lulu 到车站等车，车还没来，两人一起耐心等待。",
+        "segments": [
+          {
+            "id": "transport.story.1.intro",
+            "text": "Momo and Lulu arrive at the bus stop.",
+            "speaker": "narrator",
+            "audio": "transport.story.1.intro.audio"
+          },
+          {
+            "id": "transport.story.1.item",
+            "text": "Is our bus here yet?",
+            "speaker": "momo",
+            "audio": "transport.story.1.item.audio"
+          },
+          {
+            "id": "transport.story.1.reply",
+            "text": "Not yet. Let us wait together.",
+            "speaker": "bunny",
+            "audio": "transport.story.1.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "transport.story.2",
+        "title": "2. 票放在哪里了",
+        "templateId": "daily-life",
+        "illustration": "transport.story.2.image",
+        "characters": [
+          "transport.momo",
+          "transport.turtle"
+        ],
+        "mainWord": "en.ticket.travel",
+        "hotspots": [
+          {
+            "word": "en.ticket.travel",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "Momo 找不到车票有些着急，Toto 提醒看看袋子的小口袋。",
+        "segments": [
+          {
+            "id": "transport.story.2.intro",
+            "text": "Momo looks inside the bag.",
+            "speaker": "narrator",
+            "audio": "transport.story.2.intro.audio"
+          },
+          {
+            "id": "transport.story.2.item",
+            "text": "I cannot find my ticket.",
+            "speaker": "momo",
+            "audio": "transport.story.2.item.audio"
+          },
+          {
+            "id": "transport.story.2.reply",
+            "text": "Check the small pocket. Take your time.",
+            "speaker": "turtle",
+            "audio": "transport.story.2.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "transport.story.3",
+        "title": "3. 别把袋子落下",
+        "templateId": "daily-life",
+        "illustration": "transport.story.3.image",
+        "characters": [
+          "transport.fox",
+          "transport.momo"
+        ],
+        "mainWord": "en.bag.container",
+        "hotspots": [
+          {
+            "word": "en.bag.container",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "公交车来了，Fifi 想马上上车。Momo 提醒先拿好袋子。",
+        "segments": [
+          {
+            "id": "transport.story.3.intro",
+            "text": "The bus arrives at the stop.",
+            "speaker": "narrator",
+            "audio": "transport.story.3.intro.audio"
+          },
+          {
+            "id": "transport.story.3.item",
+            "text": "Our bus is here! Let us go!",
+            "speaker": "fox",
+            "audio": "transport.story.3.item.audio"
+          },
+          {
+            "id": "transport.story.3.reply",
+            "text": "Wait. We need our bag too.",
+            "speaker": "momo",
+            "audio": "transport.story.3.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "transport.story.4",
+        "title": "4. 这个座位有人吗",
+        "templateId": "daily-life",
+        "illustration": "transport.story.4.image",
+        "characters": [
+          "transport.momo",
+          "transport.bunny"
+        ],
+        "mainWord": "en.seat.furniture",
+        "hotspots": [
+          {
+            "word": "en.seat.furniture",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "两人和大人一起上车，先问好座位是否有人，再坐在一起。",
+        "segments": [
+          {
+            "id": "transport.story.4.intro",
+            "text": "The friends step onto the bus with their grown-up.",
+            "speaker": "narrator",
+            "audio": "transport.story.4.intro.audio"
+          },
+          {
+            "id": "transport.story.4.item",
+            "text": "Is this seat free?",
+            "speaker": "momo",
+            "audio": "transport.story.4.item.audio"
+          },
+          {
+            "id": "transport.story.4.reply",
+            "text": "Yes. Let us sit beside each other.",
+            "speaker": "bunny",
+            "audio": "transport.story.4.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "transport.story.5",
+        "title": "5. 给过道留出地方",
+        "templateId": "daily-life",
+        "illustration": "transport.story.5.image",
+        "characters": [
+          "transport.fox",
+          "transport.turtle"
+        ],
+        "mainWord": "en.bag.container",
+        "hotspots": [
+          {
+            "word": "en.bag.container",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "Fifi 的袋子放在过道上，Toto 提醒挪到脚边，不挡住别人。",
+        "segments": [
+          {
+            "id": "transport.story.5.intro",
+            "text": "A bag is in the aisle.",
+            "speaker": "narrator",
+            "audio": "transport.story.5.intro.audio"
+          },
+          {
+            "id": "transport.story.5.item",
+            "text": "Where can I put my bag?",
+            "speaker": "fox",
+            "audio": "transport.story.5.item.audio"
+          },
+          {
+            "id": "transport.story.5.reply",
+            "text": "Keep it beside your feet. Leave the aisle clear.",
+            "speaker": "turtle",
+            "audio": "transport.story.5.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "transport.story.6",
+        "title": "6. 到站再走",
+        "templateId": "daily-life",
+        "illustration": "transport.story.6.image",
+        "characters": [
+          "transport.momo",
+          "transport.bunny"
+        ],
+        "mainWord": "en.bus.vehicle",
+        "hotspots": [
+          {
+            "word": "en.bus.vehicle",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "到站停稳了，两人检查袋子和车票，跟着大人一起下车。",
+        "segments": [
+          {
+            "id": "transport.story.6.intro",
+            "text": "The bus stops at their destination.",
+            "speaker": "narrator",
+            "audio": "transport.story.6.intro.audio"
+          },
+          {
+            "id": "transport.story.6.item",
+            "text": "Our stop! Bag and ticket ready?",
+            "speaker": "momo",
+            "audio": "transport.story.6.item.audio"
+          },
+          {
+            "id": "transport.story.6.reply",
+            "text": "Ready. Let us leave with our grown-up.",
+            "speaker": "bunny",
+            "audio": "transport.story.6.reply.audio"
+          }
+        ]
+      }
+    ],
+    "dialogue": [
+      {
+        "id": "transport.dialogue.1",
+        "cn": "我们的车来了吗？",
+        "question": [
+          {
+            "id": "transport.dialogue.1.question",
+            "text": "Is our bus here yet?",
+            "audio": "transport.dialogue.1.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "transport.dialogue.1.reply.1",
+            "text": "Not yet. Let us wait.",
+            "cn": "还没有，我们等等。",
+            "image": "transport.bus.image",
+            "audio": "transport.dialogue.1.reply.1.audio",
+            "followUp": [
+              {
+                "id": "transport.dialogue.1.reply.1.follow",
+                "text": "We can wait together at the stop.",
+                "audio": "transport.dialogue.1.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "transport.dialogue.1.reply.2",
+            "text": "Please stay with me.",
+            "cn": "请陪着我。",
+            "image": "transport.bus.image",
+            "audio": "transport.dialogue.1.reply.2.audio",
+            "followUp": [
+              {
+                "id": "transport.dialogue.1.reply.2.follow",
+                "text": "I will stay beside you.",
+                "audio": "transport.dialogue.1.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "transport.dialogue.2",
+        "cn": "你的车票在哪里？",
+        "question": [
+          {
+            "id": "transport.dialogue.2.question",
+            "text": "Where is your ticket?",
+            "audio": "transport.dialogue.2.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "transport.dialogue.2.reply.1",
+            "text": "In my bag.",
+            "cn": "在我的袋子里。",
+            "image": "transport.ticket.image",
+            "audio": "transport.dialogue.2.reply.1.audio",
+            "followUp": [
+              {
+                "id": "transport.dialogue.2.reply.1.follow",
+                "text": "Check the small pocket.",
+                "audio": "transport.dialogue.2.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "transport.dialogue.2.reply.2",
+            "text": "Please help me look.",
+            "cn": "请帮我找找。",
+            "image": "transport.ticket.image",
+            "audio": "transport.dialogue.2.reply.2.audio",
+            "followUp": [
+              {
+                "id": "transport.dialogue.2.reply.2.follow",
+                "text": "Take your time. We can look together.",
+                "audio": "transport.dialogue.2.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "transport.dialogue.3",
+        "cn": "车来了，东西都拿好了吗？",
+        "question": [
+          {
+            "id": "transport.dialogue.3.question",
+            "text": "The bus is here. Have we got everything?",
+            "audio": "transport.dialogue.3.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "transport.dialogue.3.reply.1",
+            "text": "Our bag and ticket!",
+            "cn": "袋子和车票！",
+            "image": "transport.bag.image",
+            "audio": "transport.dialogue.3.reply.1.audio",
+            "followUp": [
+              {
+                "id": "transport.dialogue.3.reply.1.follow",
+                "text": "Now we can go with our grown-up.",
+                "audio": "transport.dialogue.3.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "transport.dialogue.3.reply.2",
+            "text": "Wait for my bag, please.",
+            "cn": "请等等，我拿袋子。",
+            "image": "transport.bag.image",
+            "audio": "transport.dialogue.3.reply.2.audio",
+            "followUp": [
+              {
+                "id": "transport.dialogue.3.reply.2.follow",
+                "text": "We can wait while you pick it up.",
+                "audio": "transport.dialogue.3.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "transport.dialogue.4",
+        "cn": "这个座位空着吗？",
+        "question": [
+          {
+            "id": "transport.dialogue.4.question",
+            "text": "Is this seat free?",
+            "audio": "transport.dialogue.4.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "transport.dialogue.4.reply.1",
+            "text": "Yes. Sit here, please.",
+            "cn": "空着，请坐这里。",
+            "image": "transport.seat.image",
+            "audio": "transport.dialogue.4.reply.1.audio",
+            "followUp": [
+              {
+                "id": "transport.dialogue.4.reply.1.follow",
+                "text": "Thank you. We can sit beside each other.",
+                "audio": "transport.dialogue.4.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "transport.dialogue.4.reply.2",
+            "text": "Let us ask first.",
+            "cn": "我们先问问。",
+            "image": "transport.seat.image",
+            "audio": "transport.dialogue.4.reply.2.audio",
+            "followUp": [
+              {
+                "id": "transport.dialogue.4.reply.2.follow",
+                "text": "Good idea. Ask before we sit.",
+                "audio": "transport.dialogue.4.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "transport.dialogue.5",
+        "cn": "我们的袋子放在哪里？",
+        "question": [
+          {
+            "id": "transport.dialogue.5.question",
+            "text": "Where can we keep our bag?",
+            "audio": "transport.dialogue.5.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "transport.dialogue.5.reply.1",
+            "text": "Beside our feet.",
+            "cn": "放在脚边。",
+            "image": "transport.bag.image",
+            "audio": "transport.dialogue.5.reply.1.audio",
+            "followUp": [
+              {
+                "id": "transport.dialogue.5.reply.1.follow",
+                "text": "Then the aisle will stay clear.",
+                "audio": "transport.dialogue.5.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "transport.dialogue.5.reply.2",
+            "text": "Help me move it, please.",
+            "cn": "请帮我挪一下。",
+            "image": "transport.bag.image",
+            "audio": "transport.dialogue.5.reply.2.audio",
+            "followUp": [
+              {
+                "id": "transport.dialogue.5.reply.2.follow",
+                "text": "We can move it together.",
+                "audio": "transport.dialogue.5.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "transport.dialogue.6",
+        "cn": "车停稳了，我们下车吗？",
+        "question": [
+          {
+            "id": "transport.dialogue.6.question",
+            "text": "The bus has stopped. Shall we leave?",
+            "audio": "transport.dialogue.6.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "transport.dialogue.6.reply.1",
+            "text": "Yes, with our grown-up.",
+            "cn": "好，和大人一起。",
+            "image": "transport.ticket.image",
+            "audio": "transport.dialogue.6.reply.1.audio",
+            "followUp": [
+              {
+                "id": "transport.dialogue.6.reply.1.follow",
+                "text": "Take your bag and ticket with you.",
+                "audio": "transport.dialogue.6.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "transport.dialogue.6.reply.2",
+            "text": "Please wait for me.",
+            "cn": "请等等我。",
+            "image": "transport.bag.image",
+            "audio": "transport.dialogue.6.reply.2.audio",
+            "followUp": [
+              {
+                "id": "transport.dialogue.6.reply.2.follow",
+                "text": "We will stay together.",
+                "audio": "transport.dialogue.6.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "game": {
+      "type": "scene-find",
+      "title": "在车站里找一找",
+      "instructions": "先听完英语，再在大图里找对应物品。可以重听、请朋友示范或跳过。",
+      "illustration": "transport.game.image",
+      "hotspots": [
+        {
+          "word": "en.bus.vehicle",
+          "x": 0.68,
+          "y": 0.3
+        },
+        {
+          "word": "en.ticket.travel",
+          "x": 0.22,
+          "y": 0.26
+        },
+        {
+          "word": "en.bag.container",
+          "x": 0.79,
+          "y": 0.79
+        },
+        {
+          "word": "en.seat.furniture",
+          "x": 0.24,
+          "y": 0.77
+        }
+      ],
+      "questions": [
+        {
+          "id": "transport.game.1",
+          "target": "en.bus.vehicle",
+          "options": [
+            "en.bus.vehicle",
+            "en.ticket.travel",
+            "en.bag.container",
+            "en.seat.furniture"
+          ]
+        },
+        {
+          "id": "transport.game.2",
+          "target": "en.ticket.travel",
+          "options": [
+            "en.bus.vehicle",
+            "en.ticket.travel",
+            "en.bag.container",
+            "en.seat.furniture"
+          ]
+        },
+        {
+          "id": "transport.game.3",
+          "target": "en.bag.container",
+          "options": [
+            "en.bus.vehicle",
+            "en.ticket.travel",
+            "en.bag.container",
+            "en.seat.furniture"
+          ]
+        },
+        {
+          "id": "transport.game.4",
+          "target": "en.seat.furniture",
+          "options": [
+            "en.bus.vehicle",
+            "en.ticket.travel",
+            "en.bag.container",
+            "en.seat.furniture"
+          ]
+        }
+      ]
+    },
+    "summary": [
+      "en.bus.vehicle",
+      "en.ticket.travel",
+      "en.bag.container",
+      "en.seat.furniture"
+    ]
+  }
+}

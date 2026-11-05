@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 430" fill="none">
+<defs><pattern id="checks" width="44" height="44" patternUnits="userSpaceOnUse"><path fill="#fce8cd" d="M0 0h44v44H0z"/><path fill="#e8ac91" fill-opacity=".55" d="M0 0h22v44H0zM0 0h44v22H0z"/></pattern></defs>
+<g stroke="#665442" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path fill="#e8edcf" stroke="none" d="M19 327C48 263 127 262 206 278c107-45 227-37 329 20l-2 96H24z"/>
+<path d="M38 324c82-42 132-32 192-22m84-9c77-22 147-5 198 17" stroke="#a2ae80" stroke-width="2"/>
+<circle cx="438" cy="77" r="31" fill="#f2ca73"/><path d="m438 29 2-11m31 25 9-10m8 44 13 1m-34 34 9 10m-38 6-1 12m-33-29-9 8m-7-41-12-1m27-33-8-10" stroke="#d2a653"/>
+<path d="M58 101c-17-14-5-35 14-32 1-32 45-36 55-9 27-12 44 17 28 32-27 10-65 13-97 9z" fill="#fffdf4" stroke="#9ba6a3" stroke-width="2"/>
+<path d="m233 305 218-28 66 98-256 31-58-75z" fill="url(#checks)"/>
+<path d="m242 318 204-28m-202 94 247-28" stroke="#fff7e9" stroke-width="2"/>
+</g>
+{{CHARACTERS}}
+<g stroke="#665442" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<!-- Picnic basket, apple and milk. -->
+<path d="M386 319c-5-49 56-52 57-5" stroke-width="5"/><path d="m377 318 77-6-9 53-55 5z" fill="#d9b477"/><path d="m391 331 49-4m-46 18 43-4m-29-14 3 37m14-38 2 37" stroke="#aa8151" stroke-width="2"/>
+<path d="M248 344c-18-17-37-1-29 17 6 15 26 21 35 4 9-17 6-25-6-21z" fill="#d78068"/><path d="m242 344 2-12m0 6c8-12 17-10 19-6-5 8-12 9-19 6" fill="#9aaa7e"/>
+<path d="m464 333 8-16 21 1 9 17-2 36-34-1z" fill="#fff9ee"/><path d="m464 333 38 2m-30-18 5 17 16-16"/><path d="m475 345 16 1m-16 7 12 1" stroke="#87a4ae"/>
+<path d="m57 348-3-12m4 7 8-9m112 28-3-13m3 7 8-10m334-5 2-12m-2 7-7-7" stroke="#8b9d6c" stroke-width="2"/>
+<path d="m64 292 5-8 5 8-5 6zm436-108 5-8 4 8-4 6z" fill="#e9bd65" stroke="#d1a653" stroke-width="2"/>
+</g></svg>

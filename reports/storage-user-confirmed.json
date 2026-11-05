@@ -1,0 +1,15 @@
+{
+    "schemaVersion":  1,
+    "provenance":  "user-provided terminal output in this conversation, 2026-10-29",
+    "interpreter":  "Python 3.12.4",
+    "workingDirectory":  "D:\\py_space\\momoplanet",
+    "status":  "passed",
+    "testCount":  3,
+    "skipped":  0,
+    "registrationNote":  "app.py and tests/test_storage.py have not changed since the user-provided run in this conversation. Hashes captured when registering that evidence, not claimed as captured by the earlier command.",
+    "sourceHashes":  {
+                         "app.py":  "1ca1677e21baceac5f509821b7169e6b5c971698875aa0791581e1ebd6491329",
+                         "tests/test_storage.py":  "58dddc4d4d2097c54b4eb2e1520ab212574a12e7318f9a43c4e939cca2481e5d"
+                     },
+    "output":  "test_invalid_events_are_rejected ... ok\ntest_theme_sticker_is_unique_and_survives_exit ... ok\ntest_time_is_bounded_and_invalid_values_do_not_write ... ok\nRan 3 tests in 0.003s\nOK"
+}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "style": "warm-ink-sketch",
+  "characters": [
+    {"id":"momo","name":"Momo","nameZh":"墨墨","species":"小熊","trait":"好奇的发现者","image":"illustrations/momo.svg","colors":["#cfa47b","#9cad95"],"signature":"圆耳朵 · 蜂蜜棕毛色 · 鼠尾草绿领巾","personality":"喜欢问为什么，遇到新事物会先凑近看看。有时太投入，会忘记带齐东西。","role":"发起探索，提出问题；也会向朋友求助。","line":"我们一起去看看吧！","gesture":"身体微微前倾，抬起一只小爪。"},
+    {"id":"bunny","name":"Lulu","nameZh":"露露","species":"小兔","trait":"体贴的倾听者","image":"illustrations/bunny.svg","colors":["#fff8e9","#e6b5a1"],"signature":"一高一低的长耳朵 · 奶油毛色 · 桃色领巾","personality":"留意朋友的感受，愿意分享。遇到陌生事物也会犹豫，需要朋友鼓励。","role":"表达感受、邀请分享；也可以先选择自己的需要。","line":"你想和我一起吗？","gesture":"长耳轻轻偏向说话的人，双爪靠近胸前。"},
+    {"id":"fox","name":"Fifi","nameZh":"菲菲","species":"小狐狸","trait":"活泼的尝试者","image":"illustrations/fox.svg","colors":["#d49a70","#b3c9cf"],"signature":"三角耳 · 奶油脸颊与大尾尖 · 雾蓝领巾","personality":"点子多，喜欢动手试。有时行动太快，愿意停下来重新想一想。","role":"提出玩法、带来新尝试；尝试失败后示范再来一次。","line":"我有个新点子！","gesture":"一只前爪抬起，大尾巴向一侧扬起。"},
+    {"id":"turtle","name":"Toto","nameZh":"托托","species":"小乌龟","trait":"耐心的观察者","image":"illustrations/turtle.svg","colors":["#9cad95","#dfb774"],"signature":"低矮圆龟壳 · 分块壳纹 · 麦黄领巾","personality":"喜欢观察、整理和按自己的节奏尝试。也会着急，也有需要朋友帮助的时候。","role":"发现遗漏、整理物品、陪伴等待；不承担评分或催促职责。","line":"慢慢来，我陪你。","gesture":"四脚稳稳着地，抬头看向朋友。"}
+  ]
+}

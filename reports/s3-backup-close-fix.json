@@ -1,0 +1,20 @@
+{
+    "stage":  "S3",
+    "status":  "fixed_awaiting_python_rerun",
+    "recordedAt":  "2026-10-29T12:24:30.5839636Z",
+    "previousReport":  "reports/s3-python-tests-before-backup-close-fix.json",
+    "previousRun":  {
+                        "testsRun":  29,
+                        "passed":  28,
+                        "errors":  1,
+                        "skipped":  0
+                    },
+    "cause":  "Backup SQLite connection was not explicitly closed; Windows refused temporary backup deletion (WinError 32).",
+    "change":  "contextlib.closing for backup connection; existing migration test asserts deterministic closure of source and backup.",
+    "sourceHashes":  {
+                         "storage_v3.py":  "00a43659d0b5c1ac34a182367677d0edd409c1b0d3f5c0c8a54f4013e2d08d3b",
+                         "tests/test_s3_storage.py":  "b07312babe185526c0dc6d654bd8017bdafbc039a81ca4a0231f782ead7e028a"
+                     },
+    "pythonVerification":  "pending; interpreter inaccessible to tool process",
+    "familyDatabaseTouched":  false
+}

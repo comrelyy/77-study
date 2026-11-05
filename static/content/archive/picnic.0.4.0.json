@@ -1,0 +1,1468 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "picnic",
+  "contentVersion": "0.4.0",
+  "status": "draft",
+  "compatibleFrom": [],
+  "title": "和 Momo 去野餐",
+  "stickerId": "picnic.sticker",
+  "assets": [
+    {
+      "id": "picnic.momo",
+      "kind": "image",
+      "path": "illustrations/momo.svg"
+    },
+    {
+      "id": "picnic.bunny",
+      "kind": "image",
+      "path": "illustrations/bunny.svg"
+    },
+    {
+      "id": "picnic.wave",
+      "kind": "image",
+      "path": "illustrations/wave.svg"
+    },
+    {
+      "id": "picnic.apple.image",
+      "kind": "image",
+      "path": "illustrations/apple.svg"
+    },
+    {
+      "id": "picnic.apple.audio",
+      "kind": "audio",
+      "path": "audio/picnic/picnic.apple.audio.wav",
+      "text": "apple",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.banana.image",
+      "kind": "image",
+      "path": "illustrations/banana.svg"
+    },
+    {
+      "id": "picnic.banana.audio",
+      "kind": "audio",
+      "path": "audio/picnic/picnic.banana.audio.wav",
+      "text": "banana",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.bread.image",
+      "kind": "image",
+      "path": "illustrations/bread.svg"
+    },
+    {
+      "id": "picnic.bread.audio",
+      "kind": "audio",
+      "path": "audio/picnic/picnic.bread.audio.wav",
+      "text": "bread",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.milk.image",
+      "kind": "image",
+      "path": "illustrations/milk.svg"
+    },
+    {
+      "id": "picnic.milk.audio",
+      "kind": "audio",
+      "path": "audio/picnic/picnic.milk.audio.wav",
+      "text": "milk",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.basket",
+      "kind": "image",
+      "path": "illustrations/basket.svg"
+    },
+    {
+      "id": "picnic.dialogue.1.question.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.1.question.audio.wav",
+      "text": "Hello, Bunny! Shall we have a picnic?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.1.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.1.reply.1.audio.wav",
+      "text": "Yes! Let us have a picnic.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.1.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.1.reply.1.follow.audio.wav",
+      "text": "Great! I brought our basket.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.1.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.1.reply.2.audio.wav",
+      "text": "Can I join you?",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.1.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.1.reply.2.follow.audio.wav",
+      "text": "Of course! There is room for you.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.2.question.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.2.question.audio.wav",
+      "text": "Where shall we sit?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.2.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.2.reply.1.audio.wav",
+      "text": "Let us sit here.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.2.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.2.reply.1.follow.audio.wav",
+      "text": "Here is a lovely spot for our picnic.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.2.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.2.reply.2.audio.wav",
+      "text": "Next to you, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.2.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.2.reply.2.follow.audio.wav",
+      "text": "Come and sit beside me.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.3.question.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.3.question.audio.wav",
+      "text": "What would you like from our basket?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.3.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.3.reply.1.audio.wav",
+      "text": "An apple, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.3.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.3.reply.1.follow.audio.wav",
+      "text": "Here is your apple.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.3.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.3.reply.2.audio.wav",
+      "text": "A banana, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.3.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.3.reply.2.follow.audio.wav",
+      "text": "Here is your banana.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.3.reply.3.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.3.reply.3.audio.wav",
+      "text": "No food yet, thank you.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.3.reply.3.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.3.reply.3.follow.audio.wav",
+      "text": "That is okay. We can enjoy the sunshine.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.4.question.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.4.question.audio.wav",
+      "text": "Shall we share some bread, too?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.4.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.4.reply.1.audio.wav",
+      "text": "Yes! Let us share.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.4.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.4.reply.1.follow.audio.wav",
+      "text": "Here is some bread for each of us.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.4.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.4.reply.2.audio.wav",
+      "text": "No, thank you.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.4.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.4.reply.2.follow.audio.wav",
+      "text": "That is okay. I will keep it here.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.5.question.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.5.question.audio.wav",
+      "text": "We have milk. Would you like a drink?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.5.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.5.reply.1.audio.wav",
+      "text": "Some milk, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.5.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.5.reply.1.follow.audio.wav",
+      "text": "Here is your milk. Take a little sip.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.5.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.5.reply.2.audio.wav",
+      "text": "Not now, thank you.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.5.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.5.reply.2.follow.audio.wav",
+      "text": "All right. You can have a drink later.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.6.question.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.6.question.audio.wav",
+      "text": "What shall we do after our picnic?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.6.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.6.reply.1.audio.wav",
+      "text": "Let us play together.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.6.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.6.reply.1.follow.audio.wav",
+      "text": "Good idea! We can play after tidying up.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.6.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.6.reply.2.audio.wav",
+      "text": "Let us tell a story.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.6.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.6.reply.2.follow.audio.wav",
+      "text": "Lovely! I have a story to share.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.7.question.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.7.question.audio.wav",
+      "text": "Before we play, shall we tidy our picnic?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.7.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.7.reply.1.audio.wav",
+      "text": "I can carry the basket.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.7.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.7.reply.1.follow.audio.wav",
+      "text": "Thank you! I will put our food away.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.7.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.7.reply.2.audio.wav",
+      "text": "Let us do it together.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.7.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.7.reply.2.follow.audio.wav",
+      "text": "Together we can make this spot clean.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.8.question.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.8.question.audio.wav",
+      "text": "Thank you for our picnic. Did you enjoy it?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.8.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.8.reply.1.audio.wav",
+      "text": "Yes! Let us picnic again.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.8.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.8.reply.1.follow.audio.wav",
+      "text": "I would love that. See you next time!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.8.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.8.reply.2.audio.wav",
+      "text": "Thank you for sharing with me.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.dialogue.8.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v02/picnic.dialogue.8.reply.2.follow.audio.wav",
+      "text": "You are welcome. It is lovely sharing with you.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.fox",
+      "kind": "image",
+      "path": "illustrations/fox.svg"
+    },
+    {
+      "id": "picnic.turtle",
+      "kind": "image",
+      "path": "illustrations/turtle.svg"
+    },
+    {
+      "id": "picnic.story.1.image",
+      "kind": "image",
+      "path": "illustrations/scenes/picnic-1.svg"
+    },
+    {
+      "id": "picnic.story.1.intro.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.1.intro.audio.wav",
+      "text": "An apple rolls out of the picnic basket.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.1.item.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.1.item.audio.wav",
+      "text": "Oh! Our apple!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.1.reply.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.1.reply.audio.wav",
+      "text": "I can catch it. Here you are.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.2.image",
+      "kind": "image",
+      "path": "illustrations/scenes/picnic-2.svg"
+    },
+    {
+      "id": "picnic.story.2.intro.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.2.intro.audio.wav",
+      "text": "Lulu takes out a banana.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.2.item.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.2.item.audio.wav",
+      "text": "Would you like this banana?",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.2.reply.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.2.reply.audio.wav",
+      "text": "Yes, please. You can have the apple.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.3.image",
+      "kind": "image",
+      "path": "illustrations/scenes/picnic-3.svg"
+    },
+    {
+      "id": "picnic.story.3.intro.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.3.intro.audio.wav",
+      "text": "There is one big piece of bread.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.3.item.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.3.item.audio.wav",
+      "text": "How can we both have some?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.3.reply.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.3.reply.audio.wav",
+      "text": "We can share it. Half for each of us.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.4.image",
+      "kind": "image",
+      "path": "illustrations/scenes/picnic-4.svg"
+    },
+    {
+      "id": "picnic.story.4.intro.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.4.intro.audio.wav",
+      "text": "Lulu offers Momo some milk.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.4.item.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.4.item.audio.wav",
+      "text": "Some milk?",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.4.reply.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.4.reply.audio.wav",
+      "text": "Not now, thank you. Maybe later.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.5.image",
+      "kind": "image",
+      "path": "illustrations/scenes/picnic-5.svg"
+    },
+    {
+      "id": "picnic.story.5.intro.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.5.intro.audio.wav",
+      "text": "Lulu has been helping with the basket.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.5.item.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.5.item.audio.wav",
+      "text": "Your apple is waiting. Sit beside me.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.5.reply.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.5.reply.audio.wav",
+      "text": "Thank you! Now we can eat together.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.6.image",
+      "kind": "image",
+      "path": "illustrations/scenes/picnic-6.svg"
+    },
+    {
+      "id": "picnic.story.6.intro.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.6.intro.audio.wav",
+      "text": "The picnic is over.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.6.item.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.6.item.audio.wav",
+      "text": "I will pack the bread away.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.story.6.reply.audio",
+      "kind": "audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.6.reply.audio.wav",
+      "text": "I will carry the basket. See you, picnic spot!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    }
+  ],
+  "words": [
+    {
+      "id": "en.apple.fruit",
+      "text": "apple",
+      "cn": "苹果",
+      "image": "picnic.apple.image",
+      "audio": "picnic.apple.audio"
+    },
+    {
+      "id": "en.banana.fruit",
+      "text": "banana",
+      "cn": "香蕉",
+      "image": "picnic.banana.image",
+      "audio": "picnic.banana.audio"
+    },
+    {
+      "id": "en.bread.food",
+      "text": "bread",
+      "cn": "面包",
+      "image": "picnic.bread.image",
+      "audio": "picnic.bread.audio"
+    },
+    {
+      "id": "en.milk.drink",
+      "text": "milk",
+      "cn": "牛奶",
+      "image": "picnic.milk.image",
+      "audio": "picnic.milk.audio"
+    }
+  ],
+  "modules": {
+    "story": [
+      {
+        "id": "picnic.story.1",
+        "title": "1. 苹果滚走了",
+        "templateId": "picnic-meadow",
+        "illustration": "picnic.story.1.image",
+        "characters": [
+          "picnic.momo",
+          "picnic.bunny"
+        ],
+        "mainWord": "en.apple.fruit",
+        "hotspots": [
+          {
+            "word": "en.apple.fruit",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "刚铺好野餐垫，一只苹果滚出篮子。Lulu 帮 Momo 接住它。",
+        "segments": [
+          {
+            "id": "picnic.story.1.intro",
+            "text": "An apple rolls out of the picnic basket.",
+            "speaker": "narrator",
+            "audio": "picnic.story.1.intro.audio"
+          },
+          {
+            "id": "picnic.story.1.item",
+            "text": "Oh! Our apple!",
+            "speaker": "momo",
+            "audio": "picnic.story.1.item.audio"
+          },
+          {
+            "id": "picnic.story.1.reply",
+            "text": "I can catch it. Here you are.",
+            "speaker": "bunny",
+            "audio": "picnic.story.1.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "picnic.story.2",
+        "title": "2. 谁想吃香蕉",
+        "templateId": "picnic-meadow",
+        "illustration": "picnic.story.2.image",
+        "characters": [
+          "picnic.bunny",
+          "picnic.momo"
+        ],
+        "mainWord": "en.banana.fruit",
+        "hotspots": [
+          {
+            "word": "en.banana.fruit",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "Lulu 拿出香蕉，两人商量各自想吃的水果。",
+        "segments": [
+          {
+            "id": "picnic.story.2.intro",
+            "text": "Lulu takes out a banana.",
+            "speaker": "narrator",
+            "audio": "picnic.story.2.intro.audio"
+          },
+          {
+            "id": "picnic.story.2.item",
+            "text": "Would you like this banana?",
+            "speaker": "bunny",
+            "audio": "picnic.story.2.item.audio"
+          },
+          {
+            "id": "picnic.story.2.reply",
+            "text": "Yes, please. You can have the apple.",
+            "speaker": "momo",
+            "audio": "picnic.story.2.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "picnic.story.3",
+        "title": "3. 面包只有一大块",
+        "templateId": "picnic-meadow",
+        "illustration": "picnic.story.3.image",
+        "characters": [
+          "picnic.momo",
+          "picnic.bunny"
+        ],
+        "mainWord": "en.bread.food",
+        "hotspots": [
+          {
+            "word": "en.bread.food",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "篮子里只有一大块面包。Lulu 提议分成两份，两人都有得吃。",
+        "segments": [
+          {
+            "id": "picnic.story.3.intro",
+            "text": "There is one big piece of bread.",
+            "speaker": "narrator",
+            "audio": "picnic.story.3.intro.audio"
+          },
+          {
+            "id": "picnic.story.3.item",
+            "text": "How can we both have some?",
+            "speaker": "momo",
+            "audio": "picnic.story.3.item.audio"
+          },
+          {
+            "id": "picnic.story.3.reply",
+            "text": "We can share it. Half for each of us.",
+            "speaker": "bunny",
+            "audio": "picnic.story.3.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "picnic.story.4",
+        "title": "4. 现在不想喝",
+        "templateId": "picnic-meadow",
+        "illustration": "picnic.story.4.image",
+        "characters": [
+          "picnic.bunny",
+          "picnic.momo"
+        ],
+        "mainWord": "en.milk.drink",
+        "hotspots": [
+          {
+            "word": "en.milk.drink",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "Lulu 邀请 Momo 喝牛奶。Momo 现在不想喝，礼貌拒绝，朋友也不催促。",
+        "segments": [
+          {
+            "id": "picnic.story.4.intro",
+            "text": "Lulu offers Momo some milk.",
+            "speaker": "narrator",
+            "audio": "picnic.story.4.intro.audio"
+          },
+          {
+            "id": "picnic.story.4.item",
+            "text": "Some milk?",
+            "speaker": "bunny",
+            "audio": "picnic.story.4.item.audio"
+          },
+          {
+            "id": "picnic.story.4.reply",
+            "text": "Not now, thank you. Maybe later.",
+            "speaker": "momo",
+            "audio": "picnic.story.4.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "picnic.story.5",
+        "title": "5. 朋友还没吃到呢",
+        "templateId": "picnic-meadow",
+        "illustration": "picnic.story.5.image",
+        "characters": [
+          "picnic.momo",
+          "picnic.bunny"
+        ],
+        "mainWord": "en.apple.fruit",
+        "hotspots": [
+          {
+            "word": "en.apple.fruit",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "Lulu 一直忙着帮忙。Momo 注意到她还没吃，邀请朋友坐下一起享用。",
+        "segments": [
+          {
+            "id": "picnic.story.5.intro",
+            "text": "Lulu has been helping with the basket.",
+            "speaker": "narrator",
+            "audio": "picnic.story.5.intro.audio"
+          },
+          {
+            "id": "picnic.story.5.item",
+            "text": "Your apple is waiting. Sit beside me.",
+            "speaker": "momo",
+            "audio": "picnic.story.5.item.audio"
+          },
+          {
+            "id": "picnic.story.5.reply",
+            "text": "Thank you! Now we can eat together.",
+            "speaker": "bunny",
+            "audio": "picnic.story.5.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "picnic.story.6",
+        "title": "6. 把草地留干净",
+        "templateId": "picnic-meadow",
+        "illustration": "picnic.story.6.image",
+        "characters": [
+          "picnic.momo",
+          "picnic.bunny"
+        ],
+        "mainWord": "en.bread.food",
+        "hotspots": [
+          {
+            "word": "en.bread.food",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "野餐结束，Momo 收好面包，Lulu 拎起篮子，两人把草地留得干干净净。",
+        "segments": [
+          {
+            "id": "picnic.story.6.intro",
+            "text": "The picnic is over.",
+            "speaker": "narrator",
+            "audio": "picnic.story.6.intro.audio"
+          },
+          {
+            "id": "picnic.story.6.item",
+            "text": "I will pack the bread away.",
+            "speaker": "momo",
+            "audio": "picnic.story.6.item.audio"
+          },
+          {
+            "id": "picnic.story.6.reply",
+            "text": "I will carry the basket. See you, picnic spot!",
+            "speaker": "bunny",
+            "audio": "picnic.story.6.reply.audio"
+          }
+        ]
+      }
+    ],
+    "dialogue": [
+      {
+        "id": "picnic.dialogue.1",
+        "cn": "小兔你好！我们一起野餐好吗？",
+        "question": [
+          {
+            "id": "picnic.dialogue.1.question",
+            "text": "Hello, Bunny! Shall we have a picnic?",
+            "audio": "picnic.dialogue.1.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "picnic.dialogue.1.reply.1",
+            "image": "picnic.bunny",
+            "text": "Yes! Let us have a picnic.",
+            "cn": "好呀，一起野餐！",
+            "audio": "picnic.dialogue.1.reply.1.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.1.reply.1.follow",
+                "text": "Great! I brought our basket.",
+                "audio": "picnic.dialogue.1.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "picnic.dialogue.1.reply.2",
+            "image": "picnic.wave",
+            "text": "Can I join you?",
+            "cn": "我可以加入吗？",
+            "audio": "picnic.dialogue.1.reply.2.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.1.reply.2.follow",
+                "text": "Of course! There is room for you.",
+                "audio": "picnic.dialogue.1.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "picnic.dialogue.2",
+        "cn": "我们坐在哪里呢？",
+        "question": [
+          {
+            "id": "picnic.dialogue.2.question",
+            "text": "Where shall we sit?",
+            "audio": "picnic.dialogue.2.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "picnic.dialogue.2.reply.1",
+            "image": "picnic.basket",
+            "text": "Let us sit here.",
+            "cn": "我们坐在这里吧。",
+            "audio": "picnic.dialogue.2.reply.1.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.2.reply.1.follow",
+                "text": "Here is a lovely spot for our picnic.",
+                "audio": "picnic.dialogue.2.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "picnic.dialogue.2.reply.2",
+            "image": "picnic.momo",
+            "text": "Next to you, please.",
+            "cn": "我想坐在你旁边。",
+            "audio": "picnic.dialogue.2.reply.2.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.2.reply.2.follow",
+                "text": "Come and sit beside me.",
+                "audio": "picnic.dialogue.2.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "picnic.dialogue.3",
+        "cn": "你想从篮子里拿什么？",
+        "question": [
+          {
+            "id": "picnic.dialogue.3.question",
+            "text": "What would you like from our basket?",
+            "audio": "picnic.dialogue.3.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "picnic.dialogue.3.reply.1",
+            "image": "picnic.apple.image",
+            "text": "An apple, please.",
+            "cn": "请给我一个苹果。",
+            "audio": "picnic.dialogue.3.reply.1.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.3.reply.1.follow",
+                "text": "Here is your apple.",
+                "audio": "picnic.dialogue.3.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "picnic.dialogue.3.reply.2",
+            "image": "picnic.banana.image",
+            "text": "A banana, please.",
+            "cn": "请给我一根香蕉。",
+            "audio": "picnic.dialogue.3.reply.2.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.3.reply.2.follow",
+                "text": "Here is your banana.",
+                "audio": "picnic.dialogue.3.reply.2.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "picnic.dialogue.3.reply.3",
+            "image": "picnic.wave",
+            "text": "No food yet, thank you.",
+            "cn": "我还不想吃，谢谢。",
+            "audio": "picnic.dialogue.3.reply.3.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.3.reply.3.follow",
+                "text": "That is okay. We can enjoy the sunshine.",
+                "audio": "picnic.dialogue.3.reply.3.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "picnic.dialogue.4",
+        "cn": "我们也分享一点面包好吗？",
+        "question": [
+          {
+            "id": "picnic.dialogue.4.question",
+            "text": "Shall we share some bread, too?",
+            "audio": "picnic.dialogue.4.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "picnic.dialogue.4.reply.1",
+            "image": "picnic.bread.image",
+            "text": "Yes! Let us share.",
+            "cn": "好呀，一起分享。",
+            "audio": "picnic.dialogue.4.reply.1.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.4.reply.1.follow",
+                "text": "Here is some bread for each of us.",
+                "audio": "picnic.dialogue.4.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "picnic.dialogue.4.reply.2",
+            "image": "picnic.wave",
+            "text": "No, thank you.",
+            "cn": "不用了，谢谢。",
+            "audio": "picnic.dialogue.4.reply.2.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.4.reply.2.follow",
+                "text": "That is okay. I will keep it here.",
+                "audio": "picnic.dialogue.4.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "picnic.dialogue.5",
+        "cn": "我们带了牛奶。你想喝点东西吗？",
+        "question": [
+          {
+            "id": "picnic.dialogue.5.question",
+            "text": "We have milk. Would you like a drink?",
+            "audio": "picnic.dialogue.5.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "picnic.dialogue.5.reply.1",
+            "image": "picnic.milk.image",
+            "text": "Some milk, please.",
+            "cn": "请给我一些牛奶。",
+            "audio": "picnic.dialogue.5.reply.1.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.5.reply.1.follow",
+                "text": "Here is your milk. Take a little sip.",
+                "audio": "picnic.dialogue.5.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "picnic.dialogue.5.reply.2",
+            "image": "picnic.wave",
+            "text": "Not now, thank you.",
+            "cn": "现在不想喝，谢谢。",
+            "audio": "picnic.dialogue.5.reply.2.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.5.reply.2.follow",
+                "text": "All right. You can have a drink later.",
+                "audio": "picnic.dialogue.5.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "picnic.dialogue.6",
+        "cn": "野餐后我们做什么呢？",
+        "question": [
+          {
+            "id": "picnic.dialogue.6.question",
+            "text": "What shall we do after our picnic?",
+            "audio": "picnic.dialogue.6.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "picnic.dialogue.6.reply.1",
+            "image": "picnic.bunny",
+            "text": "Let us play together.",
+            "cn": "我们一起玩吧。",
+            "audio": "picnic.dialogue.6.reply.1.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.6.reply.1.follow",
+                "text": "Good idea! We can play after tidying up.",
+                "audio": "picnic.dialogue.6.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "picnic.dialogue.6.reply.2",
+            "image": "picnic.momo",
+            "text": "Let us tell a story.",
+            "cn": "我们讲个故事吧。",
+            "audio": "picnic.dialogue.6.reply.2.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.6.reply.2.follow",
+                "text": "Lovely! I have a story to share.",
+                "audio": "picnic.dialogue.6.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "picnic.dialogue.7",
+        "cn": "玩之前，我们把野餐的东西整理好吗？",
+        "question": [
+          {
+            "id": "picnic.dialogue.7.question",
+            "text": "Before we play, shall we tidy our picnic?",
+            "audio": "picnic.dialogue.7.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "picnic.dialogue.7.reply.1",
+            "image": "picnic.basket",
+            "text": "I can carry the basket.",
+            "cn": "我可以提篮子。",
+            "audio": "picnic.dialogue.7.reply.1.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.7.reply.1.follow",
+                "text": "Thank you! I will put our food away.",
+                "audio": "picnic.dialogue.7.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "picnic.dialogue.7.reply.2",
+            "image": "picnic.bunny",
+            "text": "Let us do it together.",
+            "cn": "我们一起整理吧。",
+            "audio": "picnic.dialogue.7.reply.2.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.7.reply.2.follow",
+                "text": "Together we can make this spot clean.",
+                "audio": "picnic.dialogue.7.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "picnic.dialogue.8",
+        "cn": "谢谢你一起野餐。你玩得开心吗？",
+        "question": [
+          {
+            "id": "picnic.dialogue.8.question",
+            "text": "Thank you for our picnic. Did you enjoy it?",
+            "audio": "picnic.dialogue.8.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "picnic.dialogue.8.reply.1",
+            "image": "picnic.momo",
+            "text": "Yes! Let us picnic again.",
+            "cn": "开心！下次再一起野餐。",
+            "audio": "picnic.dialogue.8.reply.1.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.8.reply.1.follow",
+                "text": "I would love that. See you next time!",
+                "audio": "picnic.dialogue.8.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "picnic.dialogue.8.reply.2",
+            "image": "picnic.wave",
+            "text": "Thank you for sharing with me.",
+            "cn": "谢谢你和我分享。",
+            "audio": "picnic.dialogue.8.reply.2.audio",
+            "followUp": [
+              {
+                "id": "picnic.dialogue.8.reply.2.follow",
+                "text": "You are welcome. It is lovely sharing with you.",
+                "audio": "picnic.dialogue.8.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "game": {
+      "type": "listen-pack",
+      "questions": [
+        {
+          "id": "picnic.game.1",
+          "target": "en.apple.fruit",
+          "options": [
+            "en.apple.fruit",
+            "en.banana.fruit",
+            "en.bread.food",
+            "en.milk.drink"
+          ]
+        },
+        {
+          "id": "picnic.game.2",
+          "target": "en.banana.fruit",
+          "options": [
+            "en.apple.fruit",
+            "en.banana.fruit",
+            "en.bread.food",
+            "en.milk.drink"
+          ]
+        },
+        {
+          "id": "picnic.game.3",
+          "target": "en.bread.food",
+          "options": [
+            "en.apple.fruit",
+            "en.banana.fruit",
+            "en.bread.food",
+            "en.milk.drink"
+          ]
+        },
+        {
+          "id": "picnic.game.4",
+          "target": "en.milk.drink",
+          "options": [
+            "en.apple.fruit",
+            "en.banana.fruit",
+            "en.bread.food",
+            "en.milk.drink"
+          ]
+        }
+      ]
+    },
+    "summary": [
+      "en.apple.fruit",
+      "en.banana.fruit",
+      "en.bread.food",
+      "en.milk.drink"
+    ]
+  },
+  "learning": {
+    "goal": "在分享食物时表达选择、接受与拒绝",
+    "function": "…, please. / No, thank you.",
+    "revisit": [
+      "bread",
+      "milk",
+      "apple",
+      "banana"
+    ]
+  }
+}

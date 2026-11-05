@@ -1,0 +1,5 @@
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const files=['docs/INTERACTION_CONTRACT.md','docs/S1_FLOW_SPEC.md','static/dev/model.js','static/dev/player.js','static/dev/prototype.js','static/dev/prototype.css','static/dev/index.html','static/style.css','static/theme.css','static/sketch.css','static/dev/content/picnic.json','static/dev/content/tidy.json','static/dev/review-core.js','static/dev/review-page.js','static/dev/review.html','static/dev/review.css'];
+function sourceHashes(){const all=[...files];if(fs.existsSync(path.join(__dirname,'static/audio/s1-sample-manifest.json')))all.push('static/audio/s1-sample-manifest.json');return Object.fromEntries(all.map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(__dirname,file))).digest('hex')]));}
+if(require.main===module)fs.writeFileSync(path.join(__dirname,'static/dev/review-sources.json'),JSON.stringify({schemaVersion:1,sourceHashes:sourceHashes()},null,2)+'\n');
+module.exports={sourceHashes};

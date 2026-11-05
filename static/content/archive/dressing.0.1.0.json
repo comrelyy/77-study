@@ -1,0 +1,1067 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "dressing",
+  "contentVersion": "0.1.0",
+  "status": "draft",
+  "compatibleFrom": [],
+  "title": "和 Momo 准备出门",
+  "stickerId": "dressing.sticker",
+  "learning": {
+    "goal": "表达穿戴需求，尝试自己做并请求帮助",
+    "function": "I need … / Help me, please.",
+    "revisit": [
+      "please",
+      "help"
+    ]
+  },
+  "assets": [
+    {
+      "id": "dressing.momo",
+      "kind": "image",
+      "path": "illustrations/momo.svg"
+    },
+    {
+      "id": "dressing.bunny",
+      "kind": "image",
+      "path": "illustrations/bunny.svg"
+    },
+    {
+      "id": "dressing.wave",
+      "kind": "image",
+      "path": "illustrations/wave.svg"
+    },
+    {
+      "id": "dressing.shirt.image",
+      "kind": "image",
+      "path": "illustrations/shirt.svg"
+    },
+    {
+      "id": "dressing.shirt.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.shirt.audio.wav",
+      "text": "shirt",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.socks.image",
+      "kind": "image",
+      "path": "illustrations/socks.svg"
+    },
+    {
+      "id": "dressing.socks.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.socks.audio.wav",
+      "text": "socks",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.shoes.image",
+      "kind": "image",
+      "path": "illustrations/shoes.svg"
+    },
+    {
+      "id": "dressing.shoes.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.shoes.audio.wav",
+      "text": "shoes",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.hat.image",
+      "kind": "image",
+      "path": "illustrations/hat.svg"
+    },
+    {
+      "id": "dressing.hat.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.hat.audio.wav",
+      "text": "hat",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.1.image",
+      "kind": "image",
+      "path": "illustrations/scenes/dressing-1.svg"
+    },
+    {
+      "id": "dressing.story.1.intro.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.story.1.intro.audio.wav",
+      "text": "The wind taps our window.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.1.item.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.story.1.item.audio.wav",
+      "text": "Momo finds a shirt for our walk.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.2.image",
+      "kind": "image",
+      "path": "illustrations/scenes/dressing-2.svg"
+    },
+    {
+      "id": "dressing.story.2.intro.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.story.2.intro.audio.wav",
+      "text": "One sock is hiding under the chair.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.2.item.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.story.2.item.audio.wav",
+      "text": "Lulu finds it. Now we have two socks!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.3.image",
+      "kind": "image",
+      "path": "illustrations/scenes/dressing-3.svg"
+    },
+    {
+      "id": "dressing.story.3.intro.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.story.3.intro.audio.wav",
+      "text": "Momo puts the shoes on the wrong feet.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.3.item.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.story.3.item.audio.wav",
+      "text": "Let us swap them and try again.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.4.image",
+      "kind": "image",
+      "path": "illustrations/scenes/dressing-4.svg"
+    },
+    {
+      "id": "dressing.story.4.intro.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.story.4.intro.audio.wav",
+      "text": "Our hat is waiting by the door.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.4.item.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.story.4.item.audio.wav",
+      "text": "Lulu helps Momo put it on.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.5.image",
+      "kind": "image",
+      "path": "illustrations/scenes/dressing-5.svg"
+    },
+    {
+      "id": "dressing.story.5.intro.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.story.5.intro.audio.wav",
+      "text": "Shirt, socks, shoes, and hat. We are ready!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.5.item.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.story.5.item.audio.wav",
+      "text": "We open the door and walk together.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.1.question.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.1.question.audio.wav",
+      "text": "Shall we get ready for our walk?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.1.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.1.reply.1.audio.wav",
+      "text": "Yes! I need my shirt.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.1.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.1.reply.1.follow.audio.wav",
+      "text": "Here is your shirt. Let us get dressed.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.1.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.1.reply.2.audio.wav",
+      "text": "Help me, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.1.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.1.reply.2.follow.audio.wav",
+      "text": "Of course. We can get ready together.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.2.question.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.2.question.audio.wav",
+      "text": "Where is the other sock?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.2.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.2.reply.1.audio.wav",
+      "text": "Under the chair!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.2.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.2.reply.1.follow.audio.wav",
+      "text": "You found it. Now we have two socks.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.2.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.2.reply.2.audio.wav",
+      "text": "Let us look together.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.2.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.2.reply.2.follow.audio.wav",
+      "text": "I will look beside the chair.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.3.question.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.3.question.audio.wav",
+      "text": "Are your shoes comfortable?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.3.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.3.reply.1.audio.wav",
+      "text": "These feel funny.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.3.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.3.reply.1.follow.audio.wav",
+      "text": "Let us check which shoe goes on each foot.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.3.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.3.reply.2.audio.wav",
+      "text": "Help me swap them, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.3.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.3.reply.2.follow.audio.wav",
+      "text": "I can help. We can try again.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.4.question.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.4.question.audio.wav",
+      "text": "Would you like your hat?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.4.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.4.reply.1.audio.wav",
+      "text": "Yes, my hat, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.4.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.4.reply.1.follow.audio.wav",
+      "text": "Here it is. Shall I help you?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.4.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.4.reply.2.audio.wav",
+      "text": "I can put it on.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.4.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.4.reply.2.follow.audio.wav",
+      "text": "Go ahead. I am here if you need help.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.5.question.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.5.question.audio.wav",
+      "text": "Shall we check before we go?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.5.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.5.reply.1.audio.wav",
+      "text": "Shirt, socks, shoes, and hat!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.5.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.5.reply.1.follow.audio.wav",
+      "text": "Everything is ready for our walk.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.5.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.5.reply.2.audio.wav",
+      "text": "My shoes need help.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.5.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.5.reply.2.follow.audio.wav",
+      "text": "We can stop and fix them first.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.6.question.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.6.question.audio.wav",
+      "text": "Are you ready to open the door?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.6.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.6.reply.1.audio.wav",
+      "text": "Yes! Let us go together.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.6.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.6.reply.1.follow.audio.wav",
+      "text": "Let us ask our grown-up to come too.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.6.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.6.reply.2.audio.wav",
+      "text": "Please wait for me.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.dialogue.6.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.dialogue.6.reply.2.follow.audio.wav",
+      "text": "We can wait. Take your time.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    }
+  ],
+  "words": [
+    {
+      "id": "en.shirt.clothing",
+      "text": "shirt",
+      "cn": "上衣",
+      "image": "dressing.shirt.image",
+      "audio": "dressing.shirt.audio"
+    },
+    {
+      "id": "en.socks.clothing",
+      "text": "socks",
+      "cn": "袜子",
+      "image": "dressing.socks.image",
+      "audio": "dressing.socks.audio"
+    },
+    {
+      "id": "en.shoes.clothing",
+      "text": "shoes",
+      "cn": "鞋子",
+      "image": "dressing.shoes.image",
+      "audio": "dressing.shoes.audio"
+    },
+    {
+      "id": "en.hat.clothing",
+      "text": "hat",
+      "cn": "帽子",
+      "image": "dressing.hat.image",
+      "audio": "dressing.hat.audio"
+    }
+  ],
+  "modules": {
+    "story": [
+      {
+        "id": "dressing.story.1",
+        "title": "1. 风来敲窗",
+        "templateId": "daily-life",
+        "illustration": "dressing.story.1.image",
+        "characters": [
+          "dressing.momo",
+          "dressing.bunny"
+        ],
+        "mainWord": "en.shirt.clothing",
+        "hotspots": [
+          {
+            "word": "en.shirt.clothing",
+            "x": 0.7,
+            "y": 0.6
+          }
+        ],
+        "translation": "风轻轻敲窗，Momo 找来出门穿的上衣。",
+        "segments": [
+          {
+            "id": "dressing.story.1.intro",
+            "text": "The wind taps our window.",
+            "audio": "dressing.story.1.intro.audio"
+          },
+          {
+            "id": "dressing.story.1.item",
+            "text": "Momo finds a shirt for our walk.",
+            "audio": "dressing.story.1.item.audio"
+          }
+        ]
+      },
+      {
+        "id": "dressing.story.2",
+        "title": "2. 少了一只袜子",
+        "templateId": "daily-life",
+        "illustration": "dressing.story.2.image",
+        "characters": [
+          "dressing.momo",
+          "dressing.bunny"
+        ],
+        "mainWord": "en.socks.clothing",
+        "hotspots": [
+          {
+            "word": "en.socks.clothing",
+            "x": 0.7,
+            "y": 0.6
+          }
+        ],
+        "translation": "一只袜子藏在椅子下，Lulu 找到了它，两只袜子凑齐啦。",
+        "segments": [
+          {
+            "id": "dressing.story.2.intro",
+            "text": "One sock is hiding under the chair.",
+            "audio": "dressing.story.2.intro.audio"
+          },
+          {
+            "id": "dressing.story.2.item",
+            "text": "Lulu finds it. Now we have two socks!",
+            "audio": "dressing.story.2.item.audio"
+          }
+        ]
+      },
+      {
+        "id": "dressing.story.3",
+        "title": "3. 鞋子穿反啦",
+        "templateId": "daily-life",
+        "illustration": "dressing.story.3.image",
+        "characters": [
+          "dressing.momo",
+          "dressing.bunny"
+        ],
+        "mainWord": "en.shoes.clothing",
+        "hotspots": [
+          {
+            "word": "en.shoes.clothing",
+            "x": 0.7,
+            "y": 0.6
+          }
+        ],
+        "translation": "Momo 把鞋子穿反了，换过来再试一次就好。",
+        "segments": [
+          {
+            "id": "dressing.story.3.intro",
+            "text": "Momo puts the shoes on the wrong feet.",
+            "audio": "dressing.story.3.intro.audio"
+          },
+          {
+            "id": "dressing.story.3.item",
+            "text": "Let us swap them and try again.",
+            "audio": "dressing.story.3.item.audio"
+          }
+        ]
+      },
+      {
+        "id": "dressing.story.4",
+        "title": "4. 门边的帽子",
+        "templateId": "daily-life",
+        "illustration": "dressing.story.4.image",
+        "characters": [
+          "dressing.momo",
+          "dressing.bunny"
+        ],
+        "mainWord": "en.hat.clothing",
+        "hotspots": [
+          {
+            "word": "en.hat.clothing",
+            "x": 0.7,
+            "y": 0.6
+          }
+        ],
+        "translation": "帽子就在门边，Lulu 帮 Momo 戴好它。",
+        "segments": [
+          {
+            "id": "dressing.story.4.intro",
+            "text": "Our hat is waiting by the door.",
+            "audio": "dressing.story.4.intro.audio"
+          },
+          {
+            "id": "dressing.story.4.item",
+            "text": "Lulu helps Momo put it on.",
+            "audio": "dressing.story.4.item.audio"
+          }
+        ]
+      },
+      {
+        "id": "dressing.story.5",
+        "title": "5. 准备好啦",
+        "templateId": "daily-life",
+        "illustration": "dressing.story.5.image",
+        "characters": [
+          "dressing.momo",
+          "dressing.bunny"
+        ],
+        "mainWord": "en.shoes.clothing",
+        "hotspots": [
+          {
+            "word": "en.shoes.clothing",
+            "x": 0.7,
+            "y": 0.6
+          }
+        ],
+        "translation": "衣服、袜子、鞋子和帽子都好了，我们一起出门。",
+        "segments": [
+          {
+            "id": "dressing.story.5.intro",
+            "text": "Shirt, socks, shoes, and hat. We are ready!",
+            "audio": "dressing.story.5.intro.audio"
+          },
+          {
+            "id": "dressing.story.5.item",
+            "text": "We open the door and walk together.",
+            "audio": "dressing.story.5.item.audio"
+          }
+        ]
+      }
+    ],
+    "dialogue": [
+      {
+        "id": "dressing.dialogue.1",
+        "cn": "我们准备出门散步好吗？",
+        "question": [
+          {
+            "id": "dressing.dialogue.1.question",
+            "text": "Shall we get ready for our walk?",
+            "audio": "dressing.dialogue.1.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "dressing.dialogue.1.reply.1",
+            "text": "Yes! I need my shirt.",
+            "cn": "好呀，我需要上衣。",
+            "image": "dressing.shirt.image",
+            "audio": "dressing.dialogue.1.reply.1.audio",
+            "followUp": [
+              {
+                "id": "dressing.dialogue.1.reply.1.follow",
+                "text": "Here is your shirt. Let us get dressed.",
+                "audio": "dressing.dialogue.1.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "dressing.dialogue.1.reply.2",
+            "text": "Help me, please.",
+            "cn": "请帮帮我。",
+            "image": "dressing.shirt.image",
+            "audio": "dressing.dialogue.1.reply.2.audio",
+            "followUp": [
+              {
+                "id": "dressing.dialogue.1.reply.2.follow",
+                "text": "Of course. We can get ready together.",
+                "audio": "dressing.dialogue.1.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dressing.dialogue.2",
+        "cn": "另一只袜子在哪里？",
+        "question": [
+          {
+            "id": "dressing.dialogue.2.question",
+            "text": "Where is the other sock?",
+            "audio": "dressing.dialogue.2.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "dressing.dialogue.2.reply.1",
+            "text": "Under the chair!",
+            "cn": "在椅子下面！",
+            "image": "dressing.socks.image",
+            "audio": "dressing.dialogue.2.reply.1.audio",
+            "followUp": [
+              {
+                "id": "dressing.dialogue.2.reply.1.follow",
+                "text": "You found it. Now we have two socks.",
+                "audio": "dressing.dialogue.2.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "dressing.dialogue.2.reply.2",
+            "text": "Let us look together.",
+            "cn": "我们一起找。",
+            "image": "dressing.socks.image",
+            "audio": "dressing.dialogue.2.reply.2.audio",
+            "followUp": [
+              {
+                "id": "dressing.dialogue.2.reply.2.follow",
+                "text": "I will look beside the chair.",
+                "audio": "dressing.dialogue.2.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dressing.dialogue.3",
+        "cn": "鞋子穿着舒服吗？",
+        "question": [
+          {
+            "id": "dressing.dialogue.3.question",
+            "text": "Are your shoes comfortable?",
+            "audio": "dressing.dialogue.3.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "dressing.dialogue.3.reply.1",
+            "text": "These feel funny.",
+            "cn": "感觉怪怪的。",
+            "image": "dressing.shoes.image",
+            "audio": "dressing.dialogue.3.reply.1.audio",
+            "followUp": [
+              {
+                "id": "dressing.dialogue.3.reply.1.follow",
+                "text": "Let us check which shoe goes on each foot.",
+                "audio": "dressing.dialogue.3.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "dressing.dialogue.3.reply.2",
+            "text": "Help me swap them, please.",
+            "cn": "请帮我把鞋子换过来。",
+            "image": "dressing.shoes.image",
+            "audio": "dressing.dialogue.3.reply.2.audio",
+            "followUp": [
+              {
+                "id": "dressing.dialogue.3.reply.2.follow",
+                "text": "I can help. We can try again.",
+                "audio": "dressing.dialogue.3.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dressing.dialogue.4",
+        "cn": "你想戴帽子吗？",
+        "question": [
+          {
+            "id": "dressing.dialogue.4.question",
+            "text": "Would you like your hat?",
+            "audio": "dressing.dialogue.4.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "dressing.dialogue.4.reply.1",
+            "text": "Yes, my hat, please.",
+            "cn": "想，请给我帽子。",
+            "image": "dressing.hat.image",
+            "audio": "dressing.dialogue.4.reply.1.audio",
+            "followUp": [
+              {
+                "id": "dressing.dialogue.4.reply.1.follow",
+                "text": "Here it is. Shall I help you?",
+                "audio": "dressing.dialogue.4.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "dressing.dialogue.4.reply.2",
+            "text": "I can put it on.",
+            "cn": "我能自己戴上。",
+            "image": "dressing.hat.image",
+            "audio": "dressing.dialogue.4.reply.2.audio",
+            "followUp": [
+              {
+                "id": "dressing.dialogue.4.reply.2.follow",
+                "text": "Go ahead. I am here if you need help.",
+                "audio": "dressing.dialogue.4.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dressing.dialogue.5",
+        "cn": "出门前我们检查一下好吗？",
+        "question": [
+          {
+            "id": "dressing.dialogue.5.question",
+            "text": "Shall we check before we go?",
+            "audio": "dressing.dialogue.5.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "dressing.dialogue.5.reply.1",
+            "text": "Shirt, socks, shoes, and hat!",
+            "cn": "上衣、袜子、鞋子和帽子！",
+            "image": "dressing.shirt.image",
+            "audio": "dressing.dialogue.5.reply.1.audio",
+            "followUp": [
+              {
+                "id": "dressing.dialogue.5.reply.1.follow",
+                "text": "Everything is ready for our walk.",
+                "audio": "dressing.dialogue.5.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "dressing.dialogue.5.reply.2",
+            "text": "My shoes need help.",
+            "cn": "我的鞋子还需要弄一下。",
+            "image": "dressing.shoes.image",
+            "audio": "dressing.dialogue.5.reply.2.audio",
+            "followUp": [
+              {
+                "id": "dressing.dialogue.5.reply.2.follow",
+                "text": "We can stop and fix them first.",
+                "audio": "dressing.dialogue.5.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dressing.dialogue.6",
+        "cn": "准备好开门了吗？",
+        "question": [
+          {
+            "id": "dressing.dialogue.6.question",
+            "text": "Are you ready to open the door?",
+            "audio": "dressing.dialogue.6.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "dressing.dialogue.6.reply.1",
+            "text": "Yes! Let us go together.",
+            "cn": "好啦，我们一起走。",
+            "image": "dressing.hat.image",
+            "audio": "dressing.dialogue.6.reply.1.audio",
+            "followUp": [
+              {
+                "id": "dressing.dialogue.6.reply.1.follow",
+                "text": "Let us ask our grown-up to come too.",
+                "audio": "dressing.dialogue.6.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "dressing.dialogue.6.reply.2",
+            "text": "Please wait for me.",
+            "cn": "请等等我。",
+            "image": "dressing.socks.image",
+            "audio": "dressing.dialogue.6.reply.2.audio",
+            "followUp": [
+              {
+                "id": "dressing.dialogue.6.reply.2.follow",
+                "text": "We can wait. Take your time.",
+                "audio": "dressing.dialogue.6.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "game": {
+      "type": "select-place",
+      "title": "帮 Momo 整理出门的衣物",
+      "instructions": "先选物品，再点合适的位置。可以换选，请人示范、跳过或结束。",
+      "questions": [
+        {
+          "id": "dressing.game.1",
+          "target": "en.shirt.clothing",
+          "options": [
+            "en.shirt.clothing",
+            "en.socks.clothing",
+            "en.shoes.clothing",
+            "en.hat.clothing"
+          ],
+          "zone": "dressing.zone.0"
+        },
+        {
+          "id": "dressing.game.2",
+          "target": "en.socks.clothing",
+          "options": [
+            "en.shirt.clothing",
+            "en.socks.clothing",
+            "en.shoes.clothing",
+            "en.hat.clothing"
+          ],
+          "zone": "dressing.zone.0"
+        },
+        {
+          "id": "dressing.game.3",
+          "target": "en.shoes.clothing",
+          "options": [
+            "en.shirt.clothing",
+            "en.socks.clothing",
+            "en.shoes.clothing",
+            "en.hat.clothing"
+          ],
+          "zone": "dressing.zone.1"
+        },
+        {
+          "id": "dressing.game.4",
+          "target": "en.hat.clothing",
+          "options": [
+            "en.shirt.clothing",
+            "en.socks.clothing",
+            "en.shoes.clothing",
+            "en.hat.clothing"
+          ],
+          "zone": "dressing.zone.0"
+        }
+      ],
+      "zones": [
+        {
+          "id": "dressing.zone.0",
+          "label": "衣柜"
+        },
+        {
+          "id": "dressing.zone.1",
+          "label": "鞋架"
+        }
+      ]
+    },
+    "summary": [
+      "en.shirt.clothing",
+      "en.socks.clothing",
+      "en.shoes.clothing",
+      "en.hat.clothing"
+    ]
+  }
+}

@@ -1,0 +1,447 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "tidy",
+  "contentVersion": "0.1.0",
+  "status": "draft",
+  "compatibleFrom": [],
+  "title": "和 Momo 整理玩具",
+  "stickerId": "tidy.sticker",
+  "assets": [
+    {
+      "id": "tidy.momo",
+      "kind": "image",
+      "path": "illustrations/momo.svg"
+    },
+    {
+      "id": "tidy.bunny",
+      "kind": "image",
+      "path": "illustrations/bunny.svg"
+    },
+    {
+      "id": "tidy.wave",
+      "kind": "image",
+      "path": "illustrations/wave.svg"
+    },
+    {
+      "id": "tidy.ball.image",
+      "kind": "image",
+      "path": "illustrations/ball.svg"
+    },
+    {
+      "id": "tidy.ball.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.ball.audio.wav",
+      "text": "ball",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.car.image",
+      "kind": "image",
+      "path": "illustrations/car.svg"
+    },
+    {
+      "id": "tidy.car.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.car.audio.wav",
+      "text": "car",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.teddy.image",
+      "kind": "image",
+      "path": "illustrations/momo.svg"
+    },
+    {
+      "id": "tidy.teddy.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.teddy.audio.wav",
+      "text": "teddy",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.story.1.intro.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.story.1.intro.audio.wav",
+      "text": "Let us put our toys away.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.story.1.item.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.story.1.item.audio.wav",
+      "text": "Look! ball. Let us share!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.story.2.intro.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.story.2.intro.audio.wav",
+      "text": "Let us put our toys away.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.story.2.item.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.story.2.item.audio.wav",
+      "text": "Look! car. Let us share!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.dialogue.1.question.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.dialogue.1.question.audio.wav",
+      "text": "Shall we put the ball away?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.dialogue.1.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.dialogue.1.reply.1.audio.wav",
+      "text": "Yes, let us tidy up!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.dialogue.1.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.dialogue.1.reply.1.follow.audio.wav",
+      "text": "Thank you for helping!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.dialogue.1.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.dialogue.1.reply.2.audio.wav",
+      "text": "Please help me.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.dialogue.1.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.dialogue.1.reply.2.follow.audio.wav",
+      "text": "Of course. Let us do it together.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.dialogue.2.question.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.dialogue.2.question.audio.wav",
+      "text": "Shall we put the car away?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.dialogue.2.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.dialogue.2.reply.1.audio.wav",
+      "text": "Yes, let us tidy up!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.dialogue.2.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.dialogue.2.reply.1.follow.audio.wav",
+      "text": "Thank you for helping!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.dialogue.2.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.dialogue.2.reply.2.audio.wav",
+      "text": "Please help me.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.dialogue.2.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.dialogue.2.reply.2.follow.audio.wav",
+      "text": "Of course. Let us do it together.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    }
+  ],
+  "words": [
+    {
+      "id": "en.ball.toy",
+      "text": "ball",
+      "cn": "球",
+      "image": "tidy.ball.image",
+      "audio": "tidy.ball.audio"
+    },
+    {
+      "id": "en.car.toy",
+      "text": "car",
+      "cn": "小汽车",
+      "image": "tidy.car.image",
+      "audio": "tidy.car.audio"
+    },
+    {
+      "id": "en.teddy.toy",
+      "text": "teddy",
+      "cn": "小熊玩偶",
+      "image": "tidy.teddy.image",
+      "audio": "tidy.teddy.audio"
+    }
+  ],
+  "modules": {
+    "story": [
+      {
+        "id": "tidy.story.1",
+        "title": "1. 球",
+        "templateId": "tidy-room",
+        "characters": [
+          "tidy.momo",
+          "tidy.bunny"
+        ],
+        "mainWord": "en.ball.toy",
+        "hotspots": [
+          {
+            "word": "en.ball.toy",
+            "x": 0.72,
+            "y": 0.65
+          }
+        ],
+        "translation": "把球送回自己的家。",
+        "segments": [
+          {
+            "id": "tidy.story.1.intro",
+            "text": "Let us put our toys away.",
+            "audio": "tidy.story.1.intro.audio"
+          },
+          {
+            "id": "tidy.story.1.item",
+            "text": "Look! ball. Let us share!",
+            "audio": "tidy.story.1.item.audio"
+          }
+        ]
+      },
+      {
+        "id": "tidy.story.2",
+        "title": "2. 小汽车",
+        "templateId": "tidy-room",
+        "characters": [
+          "tidy.momo",
+          "tidy.bunny"
+        ],
+        "mainWord": "en.car.toy",
+        "hotspots": [
+          {
+            "word": "en.car.toy",
+            "x": 0.72,
+            "y": 0.65
+          }
+        ],
+        "translation": "把小汽车送回自己的家。",
+        "segments": [
+          {
+            "id": "tidy.story.2.intro",
+            "text": "Let us put our toys away.",
+            "audio": "tidy.story.2.intro.audio"
+          },
+          {
+            "id": "tidy.story.2.item",
+            "text": "Look! car. Let us share!",
+            "audio": "tidy.story.2.item.audio"
+          }
+        ]
+      }
+    ],
+    "dialogue": [
+      {
+        "id": "tidy.dialogue.1",
+        "question": [
+          {
+            "id": "tidy.dialogue.1.question",
+            "text": "Shall we put the ball away?",
+            "audio": "tidy.dialogue.1.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "tidy.dialogue.1.reply.1",
+            "image": "tidy.ball.image",
+            "text": "Yes, let us tidy up!",
+            "cn": "好，我们一起整理吧！",
+            "audio": "tidy.dialogue.1.reply.1.audio",
+            "followUp": [
+              {
+                "id": "tidy.dialogue.1.reply.1.follow",
+                "text": "Thank you for helping!",
+                "audio": "tidy.dialogue.1.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "tidy.dialogue.1.reply.2",
+            "image": "tidy.wave",
+            "text": "Please help me.",
+            "cn": "请帮帮我。",
+            "audio": "tidy.dialogue.1.reply.2.audio",
+            "followUp": [
+              {
+                "id": "tidy.dialogue.1.reply.2.follow",
+                "text": "Of course. Let us do it together.",
+                "audio": "tidy.dialogue.1.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tidy.dialogue.2",
+        "question": [
+          {
+            "id": "tidy.dialogue.2.question",
+            "text": "Shall we put the car away?",
+            "audio": "tidy.dialogue.2.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "tidy.dialogue.2.reply.1",
+            "image": "tidy.car.image",
+            "text": "Yes, let us tidy up!",
+            "cn": "好，我们一起整理吧！",
+            "audio": "tidy.dialogue.2.reply.1.audio",
+            "followUp": [
+              {
+                "id": "tidy.dialogue.2.reply.1.follow",
+                "text": "Thank you for helping!",
+                "audio": "tidy.dialogue.2.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "tidy.dialogue.2.reply.2",
+            "image": "tidy.wave",
+            "text": "Please help me.",
+            "cn": "请帮帮我。",
+            "audio": "tidy.dialogue.2.reply.2.audio",
+            "followUp": [
+              {
+                "id": "tidy.dialogue.2.reply.2.follow",
+                "text": "Of course. Let us do it together.",
+                "audio": "tidy.dialogue.2.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "game": {
+      "type": "select-place",
+      "questions": [
+        {
+          "id": "tidy.game.1",
+          "target": "en.ball.toy",
+          "options": [
+            "en.ball.toy",
+            "en.car.toy",
+            "en.teddy.toy"
+          ],
+          "zone": "tidy.box"
+        },
+        {
+          "id": "tidy.game.2",
+          "target": "en.car.toy",
+          "options": [
+            "en.ball.toy",
+            "en.car.toy",
+            "en.teddy.toy"
+          ],
+          "zone": "tidy.box"
+        },
+        {
+          "id": "tidy.game.3",
+          "target": "en.teddy.toy",
+          "options": [
+            "en.ball.toy",
+            "en.car.toy",
+            "en.teddy.toy"
+          ],
+          "zone": "tidy.shelf"
+        }
+      ],
+      "zones": [
+        {
+          "id": "tidy.box",
+          "label": "玩具箱"
+        },
+        {
+          "id": "tidy.shelf",
+          "label": "小架子"
+        }
+      ]
+    },
+    "summary": [
+      "en.ball.toy",
+      "en.car.toy",
+      "en.teddy.toy"
+    ]
+  }
+}

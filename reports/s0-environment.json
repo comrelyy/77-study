@@ -1,0 +1,26 @@
+{
+  "stage": "S0",
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-29T00:43:12.961Z",
+  "source": "local browser measurement and explicit operator confirmations",
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "browser": "Chrome",
+    "browserVersion": "156.0.0.0",
+    "viewport": {"width": 1440, "height": 731},
+    "screen": {"width": 1440, "height": 900},
+    "devicePixelRatio": 2,
+    "zoom": "not inferred from devicePixelRatio"
+  },
+  "checks": {
+    "windows": true,
+    "chrome": true,
+    "zoom100Confirmed": true,
+    "stableChannelConfirmed": true,
+    "mouseConfirmed": true,
+    "viewport": true,
+    "service": true
+  },
+  "serviceError": "",
+  "status": "passed"
+}

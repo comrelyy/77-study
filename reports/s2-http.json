@@ -1,0 +1,11 @@
+{
+  "stage": "S2",
+  "source": "assistant read-only HTTP smoke check against the running local server",
+  "results": [
+    {"path": "/", "status": 200, "contentType": "text/html"},
+    {"path": "/main.mjs", "status": 200, "contentType": "text/javascript"},
+    {"path": "/core/app.mjs", "status": 200, "contentType": "text/javascript"},
+    {"path": "/content/catalog.json", "status": 200, "contentType": "application/json"}
+  ],
+  "browserVisualAndAudioVerification": "not performed by this smoke check"
+}

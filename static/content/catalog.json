@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "mode": "development",
+  "previewScene": "picnic",
+  "previewScenes": [
+    "dressing",
+    "washing",
+    "breakfast",
+    "cooking",
+    "tidy",
+    "picnic",
+    "park",
+    "transport",
+    "shopping",
+    "weather",
+    "gardening",
+    "bedtime"
+  ],
+  "releasedScenes": [],
+  "developmentScenes": [
+    "tidy"
+  ],
+  "scenes": {
+    "picnic": "content/picnic.json",
+    "tidy": "content/tidy.json",
+    "dressing": "content/dressing.json",
+    "washing": "content/washing.json",
+    "breakfast": "content/breakfast.json",
+    "park": "content/park.json",
+    "shopping": "content/shopping.json",
+    "bedtime": "content/bedtime.json",
+    "cooking": "content/cooking.json",
+    "transport": "content/transport.json",
+    "weather": "content/weather.json",
+    "gardening": "content/gardening.json"
+  },
+  "requiredReleaseScenes": [
+    "dressing",
+    "washing",
+    "breakfast",
+    "cooking",
+    "tidy",
+    "picnic",
+    "park",
+    "transport",
+    "shopping",
+    "weather",
+    "gardening",
+    "bedtime"
+  ]
+}
