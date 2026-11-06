@@ -35,7 +35,13 @@ class FixtureModel(ChatModelBase):
             raise RuntimeError(f"fixture exhausted for {self.role}")
         payload = self.responses.pop(0)
         names = [t["function"]["name"] for t in tools or []]
-        if STRUCTURED_TOOL in names:
+        if "__tool__" in payload:
+            block = ToolCallBlock(
+                id=f"call_{len(self.calls)}",
+                name=payload["__tool__"],
+                input=json.dumps(payload["input"]),
+            )
+        elif STRUCTURED_TOOL in names:
             block = ToolCallBlock(
                 id=f"call_{len(self.calls)}",
                 name=STRUCTURED_TOOL,

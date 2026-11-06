@@ -1,9 +1,10 @@
-"""Chapter 2: the model proposes words (structured output); the program checks the illustrations."""
-from agentscope.agent import Agent
+"""Chapters 2-3: the model proposes words and checks them with tools; the program is the final judge."""
+from agentscope.agent import Agent, ReActConfig
 from agentscope.message import UserMsg
 from pydantic import BaseModel
 
 from momo_agent.repo import Repo
+from momo_agent.tools import make_word_tools
 
 WORD_COUNT = 4
 
@@ -12,7 +13,9 @@ Given a theme, pick 4 or 5 concrete words that a child can see and point at,
 such as hat, cup or ball. Avoid abstract words, verbs and long words.
 For each word give the English text (lowercase, singular) and its Chinese meaning.
 scene_id is a short lowercase English slug (letters, digits, hyphen; e.g. "birthday").
-Also give a title, a one-sentence goal and a function."""
+Also give a title, a one-sentence goal and a function.
+Use the tools to confirm that each word has a picture (check_word, or list_illustrated_words),
+and replace any word that does not with one that does."""
 
 
 class WordCard(BaseModel):
@@ -51,7 +54,13 @@ def check_words(plan: WordPlan, illustrated: list[str]) -> tuple[list[WordCard],
 
 
 async def plan_words(topic: str, repo: Repo, model) -> WordPlan:
-    agent = Agent(name="planner", system_prompt=PLANNER_PROMPT, model=model)
+    agent = Agent(
+        name="planner",
+        system_prompt=PLANNER_PROMPT,
+        model=model,
+        toolkit=make_word_tools(repo),
+        react_config=ReActConfig(max_iters=6),
+    )
     msg = await agent.reply(UserMsg(name="user", content=topic), structured_schema=WordPlan)
     plan = WordPlan.model_validate(msg.structured_output)
     have, missing = check_words(plan, repo.illustrated_words())

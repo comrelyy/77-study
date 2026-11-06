@@ -1,5 +1,6 @@
 {
   "planner": [
+    {"__tool__": "check_word", "input": {"text": "fish"}},
     {
       "scene_id": "ocean",
       "title": "海边一天",

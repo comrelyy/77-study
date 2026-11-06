@@ -3,8 +3,9 @@ import unittest
 from unittest import mock
 
 from agentscope.agent import Agent
-from agentscope.message import UserMsg
+from agentscope.message import TextBlock, UserMsg
 from agentscope.model import DashScopeChatModel
+from agentscope.tool import FunctionTool, ToolResponse, Toolkit
 from pydantic import BaseModel
 
 from momo_agent.fake_model import FixtureModel
@@ -67,3 +68,25 @@ class FixtureModelTest(unittest.IsolatedAsyncioTestCase):
         with self.assertRaises(RuntimeError) as ctx:
             await agent.reply(UserMsg(name="user", content="again"), structured_schema=X)
         self.assertIn("planner", str(ctx.exception))
+
+    async def test_tool_payload_returns_tool_call(self):
+        calls = []
+
+        def ping(word: str) -> ToolResponse:
+            """Ping."""
+            calls.append(word)
+            return ToolResponse(content=[TextBlock(text="pong")])
+
+        m = FixtureModel(
+            [{"__tool__": "ping", "input": {"word": "hat"}}, {"x": 2}], role="planner"
+        )
+        agent = Agent(
+            name="t",
+            system_prompt="s",
+            model=m,
+            toolkit=Toolkit(tools=[FunctionTool(ping, is_read_only=True)]),
+        )
+        msg = await agent.reply(UserMsg(name="user", content="hi"), structured_schema=X)
+        self.assertEqual(calls, ["hat"])
+        self.assertEqual(msg.structured_output, {"x": 2})
+        self.assertEqual(len(m.calls), 2)

@@ -1,5 +1,6 @@
 {
   "planner": [
+    {"__tool__": "check_word", "input": {"text": "teddy"}},
     {
       "scene_id": "birthday",
       "title": "生日会",
