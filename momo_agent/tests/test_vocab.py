@@ -22,11 +22,19 @@ class CheckWordsTest(unittest.TestCase):
         self.assertEqual([c.text for c in have], ["hat", "cup"])
         self.assertEqual(missing, ["balls", "fish"])
 
+    def test_duplicates_count_once(self):
+        words = [WordCard(text=t, cn="x") for t in [" Hat", "hat", "cup", "Balls", "fish"]]
+        plan = WordPlan(scene_id="s", title="t", goal="g", function="f", words=words)
+        have, missing = check_words(plan, ["hat", "cup", "ball"])
+        self.assertEqual([c.text for c in have], ["hat", "cup"])
+        self.assertEqual(missing, ["balls", "fish"])
+
 
 class PlanWordsTest(unittest.IsolatedAsyncioTestCase):
     async def test_birthday_gives_four_illustrated_words(self):
         fx = fixtures("birthday")
         plan = await plan_words("生日会", Repo(ROOT), make_model("planner", fx))
+        self.assertEqual(len(plan.words), 4)
         self.assertEqual([c.text for c in plan.words], ["hat", "cup", "ball", "teddy"])
 
     async def test_ocean_is_refused(self):
