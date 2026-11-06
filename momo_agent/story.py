@@ -54,6 +54,9 @@ def check_story(draft: StoryDraft, words: list[str]) -> list[str]:
                 errors.append(f"scene {i} {name}: each line must have 1–15 words")
         if scene.main_word not in words:
             errors.append(f"scene {i} main_word is not a target word: {scene.main_word}")
+        scene_text = " ".join(texts[-3:])
+        if not re.search(rf"\b{re.escape(scene.main_word)}\b", scene_text, re.IGNORECASE):
+            errors.append(f"scene {i}: main_word {scene.main_word} not mentioned")
     story = " ".join(texts)
     for word in words:
         if not re.search(rf"\b{re.escape(word)}\b", story, re.IGNORECASE):

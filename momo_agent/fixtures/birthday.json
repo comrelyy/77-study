@@ -1,37 +1,17 @@
 {
   "planner": [
-    {
-      "__tool__": "check_word",
-      "input": {
-        "text": "teddy"
-      }
-    },
+    {"__tool__": "check_word", "input": {"text": "teddy"}},
     {
       "scene_id": "birthday",
       "title": "生日会",
       "goal": "认识生日会上常见的四样东西",
       "function": "naming",
       "words": [
-        {
-          "text": "hat",
-          "cn": "帽子"
-        },
-        {
-          "text": "cup",
-          "cn": "杯子"
-        },
-        {
-          "text": "ball",
-          "cn": "球"
-        },
-        {
-          "text": "teddy",
-          "cn": "泰迪熊"
-        },
-        {
-          "text": "book",
-          "cn": "书"
-        }
+        {"text": "hat", "cn": "帽子"},
+        {"text": "cup", "cn": "杯子"},
+        {"text": "ball", "cn": "球"},
+        {"text": "teddy", "cn": "泰迪熊"},
+        {"text": "book", "cn": "书"}
       ]
     }
   ],
@@ -40,7 +20,7 @@
       "scenes": [
         {
           "title": "1. 生日帽",
-          "translation": "到了生日会，Momo 戴上了一顶彩色的帽子。",
+          "translation": "到了生日会，Momo 戴上了一顶红色的帽子。",
           "main_word": "hat",
           "narration": "Momo and Lulu come to the birthday party.",
           "momo_line": "Look at my new hat!",
@@ -79,7 +59,7 @@
           "translation": "大家围在一起唱生日歌。",
           "main_word": "hat",
           "narration": "Everyone sings a happy song.",
-          "momo_line": "Today I am four years old.",
+          "momo_line": "I wear my hat. I am four years old.",
           "bunny_line": "Happy birthday! You are four now.",
           "momo_first": false
         },
@@ -89,7 +69,7 @@
           "main_word": "ball",
           "narration": "The party is over and the sun goes down.",
           "momo_line": "Thank you for the nice day.",
-          "bunny_line": "See you soon, my good friend.",
+          "bunny_line": "Keep your ball, my good friend.",
           "momo_first": true
         }
       ]

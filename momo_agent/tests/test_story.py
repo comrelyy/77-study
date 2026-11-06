@@ -64,6 +64,14 @@ class CheckStoryTest(unittest.TestCase):
         errors = check_story(draft(main_word="fish"), WORDS)
         self.assertTrue(any("main_word" in e for e in errors))
 
+    def test_main_word_must_appear_in_its_scene(self):
+        errors = check_story(draft(main_word="teddy", narration="Scene 1 has a hat, a cup and a ball."), WORDS)
+        self.assertIn("scene 1: main_word teddy not mentioned", errors)
+
+    def test_case_insensitive_word(self):
+        d = draft(narration="Scene 1 has a Hat, a cup, a ball and a teddy.")
+        self.assertEqual(check_story(d, ["hat"]), [])
+
     def test_duplicate_narration(self):
         d = StoryDraft(scenes=[scene(n, narration="Same hat cup ball teddy.") for n in range(1, 7)])
         self.assertIn("scene narrations must all be different", check_story(d, WORDS))
