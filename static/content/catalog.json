@@ -14,7 +14,8 @@
     "shopping",
     "weather",
     "gardening",
-    "bedtime"
+    "bedtime",
+    "birthday"
   ],
   "releasedScenes": [],
   "developmentScenes": [
@@ -32,7 +33,8 @@
     "cooking": "content/cooking.json",
     "transport": "content/transport.json",
     "weather": "content/weather.json",
-    "gardening": "content/gardening.json"
+    "gardening": "content/gardening.json",
+    "birthday": "content/birthday.json"
   },
   "requiredReleaseScenes": [
     "dressing",
