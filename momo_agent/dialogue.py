@@ -58,21 +58,25 @@ def check_dialogue(draft: DialogueDraft, words: list[str]) -> list[str]:
     return errors
 
 
-async def write_dialogue(plan: WordPlan, story: StoryDraft, model) -> DialogueDraft:
-    words = [card.text for card in plan.words]
-    lines = "\n".join(
-        f"{i}. {s.narration} Momo: {s.momo_line} Lulu: {s.bunny_line}"
-        for i, s in enumerate(story.scenes, 1)
-    )
-    agent = Agent(
+def dialogue_agent(model) -> Agent:
+    return Agent(
         name="dialogue_writer",
         system_prompt=DIALOGUE_PROMPT,
         model=model,
         react_config=ReActConfig(max_iters=3),
     )
-    request = (
-        f"Theme: {plan.title}\nGoal: {plan.goal}\nWords: {', '.join(words)}\n"
-        f"Story:\n{lines}"
+
+
+def dialogue_request(plan: WordPlan, story: StoryDraft) -> str:
+    words = [card.text for card in plan.words]
+    lines = "\n".join(
+        f"{i}. {s.narration} Momo: {s.momo_line} Lulu: {s.bunny_line}"
+        for i, s in enumerate(story.scenes, 1)
     )
-    msg = await agent.reply(UserMsg(name="user", content=request), structured_schema=DialogueDraft)
+    return f"Theme: {plan.title}\nGoal: {plan.goal}\nWords: {', '.join(words)}\nStory:\n{lines}"
+
+
+async def write_dialogue(plan: WordPlan, story: StoryDraft, model) -> DialogueDraft:
+    agent = dialogue_agent(model)
+    msg = await agent.reply(UserMsg(name="user", content=dialogue_request(plan, story)), structured_schema=DialogueDraft)
     return DialogueDraft.model_validate(msg.structured_output)

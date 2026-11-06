@@ -67,18 +67,25 @@ def check_story(draft: StoryDraft, words: list[str]) -> list[str]:
     return errors
 
 
-async def write_story(plan: WordPlan, repo: Repo, model) -> StoryDraft:
-    words = [card.text for card in plan.words]
-    examples = pick_examples(repo, words)
-    agent = Agent(
+def story_agent(model) -> Agent:
+    return Agent(
         name="storyteller",
         system_prompt=STORY_PROMPT,
         model=model,
         react_config=ReActConfig(max_iters=3),
     )
-    request = (
+
+
+def story_request(plan: WordPlan, repo: Repo) -> str:
+    words = [card.text for card in plan.words]
+    examples = pick_examples(repo, words)
+    return (
         f"Theme: {plan.title}\nGoal: {plan.goal}\nWords: {', '.join(words)}\n"
         f"Example stories:\n{json.dumps(examples, ensure_ascii=False)}"
     )
-    msg = await agent.reply(UserMsg(name="user", content=request), structured_schema=StoryDraft)
+
+
+async def write_story(plan: WordPlan, repo: Repo, model) -> StoryDraft:
+    agent = story_agent(model)
+    msg = await agent.reply(UserMsg(name="user", content=story_request(plan, repo)), structured_schema=StoryDraft)
     return StoryDraft.model_validate(msg.structured_output)
