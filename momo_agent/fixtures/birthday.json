@@ -1,7 +1,7 @@
 {
   "planner": [
     {
-      "scene_id": "birthday-party",
+      "scene_id": "birthday",
       "title": "生日会",
       "goal": "认识生日会上常见的四样东西",
       "function": "naming",

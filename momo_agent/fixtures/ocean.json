@@ -1,7 +1,7 @@
 {
   "planner": [
     {
-      "scene_id": "ocean-day",
+      "scene_id": "ocean",
       "title": "海边一天",
       "goal": "认识海边常见的东西",
       "function": "naming",
