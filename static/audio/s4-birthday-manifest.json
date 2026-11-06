@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sceneId": "birthday",
   "contentVersion": "0.1.0",
-  "generatedAt": "2026-11-06T11:22:42.967124+00:00",
+  "generatedAt": "2026-11-06T11:39:21.214337+00:00",
   "source": "Local offline speech synthesis",
   "purpose": "Local synthesis; listening and rights review pending",
   "rightsStatus": "pending review",
@@ -363,24 +363,24 @@
     {
       "id": "birthday.dialogue.2.reply.3.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.2.reply.3.audio.wav",
-      "text": "It is a big cup.",
+      "text": "There is milk.",
       "language": "en-US",
       "role": "momo",
       "voice": "Samantha (macOS say)",
       "rate": 150,
       "volume": 100,
-      "sha256": "244e2d9d908ad49359f776a7d370a524713ba5ef7661956c3fd9c6d5a2310867"
+      "sha256": "07e8dc3a7f5b7e10794d3f36abc035f6ae5b0cbd846aaebfcd76544a320abf52"
     },
     {
       "id": "birthday.dialogue.2.reply.3.follow.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.2.reply.3.follow.audio.wav",
-      "text": "It is just right for a party.",
+      "text": "Milk is good for you.",
       "language": "en-US",
       "role": "bunny",
       "voice": "Samantha (macOS say)",
       "rate": 165,
       "volume": 100,
-      "sha256": "7348aae922661bba4247f917471be78796dcbd81ca667341ec40f180121a11b7"
+      "sha256": "367d13e3669705af4edcda9b14181fe874505e812a3ad48216c5ceedaacefcde"
     },
     {
       "id": "birthday.dialogue.3.question.audio",
@@ -473,24 +473,24 @@
     {
       "id": "birthday.dialogue.4.reply.2.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.4.reply.2.audio.wav",
-      "text": "The teddy is soft.",
+      "text": "I want the teddy.",
       "language": "en-US",
       "role": "momo",
       "voice": "Samantha (macOS say)",
       "rate": 150,
       "volume": 100,
-      "sha256": "777eedca133cd3b96246e4a89fcb4f0b936b7fca2fb7d61b566178354f0ba432"
+      "sha256": "8018c1e3a26d5a687cad498d68499d212a6e879622b65d7db28b5be83533df04"
     },
     {
       "id": "birthday.dialogue.4.reply.2.follow.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.4.reply.2.follow.audio.wav",
-      "text": "Yes, it is soft and warm.",
+      "text": "Here you are. Hug it softly.",
       "language": "en-US",
       "role": "bunny",
       "voice": "Samantha (macOS say)",
       "rate": 165,
       "volume": 100,
-      "sha256": "f167b9b47332749bcadc2a52dde509d8eb16ca31374c18ec3c9a93348a7354fd"
+      "sha256": "b565db34a15d9955aac5697dcb28fe22ffb4b864b9452d1e8d929bae969443ef"
     },
     {
       "id": "birthday.dialogue.5.question.audio",
@@ -528,24 +528,24 @@
     {
       "id": "birthday.dialogue.5.reply.2.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.5.reply.2.audio.wav",
-      "text": "It is a party hat.",
+      "text": "It is blue.",
       "language": "en-US",
       "role": "momo",
       "voice": "Samantha (macOS say)",
       "rate": 150,
       "volume": 100,
-      "sha256": "54cf99299d7bd156a22dba6a00c204c90954c43f71b9f6ab7ecc1b4ba41ac40f"
+      "sha256": "6a782e1182926941339673dfb79ec34647f9fc2c2ef6f78a1a8955dede335350"
     },
     {
       "id": "birthday.dialogue.5.reply.2.follow.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.5.reply.2.follow.audio.wav",
-      "text": "Happy birthday to you!",
+      "text": "Blue is a nice colour.",
       "language": "en-US",
       "role": "bunny",
       "voice": "Samantha (macOS say)",
       "rate": 165,
       "volume": 100,
-      "sha256": "7a8d6e0d88a306500530bd5ab79b810c5b7f8109d8c360a5cf75fee8d7e5bed5"
+      "sha256": "e3dde4080e55b3f2f0524cf60d7a3712b353d7bbf5cb749843e6c3c40d061cea"
     },
     {
       "id": "birthday.dialogue.6.question.audio",
@@ -594,13 +594,13 @@
     {
       "id": "birthday.dialogue.6.reply.2.follow.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.6.reply.2.follow.audio.wav",
-      "text": "It has nice juice in it.",
+      "text": "Nice cup! Drink your juice.",
       "language": "en-US",
       "role": "bunny",
       "voice": "Samantha (macOS say)",
       "rate": 165,
       "volume": 100,
-      "sha256": "7730a2772ad60d09d4a05287ed8dee4560887e95ba56aa1694f55000e995a5ae"
+      "sha256": "da7db80634c1a4a80be20b40ecbc08dc9abcf015e038130fdddf16b8e6fc6f5f"
     },
     {
       "id": "birthday.dialogue.6.reply.3.audio",

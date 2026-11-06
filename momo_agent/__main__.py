@@ -48,6 +48,9 @@ def generate(args, repo: Repo) -> int:
     print(f'  1. in static/content/{pack["sceneId"]}.json change "status" to "released"')
     print(f'  2. add "{pack["sceneId"]}" to "releasedScenes" in static/content/catalog.json')
     print("  3. run: node s5-release.cjs   (read the blockers it lists)")
+    print("     It rewrites tracked files (reports/s5-release.json, static/dev/s5-manifest.json) and still lists")
+    print("     other blockers: audio not yet reviewed, other required themes, device acceptance.")
+    print("     Release is a human decision, made after the listening review.")
     return 0
 
 

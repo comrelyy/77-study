@@ -429,7 +429,7 @@
       "id": "birthday.dialogue.2.reply.3.audio",
       "kind": "audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.2.reply.3.audio.wav",
-      "text": "It is a big cup.",
+      "text": "There is milk.",
       "language": "en-US",
       "role": "momo",
       "source": null,
@@ -440,7 +440,7 @@
       "id": "birthday.dialogue.2.reply.3.follow.audio",
       "kind": "audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.2.reply.3.follow.audio.wav",
-      "text": "It is just right for a party.",
+      "text": "Milk is good for you.",
       "language": "en-US",
       "role": "bunny",
       "source": null,
@@ -539,7 +539,7 @@
       "id": "birthday.dialogue.4.reply.2.audio",
       "kind": "audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.4.reply.2.audio.wav",
-      "text": "The teddy is soft.",
+      "text": "I want the teddy.",
       "language": "en-US",
       "role": "momo",
       "source": null,
@@ -550,7 +550,7 @@
       "id": "birthday.dialogue.4.reply.2.follow.audio",
       "kind": "audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.4.reply.2.follow.audio.wav",
-      "text": "Yes, it is soft and warm.",
+      "text": "Here you are. Hug it softly.",
       "language": "en-US",
       "role": "bunny",
       "source": null,
@@ -594,7 +594,7 @@
       "id": "birthday.dialogue.5.reply.2.audio",
       "kind": "audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.5.reply.2.audio.wav",
-      "text": "It is a party hat.",
+      "text": "It is blue.",
       "language": "en-US",
       "role": "momo",
       "source": null,
@@ -605,7 +605,7 @@
       "id": "birthday.dialogue.5.reply.2.follow.audio",
       "kind": "audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.5.reply.2.follow.audio.wav",
-      "text": "Happy birthday to you!",
+      "text": "Blue is a nice colour.",
       "language": "en-US",
       "role": "bunny",
       "source": null,
@@ -660,7 +660,7 @@
       "id": "birthday.dialogue.6.reply.2.follow.audio",
       "kind": "audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.6.reply.2.follow.audio.wav",
-      "text": "It has nice juice in it.",
+      "text": "Nice cup! Drink your juice.",
       "language": "en-US",
       "role": "bunny",
       "source": null,
@@ -724,7 +724,7 @@
     "story": [
       {
         "id": "birthday.story.1",
-        "title": "1. 1. 生日帽",
+        "title": "1. 生日帽",
         "templateId": "daily-life",
         "illustration": "birthday.story.1.image",
         "characters": [
@@ -763,7 +763,7 @@
       },
       {
         "id": "birthday.story.2",
-        "title": "2. 2. 一杯果汁",
+        "title": "2. 一杯果汁",
         "templateId": "daily-life",
         "illustration": "birthday.story.2.image",
         "characters": [
@@ -802,7 +802,7 @@
       },
       {
         "id": "birthday.story.3",
-        "title": "3. 3. 圆圆的球",
+        "title": "3. 圆圆的球",
         "templateId": "daily-life",
         "illustration": "birthday.story.3.image",
         "characters": [
@@ -841,7 +841,7 @@
       },
       {
         "id": "birthday.story.4",
-        "title": "4. 4. 泰迪熊",
+        "title": "4. 泰迪熊",
         "templateId": "daily-life",
         "illustration": "birthday.story.4.image",
         "characters": [
@@ -880,7 +880,7 @@
       },
       {
         "id": "birthday.story.5",
-        "title": "5. 5. 唱生日歌",
+        "title": "5. 唱生日歌",
         "templateId": "daily-life",
         "illustration": "birthday.story.5.image",
         "characters": [
@@ -919,7 +919,7 @@
       },
       {
         "id": "birthday.story.6",
-        "title": "6. 6. 美好的一天",
+        "title": "6. 美好的一天",
         "templateId": "daily-life",
         "illustration": "birthday.story.6.image",
         "characters": [
@@ -1040,14 +1040,14 @@
           },
           {
             "id": "birthday.dialogue.2.reply.3",
-            "text": "It is a big cup.",
-            "cn": "这是一个大杯子。",
+            "text": "There is milk.",
+            "cn": "有牛奶。",
             "image": "birthday.cup.image",
             "audio": "birthday.dialogue.2.reply.3.audio",
             "followUp": [
               {
                 "id": "birthday.dialogue.2.reply.3.follow",
-                "text": "It is just right for a party.",
+                "text": "Milk is good for you.",
                 "audio": "birthday.dialogue.2.reply.3.follow.audio"
               }
             ]
@@ -1122,14 +1122,14 @@
           },
           {
             "id": "birthday.dialogue.4.reply.2",
-            "text": "The teddy is soft.",
-            "cn": "泰迪熊软软的。",
+            "text": "I want the teddy.",
+            "cn": "我想抱泰迪熊。",
             "image": "birthday.teddy.image",
             "audio": "birthday.dialogue.4.reply.2.audio",
             "followUp": [
               {
                 "id": "birthday.dialogue.4.reply.2.follow",
-                "text": "Yes, it is soft and warm.",
+                "text": "Here you are. Hug it softly.",
                 "audio": "birthday.dialogue.4.reply.2.follow.audio"
               }
             ]
@@ -1163,14 +1163,14 @@
           },
           {
             "id": "birthday.dialogue.5.reply.2",
-            "text": "It is a party hat.",
-            "cn": "这是一顶派对帽。",
+            "text": "It is blue.",
+            "cn": "是蓝色的。",
             "image": "birthday.hat.image",
             "audio": "birthday.dialogue.5.reply.2.audio",
             "followUp": [
               {
                 "id": "birthday.dialogue.5.reply.2.follow",
-                "text": "Happy birthday to you!",
+                "text": "Blue is a nice colour.",
                 "audio": "birthday.dialogue.5.reply.2.follow.audio"
               }
             ]
@@ -1211,7 +1211,7 @@
             "followUp": [
               {
                 "id": "birthday.dialogue.6.reply.2.follow",
-                "text": "It has nice juice in it.",
+                "text": "Nice cup! Drink your juice.",
                 "audio": "birthday.dialogue.6.reply.2.follow.audio"
               }
             ]

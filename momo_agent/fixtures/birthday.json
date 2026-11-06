@@ -19,7 +19,7 @@
     {
       "scenes": [
         {
-          "title": "1. 生日帽",
+          "title": "生日帽",
           "translation": "到了生日会，Momo 戴上了一顶红色的帽子。",
           "main_word": "hat",
           "narration": "Momo and Lulu come to the birthday party.",
@@ -28,7 +28,7 @@
           "momo_first": false
         },
         {
-          "title": "2. 一杯果汁",
+          "title": "一杯果汁",
           "translation": "Lulu 给大家倒了一杯果汁。",
           "main_word": "cup",
           "narration": "Lulu pours juice into a cup.",
@@ -37,7 +37,7 @@
           "momo_first": true
         },
         {
-          "title": "3. 圆圆的球",
+          "title": "圆圆的球",
           "translation": "他们在草地上玩球。",
           "main_word": "ball",
           "narration": "The friends play on the grass.",
@@ -46,7 +46,7 @@
           "momo_first": false
         },
         {
-          "title": "4. 泰迪熊",
+          "title": "泰迪熊",
           "translation": "Momo 找到了一只泰迪熊，要轻轻抱它。",
           "main_word": "teddy",
           "narration": "A teddy sits under the table.",
@@ -55,7 +55,7 @@
           "momo_first": true
         },
         {
-          "title": "5. 唱生日歌",
+          "title": "唱生日歌",
           "translation": "大家围在一起唱生日歌。",
           "main_word": "hat",
           "narration": "Everyone sings a happy song.",
@@ -64,7 +64,7 @@
           "momo_first": false
         },
         {
-          "title": "6. 美好的一天",
+          "title": "美好的一天",
           "translation": "派对结束了，大家都很开心。",
           "main_word": "ball",
           "narration": "The party is over and the sun goes down.",
@@ -113,10 +113,10 @@
               "follow_up": "Hold the cup with two hands."
             },
             {
-              "text": "It is a big cup.",
-              "cn": "这是一个大杯子。",
+              "text": "There is milk.",
+              "cn": "有牛奶。",
               "image_word": "cup",
-              "follow_up": "It is just right for a party."
+              "follow_up": "Milk is good for you."
             }
           ]
         },
@@ -149,10 +149,10 @@
               "follow_up": "The teddy likes a gentle hug."
             },
             {
-              "text": "The teddy is soft.",
-              "cn": "泰迪熊软软的。",
+              "text": "I want the teddy.",
+              "cn": "我想抱泰迪熊。",
               "image_word": "teddy",
-              "follow_up": "Yes, it is soft and warm."
+              "follow_up": "Here you are. Hug it softly."
             }
           ]
         },
@@ -167,10 +167,10 @@
               "follow_up": "Red is a lovely colour."
             },
             {
-              "text": "It is a party hat.",
-              "cn": "这是一顶派对帽。",
+              "text": "It is blue.",
+              "cn": "是蓝色的。",
               "image_word": "hat",
-              "follow_up": "Happy birthday to you!"
+              "follow_up": "Blue is a nice colour."
             }
           ]
         },
@@ -188,7 +188,7 @@
               "text": "I like the cup.",
               "cn": "我最喜欢杯子。",
               "image_word": "cup",
-              "follow_up": "It has nice juice in it."
+              "follow_up": "Nice cup! Drink your juice."
             },
             {
               "text": "I like the teddy.",

@@ -72,6 +72,10 @@ class CheckStoryTest(unittest.TestCase):
         d = draft(narration="Scene 1 has a Hat, a cup, a ball and a teddy.")
         self.assertEqual(check_story(d, ["hat"]), [])
 
+    def test_title_without_number(self):
+        errors = check_story(draft(title="1. 生日帽"), WORDS)
+        self.assertIn("scene 1 title must not start with a number", errors)
+
     def test_duplicate_narration(self):
         d = StoryDraft(scenes=[scene(n, narration="Same hat cup ball teddy.") for n in range(1, 7)])
         self.assertIn("scene narrations must all be different", check_story(d, WORDS))

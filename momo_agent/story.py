@@ -17,7 +17,7 @@ STORY_PROMPT = """You write a short picture story for children aged 3 to 6 who a
 Momo is a child and Lulu is a bunny. Write exactly 6 scenes about the given theme.
 Use plain, simple English that a learner can read. Each sentence has at most 15 words.
 Every scene has:
-- title: a short Chinese title, and translation: one Chinese sentence about the scene.
+- title: a short Chinese title without any number (numbers are added later), and translation: one Chinese sentence about the scene.
 - narration: what happens, then momo_line (Momo speaks) and bunny_line (Lulu replies).
 - momo_first: true if Momo speaks before the narration, otherwise false.
 - main_word: one of the given words. The child taps it in the picture, so it must be
@@ -52,6 +52,8 @@ def check_story(draft: StoryDraft, words: list[str]) -> list[str]:
             texts.append(text)
             if not 1 <= len(text.split()) <= MAX_WORDS_PER_LINE:
                 errors.append(f"scene {i} {name}: each line must have 1–15 words")
+        if scene.title.strip()[:1].isdigit():
+            errors.append(f"scene {i} title must not start with a number")
         if scene.main_word not in words:
             errors.append(f"scene {i} main_word is not a target word: {scene.main_word}")
         scene_text = " ".join(texts[-3:])
