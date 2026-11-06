@@ -19,7 +19,8 @@ Use plain, simple English that a learner can read. Each sentence has at most 15 
 Every scene has:
 - title: a short Chinese title without any number (numbers are added later), and translation: one Chinese sentence about the scene.
 - narration: what happens, then momo_line (Momo speaks) and bunny_line (Lulu replies).
-- momo_first: true if Momo speaks before the narration, otherwise false.
+- The narration always comes first. momo_first: true if Momo speaks next and Lulu answers,
+  false if Lulu speaks next and Momo answers. The answer must fit what was just said.
 - main_word: one of the given words. The child taps it in the picture, so it must be
   something that can be seen in that scene.
 Use every given word somewhere in the story, and start every scene with different narration.

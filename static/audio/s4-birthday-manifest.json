@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sceneId": "birthday",
   "contentVersion": "0.1.0",
-  "generatedAt": "2026-11-06T11:39:21.214337+00:00",
+  "generatedAt": "2026-11-06T11:49:13.217326+00:00",
   "source": "Local offline speech synthesis",
   "purpose": "Local synthesis; listening and rights review pending",
   "rightsStatus": "pending review",
@@ -66,17 +66,6 @@
     {
       "id": "birthday.story.1.item.audio",
       "path": "audio/birthday/v0-1-0/birthday.story.1.item.audio.wav",
-      "text": "It is a red hat. I like it.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
-      "volume": 100,
-      "sha256": "cd012c76b1485ff9fd8672a7bdb545ea293be7ffdffac195849f0ce73c52a83f"
-    },
-    {
-      "id": "birthday.story.1.reply.audio",
-      "path": "audio/birthday/v0-1-0/birthday.story.1.reply.audio.wav",
       "text": "Look at my new hat!",
       "language": "en-US",
       "role": "momo",
@@ -84,6 +73,17 @@
       "rate": 150,
       "volume": 100,
       "sha256": "4c0e8a923afa1f50248bdf82a69f8d1b5dc1ed7893888277054574741791a9bc"
+    },
+    {
+      "id": "birthday.story.1.reply.audio",
+      "path": "audio/birthday/v0-1-0/birthday.story.1.reply.audio.wav",
+      "text": "It is a red hat. I like it.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Samantha (macOS say)",
+      "rate": 165,
+      "volume": 100,
+      "sha256": "cd012c76b1485ff9fd8672a7bdb545ea293be7ffdffac195849f0ce73c52a83f"
     },
     {
       "id": "birthday.story.2.intro.audio",
@@ -132,17 +132,6 @@
     {
       "id": "birthday.story.3.item.audio",
       "path": "audio/birthday/v0-1-0/birthday.story.3.item.audio.wav",
-      "text": "I catch the ball. Hooray!",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
-      "volume": 100,
-      "sha256": "086ace9004b559f73a7635d879714a91b79f24f8ac68c3820bd13ec72ea0d10a"
-    },
-    {
-      "id": "birthday.story.3.reply.audio",
-      "path": "audio/birthday/v0-1-0/birthday.story.3.reply.audio.wav",
       "text": "I kick the ball to you.",
       "language": "en-US",
       "role": "momo",
@@ -150,6 +139,17 @@
       "rate": 150,
       "volume": 100,
       "sha256": "32cd23afe904692d4d20aa663a38cbc3ba6b59ac9dd395844ab091fd5bb49938"
+    },
+    {
+      "id": "birthday.story.3.reply.audio",
+      "path": "audio/birthday/v0-1-0/birthday.story.3.reply.audio.wav",
+      "text": "I catch the ball. Hooray!",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Samantha (macOS say)",
+      "rate": 165,
+      "volume": 100,
+      "sha256": "086ace9004b559f73a7635d879714a91b79f24f8ac68c3820bd13ec72ea0d10a"
     },
     {
       "id": "birthday.story.4.intro.audio",
@@ -176,13 +176,13 @@
     {
       "id": "birthday.story.4.reply.audio",
       "path": "audio/birthday/v0-1-0/birthday.story.4.reply.audio.wav",
-      "text": "Hug the teddy in a gentle way.",
+      "text": "Hug the teddy gently.",
       "language": "en-US",
       "role": "bunny",
       "voice": "Samantha (macOS say)",
       "rate": 165,
       "volume": 100,
-      "sha256": "3ecaf720eac1a91e5488b5d995adee5b114ffb3759150a10c368a5f7fbbba52b"
+      "sha256": "5a0b39d7ba7ef954c8317f79cf0eadc393b9e22f8f09fcb594fc69c01f9f31f6"
     },
     {
       "id": "birthday.story.5.intro.audio",
@@ -264,13 +264,13 @@
     {
       "id": "birthday.dialogue.1.reply.1.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.1.reply.1.audio.wav",
-      "text": "I want the hat.",
+      "text": "I want to wear the hat.",
       "language": "en-US",
       "role": "momo",
       "voice": "Samantha (macOS say)",
       "rate": 150,
       "volume": 100,
-      "sha256": "47d1cc019ae90f20cdf66cbbd85224ca43f94935e00360bec1ef2f1583e86c7b"
+      "sha256": "d00de9e9bf9d518c91194c155d566b6c22968194ac8f88d0d3120c65c0cb0667"
     },
     {
       "id": "birthday.dialogue.1.reply.1.follow.audio",
@@ -286,13 +286,13 @@
     {
       "id": "birthday.dialogue.1.reply.2.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.1.reply.2.audio.wav",
-      "text": "Can I try the hat?",
+      "text": "The hat, please.",
       "language": "en-US",
       "role": "momo",
       "voice": "Samantha (macOS say)",
       "rate": 150,
       "volume": 100,
-      "sha256": "f4774027ea459e1e6b323a3a531539bb2c67ef342a79c60189effdd35fa27421"
+      "sha256": "59ea4d266451b4902f49e37ad852823b9919e33332ff135b8fe587e18428cc48"
     },
     {
       "id": "birthday.dialogue.1.reply.2.follow.audio",
@@ -396,13 +396,13 @@
     {
       "id": "birthday.dialogue.3.reply.1.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.3.reply.1.audio.wav",
-      "text": "Let us play with the ball.",
+      "text": "We can play with the ball.",
       "language": "en-US",
       "role": "momo",
       "voice": "Samantha (macOS say)",
       "rate": 150,
       "volume": 100,
-      "sha256": "ddaa68cd948bf213329308201a4c26cf96f849b486819f8373b60035bf75d85c"
+      "sha256": "9e61619b86521ca331a37dece88c33e45c074a0ac9a2d0e9c0b348857f1239c0"
     },
     {
       "id": "birthday.dialogue.3.reply.1.follow.audio",
@@ -418,13 +418,13 @@
     {
       "id": "birthday.dialogue.3.reply.2.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.3.reply.2.audio.wav",
-      "text": "Roll the ball to me.",
+      "text": "We can roll the ball.",
       "language": "en-US",
       "role": "momo",
       "voice": "Samantha (macOS say)",
       "rate": 150,
       "volume": 100,
-      "sha256": "cd1c607c9cb2f3c08201e0496ada54449dacbc13b78e6465b603530d907cf5ad"
+      "sha256": "3a4043cd128bd621c638b7f0e1146e0d7656cee9df806ed4987cba913b5332ac"
     },
     {
       "id": "birthday.dialogue.3.reply.2.follow.audio",
@@ -495,7 +495,7 @@
     {
       "id": "birthday.dialogue.5.question.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.5.question.audio.wav",
-      "text": "What colour is your hat?",
+      "text": "What color is your hat?",
       "language": "en-US",
       "role": "bunny",
       "voice": "Samantha (macOS say)",
@@ -517,7 +517,7 @@
     {
       "id": "birthday.dialogue.5.reply.1.follow.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.5.reply.1.follow.audio.wav",
-      "text": "Red is a lovely colour.",
+      "text": "Red is a lovely color.",
       "language": "en-US",
       "role": "bunny",
       "voice": "Samantha (macOS say)",
@@ -539,7 +539,7 @@
     {
       "id": "birthday.dialogue.5.reply.2.follow.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.5.reply.2.follow.audio.wav",
-      "text": "Blue is a nice colour.",
+      "text": "Blue is a nice color.",
       "language": "en-US",
       "role": "bunny",
       "voice": "Samantha (macOS say)",

@@ -25,7 +25,7 @@
           "narration": "Momo and Lulu come to the birthday party.",
           "momo_line": "Look at my new hat!",
           "bunny_line": "It is a red hat. I like it.",
-          "momo_first": false
+          "momo_first": true
         },
         {
           "title": "一杯果汁",
@@ -43,7 +43,7 @@
           "narration": "The friends play on the grass.",
           "momo_line": "I kick the ball to you.",
           "bunny_line": "I catch the ball. Hooray!",
-          "momo_first": false
+          "momo_first": true
         },
         {
           "title": "泰迪熊",
@@ -51,7 +51,7 @@
           "main_word": "teddy",
           "narration": "A teddy sits under the table.",
           "momo_line": "Look, a little teddy!",
-          "bunny_line": "Hug the teddy in a gentle way.",
+          "bunny_line": "Hug the teddy gently.",
           "momo_first": true
         },
         {
@@ -83,14 +83,14 @@
           "question": "What do you want to wear?",
           "replies": [
             {
-              "text": "I want the hat.",
-              "cn": "我想戴帽子。",
+              "text": "I want to wear the hat.",
+              "cn": "我想戴这顶帽子。",
               "image_word": "hat",
               "follow_up": "The hat looks great on you!"
             },
             {
-              "text": "Can I try the hat?",
-              "cn": "我可以试试帽子吗？",
+              "text": "The hat, please.",
+              "cn": "请给我帽子。",
               "image_word": "hat",
               "follow_up": "Yes, put it on your head."
             }
@@ -125,14 +125,14 @@
           "question": "What shall we play?",
           "replies": [
             {
-              "text": "Let us play with the ball.",
+              "text": "We can play with the ball.",
               "cn": "我们玩球吧。",
               "image_word": "ball",
               "follow_up": "Great! I will catch it."
             },
             {
-              "text": "Roll the ball to me.",
-              "cn": "把球滚给我。",
+              "text": "We can roll the ball.",
+              "cn": "我们可以滚球。",
               "image_word": "ball",
               "follow_up": "Here it comes. Roll, roll, roll!"
             }
@@ -158,19 +158,19 @@
         },
         {
           "cn": "你的帽子是什么颜色？",
-          "question": "What colour is your hat?",
+          "question": "What color is your hat?",
           "replies": [
             {
               "text": "My hat is red.",
               "cn": "我的帽子是红色的。",
               "image_word": "hat",
-              "follow_up": "Red is a lovely colour."
+              "follow_up": "Red is a lovely color."
             },
             {
               "text": "It is blue.",
               "cn": "是蓝色的。",
               "image_word": "hat",
-              "follow_up": "Blue is a nice colour."
+              "follow_up": "Blue is a nice color."
             }
           ]
         },
