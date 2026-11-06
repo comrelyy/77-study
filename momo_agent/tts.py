@@ -43,12 +43,12 @@ def synthesize(text: str, role: str, out: Path) -> dict:
         rate = MAC_RATES.get(role, 150)
         subprocess.run(
             ["say", "-v", "Samantha", "-r", str(rate), "--file-format=WAVE",
-             "--data-format=LEI16@22050", "-o", str(out), text],
+             "--data-format=LEI16@22050", "-o", str(out), "--", text],
             check=True)
         return {"voice": MAC_VOICE, "rate": rate, "volume": 100}
     if sys.platform == "win32":
         rate = WIN_RATES.get(role, -2)
-        env = {**os.environ, "MOMO_TTS_TEXT": text, "MOMO_TTS_RATE": str(rate), "MOMO_TTS_OUT": str(out)}
+        env = {**os.environ, "MOMO_TTS_TEXT": text, "MOMO_TTS_RATE": str(rate), "MOMO_TTS_OUT": str(Path(out).resolve())}
         subprocess.run(["powershell", "-NoProfile", "-Command", WIN_SCRIPT], env=env, check=True)
         return {"voice": WIN_VOICE, "rate": rate, "volume": 90}
     raise RuntimeError(f"No speech engine for platform {sys.platform}")

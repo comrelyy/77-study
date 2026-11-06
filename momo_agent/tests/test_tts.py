@@ -29,6 +29,13 @@ class MacSynthesizeTest(unittest.TestCase):
             inspect_wav(out)
             self.assertEqual(info, {"voice": "Samantha (macOS say)", "rate": 150, "volume": 100})
 
+    def test_text_starting_with_dash_is_not_an_option(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "t.wav"
+            tts.synthesize("-v Alex hello", "momo", out)
+            inspect_wav(out)
+            self.assertGreater(out.stat().st_size, 20000)
+
     def test_shell_text_is_inert(self):
         with tempfile.TemporaryDirectory() as tmp:
             marker = Path(tmp) / "pwned"
@@ -50,7 +57,7 @@ class WindowsSynthesizeTest(unittest.TestCase):
         self.assertNotIn(text, " ".join(cmd))
         self.assertEqual(kwargs["env"]["MOMO_TTS_TEXT"], text)
         self.assertEqual(kwargs["env"]["MOMO_TTS_RATE"], "-3")
-        self.assertEqual(kwargs["env"]["MOMO_TTS_OUT"], "out.wav")
+        self.assertEqual(kwargs["env"]["MOMO_TTS_OUT"], str(Path("out.wav").resolve()))
         self.assertIn("SAPI.SpVoice", cmd[3])
         self.assertIn("SAPI.SpFileStream", cmd[3])
         self.assertIn("Microsoft Zira Desktop - English (United States)", cmd[3])
