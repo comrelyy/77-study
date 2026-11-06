@@ -7,6 +7,7 @@ from agentscope.message import UserMsg
 from pydantic import BaseModel
 
 from momo_agent.examples import pick_examples
+from momo_agent.llm import structured
 from momo_agent.repo import Repo
 from momo_agent.vocab import WordPlan
 
@@ -14,7 +15,7 @@ SCENE_COUNT = 6
 MAX_WORDS_PER_LINE = 15
 
 STORY_PROMPT = """You write a short picture story for children aged 3 to 6 who are learning English.
-Momo is a child and Lulu is a bunny. Write exactly 6 scenes about the given theme.
+Momo is a curious little bear cub (小熊) and Lulu is a little bunny (小兔); they are friends. Write exactly 6 scenes about the given theme.
 Use plain, simple English that a learner can read. Each sentence has at most 15 words.
 Every scene has:
 - title: a short Chinese title without any number (numbers are added later), and translation: one Chinese sentence about the scene.
@@ -23,6 +24,7 @@ Every scene has:
   false if Lulu speaks next and Momo answers. The answer must fit what was just said.
 - main_word: one of the given words. The child taps it in the picture, so it must be
   something that can be seen in that scene.
+Do not describe colours or sizes of the pictured things: the model never sees the pictures.
 Use every given word somewhere in the story, and start every scene with different narration.
 Below are stories from other themes. Copy their simple style, not their sentences."""
 
@@ -91,4 +93,4 @@ def story_request(plan: WordPlan, repo: Repo) -> str:
 async def write_story(plan: WordPlan, repo: Repo, model) -> StoryDraft:
     agent = story_agent(model)
     msg = await agent.reply(UserMsg(name="user", content=story_request(plan, repo)), structured_schema=StoryDraft)
-    return StoryDraft.model_validate(msg.structured_output)
+    return structured(msg, StoryDraft, "story")

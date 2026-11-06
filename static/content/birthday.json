@@ -9,7 +9,7 @@
   "stickerId": "birthday.sticker",
   "learning": {
     "goal": "认识生日会上常见的四样东西",
-    "function": "naming",
+    "function": "I can see … / Your turn.",
     "revisit": []
   },
   "assets": [
@@ -118,7 +118,7 @@
       "id": "birthday.story.1.reply.audio",
       "kind": "audio",
       "path": "audio/birthday/v0-1-0/birthday.story.1.reply.audio.wav",
-      "text": "It is a red hat. I like it.",
+      "text": "It is a yellow hat. I like it.",
       "language": "en-US",
       "role": "bunny",
       "source": null,
@@ -156,7 +156,7 @@
       "id": "birthday.story.2.reply.audio",
       "kind": "audio",
       "path": "audio/birthday/v0-1-0/birthday.story.2.reply.audio.wav",
-      "text": "Yes, please. Be gentle with it.",
+      "text": "Yes, you can. Be gentle with it.",
       "language": "en-US",
       "role": "bunny",
       "source": null,
@@ -572,7 +572,7 @@
       "id": "birthday.dialogue.5.reply.1.audio",
       "kind": "audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.5.reply.1.audio.wav",
-      "text": "My hat is red.",
+      "text": "My hat is yellow.",
       "language": "en-US",
       "role": "momo",
       "source": null,
@@ -583,7 +583,7 @@
       "id": "birthday.dialogue.5.reply.1.follow.audio",
       "kind": "audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.5.reply.1.follow.audio.wav",
-      "text": "Red is a lovely color.",
+      "text": "Yellow is a lovely color.",
       "language": "en-US",
       "role": "bunny",
       "source": null,
@@ -594,7 +594,7 @@
       "id": "birthday.dialogue.5.reply.2.audio",
       "kind": "audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.5.reply.2.audio.wav",
-      "text": "It is blue.",
+      "text": "It is green and yellow.",
       "language": "en-US",
       "role": "momo",
       "source": null,
@@ -605,7 +605,7 @@
       "id": "birthday.dialogue.5.reply.2.follow.audio",
       "kind": "audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.5.reply.2.follow.audio.wav",
-      "text": "Blue is a nice color.",
+      "text": "Green and yellow look nice.",
       "language": "en-US",
       "role": "bunny",
       "source": null,
@@ -739,7 +739,7 @@
             "y": 0.75
           }
         ],
-        "translation": "到了生日会，Momo 戴上了一顶红色的帽子。",
+        "translation": "到了生日会，Momo 戴上了一顶黄色的帽子。",
         "segments": [
           {
             "id": "birthday.story.1.intro",
@@ -755,7 +755,7 @@
           },
           {
             "id": "birthday.story.1.reply",
-            "text": "It is a red hat. I like it.",
+            "text": "It is a yellow hat. I like it.",
             "speaker": "bunny",
             "audio": "birthday.story.1.reply.audio"
           }
@@ -794,7 +794,7 @@
           },
           {
             "id": "birthday.story.2.reply",
-            "text": "Yes, please. Be gentle with it.",
+            "text": "Yes, you can. Be gentle with it.",
             "speaker": "bunny",
             "audio": "birthday.story.2.reply.audio"
           }
@@ -1149,28 +1149,28 @@
         "options": [
           {
             "id": "birthday.dialogue.5.reply.1",
-            "text": "My hat is red.",
-            "cn": "我的帽子是红色的。",
+            "text": "My hat is yellow.",
+            "cn": "我的帽子是黄色的。",
             "image": "birthday.hat.image",
             "audio": "birthday.dialogue.5.reply.1.audio",
             "followUp": [
               {
                 "id": "birthday.dialogue.5.reply.1.follow",
-                "text": "Red is a lovely color.",
+                "text": "Yellow is a lovely color.",
                 "audio": "birthday.dialogue.5.reply.1.follow.audio"
               }
             ]
           },
           {
             "id": "birthday.dialogue.5.reply.2",
-            "text": "It is blue.",
-            "cn": "是蓝色的。",
+            "text": "It is green and yellow.",
+            "cn": "是绿色和黄色的。",
             "image": "birthday.hat.image",
             "audio": "birthday.dialogue.5.reply.2.audio",
             "followUp": [
               {
                 "id": "birthday.dialogue.5.reply.2.follow",
-                "text": "Blue is a nice color.",
+                "text": "Green and yellow look nice.",
                 "audio": "birthday.dialogue.5.reply.2.follow.audio"
               }
             ]

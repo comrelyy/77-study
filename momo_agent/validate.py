@@ -8,10 +8,11 @@ SCRIPT = Path(__file__).parent / "js" / "validate_pack.cjs"
 
 
 def validate_pack(pack: dict, static_root: Path, manifest: dict | None = None,
-                  assume_scene_images: bool = True) -> list[str]:
+                  assume_scene_images: bool = True, staged: Path | None = None) -> list[str]:
     """Return the validator's errors; an empty list means the pack is valid.
 
     assume_scene_images=True treats the pack's own scene pictures as present (they are drawn after validation).
+    staged is a directory shaped like static/ holding files not yet moved in; the validator sees it on top of static_root.
     """
     with tempfile.TemporaryDirectory() as tmp:
         pack_file = Path(tmp) / "pack.json"
@@ -21,6 +22,8 @@ def validate_pack(pack: dict, static_root: Path, manifest: dict | None = None,
             manifest_file = Path(tmp) / "manifest.json"
             manifest_file.write_text(json.dumps(manifest), "utf-8")
             cmd += ["--audit", str(manifest_file)]
+        if staged is not None:
+            cmd += ["--staged", str(staged)]
         if not assume_scene_images:
             cmd.append("--real-scenes")
         done = subprocess.run(cmd, capture_output=True, text=True)

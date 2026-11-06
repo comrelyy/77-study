@@ -5,7 +5,7 @@
       "scene_id": "birthday",
       "title": "生日会",
       "goal": "认识生日会上常见的四样东西",
-      "function": "naming",
+      "function": "I can see … / Your turn.",
       "words": [
         {"text": "hat", "cn": "帽子"},
         {"text": "cup", "cn": "杯子"},
@@ -20,11 +20,11 @@
       "scenes": [
         {
           "title": "生日帽",
-          "translation": "到了生日会，Momo 戴上了一顶红色的帽子。",
+          "translation": "到了生日会，Momo 戴上了一顶黄色的帽子。",
           "main_word": "hat",
           "narration": "Momo and Lulu come to the birthday party.",
           "momo_line": "Look at my new hat!",
-          "bunny_line": "It is a red hat. I like it.",
+          "bunny_line": "It is a yellow hat. I like it.",
           "momo_first": true
         },
         {
@@ -33,7 +33,7 @@
           "main_word": "cup",
           "narration": "Lulu pours juice into a cup.",
           "momo_line": "Can I hold the cup?",
-          "bunny_line": "Yes, please. Be gentle with it.",
+          "bunny_line": "Yes, you can. Be gentle with it.",
           "momo_first": true
         },
         {
@@ -161,16 +161,16 @@
           "question": "What color is your hat?",
           "replies": [
             {
-              "text": "My hat is red.",
-              "cn": "我的帽子是红色的。",
+              "text": "My hat is yellow.",
+              "cn": "我的帽子是黄色的。",
               "image_word": "hat",
-              "follow_up": "Red is a lovely color."
+              "follow_up": "Yellow is a lovely color."
             },
             {
-              "text": "It is blue.",
-              "cn": "是蓝色的。",
+              "text": "It is green and yellow.",
+              "cn": "是绿色和黄色的。",
               "image_word": "hat",
-              "follow_up": "Blue is a nice color."
+              "follow_up": "Green and yellow look nice."
             }
           ]
         },

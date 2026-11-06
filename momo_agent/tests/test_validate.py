@@ -44,7 +44,7 @@ class RepairLoopTest(unittest.IsolatedAsyncioTestCase):
             return models[role]
 
         try:
-            return await generate_lesson("生日会", Repo(ROOT), model_for), models
+            return await generate_lesson("生日会", Repo(ROOT), model_for, overwrite=True), models
         except LessonInvalid as err:
             err.models = models
             raise

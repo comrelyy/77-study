@@ -3,6 +3,7 @@ from agentscope.agent import Agent, ReActConfig
 from agentscope.message import UserMsg
 from pydantic import BaseModel
 
+from momo_agent.llm import structured
 from momo_agent.story import StoryDraft
 from momo_agent.vocab import WordPlan
 
@@ -11,8 +12,8 @@ MAX_WORDS_PER_REPLY = 8
 MAX_WORDS_PER_QUESTION = 15
 
 DIALOGUE_PROMPT = """You write speaking practice for children aged 3 to 6 who are learning English.
-Write exactly 6 rounds. In each round Lulu (the bunny) asks the child one question,
-and the child picks one of 2 or 3 replies. The rounds should follow the story you are given.
+Write exactly 6 rounds. In each round Lulu (a little bunny, 小兔) asks the child one question,
+and the child, who plays Momo (a little bear cub, 小熊), picks one of 2 or 3 replies. The rounds should follow the story you are given.
 Every round has:
 - cn: the question in Chinese, and question: the same question in simple English (at most 15 words).
 - replies: 2 or 3 things the child can say. Each reply has text (English, at most 8 words),
@@ -79,4 +80,4 @@ def dialogue_request(plan: WordPlan, story: StoryDraft) -> str:
 async def write_dialogue(plan: WordPlan, story: StoryDraft, model) -> DialogueDraft:
     agent = dialogue_agent(model)
     msg = await agent.reply(UserMsg(name="user", content=dialogue_request(plan, story)), structured_schema=DialogueDraft)
-    return DialogueDraft.model_validate(msg.structured_output)
+    return structured(msg, DialogueDraft, "dialogue")

@@ -3,6 +3,7 @@ from agentscope.agent import Agent, ReActConfig
 from agentscope.message import UserMsg
 from pydantic import BaseModel
 
+from momo_agent.llm import structured
 from momo_agent.repo import Repo
 from momo_agent.tools import make_word_tools
 
@@ -13,7 +14,9 @@ Given a theme, pick 4 or 5 concrete words that a child can see and point at,
 such as hat, cup or ball. Avoid abstract words, verbs and long words.
 For each word give the English text (lowercase, singular) and its Chinese meaning.
 scene_id is a short lowercase English slug (letters, digits, hyphen; e.g. "birthday").
-Also give a title, a one-sentence goal and a function.
+Also give title, goal and function:
+title and goal are Chinese; the title looks like "和 Momo 逛公园", the goal is one short sentence.
+function is the English sentence pattern the child practises, such as "I can see … / Your turn.".
 Use the tools to confirm that each word has a picture (check_word, or list_illustrated_words),
 and replace any word that does not with one that does."""
 
@@ -62,7 +65,7 @@ async def plan_words(topic: str, repo: Repo, model) -> WordPlan:
         react_config=ReActConfig(max_iters=6),
     )
     msg = await agent.reply(UserMsg(name="user", content=topic), structured_schema=WordPlan)
-    plan = WordPlan.model_validate(msg.structured_output)
+    plan = structured(msg, WordPlan, "planner")
     have, missing = check_words(plan, repo.illustrated_words())
     if len(have) < WORD_COUNT:
         raise LessonRefused(missing, [c.text for c in have])

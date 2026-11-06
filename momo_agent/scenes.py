@@ -1,10 +1,14 @@
 """Chapter 9: draw the scene pictures and write the lesson (pictures, audio, pack) into static/."""
 import json
 import re
+import shutil
+import tempfile
 from pathlib import Path
 
+from momo_agent.pipeline import LessonInvalid
 from momo_agent.repo import Repo
 from momo_agent.tts import render_audio
+from momo_agent.validate import validate_pack
 
 # The ground of the park background in draw-content-assets.cjs: grass hill and path.
 GROUND = (
@@ -43,22 +47,36 @@ def render_scene(main_word: str, repo: Repo) -> tuple[str, dict]:
 
 
 def write_lesson(pack: dict, repo: Repo) -> list[Path]:
-    """Write scene pictures, audio (with its manifest) and the pack file; return every path written."""
+    """Build the whole lesson in a staging folder, check it there, and only then move it into static/.
+
+    Returns every path written. If anything fails before the move, static/ is left as it was.
+    """
     static = repo.root / "static"
     asset_path = {a["id"]: a["path"] for a in pack["assets"]}
     word_text = {w["id"]: w["text"] for w in pack["words"]}
-    written = []
-    for scene in pack["modules"]["story"]:
-        svg, hotspot = render_scene(word_text[scene["mainWord"]], repo)
-        scene["hotspots"] = [{"word": scene["mainWord"], **hotspot}]
-        path = static / asset_path[scene["illustration"]]
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(svg, "utf-8")
-        written.append(path)
-    render_audio(pack, static)
-    written += [static / a["path"] for a in pack["assets"] if a["kind"] == "audio"]
-    written.append(static / "audio" / f"s4-{pack['sceneId']}-manifest.json")
-    pack_file = static / "content" / f"{pack['sceneId']}.json"
-    pack_file.write_text(json.dumps(pack, indent=2, ensure_ascii=False) + "\n", "utf-8")
-    written.append(pack_file)
+    with tempfile.TemporaryDirectory() as tmp:
+        staged = Path(tmp) / "static"
+        for scene in pack["modules"]["story"]:
+            svg, hotspot = render_scene(word_text[scene["mainWord"]], repo)
+            scene["hotspots"] = [{"word": scene["mainWord"], **hotspot}]
+            path = staged / asset_path[scene["illustration"]]
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(svg, "utf-8")
+        manifest = render_audio(pack, staged)
+        (staged / "content").mkdir()
+        (staged / "content" / f"{pack['sceneId']}.json").write_text(
+            json.dumps(pack, indent=2, ensure_ascii=False) + "\n", "utf-8")
+        errors = validate_pack(pack, static, manifest, assume_scene_images=False, staged=staged)
+        if errors:
+            raise LessonInvalid(errors)
+        # the new audio folder replaces the old one of this theme
+        shutil.rmtree(static / "audio" / pack["sceneId"], ignore_errors=True)
+        files = sorted(p for p in staged.rglob("*") if p.is_file())
+        files.sort(key=lambda p: (p.suffix == ".json", not p.name.startswith("s4-")))  # pictures and wavs first, pack last
+        written = []
+        for src in files:
+            dest = static / src.relative_to(staged)
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.move(src, dest)
+            written.append(dest)
     return written

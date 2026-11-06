@@ -19,7 +19,8 @@ def birthday(scene_id=None):
 
 
 async def run(fx):
-    return await generate_lesson("生日会", Repo(ROOT), lambda role: make_model(role, fx))
+    # birthday is already in the repo as a generated sample, so it may be replaced
+    return await generate_lesson("生日会", Repo(ROOT), lambda role: make_model(role, fx), overwrite=True)
 
 
 class GenerateLessonTest(unittest.IsolatedAsyncioTestCase):

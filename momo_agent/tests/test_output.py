@@ -1,13 +1,11 @@
 import contextlib
 import io
 import json
-import os
 import shutil
 import sys
 import tempfile
 import unittest
 from pathlib import Path
-from unittest import mock
 
 from momo_agent.__main__ import main
 from momo_agent.register import register
@@ -45,17 +43,11 @@ class RenderSceneTest(unittest.TestCase):
 
 @unittest.skipUnless(sys.platform == "darwin", "macOS say only")
 class EndToEndTest(unittest.TestCase):
-    def setUp(self):
-        # a real provider exported in the shell must never make paid calls from tests
-        patcher = mock.patch.dict(os.environ, {"MOMO_LLM_PROVIDER": "fake"})
-        patcher.start()
-        self.addCleanup(patcher.stop)
-
     def test_birthday_generate_and_register(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = make_repo(tmp)
             before = json.loads((root / "static/content/catalog.json").read_text("utf-8"))
-            code, out = run_cli(root, "generate", "生日会", "--fixtures", str(FIXTURES / "birthday.json"))
+            code, out = run_cli(root, "generate", "生日会", "--fixtures", str(FIXTURES / "birthday.json"), "--overwrite")
             self.assertEqual(code, 0, out)
 
             static = root / "static"

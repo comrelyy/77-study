@@ -1,6 +1,5 @@
 import asyncio
 import json
-import os
 import re
 import tempfile
 import unittest
@@ -22,13 +21,14 @@ TOUCH_CATALOG = re.compile(r"""(releasedScenes|requiredReleaseScenes)['"]\]\s*(=
 class NeverReleasesTest(unittest.TestCase):
     def test_written_pack_is_draft_and_catalog_release_lists_untouched(self):
         fixtures = json.loads((FIXTURES / "birthday.json").read_text("utf-8"))
-        with tempfile.TemporaryDirectory() as tmp, mock.patch.dict(os.environ, {"MOMO_LLM_PROVIDER": "fake"}):
+        with tempfile.TemporaryDirectory() as tmp:
             root = make_repo(tmp)
             repo = Repo(root)
             catalog_file = root / "static/content/catalog.json"
             before = json.loads(catalog_file.read_text("utf-8"))
-            pack = asyncio.run(generate_lesson("生日会", repo, lambda role: make_model(role, fixtures)))
-            with mock.patch("momo_agent.scenes.render_audio"):  # skip the slow speech synthesis
+            pack = asyncio.run(generate_lesson("生日会", repo, lambda role: make_model(role, fixtures), overwrite=True))
+            with mock.patch("momo_agent.scenes.render_audio", return_value={}), \
+                    mock.patch("momo_agent.scenes.validate_pack", return_value=[]):  # skip the slow speech synthesis
                 write_lesson(pack, repo)
             register(repo)
 

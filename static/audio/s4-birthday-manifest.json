@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sceneId": "birthday",
   "contentVersion": "0.1.0",
-  "generatedAt": "2026-11-06T11:49:13.217326+00:00",
+  "generatedAt": "2026-11-06T12:47:09.807532+00:00",
   "source": "Local offline speech synthesis",
   "purpose": "Local synthesis; listening and rights review pending",
   "rightsStatus": "pending review",
@@ -77,13 +77,13 @@
     {
       "id": "birthday.story.1.reply.audio",
       "path": "audio/birthday/v0-1-0/birthday.story.1.reply.audio.wav",
-      "text": "It is a red hat. I like it.",
+      "text": "It is a yellow hat. I like it.",
       "language": "en-US",
       "role": "bunny",
       "voice": "Samantha (macOS say)",
       "rate": 165,
       "volume": 100,
-      "sha256": "cd012c76b1485ff9fd8672a7bdb545ea293be7ffdffac195849f0ce73c52a83f"
+      "sha256": "b956ddbc3182b9ff2ad6c59a80248c03c56679fce7c31c95ea26d8b77cbe88b4"
     },
     {
       "id": "birthday.story.2.intro.audio",
@@ -110,13 +110,13 @@
     {
       "id": "birthday.story.2.reply.audio",
       "path": "audio/birthday/v0-1-0/birthday.story.2.reply.audio.wav",
-      "text": "Yes, please. Be gentle with it.",
+      "text": "Yes, you can. Be gentle with it.",
       "language": "en-US",
       "role": "bunny",
       "voice": "Samantha (macOS say)",
       "rate": 165,
       "volume": 100,
-      "sha256": "2052147e0c4a9cdc06ffde582a80b21ff3ffe79983b0167a3486423211ce4692"
+      "sha256": "ba60eb1a5f369f99c44e8a50644ddb4db5fce85e10b13ca2b65f8c5a7701a6eb"
     },
     {
       "id": "birthday.story.3.intro.audio",
@@ -506,46 +506,46 @@
     {
       "id": "birthday.dialogue.5.reply.1.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.5.reply.1.audio.wav",
-      "text": "My hat is red.",
+      "text": "My hat is yellow.",
       "language": "en-US",
       "role": "momo",
       "voice": "Samantha (macOS say)",
       "rate": 150,
       "volume": 100,
-      "sha256": "284ebdfe617746f1db916fa628d41ec794eea9ef8a67cb02e2207e3eeff97a96"
+      "sha256": "0d316c5cdb8f99c5b73018d673986409873038d314a1fa90a8babefe6eb467e2"
     },
     {
       "id": "birthday.dialogue.5.reply.1.follow.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.5.reply.1.follow.audio.wav",
-      "text": "Red is a lovely color.",
+      "text": "Yellow is a lovely color.",
       "language": "en-US",
       "role": "bunny",
       "voice": "Samantha (macOS say)",
       "rate": 165,
       "volume": 100,
-      "sha256": "aa166ebab842b87d6c5ad3c2b37a62c87ab5c6ffa1d0424e5df0610432e604f2"
+      "sha256": "e3e14f688dd59bb09a1819495d54ee670c7cbccd2c92ec806dfb508cea1b5c20"
     },
     {
       "id": "birthday.dialogue.5.reply.2.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.5.reply.2.audio.wav",
-      "text": "It is blue.",
+      "text": "It is green and yellow.",
       "language": "en-US",
       "role": "momo",
       "voice": "Samantha (macOS say)",
       "rate": 150,
       "volume": 100,
-      "sha256": "6a782e1182926941339673dfb79ec34647f9fc2c2ef6f78a1a8955dede335350"
+      "sha256": "04104bef51e2449eaa9f169212c95be46358416cf7e81efea261dacdebf8c3fb"
     },
     {
       "id": "birthday.dialogue.5.reply.2.follow.audio",
       "path": "audio/birthday/v0-1-0/birthday.dialogue.5.reply.2.follow.audio.wav",
-      "text": "Blue is a nice color.",
+      "text": "Green and yellow look nice.",
       "language": "en-US",
       "role": "bunny",
       "voice": "Samantha (macOS say)",
       "rate": 165,
       "volume": 100,
-      "sha256": "e3dde4080e55b3f2f0524cf60d7a3712b353d7bbf5cb749843e6c3c40d061cea"
+      "sha256": "cb3b6fefdb7fd174f8502bc019e21324a8f7f8bd523950c0bead5983b724c0c8"
     },
     {
       "id": "birthday.dialogue.6.question.audio",

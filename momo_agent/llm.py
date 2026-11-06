@@ -14,6 +14,17 @@ from agentscope.model import (
 
 from momo_agent.fake_model import FixtureModel
 
+class NoStructuredOutput(Exception):
+    """The model finished without calling the structured-output tool."""
+
+
+def structured(reply, schema, role: str):
+    """Turn an agent reply into `schema`; say which role failed when the model gave no structured answer."""
+    if reply.structured_output is None:
+        raise NoStructuredOutput(f"{role} 模型没有返回结构化结果")
+    return schema.model_validate(reply.structured_output)
+
+
 _REAL = {
     "openai": (OpenAICredential, OpenAIChatModel),
     "anthropic": (AnthropicCredential, AnthropicChatModel),
