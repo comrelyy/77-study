@@ -74,5 +74,131 @@
         }
       ]
     }
+  ],
+  "dialogue": [
+    {
+      "rounds": [
+        {
+          "cn": "你想戴什么？",
+          "question": "What do you want to wear?",
+          "replies": [
+            {
+              "text": "I want the hat.",
+              "cn": "我想戴帽子。",
+              "image_word": "hat",
+              "follow_up": "The hat looks great on you!"
+            },
+            {
+              "text": "Can I try the hat?",
+              "cn": "我可以试试帽子吗？",
+              "image_word": "hat",
+              "follow_up": "Yes, put it on your head."
+            }
+          ]
+        },
+        {
+          "cn": "杯子里有什么？",
+          "question": "What is in the cup?",
+          "replies": [
+            {
+              "text": "There is juice.",
+              "cn": "有果汁。",
+              "image_word": "cup",
+              "follow_up": "Yummy! Drink it slowly."
+            },
+            {
+              "text": "I see juice in the cup.",
+              "cn": "我看见杯子里有果汁。",
+              "image_word": "cup",
+              "follow_up": "Hold the cup with two hands."
+            },
+            {
+              "text": "It is a big cup.",
+              "cn": "这是一个大杯子。",
+              "image_word": "cup",
+              "follow_up": "It is just right for a party."
+            }
+          ]
+        },
+        {
+          "cn": "我们玩什么好呢？",
+          "question": "What shall we play?",
+          "replies": [
+            {
+              "text": "Let us play with the ball.",
+              "cn": "我们玩球吧。",
+              "image_word": "ball",
+              "follow_up": "Great! I will catch it."
+            },
+            {
+              "text": "Roll the ball to me.",
+              "cn": "把球滚给我。",
+              "image_word": "ball",
+              "follow_up": "Here it comes. Roll, roll, roll!"
+            }
+          ]
+        },
+        {
+          "cn": "你想抱谁？",
+          "question": "Who do you want to hug?",
+          "replies": [
+            {
+              "text": "I hug the teddy.",
+              "cn": "我抱泰迪熊。",
+              "image_word": "teddy",
+              "follow_up": "The teddy likes a gentle hug."
+            },
+            {
+              "text": "The teddy is soft.",
+              "cn": "泰迪熊软软的。",
+              "image_word": "teddy",
+              "follow_up": "Yes, it is soft and warm."
+            }
+          ]
+        },
+        {
+          "cn": "你的帽子是什么颜色？",
+          "question": "What colour is your hat?",
+          "replies": [
+            {
+              "text": "My hat is red.",
+              "cn": "我的帽子是红色的。",
+              "image_word": "hat",
+              "follow_up": "Red is a lovely colour."
+            },
+            {
+              "text": "It is a party hat.",
+              "cn": "这是一顶派对帽。",
+              "image_word": "hat",
+              "follow_up": "Happy birthday to you!"
+            }
+          ]
+        },
+        {
+          "cn": "今天你最喜欢什么？",
+          "question": "What do you like best today?",
+          "replies": [
+            {
+              "text": "I like the ball.",
+              "cn": "我最喜欢球。",
+              "image_word": "ball",
+              "follow_up": "Me too! It is round and fun."
+            },
+            {
+              "text": "I like the cup.",
+              "cn": "我最喜欢杯子。",
+              "image_word": "cup",
+              "follow_up": "It has nice juice in it."
+            },
+            {
+              "text": "I like the teddy.",
+              "cn": "我最喜欢泰迪熊。",
+              "image_word": "teddy",
+              "follow_up": "The teddy is a good friend."
+            }
+          ]
+        }
+      ]
+    }
   ]
 }
