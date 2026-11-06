@@ -42,7 +42,12 @@ def generate(args, repo: Repo) -> int:
     register(repo)
     print(f"Wrote {len(written)} files for theme {pack['sceneId']}, for example:")
     print(f"  {written[-1].relative_to(repo.root)}")
-    print("Next: preview the theme, then release it by hand.")
+    print("Next: preview it with a throwaway database (never data.sqlite3):")
+    print("  .venv/bin/python app.py --db /tmp/preview.sqlite3 --port 8766")
+    print("Releasing is manual; this tool never does it. When you are happy with the theme:")
+    print(f'  1. in static/content/{pack["sceneId"]}.json change "status" to "released"')
+    print(f'  2. add "{pack["sceneId"]}" to "releasedScenes" in static/content/catalog.json')
+    print("  3. run: node s5-release.cjs   (read the blockers it lists)")
     return 0
 
 
