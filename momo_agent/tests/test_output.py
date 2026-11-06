@@ -1,11 +1,13 @@
 import contextlib
 import io
 import json
+import os
 import shutil
 import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from momo_agent.__main__ import main
 from momo_agent.register import register
@@ -43,6 +45,12 @@ class RenderSceneTest(unittest.TestCase):
 
 @unittest.skipUnless(sys.platform == "darwin", "macOS say only")
 class EndToEndTest(unittest.TestCase):
+    def setUp(self):
+        # a real provider exported in the shell must never make paid calls from tests
+        patcher = mock.patch.dict(os.environ, {"MOMO_LLM_PROVIDER": "fake"})
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
     def test_birthday_generate_and_register(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = make_repo(tmp)
@@ -61,7 +69,9 @@ class EndToEndTest(unittest.TestCase):
                 register(Repo(root))
             catalog = json.loads((static / "content/catalog.json").read_text("utf-8"))
             self.assertEqual(catalog["previewScenes"].count("birthday"), 1)
-            self.assertEqual(catalog["previewScenes"][:-1], before["previewScenes"])
+            # the repo already ships the birthday sample, so the other themes are what must stay put
+            others = [scene for scene in before["previewScenes"] if scene != "birthday"]
+            self.assertEqual([s for s in catalog["previewScenes"] if s != "birthday"], others)
             self.assertEqual(catalog["releasedScenes"], [])
             self.assertEqual(catalog["requiredReleaseScenes"], before["requiredReleaseScenes"])
 
