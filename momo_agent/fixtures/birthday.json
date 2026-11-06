@@ -1,17 +1,97 @@
 {
   "planner": [
-    {"__tool__": "check_word", "input": {"text": "teddy"}},
+    {
+      "__tool__": "check_word",
+      "input": {
+        "text": "teddy"
+      }
+    },
     {
       "scene_id": "birthday",
       "title": "生日会",
       "goal": "认识生日会上常见的四样东西",
       "function": "naming",
       "words": [
-        {"text": "hat", "cn": "帽子"},
-        {"text": "cup", "cn": "杯子"},
-        {"text": "ball", "cn": "球"},
-        {"text": "teddy", "cn": "泰迪熊"},
-        {"text": "book", "cn": "书"}
+        {
+          "text": "hat",
+          "cn": "帽子"
+        },
+        {
+          "text": "cup",
+          "cn": "杯子"
+        },
+        {
+          "text": "ball",
+          "cn": "球"
+        },
+        {
+          "text": "teddy",
+          "cn": "泰迪熊"
+        },
+        {
+          "text": "book",
+          "cn": "书"
+        }
+      ]
+    }
+  ],
+  "story": [
+    {
+      "scenes": [
+        {
+          "title": "1. 生日帽",
+          "translation": "到了生日会，Momo 戴上了一顶彩色的帽子。",
+          "main_word": "hat",
+          "narration": "Momo and Lulu come to the birthday party.",
+          "momo_line": "Look at my new hat!",
+          "bunny_line": "It is a red hat. I like it.",
+          "momo_first": false
+        },
+        {
+          "title": "2. 一杯果汁",
+          "translation": "Lulu 给大家倒了一杯果汁。",
+          "main_word": "cup",
+          "narration": "Lulu pours juice into a cup.",
+          "momo_line": "Can I hold the cup?",
+          "bunny_line": "Yes, please. Be gentle with it.",
+          "momo_first": true
+        },
+        {
+          "title": "3. 圆圆的球",
+          "translation": "他们在草地上玩球。",
+          "main_word": "ball",
+          "narration": "The friends play on the grass.",
+          "momo_line": "I kick the ball to you.",
+          "bunny_line": "I catch the ball. Hooray!",
+          "momo_first": false
+        },
+        {
+          "title": "4. 泰迪熊",
+          "translation": "Momo 找到了一只泰迪熊，要轻轻抱它。",
+          "main_word": "teddy",
+          "narration": "A teddy sits under the table.",
+          "momo_line": "Look, a little teddy!",
+          "bunny_line": "Hug the teddy in a gentle way.",
+          "momo_first": true
+        },
+        {
+          "title": "5. 唱生日歌",
+          "translation": "大家围在一起唱生日歌。",
+          "main_word": "hat",
+          "narration": "Everyone sings a happy song.",
+          "momo_line": "Today I am four years old.",
+          "bunny_line": "Happy birthday! You are four now.",
+          "momo_first": false
+        },
+        {
+          "title": "6. 美好的一天",
+          "translation": "派对结束了，大家都很开心。",
+          "main_word": "ball",
+          "narration": "The party is over and the sun goes down.",
+          "momo_line": "Thank you for the nice day.",
+          "bunny_line": "See you soon, my good friend.",
+          "momo_first": true
+        }
       ]
     }
   ]
