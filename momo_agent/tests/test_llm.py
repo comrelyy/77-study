@@ -4,6 +4,7 @@ from unittest import mock
 
 from agentscope.agent import Agent
 from agentscope.message import UserMsg
+from agentscope.model import DashScopeChatModel
 from pydantic import BaseModel
 
 from momo_agent.fake_model import FixtureModel
@@ -30,6 +31,23 @@ class MakeModelTest(unittest.TestCase):
             with self.assertRaises(RuntimeError) as ctx:
                 make_model("planner")
         self.assertIn("MOMO_LLM_API_KEY", str(ctx.exception))
+
+    def test_real_provider_requires_model(self):
+        env = {"MOMO_LLM_PROVIDER": "openai", "MOMO_LLM_API_KEY": "k"}
+        with mock.patch.dict(os.environ, env, clear=True):
+            with self.assertRaises(RuntimeError) as ctx:
+                make_model("planner")
+        self.assertIn("MOMO_LLM_MODEL", str(ctx.exception))
+
+    def test_dashscope_without_base_url(self):
+        env = {
+            "MOMO_LLM_PROVIDER": "dashscope",
+            "MOMO_LLM_API_KEY": "k",
+            "MOMO_LLM_MODEL": "qwen-plus",
+        }
+        with mock.patch.dict(os.environ, env, clear=True):
+            m = make_model("planner")
+        self.assertIsInstance(m, DashScopeChatModel)
 
 
 class FixtureModelTest(unittest.IsolatedAsyncioTestCase):
