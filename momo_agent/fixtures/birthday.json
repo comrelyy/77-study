@@ -1,0 +1,17 @@
+{
+  "planner": [
+    {
+      "scene_id": "birthday-party",
+      "title": "生日会",
+      "goal": "认识生日会上常见的四样东西",
+      "function": "naming",
+      "words": [
+        {"text": "hat", "cn": "帽子"},
+        {"text": "cup", "cn": "杯子"},
+        {"text": "ball", "cn": "球"},
+        {"text": "teddy", "cn": "泰迪熊"},
+        {"text": "book", "cn": "书"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "planner": [
+    {
+      "scene_id": "ocean-day",
+      "title": "海边一天",
+      "goal": "认识海边常见的东西",
+      "function": "naming",
+      "words": [
+        {"text": "fish", "cn": "鱼"},
+        {"text": "boat", "cn": "小船"},
+        {"text": "shell", "cn": "贝壳"},
+        {"text": "sun", "cn": "太阳"}
+      ]
+    }
+  ]
+}
