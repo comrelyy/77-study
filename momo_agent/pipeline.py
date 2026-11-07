@@ -57,9 +57,9 @@ async def write_checked(agent, request: str, schema, check, role: str, rewrites:
 
 
 async def generate_lesson(topic: str, repo: Repo, model_for: Callable[[str], object], overwrite: bool = False,
-                          rewrites: dict[str, int] | None = None) -> dict:
+                          rewrites: dict[str, int] | None = None, used_words: dict[str, str] | None = None) -> dict:
     topic = clean_topic(topic)  # before any model is built
-    plan = await plan_words(topic, repo, model_for("planner"))
+    plan = await plan_words(topic, repo, model_for("planner"), used_words)
     check_scene_id(plan.scene_id, repo, overwrite)
     words = [card.text for card in plan.words]
     story = await write_checked(

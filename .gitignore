@@ -5,3 +5,4 @@ python.zip
 .npm-cache/
 backups/
 data.sqlite3-*
+momo_agent/memory.json

@@ -58,7 +58,7 @@ def check_words(plan: WordPlan, illustrated: list[str]) -> tuple[list[WordCard],
     return have, missing
 
 
-async def plan_words(topic: str, repo: Repo, model) -> WordPlan:
+async def plan_words(topic: str, repo: Repo, model, used_words: dict[str, str] | None = None) -> WordPlan:
     topic = clean_topic(topic)
     agent = Agent(
         name="planner",
@@ -67,7 +67,11 @@ async def plan_words(topic: str, repo: Repo, model) -> WordPlan:
         toolkit=make_word_tools(repo),
         react_config=ReActConfig(max_iters=6),
     )
-    msg = await agent.reply(UserMsg(name="user", content=topic_request(topic)), structured_schema=WordPlan)
+    request = topic_request(topic)
+    if used_words:
+        listed = ", ".join(f"{word} ({scene})" for word, scene in sorted(used_words.items()))
+        request += f"\nWords used in earlier lessons (prefer other words when the theme allows): {listed}"
+    msg = await agent.reply(UserMsg(name="user", content=request), structured_schema=WordPlan)
     plan = structured(msg, WordPlan, "planner")
     have, missing = check_words(plan, repo.illustrated_words())
     if len(have) < WORD_COUNT:
