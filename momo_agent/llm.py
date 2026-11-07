@@ -13,6 +13,7 @@ from agentscope.model import (
 )
 
 from momo_agent.fake_model import FixtureModel
+from momo_agent.guard import Budget, metered
 
 class NoStructuredOutput(Exception):
     """The model finished without calling the structured-output tool."""
@@ -32,8 +33,13 @@ _REAL = {
 }
 
 
-def make_model(role: str, fixtures: dict[str, list[dict]] | None = None) -> ChatModelBase:
+def make_model(role: str, fixtures: dict[str, list[dict]] | None = None, budget: Budget | None = None) -> ChatModelBase:
     """Build the model for one agent role; MOMO_LLM_PROVIDER picks fake or a real vendor."""
+    model = _build_model(role, fixtures)
+    return metered(model, budget) if budget else model
+
+
+def _build_model(role: str, fixtures: dict[str, list[dict]] | None) -> ChatModelBase:
     provider = os.environ.get("MOMO_LLM_PROVIDER", "fake")
     if provider == "fake":
         return FixtureModel((fixtures or {})[role], role=role)

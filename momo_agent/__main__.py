@@ -7,7 +7,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from momo_agent.guard import TopicRejected
+from momo_agent.guard import Budget, BudgetExceeded, TopicRejected
 from momo_agent.llm import NoStructuredOutput, make_model
 from momo_agent.pipeline import LessonInvalid, SceneIdConflict, generate_lesson
 from momo_agent.register import register
@@ -23,8 +23,13 @@ def generate(args, repo: Repo) -> int:
     if fixtures and os.environ.get("MOMO_LLM_PROVIDER", "fake") != "fake":
         print("Note: --fixtures is only used when MOMO_LLM_PROVIDER is fake.")
     try:
-        pack = asyncio.run(generate_lesson(args.topic, repo, lambda role: make_model(role, fixtures), args.overwrite))
+        budget = Budget.from_env()
+        pack = asyncio.run(generate_lesson(args.topic, repo, lambda role: make_model(role, fixtures, budget), args.overwrite))
         written = write_lesson(pack, repo)
+    except BudgetExceeded:
+        print("已达到模型费用上限，停止生成，没有写入任何文件。")
+        print(budget.summary())
+        return 1
     except TopicRejected as err:
         print(f"主题不能用：{err}")
         return 1
@@ -42,6 +47,7 @@ def generate(args, repo: Repo) -> int:
         print(f"Error: {err}")
         return 1
     register(repo)
+    print(budget.summary())
     print(f"Wrote {len(written)} files for theme {pack['sceneId']}, for example:")
     print(f"  {written[-1].relative_to(repo.root)}")
     print("Next: preview it with a throwaway database (never data.sqlite3):")
