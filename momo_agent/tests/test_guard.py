@@ -102,6 +102,24 @@ class BudgetTest(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(budget.tokens, 15)
         self.assertEqual(budget.calls, 1)
 
+    async def test_stream_usage_counted_when_stream_fails(self):
+        class FailingModel(StreamingModel):
+            async def _call_api(self, model_name, messages, tools=None, tool_choice=None, **kw):
+                async def chunks():
+                    yield ChatResponse(
+                        content=[], usage=ChatUsage(input_tokens=10, output_tokens=5, time=0), is_last=False
+                    )
+                    raise RuntimeError("connection dropped")
+
+                return chunks()
+
+        budget = Budget(max_calls=5, max_tokens=100)
+        model = metered(FailingModel(), budget)
+        with self.assertRaises(RuntimeError):
+            async for _ in await model._call_api("stream", messages=[]):
+                pass
+        self.assertEqual(budget.tokens, 15)
+
     async def test_budget_stops_midway_and_writes_nothing(self):
         fixtures = json.loads(FIXTURES.read_text("utf-8"))
         budget = Budget(max_calls=3, max_tokens=60000)

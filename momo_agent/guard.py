@@ -89,11 +89,13 @@ def metered(model: ChatModelBase, budget: Budget) -> ChatModelBase:
 
         async def chunks():
             last = None  # chunks may repeat the same cumulative usage, so count only the last one
-            async for chunk in result:
-                if chunk.usage is not None:
-                    last = chunk.usage
-                yield chunk
-            budget.record(last)
+            try:
+                async for chunk in result:
+                    if chunk.usage is not None:
+                        last = chunk.usage
+                    yield chunk
+            finally:  # also when the stream fails or the consumer stops early: the tokens were spent
+                budget.record(last)
 
         return chunks()
 
