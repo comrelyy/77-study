@@ -7,6 +7,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+from momo_agent.guard import TopicRejected
 from momo_agent.llm import NoStructuredOutput, make_model
 from momo_agent.pipeline import LessonInvalid, SceneIdConflict, generate_lesson
 from momo_agent.register import register
@@ -24,6 +25,9 @@ def generate(args, repo: Repo) -> int:
     try:
         pack = asyncio.run(generate_lesson(args.topic, repo, lambda role: make_model(role, fixtures), args.overwrite))
         written = write_lesson(pack, repo)
+    except TopicRejected as err:
+        print(f"主题不能用：{err}")
+        return 1
     except LessonRefused as err:
         print(f"Not enough illustrated words ({len(err.found)} found, 4 needed). Add these files and try again:")
         for word in err.missing:

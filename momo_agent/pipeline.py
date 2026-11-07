@@ -7,6 +7,7 @@ from agentscope.message import UserMsg
 
 from momo_agent.assemble import assemble_pack
 from momo_agent.dialogue import DialogueDraft, check_dialogue, dialogue_agent, dialogue_request
+from momo_agent.guard import clean_topic
 from momo_agent.llm import structured
 from momo_agent.repo import Repo
 from momo_agent.story import StoryDraft, check_story, story_agent, story_request
@@ -54,6 +55,7 @@ async def write_checked(agent, request: str, schema, check, role: str):
 
 
 async def generate_lesson(topic: str, repo: Repo, model_for: Callable[[str], object], overwrite: bool = False) -> dict:
+    topic = clean_topic(topic)  # before any model is built
     plan = await plan_words(topic, repo, model_for("planner"))
     check_scene_id(plan.scene_id, repo, overwrite)
     words = [card.text for card in plan.words]
