@@ -1,4 +1,4 @@
-"""Command line: python -m momo_agent generate <topic> [--fixtures file] [--overwrite] | register"""
+"""Command line: python -m momo_agent generate <topic> [--fixtures file] [--overwrite] | register | eval [--suite file]"""
 import argparse
 import asyncio
 import json
@@ -7,6 +7,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+from momo_agent.evaluate import format_report, run_suite
 from momo_agent.guard import Budget, BudgetExceeded, TopicRejected
 from momo_agent.llm import NoStructuredOutput, make_model
 from momo_agent.pipeline import LessonInvalid, SceneIdConflict, generate_lesson
@@ -71,12 +72,18 @@ def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
     gen.add_argument("topic")
     gen.add_argument("--fixtures", help="fixtures json for the fake model (MOMO_LLM_PROVIDER=fake)")
     gen.add_argument("--overwrite", action="store_true", help="replace a theme this tool generated before")
+    ev = sub.add_parser("eval", help="run every case of a topic suite and print a report")
+    ev.add_argument("--suite", default=str(ROOT / "momo_agent/eval/suite.json"))
     sub.add_parser("register", help="list generated themes in the catalog again")
     args = parser.parse_args(argv)
     repo = Repo(root)
     if args.command == "register":
         print("Registered:", ", ".join(register(repo)) or "nothing")
         return 0
+    if args.command == "eval":
+        results = asyncio.run(run_suite(json.loads(Path(args.suite).read_text("utf-8")), repo))
+        print(format_report(results))
+        return 0 if all(r.passed for r in results) else 1
     return generate(args, repo)
 
 

@@ -41,31 +41,34 @@ def check_scene_id(scene_id: str, repo: Repo, overwrite: bool = False) -> None:
             raise SceneIdConflict(f"theme {scene_id} was already generated; use --overwrite to replace it")
 
 
-async def write_checked(agent, request: str, schema, check, role: str):
+async def write_checked(agent, request: str, schema, check, role: str, rewrites: dict[str, int] | None = None):
     """Ask the agent; while the check finds problems, tell the same agent and ask again (at most 2 rewrites)."""
     msg = request
     for rewrite in range(MAX_REWRITES + 1):
         reply = await agent.reply(UserMsg(name="user", content=msg), structured_schema=schema)
         draft = structured(reply, schema, role)
         errors = check(draft)
+        if rewrites is not None:
+            rewrites[role] = rewrite
         if not errors:
             return draft
         msg = "Your draft has these problems:\n- " + "\n- ".join(errors) + "\nPlease write the corrected full version."
     raise LessonInvalid(errors)
 
 
-async def generate_lesson(topic: str, repo: Repo, model_for: Callable[[str], object], overwrite: bool = False) -> dict:
+async def generate_lesson(topic: str, repo: Repo, model_for: Callable[[str], object], overwrite: bool = False,
+                          rewrites: dict[str, int] | None = None) -> dict:
     topic = clean_topic(topic)  # before any model is built
     plan = await plan_words(topic, repo, model_for("planner"))
     check_scene_id(plan.scene_id, repo, overwrite)
     words = [card.text for card in plan.words]
     story = await write_checked(
         story_agent(model_for("story")), story_request(plan, repo), StoryDraft,
-        lambda d: check_story(d, words), "story",
+        lambda d: check_story(d, words), "story", rewrites,
     )
     dialogue = await write_checked(
         dialogue_agent(model_for("dialogue")), dialogue_request(plan, story), DialogueDraft,
-        lambda d: check_dialogue(d, words), "dialogue",
+        lambda d: check_dialogue(d, words), "dialogue", rewrites,
     )
     pack = assemble_pack(plan, story, dialogue, repo)
     errors = validate_pack(pack, repo.root / "static")

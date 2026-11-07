@@ -1,0 +1,282 @@
+{
+  "planner": [
+    {
+      "__tool__": "check_word",
+      "input": {
+        "text": "teddy"
+      }
+    },
+    {
+      "scene_id": "birthday",
+      "title": "生日会",
+      "goal": "认识生日会上常见的四样东西",
+      "function": "I can see … / Your turn.",
+      "words": [
+        {
+          "text": "hat",
+          "cn": "帽子"
+        },
+        {
+          "text": "cup",
+          "cn": "杯子"
+        },
+        {
+          "text": "ball",
+          "cn": "球"
+        },
+        {
+          "text": "teddy",
+          "cn": "泰迪熊"
+        },
+        {
+          "text": "book",
+          "cn": "书"
+        }
+      ]
+    }
+  ],
+  "story": [
+    {
+      "scenes": [
+        {
+          "title": "生日帽",
+          "translation": "到了生日会，Momo 戴上了一顶黄色的帽子。",
+          "main_word": "cake",
+          "narration": "Momo and Lulu come to the birthday party.",
+          "momo_line": "Look at my new hat!",
+          "bunny_line": "It is a yellow hat. I like it.",
+          "momo_first": true
+        },
+        {
+          "title": "一杯果汁",
+          "translation": "Lulu 给大家倒了一杯果汁。",
+          "main_word": "cup",
+          "narration": "Lulu pours juice into a cup.",
+          "momo_line": "Can I hold the cup?",
+          "bunny_line": "Yes, you can. Be gentle with it.",
+          "momo_first": true
+        },
+        {
+          "title": "圆圆的球",
+          "translation": "他们在草地上玩球。",
+          "main_word": "ball",
+          "narration": "The friends play on the grass.",
+          "momo_line": "I kick the ball to you.",
+          "bunny_line": "I catch the ball. Hooray!",
+          "momo_first": true
+        },
+        {
+          "title": "泰迪熊",
+          "translation": "Momo 找到了一只泰迪熊，要轻轻抱它。",
+          "main_word": "teddy",
+          "narration": "A teddy sits under the table.",
+          "momo_line": "Look, a little teddy!",
+          "bunny_line": "Hug the teddy gently.",
+          "momo_first": true
+        },
+        {
+          "title": "唱生日歌",
+          "translation": "大家围在一起唱生日歌。",
+          "main_word": "hat",
+          "narration": "Everyone sings a happy song.",
+          "momo_line": "I wear my hat. I am four years old.",
+          "bunny_line": "Happy birthday! You are four now.",
+          "momo_first": false
+        },
+        {
+          "title": "美好的一天",
+          "translation": "派对结束了，大家都很开心。",
+          "main_word": "ball",
+          "narration": "The party is over and the sun goes down.",
+          "momo_line": "Thank you for the nice day.",
+          "bunny_line": "Keep your ball, my good friend.",
+          "momo_first": true
+        }
+      ]
+    },
+    {
+      "scenes": [
+        {
+          "title": "生日帽",
+          "translation": "到了生日会，Momo 戴上了一顶黄色的帽子。",
+          "main_word": "hat",
+          "narration": "Momo and Lulu come to the birthday party.",
+          "momo_line": "Look at my new hat!",
+          "bunny_line": "It is a yellow hat. I like it.",
+          "momo_first": true
+        },
+        {
+          "title": "一杯果汁",
+          "translation": "Lulu 给大家倒了一杯果汁。",
+          "main_word": "cup",
+          "narration": "Lulu pours juice into a cup.",
+          "momo_line": "Can I hold the cup?",
+          "bunny_line": "Yes, you can. Be gentle with it.",
+          "momo_first": true
+        },
+        {
+          "title": "圆圆的球",
+          "translation": "他们在草地上玩球。",
+          "main_word": "ball",
+          "narration": "The friends play on the grass.",
+          "momo_line": "I kick the ball to you.",
+          "bunny_line": "I catch the ball. Hooray!",
+          "momo_first": true
+        },
+        {
+          "title": "泰迪熊",
+          "translation": "Momo 找到了一只泰迪熊，要轻轻抱它。",
+          "main_word": "teddy",
+          "narration": "A teddy sits under the table.",
+          "momo_line": "Look, a little teddy!",
+          "bunny_line": "Hug the teddy gently.",
+          "momo_first": true
+        },
+        {
+          "title": "唱生日歌",
+          "translation": "大家围在一起唱生日歌。",
+          "main_word": "hat",
+          "narration": "Everyone sings a happy song.",
+          "momo_line": "I wear my hat. I am four years old.",
+          "bunny_line": "Happy birthday! You are four now.",
+          "momo_first": false
+        },
+        {
+          "title": "美好的一天",
+          "translation": "派对结束了，大家都很开心。",
+          "main_word": "ball",
+          "narration": "The party is over and the sun goes down.",
+          "momo_line": "Thank you for the nice day.",
+          "bunny_line": "Keep your ball, my good friend.",
+          "momo_first": true
+        }
+      ]
+    }
+  ],
+  "dialogue": [
+    {
+      "rounds": [
+        {
+          "cn": "你想戴什么？",
+          "question": "What do you want to wear?",
+          "replies": [
+            {
+              "text": "I want to wear the hat.",
+              "cn": "我想戴这顶帽子。",
+              "image_word": "hat",
+              "follow_up": "The hat looks great on you!"
+            },
+            {
+              "text": "The hat, please.",
+              "cn": "请给我帽子。",
+              "image_word": "hat",
+              "follow_up": "Yes, put it on your head."
+            }
+          ]
+        },
+        {
+          "cn": "杯子里有什么？",
+          "question": "What is in the cup?",
+          "replies": [
+            {
+              "text": "There is juice.",
+              "cn": "有果汁。",
+              "image_word": "cup",
+              "follow_up": "Yummy! Drink it slowly."
+            },
+            {
+              "text": "I see juice in the cup.",
+              "cn": "我看见杯子里有果汁。",
+              "image_word": "cup",
+              "follow_up": "Hold the cup with two hands."
+            },
+            {
+              "text": "There is milk.",
+              "cn": "有牛奶。",
+              "image_word": "cup",
+              "follow_up": "Milk is good for you."
+            }
+          ]
+        },
+        {
+          "cn": "我们玩什么好呢？",
+          "question": "What shall we play?",
+          "replies": [
+            {
+              "text": "We can play with the ball.",
+              "cn": "我们玩球吧。",
+              "image_word": "ball",
+              "follow_up": "Great! I will catch it."
+            },
+            {
+              "text": "We can roll the ball.",
+              "cn": "我们可以滚球。",
+              "image_word": "ball",
+              "follow_up": "Here it comes. Roll, roll, roll!"
+            }
+          ]
+        },
+        {
+          "cn": "你想抱谁？",
+          "question": "Who do you want to hug?",
+          "replies": [
+            {
+              "text": "I hug the teddy.",
+              "cn": "我抱泰迪熊。",
+              "image_word": "teddy",
+              "follow_up": "The teddy likes a gentle hug."
+            },
+            {
+              "text": "I want the teddy.",
+              "cn": "我想抱泰迪熊。",
+              "image_word": "teddy",
+              "follow_up": "Here you are. Hug it softly."
+            }
+          ]
+        },
+        {
+          "cn": "你的帽子是什么颜色？",
+          "question": "What color is your hat?",
+          "replies": [
+            {
+              "text": "My hat is yellow.",
+              "cn": "我的帽子是黄色的。",
+              "image_word": "hat",
+              "follow_up": "Yellow is a lovely color."
+            },
+            {
+              "text": "It is green and yellow.",
+              "cn": "是绿色和黄色的。",
+              "image_word": "hat",
+              "follow_up": "Green and yellow look nice."
+            }
+          ]
+        },
+        {
+          "cn": "今天你最喜欢什么？",
+          "question": "What do you like best today?",
+          "replies": [
+            {
+              "text": "I like the ball.",
+              "cn": "我最喜欢球。",
+              "image_word": "ball",
+              "follow_up": "Me too! It is round and fun."
+            },
+            {
+              "text": "I like the cup.",
+              "cn": "我最喜欢杯子。",
+              "image_word": "cup",
+              "follow_up": "Nice cup! Drink your juice."
+            },
+            {
+              "text": "I like the teddy.",
+              "cn": "我最喜欢泰迪熊。",
+              "image_word": "teddy",
+              "follow_up": "The teddy is a good friend."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
