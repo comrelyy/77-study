@@ -6,7 +6,7 @@ import {MemoryStorage} from './store.mjs';
 import {serializeProgress,restoreProgress} from './progress.mjs?v=lesson-20261109';
 import {renderStory} from '../modules/story.mjs?v=story-audio-fix-20261103';
 import {renderDialogue} from '../modules/dialogue.mjs?v=integrated-20261103';
-import {renderGame} from '../modules/game.mjs?v=integrated-20261103';
+import {renderGame} from '../modules/game.mjs?v=lesson-20261109';
 import {renderSummary} from '../modules/summary.mjs';
 import {renderLesson} from '../modules/lesson.mjs?v=lesson-20261109';
 import {pendingInteractionGame} from './interaction-flow.mjs?v=integrated-20261103';
@@ -103,7 +103,7 @@ export class App{
     const state=this.states.get(id);if(!state.practiceId)state.practiceId=this.uuid();return state;
   }
   open(id,restart=false){if(this.store.persistent)return this.openPersistent(id,restart);return this.openLocal(id,restart);}
-  openLocal(id,restart=false){if(!labels[id])return;this.pause();this.moduleId=id;this.last=this.now();this.ended=false;if(!this.allowed()){this.view='rest';this.draw();return;}if(restart){this.states.delete(id);if(id==='dialogue'&&this.integratedInteractions||id==='lesson')this.states.delete('game');}this.view='module';this.stateFor(id);this.draw();if(!this.seenGuides.has(id)){this.seenGuides.add(id);this.guide(id);}}
+  openLocal(id,restart=false){if(!labels[id])return;this.pause();this.moduleId=id;this.last=this.now();this.ended=false;if(!this.allowed()){this.view='rest';this.draw();return;}if(restart){this.states.delete(id);if(id==='dialogue'&&this.integratedInteractions||id==='lesson')this.states.delete('game');}this.view='module';this.stateFor(id);this.draw();if(id==='lesson')this.body?.scrollIntoView?.({block:'start'});if(!this.seenGuides.has(id)){this.seenGuides.add(id);if(id!=='lesson')this.guide(id);}}
   async openPersistent(id,restart=false){
     if(!labels[id])return;if(this.failure){this.draw();return;}const opening=this.opening=(this.opening||0)+1;this.pause();
     if(this.closingTask)await this.closingTask;if(this.leaving)await this.leaving;if(opening!==this.opening)return;
@@ -219,7 +219,7 @@ export class App{
   async records(){if(this.store.persistent)await this.leavePersistent('records');this.pause();this.view='records';const generation=++this.generation;try{const data=await this.store.state();if(generation!==this.generation)return;this.data=data;this.applyState(data);this.draw();}catch{if(generation===this.generation){this.failure={read:'records',message:'记录暂时无法读取，请大人帮一下。'};this.draw();}}}
   async stickers(){if(this.store.persistent){await this.leavePersistent('connecting');try{this.applyState(await this.store.begin());}catch(error){if(error.state)this.applyState(error.state);this.failure={recover:true,message:error.message};this.draw();return;}}this.pause();this.view='stickers';this.last=this.now();const generation=++this.generation;try{const data=await this.store.state();if(generation!==this.generation)return;this.data=data;this.applyState(data);this.draw();}catch{if(generation===this.generation){this.failure={read:'stickers',message:'贴纸暂时无法读取，请大人帮一下。'};this.draw();}}}
   draw(){
-    this.pause();const generation=++this.generation;this.root.replaceChildren();this.status=node('p','', 'activity-status');this.status.id='message';this.status.setAttribute('role','status');
+    this.pause();const generation=++this.generation;this.root.replaceChildren();this.root.classList?.toggle('lesson-mode',this.view==='module'&&this.moduleId==='lesson');this.status=node('p','', 'activity-status');this.status.id='message';this.status.setAttribute('role','status');
     const homeActions=this.view==='home'&&!this.failure;
     const toolbar=node('div',undefined,homeActions?'scene-controls home-actions':'toolbar');toolbar.append(button('返回首页',()=>this.home()),button('结束 · 再见啦',()=>this.end()));if(!homeActions)this.root.append(toolbar);
     if(this.store.internal)this.root.append(node('p','内部整理样例 · 本页内存演练，未写入家庭记录','notice'));
@@ -241,7 +241,7 @@ export class App{
     if(this.view==='complete'){this.root.append(node('h1','这一段结束啦'),node('p','想再玩一次，还是看看其他玩法？'),actions(button('再玩一次',()=>this.open(this.moduleId,true),'primary'),button('看看其他玩法',()=>this.home()),button('结束',()=>this.end())),this.status);return;}
     if(this.view==='records'){this.drawRecords();return;}
     if(this.view==='stickers'){const earned=this.data.events.some(e=>e.kind==='sticker'&&e.payload?.theme===this.pack.sceneId);this.root.append(node('h1','我们的小小纪念'),image(earned?this.memoryImage():'illustrations/cloud.svg','', 'sticker'),node('p',this.pack.title),node('p',earned?'这次相伴已经收藏。':'还没有这段相伴的贴纸。听一个词或参与一次互动，就可能留下纪念。'));return;}
-    const nav=node('nav',undefined,'chapter-nav');for(const [id]of this.visibleModules()){const b=button(this.moduleLabel(id),()=>this.open(id),id===this.moduleId?'active':'');if(id===this.moduleId)b.setAttribute('aria-current','page');nav.append(b);}this.root.append(nav,speedControls(this));
+    if(this.moduleId==='lesson')this.root.append(speedControls(this));else{const nav=node('nav',undefined,'chapter-nav');for(const [id]of this.visibleModules()){const b=button(this.moduleLabel(id),()=>this.open(id),id===this.moduleId?'active':'');if(id===this.moduleId)b.setAttribute('aria-current','page');nav.append(b);}this.root.append(nav,speedControls(this));}
     this.body=node('section');this.body.id='stage';this.root.append(this.body);const s=this.stateFor(this.moduleId);
     const c={app:this,pack:this.pack,body:this.body,messageNode:this.status,active:()=>this.generation===generation,message:text=>this.message(text),redraw:()=>this.draw(),pause:()=>this.pause(),play:id=>this.playAsset(id),sequence:segments=>this.sequence(segments),word:id=>this.word(id),assetImage:(id,alt)=>this.assetImage(id,alt),hearWord:w=>this.hearWord(w),guide:id=>this.guide(id),complete:()=>this.complete(),lock:()=>this.body.querySelectorAll('button').forEach(b=>{if(b.textContent!=='暂停声音')b.disabled=true;}),emit:(kind,payload)=>this.emit(kind,payload,undefined,payload.mode==='story_listen'?()=>{const story=s.story??s;if(story.scene.id===payload.stepId&&story.fragment>=story.scene.segments.length&&story.heard.size===payload.heard.length)story.saved=true;}:null)};
     if(this.moduleId==='dialogue'&&this.integratedInteractions&&pendingInteractionGame(this.pack,s,this.stateFor('game'))){

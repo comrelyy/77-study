@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
+import {missingBootAssets} from './static/core/boot-assets.mjs';
 import {LessonState} from './static/core/lesson-state.mjs';
 import {serializeProgress,restoreProgress} from './static/core/progress.mjs';
 const require=createRequire(import.meta.url),park=require('./static/content/park.json'),tidy=require('./static/content/tidy.json');
@@ -94,4 +95,13 @@ test('failed restore leaves target untouched',()=>{
   const rec=record(park,s);rec.state.heard=['nope'];
   const t=new LessonState(park);assert.equal(restoreProgress(park,'lesson',t,rec),false);
   assert.equal(t.index,0);assert.equal(t.practiceId,null);
+});
+
+test('boot asset check skips lesson audio but still fails a missing ordinary asset',async()=>{
+  const lessonAsset=park.assets.find(a=>String(a.id).includes('.lesson.'));
+  assert(lessonAsset,'park has lesson assets');
+  const normal=park.assets.find(a=>!String(a.id).includes('.lesson.'));
+  assert.deepEqual(await missingBootAssets(park,async path=>path!==lessonAsset.path),[]);
+  assert.deepEqual(await missingBootAssets(park,async path=>path!==normal.path),[normal.path]);
+  assert.deepEqual(await missingBootAssets(park,async()=>false),park.assets.filter(a=>!String(a.id).includes('.lesson.')).map(a=>a.path));
 });

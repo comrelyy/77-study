@@ -5,6 +5,7 @@ import {MemoryStore} from './core/store.mjs';
 import {PersistentStore} from './core/persistent-store.mjs?v=reload-handover-20261103';
 import {BrowserActivity} from './core/browser-activity.mjs?v=reload-handover-20261103';
 import {node,button} from './core/dom.mjs';
+import {missingBootAssets} from './core/boot-assets.mjs';
 import {chooseScene,availableScenes} from './core/catalog.mjs?v=themes-20261031';
 async function json(path){const response=await fetch(path,{cache:'no-store'});if(!response.ok)throw Error('内容文件读取失败');return response.json();}
 async function loadPack(catalog,id){
@@ -32,7 +33,7 @@ async function boot(){
     }
     const selected=chooseScene(catalog,query.get('dev'),query.get('scene'));
     const pack=await loadPack(catalog,selected.id);
-    if(!selected.internal){const resources=await Promise.all(pack.assets.filter(a=>!String(a.id).includes('.lesson.')).map(async a=>(await fetch(a.path,{method:'HEAD'})).ok));if(resources.some(ok=>!ok))throw Error('主题本地图片或声音不完整');}
+    if(!selected.internal){if((await missingBootAssets(pack,async path=>(await fetch(path,{method:'HEAD'})).ok)).length)throw Error('主题本地图片或声音不完整');}
     if(catalog.mode==='development'){const notice=node('p',selected.internal?'内部演示 · 记录仅保留在本页':'开发体验版 · 不限体验时长，使用时间与记录由本机保存','migration-banner');document.body.insertBefore(notice,root);}
     const scenes=selected.internal?[]:await loadOptions();
     const player=new MomoAudio.Player({fallback:(text,done,rate=1)=>{if(!('speechSynthesis'in window)){done(false);return ()=>{};}const u=new SpeechSynthesisUtterance(text);u.lang=/[\u3400-\u9fff]/.test(text)?'zh-CN':'en-US';u.rate=.8*rate;u.onend=()=>done(true);u.onerror=()=>done(false);speechSynthesis.speak(u);return ()=>speechSynthesis.cancel();}});

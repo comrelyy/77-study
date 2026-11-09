@@ -1,8 +1,8 @@
-import {renderNovelGame} from './game-novel.mjs?v=integrated-20261103';
+import {renderNovelGame} from './game-novel.mjs?v=lesson-20261109';
 import {node,button,actions,image} from '../core/dom.mjs';
 export function renderGame(c,s){
   if(['scene-find','story-order'].includes(c.pack.modules.game.type))return renderNovelGame(c,s);
-  const game=c.pack.modules.game,q=game.questions[s.index],listening=game.type==='listen-pack',wrap=node('section',undefined,'center');wrap.append(node('div','LET’S PLAY · '+(s.index+1)+' / '+game.questions.length,'eyebrow'),node('h1',game.title||(listening?'帮 Momo 装好野餐篮':'把玩具送回自己的家')));
+  const game=c.pack.modules.game,q=game.questions[s.index],listening=game.type==='listen-pack',wrap=node('section',undefined,'center');if(!c.inLesson)wrap.append(node('div','LET’S PLAY · '+(s.index+1)+' / '+game.questions.length,'eyebrow'));wrap.append(node('h1',game.title||(listening?'帮 Momo 装好野餐篮':'把玩具送回自己的家')));
   if(!listening)wrap.append(node('p','这次请安放：'+c.word(q.target).cn));
   async function hear(){if(!s.help('repeat'))return;s.heard=false;if(!await c.app.checkpoint('game'))return;const ok=await c.play(c.word(q.target).audio);if(c.active()){s.heard=ok;c.redraw();}}
   if(listening)wrap.append(button('听听要找什么',hear,'primary'));

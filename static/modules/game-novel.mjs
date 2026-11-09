@@ -1,7 +1,7 @@
 import {node,button,actions} from '../core/dom.mjs';
 export function renderNovelGame(c,s){
   const game=c.pack.modules.game,q=game.questions[s.index],ordering=game.type==='story-order';
-  const wrap=node('section',undefined,'center');wrap.append(node('div','LET’S PLAY · '+(s.index+1)+' / '+game.questions.length,'eyebrow'),node('h1',game.title),node('p',q.instructions||game.instructions));
+  const wrap=node('section',undefined,'center');if(!c.inLesson)wrap.append(node('div','LET’S PLAY · '+(s.index+1)+' / '+game.questions.length,'eyebrow'));wrap.append(node('h1',game.title),node('p',q.instructions||game.instructions));
   async function save(){const task=s.confirm();c.lock();await task;if(c.active())c.redraw();}
   if(ordering){
     const slots=node('ol',undefined,'sequence-slots');slots.setAttribute('aria-label','我排好的故事');

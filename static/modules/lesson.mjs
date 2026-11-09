@@ -1,5 +1,5 @@
 import {node,button,image,actions} from '../core/dom.mjs';
-import {renderGame} from './game.mjs?v=integrated-20261103';
+import {renderGame} from './game.mjs?v=lesson-20261109';
 const ui=new WeakMap();
 const speakers={narrator:'故事',momo:'Momo 墨墨',bunny:'Lulu 露露',fox:'Fifi 菲菲',turtle:'Toto 托托'};
 function mine(s){if(!ui.has(s))ui.set(s,{wrong:null});return ui.get(s);}
@@ -136,7 +136,7 @@ export function renderLesson(c,s){
         }finally{c.app.advancingLesson=false;}
       })();
     };
-    renderGame({...c,advanceGame:finish,complete:finish},game);return;
+    renderGame({...c,inLesson:true,advanceGame:finish,complete:finish},game);return;
   }
   const wrap=node('section',undefined,'center lesson');wrap.append(progressBar(s));
   ({words:renderWords,story:renderStory,quiz:renderQuiz,fill:renderFill,reply:renderReply,match:renderMatch,end:renderEnd})[step.kind](c,s,wrap);

@@ -42,3 +42,8 @@ button{color:var(--ink);border:1.6px solid var(--pencil);border-radius:var(--ske
 @keyframes lesson-pulse{0%,100%{box-shadow:0 0 0 0 #94a37a00}50%{box-shadow:0 0 0 8px #94a37a40}}
 @media(max-width:650px){.lesson-match{grid-template-columns:1fr}.lesson-title,.lesson-question{font-size:22px}}
 @media(prefers-reduced-motion:reduce){.lesson-shake,.lesson-reveal{animation:none}.lesson-progress b{transition:none}}
+/* Lesson mode: the step's main action stays in the first screen (1366x768, 1280x720). */
+.lesson-mode #stage{scroll-margin-top:96px}
+.lesson-mode details.notice{margin:8px 0}
+.lesson-mode #stage .find-scene{margin:8px auto;width:min(100%,calc(40vh * 1.5))}
+.lesson-mode #stage .center h1{font-size:34px;margin:6px 0}
