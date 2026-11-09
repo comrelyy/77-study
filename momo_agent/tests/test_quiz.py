@@ -3,6 +3,7 @@ import copy
 import io
 import json
 import shutil
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -13,29 +14,9 @@ from momo_agent.__main__ import main
 from momo_agent.fake_model import FixtureModel
 from momo_agent.quiz import QuizDraft
 from momo_agent.repo import Repo
-from momo_agent.tests.test_output import FIXTURES, ROOT, make_repo
+from momo_agent.tests.test_output import FIXTURES, ROOT, make_repo, quiz_repo
 
 PARK_FIXTURE = FIXTURES / "park-quiz.json"
-
-
-def quiz_repo(tmp: str, *scenes: str) -> Path:
-    """A throwaway repo with the files lesson-build needs; the real repo is never written."""
-    root = make_repo(tmp)
-    shutil.copy(ROOT / "lesson-build.cjs", root / "lesson-build.cjs")
-    (root / "static/core").mkdir(parents=True)
-    shutil.copy(ROOT / "static/core/model.js", root / "static/core/model.js")
-    (root / "content-lesson").mkdir()
-    for scene in scenes:
-        src = ROOT / "content-lesson" / f"{scene}.json"
-        if src.exists():
-            shutil.copy(src, root / "content-lesson" / f"{scene}.json")
-    audio = ROOT / "static/audio"
-    (root / "static/audio").mkdir(exist_ok=True)
-    for scene in scenes:
-        manifest = audio / f"s4-{scene}-manifest.json"
-        if manifest.exists():
-            shutil.copy(manifest, root / "static/audio" / manifest.name)
-    return root
 
 
 def run(root: Path, *argv: str) -> tuple[int, str]:
@@ -140,6 +121,47 @@ class QuizCommandTest(unittest.TestCase):
             pack = json.loads((root / "static/content/park.json").read_text("utf-8"))
             self.assertIs(pack["lesson"]["reviewed"], False)
 
+    @unittest.skipUnless(sys.platform == "darwin", "macOS say only")
+    def test_generate_also_writes_quiz_overlay(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = quiz_repo(tmp)
+            code, out = run(root, "generate", "生日会", "--fixtures", str(FIXTURES / "birthday.json"), "--overwrite")
+            self.assertEqual(code, 0, out)
+            overlay = json.loads((root / "content-lesson/birthday.json").read_text("utf-8"))
+            self.assertIs(overlay["reviewed"], False)
+            pack = json.loads((root / "static/content/birthday.json").read_text("utf-8"))
+            self.assertIs(pack["lesson"]["reviewed"], False)
+            self.assertIn("quiz", [s["kind"] for s in pack["lesson"]["steps"]])
+            self.assertEqual(out.count("model calls"), 1)  # one shared budget summary
+            lesson_audio = [a for a in pack["assets"] if a["kind"] == "audio" and "/lesson/" in a["path"]]
+            self.assertTrue(lesson_audio)
+            self.assertTrue(all((root / "static" / a["path"]).exists() for a in lesson_audio))
+
+    @unittest.skipUnless(sys.platform == "darwin", "macOS say only")
+    def test_generate_never_approves(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = quiz_repo(tmp)
+            stale = root / "content-lesson/birthday.json"
+            stale.write_text(json.dumps({"reviewed": True}), "utf-8")
+            code, out = run(root, "generate", "生日会", "--fixtures", str(FIXTURES / "birthday.json"), "--overwrite")
+            self.assertEqual(code, 0, out)
+            self.assertIs(json.loads(stale.read_text("utf-8"))["reviewed"], False)
+
+    @unittest.skipUnless(sys.platform == "darwin", "macOS say only")
+    def test_generate_quiz_failure_keeps_theme_and_exits_1(self):
+        fx = json.loads((FIXTURES / "birthday.json").read_text("utf-8"))
+        fx["quiz"] = []
+        with tempfile.TemporaryDirectory() as tmp:
+            root = quiz_repo(tmp)
+            fixtures = Path(tmp) / "no-quiz.json"
+            fixtures.write_text(json.dumps(fx, ensure_ascii=False), "utf-8")
+            code, out = run(root, "generate", "生日会", "--fixtures", str(fixtures), "--overwrite")
+            self.assertEqual(code, 1, out)
+            self.assertIn("题目没有生成：", out)
+            self.assertIn("python -m momo_agent quiz birthday", out)
+            self.assertTrue((root / "static/content/birthday.json").exists())
+            self.assertFalse((root / "content-lesson/birthday.json").exists())
+
     def test_approve_sets_reviewed(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = quiz_repo(tmp)
@@ -184,6 +206,12 @@ class QuizCommandTest(unittest.TestCase):
             root = quiz_repo(tmp)
             shutil.copytree(ROOT / "static/audio/birthday", root / "static/audio/birthday")
             shutil.copy(ROOT / "static/audio/s4-birthday-manifest.json", root / "static/audio/")
+            # the repo now ships the birthday lesson audio; this test needs it missing
+            shutil.rmtree(root / "static/audio/birthday/lesson")
+            copied = root / "static/audio/s4-birthday-manifest.json"
+            shipped = json.loads(copied.read_text("utf-8"))
+            shipped["entries"] = [e for e in shipped["entries"] if "/lesson/" not in e["path"]]
+            copied.write_text(json.dumps(shipped), "utf-8")
             fixtures = str(FIXTURES / "birthday.json")
             with mock.patch.object(tts, "synthesize", fake_say):
                 code, out = run(root, "quiz", "birthday", "--fixtures", fixtures)

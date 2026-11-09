@@ -25,6 +25,26 @@ def make_repo(tmp: str) -> Path:
     return Path(tmp)
 
 
+def quiz_repo(tmp: str, *scenes: str) -> Path:
+    """A throwaway repo with the files lesson-build needs; the real repo is never written."""
+    root = make_repo(tmp)
+    shutil.copy(ROOT / "lesson-build.cjs", root / "lesson-build.cjs")
+    (root / "static/core").mkdir(parents=True)
+    shutil.copy(ROOT / "static/core/model.js", root / "static/core/model.js")
+    (root / "content-lesson").mkdir()
+    for scene in scenes:
+        src = ROOT / "content-lesson" / f"{scene}.json"
+        if src.exists():
+            shutil.copy(src, root / "content-lesson" / f"{scene}.json")
+    audio = ROOT / "static/audio"
+    (root / "static/audio").mkdir(exist_ok=True)
+    for scene in scenes:
+        manifest = audio / f"s4-{scene}-manifest.json"
+        if manifest.exists():
+            shutil.copy(manifest, root / "static/audio" / manifest.name)
+    return root
+
+
 def run_cli(root: Path, *argv: str) -> tuple[int, str]:
     out = io.StringIO()
     with contextlib.redirect_stdout(out):
@@ -45,7 +65,7 @@ class RenderSceneTest(unittest.TestCase):
 class EndToEndTest(unittest.TestCase):
     def test_birthday_generate_and_register(self):
         with tempfile.TemporaryDirectory() as tmp:
-            root = make_repo(tmp)
+            root = quiz_repo(tmp)
             before = json.loads((root / "static/content/catalog.json").read_text("utf-8"))
             code, out = run_cli(root, "generate", "生日会", "--fixtures", str(FIXTURES / "birthday.json"), "--overwrite")
             self.assertEqual(code, 0, out)

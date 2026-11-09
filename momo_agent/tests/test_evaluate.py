@@ -49,6 +49,16 @@ class EvaluateTest(unittest.IsolatedAsyncioTestCase):
         self.assertIn("RuntimeError", results[0].detail)
         self.assertEqual(results[1].status, "ok")
 
+    async def test_eval_checks_quiz(self):
+        fx = json.loads((ROOT / BIRTHDAY).read_text("utf-8"))
+        fx["quiz"][0]["questions"][0]["answer"] = "zebra"  # not in the scenes or options
+        fx["quiz"] = [fx["quiz"][0]] * 3  # the rewrites are no better
+        with tempfile.TemporaryDirectory() as tmp:
+            broken = Path(tmp) / "bad-quiz.json"
+            broken.write_text(json.dumps(fx, ensure_ascii=False), "utf-8")
+            results = await run_suite([{"topic": "生日会", "fixtures": str(broken), "expect": "ok"}], Repo(ROOT))
+        self.assertEqual(results[0].status, "invalid", results[0].detail)
+
     def test_report_format(self):
         result = CaseResult("生日会", "ok", "ok", "", {"story": 0, "dialogue": 0}, 4, 0, 0.123)
         lines = format_report([result]).splitlines()

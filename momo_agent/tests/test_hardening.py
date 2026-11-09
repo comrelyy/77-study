@@ -10,7 +10,7 @@ from momo_agent.fake_model import FixtureModel
 from momo_agent.llm import NoStructuredOutput, make_model
 from momo_agent.pipeline import SceneIdConflict, generate_lesson
 from momo_agent.repo import Repo
-from momo_agent.tests.test_output import FIXTURES, ROOT, make_repo, run_cli
+from momo_agent.tests.test_output import FIXTURES, ROOT, make_repo, quiz_repo, run_cli
 from momo_agent.vocab import plan_words
 from agentscope.message import TextBlock
 from agentscope.model import ChatResponse
@@ -122,7 +122,8 @@ class StagingTest(unittest.TestCase):
                 return {}
 
             with mock.patch("momo_agent.scenes.render_audio", fake_audio), \
-                    mock.patch("momo_agent.scenes.validate_pack", return_value=[]):
+                    mock.patch("momo_agent.scenes.validate_pack", return_value=[]), \
+                    mock.patch("momo_agent.__main__.write_quiz"):  # the quiz flow has its own tests
                 code, out = run_cli(root, "generate", "生日会", "--fixtures", str(FIXTURES / "birthday.json"), "--overwrite")
             self.assertEqual(code, 0, out)
             self.assertFalse(stale.exists())

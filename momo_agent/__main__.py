@@ -59,6 +59,14 @@ def generate(args, repo: Repo) -> int:
         print(f"Error: {err}")
         return 1
     register(repo)
+    try:
+        write_quiz(pack["sceneId"], fixtures, budget, repo)
+    except (BudgetExceeded, LessonInvalid, NoStructuredOutput, RuntimeError, subprocess.CalledProcessError) as err:
+        reason = "已达到模型费用上限" if isinstance(err, BudgetExceeded) else "；".join(getattr(err, "errors", [str(err)]))
+        print(f"主题 {pack['sceneId']} 已写入。")
+        print(f"题目没有生成：{reason}。可以稍后运行 python -m momo_agent quiz {pack['sceneId']}")
+        print(budget.summary())
+        return 1
     print(budget.summary())
     repeated = [f"{text}（{used[text]}）" for text in sorted(w["text"] for w in pack["words"]) if text in used]
     if repeated:
@@ -83,6 +91,20 @@ WINDOWS_AUDIO_HINT = ("手写主题的题目读音请在 Windows 上运行："
                       "powershell -NoProfile -ExecutionPolicy Bypass -File .\\make-s4-audio.ps1 -SceneId {}")
 
 
+def write_quiz(scene_id: str, fixtures: dict | None, budget: Budget, repo: Repo) -> None:
+    """Quiz flow shared by `quiz` and `generate`: draft, overlay (unreviewed), lesson build, missing audio."""
+    pack = repo.load_pack(scene_id)
+    draft = asyncio.run(quiz_mod.generate_quiz(pack, make_model("quiz", fixtures, budget)))
+    quiz_mod.write_overlay(pack, draft, repo)
+    print(quiz_mod.run_lesson_build(scene_id, repo), end="")
+    pack = repo.load_pack(scene_id)
+    if pack.get("generatedBy") == "momo_agent":
+        written = tts.render_missing_audio(pack, repo.root / "static")
+        print(f"Synthesised {len(written)} lesson audio files.")
+    else:
+        print(WINDOWS_AUDIO_HINT.format(scene_id))
+
+
 def quiz_command(args, repo: Repo) -> int:
     fixtures = json.loads(Path(args.fixtures).read_text("utf-8")) if args.fixtures else None
     if fixtures and os.environ.get("MOMO_LLM_PROVIDER", "fake") != "fake":
@@ -90,12 +112,9 @@ def quiz_command(args, repo: Repo) -> int:
     if args.scene_id not in repo.scene_ids():
         print(f"找不到主题：{args.scene_id}")
         return 1
-    pack = repo.load_pack(args.scene_id)
     budget = Budget.from_env()
     try:
-        draft = asyncio.run(quiz_mod.generate_quiz(pack, make_model("quiz", fixtures, budget)))
-        quiz_mod.write_overlay(pack, draft, repo)
-        print(quiz_mod.run_lesson_build(args.scene_id, repo), end="")
+        write_quiz(args.scene_id, fixtures, budget, repo)
     except BudgetExceeded:
         print("已达到模型费用上限，停止生成。")
         print(budget.summary())
@@ -108,12 +127,6 @@ def quiz_command(args, repo: Repo) -> int:
     except (NoStructuredOutput, RuntimeError, subprocess.CalledProcessError) as err:
         print(f"Error: {err}")
         return 1
-    pack = repo.load_pack(args.scene_id)
-    if pack.get("generatedBy") == "momo_agent":
-        written = tts.render_missing_audio(pack, repo.root / "static")
-        print(f"Synthesised {len(written)} lesson audio files.")
-    else:
-        print(WINDOWS_AUDIO_HINT.format(args.scene_id))
     print(budget.summary())
     print(f"题目已生成，未审核。预览后运行：python -m momo_agent quiz-approve {args.scene_id}")
     return 0

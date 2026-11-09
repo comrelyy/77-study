@@ -6,6 +6,7 @@ from dataclasses import dataclass
 
 from momo_agent.guard import Budget, BudgetExceeded, TopicRejected
 from momo_agent.llm import NoStructuredOutput, make_model
+from momo_agent import quiz as quiz_mod
 from momo_agent.pipeline import LessonInvalid, generate_lesson
 from momo_agent.repo import Repo
 from momo_agent.vocab import LessonRefused
@@ -36,8 +37,9 @@ async def run_case(case: dict, repo: Repo) -> CaseResult:
     status, detail = "ok", ""
     start = time.perf_counter()
     try:
-        await generate_lesson(case["topic"], repo, lambda role: make_model(role, fixtures, budget),
-                              overwrite=True, rewrites=rewrites)
+        pack = await generate_lesson(case["topic"], repo, lambda role: make_model(role, fixtures, budget),
+                                     overwrite=True, rewrites=rewrites)
+        await quiz_mod.generate_quiz(pack, make_model("quiz", fixtures, budget), rewrites)  # checked, never written
     except LessonRefused as err:
         status, detail = "refused", f"{len(err.found)} illustrated words found"
     except TopicRejected as err:
