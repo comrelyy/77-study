@@ -86,10 +86,15 @@ def render_missing_audio(pack: dict, static_root: Path) -> list[Path]:
     """Synthesize only the audio assets whose file is missing and add them to the theme's audio manifest."""
     static_root = Path(static_root)
     written, entries = [], []
+    # picnic is the original theme; its manifest has no scene id in the name (same rule as content-audit.cjs)
+    name = "s4-manifest.json" if pack["sceneId"] == "picnic" else f"s4-{pack['sceneId']}-manifest.json"
+    manifest_path = static_root / "audio" / name
     for asset in pack["assets"]:
         out = static_root / asset["path"]
         if asset["kind"] != "audio" or out.exists():
             continue
+        if not manifest_path.exists():
+            raise RuntimeError(f"找不到音频清单 {name}，无法登记新合成的题目读音。")
         out.parent.mkdir(parents=True, exist_ok=True)
         info = synthesize(asset["text"], asset["role"], out)
         entries.append({
@@ -99,7 +104,7 @@ def render_missing_audio(pack: dict, static_root: Path) -> list[Path]:
         })
         written.append(out)
     if entries:
-        path = static_root / "audio" / f"s4-{pack['sceneId']}-manifest.json"
+        path = manifest_path
         manifest = json.loads(path.read_text("utf-8"))
         new_ids = {e["id"] for e in entries}
         manifest["entries"] = [e for e in manifest["entries"] if e["id"] not in new_ids] + entries

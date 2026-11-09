@@ -1,14 +1,14 @@
 import {node,button,image,actions} from './dom.mjs?v=content-v2';
 import {speedControls,observationForm} from './enhancements.mjs';
 import {StoryState} from './story-state.mjs';
-import {LessonState} from './lesson-state.mjs';
+import {LessonState} from './lesson-state.mjs?v=lesson-20261110';
 import {MemoryStorage} from './store.mjs';
-import {serializeProgress,restoreProgress} from './progress.mjs?v=lesson-20261109';
+import {serializeProgress,restoreProgress} from './progress.mjs?v=lesson-20261110';
 import {renderStory} from '../modules/story.mjs?v=story-audio-fix-20261103';
 import {renderDialogue} from '../modules/dialogue.mjs?v=integrated-20261103';
-import {renderGame} from '../modules/game.mjs?v=lesson-20261109';
+import {renderGame} from '../modules/game.mjs?v=lesson-20261110';
 import {renderSummary} from '../modules/summary.mjs';
-import {renderLesson} from '../modules/lesson.mjs?v=lesson-20261109';
+import {renderLesson} from '../modules/lesson.mjs?v=lesson-20261110';
 import {pendingInteractionGame} from './interaction-flow.mjs?v=integrated-20261103';
 const labels={story:'主题小故事',dialogue:'情景对话',game:'游戏互动',summary:'单词汇总',lesson:'这节课'};
 const guides={story:'点“听英语故事”开始。暂停后可以继续当前小段；点图卡听单词。也可以跳过或结束。',dialogue:'点一个回答，小兔就会说出来，Momo 会接着说下一句。想先听听可以点示范回答。也可以暂停、跳过或结束。',summary:'点图卡听单词。可以重听，也可以随时结束，不用点完每一张。',lesson:'跟着进度条一步步来：听一听、答一答。答错了可以再试，随时可以暂停或结束。'};
@@ -253,7 +253,7 @@ export class App{
   }
   drawHome(toolbar){
     if(this.navigateScene)this.root.append(button('← 切换主题',()=>this.selectScene(null),'theme-back'));
-    const hero=node('section',undefined,'hero'),copy=node('div');copy.append(node('div','MOMO’S LITTLE DISCOVERIES','eyebrow'),node('h1',this.pack.title),node('p','选一段喜欢的玩法，跟着自己的节奏发现。不要求记住全部单词。'));const art=node('div',undefined,'picnic-scene');
+    const hero=node('section',undefined,'hero'),copy=node('div');copy.append(node('div','MOMO’S LITTLE DISCOVERIES','eyebrow'),node('h1',this.pack.title),node('p','跟着墨墨，用自己的节奏玩完这节课。不要求记住全部单词。'));const art=node('div',undefined,'picnic-scene');
     const first=this.pack.modules.story[0];
     if(first.illustration){art.className+=' content-home-scene'+(this.pack.sceneId==='tidy'?' tidy-home-scene':'');const picture=this.assetImage(first.illustration,this.pack.title);picture.className='picnic-illustration';art.append(picture);}
     else if(first.templateId==='picnic-meadow')art.append(image('picnic-sketch.svg','Momo 的生活小发现','picnic-illustration'));

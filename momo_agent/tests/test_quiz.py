@@ -174,6 +174,47 @@ class QuizCommandTest(unittest.TestCase):
             self.assertNotEqual(after["contentVersion"], before["contentVersion"])
             self.assertIs(json.loads((root / "content-lesson/park.json").read_text("utf-8"))["reviewed"], True)
 
+    def test_approve_refuses_invalid_overlay_and_keeps_it_unchanged(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = quiz_repo(tmp)
+            self.assertEqual(run(root, "quiz", "park", "--fixtures", str(PARK_FIXTURE))[0], 0)
+            path = root / "content-lesson/park.json"
+            overlay = json.loads(path.read_text("utf-8"))
+            overlay["replies"][0]["dialogueId"] = "park.dialogue.nowhere"
+            path.write_text(json.dumps(overlay, indent=2, ensure_ascii=False) + "\n", "utf-8")
+            before = path.read_text("utf-8")
+            code, out = run(root, "quiz-approve", "park")
+            self.assertEqual(code, 1, out)
+            self.assertEqual(path.read_text("utf-8"), before)
+            self.assertIs(json.loads(path.read_text("utf-8"))["reviewed"], False)
+            self.assertIs(json.loads((root / "static/content/park.json").read_text("utf-8"))["lesson"]["reviewed"], False)
+
+    def test_approve_restores_overlay_when_lesson_build_fails(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = quiz_repo(tmp)
+            self.assertEqual(run(root, "quiz", "park", "--fixtures", str(PARK_FIXTURE))[0], 0)
+            path = root / "content-lesson/park.json"
+            before = path.read_text("utf-8")
+            with mock.patch.object(quiz, "run_lesson_build", side_effect=RuntimeError("boom")):
+                code, out = run(root, "quiz-approve", "park")
+            self.assertEqual(code, 1, out)
+            self.assertIn("boom", out)
+            self.assertEqual(path.read_text("utf-8"), before)
+
+    def test_approve_refuses_stale_overlay(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = quiz_repo(tmp)
+            self.assertEqual(run(root, "quiz", "park", "--fixtures", str(PARK_FIXTURE))[0], 0)
+            path = root / "content-lesson/park.json"
+            overlay = json.loads(path.read_text("utf-8"))
+            overlay["sourceVersion"] = "0.0.1"
+            path.write_text(json.dumps(overlay, indent=2, ensure_ascii=False) + "\n", "utf-8")
+            before = path.read_text("utf-8")
+            code, out = run(root, "quiz-approve", "park")
+            self.assertEqual(code, 1, out)
+            self.assertIn("旧内容", out)
+            self.assertEqual(path.read_text("utf-8"), before)
+
     def test_approve_without_overlay_fails(self):
         with tempfile.TemporaryDirectory() as tmp:
             code, out = run(quiz_repo(tmp), "quiz-approve", "park")
@@ -233,6 +274,29 @@ class QuizCommandTest(unittest.TestCase):
 
 
 class RenderMissingAudioTest(unittest.TestCase):
+    def test_picnic_uses_unsuffixed_manifest_name(self):
+        pack = {"sceneId": "picnic", "contentVersion": "1.0.0", "assets": [
+            {"id": "picnic.b", "kind": "audio", "path": "audio/picnic/b.wav", "text": "new", "language": "en-US", "role": "bunny"}]}
+        with tempfile.TemporaryDirectory() as tmp:
+            static = Path(tmp)
+            (static / "audio").mkdir()
+            (static / "audio/s4-manifest.json").write_text(json.dumps({"entries": []}), "utf-8")
+            with mock.patch.object(tts, "synthesize", lambda t, r, out: Path(out).write_bytes(b"new") and
+                                   {"voice": "v", "rate": 1, "volume": 2}):
+                tts.render_missing_audio(pack, static)
+            entries = json.loads((static / "audio/s4-manifest.json").read_text("utf-8"))["entries"]
+            self.assertEqual([e["id"] for e in entries], ["picnic.b"])
+
+    def test_missing_manifest_is_a_clear_error(self):
+        pack = {"sceneId": "demo", "contentVersion": "1.0.0", "assets": [
+            {"id": "demo.b", "kind": "audio", "path": "audio/demo/b.wav", "text": "new", "language": "en-US", "role": "bunny"}]}
+        with tempfile.TemporaryDirectory() as tmp:
+            with mock.patch.object(tts, "synthesize", lambda t, r, out: Path(out).write_bytes(b"new") and
+                                   {"voice": "v", "rate": 1, "volume": 2}):
+                with self.assertRaisesRegex(RuntimeError, "s4-demo-manifest.json"):
+                    tts.render_missing_audio(pack, Path(tmp))
+
+
     def test_existing_files_are_kept_and_manifest_gets_new_entries(self):
         pack = {"sceneId": "demo", "contentVersion": "1.0.0", "assets": [
             {"id": "demo.a", "kind": "audio", "path": "audio/demo/a.wav", "text": "old", "language": "en-US", "role": "momo"},

@@ -56,6 +56,12 @@ test('restores attempts and reveal after reload',()=>{
   assert.equal(t.step.id,'park.lesson.quiz.2');assert.equal(t.attempts,1);assert.equal(t.practiceId,'p1');
   assert.equal(t.answer(wrongOf(t.step)).revealed,true);
 });
+test('game step is fresh when entered by advancing, not when restored at it',()=>{
+  const p=reviewed(),gameId=p.lesson.steps.find(x=>x.kind==='game').id,s=goto(new LessonState(p),gameId);
+  assert.equal(s.freshGame,true);
+  s.practiceId='p';const t=new LessonState(p);assert(restoreProgress(p,'lesson',t,record(p,s)));
+  assert.equal(t.step.id,gameId);assert.equal(t.freshGame,false);
+});
 test('restores match, reply round and story position',()=>{
   const p=reviewed();
   let s=goto(new LessonState(p),'park.lesson.match');s.practiceId='p';s.answer(s.target);

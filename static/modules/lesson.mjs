@@ -1,5 +1,5 @@
 import {node,button,image,actions} from '../core/dom.mjs';
-import {renderGame} from './game.mjs?v=lesson-20261109';
+import {renderGame} from './game.mjs?v=lesson-20261110';
 const ui=new WeakMap();
 const speakers={narrator:'故事',momo:'Momo 墨墨',bunny:'Lulu 露露',fox:'Fifi 菲菲',turtle:'Toto 托托'};
 function mine(s){if(!ui.has(s))ui.set(s,{wrong:null});return ui.get(s);}
@@ -125,6 +125,7 @@ export function renderLesson(c,s){
   const step=s.step;
   if(step.kind==='game'){
     c.body.append(progressBar(s));
+    if(s.freshGame){c.app.states.delete('game');s.freshGame=false;}
     const game=c.app.stateFor('game'),finish=()=>{
       if(c.app.advancingLesson)return;c.app.advancingLesson=true;
       return (async()=>{

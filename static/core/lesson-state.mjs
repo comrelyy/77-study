@@ -10,7 +10,7 @@ export class LessonState{
   get target(){const s=this.step;return s.kind==='match'?s.words.find(w=>!this.matched.has(w))??null:null;}
   enter(){
     const s=this.step;
-    this.attempts=0;this.revealed=false;this.done=false;this.matched=new Set();this.roundIndex=0;this.story=null;
+    this.attempts=0;this.revealed=false;this.done=false;this.matched=new Set();this.roundIndex=0;this.story=null;this.freshGame=s.kind==='game';
     if(s.kind==='reply')this.roundIndex=Math.floor(this.random()*s.rounds.length);
     if(s.kind==='story')this.story=new StoryState([this.pack.modules.story.find(x=>x.id===s.storyId)]);
   }

@@ -166,6 +166,13 @@ def approve(scene_id: str, repo: Repo) -> None:
     base = (pack.get("lesson") or {}).get("baseVersion") or pack["contentVersion"]
     if overlay["sourceVersion"] != base:
         raise RuntimeError(f"题目基于旧内容（{overlay['sourceVersion']}，当前 {base}），请先重新生成：python -m momo_agent quiz {scene_id}")
+    previous = path.read_text("utf-8")
     overlay["reviewed"] = True
     path.write_text(json.dumps(overlay, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    run_lesson_build(scene_id, repo)
+    try:
+        output = run_lesson_build(scene_id, repo)
+        if repo.load_pack(scene_id).get("lesson", {}).get("reviewed") is not True:
+            raise RuntimeError("题目没有通过检查，未能审核：\n" + output.strip())
+    except BaseException:
+        path.write_text(previous, encoding="utf-8")
+        raise

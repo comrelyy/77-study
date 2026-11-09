@@ -128,6 +128,7 @@ test('entering lesson does not autoplay',async()=>{
 test('home shows a single lesson entry',async()=>{
   const env=await fixture(require('./static/content/park.json'));
   const cards=env.root.querySelectorAll('.activity');assert.equal(cards.length,1);assert(cards[0].textContent.includes('开始这节课'));
+  assert(!env.root.textContent.includes('选一段'),'hero copy talks about one lesson');assert(env.root.querySelector('.hero').textContent.includes('这节课'));
   for(const old of ['主题小故事','情景互动','单词汇总','游戏互动'])assert(!env.root.textContent.includes(old),old);
   env.app.open('lesson');env.app.home();assert(env.root.querySelector('.activity').textContent.includes('继续上次'));
 });
@@ -155,6 +156,15 @@ test('one skip leaves the game step; a finished game does not trap it',async()=>
     assert.equal(s.step.kind,'game');if(finished){env.app.stateFor('game').finished=true;env.app.draw();}
     await button(env.root,'先跳过').fire();
     assert.equal(s.step.kind,'match');assert(env.app.stateFor('game').finished);
+  }
+});
+
+test('lesson game step starts from the first question even with old game progress',async()=>{
+  for(const done of [false,true]){
+    const env=await fixture(require('./static/content/park.json'));
+    const old=env.app.stateFor('game');old.index=1;old.done=done;old.finished=done;
+    env.app.open('lesson');await toStep(env,'game');
+    const game=env.app.stateFor('game');assert.equal(game.index,0,'done='+done);assert.equal(game.done,false);assert.equal(game.finished,false);
   }
 });
 

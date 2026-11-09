@@ -28,7 +28,7 @@ export function restoreProgress(pack,module,target,record){
       if(s.heard.some(id=>!ids.has(id)))return false;
       fragment=s.fragmentId===null?scene.segments.length:scene.segments.findIndex(x=>x.id===s.fragmentId);if(fragment<0)return false;
     }else if(s.heard.length||s.fragmentId!==null)return false;
-    target.index=index;target.enter();
+    target.index=index;target.enter();target.freshGame=false;
     if(kind==='story'){target.story.fragment=fragment;target.story.heard=new Set(s.heard);}
     target.attempts=s.attempts;target.revealed=s.revealed;target.matched=new Set(s.matched);target.roundIndex=s.roundIndex;
     target.done=kind==='match'&&step.words.every(w=>target.matched.has(w));

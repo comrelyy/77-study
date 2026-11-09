@@ -153,7 +153,11 @@ def quiz_audio_command(args, repo: Repo) -> int:
     if pack.get("generatedBy") != "momo_agent" and sys.platform != "win32":
         print(WINDOWS_AUDIO_HINT.format(args.scene_id))
         return 1
-    written = tts.render_missing_audio(pack, repo.root / "static")
+    try:
+        written = tts.render_missing_audio(pack, repo.root / "static")
+    except RuntimeError as err:
+        print(f"Error: {err}")
+        return 1
     print(f"Synthesised {len(written)} audio files.")
     return 0
 
