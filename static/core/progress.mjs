@@ -3,6 +3,10 @@ export function serializeProgress(pack,module,state){
   if(module==='story')Object.assign(value,{stepId:state.scene.id,fragmentId:state.scene.segments[state.fragment]?.id||null,heard:[...state.heard],completed:state.saved});
   else if(module==='dialogue')Object.assign(value,{stepId:pack.modules.dialogue[state.index].id,selectedId:state.selection,confirmed:state.done,speechIndex:state.speechIndex||0,demo:state.demo,history:state.events});
   else if(module==='game')Object.assign(value,{stepId:pack.modules.game.questions[state.index].id,selectedId:state.selection,order:state.candidates(),attempts:state.attempts,demonstrated:state.demoUsed,helpTypes:state.helpTypes,completed:state.done,finished:state.finished===true,...(pack.modules.game.type==='story-order'?{sequenceOrder:[...state.sequence]}:{})});
+  else if(module==='lesson'){
+    const st=state.story,seg=st?.scene.segments[st.fragment];
+    Object.assign(value,{stepId:state.step.id,attempts:state.attempts,revealed:state.revealed,matched:[...state.matched],roundIndex:state.roundIndex,heard:st?[...st.heard]:[],fragmentId:st?(seg?.id||null):null});
+  }
   else if(module==='summary')value.page=state.page||0;
   return {sceneId:pack.sceneId,moduleId:module,contentVersion:pack.contentVersion,state:value};
 }
@@ -11,6 +15,22 @@ export function restoreProgress(pack,module,target,record){
   if(record.contentVersion!==pack.contentVersion&&!pack.compatibleFrom.includes(record.contentVersion))return false;
   const s=record.state;if(typeof s.practiceId!=='string')return false;
   if(module==='summary'){if(!Number.isInteger(s.page)||s.page<0||s.page>=Math.ceil(pack.modules.summary.length/4))return false;target.page=s.page;}
+  else if(module==='lesson'){
+    const index=target.steps.findIndex(x=>x.id===s.stepId);if(index<0)return false;
+    const step=target.steps[index],kind=step.kind;
+    if(!Number.isInteger(s.attempts)||s.attempts<0||s.attempts>100000||typeof s.revealed!=='boolean')return false;
+    if(!Array.isArray(s.matched)||new Set(s.matched).size!==s.matched.length||s.matched.some(w=>kind!=='match'||!step.words.includes(w)))return false;
+    if(!Number.isInteger(s.roundIndex)||s.roundIndex<0||(kind==='reply'?s.roundIndex>=step.rounds.length:s.roundIndex!==0))return false;
+    if(!Array.isArray(s.heard))return false;
+    target.index=index;target.enter();
+    if(kind==='story'){
+      const scene=target.story.scene,ids=new Set(scene.segments.map(x=>x.id));
+      if(s.heard.some(id=>!ids.has(id)))return false;
+      const fragment=s.fragmentId===null?scene.segments.length:scene.segments.findIndex(x=>x.id===s.fragmentId);if(fragment<0)return false;
+      target.story.fragment=fragment;target.story.heard=new Set(s.heard);
+    }else if(s.heard.length||s.fragmentId!==null)return false;
+    target.attempts=s.attempts;target.revealed=s.revealed;target.matched=new Set(s.matched);target.roundIndex=s.roundIndex;
+  }
   else{
     const items=module==='story'?pack.modules.story:module==='dialogue'?pack.modules.dialogue:pack.modules.game.questions;
     const index=items.findIndex(x=>x.id===s.stepId);if(index<0)return false;
