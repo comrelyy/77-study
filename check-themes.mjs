@@ -22,7 +22,8 @@ test('normal previews, internal examples, and releases have separate entry rules
   assert.throws(()=>chooseScene(release,null,'tidy'));assert.throws(()=>chooseScene(release,'tidy'));
 });
 test('all selectable themes have real local images and valid non-silent audio',()=>{
-  for(const pack of packs){assert.deepEqual(validate(pack,{exists:path=>fs.existsSync('static/'+path)}).errors,[]);assert(pack.assets.every(a=>fs.existsSync('static/'+a.path)));const audio=require('./audio-validation.cjs').inspectPack(pack,'static');assert(audio.length>0&&audio.every(a=>a.valid));}
+  for(const pack of packs){assert.deepEqual(validate(pack,{exists:path=>fs.existsSync('static/'+path)}).errors,[]);const pending=a=>pack.lesson?.reviewed===false&&a.id.includes('.lesson.');// lesson audio awaits synthesis
+    assert(pack.assets.every(a=>pending(a)||fs.existsSync('static/'+a.path)));const audio=require('./audio-validation.cjs').inspectPack(pack,'static').filter(a=>!pending(a));assert(audio.length>0&&audio.every(a=>a.valid));}
   assert.deepEqual(new Set(tidy.modules.story.map(s=>s.mainWord)),new Set(tidy.words.map(w=>w.id)));
 });
 test('theme selection is a separate page with no activity modules',async()=>{

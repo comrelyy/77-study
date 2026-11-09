@@ -1,0 +1,1303 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "washing",
+  "contentVersion": "0.2.1",
+  "status": "draft",
+  "compatibleFrom": [
+    "0.2.0"
+  ],
+  "title": "和 Momo 洗漱啦",
+  "stickerId": "washing.sticker",
+  "learning": {
+    "goal": "理解洗漱先后顺序，表达需要与不舒服",
+    "function": "I need … / A little …, please.",
+    "revisit": [
+      "help",
+      "please"
+    ]
+  },
+  "assets": [
+    {
+      "id": "washing.momo",
+      "kind": "image",
+      "path": "illustrations/momo.svg"
+    },
+    {
+      "id": "washing.bunny",
+      "kind": "image",
+      "path": "illustrations/bunny.svg"
+    },
+    {
+      "id": "washing.wave",
+      "kind": "image",
+      "path": "illustrations/wave.svg"
+    },
+    {
+      "id": "washing.water.image",
+      "kind": "image",
+      "path": "illustrations/water.svg"
+    },
+    {
+      "id": "washing.water.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.water.audio.wav",
+      "text": "water",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.soap.image",
+      "kind": "image",
+      "path": "illustrations/soap.svg"
+    },
+    {
+      "id": "washing.soap.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.soap.audio.wav",
+      "text": "soap",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.towel.image",
+      "kind": "image",
+      "path": "illustrations/towel.svg"
+    },
+    {
+      "id": "washing.towel.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.towel.audio.wav",
+      "text": "towel",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.toothbrush.image",
+      "kind": "image",
+      "path": "illustrations/toothbrush.svg"
+    },
+    {
+      "id": "washing.toothbrush.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.toothbrush.audio.wav",
+      "text": "toothbrush",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.1.question.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.1.question.audio.wav",
+      "text": "Shall we wash our muddy hands?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.1.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.1.reply.1.audio.wav",
+      "text": "Yes, some water, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.1.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.1.reply.1.follow.audio.wav",
+      "text": "Let us ask our grown-up to check the water.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.1.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.1.reply.2.audio.wav",
+      "text": "Please help me reach.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.1.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.1.reply.2.follow.audio.wav",
+      "text": "I will call our grown-up to help.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.2.question.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.2.question.audio.wav",
+      "text": "What do we need for the bubbles?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.2.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.2.reply.1.audio.wav",
+      "text": "A little soap, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.2.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.2.reply.1.follow.audio.wav",
+      "text": "Rub your hands together with the soap.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.2.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.2.reply.2.audio.wav",
+      "text": "Can you show me?",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.2.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.2.reply.2.follow.audio.wav",
+      "text": "Watch my hands. We can rub them together.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.3.question.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.3.question.audio.wav",
+      "text": "How does the water feel?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.3.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.3.reply.1.audio.wav",
+      "text": "It feels comfortable.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.3.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.3.reply.1.follow.audio.wav",
+      "text": "Good. We can rinse the bubbles away.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.3.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.3.reply.2.audio.wav",
+      "text": "It feels too hot.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.3.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.3.reply.2.follow.audio.wav",
+      "text": "Stop and ask our grown-up for help.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.4.question.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.4.question.audio.wav",
+      "text": "Where can we dry our hands?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.4.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.4.reply.1.audio.wav",
+      "text": "With the towel.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.4.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.4.reply.1.follow.audio.wav",
+      "text": "Here it is. Pat your hands dry.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.4.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.4.reply.2.audio.wav",
+      "text": "My hands are still wet.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.4.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.4.reply.2.follow.audio.wav",
+      "text": "We can use the towel again.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.5.question.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.5.question.audio.wav",
+      "text": "Where does the towel go now?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.5.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.5.reply.1.audio.wav",
+      "text": "Back on the hook.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.5.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.5.reply.1.follow.audio.wav",
+      "text": "Yes. We leave it hanging to dry.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.5.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.5.reply.2.audio.wav",
+      "text": "Help me hang it, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.5.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.5.reply.2.follow.audio.wav",
+      "text": "I can help you reach the hook.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.6.question.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.6.question.audio.wav",
+      "text": "Is your toothbrush ready?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.6.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.6.reply.1.audio.wav",
+      "text": "Yes! Help me brush, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.6.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.6.reply.1.follow.audio.wav",
+      "text": "Let us ask our grown-up to help.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.6.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.6.reply.2.audio.wav",
+      "text": "Please wait a moment.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.dialogue.6.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.dialogue.6.reply.2.follow.audio.wav",
+      "text": "We can take a moment before brushing.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.fox",
+      "kind": "image",
+      "path": "illustrations/fox.svg"
+    },
+    {
+      "id": "washing.turtle",
+      "kind": "image",
+      "path": "illustrations/turtle.svg"
+    },
+    {
+      "id": "washing.story.1.image",
+      "kind": "image",
+      "path": "illustrations/scenes/washing-1.svg"
+    },
+    {
+      "id": "washing.story.1.intro.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.1.intro.audio.wav",
+      "text": "The friends come home with muddy hands.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.1.item.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.1.item.audio.wav",
+      "text": "Look at my hands!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.1.reply.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.1.reply.audio.wav",
+      "text": "Mine too. Let us wash them.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.2.image",
+      "kind": "image",
+      "path": "illustrations/scenes/washing-2.svg"
+    },
+    {
+      "id": "washing.story.2.intro.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.2.intro.audio.wav",
+      "text": "Momo picks up the soap.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.2.item.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.2.item.audio.wav",
+      "text": "I cannot make bubbles.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.2.reply.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.2.reply.audio.wav",
+      "text": "Rub both hands together. Like this.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.3.image",
+      "kind": "image",
+      "path": "illustrations/scenes/washing-3.svg"
+    },
+    {
+      "id": "washing.story.3.intro.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.3.intro.audio.wav",
+      "text": "Little bubbles slide towards the sink.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.3.item.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.3.item.audio.wav",
+      "text": "The bubbles are going away!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.3.reply.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.3.reply.audio.wav",
+      "text": "Yes. Now turn off the water.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.4.image",
+      "kind": "image",
+      "path": "illustrations/scenes/washing-4.svg"
+    },
+    {
+      "id": "washing.story.4.intro.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.4.intro.audio.wav",
+      "text": "There is one towel beside the sink.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.4.item.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.4.item.audio.wav",
+      "text": "Your turn first. I can wait.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.4.reply.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.4.reply.audio.wav",
+      "text": "Thank you. Now it is your turn.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.5.image",
+      "kind": "image",
+      "path": "illustrations/scenes/washing-5.svg"
+    },
+    {
+      "id": "washing.story.5.intro.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.5.intro.audio.wav",
+      "text": "Two toothbrushes wait in a cup.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.5.item.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.5.item.audio.wav",
+      "text": "Is this your toothbrush?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.5.reply.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.5.reply.audio.wav",
+      "text": "Yes. That one is yours.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.6.image",
+      "kind": "image",
+      "path": "illustrations/scenes/washing-6.svg"
+    },
+    {
+      "id": "washing.story.6.intro.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.6.intro.audio.wav",
+      "text": "The sink is clean again.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.6.item.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.6.item.audio.wav",
+      "text": "Soap here, toothbrush there. All done?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.6.reply.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.6.reply.audio.wav",
+      "text": "The towel needs its hook. Now we are done!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    }
+  ],
+  "words": [
+    {
+      "id": "en.water.drink",
+      "text": "water",
+      "cn": "水",
+      "image": "washing.water.image",
+      "audio": "washing.water.audio"
+    },
+    {
+      "id": "en.soap.wash",
+      "text": "soap",
+      "cn": "肥皂",
+      "image": "washing.soap.image",
+      "audio": "washing.soap.audio"
+    },
+    {
+      "id": "en.towel.wash",
+      "text": "towel",
+      "cn": "毛巾",
+      "image": "washing.towel.image",
+      "audio": "washing.towel.audio"
+    },
+    {
+      "id": "en.toothbrush.wash",
+      "text": "toothbrush",
+      "cn": "牙刷",
+      "image": "washing.toothbrush.image",
+      "audio": "washing.toothbrush.audio"
+    }
+  ],
+  "modules": {
+    "story": [
+      {
+        "id": "washing.story.1",
+        "title": "1. 带着泥点回来了",
+        "templateId": "daily-life",
+        "illustration": "washing.story.1.image",
+        "characters": [
+          "washing.momo",
+          "washing.bunny"
+        ],
+        "mainWord": "en.water.drink",
+        "hotspots": [
+          {
+            "word": "en.water.drink",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "玩过以后，两人的手都沾了泥。他们决定一起洗手。",
+        "segments": [
+          {
+            "id": "washing.story.1.intro",
+            "text": "The friends come home with muddy hands.",
+            "speaker": "narrator",
+            "audio": "washing.story.1.intro.audio"
+          },
+          {
+            "id": "washing.story.1.item",
+            "text": "Look at my hands!",
+            "speaker": "momo",
+            "audio": "washing.story.1.item.audio"
+          },
+          {
+            "id": "washing.story.1.reply",
+            "text": "Mine too. Let us wash them.",
+            "speaker": "bunny",
+            "audio": "washing.story.1.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "washing.story.2",
+        "title": "2. 泡泡太少啦",
+        "templateId": "daily-life",
+        "illustration": "washing.story.2.image",
+        "characters": [
+          "washing.momo",
+          "washing.bunny"
+        ],
+        "mainWord": "en.soap.wash",
+        "hotspots": [
+          {
+            "word": "en.soap.wash",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "Momo 拿起肥皂，却搓不出泡泡。Lulu 示范双手一起搓。",
+        "segments": [
+          {
+            "id": "washing.story.2.intro",
+            "text": "Momo picks up the soap.",
+            "speaker": "narrator",
+            "audio": "washing.story.2.intro.audio"
+          },
+          {
+            "id": "washing.story.2.item",
+            "text": "I cannot make bubbles.",
+            "speaker": "momo",
+            "audio": "washing.story.2.item.audio"
+          },
+          {
+            "id": "washing.story.2.reply",
+            "text": "Rub both hands together. Like this.",
+            "speaker": "bunny",
+            "audio": "washing.story.2.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "washing.story.3",
+        "title": "3. 泡泡冲走了",
+        "templateId": "daily-life",
+        "illustration": "washing.story.3.image",
+        "characters": [
+          "washing.momo",
+          "washing.bunny"
+        ],
+        "mainWord": "en.water.drink",
+        "hotspots": [
+          {
+            "word": "en.water.drink",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "清水冲走泡泡。Lulu 提醒洗好了就关水，Momo 伸手关上水龙头。",
+        "segments": [
+          {
+            "id": "washing.story.3.intro",
+            "text": "Little bubbles slide towards the sink.",
+            "speaker": "narrator",
+            "audio": "washing.story.3.intro.audio"
+          },
+          {
+            "id": "washing.story.3.item",
+            "text": "The bubbles are going away!",
+            "speaker": "momo",
+            "audio": "washing.story.3.item.audio"
+          },
+          {
+            "id": "washing.story.3.reply",
+            "text": "Yes. Now turn off the water.",
+            "speaker": "bunny",
+            "audio": "washing.story.3.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "washing.story.4",
+        "title": "4. 轮到谁擦手",
+        "templateId": "daily-life",
+        "illustration": "washing.story.4.image",
+        "characters": [
+          "washing.bunny",
+          "washing.momo"
+        ],
+        "mainWord": "en.towel.wash",
+        "hotspots": [
+          {
+            "word": "en.towel.wash",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "洗手台边有一条毛巾。Lulu 让 Momo 先擦，Momo 擦好后交给朋友。",
+        "segments": [
+          {
+            "id": "washing.story.4.intro",
+            "text": "There is one towel beside the sink.",
+            "speaker": "narrator",
+            "audio": "washing.story.4.intro.audio"
+          },
+          {
+            "id": "washing.story.4.item",
+            "text": "Your turn first. I can wait.",
+            "speaker": "bunny",
+            "audio": "washing.story.4.item.audio"
+          },
+          {
+            "id": "washing.story.4.reply",
+            "text": "Thank you. Now it is your turn.",
+            "speaker": "momo",
+            "audio": "washing.story.4.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "washing.story.5",
+        "title": "5. 找到各自的牙刷",
+        "templateId": "daily-life",
+        "illustration": "washing.story.5.image",
+        "characters": [
+          "washing.momo",
+          "washing.bunny"
+        ],
+        "mainWord": "en.toothbrush.wash",
+        "hotspots": [
+          {
+            "word": "en.toothbrush.wash",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "杯子里有两把牙刷。两人分清各自的牙刷，不拿错朋友的。",
+        "segments": [
+          {
+            "id": "washing.story.5.intro",
+            "text": "Two toothbrushes wait in a cup.",
+            "speaker": "narrator",
+            "audio": "washing.story.5.intro.audio"
+          },
+          {
+            "id": "washing.story.5.item",
+            "text": "Is this your toothbrush?",
+            "speaker": "momo",
+            "audio": "washing.story.5.item.audio"
+          },
+          {
+            "id": "washing.story.5.reply",
+            "text": "Yes. That one is yours.",
+            "speaker": "bunny",
+            "audio": "washing.story.5.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "washing.story.6",
+        "title": "6. 用品回到原处",
+        "templateId": "daily-life",
+        "illustration": "washing.story.6.image",
+        "characters": [
+          "washing.momo",
+          "washing.bunny"
+        ],
+        "mainWord": "en.towel.wash",
+        "hotspots": [
+          {
+            "word": "en.towel.wash",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "他们把肥皂、牙刷放好。Lulu 发现毛巾还没挂，两人一起完成最后一步。",
+        "segments": [
+          {
+            "id": "washing.story.6.intro",
+            "text": "The sink is clean again.",
+            "speaker": "narrator",
+            "audio": "washing.story.6.intro.audio"
+          },
+          {
+            "id": "washing.story.6.item",
+            "text": "Soap here, toothbrush there. All done?",
+            "speaker": "momo",
+            "audio": "washing.story.6.item.audio"
+          },
+          {
+            "id": "washing.story.6.reply",
+            "text": "The towel needs its hook. Now we are done!",
+            "speaker": "bunny",
+            "audio": "washing.story.6.reply.audio"
+          }
+        ]
+      }
+    ],
+    "dialogue": [
+      {
+        "id": "washing.dialogue.1",
+        "cn": "我们洗洗沾了泥的手好吗？",
+        "question": [
+          {
+            "id": "washing.dialogue.1.question",
+            "text": "Shall we wash our muddy hands?",
+            "audio": "washing.dialogue.1.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "washing.dialogue.1.reply.1",
+            "text": "Yes, some water, please.",
+            "cn": "好，请放一点水。",
+            "image": "washing.water.image",
+            "audio": "washing.dialogue.1.reply.1.audio",
+            "followUp": [
+              {
+                "id": "washing.dialogue.1.reply.1.follow",
+                "text": "Let us ask our grown-up to check the water.",
+                "audio": "washing.dialogue.1.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "washing.dialogue.1.reply.2",
+            "text": "Please help me reach.",
+            "cn": "请帮我够到洗手台。",
+            "image": "washing.water.image",
+            "audio": "washing.dialogue.1.reply.2.audio",
+            "followUp": [
+              {
+                "id": "washing.dialogue.1.reply.2.follow",
+                "text": "I will call our grown-up to help.",
+                "audio": "washing.dialogue.1.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "washing.dialogue.2",
+        "cn": "我们用什么搓泡泡呢？",
+        "question": [
+          {
+            "id": "washing.dialogue.2.question",
+            "text": "What do we need for the bubbles?",
+            "audio": "washing.dialogue.2.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "washing.dialogue.2.reply.1",
+            "text": "A little soap, please.",
+            "cn": "请给我一点肥皂。",
+            "image": "washing.soap.image",
+            "audio": "washing.dialogue.2.reply.1.audio",
+            "followUp": [
+              {
+                "id": "washing.dialogue.2.reply.1.follow",
+                "text": "Rub your hands together with the soap.",
+                "audio": "washing.dialogue.2.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "washing.dialogue.2.reply.2",
+            "text": "Can you show me?",
+            "cn": "你能示范一下吗？",
+            "image": "washing.soap.image",
+            "audio": "washing.dialogue.2.reply.2.audio",
+            "followUp": [
+              {
+                "id": "washing.dialogue.2.reply.2.follow",
+                "text": "Watch my hands. We can rub them together.",
+                "audio": "washing.dialogue.2.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "washing.dialogue.3",
+        "cn": "水感觉怎么样？",
+        "question": [
+          {
+            "id": "washing.dialogue.3.question",
+            "text": "How does the water feel?",
+            "audio": "washing.dialogue.3.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "washing.dialogue.3.reply.1",
+            "text": "It feels comfortable.",
+            "cn": "感觉很舒服。",
+            "image": "washing.water.image",
+            "audio": "washing.dialogue.3.reply.1.audio",
+            "followUp": [
+              {
+                "id": "washing.dialogue.3.reply.1.follow",
+                "text": "Good. We can rinse the bubbles away.",
+                "audio": "washing.dialogue.3.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "washing.dialogue.3.reply.2",
+            "text": "It feels too hot.",
+            "cn": "感觉太烫了。",
+            "image": "washing.water.image",
+            "audio": "washing.dialogue.3.reply.2.audio",
+            "followUp": [
+              {
+                "id": "washing.dialogue.3.reply.2.follow",
+                "text": "Stop and ask our grown-up for help.",
+                "audio": "washing.dialogue.3.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "washing.dialogue.4",
+        "cn": "我们在哪里擦干手呢？",
+        "question": [
+          {
+            "id": "washing.dialogue.4.question",
+            "text": "Where can we dry our hands?",
+            "audio": "washing.dialogue.4.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "washing.dialogue.4.reply.1",
+            "text": "With the towel.",
+            "cn": "用毛巾擦。",
+            "image": "washing.towel.image",
+            "audio": "washing.dialogue.4.reply.1.audio",
+            "followUp": [
+              {
+                "id": "washing.dialogue.4.reply.1.follow",
+                "text": "Here it is. Pat your hands dry.",
+                "audio": "washing.dialogue.4.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "washing.dialogue.4.reply.2",
+            "text": "My hands are still wet.",
+            "cn": "我的手还湿着。",
+            "image": "washing.towel.image",
+            "audio": "washing.dialogue.4.reply.2.audio",
+            "followUp": [
+              {
+                "id": "washing.dialogue.4.reply.2.follow",
+                "text": "We can use the towel again.",
+                "audio": "washing.dialogue.4.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "washing.dialogue.5",
+        "cn": "毛巾用完放在哪里？",
+        "question": [
+          {
+            "id": "washing.dialogue.5.question",
+            "text": "Where does the towel go now?",
+            "audio": "washing.dialogue.5.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "washing.dialogue.5.reply.1",
+            "text": "Back on the hook.",
+            "cn": "挂回挂钩上。",
+            "image": "washing.towel.image",
+            "audio": "washing.dialogue.5.reply.1.audio",
+            "followUp": [
+              {
+                "id": "washing.dialogue.5.reply.1.follow",
+                "text": "Yes. We leave it hanging to dry.",
+                "audio": "washing.dialogue.5.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "washing.dialogue.5.reply.2",
+            "text": "Help me hang it, please.",
+            "cn": "请帮我挂好。",
+            "image": "washing.towel.image",
+            "audio": "washing.dialogue.5.reply.2.audio",
+            "followUp": [
+              {
+                "id": "washing.dialogue.5.reply.2.follow",
+                "text": "I can help you reach the hook.",
+                "audio": "washing.dialogue.5.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "washing.dialogue.6",
+        "cn": "你的牙刷准备好了吗？",
+        "question": [
+          {
+            "id": "washing.dialogue.6.question",
+            "text": "Is your toothbrush ready?",
+            "audio": "washing.dialogue.6.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "washing.dialogue.6.reply.1",
+            "text": "Yes! Help me brush, please.",
+            "cn": "好啦，请帮我刷牙。",
+            "image": "washing.toothbrush.image",
+            "audio": "washing.dialogue.6.reply.1.audio",
+            "followUp": [
+              {
+                "id": "washing.dialogue.6.reply.1.follow",
+                "text": "Let us ask our grown-up to help.",
+                "audio": "washing.dialogue.6.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "washing.dialogue.6.reply.2",
+            "text": "Please wait a moment.",
+            "cn": "请等一下。",
+            "image": "washing.toothbrush.image",
+            "audio": "washing.dialogue.6.reply.2.audio",
+            "followUp": [
+              {
+                "id": "washing.dialogue.6.reply.2.follow",
+                "text": "We can take a moment before brushing.",
+                "audio": "washing.dialogue.6.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "game": {
+      "type": "story-order",
+      "title": "把我们的故事接起来",
+      "instructions": "听完故事后，按提示选卡片排顺序。可以撤回、请朋友示范或跳过。",
+      "questions": [
+        {
+          "id": "washing.game.1",
+          "target": "en.towel.wash",
+          "options": [
+            "en.soap.wash",
+            "en.water.drink",
+            "en.towel.wash"
+          ],
+          "solution": [
+            "en.soap.wash",
+            "en.water.drink",
+            "en.towel.wash"
+          ],
+          "instructions": "把洗手的过程接起来：先搓肥皂，再冲净泡泡，最后擦干手。",
+          "labels": {
+            "en.soap.wash": "搓搓肥皂",
+            "en.water.drink": "冲净泡泡",
+            "en.towel.wash": "擦干小手"
+          }
+        }
+      ]
+    },
+    "summary": [
+      "en.water.drink",
+      "en.soap.wash",
+      "en.towel.wash",
+      "en.toothbrush.wash"
+    ]
+  },
+  "interaction": {
+    "gameAfterDialogue": [
+      4
+    ],
+    "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.2.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "washing.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.water.drink",
+          "en.soap.wash",
+          "en.towel.wash",
+          "en.toothbrush.wash"
+        ]
+      },
+      {
+        "id": "washing.lesson.story.1",
+        "kind": "story",
+        "storyId": "washing.story.1"
+      },
+      {
+        "id": "washing.lesson.story.2",
+        "kind": "story",
+        "storyId": "washing.story.2"
+      },
+      {
+        "id": "washing.lesson.story.3",
+        "kind": "story",
+        "storyId": "washing.story.3"
+      },
+      {
+        "id": "washing.lesson.story.4",
+        "kind": "story",
+        "storyId": "washing.story.4"
+      },
+      {
+        "id": "washing.lesson.story.5",
+        "kind": "story",
+        "storyId": "washing.story.5"
+      },
+      {
+        "id": "washing.lesson.story.6",
+        "kind": "story",
+        "storyId": "washing.story.6"
+      },
+      {
+        "id": "washing.lesson.fill",
+        "kind": "fill",
+        "segmentId": "washing.story.2.intro",
+        "before": "Momo picks up the ",
+        "after": ".",
+        "image": "washing.story.2.image",
+        "options": [
+          "en.water.drink",
+          "en.soap.wash",
+          "en.towel.wash",
+          "en.toothbrush.wash"
+        ],
+        "answer": "en.soap.wash"
+      },
+      {
+        "id": "washing.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "washing.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.water.drink",
+          "en.soap.wash",
+          "en.towel.wash",
+          "en.toothbrush.wash"
+        ]
+      },
+      {
+        "id": "washing.lesson.end",
+        "kind": "end"
+      }
+    ]
+  }
+}

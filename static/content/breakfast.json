@@ -1,9 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "breakfast",
-  "contentVersion": "0.2.0",
+  "contentVersion": "0.2.1",
   "status": "draft",
-  "compatibleFrom": [],
+  "compatibleFrom": [
+    "0.2.0"
+  ],
   "title": "和 Momo 吃早餐",
   "stickerId": "breakfast.sticker",
   "learning": {
@@ -1217,5 +1219,85 @@
       5
     ],
     "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.2.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "breakfast.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.bread.food",
+          "en.milk.drink",
+          "en.egg.food",
+          "en.cup.container"
+        ]
+      },
+      {
+        "id": "breakfast.lesson.story.1",
+        "kind": "story",
+        "storyId": "breakfast.story.1"
+      },
+      {
+        "id": "breakfast.lesson.story.2",
+        "kind": "story",
+        "storyId": "breakfast.story.2"
+      },
+      {
+        "id": "breakfast.lesson.story.3",
+        "kind": "story",
+        "storyId": "breakfast.story.3"
+      },
+      {
+        "id": "breakfast.lesson.story.4",
+        "kind": "story",
+        "storyId": "breakfast.story.4"
+      },
+      {
+        "id": "breakfast.lesson.story.5",
+        "kind": "story",
+        "storyId": "breakfast.story.5"
+      },
+      {
+        "id": "breakfast.lesson.story.6",
+        "kind": "story",
+        "storyId": "breakfast.story.6"
+      },
+      {
+        "id": "breakfast.lesson.fill",
+        "kind": "fill",
+        "segmentId": "breakfast.story.1.item",
+        "before": "",
+        "after": ", egg... something is missing.",
+        "image": "breakfast.story.1.image",
+        "options": [
+          "en.bread.food",
+          "en.milk.drink",
+          "en.egg.food",
+          "en.cup.container"
+        ],
+        "answer": "en.bread.food"
+      },
+      {
+        "id": "breakfast.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "breakfast.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.bread.food",
+          "en.milk.drink",
+          "en.egg.food",
+          "en.cup.container"
+        ]
+      },
+      {
+        "id": "breakfast.lesson.end",
+        "kind": "end"
+      }
+    ]
   }
 }

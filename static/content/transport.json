@@ -1,9 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "transport",
-  "contentVersion": "0.1.0",
+  "contentVersion": "0.1.1",
   "status": "draft",
-  "compatibleFrom": [],
+  "compatibleFrom": [
+    "0.1.0"
+  ],
   "title": "和 Momo 坐公共汽车",
   "stickerId": "transport.sticker",
   "learning": {
@@ -1268,5 +1270,85 @@
       4
     ],
     "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.1.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "transport.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.bus.vehicle",
+          "en.ticket.travel",
+          "en.bag.container",
+          "en.seat.furniture"
+        ]
+      },
+      {
+        "id": "transport.lesson.story.1",
+        "kind": "story",
+        "storyId": "transport.story.1"
+      },
+      {
+        "id": "transport.lesson.story.2",
+        "kind": "story",
+        "storyId": "transport.story.2"
+      },
+      {
+        "id": "transport.lesson.story.3",
+        "kind": "story",
+        "storyId": "transport.story.3"
+      },
+      {
+        "id": "transport.lesson.story.4",
+        "kind": "story",
+        "storyId": "transport.story.4"
+      },
+      {
+        "id": "transport.lesson.story.5",
+        "kind": "story",
+        "storyId": "transport.story.5"
+      },
+      {
+        "id": "transport.lesson.story.6",
+        "kind": "story",
+        "storyId": "transport.story.6"
+      },
+      {
+        "id": "transport.lesson.fill",
+        "kind": "fill",
+        "segmentId": "transport.story.1.intro",
+        "before": "Momo and Lulu arrive at the ",
+        "after": " stop.",
+        "image": "transport.story.1.image",
+        "options": [
+          "en.bus.vehicle",
+          "en.ticket.travel",
+          "en.bag.container",
+          "en.seat.furniture"
+        ],
+        "answer": "en.bus.vehicle"
+      },
+      {
+        "id": "transport.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "transport.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.bus.vehicle",
+          "en.ticket.travel",
+          "en.bag.container",
+          "en.seat.furniture"
+        ]
+      },
+      {
+        "id": "transport.lesson.end",
+        "kind": "end"
+      }
+    ]
   }
 }

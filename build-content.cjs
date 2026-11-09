@@ -3,6 +3,7 @@ const {validate}=require('./static/core/model.js');
 const {seasons,createPack,enhanceExisting}=require('./launch-content.cjs');
 const extras=require('./extra-themes.cjs').addExtraThemes();
 const {applyNarrative,applyGames}=require('./content-v2.cjs');
+const {finalizeLesson,stripLesson}=require('./lesson-build.cjs');
 const packs=[];
 // Archive every current package before regeneration, including the six new themes.
 const existingCatalog=require('./static/content/catalog.json');
@@ -28,20 +29,27 @@ for(const pack of packs){
   // Reuse only unchanged spoken content. Changed lines get new versioned paths;
   // an old audio file must never silently stand in for a new transcript.
   const current=path.join(__dirname,'static/content',pack.sceneId+'.json');
+  let previous=null;
   if(fs.existsSync(current)){
-    const previous=JSON.parse(fs.readFileSync(current,'utf8'));
+    previous=JSON.parse(fs.readFileSync(current,'utf8'));
     for(const asset of pack.assets.filter(a=>a.kind==='audio')){
       const old=previous.assets.find(a=>a.id===asset.id&&a.kind==='audio'&&a.text===asset.text&&a.role===asset.role&&a.language===asset.language);
       if(old)asset.path=old.path;
     }
   }
+  const overlayPath=path.join(__dirname,'content-lesson',pack.sceneId+'.json');
+  const overlay=fs.existsSync(overlayPath)?JSON.parse(fs.readFileSync(overlayPath,'utf8')):null;
+  const finalized=finalizeLesson(stripLesson(pack),overlay,previous);
+  packs[packs.indexOf(pack)]=finalized.pack;
+  for(const w of finalized.warnings)console.warn('lesson '+pack.sceneId+': '+w);
 }
 for(const pack of packs)fs.writeFileSync(path.join(__dirname,'static/content',pack.sceneId+'.json'),JSON.stringify(pack,null,2)+'\n');
 const catalogPath=path.join(__dirname,'static/content/catalog.json');
 const catalog=JSON.parse(fs.readFileSync(catalogPath,'utf8'));
 // Preview expansion never approves release or changes the chosen runtime mode.
 const order=['dressing','washing','breakfast','cooking','tidy','picnic','park','transport','shopping','weather','gardening','bedtime'];
-catalog.previewScenes=order;
+// Keep agent-generated themes (e.g. birthday) that this script does not own.
+catalog.previewScenes=[...order,...catalog.previewScenes.filter(id=>!order.includes(id))];
 catalog.requiredReleaseScenes=order;
 for(const id of order)catalog.scenes[id]='content/'+id+'.json';
 fs.writeFileSync(catalogPath,JSON.stringify(catalog,null,2)+'\n');

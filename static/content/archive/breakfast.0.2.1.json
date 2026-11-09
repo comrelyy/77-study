@@ -1,0 +1,1303 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "breakfast",
+  "contentVersion": "0.2.1",
+  "status": "draft",
+  "compatibleFrom": [
+    "0.2.0"
+  ],
+  "title": "和 Momo 吃早餐",
+  "stickerId": "breakfast.sticker",
+  "learning": {
+    "goal": "表达食物偏好、拒绝与用餐需要",
+    "function": "Some …, please. / No, thank you.",
+    "revisit": [
+      "bread",
+      "milk"
+    ]
+  },
+  "assets": [
+    {
+      "id": "breakfast.momo",
+      "kind": "image",
+      "path": "illustrations/momo.svg"
+    },
+    {
+      "id": "breakfast.bunny",
+      "kind": "image",
+      "path": "illustrations/bunny.svg"
+    },
+    {
+      "id": "breakfast.wave",
+      "kind": "image",
+      "path": "illustrations/wave.svg"
+    },
+    {
+      "id": "breakfast.bread.image",
+      "kind": "image",
+      "path": "illustrations/bread.svg"
+    },
+    {
+      "id": "breakfast.bread.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.bread.audio.wav",
+      "text": "bread",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.milk.image",
+      "kind": "image",
+      "path": "illustrations/milk.svg"
+    },
+    {
+      "id": "breakfast.milk.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.milk.audio.wav",
+      "text": "milk",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.egg.image",
+      "kind": "image",
+      "path": "illustrations/egg.svg"
+    },
+    {
+      "id": "breakfast.egg.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.egg.audio.wav",
+      "text": "egg",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.cup.image",
+      "kind": "image",
+      "path": "illustrations/cup.svg"
+    },
+    {
+      "id": "breakfast.cup.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.cup.audio.wav",
+      "text": "cup",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.1.question.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.1.question.audio.wav",
+      "text": "Would you like some bread?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.1.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.1.reply.1.audio.wav",
+      "text": "Some bread, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.1.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.1.reply.1.follow.audio.wav",
+      "text": "Here is a piece for you.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.1.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.1.reply.2.audio.wav",
+      "text": "No, thank you.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.1.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.1.reply.2.follow.audio.wav",
+      "text": "That is okay. You can choose something else.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.2.question.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.2.question.audio.wav",
+      "text": "What would you like in your cup?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.2.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.2.reply.1.audio.wav",
+      "text": "A little milk, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.2.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.2.reply.1.follow.audio.wav",
+      "text": "Our grown-up can help us pour it.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.2.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.2.reply.2.audio.wav",
+      "text": "No milk, thank you.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.2.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.2.reply.2.follow.audio.wav",
+      "text": "That is okay. Tell our grown-up what you need.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.3.question.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.3.question.audio.wav",
+      "text": "Shall we share this bread?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.3.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.3.reply.1.audio.wav",
+      "text": "Yes, a small piece, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.3.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.3.reply.1.follow.audio.wav",
+      "text": "I will put your piece on your plate.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.3.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.3.reply.2.audio.wav",
+      "text": "I have enough, thank you.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.3.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.3.reply.2.follow.audio.wav",
+      "text": "You can stop whenever you have had enough.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.4.question.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.4.question.audio.wav",
+      "text": "Would you like the egg now?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.4.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.4.reply.1.audio.wav",
+      "text": "Is it too hot?",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.4.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.4.reply.1.follow.audio.wav",
+      "text": "Let us check with our grown-up first.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.4.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.4.reply.2.audio.wav",
+      "text": "I will wait a little.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.4.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.4.reply.2.follow.audio.wav",
+      "text": "We can wait until it is comfortable to eat.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.5.question.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.5.question.audio.wav",
+      "text": "Can you pass the cup, please?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.5.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.5.reply.1.audio.wav",
+      "text": "Here you are.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.5.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.5.reply.1.follow.audio.wav",
+      "text": "Thank you. I will hold it with both hands.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.5.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.5.reply.2.audio.wav",
+      "text": "Please help me carry it.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.5.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.5.reply.2.follow.audio.wav",
+      "text": "Let us carry it carefully together.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.6.question.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.6.question.audio.wav",
+      "text": "Have you had enough breakfast?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.6.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.6.reply.1.audio.wav",
+      "text": "Yes, thank you.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.6.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.6.reply.1.follow.audio.wav",
+      "text": "Let us put our things away.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.6.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.6.reply.2.audio.wav",
+      "text": "A little more bread, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.dialogue.6.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.dialogue.6.reply.2.follow.audio.wav",
+      "text": "Here is another small piece.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.fox",
+      "kind": "image",
+      "path": "illustrations/fox.svg"
+    },
+    {
+      "id": "breakfast.turtle",
+      "kind": "image",
+      "path": "illustrations/turtle.svg"
+    },
+    {
+      "id": "breakfast.story.1.image",
+      "kind": "image",
+      "path": "illustrations/scenes/breakfast-1.svg"
+    },
+    {
+      "id": "breakfast.story.1.intro.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.1.intro.audio.wav",
+      "text": "The table is almost ready.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.1.item.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.1.item.audio.wav",
+      "text": "Bread, egg... something is missing.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.1.reply.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.1.reply.audio.wav",
+      "text": "Our cup! I will bring it.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.2.image",
+      "kind": "image",
+      "path": "illustrations/scenes/breakfast-2.svg"
+    },
+    {
+      "id": "breakfast.story.2.intro.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.2.intro.audio.wav",
+      "text": "Lulu has bread, but Momo has none.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.2.item.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.2.item.audio.wav",
+      "text": "May I have some bread?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.2.reply.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.2.reply.audio.wav",
+      "text": "Of course. This piece is for you.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.3.image",
+      "kind": "image",
+      "path": "illustrations/scenes/breakfast-3.svg"
+    },
+    {
+      "id": "breakfast.story.3.intro.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.3.intro.audio.wav",
+      "text": "A grown-up helps pour the milk.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.3.item.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.3.item.audio.wav",
+      "text": "A little milk, please.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.3.reply.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.3.reply.audio.wav",
+      "text": "Say stop when you have enough.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.4.image",
+      "kind": "image",
+      "path": "illustrations/scenes/breakfast-4.svg"
+    },
+    {
+      "id": "breakfast.story.4.intro.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.4.intro.audio.wav",
+      "text": "An egg is still warm.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.4.item.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.4.item.audio.wav",
+      "text": "Can we eat it now?",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.4.reply.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.4.reply.audio.wav",
+      "text": "Let us check and wait a little.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.5.image",
+      "kind": "image",
+      "path": "illustrations/scenes/breakfast-5.svg"
+    },
+    {
+      "id": "breakfast.story.5.intro.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.5.intro.audio.wav",
+      "text": "There is another piece of bread.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.5.item.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.5.item.audio.wav",
+      "text": "Would you like more?",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.5.reply.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.5.reply.audio.wav",
+      "text": "No, thank you. I have enough.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.6.image",
+      "kind": "image",
+      "path": "illustrations/scenes/breakfast-6.svg"
+    },
+    {
+      "id": "breakfast.story.6.intro.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.6.intro.audio.wav",
+      "text": "Breakfast is finished.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.6.item.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.6.item.audio.wav",
+      "text": "I will carry the cup with help.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.story.6.reply.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.6.reply.audio.wav",
+      "text": "I will put the bread away. Teamwork!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    }
+  ],
+  "words": [
+    {
+      "id": "en.bread.food",
+      "text": "bread",
+      "cn": "面包",
+      "image": "breakfast.bread.image",
+      "audio": "breakfast.bread.audio"
+    },
+    {
+      "id": "en.milk.drink",
+      "text": "milk",
+      "cn": "牛奶",
+      "image": "breakfast.milk.image",
+      "audio": "breakfast.milk.audio"
+    },
+    {
+      "id": "en.egg.food",
+      "text": "egg",
+      "cn": "鸡蛋",
+      "image": "breakfast.egg.image",
+      "audio": "breakfast.egg.audio"
+    },
+    {
+      "id": "en.cup.container",
+      "text": "cup",
+      "cn": "杯子",
+      "image": "breakfast.cup.image",
+      "audio": "breakfast.cup.audio"
+    }
+  ],
+  "modules": {
+    "story": [
+      {
+        "id": "breakfast.story.1",
+        "title": "1. 早餐桌上少了什么",
+        "templateId": "daily-life",
+        "illustration": "breakfast.story.1.image",
+        "characters": [
+          "breakfast.momo",
+          "breakfast.bunny"
+        ],
+        "mainWord": "en.cup.container",
+        "hotspots": [
+          {
+            "word": "en.cup.container",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "早餐快准备好了。Momo 检查餐桌，Lulu 发现还少了杯子。",
+        "segments": [
+          {
+            "id": "breakfast.story.1.intro",
+            "text": "The table is almost ready.",
+            "speaker": "narrator",
+            "audio": "breakfast.story.1.intro.audio"
+          },
+          {
+            "id": "breakfast.story.1.item",
+            "text": "Bread, egg... something is missing.",
+            "speaker": "momo",
+            "audio": "breakfast.story.1.item.audio"
+          },
+          {
+            "id": "breakfast.story.1.reply",
+            "text": "Our cup! I will bring it.",
+            "speaker": "bunny",
+            "audio": "breakfast.story.1.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "breakfast.story.2",
+        "title": "2. 这块面包给你",
+        "templateId": "daily-life",
+        "illustration": "breakfast.story.2.image",
+        "characters": [
+          "breakfast.momo",
+          "breakfast.bunny"
+        ],
+        "mainWord": "en.bread.food",
+        "hotspots": [
+          {
+            "word": "en.bread.food",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "Lulu 面前有面包，Momo 还没有。Momo 开口请求，Lulu 分一块给朋友。",
+        "segments": [
+          {
+            "id": "breakfast.story.2.intro",
+            "text": "Lulu has bread, but Momo has none.",
+            "speaker": "narrator",
+            "audio": "breakfast.story.2.intro.audio"
+          },
+          {
+            "id": "breakfast.story.2.item",
+            "text": "May I have some bread?",
+            "speaker": "momo",
+            "audio": "breakfast.story.2.item.audio"
+          },
+          {
+            "id": "breakfast.story.2.reply",
+            "text": "Of course. This piece is for you.",
+            "speaker": "bunny",
+            "audio": "breakfast.story.2.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "breakfast.story.3",
+        "title": "3. 慢慢倒，别着急",
+        "templateId": "daily-life",
+        "illustration": "breakfast.story.3.image",
+        "characters": [
+          "breakfast.momo",
+          "breakfast.bunny"
+        ],
+        "mainWord": "en.milk.drink",
+        "hotspots": [
+          {
+            "word": "en.milk.drink",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "大人帮忙倒牛奶。Momo 要一点点，Lulu 提醒够了就说停。",
+        "segments": [
+          {
+            "id": "breakfast.story.3.intro",
+            "text": "A grown-up helps pour the milk.",
+            "speaker": "narrator",
+            "audio": "breakfast.story.3.intro.audio"
+          },
+          {
+            "id": "breakfast.story.3.item",
+            "text": "A little milk, please.",
+            "speaker": "momo",
+            "audio": "breakfast.story.3.item.audio"
+          },
+          {
+            "id": "breakfast.story.3.reply",
+            "text": "Say stop when you have enough.",
+            "speaker": "bunny",
+            "audio": "breakfast.story.3.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "breakfast.story.4",
+        "title": "4. 鸡蛋先等一等",
+        "templateId": "daily-life",
+        "illustration": "breakfast.story.4.image",
+        "characters": [
+          "breakfast.bunny",
+          "breakfast.momo"
+        ],
+        "mainWord": "en.egg.food",
+        "hotspots": [
+          {
+            "word": "en.egg.food",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "鸡蛋还有些热。Lulu 想吃，Momo 提议先检查、等一会儿。",
+        "segments": [
+          {
+            "id": "breakfast.story.4.intro",
+            "text": "An egg is still warm.",
+            "speaker": "narrator",
+            "audio": "breakfast.story.4.intro.audio"
+          },
+          {
+            "id": "breakfast.story.4.item",
+            "text": "Can we eat it now?",
+            "speaker": "bunny",
+            "audio": "breakfast.story.4.item.audio"
+          },
+          {
+            "id": "breakfast.story.4.reply",
+            "text": "Let us check and wait a little.",
+            "speaker": "momo",
+            "audio": "breakfast.story.4.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "breakfast.story.5",
+        "title": "5. 说够了也可以",
+        "templateId": "daily-life",
+        "illustration": "breakfast.story.5.image",
+        "characters": [
+          "breakfast.bunny",
+          "breakfast.momo"
+        ],
+        "mainWord": "en.bread.food",
+        "hotspots": [
+          {
+            "word": "en.bread.food",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "Lulu 想再分一块面包，Momo 表达已经吃够，朋友接受这个选择。",
+        "segments": [
+          {
+            "id": "breakfast.story.5.intro",
+            "text": "There is another piece of bread.",
+            "speaker": "narrator",
+            "audio": "breakfast.story.5.intro.audio"
+          },
+          {
+            "id": "breakfast.story.5.item",
+            "text": "Would you like more?",
+            "speaker": "bunny",
+            "audio": "breakfast.story.5.item.audio"
+          },
+          {
+            "id": "breakfast.story.5.reply",
+            "text": "No, thank you. I have enough.",
+            "speaker": "momo",
+            "audio": "breakfast.story.5.reply.audio"
+          }
+        ]
+      },
+      {
+        "id": "breakfast.story.6",
+        "title": "6. 一起收拾早餐桌",
+        "templateId": "daily-life",
+        "illustration": "breakfast.story.6.image",
+        "characters": [
+          "breakfast.momo",
+          "breakfast.bunny"
+        ],
+        "mainWord": "en.cup.container",
+        "hotspots": [
+          {
+            "word": "en.cup.container",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "早餐结束。Momo 请人帮忙端杯子，Lulu 收好面包，两人一起收拾。",
+        "segments": [
+          {
+            "id": "breakfast.story.6.intro",
+            "text": "Breakfast is finished.",
+            "speaker": "narrator",
+            "audio": "breakfast.story.6.intro.audio"
+          },
+          {
+            "id": "breakfast.story.6.item",
+            "text": "I will carry the cup with help.",
+            "speaker": "momo",
+            "audio": "breakfast.story.6.item.audio"
+          },
+          {
+            "id": "breakfast.story.6.reply",
+            "text": "I will put the bread away. Teamwork!",
+            "speaker": "bunny",
+            "audio": "breakfast.story.6.reply.audio"
+          }
+        ]
+      }
+    ],
+    "dialogue": [
+      {
+        "id": "breakfast.dialogue.1",
+        "cn": "你想吃一点面包吗？",
+        "question": [
+          {
+            "id": "breakfast.dialogue.1.question",
+            "text": "Would you like some bread?",
+            "audio": "breakfast.dialogue.1.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "breakfast.dialogue.1.reply.1",
+            "text": "Some bread, please.",
+            "cn": "请给我一点面包。",
+            "image": "breakfast.bread.image",
+            "audio": "breakfast.dialogue.1.reply.1.audio",
+            "followUp": [
+              {
+                "id": "breakfast.dialogue.1.reply.1.follow",
+                "text": "Here is a piece for you.",
+                "audio": "breakfast.dialogue.1.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "breakfast.dialogue.1.reply.2",
+            "text": "No, thank you.",
+            "cn": "不用了，谢谢。",
+            "image": "breakfast.bread.image",
+            "audio": "breakfast.dialogue.1.reply.2.audio",
+            "followUp": [
+              {
+                "id": "breakfast.dialogue.1.reply.2.follow",
+                "text": "That is okay. You can choose something else.",
+                "audio": "breakfast.dialogue.1.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "breakfast.dialogue.2",
+        "cn": "你的杯子里想装什么？",
+        "question": [
+          {
+            "id": "breakfast.dialogue.2.question",
+            "text": "What would you like in your cup?",
+            "audio": "breakfast.dialogue.2.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "breakfast.dialogue.2.reply.1",
+            "text": "A little milk, please.",
+            "cn": "请给我一点牛奶。",
+            "image": "breakfast.milk.image",
+            "audio": "breakfast.dialogue.2.reply.1.audio",
+            "followUp": [
+              {
+                "id": "breakfast.dialogue.2.reply.1.follow",
+                "text": "Our grown-up can help us pour it.",
+                "audio": "breakfast.dialogue.2.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "breakfast.dialogue.2.reply.2",
+            "text": "No milk, thank you.",
+            "cn": "不喝牛奶，谢谢。",
+            "image": "breakfast.cup.image",
+            "audio": "breakfast.dialogue.2.reply.2.audio",
+            "followUp": [
+              {
+                "id": "breakfast.dialogue.2.reply.2.follow",
+                "text": "That is okay. Tell our grown-up what you need.",
+                "audio": "breakfast.dialogue.2.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "breakfast.dialogue.3",
+        "cn": "我们分享这块面包好吗？",
+        "question": [
+          {
+            "id": "breakfast.dialogue.3.question",
+            "text": "Shall we share this bread?",
+            "audio": "breakfast.dialogue.3.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "breakfast.dialogue.3.reply.1",
+            "text": "Yes, a small piece, please.",
+            "cn": "好，请给我一小块。",
+            "image": "breakfast.bread.image",
+            "audio": "breakfast.dialogue.3.reply.1.audio",
+            "followUp": [
+              {
+                "id": "breakfast.dialogue.3.reply.1.follow",
+                "text": "I will put your piece on your plate.",
+                "audio": "breakfast.dialogue.3.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "breakfast.dialogue.3.reply.2",
+            "text": "I have enough, thank you.",
+            "cn": "我已经够了，谢谢。",
+            "image": "breakfast.bread.image",
+            "audio": "breakfast.dialogue.3.reply.2.audio",
+            "followUp": [
+              {
+                "id": "breakfast.dialogue.3.reply.2.follow",
+                "text": "You can stop whenever you have had enough.",
+                "audio": "breakfast.dialogue.3.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "breakfast.dialogue.4",
+        "cn": "你现在想吃鸡蛋吗？",
+        "question": [
+          {
+            "id": "breakfast.dialogue.4.question",
+            "text": "Would you like the egg now?",
+            "audio": "breakfast.dialogue.4.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "breakfast.dialogue.4.reply.1",
+            "text": "Is it too hot?",
+            "cn": "它会不会太烫？",
+            "image": "breakfast.egg.image",
+            "audio": "breakfast.dialogue.4.reply.1.audio",
+            "followUp": [
+              {
+                "id": "breakfast.dialogue.4.reply.1.follow",
+                "text": "Let us check with our grown-up first.",
+                "audio": "breakfast.dialogue.4.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "breakfast.dialogue.4.reply.2",
+            "text": "I will wait a little.",
+            "cn": "我想等一会儿。",
+            "image": "breakfast.egg.image",
+            "audio": "breakfast.dialogue.4.reply.2.audio",
+            "followUp": [
+              {
+                "id": "breakfast.dialogue.4.reply.2.follow",
+                "text": "We can wait until it is comfortable to eat.",
+                "audio": "breakfast.dialogue.4.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "breakfast.dialogue.5",
+        "cn": "你能递一下杯子吗？",
+        "question": [
+          {
+            "id": "breakfast.dialogue.5.question",
+            "text": "Can you pass the cup, please?",
+            "audio": "breakfast.dialogue.5.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "breakfast.dialogue.5.reply.1",
+            "text": "Here you are.",
+            "cn": "给你。",
+            "image": "breakfast.cup.image",
+            "audio": "breakfast.dialogue.5.reply.1.audio",
+            "followUp": [
+              {
+                "id": "breakfast.dialogue.5.reply.1.follow",
+                "text": "Thank you. I will hold it with both hands.",
+                "audio": "breakfast.dialogue.5.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "breakfast.dialogue.5.reply.2",
+            "text": "Please help me carry it.",
+            "cn": "请帮我拿过去。",
+            "image": "breakfast.cup.image",
+            "audio": "breakfast.dialogue.5.reply.2.audio",
+            "followUp": [
+              {
+                "id": "breakfast.dialogue.5.reply.2.follow",
+                "text": "Let us carry it carefully together.",
+                "audio": "breakfast.dialogue.5.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "breakfast.dialogue.6",
+        "cn": "早餐吃够了吗？",
+        "question": [
+          {
+            "id": "breakfast.dialogue.6.question",
+            "text": "Have you had enough breakfast?",
+            "audio": "breakfast.dialogue.6.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "breakfast.dialogue.6.reply.1",
+            "text": "Yes, thank you.",
+            "cn": "够了，谢谢。",
+            "image": "breakfast.cup.image",
+            "audio": "breakfast.dialogue.6.reply.1.audio",
+            "followUp": [
+              {
+                "id": "breakfast.dialogue.6.reply.1.follow",
+                "text": "Let us put our things away.",
+                "audio": "breakfast.dialogue.6.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "breakfast.dialogue.6.reply.2",
+            "text": "A little more bread, please.",
+            "cn": "请再给我一点面包。",
+            "image": "breakfast.bread.image",
+            "audio": "breakfast.dialogue.6.reply.2.audio",
+            "followUp": [
+              {
+                "id": "breakfast.dialogue.6.reply.2.follow",
+                "text": "Here is another small piece.",
+                "audio": "breakfast.dialogue.6.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "game": {
+      "type": "story-order",
+      "title": "把我们的故事接起来",
+      "instructions": "听完故事后，按提示选卡片排顺序。可以撤回、请朋友示范或跳过。",
+      "questions": [
+        {
+          "id": "breakfast.game.1",
+          "target": "en.cup.container",
+          "options": [
+            "en.bread.food",
+            "en.egg.food",
+            "en.cup.container"
+          ],
+          "solution": [
+            "en.bread.food",
+            "en.egg.food",
+            "en.cup.container"
+          ],
+          "instructions": "按朋友商量的计划摆早餐：先分面包，再摆鸡蛋，最后端杯子。",
+          "labels": {
+            "en.bread.food": "分享面包",
+            "en.egg.food": "摆好鸡蛋",
+            "en.cup.container": "端来杯子"
+          }
+        }
+      ]
+    },
+    "summary": [
+      "en.bread.food",
+      "en.milk.drink",
+      "en.egg.food",
+      "en.cup.container"
+    ]
+  },
+  "interaction": {
+    "gameAfterDialogue": [
+      5
+    ],
+    "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.2.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "breakfast.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.bread.food",
+          "en.milk.drink",
+          "en.egg.food",
+          "en.cup.container"
+        ]
+      },
+      {
+        "id": "breakfast.lesson.story.1",
+        "kind": "story",
+        "storyId": "breakfast.story.1"
+      },
+      {
+        "id": "breakfast.lesson.story.2",
+        "kind": "story",
+        "storyId": "breakfast.story.2"
+      },
+      {
+        "id": "breakfast.lesson.story.3",
+        "kind": "story",
+        "storyId": "breakfast.story.3"
+      },
+      {
+        "id": "breakfast.lesson.story.4",
+        "kind": "story",
+        "storyId": "breakfast.story.4"
+      },
+      {
+        "id": "breakfast.lesson.story.5",
+        "kind": "story",
+        "storyId": "breakfast.story.5"
+      },
+      {
+        "id": "breakfast.lesson.story.6",
+        "kind": "story",
+        "storyId": "breakfast.story.6"
+      },
+      {
+        "id": "breakfast.lesson.fill",
+        "kind": "fill",
+        "segmentId": "breakfast.story.1.item",
+        "before": "",
+        "after": ", egg... something is missing.",
+        "image": "breakfast.story.1.image",
+        "options": [
+          "en.bread.food",
+          "en.milk.drink",
+          "en.egg.food",
+          "en.cup.container"
+        ],
+        "answer": "en.bread.food"
+      },
+      {
+        "id": "breakfast.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "breakfast.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.bread.food",
+          "en.milk.drink",
+          "en.egg.food",
+          "en.cup.container"
+        ]
+      },
+      {
+        "id": "breakfast.lesson.end",
+        "kind": "end"
+      }
+    ]
+  }
+}

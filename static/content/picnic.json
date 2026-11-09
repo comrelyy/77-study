@@ -1,9 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "picnic",
-  "contentVersion": "0.4.0",
+  "contentVersion": "0.4.1",
   "status": "draft",
-  "compatibleFrom": [],
+  "compatibleFrom": [
+    "0.4.0"
+  ],
   "title": "和 Momo 去野餐",
   "stickerId": "picnic.sticker",
   "assets": [
@@ -1473,5 +1475,85 @@
       5
     ],
     "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.4.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "picnic.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.apple.fruit",
+          "en.banana.fruit",
+          "en.bread.food",
+          "en.milk.drink"
+        ]
+      },
+      {
+        "id": "picnic.lesson.story.1",
+        "kind": "story",
+        "storyId": "picnic.story.1"
+      },
+      {
+        "id": "picnic.lesson.story.2",
+        "kind": "story",
+        "storyId": "picnic.story.2"
+      },
+      {
+        "id": "picnic.lesson.story.3",
+        "kind": "story",
+        "storyId": "picnic.story.3"
+      },
+      {
+        "id": "picnic.lesson.story.4",
+        "kind": "story",
+        "storyId": "picnic.story.4"
+      },
+      {
+        "id": "picnic.lesson.story.5",
+        "kind": "story",
+        "storyId": "picnic.story.5"
+      },
+      {
+        "id": "picnic.lesson.story.6",
+        "kind": "story",
+        "storyId": "picnic.story.6"
+      },
+      {
+        "id": "picnic.lesson.fill",
+        "kind": "fill",
+        "segmentId": "picnic.story.1.intro",
+        "before": "An ",
+        "after": " rolls out of the picnic basket.",
+        "image": "picnic.story.1.image",
+        "options": [
+          "en.apple.fruit",
+          "en.banana.fruit",
+          "en.bread.food",
+          "en.milk.drink"
+        ],
+        "answer": "en.apple.fruit"
+      },
+      {
+        "id": "picnic.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "picnic.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.apple.fruit",
+          "en.banana.fruit",
+          "en.bread.food",
+          "en.milk.drink"
+        ]
+      },
+      {
+        "id": "picnic.lesson.end",
+        "kind": "end"
+      }
+    ]
   }
 }

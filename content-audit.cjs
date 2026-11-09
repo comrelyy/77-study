@@ -7,7 +7,10 @@ const root=__dirname;
 const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 function auditPack(pack,manifest,{staticRoot=path.join(root,'static')}={}){
   const validation=validate(pack,{exists:file=>fs.existsSync(path.join(staticRoot,file))});
-  const errors=[...validation.errors],audio=inspectPack(pack,staticRoot);
+  // Lesson audio of an unreviewed lesson is synthesized later (Windows); until then it is pending, not an error.
+  const pendingLesson=a=>pack.lesson?.reviewed===false&&a.id.includes('.lesson.');
+  const pendingIds=new Set(pack.assets.filter(a=>a.kind==='audio'&&pendingLesson(a)&&!fs.existsSync(path.join(staticRoot,a.path))).map(a=>a.id));
+  const errors=[...validation.errors],audio=inspectPack(pack,staticRoot).filter(a=>!pendingIds.has(a.id));
   const entries=manifest?.entries||[];
   for(const sound of audio){
     if(!sound.valid)errors.push(sound.id+': '+sound.error);
@@ -28,7 +31,7 @@ function auditPack(pack,manifest,{staticRoot=path.join(root,'static')}={}){
     dialogueRounds:pack.modules.dialogue.length,replyChoices:pack.modules.dialogue.reduce((n,r)=>n+r.options.length,0),
     gameplay:pack.modules.game.type,gameQuestions:pack.modules.game.questions.length,
     localAudio:audio.length,validAudio:audio.filter(a=>a.valid).length,provenanceMatched:audio.filter(a=>a.provenanceMatches).length,
-    audioSeconds:Math.round(audio.reduce((n,a)=>n+(a.seconds||0),0)),pendingAudioReview:pending.length,
+    audioSeconds:Math.round(audio.reduce((n,a)=>n+(a.seconds||0),0)),pendingAudioReview:pending.length,pendingLessonAudio:pendingIds.size,
     technicalStatus:errors.length?'failed':'passed',releaseReadiness:'not-approved',errors,audio};
 }
 function generate(){

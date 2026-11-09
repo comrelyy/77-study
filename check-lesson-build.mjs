@@ -3,8 +3,9 @@ import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url);
 const {buildLesson,finalizeLesson,stripLesson}=require('./lesson-build.cjs'),{validate}=require('./static/core/model.js');
+// park/tidy fixtures are archived pre-lesson packs, stable after build-content adds lessons.
 const catalog=require('./static/content/catalog.json'),overlay=require('./content-lesson/park.json');
-const packs=Object.values(catalog.scenes).map(f=>require('./static/'+f)),park=require('./static/content/park.json'),tidy=require('./static/content/tidy.json');
+const packs=Object.values(catalog.scenes).map(f=>require('./static/'+f)),park=require('./static/content/archive/park.0.2.0.json'),tidy=require('./static/content/archive/tidy.0.5.0.json');
 const kinds=l=>l.steps.map(s=>s.kind),clone=x=>JSON.parse(JSON.stringify(x));
 const build=(p=park,o=overlay)=>buildLesson(stripLesson(p),o);
 
@@ -97,4 +98,16 @@ test('lesson validation rejects bad answers',()=>{
   p=fresh();p.lesson.steps[1].kind='bogus';assert(errs(p).some(e=>e.includes('bogus')||e.includes('unknown')),'bad kind');
   p=fresh();step(p,'reply').rounds[0].wrong.audio=park.words[0].audio;assert(errs(p).length>0,'wrong audio text mismatch');
   assert.deepEqual(errs(clone(park)),[]);
+});
+
+test('built catalog packs carry lessons; only park has quiz/reply',()=>{
+  const all=Object.keys(catalog.scenes);
+  assert(all.includes('birthday'));
+  for(const id of all){
+    const p=require('./static/content/'+id+'.json'),ks=kinds(p.lesson);
+    assert(p.lesson,id);
+    const extra=ks.some(k=>k==='quiz'||k==='reply');
+    assert.equal(extra,id==='park',id);
+    if(id==='park')assert.equal(p.lesson.reviewed,false);
+  }
 });

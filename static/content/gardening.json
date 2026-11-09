@@ -1,9 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "gardening",
-  "contentVersion": "0.1.0",
+  "contentVersion": "0.1.1",
   "status": "draft",
-  "compatibleFrom": [],
+  "compatibleFrom": [
+    "0.1.0"
+  ],
   "title": "和 Momo 照顾小花",
   "stickerId": "gardening.sticker",
   "learning": {
@@ -1217,5 +1219,85 @@
       3
     ],
     "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.1.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "gardening.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.pot.garden",
+          "en.seed.plant",
+          "en.water.drink",
+          "en.flower.plant"
+        ]
+      },
+      {
+        "id": "gardening.lesson.story.1",
+        "kind": "story",
+        "storyId": "gardening.story.1"
+      },
+      {
+        "id": "gardening.lesson.story.2",
+        "kind": "story",
+        "storyId": "gardening.story.2"
+      },
+      {
+        "id": "gardening.lesson.story.3",
+        "kind": "story",
+        "storyId": "gardening.story.3"
+      },
+      {
+        "id": "gardening.lesson.story.4",
+        "kind": "story",
+        "storyId": "gardening.story.4"
+      },
+      {
+        "id": "gardening.lesson.story.5",
+        "kind": "story",
+        "storyId": "gardening.story.5"
+      },
+      {
+        "id": "gardening.lesson.story.6",
+        "kind": "story",
+        "storyId": "gardening.story.6"
+      },
+      {
+        "id": "gardening.lesson.fill",
+        "kind": "fill",
+        "segmentId": "gardening.story.1.intro",
+        "before": "Momo and Lulu find an empty ",
+        "after": ".",
+        "image": "gardening.story.1.image",
+        "options": [
+          "en.pot.garden",
+          "en.seed.plant",
+          "en.water.drink",
+          "en.flower.plant"
+        ],
+        "answer": "en.pot.garden"
+      },
+      {
+        "id": "gardening.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "gardening.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.pot.garden",
+          "en.seed.plant",
+          "en.water.drink",
+          "en.flower.plant"
+        ]
+      },
+      {
+        "id": "gardening.lesson.end",
+        "kind": "end"
+      }
+    ]
   }
 }

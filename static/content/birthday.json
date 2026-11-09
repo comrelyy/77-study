@@ -1,9 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "birthday",
-  "contentVersion": "0.1.0",
+  "contentVersion": "0.1.1",
   "status": "draft",
-  "compatibleFrom": [],
+  "compatibleFrom": [
+    "0.1.0"
+  ],
   "generatedBy": "momo_agent",
   "title": "生日会",
   "stickerId": "birthday.sticker",
@@ -1295,5 +1297,85 @@
       6
     ],
     "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.1.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "birthday.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.hat.clothing",
+          "en.cup.container",
+          "en.ball.toy",
+          "en.teddy.toy"
+        ]
+      },
+      {
+        "id": "birthday.lesson.story.1",
+        "kind": "story",
+        "storyId": "birthday.story.1"
+      },
+      {
+        "id": "birthday.lesson.story.2",
+        "kind": "story",
+        "storyId": "birthday.story.2"
+      },
+      {
+        "id": "birthday.lesson.story.3",
+        "kind": "story",
+        "storyId": "birthday.story.3"
+      },
+      {
+        "id": "birthday.lesson.story.4",
+        "kind": "story",
+        "storyId": "birthday.story.4"
+      },
+      {
+        "id": "birthday.lesson.story.5",
+        "kind": "story",
+        "storyId": "birthday.story.5"
+      },
+      {
+        "id": "birthday.lesson.story.6",
+        "kind": "story",
+        "storyId": "birthday.story.6"
+      },
+      {
+        "id": "birthday.lesson.fill",
+        "kind": "fill",
+        "segmentId": "birthday.story.1.item",
+        "before": "Look at my new ",
+        "after": "!",
+        "image": "birthday.story.1.image",
+        "options": [
+          "en.hat.clothing",
+          "en.cup.container",
+          "en.ball.toy",
+          "en.teddy.toy"
+        ],
+        "answer": "en.hat.clothing"
+      },
+      {
+        "id": "birthday.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "birthday.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.hat.clothing",
+          "en.cup.container",
+          "en.ball.toy",
+          "en.teddy.toy"
+        ]
+      },
+      {
+        "id": "birthday.lesson.end",
+        "kind": "end"
+      }
+    ]
   }
 }

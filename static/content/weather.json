@@ -1,9 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "weather",
-  "contentVersion": "0.1.0",
+  "contentVersion": "0.1.1",
   "status": "draft",
-  "compatibleFrom": [],
+  "compatibleFrom": [
+    "0.1.0"
+  ],
   "title": "和 Momo 看天气",
   "stickerId": "weather.sticker",
   "learning": {
@@ -1268,5 +1270,85 @@
       4
     ],
     "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.1.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "weather.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.sun.nature",
+          "en.cloud.weather",
+          "en.rain.weather",
+          "en.umbrella.object"
+        ]
+      },
+      {
+        "id": "weather.lesson.story.1",
+        "kind": "story",
+        "storyId": "weather.story.1"
+      },
+      {
+        "id": "weather.lesson.story.2",
+        "kind": "story",
+        "storyId": "weather.story.2"
+      },
+      {
+        "id": "weather.lesson.story.3",
+        "kind": "story",
+        "storyId": "weather.story.3"
+      },
+      {
+        "id": "weather.lesson.story.4",
+        "kind": "story",
+        "storyId": "weather.story.4"
+      },
+      {
+        "id": "weather.lesson.story.5",
+        "kind": "story",
+        "storyId": "weather.story.5"
+      },
+      {
+        "id": "weather.lesson.story.6",
+        "kind": "story",
+        "storyId": "weather.story.6"
+      },
+      {
+        "id": "weather.lesson.fill",
+        "kind": "fill",
+        "segmentId": "weather.story.1.item",
+        "before": "I can see the ",
+        "after": "!",
+        "image": "weather.story.1.image",
+        "options": [
+          "en.sun.nature",
+          "en.cloud.weather",
+          "en.rain.weather",
+          "en.umbrella.object"
+        ],
+        "answer": "en.sun.nature"
+      },
+      {
+        "id": "weather.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "weather.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.sun.nature",
+          "en.cloud.weather",
+          "en.rain.weather",
+          "en.umbrella.object"
+        ]
+      },
+      {
+        "id": "weather.lesson.end",
+        "kind": "end"
+      }
+    ]
   }
 }

@@ -1,9 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "cooking",
-  "contentVersion": "0.1.0",
+  "contentVersion": "0.1.1",
   "status": "draft",
-  "compatibleFrom": [],
+  "compatibleFrom": [
+    "0.1.0"
+  ],
   "title": "和 Momo 一起做点心",
   "stickerId": "cooking.sticker",
   "learning": {
@@ -1217,5 +1219,85 @@
       5
     ],
     "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.1.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "cooking.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.bowl.container",
+          "en.tomato.food",
+          "en.spoon.utensil",
+          "en.bread.food"
+        ]
+      },
+      {
+        "id": "cooking.lesson.story.1",
+        "kind": "story",
+        "storyId": "cooking.story.1"
+      },
+      {
+        "id": "cooking.lesson.story.2",
+        "kind": "story",
+        "storyId": "cooking.story.2"
+      },
+      {
+        "id": "cooking.lesson.story.3",
+        "kind": "story",
+        "storyId": "cooking.story.3"
+      },
+      {
+        "id": "cooking.lesson.story.4",
+        "kind": "story",
+        "storyId": "cooking.story.4"
+      },
+      {
+        "id": "cooking.lesson.story.5",
+        "kind": "story",
+        "storyId": "cooking.story.5"
+      },
+      {
+        "id": "cooking.lesson.story.6",
+        "kind": "story",
+        "storyId": "cooking.story.6"
+      },
+      {
+        "id": "cooking.lesson.fill",
+        "kind": "fill",
+        "segmentId": "cooking.story.1.reply",
+        "before": "Yes! Let us find a ",
+        "after": ".",
+        "image": "cooking.story.1.image",
+        "options": [
+          "en.bowl.container",
+          "en.tomato.food",
+          "en.spoon.utensil",
+          "en.bread.food"
+        ],
+        "answer": "en.bowl.container"
+      },
+      {
+        "id": "cooking.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "cooking.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.bowl.container",
+          "en.tomato.food",
+          "en.spoon.utensil",
+          "en.bread.food"
+        ]
+      },
+      {
+        "id": "cooking.lesson.end",
+        "kind": "end"
+      }
+    ]
   }
 }

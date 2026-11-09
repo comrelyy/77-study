@@ -1,9 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "bedtime",
-  "contentVersion": "0.2.0",
+  "contentVersion": "0.2.1",
   "status": "draft",
-  "compatibleFrom": [],
+  "compatibleFrom": [
+    "0.2.0"
+  ],
   "title": "和 Momo 道晚安",
   "stickerId": "bedtime.sticker",
   "learning": {
@@ -1218,5 +1220,85 @@
       5
     ],
     "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.2.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "bedtime.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.book.object",
+          "en.bed.furniture",
+          "en.lamp.object",
+          "en.teddy.toy"
+        ]
+      },
+      {
+        "id": "bedtime.lesson.story.1",
+        "kind": "story",
+        "storyId": "bedtime.story.1"
+      },
+      {
+        "id": "bedtime.lesson.story.2",
+        "kind": "story",
+        "storyId": "bedtime.story.2"
+      },
+      {
+        "id": "bedtime.lesson.story.3",
+        "kind": "story",
+        "storyId": "bedtime.story.3"
+      },
+      {
+        "id": "bedtime.lesson.story.4",
+        "kind": "story",
+        "storyId": "bedtime.story.4"
+      },
+      {
+        "id": "bedtime.lesson.story.5",
+        "kind": "story",
+        "storyId": "bedtime.story.5"
+      },
+      {
+        "id": "bedtime.lesson.story.6",
+        "kind": "story",
+        "storyId": "bedtime.story.6"
+      },
+      {
+        "id": "bedtime.lesson.fill",
+        "kind": "fill",
+        "segmentId": "bedtime.story.1.item",
+        "before": "I want this ",
+        "after": ".",
+        "image": "bedtime.story.1.image",
+        "options": [
+          "en.book.object",
+          "en.bed.furniture",
+          "en.lamp.object",
+          "en.teddy.toy"
+        ],
+        "answer": "en.book.object"
+      },
+      {
+        "id": "bedtime.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "bedtime.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.book.object",
+          "en.bed.furniture",
+          "en.lamp.object",
+          "en.teddy.toy"
+        ]
+      },
+      {
+        "id": "bedtime.lesson.end",
+        "kind": "end"
+      }
+    ]
   }
 }

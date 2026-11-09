@@ -1,9 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "tidy",
-  "contentVersion": "0.5.0",
+  "contentVersion": "0.5.1",
   "status": "draft",
-  "compatibleFrom": [],
+  "compatibleFrom": [
+    "0.5.0"
+  ],
   "title": "和 Momo 整理玩具",
   "stickerId": "tidy.sticker",
   "assets": [
@@ -1219,5 +1221,82 @@
       4
     ],
     "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.5.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "tidy.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.ball.toy",
+          "en.car.toy",
+          "en.teddy.toy"
+        ]
+      },
+      {
+        "id": "tidy.lesson.story.1",
+        "kind": "story",
+        "storyId": "tidy.story.1"
+      },
+      {
+        "id": "tidy.lesson.story.2",
+        "kind": "story",
+        "storyId": "tidy.story.2"
+      },
+      {
+        "id": "tidy.lesson.story.3",
+        "kind": "story",
+        "storyId": "tidy.story.3"
+      },
+      {
+        "id": "tidy.lesson.story.4",
+        "kind": "story",
+        "storyId": "tidy.story.4"
+      },
+      {
+        "id": "tidy.lesson.story.5",
+        "kind": "story",
+        "storyId": "tidy.story.5"
+      },
+      {
+        "id": "tidy.lesson.story.6",
+        "kind": "story",
+        "storyId": "tidy.story.6"
+      },
+      {
+        "id": "tidy.lesson.fill",
+        "kind": "fill",
+        "segmentId": "tidy.story.1.intro",
+        "before": "The friends want to roll a ",
+        "after": ".",
+        "image": "tidy.story.1.image",
+        "options": [
+          "en.ball.toy",
+          "en.car.toy",
+          "en.teddy.toy"
+        ],
+        "answer": "en.ball.toy"
+      },
+      {
+        "id": "tidy.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "tidy.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.ball.toy",
+          "en.car.toy",
+          "en.teddy.toy"
+        ]
+      },
+      {
+        "id": "tidy.lesson.end",
+        "kind": "end"
+      }
+    ]
   }
 }

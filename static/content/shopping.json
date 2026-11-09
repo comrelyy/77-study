@@ -1,9 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "shopping",
-  "contentVersion": "0.2.0",
+  "contentVersion": "0.2.1",
   "status": "draft",
-  "compatibleFrom": [],
+  "compatibleFrom": [
+    "0.2.0"
+  ],
   "title": "和 Momo 逛小商店",
   "stickerId": "shopping.sticker",
   "learning": {
@@ -1241,5 +1243,85 @@
       5
     ],
     "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.2.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "shopping.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.apple.fruit",
+          "en.banana.fruit",
+          "en.bag.container",
+          "en.coin.money"
+        ]
+      },
+      {
+        "id": "shopping.lesson.story.1",
+        "kind": "story",
+        "storyId": "shopping.story.1"
+      },
+      {
+        "id": "shopping.lesson.story.2",
+        "kind": "story",
+        "storyId": "shopping.story.2"
+      },
+      {
+        "id": "shopping.lesson.story.3",
+        "kind": "story",
+        "storyId": "shopping.story.3"
+      },
+      {
+        "id": "shopping.lesson.story.4",
+        "kind": "story",
+        "storyId": "shopping.story.4"
+      },
+      {
+        "id": "shopping.lesson.story.5",
+        "kind": "story",
+        "storyId": "shopping.story.5"
+      },
+      {
+        "id": "shopping.lesson.story.6",
+        "kind": "story",
+        "storyId": "shopping.story.6"
+      },
+      {
+        "id": "shopping.lesson.fill",
+        "kind": "fill",
+        "segmentId": "shopping.story.1.intro",
+        "before": "Momo picks up the shopping ",
+        "after": ".",
+        "image": "shopping.story.1.image",
+        "options": [
+          "en.apple.fruit",
+          "en.banana.fruit",
+          "en.bag.container",
+          "en.coin.money"
+        ],
+        "answer": "en.bag.container"
+      },
+      {
+        "id": "shopping.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "shopping.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.apple.fruit",
+          "en.banana.fruit",
+          "en.bag.container",
+          "en.coin.money"
+        ]
+      },
+      {
+        "id": "shopping.lesson.end",
+        "kind": "end"
+      }
+    ]
   }
 }

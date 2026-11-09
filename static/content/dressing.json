@@ -1,9 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "dressing",
-  "contentVersion": "0.2.0",
+  "contentVersion": "0.2.1",
   "status": "draft",
-  "compatibleFrom": [],
+  "compatibleFrom": [
+    "0.2.0"
+  ],
   "title": "和 Momo 准备出门",
   "stickerId": "dressing.sticker",
   "learning": {
@@ -1268,5 +1270,85 @@
       4
     ],
     "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.2.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "dressing.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.shirt.clothing",
+          "en.socks.clothing",
+          "en.shoes.clothing",
+          "en.hat.clothing"
+        ]
+      },
+      {
+        "id": "dressing.lesson.story.1",
+        "kind": "story",
+        "storyId": "dressing.story.1"
+      },
+      {
+        "id": "dressing.lesson.story.2",
+        "kind": "story",
+        "storyId": "dressing.story.2"
+      },
+      {
+        "id": "dressing.lesson.story.3",
+        "kind": "story",
+        "storyId": "dressing.story.3"
+      },
+      {
+        "id": "dressing.lesson.story.4",
+        "kind": "story",
+        "storyId": "dressing.story.4"
+      },
+      {
+        "id": "dressing.lesson.story.5",
+        "kind": "story",
+        "storyId": "dressing.story.5"
+      },
+      {
+        "id": "dressing.lesson.story.6",
+        "kind": "story",
+        "storyId": "dressing.story.6"
+      },
+      {
+        "id": "dressing.lesson.fill",
+        "kind": "fill",
+        "segmentId": "dressing.story.1.item",
+        "before": "Let us go out! Where is my ",
+        "after": "?",
+        "image": "dressing.story.1.image",
+        "options": [
+          "en.shirt.clothing",
+          "en.socks.clothing",
+          "en.shoes.clothing",
+          "en.hat.clothing"
+        ],
+        "answer": "en.shirt.clothing"
+      },
+      {
+        "id": "dressing.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "dressing.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.shirt.clothing",
+          "en.socks.clothing",
+          "en.shoes.clothing",
+          "en.hat.clothing"
+        ]
+      },
+      {
+        "id": "dressing.lesson.end",
+        "kind": "end"
+      }
+    ]
   }
 }

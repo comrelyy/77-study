@@ -1,9 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "park",
-  "contentVersion": "0.2.0",
+  "contentVersion": "0.2.1",
   "status": "draft",
-  "compatibleFrom": [],
+  "compatibleFrom": [
+    "0.2.0"
+  ],
   "title": "和 Momo 逛公园",
   "stickerId": "park.sticker",
   "learning": {
@@ -666,6 +668,72 @@
       "id": "park.game.image",
       "kind": "image",
       "path": "illustrations/scenes/park-game.svg"
+    },
+    {
+      "id": "park.lesson.wrong.f4c4f2dc.audio",
+      "kind": "audio",
+      "path": "audio/park/lesson/f4c4f2dc.wav",
+      "text": "I want my ball.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.lesson.wrong.3f7b80af.audio",
+      "kind": "audio",
+      "path": "audio/park/lesson/3f7b80af.wav",
+      "text": "I hear a bird.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.lesson.wrong.9e0b617d.audio",
+      "kind": "audio",
+      "path": "audio/park/lesson/9e0b617d.wav",
+      "text": "I am under the tree.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.lesson.wrong.ba1617e8.audio",
+      "kind": "audio",
+      "path": "audio/park/lesson/ba1617e8.wav",
+      "text": "I like the flower.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.lesson.wrong.834c6790.audio",
+      "kind": "audio",
+      "path": "audio/park/lesson/834c6790.wav",
+      "text": "Look at the tree.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.lesson.wrong.3929b42b.audio",
+      "kind": "audio",
+      "path": "audio/park/lesson/3929b42b.wav",
+      "text": "Goodbye, ball!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
     }
   ],
   "words": [
@@ -1268,5 +1336,194 @@
       4
     ],
     "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.2.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "park.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.tree.plant",
+          "en.flower.plant",
+          "en.bird.animal",
+          "en.ball.toy"
+        ]
+      },
+      {
+        "id": "park.lesson.story.1",
+        "kind": "story",
+        "storyId": "park.story.1"
+      },
+      {
+        "id": "park.lesson.story.2",
+        "kind": "story",
+        "storyId": "park.story.2"
+      },
+      {
+        "id": "park.lesson.quiz.1",
+        "kind": "quiz",
+        "question": "Lulu 想坐在哪儿？",
+        "options": [
+          "en.tree.plant",
+          "en.flower.plant",
+          "en.ball.toy"
+        ],
+        "answer": "en.tree.plant",
+        "review": true
+      },
+      {
+        "id": "park.lesson.story.3",
+        "kind": "story",
+        "storyId": "park.story.3"
+      },
+      {
+        "id": "park.lesson.story.4",
+        "kind": "story",
+        "storyId": "park.story.4"
+      },
+      {
+        "id": "park.lesson.quiz.2",
+        "kind": "quiz",
+        "question": "Momo 抱着什么很久？",
+        "options": [
+          "en.ball.toy",
+          "en.tree.plant",
+          "en.flower.plant"
+        ],
+        "answer": "en.ball.toy",
+        "review": true
+      },
+      {
+        "id": "park.lesson.story.5",
+        "kind": "story",
+        "storyId": "park.story.5"
+      },
+      {
+        "id": "park.lesson.story.6",
+        "kind": "story",
+        "storyId": "park.story.6"
+      },
+      {
+        "id": "park.lesson.quiz.3",
+        "kind": "quiz",
+        "question": "离开公园时，Lulu 跟谁说了再见？",
+        "options": [
+          "en.flower.plant",
+          "en.bird.animal",
+          "en.ball.toy"
+        ],
+        "answer": "en.bird.animal",
+        "review": true
+      },
+      {
+        "id": "park.lesson.fill",
+        "kind": "fill",
+        "segmentId": "park.story.1.reply",
+        "before": "Under this ",
+        "after": ". There is shade.",
+        "image": "park.story.1.image",
+        "options": [
+          "en.tree.plant",
+          "en.flower.plant",
+          "en.bird.animal",
+          "en.ball.toy"
+        ],
+        "answer": "en.tree.plant"
+      },
+      {
+        "id": "park.lesson.reply",
+        "kind": "reply",
+        "review": true,
+        "rounds": [
+          {
+            "dialogueId": "park.dialogue.1",
+            "answer": "park.dialogue.1.reply.1",
+            "wrong": {
+              "id": "park.dialogue.1.wrong.f4c4f2dc",
+              "text": "I want my ball.",
+              "cn": "我想要我的球。",
+              "image": "park.ball.image",
+              "audio": "park.lesson.wrong.f4c4f2dc.audio"
+            }
+          },
+          {
+            "dialogueId": "park.dialogue.2",
+            "answer": "park.dialogue.2.reply.1",
+            "wrong": {
+              "id": "park.dialogue.2.wrong.3f7b80af",
+              "text": "I hear a bird.",
+              "cn": "我听见小鸟了。",
+              "image": "park.bird.image",
+              "audio": "park.lesson.wrong.3f7b80af.audio"
+            }
+          },
+          {
+            "dialogueId": "park.dialogue.3",
+            "answer": "park.dialogue.3.reply.1",
+            "wrong": {
+              "id": "park.dialogue.3.wrong.9e0b617d",
+              "text": "I am under the tree.",
+              "cn": "我在树下面。",
+              "image": "park.tree.image",
+              "audio": "park.lesson.wrong.9e0b617d.audio"
+            }
+          },
+          {
+            "dialogueId": "park.dialogue.4",
+            "answer": "park.dialogue.4.reply.1",
+            "wrong": {
+              "id": "park.dialogue.4.wrong.ba1617e8",
+              "text": "I like the flower.",
+              "cn": "我喜欢这朵花。",
+              "image": "park.flower.image",
+              "audio": "park.lesson.wrong.ba1617e8.audio"
+            }
+          },
+          {
+            "dialogueId": "park.dialogue.5",
+            "answer": "park.dialogue.5.reply.1",
+            "wrong": {
+              "id": "park.dialogue.5.wrong.834c6790",
+              "text": "Look at the tree.",
+              "cn": "看这棵树。",
+              "image": "park.tree.image",
+              "audio": "park.lesson.wrong.834c6790.audio"
+            }
+          },
+          {
+            "dialogueId": "park.dialogue.6",
+            "answer": "park.dialogue.6.reply.1",
+            "wrong": {
+              "id": "park.dialogue.6.wrong.3929b42b",
+              "text": "Goodbye, ball!",
+              "cn": "再见，球！",
+              "image": "park.ball.image",
+              "audio": "park.lesson.wrong.3929b42b.audio"
+            }
+          }
+        ]
+      },
+      {
+        "id": "park.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "park.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.tree.plant",
+          "en.flower.plant",
+          "en.bird.animal",
+          "en.ball.toy"
+        ]
+      },
+      {
+        "id": "park.lesson.end",
+        "kind": "end"
+      }
+    ]
   }
 }

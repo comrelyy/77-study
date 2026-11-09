@@ -1,9 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "washing",
-  "contentVersion": "0.2.0",
+  "contentVersion": "0.2.1",
   "status": "draft",
-  "compatibleFrom": [],
+  "compatibleFrom": [
+    "0.2.0"
+  ],
   "title": "和 Momo 洗漱啦",
   "stickerId": "washing.sticker",
   "learning": {
@@ -1217,5 +1219,85 @@
       4
     ],
     "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.2.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "washing.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.water.drink",
+          "en.soap.wash",
+          "en.towel.wash",
+          "en.toothbrush.wash"
+        ]
+      },
+      {
+        "id": "washing.lesson.story.1",
+        "kind": "story",
+        "storyId": "washing.story.1"
+      },
+      {
+        "id": "washing.lesson.story.2",
+        "kind": "story",
+        "storyId": "washing.story.2"
+      },
+      {
+        "id": "washing.lesson.story.3",
+        "kind": "story",
+        "storyId": "washing.story.3"
+      },
+      {
+        "id": "washing.lesson.story.4",
+        "kind": "story",
+        "storyId": "washing.story.4"
+      },
+      {
+        "id": "washing.lesson.story.5",
+        "kind": "story",
+        "storyId": "washing.story.5"
+      },
+      {
+        "id": "washing.lesson.story.6",
+        "kind": "story",
+        "storyId": "washing.story.6"
+      },
+      {
+        "id": "washing.lesson.fill",
+        "kind": "fill",
+        "segmentId": "washing.story.2.intro",
+        "before": "Momo picks up the ",
+        "after": ".",
+        "image": "washing.story.2.image",
+        "options": [
+          "en.water.drink",
+          "en.soap.wash",
+          "en.towel.wash",
+          "en.toothbrush.wash"
+        ],
+        "answer": "en.soap.wash"
+      },
+      {
+        "id": "washing.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "washing.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.water.drink",
+          "en.soap.wash",
+          "en.towel.wash",
+          "en.toothbrush.wash"
+        ]
+      },
+      {
+        "id": "washing.lesson.end",
+        "kind": "end"
+      }
+    ]
   }
 }
