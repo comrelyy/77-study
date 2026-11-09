@@ -42,7 +42,7 @@ async function walk(env,seen=[]){
       while(!s.done){const target=s.target;await root.querySelector('.lesson-target').fire();await option(root,target).fire();}
       await button(root,'继续').fire();
     }
-    else if(step.kind==='game'){while(app.stateFor('lesson').step===step)await playGameQuestion(app,root,app.pack);}
+    else if(step.kind==='game'){await playGameQuestion(app,root,app.pack);assert.equal(app.stateFor('lesson').step.kind,'match');assert(app.stateFor('game').finished);}
     else throw Error('unexpected step '+step.kind);
   }
   assert(root.textContent.includes('这节课完成啦'),'lesson did not finish');
@@ -78,7 +78,7 @@ test('reviewed park shows quiz and reply',async()=>{
     if(['words','story'].includes(step.kind))await button(root,'下一步 / 跳过').fire();
     else if(['quiz','fill','reply'].includes(step.kind)){await option(root,s.correctId()).fire();await button(root,'继续').fire();}
     else if(step.kind==='match'){while(!s.done){const t=s.target;await option(root,t).fire();}await button(root,'继续').fire();}
-    else if(step.kind==='game'){while(app.stateFor('lesson').step===step)await playGameQuestion(app,root,pack);}
+    else if(step.kind==='game'){await playGameQuestion(app,root,pack);}
   }
   assert(seen.includes('quiz')&&seen.includes('reply'));assert.equal(texts.size,quizzes.length+1);
   assert(answers(env.store).every(a=>a.correct));
@@ -112,12 +112,12 @@ test('double click records one answer',async()=>{
 test('missing lesson audio still answerable',async()=>{
   const pack=clone(require('./static/content/park.json'));pack.lesson.reviewed=true;
   const env=await fixture(pack,{fail:p=>p.includes('audio/park/lesson/')});env.app.open('lesson');await toStep(env,'reply');
-  const s=env.app.stateFor('lesson'),round=s.step.rounds[s.roundIndex];
+  const s=env.app.stateFor('lesson'),round=s.step.rounds[s.roundIndex],replyId=s.step.id;
   await option(env.root,round.wrong.id).fire();
   assert(env.played.some(p=>p.includes('audio/park/lesson/')));assert(env.root.textContent.includes('声音暂停或不可用'));
   await option(env.root,round.answer).fire();assert(s.done);
   await button(env.root,'继续').fire();assert.notEqual(s.step.kind,'reply');
-  assert.deepEqual(answers(env.store).filter(a=>a.stepId===s.step.id||a.roundIndex!==undefined).map(a=>a.correct),[false,true]);
+  assert.deepEqual(answers(env.store).filter(a=>a.stepId===replyId).map(a=>a.correct),[false,true]);
 });
 
 test('entering lesson does not autoplay',async()=>{
@@ -139,4 +139,27 @@ test('story step plays each sentence once on click and saves story_listen after 
   assert.equal(env.played.length,0);await env.root.querySelectorAll('.lesson-bubble')[0].fire();assert.equal(env.played.length,1);
   await button(env.root,'听这一幕').fire();
   assert.equal([...env.store.events.values()].filter(e=>e.payload.mode==='story_listen').length,1);
+});
+
+test('wrong double click records one wrong answer',async()=>{
+  const env=await fixture(require('./static/content/park.json'));env.app.open('lesson');await toStep(env,'fill');
+  const s=env.app.stateFor('lesson'),wrong=s.step.options.find(o=>o!==s.step.answer),b=option(env.root,wrong);
+  await Promise.all([b.fire(),b.fire()]);
+  const list=answers(env.store);assert.equal(list.length,1);assert.equal(list[0].correct,false);assert.equal(s.attempts,1);
+});
+
+test('one skip leaves the game step; a finished game does not trap it',async()=>{
+  for(const finished of [false,true]){
+    const env=await fixture(require('./static/content/park.json'));env.app.open('lesson');await toStep(env,'fill');
+    const s=env.app.stateFor('lesson');await option(env.root,s.step.answer).fire();await button(env.root,'继续').fire();
+    assert.equal(s.step.kind,'game');if(finished){env.app.stateFor('game').finished=true;env.app.draw();}
+    await button(env.root,'先跳过').fire();
+    assert.equal(s.step.kind,'match');assert(env.app.stateFor('game').finished);
+  }
+});
+
+test('tapping a word keeps the words step usable',async()=>{
+  const env=await fixture(require('./static/content/park.json'));env.app.open('lesson');
+  await env.root.querySelector('.word-card').fire();assert.equal([...env.store.events.values()].filter(e=>e.kind==='introduced').length,1);
+  await button(env.root,'下一步 / 跳过').fire();assert.equal(env.app.stateFor('lesson').step.kind,'story');
 });

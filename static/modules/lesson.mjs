@@ -44,7 +44,7 @@ function wordTile(c,s,id,after,showText=true){
 function renderWords(c,s,wrap){
   const step=s.step;wrap.append(node('h2','先认识今天的小伙伴','lesson-title'),node('p','点图卡听一听，不用全部点完。'));
   const grid=node('div',undefined,'word-grid');
-  for(const id of step.words){const w=c.word(id),b=button('',()=>c.hearWord(w),'word-card');b.append(c.assetImage(w.image),node('b',w.text),node('small',w.cn));grid.append(b);}
+  for(const id of step.words){const w=c.word(id),b=button('',async()=>{const ok=await c.hearWord(w);if(ok&&c.active()){c.redraw();c.message('听完 '+w.text+' 啦，可以再听，也可以继续。');}},'word-card');b.append(c.assetImage(w.image),node('b',w.text),node('small',w.cn));grid.append(b);}
   wrap.append(grid,footer(c,skipButton(c,s)),c.messageNode);
 }
 function renderStory(c,s,wrap){
@@ -130,7 +130,6 @@ export function renderLesson(c,s){
       return (async()=>{
         try{
           const generation=c.app.generation;c.pause();
-          if(game.next()){c.redraw();await c.app.checkpoint('game');return;}
           game.finished=true;
           if(!await c.app.checkpoint('game')||generation!==c.app.generation)return;
           if(s.next()){c.redraw();await c.app.checkpoint('lesson');}

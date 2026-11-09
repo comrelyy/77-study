@@ -36,8 +36,10 @@ test('a park lesson with one wrong answer persists answers and progress through 
     };
     let {app,root,store}=await open();
     await app.open('lesson');assert.equal(app.failure,null,JSON.stringify(app.failure));
-    // words, six stories, then the fill step: one wrong answer first.
-    for(let i=0;i<7;i++){await click(root,'下一步 / 跳过');assert.equal(app.failure,null);}
+    // word tap (introduced) on the words step, then a full story listen (story_listen), then skip on to the fill step.
+    await root.querySelector('.word-card').fire();assert.equal(app.failure,null,JSON.stringify(app.failure));
+    await click(root,'下一步 / 跳过');await click(root,'听这一幕');assert.equal(app.failure,null,JSON.stringify(app.failure));
+    for(let i=0;i<6;i++){await click(root,'下一步 / 跳过');assert.equal(app.failure,null);}
     let lesson=app.stateFor('lesson');assert.equal(lesson.step.kind,'fill');
     const fill=lesson.step,wrong=fill.options.find(o=>o!==fill.answer);
     await pick(root,wrong);assert.equal(app.failure,null,JSON.stringify(app.failure));assert.equal(lesson.attempts,1);
@@ -47,9 +49,8 @@ test('a park lesson with one wrong answer persists answers and progress through 
     lesson=app.stateFor('lesson');assert.equal(lesson.step.id,fill.id);assert.equal(lesson.attempts,1);
     await app.open('lesson');lesson=app.stateFor('lesson');assert.equal(lesson.step.id,fill.id);assert.equal(lesson.attempts,1);
     await pick(root,fill.answer);assert.equal(app.failure,null,JSON.stringify(app.failure));await click(root,'继续');
-    // game (scene-find, four questions)
-    let guard=0;
-    while(app.stateFor('lesson').step.kind==='game'&&guard++<10){
+    // game: exactly one question, then the lesson moves on
+    {
       const game=app.stateFor('game'),q=pack.modules.game.questions[game.index];
       await click(root,'听听要找什么');
       await root.querySelectorAll('button').find(b=>b.attributes['aria-label']==='选择'+app.word(q.target).cn).fire();
@@ -64,7 +65,9 @@ test('a park lesson with one wrong answer persists answers and progress through 
     assert.deepEqual(answers.filter(a=>a.payload.stepId===fill.id).map(a=>[a.payload.correct,a.payload.attempt]).sort((a,b)=>a[1]-b[1]),[[false,1],[true,2]]);
     assert.equal(answers.filter(a=>a.payload.correct===false).length,1);
     assert.equal(answers.filter(a=>a.payload.stepId===pack.lesson.steps.find(s=>s.kind==='match').id&&a.payload.correct).length,pack.lesson.steps.find(s=>s.kind==='match').words.length);
-    assert.equal(state.events.filter(e=>e.kind==='choice'&&e.payload.moduleId==='game').length,pack.modules.game.questions.length);
+    assert.equal(state.events.filter(e=>e.kind==='choice'&&e.payload.moduleId==='game').length,1);
+    assert(state.events.some(e=>e.kind==='introduced'&&e.payload.moduleId==='lesson'));
+    assert(state.events.some(e=>e.kind==='choice'&&e.payload.mode==='story_listen'&&e.payload.moduleId==='lesson'));
     assert(state.events.some(e=>e.kind==='sticker'));
     const progress=state.progress.find(p=>p.sceneId==='park'&&p.moduleId==='lesson');assert(progress,'lesson progress saved');assert.equal(progress.state.stepId,pack.lesson.steps.find(s=>s.kind==='end').id);
     assert.equal(state.progress.find(p=>p.moduleId==='game').state.finished,true);
