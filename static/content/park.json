@@ -1,10 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "park",
-  "contentVersion": "0.2.1",
+  "contentVersion": "0.2.2",
   "status": "draft",
   "compatibleFrom": [
-    "0.2.0"
+    "0.2.0",
+    "0.2.1"
   ],
   "title": "和 Momo 逛公园",
   "stickerId": "park.sticker",
@@ -475,6 +476,17 @@
       "reviewed": false
     },
     {
+      "id": "park.story.1.more1.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-2-0/park.story.1.more1.audio.wav",
+      "text": "Ah, it is cool here.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "park.story.2.image",
       "kind": "image",
       "path": "illustrations/scenes/park-2.svg"
@@ -513,6 +525,17 @@
       "reviewed": false
     },
     {
+      "id": "park.story.2.more1.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-2-0/park.story.2.more1.audio.wav",
+      "text": "Okay. Goodbye, little flower.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "park.story.3.image",
       "kind": "image",
       "path": "illustrations/scenes/park-3.svg"
@@ -544,6 +567,28 @@
       "kind": "audio",
       "path": "audio/park/v0-2-0/park.story.3.reply.audio.wav",
       "text": "Yes! Let us be quiet and listen.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.story.3.more1.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-2-0/park.story.3.more1.audio.wav",
+      "text": "What a pretty song!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.story.3.more2.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-2-0/park.story.3.more2.audio.wav",
+      "text": "I think the bird is happy.",
       "language": "en-US",
       "role": "momo",
       "source": null,
@@ -589,6 +634,17 @@
       "reviewed": false
     },
     {
+      "id": "park.story.4.more1.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-2-0/park.story.4.more1.audio.wav",
+      "text": "Thank you! I roll it back to you.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "park.story.5.image",
       "kind": "image",
       "path": "illustrations/scenes/park-5.svg"
@@ -620,6 +676,28 @@
       "kind": "audio",
       "path": "audio/park/v0-2-0/park.story.5.reply.audio.wav",
       "text": "Stay with me. Let us ask for help.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.story.5.more1.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-2-0/park.story.5.more1.audio.wav",
+      "text": "Okay. I will stay with you.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.story.5.more2.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-2-0/park.story.5.more2.audio.wav",
+      "text": "Thank you. Our grown-up can get it.",
       "language": "en-US",
       "role": "bunny",
       "source": null,
@@ -660,6 +738,17 @@
       "text": "We can bring our ball another day.",
       "language": "en-US",
       "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.story.6.more1.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-2-0/park.story.6.more1.audio.wav",
+      "text": "Yes. See you next time, park!",
+      "language": "en-US",
+      "role": "momo",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -790,20 +879,30 @@
           {
             "id": "park.story.1.intro",
             "text": "The friends arrive at the park.",
+            "cn": "朋友们来到公园。",
             "speaker": "narrator",
             "audio": "park.story.1.intro.audio"
           },
           {
             "id": "park.story.1.item",
             "text": "It is sunny. Where can we sit?",
+            "cn": "太阳好晒。我们坐哪儿呢？",
             "speaker": "momo",
             "audio": "park.story.1.item.audio"
           },
           {
             "id": "park.story.1.reply",
             "text": "Under this tree. There is shade.",
+            "cn": "坐这棵树下，这里有阴凉。",
             "speaker": "bunny",
             "audio": "park.story.1.reply.audio"
+          },
+          {
+            "id": "park.story.1.more1",
+            "text": "Ah, it is cool here.",
+            "cn": "啊，这里好凉快。",
+            "speaker": "momo",
+            "audio": "park.story.1.more1.audio"
           }
         ]
       },
@@ -829,20 +928,30 @@
           {
             "id": "park.story.2.intro",
             "text": "A flower grows beside the path.",
+            "cn": "小路边长着一朵花。",
             "speaker": "narrator",
             "audio": "park.story.2.intro.audio"
           },
           {
             "id": "park.story.2.item",
             "text": "Can we take it home?",
+            "cn": "我们能把它带回家吗？",
             "speaker": "momo",
             "audio": "park.story.2.item.audio"
           },
           {
             "id": "park.story.2.reply",
             "text": "Let it grow. We can visit again.",
+            "cn": "让它继续长吧。我们可以再来看它。",
             "speaker": "bunny",
             "audio": "park.story.2.reply.audio"
+          },
+          {
+            "id": "park.story.2.more1",
+            "text": "Okay. Goodbye, little flower.",
+            "cn": "好吧。再见，小花。",
+            "speaker": "momo",
+            "audio": "park.story.2.more1.audio"
           }
         ]
       },
@@ -868,20 +977,37 @@
           {
             "id": "park.story.3.intro",
             "text": "A bird sings in the tree.",
+            "cn": "一只小鸟在树上唱歌。",
             "speaker": "narrator",
             "audio": "park.story.3.intro.audio"
           },
           {
             "id": "park.story.3.item",
             "text": "Can you hear that?",
+            "cn": "你听到了吗？",
             "speaker": "bunny",
             "audio": "park.story.3.item.audio"
           },
           {
             "id": "park.story.3.reply",
             "text": "Yes! Let us be quiet and listen.",
+            "cn": "听到了！我们安静地听一听。",
             "speaker": "momo",
             "audio": "park.story.3.reply.audio"
+          },
+          {
+            "id": "park.story.3.more1",
+            "text": "What a pretty song!",
+            "cn": "多好听的歌呀！",
+            "speaker": "bunny",
+            "audio": "park.story.3.more1.audio"
+          },
+          {
+            "id": "park.story.3.more2",
+            "text": "I think the bird is happy.",
+            "cn": "我觉得小鸟很开心。",
+            "speaker": "momo",
+            "audio": "park.story.3.more2.audio"
           }
         ]
       },
@@ -907,20 +1033,30 @@
           {
             "id": "park.story.4.intro",
             "text": "Momo holds the ball for a long time.",
+            "cn": "Momo 抱着球玩了好久。",
             "speaker": "narrator",
             "audio": "park.story.4.intro.audio"
           },
           {
             "id": "park.story.4.item",
             "text": "May I have a turn?",
+            "cn": "可以轮到我玩一会儿吗？",
             "speaker": "bunny",
             "audio": "park.story.4.item.audio"
           },
           {
             "id": "park.story.4.reply",
             "text": "Yes. I roll it to you. Your turn!",
+            "cn": "可以。我滚给你，轮到你啦！",
             "speaker": "momo",
             "audio": "park.story.4.reply.audio"
+          },
+          {
+            "id": "park.story.4.more1",
+            "text": "Thank you! I roll it back to you.",
+            "cn": "谢谢！我再滚回给你。",
+            "speaker": "bunny",
+            "audio": "park.story.4.more1.audio"
           }
         ]
       },
@@ -946,20 +1082,37 @@
           {
             "id": "park.story.5.intro",
             "text": "The ball rolls beside the path.",
+            "cn": "球滚到了路边。",
             "speaker": "narrator",
             "audio": "park.story.5.intro.audio"
           },
           {
             "id": "park.story.5.item",
             "text": "I want to run after it!",
+            "cn": "我想跑过去追！",
             "speaker": "momo",
             "audio": "park.story.5.item.audio"
           },
           {
             "id": "park.story.5.reply",
             "text": "Stay with me. Let us ask for help.",
+            "cn": "待在我身边。我们去请人帮忙。",
             "speaker": "bunny",
             "audio": "park.story.5.reply.audio"
+          },
+          {
+            "id": "park.story.5.more1",
+            "text": "Okay. I will stay with you.",
+            "cn": "好的。我待在你身边。",
+            "speaker": "momo",
+            "audio": "park.story.5.more1.audio"
+          },
+          {
+            "id": "park.story.5.more2",
+            "text": "Thank you. Our grown-up can get it.",
+            "cn": "谢谢你。大人可以帮我们拿回来。",
+            "speaker": "bunny",
+            "audio": "park.story.5.more2.audio"
           }
         ]
       },
@@ -985,20 +1138,30 @@
           {
             "id": "park.story.6.intro",
             "text": "It is time to leave the park.",
+            "cn": "该离开公园了。",
             "speaker": "narrator",
             "audio": "park.story.6.intro.audio"
           },
           {
             "id": "park.story.6.item",
             "text": "Goodbye, bird. Goodbye, tree!",
+            "cn": "再见，小鸟。再见，大树！",
             "speaker": "momo",
             "audio": "park.story.6.item.audio"
           },
           {
             "id": "park.story.6.reply",
             "text": "We can bring our ball another day.",
+            "cn": "我们改天再带球来玩。",
             "speaker": "bunny",
             "audio": "park.story.6.reply.audio"
+          },
+          {
+            "id": "park.story.6.more1",
+            "text": "Yes. See you next time, park!",
+            "cn": "好。下次见，公园！",
+            "speaker": "momo",
+            "audio": "park.story.6.more1.audio"
           }
         ]
       }

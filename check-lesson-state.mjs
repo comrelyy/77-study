@@ -111,3 +111,12 @@ test('boot asset check skips lesson audio but still fails a missing ordinary ass
   assert.deepEqual(await missingBootAssets(park,async path=>path!==normal.path),[normal.path]);
   assert.deepEqual(await missingBootAssets(park,async()=>false),park.assets.filter(a=>!String(a.id).includes('.lesson.')).map(a=>a.path));
 });
+test('previous and goTo re-enter a step from scratch',()=>{
+  const s=goto(new LessonState(reviewed()),'park.lesson.quiz.1'),at=s.index,w=wrongOf(s.step);
+  s.answer(w);assert.equal(s.attempts,1);
+  assert.equal(s.next(),true);assert.equal(s.previous(),true);assert.equal(s.index,at);
+  assert.equal(s.attempts,0);assert.equal(s.done,false);assert.equal(s.revealed,false);
+  assert.equal(s.goTo(s.steps.length-1),true);assert.equal(s.step.kind,'end');
+  assert.equal(s.goTo(0),true);assert.equal(s.previous(),false);assert.equal(s.index,0);
+  assert.equal(s.goTo(s.steps.length),false);assert.equal(s.goTo(-1),false);assert.equal(s.index,0);
+});

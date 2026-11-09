@@ -1,10 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "bedtime",
-  "contentVersion": "0.2.1",
+  "contentVersion": "0.2.2",
   "status": "draft",
   "compatibleFrom": [
-    "0.2.0"
+    "0.2.0",
+    "0.2.1"
   ],
   "title": "和 Momo 道晚安",
   "stickerId": "bedtime.sticker",
@@ -476,6 +477,17 @@
       "reviewed": false
     },
     {
+      "id": "bedtime.story.1.more1.audio",
+      "kind": "audio",
+      "path": "audio/bedtime/v0-2-0/bedtime.story.1.more1.audio.wav",
+      "text": "Okay. Let us look at both.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "bedtime.story.2.image",
       "kind": "image",
       "path": "illustrations/scenes/bedtime-2.svg"
@@ -514,6 +526,17 @@
       "reviewed": false
     },
     {
+      "id": "bedtime.story.2.more1.audio",
+      "kind": "audio",
+      "path": "audio/bedtime/v0-2-0/bedtime.story.2.more1.audio.wav",
+      "text": "Now it is your turn.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "bedtime.story.3.image",
       "kind": "image",
       "path": "illustrations/scenes/bedtime-3.svg"
@@ -545,6 +568,28 @@
       "kind": "audio",
       "path": "audio/bedtime/v0-2-0/bedtime.story.3.reply.audio.wav",
       "text": "Look behind the cushion. I can help.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "bedtime.story.3.more1.audio",
+      "kind": "audio",
+      "path": "audio/bedtime/v0-2-0/bedtime.story.3.more1.audio.wav",
+      "text": "I found teddy! Thank you, Lulu.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "bedtime.story.3.more2.audio",
+      "kind": "audio",
+      "path": "audio/bedtime/v0-2-0/bedtime.story.3.more2.audio.wav",
+      "text": "Now teddy can sleep too.",
       "language": "en-US",
       "role": "bunny",
       "source": null,
@@ -590,6 +635,17 @@
       "reviewed": false
     },
     {
+      "id": "bedtime.story.4.more1.audio",
+      "kind": "audio",
+      "path": "audio/bedtime/v0-2-0/bedtime.story.4.more1.audio.wav",
+      "text": "Now it feels soft.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "bedtime.story.5.image",
       "kind": "image",
       "path": "illustrations/scenes/bedtime-5.svg"
@@ -621,6 +677,28 @@
       "kind": "audio",
       "path": "audio/bedtime/v0-2-0/bedtime.story.5.reply.audio.wav",
       "text": "A little, please. Leave it on for now.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "bedtime.story.5.more1.audio",
+      "kind": "audio",
+      "path": "audio/bedtime/v0-2-0/bedtime.story.5.more1.audio.wav",
+      "text": "Okay. A little dimmer.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "bedtime.story.5.more2.audio",
+      "kind": "audio",
+      "path": "audio/bedtime/v0-2-0/bedtime.story.5.more2.audio.wav",
+      "text": "That is just right.",
       "language": "en-US",
       "role": "momo",
       "source": null,
@@ -661,6 +739,50 @@
       "text": "I will call our grown-up. Goodnight, friend.",
       "language": "en-US",
       "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "bedtime.story.6.more1.audio",
+      "kind": "audio",
+      "path": "audio/bedtime/v0-2-0/bedtime.story.6.more1.audio.wav",
+      "text": "Goodnight, Lulu.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "bedtime.game.1.label.book.audio",
+      "kind": "audio",
+      "path": "audio/bedtime/v0-2-0/bedtime.game.1.label.book.audio.wav",
+      "text": "read a book",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "bedtime.game.1.label.teddy.audio",
+      "kind": "audio",
+      "path": "audio/bedtime/v0-2-0/bedtime.game.1.label.teddy.audio.wav",
+      "text": "hug teddy",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "bedtime.game.1.label.lamp.audio",
+      "kind": "audio",
+      "path": "audio/bedtime/v0-2-0/bedtime.game.1.label.lamp.audio.wav",
+      "text": "dim the lamp",
+      "language": "en-US",
+      "role": "narrator",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -720,20 +842,30 @@
           {
             "id": "bedtime.story.1.intro",
             "text": "The sky is getting dark.",
+            "cn": "天慢慢黑了。",
             "speaker": "narrator",
             "audio": "bedtime.story.1.intro.audio"
           },
           {
             "id": "bedtime.story.1.item",
             "text": "I want this book.",
+            "cn": "我想看这本书。",
             "speaker": "momo",
             "audio": "bedtime.story.1.item.audio"
           },
           {
             "id": "bedtime.story.1.reply",
             "text": "I want that one. Can we choose together?",
+            "cn": "我想看那本。我们一起选好吗？",
             "speaker": "bunny",
             "audio": "bedtime.story.1.reply.audio"
+          },
+          {
+            "id": "bedtime.story.1.more1",
+            "text": "Okay. Let us look at both.",
+            "cn": "好呀。我们两本都看看。",
+            "speaker": "momo",
+            "audio": "bedtime.story.1.more1.audio"
           }
         ]
       },
@@ -759,20 +891,30 @@
           {
             "id": "bedtime.story.2.intro",
             "text": "The friends choose a book together.",
+            "cn": "朋友们一起选好了一本书。",
             "speaker": "narrator",
             "audio": "bedtime.story.2.intro.audio"
           },
           {
             "id": "bedtime.story.2.item",
             "text": "You turn this page. I will turn the next.",
+            "cn": "你翻这一页，我翻下一页。",
             "speaker": "bunny",
             "audio": "bedtime.story.2.item.audio"
           },
           {
             "id": "bedtime.story.2.reply",
             "text": "Good idea. Let us take turns.",
+            "cn": "好主意。我们轮流翻。",
             "speaker": "momo",
             "audio": "bedtime.story.2.reply.audio"
+          },
+          {
+            "id": "bedtime.story.2.more1",
+            "text": "Now it is your turn.",
+            "cn": "现在轮到你了。",
+            "speaker": "bunny",
+            "audio": "bedtime.story.2.more1.audio"
           }
         ]
       },
@@ -798,20 +940,37 @@
           {
             "id": "bedtime.story.3.intro",
             "text": "Teddy is not on the bed.",
+            "cn": "小熊不在床上。",
             "speaker": "narrator",
             "audio": "bedtime.story.3.intro.audio"
           },
           {
             "id": "bedtime.story.3.item",
             "text": "I cannot find teddy.",
+            "cn": "我找不到小熊了。",
             "speaker": "momo",
             "audio": "bedtime.story.3.item.audio"
           },
           {
             "id": "bedtime.story.3.reply",
             "text": "Look behind the cushion. I can help.",
+            "cn": "看看靠垫后面。我来帮你。",
             "speaker": "bunny",
             "audio": "bedtime.story.3.reply.audio"
+          },
+          {
+            "id": "bedtime.story.3.more1",
+            "text": "I found teddy! Thank you, Lulu.",
+            "cn": "我找到小熊了！谢谢你，Lulu。",
+            "speaker": "momo",
+            "audio": "bedtime.story.3.more1.audio"
+          },
+          {
+            "id": "bedtime.story.3.more2",
+            "text": "Now teddy can sleep too.",
+            "cn": "现在小熊也可以睡觉了。",
+            "speaker": "bunny",
+            "audio": "bedtime.story.3.more2.audio"
           }
         ]
       },
@@ -837,20 +996,30 @@
           {
             "id": "bedtime.story.4.intro",
             "text": "The blanket is twisted on the bed.",
+            "cn": "床上的被子卷成了一团。",
             "speaker": "narrator",
             "audio": "bedtime.story.4.intro.audio"
           },
           {
             "id": "bedtime.story.4.item",
             "text": "My bed feels bumpy.",
+            "cn": "我的床疙疙瘩瘩的。",
             "speaker": "momo",
             "audio": "bedtime.story.4.item.audio"
           },
           {
             "id": "bedtime.story.4.reply",
             "text": "Let us smooth the blanket together.",
+            "cn": "我们一起把被子铺平吧。",
             "speaker": "bunny",
             "audio": "bedtime.story.4.reply.audio"
+          },
+          {
+            "id": "bedtime.story.4.more1",
+            "text": "Now it feels soft.",
+            "cn": "现在软软的了。",
+            "speaker": "momo",
+            "audio": "bedtime.story.4.more1.audio"
           }
         ]
       },
@@ -876,20 +1045,37 @@
           {
             "id": "bedtime.story.5.intro",
             "text": "The lamp is still bright.",
+            "cn": "灯还很亮。",
             "speaker": "narrator",
             "audio": "bedtime.story.5.intro.audio"
           },
           {
             "id": "bedtime.story.5.item",
             "text": "Would you like it dimmer?",
+            "cn": "你想把灯调暗一点吗？",
             "speaker": "bunny",
             "audio": "bedtime.story.5.item.audio"
           },
           {
             "id": "bedtime.story.5.reply",
             "text": "A little, please. Leave it on for now.",
+            "cn": "暗一点点就好。先别关掉。",
             "speaker": "momo",
             "audio": "bedtime.story.5.reply.audio"
+          },
+          {
+            "id": "bedtime.story.5.more1",
+            "text": "Okay. A little dimmer.",
+            "cn": "好的。暗一点点。",
+            "speaker": "bunny",
+            "audio": "bedtime.story.5.more1.audio"
+          },
+          {
+            "id": "bedtime.story.5.more2",
+            "text": "That is just right.",
+            "cn": "这样刚刚好。",
+            "speaker": "momo",
+            "audio": "bedtime.story.5.more2.audio"
           }
         ]
       },
@@ -915,20 +1101,30 @@
           {
             "id": "bedtime.story.6.intro",
             "text": "Everything is ready for resting.",
+            "cn": "睡觉前的事都准备好了。",
             "speaker": "narrator",
             "audio": "bedtime.story.6.intro.audio"
           },
           {
             "id": "bedtime.story.6.item",
             "text": "Please stay with me a little.",
+            "cn": "请再陪我一会儿。",
             "speaker": "momo",
             "audio": "bedtime.story.6.item.audio"
           },
           {
             "id": "bedtime.story.6.reply",
             "text": "I will call our grown-up. Goodnight, friend.",
+            "cn": "我去叫大人来。晚安，我的朋友。",
             "speaker": "bunny",
             "audio": "bedtime.story.6.reply.audio"
+          },
+          {
+            "id": "bedtime.story.6.more1",
+            "text": "Goodnight, Lulu.",
+            "cn": "晚安，Lulu。",
+            "speaker": "momo",
+            "audio": "bedtime.story.6.more1.audio"
           }
         ]
       }
@@ -1201,9 +1397,14 @@
           ],
           "instructions": "把今晚的睡前故事接起来：先一起看书，再抱好小熊，最后调暗灯光。",
           "labels": {
-            "en.book.object": "一起读书",
-            "en.teddy.toy": "抱好小熊",
-            "en.lamp.object": "调暗台灯"
+            "en.book.object": "read a book",
+            "en.teddy.toy": "hug teddy",
+            "en.lamp.object": "dim the lamp"
+          },
+          "labelAudio": {
+            "en.book.object": "bedtime.game.1.label.book.audio",
+            "en.teddy.toy": "bedtime.game.1.label.teddy.audio",
+            "en.lamp.object": "bedtime.game.1.label.lamp.audio"
           }
         }
       ]

@@ -6,7 +6,7 @@ export function renderNovelGame(c,s){
   if(ordering){
     const slots=node('ol',undefined,'sequence-slots');slots.setAttribute('aria-label','我排好的故事');
     for(let i=0;i<q.solution.length;i++){const slot=node('li',undefined,'sequence-slot'),id=s.sequence[i];slot.append(node('small','第 '+(i+1)+' 步'));if(id){slot.append(c.assetImage(c.word(id).image),node('b',q.labels[id]));}else slot.append(node('span','选一张放这里'));slots.append(slot);}wrap.append(slots);
-    const options=node('div',undefined,'food-options');for(const id of s.candidates()){const b=button('',()=>{if(s.select(id)){c.redraw();c.app.checkpoint('game');}},'food-tile');b.append(c.assetImage(c.word(id).image),node('span',q.labels[id]));b.disabled=s.done||s.busy||s.sequence.includes(id);options.append(b);}wrap.append(options);
+    const options=node('div',undefined,'food-options');for(const id of s.candidates()){const b=button('',()=>{if(s.select(id)){c.redraw();c.app.checkpoint('game');if(q.labelAudio?.[id])c.play(q.labelAudio[id]);}},'food-tile');b.append(c.assetImage(c.word(id).image),node('span',q.labels[id],'order-label'));b.disabled=s.done||s.busy||s.sequence.includes(id);options.append(b);}wrap.append(options);
     const confirm=button('故事排好了',save,'primary');confirm.disabled=s.done||s.busy||s.sequence.length!==q.solution.length;
     const undo=button('撤回最后一步',()=>{if(s.undoSequence()){c.redraw();c.app.checkpoint('game');}});undo.disabled=s.done||s.busy||!s.sequence.length;wrap.append(actions(confirm,undo));
   }else{

@@ -69,7 +69,8 @@ const stories={
 
 function applyNarrative(pack){
   const rows=stories[pack.sceneId];if(!rows)return pack;
-  const {audio}=require('./launch-content.cjs');
+  const {audio}=require('./launch-content.cjs'),storyCn=require('./story-cn.cjs'),storyMore=require('./story-more.cjs');
+  if(!stories[pack.sceneId].every((_,i)=>storyMore[pack.sceneId+'.story.'+(i+1)]))throw Error('Missing extra story lines: '+pack.sceneId);
   pack.contentVersion=pack.sceneId==='picnic'?'0.4.0':pack.sceneId==='tidy'?'0.5.0':['cooking','transport','weather','gardening'].includes(pack.sceneId)?'0.1.0':'0.2.0';
   pack.compatibleFrom=[];
   pack.assets=pack.assets.filter(a=>!a.id.includes('.story.'));
@@ -80,7 +81,8 @@ function applyNarrative(pack){
     const illustration=id+'.image';pack.assets.push({id:illustration,kind:'image',path:`illustrations/scenes/${pack.sceneId}-${i+1}.svg`});
     return {id,title:(i+1)+'. '+title,templateId:pack.sceneId==='picnic'?'picnic-meadow':pack.sceneId==='tidy'?'tidy-room':'daily-life',illustration,
       characters:[pack.sceneId+'.'+a,pack.sceneId+'.'+b],mainWord:main.id,hotspots:[{word:main.id,x:.5,y:.6}],translation,
-      segments:[['narrator',narration],[a,lineA],[b,lineB]].map(([speaker,text],j)=>{const sid=id+'.'+['intro','item','reply'][j];return {id:sid,text,speaker,audio:audio(pack,sid,text,speaker)};})};
+      segments:[['narrator',narration],[a,lineA],[b,lineB]].map(([speaker,text],j)=>{const sid=id+'.'+['intro','item','reply'][j];if(!storyCn[sid])throw Error('Missing story Chinese: '+sid);return {id:sid,text,cn:storyCn[sid],speaker,audio:audio(pack,sid,text,speaker)};})
+        .concat((storyMore[id]||[]).map(([speaker,text,cn],j)=>{const sid=id+'.more'+(j+1);return {id:sid,text,cn,speaker,audio:audio(pack,sid,text,speaker)};}))};
   });
   return pack;
 }
@@ -96,15 +98,17 @@ function applyGames(pack){
       questions:pack.words.map((w,i)=>({id:id+'.game.'+(i+1),target:w.id,options:pack.words.map(w=>w.id)}))};
   }
   const orders={
-    washing:[['把洗手的过程接起来：先搓肥皂，再冲净泡泡，最后擦干手。',['soap','water','towel'],['搓搓肥皂','冲净泡泡','擦干小手']]],
-    breakfast:[['按朋友商量的计划摆早餐：先分面包，再摆鸡蛋，最后端杯子。',['bread','egg','cup'],['分享面包','摆好鸡蛋','端来杯子']]],
-    bedtime:[['把今晚的睡前故事接起来：先一起看书，再抱好小熊，最后调暗灯光。',['book','teddy','lamp'],['一起读书','抱好小熊','调暗台灯']]],
-    cooking:[['按准备点心的步骤来：先拿碗，再放番茄，最后用勺子拌一拌。',['bowl','tomato','spoon'],['拿好碗','放入番茄','用勺子搅拌']]],
-    gardening:[['按种植计划来：先准备花盆，再放种子，最后浇一点水。',['pot','seed','water'],['准备花盆','放入种子','浇一点水']]]
+    washing:[['把洗手的过程接起来：先搓肥皂，再冲净泡泡，最后擦干手。',['soap','water','towel'],['rub the soap','rinse the bubbles','dry our hands']]],
+    breakfast:[['按朋友商量的计划摆早餐：先分面包，再摆鸡蛋，最后端杯子。',['bread','egg','cup'],['share the bread','put out the egg','bring the cups']]],
+    bedtime:[['把今晚的睡前故事接起来：先一起看书，再抱好小熊，最后调暗灯光。',['book','teddy','lamp'],['read a book','hug teddy','dim the lamp']]],
+    cooking:[['按准备点心的步骤来：先拿碗，再放番茄，最后用勺子拌一拌。',['bowl','tomato','spoon'],['get the bowl','add the tomato','stir with the spoon']]],
+    gardening:[['按种植计划来：先准备花盆，再放种子，最后浇一点水。',['pot','seed','water'],['get the pot','plant the seed','add a little water']]]
   };
   if(orders[id])pack.modules.game={type:'story-order',title:'把我们的故事接起来',instructions:'听完故事后，按提示选卡片排顺序。可以撤回、请朋友示范或跳过。',questions:orders[id].map(([instructions,keys,labels],i)=>{
     const solution=keys.map(resolve);if(solution.some(w=>!w))throw Error('Missing order word');
-    return {id:id+'.game.'+(i+1),target:solution.at(-1),options:solution,solution,instructions,labels:Object.fromEntries(solution.map((w,i)=>[w,labels[i]]))};
+    const qid=id+'.game.'+(i+1),{audio}=require('./launch-content.cjs');
+    return {id:qid,target:solution.at(-1),options:solution,solution,instructions,labels:Object.fromEntries(solution.map((w,i)=>[w,labels[i]])),
+      labelAudio:Object.fromEntries(solution.map((w,i)=>[w,audio(pack,qid+'.label.'+keys[i],labels[i],'narrator')]))};
   })};
   const hooks={dressing:[1,2,3,4],washing:[4],breakfast:[5],cooking:[5],tidy:[2,3,4],picnic:[3,3,4,5],park:[1,2,3,4],transport:[1,2,3,4],shopping:[2,4,5,5],weather:[1,2,3,4],gardening:[3],bedtime:[5]};
   pack.interaction={gameAfterDialogue:hooks[id],separateGameEntry:false};

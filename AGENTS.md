@@ -30,3 +30,5 @@
 - 2026-10-30 S7：复习来源加载与试听在 static/core/review-sources.mjs；家庭来源只允许发布情景及开发预览，内部样例隔离。运行 node check-s7.mjs；不得用隔离包测试代替真实多情景音画验收，见 docs/S7_DELIVERY.md。
 
 - 2026-11-09 主题首页改为"一节课一条线"：只有"开始这节课"一个入口，按 单词 → 故事（含选图题）→ 填空 → 对话补全 → 一道游戏 → 配对 → 完成 走；答错不扣分，同题连错 2 次给答案。题目源在 `content-lesson/<id>.json`，由 `lesson-build.cjs` 合进内容包 `lesson`；`lesson.reviewed` 只能由人运行 `python -m momo_agent quiz-approve <id>` 置为 true，智能体生成流程不得设置，未审核时跳过 quiz/reply 步骤。手写主题（无 `generatedBy`）的题目读音只能在 Windows 用 `make-s4-audio.ps1 -SceneId <id>` 合成，`quiz-audio` 在 macOS 拒绝。页面加载的资源存在性检查不含 `.lesson.` 读音。运行 `check-lesson-build.mjs`、`check-lesson-state.mjs`、`check-lesson-flow.mjs`、`check-lesson-http.mjs`、`momo_agent` 测试及统一检查。详见 `docs/LESSON_LINE.md`。
+
+- 2026-11-09 课程页打磨（用户定）：故事每句带 `cn`，句后「中」图标点开才显示，替代整幕「看看中文意思」；手写主题中文在 `story-cn.cjs`。课程页左侧步骤导航可点击跳到任意一步，另有「上一步」；进入任一步都从头重做该步（`LessonState.goTo`）。手写主题每幕追加 1–2 句台词（`story-more.cjs`，id 为 `.more1/.more2`，只追加不改旧句）。「把故事接起来」卡片用英文短语并配 `labelAudio`。新增读音在 Mac 先用 `python3 scripts/mac-placeholder-audio.py` 合成 Samantha 临时声音，manifest 标 `provenanceStatus: mac placeholder`；Windows 运行 `make-s4-audio.ps1 -SceneId <id>` 会重新合成这些占位文件，临时声音不得当作正式读音验收。

@@ -1,4 +1,10 @@
 ﻿import {node,button,actions,image} from '../core/dom.mjs';
+const openCn=new Set();
+function cnToggle(seg,target){
+  const cn=node('span',seg.cn,'segment-cn');cn.hidden=!openCn.has(seg.id);
+  const t=button('中',()=>{cn.hidden=!cn.hidden;if(cn.hidden)openCn.delete(seg.id);else openCn.add(seg.id);t.setAttribute('aria-pressed',String(!cn.hidden));},'cn-toggle');
+  t.setAttribute('aria-label','看中文');t.setAttribute('aria-pressed',String(!cn.hidden));target.append(t,cn);
+}
 export function renderStory(c,s){
   const scene=s.scene,layout=node('div',undefined,'scene-layout'),art=node('div',undefined,'story-art sketch-story '+scene.templateId);
   art.append(node('div','STORY · '+(s.step+1)+' / '+s.scenes.length,'sketch-page-number'));
@@ -12,8 +18,7 @@ export function renderStory(c,s){
     finally{s.choosing=false;b.disabled=false;}
   },'food-prop sketch-food-prop');b.setAttribute('aria-label','听'+w.cn);b.append(c.assetImage(w.image),node('b',w.text),node('small','听完，去下一幕 →'));wordTray.append(b);}art.append(wordTray);
   const copy=node('div');copy.append(node('div','STORY · '+(s.step+1)+' / '+s.scenes.length,'eyebrow'),node('h1',scene.title));
-  const english=node('div',undefined,'english-story');for(const [i,segment]of scene.segments.entries()){const p=node('p',undefined,i===s.fragment?'current-fragment':'');if(segment.speaker)p.append(node('small',({narrator:'故事',momo:'Momo 墨墨',bunny:'Lulu 露露',fox:'Fifi 菲菲',turtle:'Toto 托托'})[segment.speaker]||segment.speaker,'story-speaker'));p.append(node('span',segment.text));english.append(p);}copy.append(english);
-  const translation=node('details',undefined,'translation');translation.append(node('summary','看看中文意思'),node('p',scene.translation));copy.append(translation);
+  const english=node('div',undefined,'english-story');for(const [i,segment]of scene.segments.entries()){const p=node('p',undefined,i===s.fragment?'current-fragment':'');if(segment.speaker)p.append(node('small',({narrator:'故事',momo:'Momo 墨墨',bunny:'Lulu 露露',fox:'Fifi 菲菲',turtle:'Toto 托托'})[segment.speaker]||segment.speaker,'story-speaker'));p.append(node('span',segment.text));if(segment.cn)cnToggle(segment,p);english.append(p);}copy.append(english);
   async function startStory(restart=false){
     if(!c.active())return;
     // Keep Audio.play inside the click's task. Resetting/redrawing alone is not

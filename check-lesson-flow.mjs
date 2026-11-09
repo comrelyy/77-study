@@ -173,3 +173,14 @@ test('tapping a word keeps the words step usable',async()=>{
   await env.root.querySelector('.word-card').fire();assert.equal([...env.store.events.values()].filter(e=>e.kind==='introduced').length,1);
   await button(env.root,'下一步 / 跳过').fire();assert.equal(env.app.stateFor('lesson').step.kind,'story');
 });
+test('step navigation jumps anywhere and 上一步 restarts the previous step',async()=>{
+  const pack=require('./static/content/dressing.json'),env=await fixture(pack),{app,root}=env;app.open('lesson');
+  assert.equal(root.querySelector('.lesson-steps').querySelectorAll('button').length,app.stateFor('lesson').steps.length);
+  await button(root,'配一配').fire();assert.equal(app.stateFor('lesson').step.kind,'match');
+  await button(root,'填一填').fire();const s=app.stateFor('lesson');assert.equal(s.step.kind,'fill');
+  await option(root,s.step.options.find(x=>x!==s.correctId())).fire();assert.equal(s.attempts,1);
+  await option(root,s.correctId()).fire();assert(s.done);await button(root,'继续').fire();assert.equal(s.step.kind,'game');
+  await button(root,'填一填').fire();assert.equal(s.step.kind,'fill');assert.equal(s.done,false);assert.equal(s.attempts,0);
+  await button(root,'上一步').fire();assert.equal(s.step.kind,'story');
+  await button(root,'认识单词').fire();assert.equal(s.index,0);assert.equal(button(root,'上一步').disabled,true);
+});

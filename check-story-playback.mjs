@@ -41,7 +41,7 @@ test('pause and resume replay the interrupted line and do not record an incomple
   await find(root,'暂停声音').fire();await first;assert.equal(state.fragment,1);assert.equal(store.events.size,0);
   sounds[1].onended();assert.equal(state.fragment,1);
   const resume=find(root,'继续这一幕').fire();await until(()=>sounds.length===3);assert.equal(sounds[2].url,scenePaths[1]);
-  sounds[2].onended();await until(()=>sounds.length===4);sounds[3].onended();await resume;assert(state.saved);assert.equal(store.events.size,1);
+  for(let i=2;i<scenePaths.length+1;i++){await until(()=>sounds.length===i+1);sounds[i].onended();}await resume;assert(state.saved);assert.equal(store.events.size,1);
 });
 
 test('an unavailable audio file keeps the scene incomplete and shows a usable retry message',async()=>{

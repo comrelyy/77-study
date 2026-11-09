@@ -1,4 +1,4 @@
-import {renderNovelGame} from './game-novel.mjs?v=lesson-20261109';
+import {renderNovelGame} from './game-novel.mjs?v=segment-cn-20261109b';
 import {node,button,actions,image} from '../core/dom.mjs';
 export function renderGame(c,s){
   if(['scene-find','story-order'].includes(c.pack.modules.game.type))return renderNovelGame(c,s);

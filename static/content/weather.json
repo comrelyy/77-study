@@ -1,10 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "weather",
-  "contentVersion": "0.1.1",
+  "contentVersion": "0.1.2",
   "status": "draft",
   "compatibleFrom": [
-    "0.1.0"
+    "0.1.0",
+    "0.1.1"
   ],
   "title": "和 Momo 看天气",
   "stickerId": "weather.sticker",
@@ -475,6 +476,17 @@
       "reviewed": false
     },
     {
+      "id": "weather.story.1.more1.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.1.more1.audio.wav",
+      "text": "Blue sky, and a big sun!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "weather.story.2.image",
       "kind": "image",
       "path": "illustrations/scenes/weather-2.svg"
@@ -506,6 +518,28 @@
       "kind": "audio",
       "path": "audio/weather/v0-1-0/weather.story.2.reply.audio.wav",
       "text": "I think it looks like a turtle!",
+      "language": "en-US",
+      "role": "fox",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.2.more1.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.2.more1.audio.wav",
+      "text": "We can both be right.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.2.more2.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.2.more2.audio.wav",
+      "text": "Look, it is moving away.",
       "language": "en-US",
       "role": "fox",
       "source": null,
@@ -551,6 +585,17 @@
       "reviewed": false
     },
     {
+      "id": "weather.story.3.more1.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.3.more1.audio.wav",
+      "text": "Okay. We can play inside today.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "weather.story.4.image",
       "kind": "image",
       "path": "illustrations/scenes/weather-4.svg"
@@ -584,6 +629,17 @@
       "text": "Thank you. I nearly forgot it.",
       "language": "en-US",
       "role": "fox",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.4.more1.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.4.more1.audio.wav",
+      "text": "Here it is, by the door.",
+      "language": "en-US",
+      "role": "turtle",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -627,6 +683,28 @@
       "reviewed": false
     },
     {
+      "id": "weather.story.5.more1.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.5.more1.audio.wav",
+      "text": "Yes! A story about a little cloud.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.5.more2.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.5.more2.audio.wav",
+      "text": "You start. I will listen.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "weather.story.6.image",
       "kind": "image",
       "path": "illustrations/scenes/weather-6.svg"
@@ -660,6 +738,17 @@
       "text": "Let us check with our grown-up before we go.",
       "language": "en-US",
       "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.story.6.more1.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.story.6.more1.audio.wav",
+      "text": "Okay. I will ask now.",
+      "language": "en-US",
+      "role": "momo",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -724,20 +813,30 @@
           {
             "id": "weather.story.1.intro",
             "text": "Momo and Lulu want to play outside.",
+            "cn": "Momo 和 Lulu 想去外面玩。",
             "speaker": "narrator",
             "audio": "weather.story.1.intro.audio"
           },
           {
             "id": "weather.story.1.item",
             "text": "I can see the sun!",
+            "cn": "我看见太阳了！",
             "speaker": "momo",
             "audio": "weather.story.1.item.audio"
           },
           {
             "id": "weather.story.1.reply",
             "text": "Let us look at the whole sky.",
+            "cn": "我们把整个天空都看一看吧。",
             "speaker": "bunny",
             "audio": "weather.story.1.reply.audio"
+          },
+          {
+            "id": "weather.story.1.more1",
+            "text": "Blue sky, and a big sun!",
+            "cn": "蓝蓝的天，大大的太阳！",
+            "speaker": "momo",
+            "audio": "weather.story.1.more1.audio"
           }
         ]
       },
@@ -763,20 +862,37 @@
           {
             "id": "weather.story.2.intro",
             "text": "A cloud drifts across the sky.",
+            "cn": "一朵云飘过天空。",
             "speaker": "narrator",
             "audio": "weather.story.2.intro.audio"
           },
           {
             "id": "weather.story.2.item",
             "text": "That cloud looks like a little boat.",
+            "cn": "那朵云像一只小船。",
             "speaker": "momo",
             "audio": "weather.story.2.item.audio"
           },
           {
             "id": "weather.story.2.reply",
             "text": "I think it looks like a turtle!",
+            "cn": "我觉得它像一只乌龟！",
             "speaker": "fox",
             "audio": "weather.story.2.reply.audio"
+          },
+          {
+            "id": "weather.story.2.more1",
+            "text": "We can both be right.",
+            "cn": "我们说的都可以对。",
+            "speaker": "momo",
+            "audio": "weather.story.2.more1.audio"
+          },
+          {
+            "id": "weather.story.2.more2",
+            "text": "Look, it is moving away.",
+            "cn": "看，它飘走了。",
+            "speaker": "fox",
+            "audio": "weather.story.2.more2.audio"
           }
         ]
       },
@@ -802,20 +918,30 @@
           {
             "id": "weather.story.3.intro",
             "text": "Little drops tap the window.",
+            "cn": "小雨点轻轻敲着窗户。",
             "speaker": "narrator",
             "audio": "weather.story.3.intro.audio"
           },
           {
             "id": "weather.story.3.item",
             "text": "Is that rain?",
+            "cn": "那是下雨了吗？",
             "speaker": "momo",
             "audio": "weather.story.3.item.audio"
           },
           {
             "id": "weather.story.3.reply",
             "text": "Yes. Let us change our plan.",
+            "cn": "是的。我们换个计划吧。",
             "speaker": "bunny",
             "audio": "weather.story.3.reply.audio"
+          },
+          {
+            "id": "weather.story.3.more1",
+            "text": "Okay. We can play inside today.",
+            "cn": "好吧。今天我们可以在屋里玩。",
+            "speaker": "momo",
+            "audio": "weather.story.3.more1.audio"
           }
         ]
       },
@@ -841,20 +967,30 @@
           {
             "id": "weather.story.4.intro",
             "text": "Fifi runs towards the door.",
+            "cn": "Fifi 朝门口跑去。",
             "speaker": "narrator",
             "audio": "weather.story.4.intro.audio"
           },
           {
             "id": "weather.story.4.item",
             "text": "Wait! Where is your umbrella?",
+            "cn": "等等！你的雨伞呢？",
             "speaker": "turtle",
             "audio": "weather.story.4.item.audio"
           },
           {
             "id": "weather.story.4.reply",
             "text": "Thank you. I nearly forgot it.",
+            "cn": "谢谢你。我差点忘了。",
             "speaker": "fox",
             "audio": "weather.story.4.reply.audio"
+          },
+          {
+            "id": "weather.story.4.more1",
+            "text": "Here it is, by the door.",
+            "cn": "在这儿，门边上。",
+            "speaker": "turtle",
+            "audio": "weather.story.4.more1.audio"
           }
         ]
       },
@@ -880,20 +1016,37 @@
           {
             "id": "weather.story.5.intro",
             "text": "The friends stay inside while it rains.",
+            "cn": "下雨了，朋友们待在屋里。",
             "speaker": "narrator",
             "audio": "weather.story.5.intro.audio"
           },
           {
             "id": "weather.story.5.item",
             "text": "I wanted to play outside.",
+            "cn": "我本来想出去玩的。",
             "speaker": "momo",
             "audio": "weather.story.5.item.audio"
           },
           {
             "id": "weather.story.5.reply",
             "text": "I know. Shall we tell a rainy-day story?",
+            "cn": "我知道。我们来讲一个下雨天的故事好吗？",
             "speaker": "bunny",
             "audio": "weather.story.5.reply.audio"
+          },
+          {
+            "id": "weather.story.5.more1",
+            "text": "Yes! A story about a little cloud.",
+            "cn": "好呀！讲一个小云朵的故事。",
+            "speaker": "momo",
+            "audio": "weather.story.5.more1.audio"
+          },
+          {
+            "id": "weather.story.5.more2",
+            "text": "You start. I will listen.",
+            "cn": "你先讲，我来听。",
+            "speaker": "bunny",
+            "audio": "weather.story.5.more2.audio"
           }
         ]
       },
@@ -919,20 +1072,30 @@
           {
             "id": "weather.story.6.intro",
             "text": "The rain stops and sunlight returns.",
+            "cn": "雨停了，阳光又回来了。",
             "speaker": "narrator",
             "audio": "weather.story.6.intro.audio"
           },
           {
             "id": "weather.story.6.item",
             "text": "The sun is back!",
+            "cn": "太阳回来啦！",
             "speaker": "momo",
             "audio": "weather.story.6.item.audio"
           },
           {
             "id": "weather.story.6.reply",
             "text": "Let us check with our grown-up before we go.",
+            "cn": "出门前我们先问问大人吧。",
             "speaker": "bunny",
             "audio": "weather.story.6.reply.audio"
+          },
+          {
+            "id": "weather.story.6.more1",
+            "text": "Okay. I will ask now.",
+            "cn": "好的。我现在就去问。",
+            "speaker": "momo",
+            "audio": "weather.story.6.more1.audio"
           }
         ]
       }

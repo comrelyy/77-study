@@ -1,10 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "washing",
-  "contentVersion": "0.2.1",
+  "contentVersion": "0.2.2",
   "status": "draft",
   "compatibleFrom": [
-    "0.2.0"
+    "0.2.0",
+    "0.2.1"
   ],
   "title": "和 Momo 洗漱啦",
   "stickerId": "washing.sticker",
@@ -475,6 +476,28 @@
       "reviewed": false
     },
     {
+      "id": "washing.story.1.more1.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.1.more1.audio.wav",
+      "text": "Where is the soap?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.1.more2.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.1.more2.audio.wav",
+      "text": "It is by the sink.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "washing.story.2.image",
       "kind": "image",
       "path": "illustrations/scenes/washing-2.svg"
@@ -513,6 +536,17 @@
       "reviewed": false
     },
     {
+      "id": "washing.story.2.more1.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.2.more1.audio.wav",
+      "text": "Look! Lots of bubbles now.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "washing.story.3.image",
       "kind": "image",
       "path": "illustrations/scenes/washing-3.svg"
@@ -544,6 +578,28 @@
       "kind": "audio",
       "path": "audio/washing/v0-2-0/washing.story.3.reply.audio.wav",
       "text": "Yes. Now turn off the water.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.3.more1.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.3.more1.audio.wav",
+      "text": "I turned it off. Is that right?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.3.more2.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.3.more2.audio.wav",
+      "text": "Yes. We save water that way.",
       "language": "en-US",
       "role": "bunny",
       "source": null,
@@ -589,6 +645,17 @@
       "reviewed": false
     },
     {
+      "id": "washing.story.4.more1.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.4.more1.audio.wav",
+      "text": "My hands are dry too.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "washing.story.5.image",
       "kind": "image",
       "path": "illustrations/scenes/washing-5.svg"
@@ -620,6 +687,28 @@
       "kind": "audio",
       "path": "audio/washing/v0-2-0/washing.story.5.reply.audio.wav",
       "text": "Yes. That one is yours.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.5.more1.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.5.more1.audio.wav",
+      "text": "Mine is the blue one.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.5.more2.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.5.more2.audio.wav",
+      "text": "And mine is the pink one.",
       "language": "en-US",
       "role": "bunny",
       "source": null,
@@ -660,6 +749,50 @@
       "text": "The towel needs its hook. Now we are done!",
       "language": "en-US",
       "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.story.6.more1.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.story.6.more1.audio.wav",
+      "text": "Our hands are clean. Shall we go and play?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.game.1.label.soap.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.game.1.label.soap.audio.wav",
+      "text": "rub the soap",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.game.1.label.water.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.game.1.label.water.audio.wav",
+      "text": "rinse the bubbles",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "washing.game.1.label.towel.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-2-0/washing.game.1.label.towel.audio.wav",
+      "text": "dry our hands",
+      "language": "en-US",
+      "role": "narrator",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -719,20 +852,37 @@
           {
             "id": "washing.story.1.intro",
             "text": "The friends come home with muddy hands.",
+            "cn": "朋友们带着一手泥回到家。",
             "speaker": "narrator",
             "audio": "washing.story.1.intro.audio"
           },
           {
             "id": "washing.story.1.item",
             "text": "Look at my hands!",
+            "cn": "看我的手！",
             "speaker": "momo",
             "audio": "washing.story.1.item.audio"
           },
           {
             "id": "washing.story.1.reply",
             "text": "Mine too. Let us wash them.",
+            "cn": "我的也是。我们去洗手吧。",
             "speaker": "bunny",
             "audio": "washing.story.1.reply.audio"
+          },
+          {
+            "id": "washing.story.1.more1",
+            "text": "Where is the soap?",
+            "cn": "肥皂在哪儿？",
+            "speaker": "momo",
+            "audio": "washing.story.1.more1.audio"
+          },
+          {
+            "id": "washing.story.1.more2",
+            "text": "It is by the sink.",
+            "cn": "在水池旁边。",
+            "speaker": "bunny",
+            "audio": "washing.story.1.more2.audio"
           }
         ]
       },
@@ -758,20 +908,30 @@
           {
             "id": "washing.story.2.intro",
             "text": "Momo picks up the soap.",
+            "cn": "Momo 拿起了肥皂。",
             "speaker": "narrator",
             "audio": "washing.story.2.intro.audio"
           },
           {
             "id": "washing.story.2.item",
             "text": "I cannot make bubbles.",
+            "cn": "我搓不出泡泡。",
             "speaker": "momo",
             "audio": "washing.story.2.item.audio"
           },
           {
             "id": "washing.story.2.reply",
             "text": "Rub both hands together. Like this.",
+            "cn": "两只手一起搓，像这样。",
             "speaker": "bunny",
             "audio": "washing.story.2.reply.audio"
+          },
+          {
+            "id": "washing.story.2.more1",
+            "text": "Look! Lots of bubbles now.",
+            "cn": "看！现在有好多泡泡。",
+            "speaker": "momo",
+            "audio": "washing.story.2.more1.audio"
           }
         ]
       },
@@ -797,20 +957,37 @@
           {
             "id": "washing.story.3.intro",
             "text": "Little bubbles slide towards the sink.",
+            "cn": "小泡泡滑向水池。",
             "speaker": "narrator",
             "audio": "washing.story.3.intro.audio"
           },
           {
             "id": "washing.story.3.item",
             "text": "The bubbles are going away!",
+            "cn": "泡泡不见啦！",
             "speaker": "momo",
             "audio": "washing.story.3.item.audio"
           },
           {
             "id": "washing.story.3.reply",
             "text": "Yes. Now turn off the water.",
+            "cn": "对。现在把水关上吧。",
             "speaker": "bunny",
             "audio": "washing.story.3.reply.audio"
+          },
+          {
+            "id": "washing.story.3.more1",
+            "text": "I turned it off. Is that right?",
+            "cn": "我关上了。这样对吗？",
+            "speaker": "momo",
+            "audio": "washing.story.3.more1.audio"
+          },
+          {
+            "id": "washing.story.3.more2",
+            "text": "Yes. We save water that way.",
+            "cn": "对。这样可以节约用水。",
+            "speaker": "bunny",
+            "audio": "washing.story.3.more2.audio"
           }
         ]
       },
@@ -836,20 +1013,30 @@
           {
             "id": "washing.story.4.intro",
             "text": "There is one towel beside the sink.",
+            "cn": "水池边有一条毛巾。",
             "speaker": "narrator",
             "audio": "washing.story.4.intro.audio"
           },
           {
             "id": "washing.story.4.item",
             "text": "Your turn first. I can wait.",
+            "cn": "你先用，我可以等。",
             "speaker": "bunny",
             "audio": "washing.story.4.item.audio"
           },
           {
             "id": "washing.story.4.reply",
             "text": "Thank you. Now it is your turn.",
+            "cn": "谢谢你。现在轮到你了。",
             "speaker": "momo",
             "audio": "washing.story.4.reply.audio"
+          },
+          {
+            "id": "washing.story.4.more1",
+            "text": "My hands are dry too.",
+            "cn": "我的手也擦干了。",
+            "speaker": "bunny",
+            "audio": "washing.story.4.more1.audio"
           }
         ]
       },
@@ -875,20 +1062,37 @@
           {
             "id": "washing.story.5.intro",
             "text": "Two toothbrushes wait in a cup.",
+            "cn": "杯子里放着两把牙刷。",
             "speaker": "narrator",
             "audio": "washing.story.5.intro.audio"
           },
           {
             "id": "washing.story.5.item",
             "text": "Is this your toothbrush?",
+            "cn": "这是你的牙刷吗？",
             "speaker": "momo",
             "audio": "washing.story.5.item.audio"
           },
           {
             "id": "washing.story.5.reply",
             "text": "Yes. That one is yours.",
+            "cn": "是的。那把是你的。",
             "speaker": "bunny",
             "audio": "washing.story.5.reply.audio"
+          },
+          {
+            "id": "washing.story.5.more1",
+            "text": "Mine is the blue one.",
+            "cn": "我的是蓝色那把。",
+            "speaker": "momo",
+            "audio": "washing.story.5.more1.audio"
+          },
+          {
+            "id": "washing.story.5.more2",
+            "text": "And mine is the pink one.",
+            "cn": "我的是粉色那把。",
+            "speaker": "bunny",
+            "audio": "washing.story.5.more2.audio"
           }
         ]
       },
@@ -914,20 +1118,30 @@
           {
             "id": "washing.story.6.intro",
             "text": "The sink is clean again.",
+            "cn": "水池又干干净净了。",
             "speaker": "narrator",
             "audio": "washing.story.6.intro.audio"
           },
           {
             "id": "washing.story.6.item",
             "text": "Soap here, toothbrush there. All done?",
+            "cn": "肥皂放这儿，牙刷放那儿。都弄好了吗？",
             "speaker": "momo",
             "audio": "washing.story.6.item.audio"
           },
           {
             "id": "washing.story.6.reply",
             "text": "The towel needs its hook. Now we are done!",
+            "cn": "毛巾还要挂到钩子上。现在弄好啦！",
             "speaker": "bunny",
             "audio": "washing.story.6.reply.audio"
+          },
+          {
+            "id": "washing.story.6.more1",
+            "text": "Our hands are clean. Shall we go and play?",
+            "cn": "我们的手干净了。去玩好吗？",
+            "speaker": "momo",
+            "audio": "washing.story.6.more1.audio"
           }
         ]
       }
@@ -1200,9 +1414,14 @@
           ],
           "instructions": "把洗手的过程接起来：先搓肥皂，再冲净泡泡，最后擦干手。",
           "labels": {
-            "en.soap.wash": "搓搓肥皂",
-            "en.water.drink": "冲净泡泡",
-            "en.towel.wash": "擦干小手"
+            "en.soap.wash": "rub the soap",
+            "en.water.drink": "rinse the bubbles",
+            "en.towel.wash": "dry our hands"
+          },
+          "labelAudio": {
+            "en.soap.wash": "washing.game.1.label.soap.audio",
+            "en.water.drink": "washing.game.1.label.water.audio",
+            "en.towel.wash": "washing.game.1.label.towel.audio"
           }
         }
       ]
@@ -1268,10 +1487,10 @@
       {
         "id": "washing.lesson.fill",
         "kind": "fill",
-        "segmentId": "washing.story.2.intro",
-        "before": "Momo picks up the ",
-        "after": ".",
-        "image": "washing.story.2.image",
+        "segmentId": "washing.story.1.more1",
+        "before": "Where is the ",
+        "after": "?",
+        "image": "washing.story.1.image",
         "options": [
           "en.water.drink",
           "en.soap.wash",

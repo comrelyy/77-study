@@ -1,10 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "gardening",
-  "contentVersion": "0.1.1",
+  "contentVersion": "0.1.2",
   "status": "draft",
   "compatibleFrom": [
-    "0.1.0"
+    "0.1.0",
+    "0.1.1"
   ],
   "title": "和 Momo 照顾小花",
   "stickerId": "gardening.sticker",
@@ -475,6 +476,28 @@
       "reviewed": false
     },
     {
+      "id": "gardening.story.1.more1.audio",
+      "kind": "audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.1.more1.audio.wav",
+      "text": "Where can we find a seed?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "gardening.story.1.more2.audio",
+      "kind": "audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.1.more2.audio.wav",
+      "text": "Our grown-up has some.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "gardening.story.2.image",
       "kind": "image",
       "path": "illustrations/scenes/gardening-2.svg"
@@ -513,6 +536,17 @@
       "reviewed": false
     },
     {
+      "id": "gardening.story.2.more1.audio",
+      "kind": "audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.2.more1.audio.wav",
+      "text": "I put it in gently.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "gardening.story.3.image",
       "kind": "image",
       "path": "illustrations/scenes/gardening-3.svg"
@@ -544,6 +578,28 @@
       "kind": "audio",
       "path": "audio/gardening/v0-1-0/gardening.story.3.reply.audio.wav",
       "text": "Just a little. Pour slowly.",
+      "language": "en-US",
+      "role": "turtle",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "gardening.story.3.more1.audio",
+      "kind": "audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.3.more1.audio.wav",
+      "text": "Okay. Just a little.",
+      "language": "en-US",
+      "role": "fox",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "gardening.story.3.more2.audio",
+      "kind": "audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.3.more2.audio.wav",
+      "text": "Good. The soil is wet now.",
       "language": "en-US",
       "role": "turtle",
       "source": null,
@@ -589,6 +645,17 @@
       "reviewed": false
     },
     {
+      "id": "gardening.story.4.more1.audio",
+      "kind": "audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.4.more1.audio.wav",
+      "text": "Okay. I will wait.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "gardening.story.5.image",
       "kind": "image",
       "path": "illustrations/scenes/gardening-5.svg"
@@ -620,6 +687,28 @@
       "kind": "audio",
       "path": "audio/gardening/v0-1-0/gardening.story.5.reply.audio.wav",
       "text": "The little seed really grew.",
+      "language": "en-US",
+      "role": "fox",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "gardening.story.5.more1.audio",
+      "kind": "audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.5.more1.audio.wav",
+      "text": "It is so pretty!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "gardening.story.5.more2.audio",
+      "kind": "audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.5.more2.audio.wav",
+      "text": "We waited, and now it is here.",
       "language": "en-US",
       "role": "fox",
       "source": null,
@@ -660,6 +749,50 @@
       "text": "I can check tomorrow. We will take turns.",
       "language": "en-US",
       "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "gardening.story.6.more1.audio",
+      "kind": "audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.6.more1.audio.wav",
+      "text": "Good plan. Our flower will be happy.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "gardening.game.1.label.pot.audio",
+      "kind": "audio",
+      "path": "audio/gardening/v0-1-0/gardening.game.1.label.pot.audio.wav",
+      "text": "get the pot",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "gardening.game.1.label.seed.audio",
+      "kind": "audio",
+      "path": "audio/gardening/v0-1-0/gardening.game.1.label.seed.audio.wav",
+      "text": "plant the seed",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "gardening.game.1.label.water.audio",
+      "kind": "audio",
+      "path": "audio/gardening/v0-1-0/gardening.game.1.label.water.audio.wav",
+      "text": "add a little water",
+      "language": "en-US",
+      "role": "narrator",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -719,20 +852,37 @@
           {
             "id": "gardening.story.1.intro",
             "text": "Momo and Lulu find an empty pot.",
+            "cn": "Momo 和 Lulu 发现一只空花盆。",
             "speaker": "narrator",
             "audio": "gardening.story.1.intro.audio"
           },
           {
             "id": "gardening.story.1.item",
             "text": "What could grow in this pot?",
+            "cn": "这个花盆里能种出什么呢？",
             "speaker": "momo",
             "audio": "gardening.story.1.item.audio"
           },
           {
             "id": "gardening.story.1.reply",
             "text": "Let us try a little seed.",
+            "cn": "我们来种一颗小种子试试吧。",
             "speaker": "bunny",
             "audio": "gardening.story.1.reply.audio"
+          },
+          {
+            "id": "gardening.story.1.more1",
+            "text": "Where can we find a seed?",
+            "cn": "我们去哪儿找种子呢？",
+            "speaker": "momo",
+            "audio": "gardening.story.1.more1.audio"
+          },
+          {
+            "id": "gardening.story.1.more2",
+            "text": "Our grown-up has some.",
+            "cn": "大人那里有。",
+            "speaker": "bunny",
+            "audio": "gardening.story.1.more2.audio"
           }
         ]
       },
@@ -758,20 +908,30 @@
           {
             "id": "gardening.story.2.intro",
             "text": "A seed rests in Momo's hand.",
+            "cn": "一颗种子躺在 Momo 的手里。",
             "speaker": "narrator",
             "audio": "gardening.story.2.intro.audio"
           },
           {
             "id": "gardening.story.2.item",
             "text": "This seed is so small!",
+            "cn": "这颗种子好小呀！",
             "speaker": "momo",
             "audio": "gardening.story.2.item.audio"
           },
           {
             "id": "gardening.story.2.reply",
             "text": "Make a little space in the soil for it.",
+            "cn": "在土里给它留一个小位置。",
             "speaker": "turtle",
             "audio": "gardening.story.2.reply.audio"
+          },
+          {
+            "id": "gardening.story.2.more1",
+            "text": "I put it in gently.",
+            "cn": "我轻轻地放进去了。",
+            "speaker": "momo",
+            "audio": "gardening.story.2.more1.audio"
           }
         ]
       },
@@ -797,20 +957,37 @@
           {
             "id": "gardening.story.3.intro",
             "text": "Fifi brings water to the pot.",
+            "cn": "Fifi 拿水来浇花盆。",
             "speaker": "narrator",
             "audio": "gardening.story.3.intro.audio"
           },
           {
             "id": "gardening.story.3.item",
             "text": "Shall I pour it all in?",
+            "cn": "我把水全倒进去好吗？",
             "speaker": "fox",
             "audio": "gardening.story.3.item.audio"
           },
           {
             "id": "gardening.story.3.reply",
             "text": "Just a little. Pour slowly.",
+            "cn": "一点点就好，慢慢倒。",
             "speaker": "turtle",
             "audio": "gardening.story.3.reply.audio"
+          },
+          {
+            "id": "gardening.story.3.more1",
+            "text": "Okay. Just a little.",
+            "cn": "好的。只倒一点点。",
+            "speaker": "fox",
+            "audio": "gardening.story.3.more1.audio"
+          },
+          {
+            "id": "gardening.story.3.more2",
+            "text": "Good. The soil is wet now.",
+            "cn": "很好。现在土湿了。",
+            "speaker": "turtle",
+            "audio": "gardening.story.3.more2.audio"
           }
         ]
       },
@@ -836,20 +1013,30 @@
           {
             "id": "gardening.story.4.intro",
             "text": "Momo checks the pot that afternoon.",
+            "cn": "那天下午，Momo 去看了看花盆。",
             "speaker": "narrator",
             "audio": "gardening.story.4.intro.audio"
           },
           {
             "id": "gardening.story.4.item",
             "text": "I cannot see a flower yet.",
+            "cn": "我还看不到花。",
             "speaker": "momo",
             "audio": "gardening.story.4.item.audio"
           },
           {
             "id": "gardening.story.4.reply",
             "text": "Growing takes time. We can check another day.",
+            "cn": "长大需要时间。我们改天再来看。",
             "speaker": "bunny",
             "audio": "gardening.story.4.reply.audio"
+          },
+          {
+            "id": "gardening.story.4.more1",
+            "text": "Okay. I will wait.",
+            "cn": "好吧。我会等的。",
+            "speaker": "momo",
+            "audio": "gardening.story.4.more1.audio"
           }
         ]
       },
@@ -875,20 +1062,37 @@
           {
             "id": "gardening.story.5.intro",
             "text": "Many days pass. A flower finally opens.",
+            "cn": "过了好多天，花终于开了。",
             "speaker": "narrator",
             "audio": "gardening.story.5.intro.audio"
           },
           {
             "id": "gardening.story.5.item",
             "text": "Look! Our flower is here!",
+            "cn": "看！我们的花开啦！",
             "speaker": "momo",
             "audio": "gardening.story.5.item.audio"
           },
           {
             "id": "gardening.story.5.reply",
             "text": "The little seed really grew.",
+            "cn": "小种子真的长大了。",
             "speaker": "fox",
             "audio": "gardening.story.5.reply.audio"
+          },
+          {
+            "id": "gardening.story.5.more1",
+            "text": "It is so pretty!",
+            "cn": "它真漂亮！",
+            "speaker": "momo",
+            "audio": "gardening.story.5.more1.audio"
+          },
+          {
+            "id": "gardening.story.5.more2",
+            "text": "We waited, and now it is here.",
+            "cn": "我们等了好久，现在它开了。",
+            "speaker": "fox",
+            "audio": "gardening.story.5.more2.audio"
           }
         ]
       },
@@ -914,20 +1118,30 @@
           {
             "id": "gardening.story.6.intro",
             "text": "The friends make a plan for the pot.",
+            "cn": "朋友们给花盆定了个计划。",
             "speaker": "narrator",
             "audio": "gardening.story.6.intro.audio"
           },
           {
             "id": "gardening.story.6.item",
             "text": "I can check it today.",
+            "cn": "今天我来看看它。",
             "speaker": "momo",
             "audio": "gardening.story.6.item.audio"
           },
           {
             "id": "gardening.story.6.reply",
             "text": "I can check tomorrow. We will take turns.",
+            "cn": "明天我来看。我们轮流照顾。",
             "speaker": "bunny",
             "audio": "gardening.story.6.reply.audio"
+          },
+          {
+            "id": "gardening.story.6.more1",
+            "text": "Good plan. Our flower will be happy.",
+            "cn": "好计划。我们的花会很开心的。",
+            "speaker": "momo",
+            "audio": "gardening.story.6.more1.audio"
           }
         ]
       }
@@ -1200,9 +1414,14 @@
           ],
           "instructions": "按种植计划来：先准备花盆，再放种子，最后浇一点水。",
           "labels": {
-            "en.pot.garden": "准备花盆",
-            "en.seed.plant": "放入种子",
-            "en.water.drink": "浇一点水"
+            "en.pot.garden": "get the pot",
+            "en.seed.plant": "plant the seed",
+            "en.water.drink": "add a little water"
+          },
+          "labelAudio": {
+            "en.pot.garden": "gardening.game.1.label.pot.audio",
+            "en.seed.plant": "gardening.game.1.label.seed.audio",
+            "en.water.drink": "gardening.game.1.label.water.audio"
           }
         }
       ]

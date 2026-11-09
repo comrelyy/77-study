@@ -1,5 +1,5 @@
 import {loadReviewSources} from './core/review-sources.mjs?v=themes-20261031';
-import {App} from './core/app.mjs?v=lesson-20261110';
+import {App} from './core/app.mjs?v=segment-cn-20261109b';
 import {renderThemeSelection} from './core/theme-selection.mjs?v=theme-page-20261031';
 import {MemoryStore} from './core/store.mjs';
 import {PersistentStore} from './core/persistent-store.mjs?v=reload-handover-20261103';

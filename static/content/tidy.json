@@ -1,10 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "tidy",
-  "contentVersion": "0.5.1",
+  "contentVersion": "0.5.2",
   "status": "draft",
   "compatibleFrom": [
-    "0.5.0"
+    "0.5.0",
+    "0.5.1"
   ],
   "title": "和 Momo 整理玩具",
   "stickerId": "tidy.sticker",
@@ -456,6 +457,28 @@
       "reviewed": false
     },
     {
+      "id": "tidy.story.1.more1.audio",
+      "kind": "audio",
+      "path": "audio/tidy/v0-5-0/tidy.story.1.more1.audio.wav",
+      "text": "Where shall we start?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.story.1.more2.audio",
+      "kind": "audio",
+      "path": "audio/tidy/v0-5-0/tidy.story.1.more2.audio.wav",
+      "text": "Let us pick up the ball first.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "tidy.story.2.image",
       "kind": "image",
       "path": "illustrations/scenes/tidy-2.svg"
@@ -489,6 +512,17 @@
       "text": "Yes. I will hold the lid for you.",
       "language": "en-US",
       "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.story.2.more1.audio",
+      "kind": "audio",
+      "path": "audio/tidy/v0-5-0/tidy.story.2.more1.audio.wav",
+      "text": "Thank you. The ball is in.",
+      "language": "en-US",
+      "role": "momo",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -532,6 +566,17 @@
       "reviewed": false
     },
     {
+      "id": "tidy.story.3.more1.audio",
+      "kind": "audio",
+      "path": "audio/tidy/v0-5-0/tidy.story.3.more1.audio.wav",
+      "text": "Thank you. Now the car has a home.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "tidy.story.4.image",
       "kind": "image",
       "path": "illustrations/scenes/tidy-4.svg"
@@ -565,6 +610,17 @@
       "text": "The shelf has room. Let us ask for help.",
       "language": "en-US",
       "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.story.4.more1.audio",
+      "kind": "audio",
+      "path": "audio/tidy/v0-5-0/tidy.story.4.more1.audio.wav",
+      "text": "Good idea. Can a grown-up help us?",
+      "language": "en-US",
+      "role": "momo",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -608,6 +664,28 @@
       "reviewed": false
     },
     {
+      "id": "tidy.story.5.more1.audio",
+      "kind": "audio",
+      "path": "audio/tidy/v0-5-0/tidy.story.5.more1.audio.wav",
+      "text": "Now the floor is clear.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.story.5.more2.audio",
+      "kind": "audio",
+      "path": "audio/tidy/v0-5-0/tidy.story.5.more2.audio.wav",
+      "text": "You have good eyes, Momo!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "tidy.story.6.image",
       "kind": "image",
       "path": "illustrations/scenes/tidy-6.svg"
@@ -639,6 +717,28 @@
       "kind": "audio",
       "path": "audio/tidy/v0-5-0/tidy.story.6.reply.audio.wav",
       "text": "Yes! We can put it back after playing.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.story.6.more1.audio",
+      "kind": "audio",
+      "path": "audio/tidy/v0-5-0/tidy.story.6.more1.audio.wav",
+      "text": "Roll it to me, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.story.6.more2.audio",
+      "kind": "audio",
+      "path": "audio/tidy/v0-5-0/tidy.story.6.more2.audio.wav",
+      "text": "Here it comes!",
       "language": "en-US",
       "role": "momo",
       "source": null,
@@ -693,20 +793,37 @@
           {
             "id": "tidy.story.1.intro",
             "text": "The friends want to roll a ball.",
+            "cn": "朋友们想滚球玩。",
             "speaker": "narrator",
             "audio": "tidy.story.1.intro.audio"
           },
           {
             "id": "tidy.story.1.item",
             "text": "The floor is full of toys!",
+            "cn": "地上全是玩具！",
             "speaker": "momo",
             "audio": "tidy.story.1.item.audio"
           },
           {
             "id": "tidy.story.1.reply",
             "text": "Let us make some space together.",
+            "cn": "我们一起腾出一块地方吧。",
             "speaker": "bunny",
             "audio": "tidy.story.1.reply.audio"
+          },
+          {
+            "id": "tidy.story.1.more1",
+            "text": "Where shall we start?",
+            "cn": "我们从哪儿开始？",
+            "speaker": "momo",
+            "audio": "tidy.story.1.more1.audio"
+          },
+          {
+            "id": "tidy.story.1.more2",
+            "text": "Let us pick up the ball first.",
+            "cn": "我们先把球捡起来吧。",
+            "speaker": "bunny",
+            "audio": "tidy.story.1.more2.audio"
           }
         ]
       },
@@ -732,20 +849,30 @@
           {
             "id": "tidy.story.2.intro",
             "text": "Momo carries the ball to the box.",
+            "cn": "Momo 把球拿到箱子边。",
             "speaker": "narrator",
             "audio": "tidy.story.2.intro.audio"
           },
           {
             "id": "tidy.story.2.item",
             "text": "In the box?",
+            "cn": "放进箱子里吗？",
             "speaker": "momo",
             "audio": "tidy.story.2.item.audio"
           },
           {
             "id": "tidy.story.2.reply",
             "text": "Yes. I will hold the lid for you.",
+            "cn": "对。我帮你扶着盖子。",
             "speaker": "bunny",
             "audio": "tidy.story.2.reply.audio"
+          },
+          {
+            "id": "tidy.story.2.more1",
+            "text": "Thank you. The ball is in.",
+            "cn": "谢谢你。球放进去了。",
+            "speaker": "momo",
+            "audio": "tidy.story.2.more1.audio"
           }
         ]
       },
@@ -771,20 +898,30 @@
           {
             "id": "tidy.story.3.intro",
             "text": "A car is hiding under a cushion.",
+            "cn": "一辆小汽车藏在靠垫下面。",
             "speaker": "narrator",
             "audio": "tidy.story.3.intro.audio"
           },
           {
             "id": "tidy.story.3.item",
             "text": "I found the car!",
+            "cn": "我找到小汽车了！",
             "speaker": "bunny",
             "audio": "tidy.story.3.item.audio"
           },
           {
             "id": "tidy.story.3.reply",
             "text": "Here is a space beside the ball.",
+            "cn": "球旁边有个空位，放这儿。",
             "speaker": "momo",
             "audio": "tidy.story.3.reply.audio"
+          },
+          {
+            "id": "tidy.story.3.more1",
+            "text": "Thank you. Now the car has a home.",
+            "cn": "谢谢你。现在小汽车有地方放了。",
+            "speaker": "bunny",
+            "audio": "tidy.story.3.more1.audio"
           }
         ]
       },
@@ -810,20 +947,30 @@
           {
             "id": "tidy.story.4.intro",
             "text": "Teddy is too big for the small space.",
+            "cn": "小熊太大了，小空位放不下。",
             "speaker": "narrator",
             "audio": "tidy.story.4.intro.audio"
           },
           {
             "id": "tidy.story.4.item",
             "text": "Teddy does not fit here.",
+            "cn": "小熊放不进这里。",
             "speaker": "momo",
             "audio": "tidy.story.4.item.audio"
           },
           {
             "id": "tidy.story.4.reply",
             "text": "The shelf has room. Let us ask for help.",
+            "cn": "架子上有地方。我们请人帮忙吧。",
             "speaker": "bunny",
             "audio": "tidy.story.4.reply.audio"
+          },
+          {
+            "id": "tidy.story.4.more1",
+            "text": "Good idea. Can a grown-up help us?",
+            "cn": "好主意。大人能帮帮我们吗？",
+            "speaker": "momo",
+            "audio": "tidy.story.4.more1.audio"
           }
         ]
       },
@@ -849,20 +996,37 @@
           {
             "id": "tidy.story.5.intro",
             "text": "Momo looks around once more.",
+            "cn": "Momo 又四处看了一遍。",
             "speaker": "narrator",
             "audio": "tidy.story.5.intro.audio"
           },
           {
             "id": "tidy.story.5.item",
             "text": "Wait! Another car by your foot.",
+            "cn": "等等！你脚边还有一辆小汽车。",
             "speaker": "momo",
             "audio": "tidy.story.5.item.audio"
           },
           {
             "id": "tidy.story.5.reply",
             "text": "Thank you. I will put it away.",
+            "cn": "谢谢你。我把它收好。",
             "speaker": "bunny",
             "audio": "tidy.story.5.reply.audio"
+          },
+          {
+            "id": "tidy.story.5.more1",
+            "text": "Now the floor is clear.",
+            "cn": "现在地上空出来了。",
+            "speaker": "momo",
+            "audio": "tidy.story.5.more1.audio"
+          },
+          {
+            "id": "tidy.story.5.more2",
+            "text": "You have good eyes, Momo!",
+            "cn": "你的眼睛真尖，Momo！",
+            "speaker": "bunny",
+            "audio": "tidy.story.5.more2.audio"
           }
         ]
       },
@@ -888,20 +1052,37 @@
           {
             "id": "tidy.story.6.intro",
             "text": "There is a clear space on the floor.",
+            "cn": "地上空出了一块地方。",
             "speaker": "narrator",
             "audio": "tidy.story.6.intro.audio"
           },
           {
             "id": "tidy.story.6.item",
             "text": "Shall we take out just the ball?",
+            "cn": "我们只拿球出来玩好吗？",
             "speaker": "bunny",
             "audio": "tidy.story.6.item.audio"
           },
           {
             "id": "tidy.story.6.reply",
             "text": "Yes! We can put it back after playing.",
+            "cn": "好！玩完我们再放回去。",
             "speaker": "momo",
             "audio": "tidy.story.6.reply.audio"
+          },
+          {
+            "id": "tidy.story.6.more1",
+            "text": "Roll it to me, please.",
+            "cn": "请把球滚给我。",
+            "speaker": "bunny",
+            "audio": "tidy.story.6.more1.audio"
+          },
+          {
+            "id": "tidy.story.6.more2",
+            "text": "Here it comes!",
+            "cn": "来啦！",
+            "speaker": "momo",
+            "audio": "tidy.story.6.more2.audio"
           }
         ]
       }

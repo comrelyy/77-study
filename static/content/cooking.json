@@ -1,10 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "cooking",
-  "contentVersion": "0.1.1",
+  "contentVersion": "0.1.2",
   "status": "draft",
   "compatibleFrom": [
-    "0.1.0"
+    "0.1.0",
+    "0.1.1"
   ],
   "title": "和 Momo 一起做点心",
   "stickerId": "cooking.sticker",
@@ -475,6 +476,28 @@
       "reviewed": false
     },
     {
+      "id": "cooking.story.1.more1.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.1.more1.audio.wav",
+      "text": "Here is a big bowl.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "cooking.story.1.more2.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.1.more2.audio.wav",
+      "text": "Good. Now what shall we put in it?",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "cooking.story.2.image",
       "kind": "image",
       "path": "illustrations/scenes/cooking-2.svg"
@@ -508,6 +531,17 @@
       "text": "I have it! Let us put it in the bowl.",
       "language": "en-US",
       "role": "fox",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "cooking.story.2.more1.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.2.more1.audio.wav",
+      "text": "Thank you, Fifi. That was quick!",
+      "language": "en-US",
+      "role": "momo",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -551,6 +585,17 @@
       "reviewed": false
     },
     {
+      "id": "cooking.story.3.more1.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.3.more1.audio.wav",
+      "text": "Thank you, Toto. Now we can mix.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "cooking.story.4.image",
       "kind": "image",
       "path": "illustrations/scenes/cooking-4.svg"
@@ -582,6 +627,28 @@
       "kind": "audio",
       "path": "audio/cooking/v0-1-0/cooking.story.4.reply.audio.wav",
       "text": "And one for Lulu and Toto!",
+      "language": "en-US",
+      "role": "fox",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "cooking.story.4.more1.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.4.more1.audio.wav",
+      "text": "Oh yes. One for everyone!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "cooking.story.4.more2.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.4.more2.audio.wav",
+      "text": "Now nobody is left out.",
       "language": "en-US",
       "role": "fox",
       "source": null,
@@ -627,6 +694,28 @@
       "reviewed": false
     },
     {
+      "id": "cooking.story.5.more1.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.5.more1.audio.wav",
+      "text": "Slow and round. Like this?",
+      "language": "en-US",
+      "role": "fox",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "cooking.story.5.more2.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.5.more2.audio.wav",
+      "text": "Yes. That looks just right.",
+      "language": "en-US",
+      "role": "turtle",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "cooking.story.6.image",
       "kind": "image",
       "path": "illustrations/scenes/cooking-6.svg"
@@ -660,6 +749,50 @@
       "text": "Yes, please. Let us share!",
       "language": "en-US",
       "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "cooking.story.6.more1.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.6.more1.audio.wav",
+      "text": "Here you are. I hope you like it.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "cooking.game.1.label.bowl.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.game.1.label.bowl.audio.wav",
+      "text": "get the bowl",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "cooking.game.1.label.tomato.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.game.1.label.tomato.audio.wav",
+      "text": "add the tomato",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "cooking.game.1.label.spoon.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.game.1.label.spoon.audio.wav",
+      "text": "stir with the spoon",
+      "language": "en-US",
+      "role": "narrator",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -719,20 +852,37 @@
           {
             "id": "cooking.story.1.intro",
             "text": "Momo and Lulu are making a snack.",
+            "cn": "Momo 和 Lulu 在做点心。",
             "speaker": "narrator",
             "audio": "cooking.story.1.intro.audio"
           },
           {
             "id": "cooking.story.1.item",
             "text": "Can we make something to share?",
+            "cn": "我们做点能分享的东西好吗？",
             "speaker": "momo",
             "audio": "cooking.story.1.item.audio"
           },
           {
             "id": "cooking.story.1.reply",
             "text": "Yes! Let us find a bowl.",
+            "cn": "好呀！我们去找一个碗。",
             "speaker": "bunny",
             "audio": "cooking.story.1.reply.audio"
+          },
+          {
+            "id": "cooking.story.1.more1",
+            "text": "Here is a big bowl.",
+            "cn": "这儿有一个大碗。",
+            "speaker": "momo",
+            "audio": "cooking.story.1.more1.audio"
+          },
+          {
+            "id": "cooking.story.1.more2",
+            "text": "Good. Now what shall we put in it?",
+            "cn": "好。我们往里面放什么呢？",
+            "speaker": "bunny",
+            "audio": "cooking.story.1.more2.audio"
           }
         ]
       },
@@ -758,20 +908,30 @@
           {
             "id": "cooking.story.2.intro",
             "text": "A tomato rolls across the table.",
+            "cn": "一个番茄滚过桌子。",
             "speaker": "narrator",
             "audio": "cooking.story.2.intro.audio"
           },
           {
             "id": "cooking.story.2.item",
             "text": "Our tomato is rolling away!",
+            "cn": "我们的番茄滚走啦！",
             "speaker": "momo",
             "audio": "cooking.story.2.item.audio"
           },
           {
             "id": "cooking.story.2.reply",
             "text": "I have it! Let us put it in the bowl.",
+            "cn": "我接住了！我们把它放进碗里吧。",
             "speaker": "fox",
             "audio": "cooking.story.2.reply.audio"
+          },
+          {
+            "id": "cooking.story.2.more1",
+            "text": "Thank you, Fifi. That was quick!",
+            "cn": "谢谢你，Fifi。你真快！",
+            "speaker": "momo",
+            "audio": "cooking.story.2.more1.audio"
           }
         ]
       },
@@ -797,20 +957,30 @@
           {
             "id": "cooking.story.3.intro",
             "text": "The spoon is under a cloth.",
+            "cn": "勺子在一块布下面。",
             "speaker": "narrator",
             "audio": "cooking.story.3.intro.audio"
           },
           {
             "id": "cooking.story.3.item",
             "text": "We need a spoon for mixing.",
+            "cn": "我们需要一把勺子来搅拌。",
             "speaker": "bunny",
             "audio": "cooking.story.3.item.audio"
           },
           {
             "id": "cooking.story.3.reply",
             "text": "Lift the cloth. Here it is.",
+            "cn": "掀开布看看。在这儿呢。",
             "speaker": "turtle",
             "audio": "cooking.story.3.reply.audio"
+          },
+          {
+            "id": "cooking.story.3.more1",
+            "text": "Thank you, Toto. Now we can mix.",
+            "cn": "谢谢你，Toto。现在我们可以搅拌了。",
+            "speaker": "bunny",
+            "audio": "cooking.story.3.more1.audio"
           }
         ]
       },
@@ -836,20 +1006,37 @@
           {
             "id": "cooking.story.4.intro",
             "text": "There is bread on the plate.",
+            "cn": "盘子里有面包。",
             "speaker": "narrator",
             "audio": "cooking.story.4.intro.audio"
           },
           {
             "id": "cooking.story.4.item",
             "text": "One piece for me and one for you.",
+            "cn": "一块给我，一块给你。",
             "speaker": "momo",
             "audio": "cooking.story.4.item.audio"
           },
           {
             "id": "cooking.story.4.reply",
             "text": "And one for Lulu and Toto!",
+            "cn": "还有一块给 Lulu，一块给 Toto！",
             "speaker": "fox",
             "audio": "cooking.story.4.reply.audio"
+          },
+          {
+            "id": "cooking.story.4.more1",
+            "text": "Oh yes. One for everyone!",
+            "cn": "对哦。每人一块！",
+            "speaker": "momo",
+            "audio": "cooking.story.4.more1.audio"
+          },
+          {
+            "id": "cooking.story.4.more2",
+            "text": "Now nobody is left out.",
+            "cn": "这样谁都不会落下。",
+            "speaker": "fox",
+            "audio": "cooking.story.4.more2.audio"
           }
         ]
       },
@@ -875,20 +1062,37 @@
           {
             "id": "cooking.story.5.intro",
             "text": "Fifi stirs too quickly.",
+            "cn": "Fifi 搅得太快了。",
             "speaker": "narrator",
             "audio": "cooking.story.5.intro.audio"
           },
           {
             "id": "cooking.story.5.item",
             "text": "Oops! It almost fell out.",
+            "cn": "哎呀！差点洒出来。",
             "speaker": "fox",
             "audio": "cooking.story.5.item.audio"
           },
           {
             "id": "cooking.story.5.reply",
             "text": "Try a slow circle. I will hold the bowl.",
+            "cn": "慢慢地转圈搅。我来扶着碗。",
             "speaker": "turtle",
             "audio": "cooking.story.5.reply.audio"
+          },
+          {
+            "id": "cooking.story.5.more1",
+            "text": "Slow and round. Like this?",
+            "cn": "慢慢地转圈。像这样吗？",
+            "speaker": "fox",
+            "audio": "cooking.story.5.more1.audio"
+          },
+          {
+            "id": "cooking.story.5.more2",
+            "text": "Yes. That looks just right.",
+            "cn": "对。这样刚刚好。",
+            "speaker": "turtle",
+            "audio": "cooking.story.5.more2.audio"
           }
         ]
       },
@@ -914,20 +1118,30 @@
           {
             "id": "cooking.story.6.intro",
             "text": "The bowl is ready on the table.",
+            "cn": "碗放在桌上，准备好了。",
             "speaker": "narrator",
             "audio": "cooking.story.6.intro.audio"
           },
           {
             "id": "cooking.story.6.item",
             "text": "We all helped. Would you like some?",
+            "cn": "我们都帮了忙。你想吃一点吗？",
             "speaker": "momo",
             "audio": "cooking.story.6.item.audio"
           },
           {
             "id": "cooking.story.6.reply",
             "text": "Yes, please. Let us share!",
+            "cn": "好的，谢谢。我们一起分享吧！",
             "speaker": "bunny",
             "audio": "cooking.story.6.reply.audio"
+          },
+          {
+            "id": "cooking.story.6.more1",
+            "text": "Here you are. I hope you like it.",
+            "cn": "给你。希望你喜欢。",
+            "speaker": "momo",
+            "audio": "cooking.story.6.more1.audio"
           }
         ]
       }
@@ -1200,9 +1414,14 @@
           ],
           "instructions": "按准备点心的步骤来：先拿碗，再放番茄，最后用勺子拌一拌。",
           "labels": {
-            "en.bowl.container": "拿好碗",
-            "en.tomato.food": "放入番茄",
-            "en.spoon.utensil": "用勺子搅拌"
+            "en.bowl.container": "get the bowl",
+            "en.tomato.food": "add the tomato",
+            "en.spoon.utensil": "stir with the spoon"
+          },
+          "labelAudio": {
+            "en.bowl.container": "cooking.game.1.label.bowl.audio",
+            "en.tomato.food": "cooking.game.1.label.tomato.audio",
+            "en.spoon.utensil": "cooking.game.1.label.spoon.audio"
           }
         }
       ]

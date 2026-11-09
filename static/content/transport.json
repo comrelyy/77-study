@@ -1,10 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "transport",
-  "contentVersion": "0.1.1",
+  "contentVersion": "0.1.2",
   "status": "draft",
   "compatibleFrom": [
-    "0.1.0"
+    "0.1.0",
+    "0.1.1"
   ],
   "title": "和 Momo 坐公共汽车",
   "stickerId": "transport.sticker",
@@ -475,6 +476,28 @@
       "reviewed": false
     },
     {
+      "id": "transport.story.1.more1.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.1.more1.audio.wav",
+      "text": "How long do we wait?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.1.more2.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.1.more2.audio.wav",
+      "text": "Not long. Look down the road.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "transport.story.2.image",
       "kind": "image",
       "path": "illustrations/scenes/transport-2.svg"
@@ -508,6 +531,17 @@
       "text": "Check the small pocket. Take your time.",
       "language": "en-US",
       "role": "turtle",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.2.more1.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.2.more1.audio.wav",
+      "text": "Here it is! Thank you, Toto.",
+      "language": "en-US",
+      "role": "momo",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -551,6 +585,17 @@
       "reviewed": false
     },
     {
+      "id": "transport.story.3.more1.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.3.more1.audio.wav",
+      "text": "Oh yes. Here is our bag.",
+      "language": "en-US",
+      "role": "fox",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "transport.story.4.image",
       "kind": "image",
       "path": "illustrations/scenes/transport-4.svg"
@@ -582,6 +627,28 @@
       "kind": "audio",
       "path": "audio/transport/v0-1-0/transport.story.4.reply.audio.wav",
       "text": "Yes. Let us sit beside each other.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.4.more1.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.4.more1.audio.wav",
+      "text": "I can see out of the window.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.4.more2.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.4.more2.audio.wav",
+      "text": "Look! A big tree.",
       "language": "en-US",
       "role": "bunny",
       "source": null,
@@ -627,6 +694,17 @@
       "reviewed": false
     },
     {
+      "id": "transport.story.5.more1.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.5.more1.audio.wav",
+      "text": "Okay. Now people can walk by.",
+      "language": "en-US",
+      "role": "fox",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "transport.story.6.image",
       "kind": "image",
       "path": "illustrations/scenes/transport-6.svg"
@@ -660,6 +738,17 @@
       "text": "Ready. Let us leave with our grown-up.",
       "language": "en-US",
       "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.story.6.more1.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.story.6.more1.audio.wav",
+      "text": "Thank you, bus driver!",
+      "language": "en-US",
+      "role": "momo",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -724,20 +813,37 @@
           {
             "id": "transport.story.1.intro",
             "text": "Momo and Lulu arrive at the bus stop.",
+            "cn": "Momo 和 Lulu 来到公交车站。",
             "speaker": "narrator",
             "audio": "transport.story.1.intro.audio"
           },
           {
             "id": "transport.story.1.item",
             "text": "Is our bus here yet?",
+            "cn": "我们的车来了吗？",
             "speaker": "momo",
             "audio": "transport.story.1.item.audio"
           },
           {
             "id": "transport.story.1.reply",
             "text": "Not yet. Let us wait together.",
+            "cn": "还没有。我们一起等吧。",
             "speaker": "bunny",
             "audio": "transport.story.1.reply.audio"
+          },
+          {
+            "id": "transport.story.1.more1",
+            "text": "How long do we wait?",
+            "cn": "我们要等多久？",
+            "speaker": "momo",
+            "audio": "transport.story.1.more1.audio"
+          },
+          {
+            "id": "transport.story.1.more2",
+            "text": "Not long. Look down the road.",
+            "cn": "不会太久。往路那头看看。",
+            "speaker": "bunny",
+            "audio": "transport.story.1.more2.audio"
           }
         ]
       },
@@ -763,20 +869,30 @@
           {
             "id": "transport.story.2.intro",
             "text": "Momo looks inside the bag.",
+            "cn": "Momo 在袋子里找来找去。",
             "speaker": "narrator",
             "audio": "transport.story.2.intro.audio"
           },
           {
             "id": "transport.story.2.item",
             "text": "I cannot find my ticket.",
+            "cn": "我找不到我的车票了。",
             "speaker": "momo",
             "audio": "transport.story.2.item.audio"
           },
           {
             "id": "transport.story.2.reply",
             "text": "Check the small pocket. Take your time.",
+            "cn": "看看那个小口袋。别着急。",
             "speaker": "turtle",
             "audio": "transport.story.2.reply.audio"
+          },
+          {
+            "id": "transport.story.2.more1",
+            "text": "Here it is! Thank you, Toto.",
+            "cn": "找到了！谢谢你，Toto。",
+            "speaker": "momo",
+            "audio": "transport.story.2.more1.audio"
           }
         ]
       },
@@ -802,20 +918,30 @@
           {
             "id": "transport.story.3.intro",
             "text": "The bus arrives at the stop.",
+            "cn": "公交车到站了。",
             "speaker": "narrator",
             "audio": "transport.story.3.intro.audio"
           },
           {
             "id": "transport.story.3.item",
             "text": "Our bus is here! Let us go!",
+            "cn": "我们的车来啦！走吧！",
             "speaker": "fox",
             "audio": "transport.story.3.item.audio"
           },
           {
             "id": "transport.story.3.reply",
             "text": "Wait. We need our bag too.",
+            "cn": "等等，我们的袋子也要带上。",
             "speaker": "momo",
             "audio": "transport.story.3.reply.audio"
+          },
+          {
+            "id": "transport.story.3.more1",
+            "text": "Oh yes. Here is our bag.",
+            "cn": "对哦。我们的袋子在这儿。",
+            "speaker": "fox",
+            "audio": "transport.story.3.more1.audio"
           }
         ]
       },
@@ -841,20 +967,37 @@
           {
             "id": "transport.story.4.intro",
             "text": "The friends step onto the bus with their grown-up.",
+            "cn": "朋友们和大人一起上了车。",
             "speaker": "narrator",
             "audio": "transport.story.4.intro.audio"
           },
           {
             "id": "transport.story.4.item",
             "text": "Is this seat free?",
+            "cn": "这个座位有人吗？",
             "speaker": "momo",
             "audio": "transport.story.4.item.audio"
           },
           {
             "id": "transport.story.4.reply",
             "text": "Yes. Let us sit beside each other.",
+            "cn": "没人。我们坐在一起吧。",
             "speaker": "bunny",
             "audio": "transport.story.4.reply.audio"
+          },
+          {
+            "id": "transport.story.4.more1",
+            "text": "I can see out of the window.",
+            "cn": "我能看到窗外。",
+            "speaker": "momo",
+            "audio": "transport.story.4.more1.audio"
+          },
+          {
+            "id": "transport.story.4.more2",
+            "text": "Look! A big tree.",
+            "cn": "看！一棵大树。",
+            "speaker": "bunny",
+            "audio": "transport.story.4.more2.audio"
           }
         ]
       },
@@ -880,20 +1023,30 @@
           {
             "id": "transport.story.5.intro",
             "text": "A bag is in the aisle.",
+            "cn": "过道上放着一个袋子。",
             "speaker": "narrator",
             "audio": "transport.story.5.intro.audio"
           },
           {
             "id": "transport.story.5.item",
             "text": "Where can I put my bag?",
+            "cn": "我的袋子放在哪儿呢？",
             "speaker": "fox",
             "audio": "transport.story.5.item.audio"
           },
           {
             "id": "transport.story.5.reply",
             "text": "Keep it beside your feet. Leave the aisle clear.",
+            "cn": "放在你脚边，别挡住过道。",
             "speaker": "turtle",
             "audio": "transport.story.5.reply.audio"
+          },
+          {
+            "id": "transport.story.5.more1",
+            "text": "Okay. Now people can walk by.",
+            "cn": "好的。现在大家能走过去了。",
+            "speaker": "fox",
+            "audio": "transport.story.5.more1.audio"
           }
         ]
       },
@@ -919,20 +1072,30 @@
           {
             "id": "transport.story.6.intro",
             "text": "The bus stops at their destination.",
+            "cn": "公交车到了他们要去的地方。",
             "speaker": "narrator",
             "audio": "transport.story.6.intro.audio"
           },
           {
             "id": "transport.story.6.item",
             "text": "Our stop! Bag and ticket ready?",
+            "cn": "我们到站了！袋子和车票拿好了吗？",
             "speaker": "momo",
             "audio": "transport.story.6.item.audio"
           },
           {
             "id": "transport.story.6.reply",
             "text": "Ready. Let us leave with our grown-up.",
+            "cn": "拿好了。我们跟大人一起下车吧。",
             "speaker": "bunny",
             "audio": "transport.story.6.reply.audio"
+          },
+          {
+            "id": "transport.story.6.more1",
+            "text": "Thank you, bus driver!",
+            "cn": "谢谢司机！",
+            "speaker": "momo",
+            "audio": "transport.story.6.more1.audio"
           }
         ]
       }

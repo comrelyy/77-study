@@ -26,6 +26,9 @@ foreach ($id in ($ids | Select-Object -Unique)) {
     if ($null -eq $asset -or $asset.kind -ne 'audio') { throw "Invalid audio reference: $id" }
     $outputPath = [IO.Path]::GetFullPath((Join-Path $staticRoot $asset.path))
     if (!$outputPath.StartsWith(($staticRoot + [IO.Path]::DirectorySeparatorChar), [StringComparison]::OrdinalIgnoreCase)) { throw 'Audio path escaped static directory.' }
+    # Files made by scripts/mac-placeholder-audio.py are temporary; re-synthesize them here.
+    $placeholder = $previousEntries | Where-Object { $_.id -eq $id -and $_.path -eq $asset.path -and $_.provenanceStatus -eq 'mac placeholder' } | Select-Object -First 1
+    if ($null -ne $placeholder -and (Test-Path -LiteralPath $outputPath)) { [IO.File]::Delete($outputPath) }
     if (Test-Path -LiteralPath $outputPath) {
         $fileHash = (Get-FileHash -LiteralPath $outputPath -Algorithm SHA256).Hash.ToLowerInvariant()
         $previous = $previousEntries | Where-Object { $_.id -eq $id -and $_.path -eq $asset.path -and $_.text -eq $asset.text -and $_.sha256 -eq $fileHash } | Select-Object -First 1

@@ -1,7 +1,14 @@
 import {node,button,image,actions} from '../core/dom.mjs';
-import {renderGame} from './game.mjs?v=lesson-20261110';
+import {renderGame} from './game.mjs?v=segment-cn-20261109b';
 const ui=new WeakMap();
 const speakers={narrator:'故事',momo:'Momo 墨墨',bunny:'Lulu 露露',fox:'Fifi 菲菲',turtle:'Toto 托托'};
+const openCn=new Set();
+// The 中 icon sits outside the bubble because the bubble itself is a play button.
+function cnToggle(seg,target){
+  const cn=node('span',seg.cn,'segment-cn');cn.hidden=!openCn.has(seg.id);target.append(cn);
+  const t=button('中',()=>{cn.hidden=!cn.hidden;if(cn.hidden)openCn.delete(seg.id);else openCn.add(seg.id);t.setAttribute('aria-pressed',String(!cn.hidden));},'cn-toggle');
+  t.setAttribute('aria-label','看中文');t.setAttribute('aria-pressed',String(!cn.hidden));return t;
+}
 function mine(s){if(!ui.has(s))ui.set(s,{wrong:null});return ui.get(s);}
 function advance(c,s){
   const at=s.index;
@@ -11,8 +18,24 @@ function progressBar(s){
   const bar=node('div',undefined,'lesson-progress'),fill=node('b'),ratio=s.steps.length>1?s.index/(s.steps.length-1):1;
   fill.style.width=Math.round(ratio*100)+'%';bar.setAttribute('role','progressbar');bar.setAttribute('aria-valuemin','0');bar.setAttribute('aria-valuemax','100');bar.setAttribute('aria-valuenow',String(Math.round(ratio*100)));bar.setAttribute('aria-label','这节课的进度');bar.append(fill);return bar;
 }
-function footer(c,...extra){
-  return actions(...extra,button('暂停声音',()=>{c.pause();c.app.checkpoint('lesson');}),button('听听怎么玩',()=>c.guide('lesson')));
+function moveTo(c,s,index){
+  if(!c.active()||c.app.advancingLesson)return;
+  c.pause();if(s.goTo(index)){c.redraw();c.app.body.scrollIntoView?.({block:'start'});c.app.checkpoint('lesson');}
+}
+const stepNames={words:'认识单词',quiz:'小问题',fill:'填一填',reply:'接一句',game:'小游戏',match:'配一配',end:'完成'};
+function stepNav(c,s){
+  const nav=node('nav',undefined,'lesson-steps'),list=node('ol');nav.setAttribute('aria-label','这节课的步骤');
+  for(const [i,step] of s.steps.entries()){
+    const name=step.kind==='story'?c.pack.modules.story.find(x=>x.id===step.storyId).title:stepNames[step.kind];
+    const b=button(name,()=>moveTo(c,s,i),i===s.index?'current':i<s.index?'passed':'');
+    if(i===s.index)b.setAttribute('aria-current','step');
+    const li=node('li');li.append(b);list.append(li);
+  }
+  nav.append(list);return nav;
+}
+function footer(c,s,...extra){
+  const back=button('上一步',()=>moveTo(c,s,s.index-1));back.disabled=s.index===0;
+  return actions(back,...extra,button('暂停声音',()=>{c.pause();c.app.checkpoint('lesson');}),button('听听怎么玩',()=>c.guide('lesson')));
 }
 function skipButton(c,s){return button('下一步 / 跳过',advance(c,s));}
 function continueButton(c,s){return button('继续',advance(c,s),'primary');}
@@ -45,7 +68,7 @@ function renderWords(c,s,wrap){
   const step=s.step;wrap.append(node('h2','先认识今天的小伙伴','lesson-title'),node('p','点图卡听一听，不用全部点完。'));
   const grid=node('div',undefined,'word-grid');
   for(const id of step.words){const w=c.word(id),b=button('',async()=>{const ok=await c.hearWord(w);if(ok&&c.active()){c.redraw();c.message('听完 '+w.text+' 啦，可以再听，也可以继续。');}},'word-card');b.append(c.assetImage(w.image),node('b',w.text),node('small',w.cn));grid.append(b);}
-  wrap.append(grid,footer(c,skipButton(c,s)),c.messageNode);
+  wrap.append(grid,footer(c,s,skipButton(c,s)),c.messageNode);
 }
 function renderStory(c,s,wrap){
   const story=s.story,scene=story.scene,list=node('div',undefined,'lesson-story');
@@ -53,10 +76,10 @@ function renderStory(c,s,wrap){
   for(const [i,seg] of scene.segments.entries()){
     const b=button('',()=>{story.pause();c.pause();return c.play(seg.audio);},'lesson-bubble'+(seg.speaker==='narrator'?' narrator':'')+(i===story.fragment?' current-fragment':''));
     if(seg.speaker&&seg.speaker!=='narrator'&&seg.speaker in speakers)b.append(image('illustrations/'+seg.speaker+'.svg',speakers[seg.speaker],'lesson-avatar'));
-    const text=node('span',undefined,'lesson-bubble-text');text.append(node('small',speakers[seg.speaker]||seg.speaker||'','story-speaker'),node('span',seg.text));b.append(text);list.append(b);
+    const text=node('span',undefined,'lesson-bubble-text');text.append(node('small',speakers[seg.speaker]||seg.speaker||'','story-speaker'),node('span',seg.text));b.append(text);
+    const line=node('div',undefined,'lesson-line');line.append(b);if(seg.cn)line.append(cnToggle(seg,text));list.append(line);
   }
   wrap.append(list);
-  const translation=node('details',undefined,'translation');translation.append(node('summary','看看中文意思'),node('p',scene.translation));wrap.append(translation);
   async function startStory(){
     if(!c.active())return;c.pause();if(story.saved||story.fragment>=scene.segments.length)story.replay();listen.disabled=true;
     const playing=story.play(seg=>{list.querySelectorAll('.lesson-bubble').forEach((p,i)=>p.className=p.className.replace(' current-fragment','')+(scene.segments[i]===seg?' current-fragment':''));return c.play(seg.audio);},snapshot=>c.emit('choice',{mode:'story_listen',...snapshot}),()=>c.app.checkpoint('lesson'));
@@ -64,13 +87,13 @@ function renderStory(c,s,wrap){
     if(c.active()&&run===story.run){c.redraw();c.message(ok?'这一幕听完啦，可以重听，也可以继续。':'声音暂未播放完成。可以点“听这一幕”再试，也可以继续。');}
   }
   const listen=button(story.fragment&&story.fragment<scene.segments.length?'继续这一幕':'听这一幕',startStory,'primary');
-  wrap.append(footer(c,listen,skipButton(c,s)),c.messageNode);
+  wrap.append(footer(c,s,listen,skipButton(c,s)),c.messageNode);
 }
 function renderQuiz(c,s,wrap){
   const step=s.step,after={right:()=>c.play(c.word(step.answer).audio),reveal:()=>c.play(c.word(step.answer).audio)};
   wrap.append(node('h2',step.question,'lesson-question'),node('p','点你觉得对的图。'));
   const pics=node('div',undefined,'lesson-picks');for(const id of step.options)pics.append(wordTile(c,s,id,after));
-  wrap.append(pics,footer(c,...(s.canContinue()?[continueButton(c,s)]:[])),c.messageNode);
+  wrap.append(pics,footer(c,s,...(s.canContinue()?[continueButton(c,s)]:[])),c.messageNode);
 }
 function segmentOf(c,id){for(const story of c.pack.modules.story){const seg=story.segments.find(x=>x.id===id);if(seg)return seg;}return null;}
 function renderFill(c,s,wrap){
@@ -82,7 +105,7 @@ function renderFill(c,s,wrap){
   const chips=node('div',undefined,'lesson-chips');
   for(const id of step.options){const w=c.word(id),b=button(w.text,()=>choose(c,s,id,after),optionClass('lesson-chip',s,id));b.setAttribute('data-id',id);b.disabled=s.done||s.revealed;chips.append(b);}
   const hear=button('听这句话',()=>{c.pause();return seg?c.play(seg.audio):true;});
-  wrap.append(chips,footer(c,hear,...(s.canContinue()?[continueButton(c,s)]:[])),c.messageNode);
+  wrap.append(chips,footer(c,s,hear,...(s.canContinue()?[continueButton(c,s)]:[])),c.messageNode);
 }
 function renderReply(c,s,wrap){
   const step=s.step,round=step.rounds[s.roundIndex],dialogue=c.pack.modules.dialogue.find(d=>d.id===round.dialogueId),right=dialogue.options.find(o=>o.id===round.answer);
@@ -99,7 +122,7 @@ function renderReply(c,s,wrap){
     b.append(c.assetImage(o.image,''),node('span',undefined,'lesson-opt-text'));b.children[1].append(node('b',o.text),node('small',o.cn));b.disabled=s.done||s.revealed;opts.append(b);
   }
   const hear=button('听听问题',()=>{c.pause();return c.sequence(dialogue.question);});
-  wrap.append(opts,footer(c,hear,...(s.canContinue()?[continueButton(c,s)]:[])),c.messageNode);
+  wrap.append(opts,footer(c,s,hear,...(s.canContinue()?[continueButton(c,s)]:[])),c.messageNode);
 }
 function renderMatch(c,s,wrap){
   const step=s.step,target=s.target,after={right:async()=>{if(s.target)await c.play(c.word(s.target).audio);},reveal:()=>c.play(c.word(target).audio)};
@@ -112,7 +135,7 @@ function renderMatch(c,s,wrap){
     else left.append(node('span','?','lesson-target-wait'));
     const pic=wordTile(c,s,id,after,false);pic.className+=done?' lesson-matched':'';pic.disabled=done||s.done;right.append(pic);
   }
-  grid.append(left,right);wrap.append(grid,footer(c,...(s.canContinue()?[continueButton(c,s)]:[])),c.messageNode);
+  grid.append(left,right);wrap.append(grid,footer(c,s,...(s.canContinue()?[continueButton(c,s)]:[])),c.messageNode);
 }
 function renderEnd(c,s,wrap){
   const earned=c.app.data.events.some(e=>e.kind==='sticker'&&e.payload?.theme===c.pack.sceneId);
@@ -122,7 +145,8 @@ function renderEnd(c,s,wrap){
   wrap.append(words,actions(button('再玩一次',()=>c.app.open('lesson',true),'primary'),button('回首页',()=>c.app.home())),c.messageNode);
 }
 export function renderLesson(c,s){
-  const step=s.step;
+  const step=s.step,shell=node('div',undefined,'lesson-shell'),main=node('div',undefined,'lesson-main');
+  shell.append(stepNav(c,s),main);c.body.append(shell);c={...c,body:main};
   if(step.kind==='game'){
     c.body.append(progressBar(s));
     if(s.freshGame){c.app.states.delete('game');s.freshGame=false;}

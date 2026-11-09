@@ -1,10 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "shopping",
-  "contentVersion": "0.2.1",
+  "contentVersion": "0.2.2",
   "status": "draft",
   "compatibleFrom": [
-    "0.2.0"
+    "0.2.0",
+    "0.2.1"
   ],
   "title": "和 Momo 逛小商店",
   "stickerId": "shopping.sticker",
@@ -475,6 +476,28 @@
       "reviewed": false
     },
     {
+      "id": "shopping.story.1.more1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.1.more1.audio.wav",
+      "text": "What is on our list?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.1.more2.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.1.more2.audio.wav",
+      "text": "An apple and a banana.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "shopping.story.2.image",
       "kind": "image",
       "path": "illustrations/scenes/shopping-2.svg"
@@ -508,6 +531,17 @@
       "text": "Our list says one. Let us choose one.",
       "language": "en-US",
       "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.2.more1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.2.more1.audio.wav",
+      "text": "This one looks good.",
+      "language": "en-US",
+      "role": "momo",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -551,6 +585,17 @@
       "reviewed": false
     },
     {
+      "id": "shopping.story.3.more1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.3.more1.audio.wav",
+      "text": "You have good eyes, Momo!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "shopping.story.4.image",
       "kind": "image",
       "path": "illustrations/scenes/shopping-4.svg"
@@ -582,6 +627,28 @@
       "kind": "audio",
       "path": "audio/shopping/v0-2-0/shopping.story.4.reply.audio.wav",
       "text": "Not yet. We can wait here together.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.4.more1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.4.more1.audio.wav",
+      "text": "Now it is our turn.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.4.more2.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.4.more2.audio.wav",
+      "text": "Thank you for waiting with me.",
       "language": "en-US",
       "role": "bunny",
       "source": null,
@@ -627,6 +694,17 @@
       "reviewed": false
     },
     {
+      "id": "shopping.story.5.more1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.5.more1.audio.wav",
+      "text": "Thank you. It is easy with two.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "shopping.story.6.image",
       "kind": "image",
       "path": "illustrations/scenes/shopping-6.svg"
@@ -660,6 +738,17 @@
       "text": "Now let us share them.",
       "language": "en-US",
       "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.6.more1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.6.more1.audio.wav",
+      "text": "Here is your half.",
+      "language": "en-US",
+      "role": "momo",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -719,20 +808,37 @@
           {
             "id": "shopping.story.1.intro",
             "text": "Momo picks up the shopping bag.",
+            "cn": "Momo 拿起购物袋。",
             "speaker": "narrator",
             "audio": "shopping.story.1.intro.audio"
           },
           {
             "id": "shopping.story.1.item",
             "text": "Let us buy lots of fruit!",
+            "cn": "我们去买好多水果吧！",
             "speaker": "momo",
             "audio": "shopping.story.1.item.audio"
           },
           {
             "id": "shopping.story.1.reply",
             "text": "First, let us read our list.",
+            "cn": "我们先看看购物清单。",
             "speaker": "bunny",
             "audio": "shopping.story.1.reply.audio"
+          },
+          {
+            "id": "shopping.story.1.more1",
+            "text": "What is on our list?",
+            "cn": "我们的清单上有什么？",
+            "speaker": "momo",
+            "audio": "shopping.story.1.more1.audio"
+          },
+          {
+            "id": "shopping.story.1.more2",
+            "text": "An apple and a banana.",
+            "cn": "一个苹果和一根香蕉。",
+            "speaker": "bunny",
+            "audio": "shopping.story.1.more2.audio"
           }
         ]
       },
@@ -758,20 +864,30 @@
           {
             "id": "shopping.story.2.intro",
             "text": "There are many apples on the shelf.",
+            "cn": "架子上有好多苹果。",
             "speaker": "narrator",
             "audio": "shopping.story.2.intro.audio"
           },
           {
             "id": "shopping.story.2.item",
             "text": "Two apples? Three?",
+            "cn": "两个苹果？三个？",
             "speaker": "momo",
             "audio": "shopping.story.2.item.audio"
           },
           {
             "id": "shopping.story.2.reply",
             "text": "Our list says one. Let us choose one.",
+            "cn": "清单上写着一个。我们挑一个吧。",
             "speaker": "bunny",
             "audio": "shopping.story.2.reply.audio"
+          },
+          {
+            "id": "shopping.story.2.more1",
+            "text": "This one looks good.",
+            "cn": "这个看起来不错。",
+            "speaker": "momo",
+            "audio": "shopping.story.2.more1.audio"
           }
         ]
       },
@@ -797,20 +913,30 @@
           {
             "id": "shopping.story.3.intro",
             "text": "The banana shelf looks empty at first.",
+            "cn": "香蕉架子一开始看起来空空的。",
             "speaker": "narrator",
             "audio": "shopping.story.3.intro.audio"
           },
           {
             "id": "shopping.story.3.item",
             "text": "I cannot find a banana.",
+            "cn": "我找不到香蕉。",
             "speaker": "bunny",
             "audio": "shopping.story.3.item.audio"
           },
           {
             "id": "shopping.story.3.reply",
             "text": "Look beside the apples. There is one!",
+            "cn": "看看苹果旁边。那儿有一根！",
             "speaker": "momo",
             "audio": "shopping.story.3.reply.audio"
+          },
+          {
+            "id": "shopping.story.3.more1",
+            "text": "You have good eyes, Momo!",
+            "cn": "你的眼睛真尖，Momo！",
+            "speaker": "bunny",
+            "audio": "shopping.story.3.more1.audio"
           }
         ]
       },
@@ -836,20 +962,37 @@
           {
             "id": "shopping.story.4.intro",
             "text": "A grown-up keeps the coin for paying.",
+            "cn": "大人拿着付钱用的硬币。",
             "speaker": "narrator",
             "audio": "shopping.story.4.intro.audio"
           },
           {
             "id": "shopping.story.4.item",
             "text": "Is it our turn?",
+            "cn": "轮到我们了吗？",
             "speaker": "momo",
             "audio": "shopping.story.4.item.audio"
           },
           {
             "id": "shopping.story.4.reply",
             "text": "Not yet. We can wait here together.",
+            "cn": "还没有。我们在这儿一起等。",
             "speaker": "bunny",
             "audio": "shopping.story.4.reply.audio"
+          },
+          {
+            "id": "shopping.story.4.more1",
+            "text": "Now it is our turn.",
+            "cn": "现在轮到我们了。",
+            "speaker": "momo",
+            "audio": "shopping.story.4.more1.audio"
+          },
+          {
+            "id": "shopping.story.4.more2",
+            "text": "Thank you for waiting with me.",
+            "cn": "谢谢你陪我一起等。",
+            "speaker": "bunny",
+            "audio": "shopping.story.4.more2.audio"
           }
         ]
       },
@@ -875,20 +1018,30 @@
           {
             "id": "shopping.story.5.intro",
             "text": "The fruit goes into the bag.",
+            "cn": "水果装进了袋子。",
             "speaker": "narrator",
             "audio": "shopping.story.5.intro.audio"
           },
           {
             "id": "shopping.story.5.item",
             "text": "This bag feels heavy.",
+            "cn": "这个袋子好重。",
             "speaker": "bunny",
             "audio": "shopping.story.5.item.audio"
           },
           {
             "id": "shopping.story.5.reply",
             "text": "I can help you carry it.",
+            "cn": "我可以帮你一起拿。",
             "speaker": "momo",
             "audio": "shopping.story.5.reply.audio"
+          },
+          {
+            "id": "shopping.story.5.more1",
+            "text": "Thank you. It is easy with two.",
+            "cn": "谢谢你。两个人拿就轻松了。",
+            "speaker": "bunny",
+            "audio": "shopping.story.5.more1.audio"
           }
         ]
       },
@@ -914,20 +1067,30 @@
           {
             "id": "shopping.story.6.intro",
             "text": "The friends arrive home with their fruit.",
+            "cn": "朋友们带着水果回到家。",
             "speaker": "narrator",
             "audio": "shopping.story.6.intro.audio"
           },
           {
             "id": "shopping.story.6.item",
             "text": "One apple and one banana. We did it!",
+            "cn": "一个苹果和一根香蕉。我们做到啦！",
             "speaker": "momo",
             "audio": "shopping.story.6.item.audio"
           },
           {
             "id": "shopping.story.6.reply",
             "text": "Now let us share them.",
+            "cn": "现在我们来分着吃吧。",
             "speaker": "bunny",
             "audio": "shopping.story.6.reply.audio"
+          },
+          {
+            "id": "shopping.story.6.more1",
+            "text": "Here is your half.",
+            "cn": "这是你的一半。",
+            "speaker": "momo",
+            "audio": "shopping.story.6.more1.audio"
           }
         ]
       }

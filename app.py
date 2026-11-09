@@ -83,6 +83,10 @@ class Handler(SimpleHTTPRequestHandler):
         except (ValueError,TypeError): return self.reply({'error':'请求内容无效','code':'invalid_request'},400)
         except Exception: return self.reply({'error':'本机保存暂未确认，请大人帮一下','code':'storage_failed'},500)
 
+# The page checks every theme asset with parallel HEAD requests; the default
+# listen backlog of 5 makes macOS reset the overflow and the theme refuses to open.
+ThreadingHTTPServer.request_queue_size=128
+
 def make_server(db=DB,port=8765):
     # Bind first: a second launch must not migrate the DB while the old server owns the port.
     server=ThreadingHTTPServer(('127.0.0.1',port),Handler)

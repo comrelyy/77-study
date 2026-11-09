@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "sceneId": "birthday",
-  "contentVersion": "0.1.2",
+  "contentVersion": "0.1.3",
   "status": "draft",
   "compatibleFrom": [
     "0.1.0",
-    "0.1.1"
+    "0.1.1",
+    "0.1.2"
   ],
   "generatedBy": "momo_agent",
   "title": "生日会",
@@ -813,18 +814,21 @@
           {
             "id": "birthday.story.1.intro",
             "text": "Momo and Lulu come to the birthday party.",
+            "cn": "Momo 和 Lulu 来参加生日会。",
             "speaker": "narrator",
             "audio": "birthday.story.1.intro.audio"
           },
           {
             "id": "birthday.story.1.item",
             "text": "Look at my new hat!",
+            "cn": "看我的新帽子！",
             "speaker": "momo",
             "audio": "birthday.story.1.item.audio"
           },
           {
             "id": "birthday.story.1.reply",
             "text": "It is a yellow hat. I like it.",
+            "cn": "是一顶黄帽子。我很喜欢。",
             "speaker": "bunny",
             "audio": "birthday.story.1.reply.audio"
           }
@@ -852,18 +856,21 @@
           {
             "id": "birthday.story.2.intro",
             "text": "Lulu pours juice into a cup.",
+            "cn": "Lulu 把果汁倒进杯子里。",
             "speaker": "narrator",
             "audio": "birthday.story.2.intro.audio"
           },
           {
             "id": "birthday.story.2.item",
             "text": "Can I hold the cup?",
+            "cn": "我可以拿着杯子吗？",
             "speaker": "momo",
             "audio": "birthday.story.2.item.audio"
           },
           {
             "id": "birthday.story.2.reply",
             "text": "Yes, you can. Be gentle with it.",
+            "cn": "可以呀。要轻轻地拿。",
             "speaker": "bunny",
             "audio": "birthday.story.2.reply.audio"
           }
@@ -891,18 +898,21 @@
           {
             "id": "birthday.story.3.intro",
             "text": "The friends play on the grass.",
+            "cn": "朋友们在草地上玩。",
             "speaker": "narrator",
             "audio": "birthday.story.3.intro.audio"
           },
           {
             "id": "birthday.story.3.item",
             "text": "I kick the ball to you.",
+            "cn": "我把球踢给你。",
             "speaker": "momo",
             "audio": "birthday.story.3.item.audio"
           },
           {
             "id": "birthday.story.3.reply",
             "text": "I catch the ball. Hooray!",
+            "cn": "我接住球啦。好耶！",
             "speaker": "bunny",
             "audio": "birthday.story.3.reply.audio"
           }
@@ -930,18 +940,21 @@
           {
             "id": "birthday.story.4.intro",
             "text": "A teddy sits under the table.",
+            "cn": "桌子下面坐着一只小熊。",
             "speaker": "narrator",
             "audio": "birthday.story.4.intro.audio"
           },
           {
             "id": "birthday.story.4.item",
             "text": "Look, a little teddy!",
+            "cn": "看，一只小小熊！",
             "speaker": "momo",
             "audio": "birthday.story.4.item.audio"
           },
           {
             "id": "birthday.story.4.reply",
             "text": "Hug the teddy gently.",
+            "cn": "轻轻地抱抱小熊。",
             "speaker": "bunny",
             "audio": "birthday.story.4.reply.audio"
           }
@@ -969,18 +982,21 @@
           {
             "id": "birthday.story.5.intro",
             "text": "Everyone sings a happy song.",
+            "cn": "大家一起唱一首快乐的歌。",
             "speaker": "narrator",
             "audio": "birthday.story.5.intro.audio"
           },
           {
             "id": "birthday.story.5.item",
             "text": "Happy birthday! You are four now.",
+            "cn": "生日快乐！你现在四岁啦。",
             "speaker": "bunny",
             "audio": "birthday.story.5.item.audio"
           },
           {
             "id": "birthday.story.5.reply",
             "text": "I wear my hat. I am four years old.",
+            "cn": "我戴着帽子。我四岁了。",
             "speaker": "momo",
             "audio": "birthday.story.5.reply.audio"
           }
@@ -1008,18 +1024,21 @@
           {
             "id": "birthday.story.6.intro",
             "text": "The party is over and the sun goes down.",
+            "cn": "派对结束了，太阳下山了。",
             "speaker": "narrator",
             "audio": "birthday.story.6.intro.audio"
           },
           {
             "id": "birthday.story.6.item",
             "text": "Thank you for the nice day.",
+            "cn": "谢谢你陪我度过美好的一天。",
             "speaker": "momo",
             "audio": "birthday.story.6.item.audio"
           },
           {
             "id": "birthday.story.6.reply",
             "text": "Keep your ball, my good friend.",
+            "cn": "球你留着吧，我的好朋友。",
             "speaker": "bunny",
             "audio": "birthday.story.6.reply.audio"
           }

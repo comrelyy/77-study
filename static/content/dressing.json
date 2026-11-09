@@ -1,10 +1,11 @@
 {
   "schemaVersion": 1,
   "sceneId": "dressing",
-  "contentVersion": "0.2.1",
+  "contentVersion": "0.2.2",
   "status": "draft",
   "compatibleFrom": [
-    "0.2.0"
+    "0.2.0",
+    "0.2.1"
   ],
   "title": "和 Momo 准备出门",
   "stickerId": "dressing.sticker",
@@ -475,6 +476,28 @@
       "reviewed": false
     },
     {
+      "id": "dressing.story.1.more1.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.1.more1.audio.wav",
+      "text": "Thank you! Is it cold outside?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.1.more2.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.1.more2.audio.wav",
+      "text": "A little windy. Let us get dressed.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "dressing.story.2.image",
       "kind": "image",
       "path": "illustrations/scenes/dressing-2.svg"
@@ -513,6 +536,17 @@
       "reviewed": false
     },
     {
+      "id": "dressing.story.2.more1.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.2.more1.audio.wav",
+      "text": "Two socks. Now my feet are warm.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "dressing.story.3.image",
       "kind": "image",
       "path": "illustrations/scenes/dressing-3.svg"
@@ -544,6 +578,28 @@
       "kind": "audio",
       "path": "audio/dressing/v0-2-0/dressing.story.3.reply.audio.wav",
       "text": "Let us swap them. Try walking again.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.3.more1.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.3.more1.audio.wav",
+      "text": "Oh! Left and right were mixed up.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.3.more2.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.3.more2.audio.wav",
+      "text": "Now they look right. Can you walk?",
       "language": "en-US",
       "role": "bunny",
       "source": null,
@@ -589,6 +645,28 @@
       "reviewed": false
     },
     {
+      "id": "dressing.story.4.more1.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.4.more1.audio.wav",
+      "text": "Look! The hat is on my head.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.4.more2.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.4.more2.audio.wav",
+      "text": "Well done. You did it yourself!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "dressing.story.5.image",
       "kind": "image",
       "path": "illustrations/scenes/dressing-5.svg"
@@ -627,6 +705,17 @@
       "reviewed": false
     },
     {
+      "id": "dressing.story.5.more1.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.5.more1.audio.wav",
+      "text": "It is out. Thank you, Momo!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "dressing.story.6.image",
       "kind": "image",
       "path": "illustrations/scenes/dressing-6.svg"
@@ -660,6 +749,28 @@
       "text": "Ready! Let us walk together.",
       "language": "en-US",
       "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.6.more1.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.6.more1.audio.wav",
+      "text": "Do not forget your hat, Momo.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.story.6.more2.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.6.more2.audio.wav",
+      "text": "It is on my head. Let us go!",
+      "language": "en-US",
+      "role": "momo",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -724,20 +835,37 @@
           {
             "id": "dressing.story.1.intro",
             "text": "The wind taps the window.",
+            "cn": "风轻轻敲着窗户。",
             "speaker": "narrator",
             "audio": "dressing.story.1.intro.audio"
           },
           {
             "id": "dressing.story.1.item",
             "text": "Let us go out! Where is my shirt?",
+            "cn": "我们出去吧！我的上衣在哪儿？",
             "speaker": "momo",
             "audio": "dressing.story.1.item.audio"
           },
           {
             "id": "dressing.story.1.reply",
             "text": "Here it is. I will bring mine too.",
+            "cn": "在这儿呢。我也把我的带上。",
             "speaker": "bunny",
             "audio": "dressing.story.1.reply.audio"
+          },
+          {
+            "id": "dressing.story.1.more1",
+            "text": "Thank you! Is it cold outside?",
+            "cn": "谢谢你！外面冷吗？",
+            "speaker": "momo",
+            "audio": "dressing.story.1.more1.audio"
+          },
+          {
+            "id": "dressing.story.1.more2",
+            "text": "A little windy. Let us get dressed.",
+            "cn": "有一点风。我们穿好衣服吧。",
+            "speaker": "bunny",
+            "audio": "dressing.story.1.more2.audio"
           }
         ]
       },
@@ -763,20 +891,30 @@
           {
             "id": "dressing.story.2.intro",
             "text": "One sock is missing.",
+            "cn": "少了一只袜子。",
             "speaker": "narrator",
             "audio": "dressing.story.2.intro.audio"
           },
           {
             "id": "dressing.story.2.item",
             "text": "I have one sock. Where is the other?",
+            "cn": "我只有一只袜子，另一只在哪儿？",
             "speaker": "momo",
             "audio": "dressing.story.2.item.audio"
           },
           {
             "id": "dressing.story.2.reply",
             "text": "Look under the chair. There it is!",
+            "cn": "看看椅子下面。在那儿！",
             "speaker": "bunny",
             "audio": "dressing.story.2.reply.audio"
+          },
+          {
+            "id": "dressing.story.2.more1",
+            "text": "Two socks. Now my feet are warm.",
+            "cn": "两只袜子都有了。现在我的脚暖暖的。",
+            "speaker": "momo",
+            "audio": "dressing.story.2.more1.audio"
           }
         ]
       },
@@ -802,20 +940,37 @@
           {
             "id": "dressing.story.3.intro",
             "text": "Momo tries a few steps.",
+            "cn": "Momo 走了几步试试。",
             "speaker": "narrator",
             "audio": "dressing.story.3.intro.audio"
           },
           {
             "id": "dressing.story.3.item",
             "text": "My shoes feel funny.",
+            "cn": "我的鞋子感觉怪怪的。",
             "speaker": "momo",
             "audio": "dressing.story.3.item.audio"
           },
           {
             "id": "dressing.story.3.reply",
             "text": "Let us swap them. Try walking again.",
+            "cn": "我们把它们换过来，再走走看。",
             "speaker": "bunny",
             "audio": "dressing.story.3.reply.audio"
+          },
+          {
+            "id": "dressing.story.3.more1",
+            "text": "Oh! Left and right were mixed up.",
+            "cn": "哦！左右穿反了。",
+            "speaker": "momo",
+            "audio": "dressing.story.3.more1.audio"
+          },
+          {
+            "id": "dressing.story.3.more2",
+            "text": "Now they look right. Can you walk?",
+            "cn": "现在对了。你能走走看吗？",
+            "speaker": "bunny",
+            "audio": "dressing.story.3.more2.audio"
           }
         ]
       },
@@ -841,20 +996,37 @@
           {
             "id": "dressing.story.4.intro",
             "text": "Lulu brings the hat.",
+            "cn": "Lulu 拿来了帽子。",
             "speaker": "narrator",
             "audio": "dressing.story.4.intro.audio"
           },
           {
             "id": "dressing.story.4.item",
             "text": "Would you like some help?",
+            "cn": "要我帮帮你吗？",
             "speaker": "bunny",
             "audio": "dressing.story.4.item.audio"
           },
           {
             "id": "dressing.story.4.reply",
             "text": "I will try first. Please stay here.",
+            "cn": "我先自己试试。请待在这儿陪我。",
             "speaker": "momo",
             "audio": "dressing.story.4.reply.audio"
+          },
+          {
+            "id": "dressing.story.4.more1",
+            "text": "Look! The hat is on my head.",
+            "cn": "看！帽子戴在我头上了。",
+            "speaker": "momo",
+            "audio": "dressing.story.4.more1.audio"
+          },
+          {
+            "id": "dressing.story.4.more2",
+            "text": "Well done. You did it yourself!",
+            "cn": "真棒。你自己做到啦！",
+            "speaker": "bunny",
+            "audio": "dressing.story.4.more2.audio"
           }
         ]
       },
@@ -880,20 +1052,30 @@
           {
             "id": "dressing.story.5.intro",
             "text": "Lulu pulls at a sleeve.",
+            "cn": "Lulu 拉着一只袖子。",
             "speaker": "narrator",
             "audio": "dressing.story.5.intro.audio"
           },
           {
             "id": "dressing.story.5.item",
             "text": "My shirt is stuck. Help me, please.",
+            "cn": "我的上衣卡住了，请帮帮我。",
             "speaker": "bunny",
             "audio": "dressing.story.5.item.audio"
           },
           {
             "id": "dressing.story.5.reply",
             "text": "I can hold it. Pull gently.",
+            "cn": "我帮你扶着，轻轻拉。",
             "speaker": "momo",
             "audio": "dressing.story.5.reply.audio"
+          },
+          {
+            "id": "dressing.story.5.more1",
+            "text": "It is out. Thank you, Momo!",
+            "cn": "拉出来了。谢谢你，Momo！",
+            "speaker": "bunny",
+            "audio": "dressing.story.5.more1.audio"
           }
         ]
       },
@@ -919,20 +1101,37 @@
           {
             "id": "dressing.story.6.intro",
             "text": "Both friends stand by the door.",
+            "cn": "两个朋友站在门边。",
             "speaker": "narrator",
             "audio": "dressing.story.6.intro.audio"
           },
           {
             "id": "dressing.story.6.item",
             "text": "Shirt, socks, shoes, hat. Ready?",
+            "cn": "上衣、袜子、鞋子、帽子。准备好了吗？",
             "speaker": "momo",
             "audio": "dressing.story.6.item.audio"
           },
           {
             "id": "dressing.story.6.reply",
             "text": "Ready! Let us walk together.",
+            "cn": "准备好了！我们一起走吧。",
             "speaker": "bunny",
             "audio": "dressing.story.6.reply.audio"
+          },
+          {
+            "id": "dressing.story.6.more1",
+            "text": "Do not forget your hat, Momo.",
+            "cn": "别忘了你的帽子，Momo。",
+            "speaker": "bunny",
+            "audio": "dressing.story.6.more1.audio"
+          },
+          {
+            "id": "dressing.story.6.more2",
+            "text": "It is on my head. Let us go!",
+            "cn": "它在我头上呢。我们走吧！",
+            "speaker": "momo",
+            "audio": "dressing.story.6.more2.audio"
           }
         ]
       }
