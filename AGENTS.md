@@ -28,3 +28,5 @@
 - 2026-10-29 后续决定：开发期间取消限时。服务根据内容清单的 development 模式关闭单段和每日限时，继续累计时间并保存进度、记录；不清除家庭数据。正式模式仍保留时长限制。用户明确要求继续S5开发，可实施发布核验工具；缺少实机、声音或家庭观察时如实记录，不能宣布正式发布通过。
 
 - 2026-10-30 S7：复习来源加载与试听在 static/core/review-sources.mjs；家庭来源只允许发布情景及开发预览，内部样例隔离。运行 node check-s7.mjs；不得用隔离包测试代替真实多情景音画验收，见 docs/S7_DELIVERY.md。
+
+- 2026-11-09 主题首页改为"一节课一条线"：只有"开始这节课"一个入口，按 单词 → 故事（含选图题）→ 填空 → 对话补全 → 一道游戏 → 配对 → 完成 走；答错不扣分，同题连错 2 次给答案。题目源在 `content-lesson/<id>.json`，由 `lesson-build.cjs` 合进内容包 `lesson`；`lesson.reviewed` 只能由人运行 `python -m momo_agent quiz-approve <id>` 置为 true，智能体生成流程不得设置，未审核时跳过 quiz/reply 步骤。手写主题（无 `generatedBy`）的题目读音只能在 Windows 用 `make-s4-audio.ps1 -SceneId <id>` 合成，`quiz-audio` 在 macOS 拒绝。页面加载的资源存在性检查不含 `.lesson.` 读音。运行 `check-lesson-build.mjs`、`check-lesson-state.mjs`、`check-lesson-flow.mjs`、`check-lesson-http.mjs`、`momo_agent` 测试及统一检查。详见 `docs/LESSON_LINE.md`。
