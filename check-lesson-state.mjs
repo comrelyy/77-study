@@ -41,9 +41,11 @@ test('match pairs one by one',()=>{
   assert.equal(s.matched.size,words.length);assert.equal(s.canContinue(),true);
 });
 test('reply round is chosen once',()=>{
-  const p=reviewed(),s=goto(new LessonState(p,{random:()=>0.99}),'park.lesson.reply');
+  let calls=0;const p=reviewed(),s=goto(new LessonState(p,{random:()=>{calls++;return 0.99;}}),'park.lesson.reply');
+  assert.equal(calls,1);
   assert.equal(s.roundIndex,s.step.rounds.length-1);
-  assert.equal(s.roundIndex,s.step.rounds.length-1);
+  s.answer('x');s.answer(s.step.rounds[s.roundIndex].answer);
+  assert.equal(s.roundIndex,s.step.rounds.length-1);assert.equal(calls,1);
 });
 test('restores attempts and reveal after reload',()=>{
   const p=reviewed(),s=goto(new LessonState(p),'park.lesson.quiz.2');s.practiceId='p1';
@@ -80,4 +82,16 @@ test('tidy three words',()=>{
   assert.equal(s.step.words.length,3);
   const r=[0,1,2].map(()=>s.answer(s.target));
   assert.deepEqual(r.map(x=>x.finished),[false,false,true]);
+});
+test('fully matched step is continuable after reload',()=>{
+  const s=goto(new LessonState(park),'park.lesson.match');s.practiceId='p';
+  while(s.target)s.answer(s.target);
+  const t=new LessonState(park),i=s.index;assert(restoreProgress(park,'lesson',t,record(park,s)));
+  assert.equal(t.canContinue(),true);assert.equal(t.next(),true);assert.equal(t.index,i+1);
+});
+test('failed restore leaves target untouched',()=>{
+  const s=goto(new LessonState(park),'park.lesson.story.2');s.practiceId='p';
+  const rec=record(park,s);rec.state.heard=['nope'];
+  const t=new LessonState(park);assert.equal(restoreProgress(park,'lesson',t,rec),false);
+  assert.equal(t.index,0);assert.equal(t.practiceId,null);
 });

@@ -22,14 +22,16 @@ export function restoreProgress(pack,module,target,record){
     if(!Array.isArray(s.matched)||new Set(s.matched).size!==s.matched.length||s.matched.some(w=>kind!=='match'||!step.words.includes(w)))return false;
     if(!Number.isInteger(s.roundIndex)||s.roundIndex<0||(kind==='reply'?s.roundIndex>=step.rounds.length:s.roundIndex!==0))return false;
     if(!Array.isArray(s.heard))return false;
-    target.index=index;target.enter();
+    let fragment=0;
     if(kind==='story'){
-      const scene=target.story.scene,ids=new Set(scene.segments.map(x=>x.id));
+      const scene=target.pack.modules.story.find(x=>x.id===step.storyId),ids=new Set(scene.segments.map(x=>x.id));
       if(s.heard.some(id=>!ids.has(id)))return false;
-      const fragment=s.fragmentId===null?scene.segments.length:scene.segments.findIndex(x=>x.id===s.fragmentId);if(fragment<0)return false;
-      target.story.fragment=fragment;target.story.heard=new Set(s.heard);
+      fragment=s.fragmentId===null?scene.segments.length:scene.segments.findIndex(x=>x.id===s.fragmentId);if(fragment<0)return false;
     }else if(s.heard.length||s.fragmentId!==null)return false;
+    target.index=index;target.enter();
+    if(kind==='story'){target.story.fragment=fragment;target.story.heard=new Set(s.heard);}
     target.attempts=s.attempts;target.revealed=s.revealed;target.matched=new Set(s.matched);target.roundIndex=s.roundIndex;
+    target.done=kind==='match'&&step.words.every(w=>target.matched.has(w));
   }
   else{
     const items=module==='story'?pack.modules.story:module==='dialogue'?pack.modules.dialogue:pack.modules.game.questions;
