@@ -12,7 +12,7 @@ from pathlib import Path
 from contextlib import contextmanager, closing
 
 VERSION = 3
-MODULES = ('story', 'dialogue', 'game', 'summary')
+MODULES = ('story', 'dialogue', 'game', 'summary', 'lesson')
 
 
 class ServiceError(ValueError):
@@ -347,7 +347,7 @@ class Storage:
         if not pack or module not in MODULES or version != pack['contentVersion'] or not isinstance(state,dict) or len(canonical(state))>64000:
             raise ServiceError('invalid_progress','进度或内容版本无效')
         identifier(state.get('practiceId'))
-        items = pack['modules'][module] if module in ('story','dialogue') else pack['modules']['game']['questions'] if module=='game' else []
+        items = pack['modules'][module] if module in ('story','dialogue') else pack['modules']['game']['questions'] if module=='game' else (pack.get('lesson') or {}).get('steps',[]) if module=='lesson' else []
         step = next((x for x in items if x['id']==state.get('stepId')),None)
         if module!='summary' and not step:
             raise ServiceError('invalid_step','进度步骤已经失效')
@@ -365,6 +365,22 @@ class Storage:
                 raise ServiceError('invalid_speech_position','对话声音位置无效')
             if state.get('confirmed') and not selection:
                 raise ServiceError('missing_selection','确认回应缺少选择')
+        if module=='lesson':
+            kind=step['kind']
+            if type(state.get('attempts',0)) is not int or not 0<=state.get('attempts',0)<=100000 or type(state.get('revealed',False)) is not bool:
+                raise ServiceError('invalid_attempts','尝试记录无效')
+            matched=state.get('matched',[])
+            if not isinstance(matched,list) or not set(matched).issubset(set(step['words']) if kind=='match' else set()):
+                raise ServiceError('invalid_match','配对进度无效')
+            rounds=step['rounds'] if kind=='reply' else []
+            index=state.get('roundIndex',0)
+            if type(index) is not int or not (0<=index<len(rounds) if kind=='reply' else index==0):
+                raise ServiceError('invalid_round','回应轮次无效')
+            story=next((x for x in pack['modules']['story'] if x['id']==step.get('storyId')),None) if kind=='story' else None
+            ids={x['id'] for x in story['segments']} if story else set()
+            heard,fragment=state.get('heard',[]),state.get('fragmentId')
+            if not isinstance(heard,list) or not set(heard).issubset(ids) or fragment is not None and fragment not in ids:
+                raise ServiceError('invalid_fragment','故事片段无效')
         if module=='game':
             if not isinstance(state.get('order'),list) or len(state['order'])!=len(step['options']) or set(state['order'])!=set(step['options']):
                 raise ServiceError('invalid_order','游戏候选顺序无效')
@@ -471,6 +487,8 @@ class Storage:
             step=next((s for s in pack['modules']['story'] if s['id']==p.get('stepId')),None)
             if not step or p.get('heard')!=[s['id'] for s in step['segments']] or p.get('segments')!=[{'id':s['id'],'text':s['text']} for s in step['segments']]:
                 raise ServiceError('incomplete_story','尚未完整听完这一幕')
+        elif mode=='lesson_answer':
+            self.validate_lesson_answer(pack,p)
         elif mode=='dialogue_reply':
             step=next((s for s in pack['modules']['dialogue'] if s['id']==p.get('stepId')),None)
             choice=next((o for o in step['options'] if o['id']==p.get('selectedId')),None) if step else None
@@ -496,6 +514,27 @@ class Storage:
                 raise ServiceError('invalid_match','游戏结果不一致')
         else:
             raise ServiceError('invalid_participation','预听、示范和跳过不产生参与贴纸')
+
+    @staticmethod
+    def validate_lesson_answer(pack,p):
+        fail=ServiceError('invalid_lesson_answer','课程作答记录无效')
+        step=next((s for s in (pack.get('lesson') or {}).get('steps',[]) if s['id']==p.get('stepId')),None)
+        if p.get('moduleId')!='lesson' or not step or step['kind'] not in ('quiz','fill','reply','match') or type(p.get('attempt')) is not int or p['attempt']<1 or type(p.get('correct')) is not bool:
+            raise fail
+        selected,kind=p.get('selectedId'),step['kind']
+        if kind in ('quiz','fill'):
+            ok=selected in step['options'] and p['correct']==(selected==step['answer'])
+        elif kind=='reply':
+            index=p.get('roundIndex')
+            if type(index) is not int or not 0<=index<len(step['rounds']):
+                raise fail
+            r=step['rounds'][index]
+            ok=selected in (r['answer'],r['wrong']['id']) and p['correct']==(selected==r['answer'])
+        else:
+            target=p.get('targetId')
+            ok=target in step['words'] and selected in step['words'] and p['correct']==(target==selected)
+        if not ok:
+            raise fail
 
     @staticmethod
     def validate_pin(pin):
