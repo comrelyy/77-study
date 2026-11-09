@@ -623,6 +623,72 @@
       "rate": 165,
       "volume": 100,
       "sha256": "5f0336fb54e3ad2244d37e15b12d94646063830b2b49d384e7e6072580ed41a3"
+    },
+    {
+      "id": "birthday.lesson.wrong.febef6a7.audio",
+      "path": "audio/birthday/lesson/febef6a7.wav",
+      "text": "I want a cup.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Samantha (macOS say)",
+      "rate": 165,
+      "volume": 100,
+      "sha256": "af63ffe1abbb7bedaa7013ad8ffded66154a8232682217d19c736d850d0ac757"
+    },
+    {
+      "id": "birthday.lesson.wrong.11e4440f.audio",
+      "path": "audio/birthday/lesson/11e4440f.wav",
+      "text": "I see a hat.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Samantha (macOS say)",
+      "rate": 165,
+      "volume": 100,
+      "sha256": "7b3be0a769649ee39dde989e9d515f40e47060671e410ed543c6616a0640ccfb"
+    },
+    {
+      "id": "birthday.lesson.wrong.00b1aec1.audio",
+      "path": "audio/birthday/lesson/00b1aec1.wav",
+      "text": "Let us hug the teddy.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Samantha (macOS say)",
+      "rate": 165,
+      "volume": 100,
+      "sha256": "11e13c3a9f49be0a1f11cdf6be89af915c587ad9bbdc660bfcbe4d4103723db3"
+    },
+    {
+      "id": "birthday.lesson.wrong.7a6d8bc0.audio",
+      "path": "audio/birthday/lesson/7a6d8bc0.wav",
+      "text": "I kick the ball.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Samantha (macOS say)",
+      "rate": 165,
+      "volume": 100,
+      "sha256": "644da3e82fd16e78ab45a9f9d9a1f4c37f7767e832b00826709b24bb699c6b79"
+    },
+    {
+      "id": "birthday.lesson.wrong.1bd9bf90.audio",
+      "path": "audio/birthday/lesson/1bd9bf90.wav",
+      "text": "My cup is blue.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Samantha (macOS say)",
+      "rate": 165,
+      "volume": 100,
+      "sha256": "e1ea3d30b1236d7230561d756fe43ec50fdd0aa2e3d70afe14a6d10182c26db7"
+    },
+    {
+      "id": "birthday.lesson.wrong.1585f1a7.audio",
+      "path": "audio/birthday/lesson/1585f1a7.wav",
+      "text": "I like the hat.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Samantha (macOS say)",
+      "rate": 165,
+      "volume": 100,
+      "sha256": "b53b04b682bc048ed41f0fb5d69e71aeee1413d047ac450f0cabb62fdc90c62a"
     }
   ]
 }

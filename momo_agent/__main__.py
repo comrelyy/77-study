@@ -1,4 +1,5 @@
-"""Command line: python -m momo_agent generate <topic> [--fixtures file] [--overwrite] | register | eval [--suite file]"""
+"""Command line: python -m momo_agent generate <topic> [--fixtures file] [--overwrite] | register | eval [--suite file]
+  | quiz <id> [--fixtures file] | quiz-approve <id> | quiz-audio <id>"""
 import argparse
 import asyncio
 import json
@@ -11,6 +12,7 @@ from momo_agent.evaluate import format_report, run_suite
 from momo_agent.guard import Budget, BudgetExceeded, TopicRejected
 from momo_agent.memory import MEMORY_FILE, Memory
 from momo_agent.llm import NoStructuredOutput, make_model
+from momo_agent import quiz as quiz_mod, tts
 from momo_agent.pipeline import LessonInvalid, SceneIdConflict, generate_lesson
 from momo_agent.register import register
 from momo_agent.repo import Repo
@@ -77,6 +79,72 @@ def generate(args, repo: Repo) -> int:
     return 0
 
 
+WINDOWS_AUDIO_HINT = ("手写主题的题目读音请在 Windows 上运行："
+                      "powershell -NoProfile -ExecutionPolicy Bypass -File .\\make-s4-audio.ps1 -SceneId {}")
+
+
+def quiz_command(args, repo: Repo) -> int:
+    fixtures = json.loads(Path(args.fixtures).read_text("utf-8")) if args.fixtures else None
+    if fixtures and os.environ.get("MOMO_LLM_PROVIDER", "fake") != "fake":
+        print("Note: --fixtures is only used when MOMO_LLM_PROVIDER is fake.")
+    if args.scene_id not in repo.scene_ids():
+        print(f"找不到主题：{args.scene_id}")
+        return 1
+    pack = repo.load_pack(args.scene_id)
+    budget = Budget.from_env()
+    try:
+        draft = asyncio.run(quiz_mod.generate_quiz(pack, make_model("quiz", fixtures, budget)))
+        quiz_mod.write_overlay(pack, draft, repo)
+        print(quiz_mod.run_lesson_build(args.scene_id, repo), end="")
+    except BudgetExceeded:
+        print("已达到模型费用上限，停止生成。")
+        print(budget.summary())
+        return 1
+    except LessonInvalid as err:
+        print("Quiz not written:")
+        for line in err.errors:
+            print(f"  {line}")
+        return 1
+    except (NoStructuredOutput, RuntimeError, subprocess.CalledProcessError) as err:
+        print(f"Error: {err}")
+        return 1
+    pack = repo.load_pack(args.scene_id)
+    if pack.get("generatedBy") == "momo_agent":
+        written = tts.render_missing_audio(pack, repo.root / "static")
+        print(f"Synthesised {len(written)} lesson audio files.")
+    else:
+        print(WINDOWS_AUDIO_HINT.format(args.scene_id))
+    print(budget.summary())
+    print(f"题目已生成，未审核。预览后运行：python -m momo_agent quiz-approve {args.scene_id}")
+    return 0
+
+
+def quiz_approve_command(args, repo: Repo) -> int:
+    try:
+        quiz_mod.approve(args.scene_id, repo)
+    except (FileNotFoundError, KeyError):
+        print(f"找不到 {args.scene_id} 的题目源文件，请先运行：python -m momo_agent quiz {args.scene_id}")
+        return 1
+    except RuntimeError as err:
+        print(f"Error: {err}")
+        return 1
+    print(f"{args.scene_id} 的题目已审核通过。")
+    return 0
+
+
+def quiz_audio_command(args, repo: Repo) -> int:
+    if args.scene_id not in repo.scene_ids():
+        print(f"找不到主题：{args.scene_id}")
+        return 1
+    pack = repo.load_pack(args.scene_id)
+    if pack.get("generatedBy") != "momo_agent" and sys.platform != "win32":
+        print(WINDOWS_AUDIO_HINT.format(args.scene_id))
+        return 1
+    written = tts.render_missing_audio(pack, repo.root / "static")
+    print(f"Synthesised {len(written)} audio files.")
+    return 0
+
+
 def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
     parser = argparse.ArgumentParser(prog="momo_agent")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -86,6 +154,13 @@ def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
     gen.add_argument("--overwrite", action="store_true", help="replace a theme this tool generated before")
     ev = sub.add_parser("eval", help="run every case of a topic suite and print a report")
     ev.add_argument("--suite", default=str(ROOT / "momo_agent/eval/suite.json"))
+    qz = sub.add_parser("quiz", help="write the lesson quiz and wrong replies for a theme (unreviewed)")
+    qz.add_argument("scene_id")
+    qz.add_argument("--fixtures", help="fixtures json for the fake model (MOMO_LLM_PROVIDER=fake)")
+    qa = sub.add_parser("quiz-approve", help="mark a theme's quiz as reviewed (a person's decision)")
+    qa.add_argument("scene_id")
+    qd = sub.add_parser("quiz-audio", help="synthesise missing lesson audio for a theme")
+    qd.add_argument("scene_id")
     sub.add_parser("register", help="list generated themes in the catalog again")
     args = parser.parse_args(argv)
     repo = Repo(root)
@@ -96,6 +171,12 @@ def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
         results = asyncio.run(run_suite(json.loads(Path(args.suite).read_text("utf-8")), repo))
         print(format_report(results))
         return 0 if all(r.passed for r in results) else 1
+    if args.command == "quiz":
+        return quiz_command(args, repo)
+    if args.command == "quiz-approve":
+        return quiz_approve_command(args, repo)
+    if args.command == "quiz-audio":
+        return quiz_audio_command(args, repo)
     return generate(args, repo)
 
 

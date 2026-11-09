@@ -4,16 +4,73 @@
   "reviewed": false,
   "sourceVersion": "0.2.0",
   "quiz": [
-    {"afterScene": 2, "question": "Lulu 想坐在哪儿？", "options": ["tree", "flower", "ball"], "answer": "tree"},
-    {"afterScene": 4, "question": "Momo 抱着什么很久？", "options": ["ball", "tree", "flower"], "answer": "ball"},
-    {"afterScene": 6, "question": "离开公园时，Lulu 跟谁说了再见？", "options": ["flower", "bird", "ball"], "answer": "bird"}
+    {
+      "afterScene": 2,
+      "question": "Lulu 想坐在哪儿？",
+      "options": [
+        "tree",
+        "flower",
+        "ball"
+      ],
+      "answer": "tree"
+    },
+    {
+      "afterScene": 4,
+      "question": "Momo 抱着什么很久？",
+      "options": [
+        "ball",
+        "tree",
+        "flower"
+      ],
+      "answer": "ball"
+    },
+    {
+      "afterScene": 6,
+      "question": "离开公园时，Lulu 跟谁说了再见？",
+      "options": [
+        "flower",
+        "bird",
+        "ball"
+      ],
+      "answer": "bird"
+    }
   ],
   "replies": [
-    {"dialogueId": "park.dialogue.1", "text": "I want my ball.", "cn": "我想要我的球。", "word": "ball"},
-    {"dialogueId": "park.dialogue.2", "text": "I hear a bird.", "cn": "我听见小鸟了。", "word": "bird"},
-    {"dialogueId": "park.dialogue.3", "text": "I am under the tree.", "cn": "我在树下面。", "word": "tree"},
-    {"dialogueId": "park.dialogue.4", "text": "I like the flower.", "cn": "我喜欢这朵花。", "word": "flower"},
-    {"dialogueId": "park.dialogue.5", "text": "Look at the tree.", "cn": "看这棵树。", "word": "tree"},
-    {"dialogueId": "park.dialogue.6", "text": "Goodbye, ball!", "cn": "再见，球！", "word": "ball"}
+    {
+      "dialogueId": "park.dialogue.1",
+      "text": "I want my ball.",
+      "cn": "我想要我的球。",
+      "word": "ball"
+    },
+    {
+      "dialogueId": "park.dialogue.2",
+      "text": "I hear a bird.",
+      "cn": "我听见小鸟了。",
+      "word": "bird"
+    },
+    {
+      "dialogueId": "park.dialogue.3",
+      "text": "I am under the tree.",
+      "cn": "我在树下面。",
+      "word": "tree"
+    },
+    {
+      "dialogueId": "park.dialogue.4",
+      "text": "I like the flower.",
+      "cn": "我喜欢这朵花。",
+      "word": "flower"
+    },
+    {
+      "dialogueId": "park.dialogue.5",
+      "text": "Look at the tree.",
+      "cn": "看这棵树。",
+      "word": "tree"
+    },
+    {
+      "dialogueId": "park.dialogue.6",
+      "text": "Goodbye, ball!",
+      "cn": "再见，球！",
+      "word": "ball"
+    }
   ]
 }

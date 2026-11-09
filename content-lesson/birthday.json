@@ -1,0 +1,76 @@
+{
+  "sceneId": "birthday",
+  "generatedBy": "momo_agent",
+  "reviewed": false,
+  "sourceVersion": "0.1.0",
+  "quiz": [
+    {
+      "afterScene": 2,
+      "question": "Lulu 用什么杯子倒果汁？",
+      "options": [
+        "cup",
+        "hat",
+        "ball"
+      ],
+      "answer": "cup"
+    },
+    {
+      "afterScene": 4,
+      "question": "桌子下面坐着什么？",
+      "options": [
+        "teddy",
+        "ball",
+        "cup"
+      ],
+      "answer": "teddy"
+    },
+    {
+      "afterScene": 6,
+      "question": "Lulu 在唱歌时戴着什么？",
+      "options": [
+        "hat",
+        "teddy",
+        "ball"
+      ],
+      "answer": "hat"
+    }
+  ],
+  "replies": [
+    {
+      "dialogueId": "birthday.dialogue.1",
+      "text": "I want a cup.",
+      "cn": "我想要一个杯子。",
+      "word": "cup"
+    },
+    {
+      "dialogueId": "birthday.dialogue.2",
+      "text": "I see a hat.",
+      "cn": "我看见一顶帽子。",
+      "word": "hat"
+    },
+    {
+      "dialogueId": "birthday.dialogue.3",
+      "text": "Let us hug the teddy.",
+      "cn": "我们来抱泰迪熊吧。",
+      "word": "teddy"
+    },
+    {
+      "dialogueId": "birthday.dialogue.4",
+      "text": "I kick the ball.",
+      "cn": "我来踢球。",
+      "word": "ball"
+    },
+    {
+      "dialogueId": "birthday.dialogue.5",
+      "text": "My cup is blue.",
+      "cn": "我的杯子是蓝色的。",
+      "word": "cup"
+    },
+    {
+      "dialogueId": "birthday.dialogue.6",
+      "text": "I like the hat.",
+      "cn": "我喜欢这顶帽子。",
+      "word": "hat"
+    }
+  ]
+}

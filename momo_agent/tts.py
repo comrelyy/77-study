@@ -80,3 +80,28 @@ def render_audio(pack: dict, static_root: Path) -> dict:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return manifest
+
+
+def render_missing_audio(pack: dict, static_root: Path) -> list[Path]:
+    """Synthesize only the audio assets whose file is missing and add them to the theme's audio manifest."""
+    static_root = Path(static_root)
+    written, entries = [], []
+    for asset in pack["assets"]:
+        out = static_root / asset["path"]
+        if asset["kind"] != "audio" or out.exists():
+            continue
+        out.parent.mkdir(parents=True, exist_ok=True)
+        info = synthesize(asset["text"], asset["role"], out)
+        entries.append({
+            "id": asset["id"], "path": asset["path"], "text": asset["text"],
+            "language": asset["language"], "role": asset["role"], **info,
+            "sha256": hashlib.sha256(out.read_bytes()).hexdigest(),
+        })
+        written.append(out)
+    if entries:
+        path = static_root / "audio" / f"s4-{pack['sceneId']}-manifest.json"
+        manifest = json.loads(path.read_text("utf-8"))
+        new_ids = {e["id"] for e in entries}
+        manifest["entries"] = [e for e in manifest["entries"] if e["id"] not in new_ids] + entries
+        path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return written

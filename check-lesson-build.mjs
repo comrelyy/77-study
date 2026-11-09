@@ -100,14 +100,14 @@ test('lesson validation rejects bad answers',()=>{
   assert.deepEqual(errs(clone(park)),[]);
 });
 
-test('built catalog packs carry lessons; only park has quiz/reply',()=>{
+test('built catalog packs carry lessons; only park and birthday have quiz/reply',()=>{
   const all=Object.keys(catalog.scenes);
   assert(all.includes('birthday'));
   for(const id of all){
     const p=require('./static/content/'+id+'.json'),ks=kinds(p.lesson);
     assert(p.lesson,id);
     const extra=ks.some(k=>k==='quiz'||k==='reply');
-    assert.equal(extra,id==='park',id);
+    assert.equal(extra,id==='park'||id==='birthday',id);
     if(id==='park')assert.equal(p.lesson.reviewed,false);
   }
 });
