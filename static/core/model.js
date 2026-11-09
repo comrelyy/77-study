@@ -79,6 +79,48 @@
     if(!list(m.summary).length)error('summary','empty');for(const w of list(m.summary))word(w,'summary');
     if(new Set(list(m.summary)).size!==list(m.summary).length)error('summary','duplicate words');
     if(pack.interaction){const plan=pack.interaction.gameAfterDialogue;if(!Array.isArray(plan)||plan.length!==g.questions.length||plan.some((n,i)=>!Number.isInteger(n)||n<1||n>m.dialogue.length||i>0&&n<plan[i-1]))error('interaction','invalid dialogue/game schedule');}
+    if(pack.lesson!==undefined){
+      const l=pack.lesson,steps=l&&l.steps;
+      if(!l||typeof l!=='object'||Array.isArray(l))error('lesson','expected object');
+      else if(l.schemaVersion!==1)error('lesson','expected schemaVersion 1');
+      else if(!Array.isArray(steps)||!steps.length||steps.some(x=>!x||typeof x!=='object'))error('lesson','expected non-empty steps');
+      else{
+        if(steps[0].kind!=='words')error('lesson','first step must be words');
+        if(steps.at(-1).kind!=='end')error('lesson','last step must be end');
+        for(const s of steps){
+          const at=typeof s.id==='string'?s.id:'lesson';identity(s.id,at);
+          if(!['words','story','quiz','fill','reply','game','match','end'].includes(s.kind)){error(at,'unknown step kind '+s.kind);continue;}
+          if(s.kind==='words'||s.kind==='match'){if(!Array.isArray(s.words)||!s.words.length)error(at,'expected words');for(const w of list(s.words))word(w,at);}
+          if(s.kind==='story'&&!list(m.story).some(x=>x.id===s.storyId))error(at,'invalid story reference '+s.storyId);
+          if(s.kind==='quiz'||s.kind==='fill'){
+            if(!Array.isArray(s.options)||!s.options.length)error(at,'expected options');
+            for(const w of list(s.options))word(w,at);word(s.answer,at);
+            if(new Set(list(s.options)).size!==list(s.options).length)error(at,'duplicate options');
+            if(!list(s.options).includes(s.answer))error(at,'answer absent from options');
+          }
+          if(s.kind==='quiz'&&(typeof s.question!=='string'||!s.question.trim()))error(at,'missing question');
+          if(s.kind==='fill'){
+            const seg=list(m.story).flatMap(x=>list(x.segments)).find(x=>x.id===s.segmentId);
+            if(!seg)error(at,'invalid segment reference '+s.segmentId);
+            else if(vocab.has(s.answer)&&(String(s.before)+vocab.get(s.answer).text+String(s.after)).toLowerCase()!==seg.text.toLowerCase())error(at,'fill text does not match segment');
+            asset(s.image,'image',at);
+          }
+          if(s.kind==='reply'){
+            if(!Array.isArray(s.rounds)||!s.rounds.length)error(at,'expected rounds');
+            for(const r of list(s.rounds)){
+              const d=list(m.dialogue).find(x=>x.id===r.dialogueId),w=r.wrong||{};
+              if(!d)error(at,'invalid dialogue reference '+r.dialogueId);
+              else if(!d.options.some(o=>o.id===r.answer))error(at,'answer is not a reply of '+r.dialogueId);
+              identity(w.id,at);
+              if(typeof w.text!=='string'||!w.text.trim()||words(w.text)>8)error(at,'wrong reply must have 1–8 words');
+              if(typeof w.cn!=='string'||!w.cn.trim())error(at,'wrong reply missing cn');
+              asset(w.image,'image',at);asset(w.audio,'audio',at);
+              if(assets.get(w.audio)?.text!==w.text)error(at,'wrong reply audio text mismatch');
+            }
+          }
+        }
+      }
+    }
     return {errors,warnings};
   }
   // Deliberately memory-only. The production storage/allowance service arrives in S3.

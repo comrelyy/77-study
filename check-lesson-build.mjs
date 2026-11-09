@@ -78,7 +78,23 @@ test('stripLesson restores the base pack',()=>{
   const {pack}=finalizeLesson(park,overlay,park);
   assert.deepEqual(stripLesson(pack),{...park,compatibleFrom:pack.compatibleFrom});
 });
-test('finalized pack validates',{todo:true},()=>{
+test('finalized pack validates',()=>{
   for(const pack of [finalizeLesson(park,overlay,null).pack,...packs.map(p=>finalizeLesson(p,null,null).pack)])
     assert.deepEqual(validate(pack,{exists:()=>true}).errors,[],pack.sceneId);
+});
+test('lesson validation rejects bad answers',()=>{
+  const fresh=()=>clone(finalizeLesson(park,overlay,null).pack),errs=p=>validate(p,{exists:()=>true}).errors;
+  const step=(p,k)=>p.lesson.steps.find(s=>s.kind===k);
+  let p=fresh(),q=step(p,'quiz');q.answer=park.words.find(w=>!q.options.includes(w.id)).id;
+  assert(errs(p).some(e=>e.startsWith(q.id+': ')),'quiz answer outside options');
+  p=fresh();const r=step(p,'reply');r.rounds[0].wrong.text='one two three four five six seven eight nine';
+  assert(errs(p).some(e=>e.startsWith(r.id+': ')||e.includes(r.rounds[0].wrong.id)),'9-word wrong reply');
+  p=fresh();p.lesson.steps.pop();assert(errs(p).some(e=>e.startsWith('lesson: ')),'missing end');
+  p=fresh();p.lesson.steps[0].words=['nope'];assert(errs(p).some(e=>e.includes('nope')),'unknown word');
+  p=fresh();const f=step(p,'fill');f.after+='x';assert(errs(p).some(e=>e.startsWith(f.id+': ')),'fill mismatch');
+  p=fresh();p.lesson.steps.find(s=>s.kind==='story').storyId='nope.story';assert(errs(p).some(e=>e.includes('nope.story')),'unknown story');
+  p=fresh();p.lesson.schemaVersion=2;assert(errs(p).some(e=>e.startsWith('lesson: ')),'schemaVersion');
+  p=fresh();p.lesson.steps[1].kind='bogus';assert(errs(p).some(e=>e.includes('bogus')||e.includes('unknown')),'bad kind');
+  p=fresh();step(p,'reply').rounds[0].wrong.audio=park.words[0].audio;assert(errs(p).length>0,'wrong audio text mismatch');
+  assert.deepEqual(errs(clone(park)),[]);
 });
