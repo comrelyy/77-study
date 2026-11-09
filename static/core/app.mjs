@@ -1,15 +1,17 @@
 import {node,button,image,actions} from './dom.mjs?v=content-v2';
 import {speedControls,observationForm} from './enhancements.mjs';
 import {StoryState} from './story-state.mjs';
+import {LessonState} from './lesson-state.mjs';
 import {MemoryStorage} from './store.mjs';
-import {serializeProgress,restoreProgress} from './progress.mjs?v=integrated-20261103';
+import {serializeProgress,restoreProgress} from './progress.mjs?v=lesson-20261109';
 import {renderStory} from '../modules/story.mjs?v=story-audio-fix-20261103';
 import {renderDialogue} from '../modules/dialogue.mjs?v=integrated-20261103';
 import {renderGame} from '../modules/game.mjs?v=integrated-20261103';
 import {renderSummary} from '../modules/summary.mjs';
+import {renderLesson} from '../modules/lesson.mjs?v=lesson-20261109';
 import {pendingInteractionGame} from './interaction-flow.mjs?v=integrated-20261103';
-const labels={story:'主题小故事',dialogue:'情景对话',game:'游戏互动',summary:'单词汇总'};
-const guides={story:'点“听英语故事”开始。暂停后可以继续当前小段；点图卡听单词。也可以跳过或结束。',dialogue:'点一个回答，小兔就会说出来，Momo 会接着说下一句。想先听听可以点示范回答。也可以暂停、跳过或结束。',summary:'点图卡听单词。可以重听，也可以随时结束，不用点完每一张。'};
+const labels={story:'主题小故事',dialogue:'情景对话',game:'游戏互动',summary:'单词汇总',lesson:'这节课'};
+const guides={story:'点“听英语故事”开始。暂停后可以继续当前小段；点图卡听单词。也可以跳过或结束。',dialogue:'点一个回答，小兔就会说出来，Momo 会接着说下一句。想先听听可以点示范回答。也可以暂停、跳过或结束。',summary:'点图卡听单词。可以重听，也可以随时结束，不用点完每一张。',lesson:'跟着进度条一步步来：听一听、答一答。答错了可以再试，随时可以暂停或结束。'};
 export class App{
   constructor({root,pack,store,player,reviewLoader,scenes=[],navigateScene,Session=globalThis.MomoPrototype.Session,storage,uuid=()=>crypto.randomUUID(),now=()=>Date.now()}){
     storage=storage??(store.internal?new MemoryStorage():globalThis.sessionStorage);
@@ -59,7 +61,7 @@ export class App{
   }
   memoryImage(){return this.pack.sceneId==='picnic'?'illustrations/basket.svg':this.asset(this.pack.words[0].image).path;}
   get integratedInteractions(){return Boolean(this.pack.interaction);}
-  visibleModules(){return Object.entries(labels).filter(([id])=>id!=='game'||!this.integratedInteractions||this.pack.interaction.separateGameEntry);}
+  visibleModules(){if(this.pack.lesson)return [['lesson',labels.lesson]];return Object.entries(labels).filter(([id])=>id!=='lesson').filter(([id])=>id!=='game'||!this.integratedInteractions||this.pack.interaction.separateGameEntry);}
   moduleLabel(id){return id==='dialogue'&&this.integratedInteractions?'情景互动':labels[id];}
   leavePersistent(target='suspended'){
     if(this.leaving){this.view=target;if(target==='home')this.moduleId=null;this.draw();return this.leaving;}
@@ -83,6 +85,7 @@ export class App{
     if(active&&!this.pending&&!this.busy&&this.states.has(this.moduleId)){
       progress.push(serializeProgress(this.pack,this.moduleId,this.stateFor(this.moduleId)));
       if(this.moduleId==='dialogue'&&this.integratedInteractions&&this.states.has('game'))progress.push(serializeProgress(this.pack,'game',this.stateFor('game')));
+      if(this.moduleId==='lesson'&&this.stateFor('lesson').step.kind==='game'&&this.states.has('game'))progress.push(serializeProgress(this.pack,'game',this.stateFor('game')));
     }
     this.last=now;this.view='suspended';this.generation++;
     this.store.retire?.(progress,seconds,now);
@@ -91,6 +94,7 @@ export class App{
     if(!this.states.has(id)){
       if(id==='story')this.states.set(id,new StoryState(this.pack.modules.story));
       else if(id==='summary')this.states.set(id,{page:0});
+      else if(id==='lesson')this.states.set(id,new LessonState(this.pack));
       else{const s=new this.Session(this.pack,{save:async event=>{
         const ok=await this.emit('choice',{...event,mode:id==='dialogue'?'dialogue_reply':({'listen-pack':'packing_game','select-place':'tidy_game','scene-find':'scene_find_game','story-order':'story_order_game'})[this.pack.modules.game.type],correct:event.matched,reply:event.text,attempt:event.attempt,hinted:event.hinted||event.source==='demo',...(id==='game'?{targetAudioCompleted:s.heard}:{})},event.operationId);
         if(!ok)throw Error('save pending');
@@ -99,7 +103,7 @@ export class App{
     const state=this.states.get(id);if(!state.practiceId)state.practiceId=this.uuid();return state;
   }
   open(id,restart=false){if(this.store.persistent)return this.openPersistent(id,restart);return this.openLocal(id,restart);}
-  openLocal(id,restart=false){if(!labels[id])return;this.pause();this.moduleId=id;this.last=this.now();this.ended=false;if(!this.allowed()){this.view='rest';this.draw();return;}if(restart){this.states.delete(id);if(id==='dialogue'&&this.integratedInteractions)this.states.delete('game');}this.view='module';this.stateFor(id);this.draw();if(!this.seenGuides.has(id)){this.seenGuides.add(id);this.guide(id);}}
+  openLocal(id,restart=false){if(!labels[id])return;this.pause();this.moduleId=id;this.last=this.now();this.ended=false;if(!this.allowed()){this.view='rest';this.draw();return;}if(restart){this.states.delete(id);if(id==='dialogue'&&this.integratedInteractions||id==='lesson')this.states.delete('game');}this.view='module';this.stateFor(id);this.draw();if(!this.seenGuides.has(id)){this.seenGuides.add(id);this.guide(id);}}
   async openPersistent(id,restart=false){
     if(!labels[id])return;if(this.failure){this.draw();return;}const opening=this.opening=(this.opening||0)+1;this.pause();
     if(this.closingTask)await this.closingTask;if(this.leaving)await this.leaving;if(opening!==this.opening)return;
@@ -149,13 +153,14 @@ export class App{
       if(payload.mode==='story_listen')progress.state.completed=true;
       if(payload.mode==='dialogue_reply')Object.assign(progress.state,{selectedId:payload.selectedId,confirmed:true,speechIndex:0,history:[...s.events,payload]});
       if(['packing_game','tidy_game','scene_find_game','story_order_game'].includes(payload.mode))Object.assign(progress.state,{selectedId:payload.selectedId,attempts:payload.attempt,completed:payload.matched,demonstrated:payload.hinted,order:payload.candidateOrder,...(payload.sequenceOrder?{sequenceOrder:payload.sequenceOrder}:{})});
+      if(payload.mode==='lesson_answer'){const match=payload.correct&&s.step.kind==='match';Object.assign(progress.state,{stepId:payload.stepId,attempts:payload.correct?(match?0:s.attempts):payload.attempt,revealed:payload.correct?(match?false:s.revealed):payload.attempt>=2,matched:match?[...s.matched,s.target]:[...s.matched],roundIndex:payload.roundIndex??s.roundIndex});}
       operation.progress=progress;
     }
     if(this.pending&&JSON.stringify(this.pending.operation)!==JSON.stringify(operation))return false;
     this.pending=this.pending||{operation,complete};this.busy=true;this.failure=null;
     this.body?.querySelectorAll('button').forEach(b=>{if(b.textContent!=='暂停声音')b.disabled=true;});
     const generation=this.generation;
-    try{this.saveTask=this.store.save(this.pending.operation);const result=await this.saveTask;this.applyState(result||{});this.pending.complete?.();this.pending=null;return true;}
+    try{this.saveTask=this.store.save(this.pending.operation);const result=await this.saveTask;this.applyState(result||{});if(result?.stickerGranted&&!this.data.events.some(e=>e.kind==='sticker'&&e.payload?.theme===this.pack.sceneId))this.data.events.push({kind:'sticker',payload:{theme:this.pack.sceneId}});this.pending.complete?.();this.pending=null;return true;}
     catch(error){this.failure={message:'这次记录还没有确认保存，请大人帮一下。',details:error.message};this.pause();this.draw();return false;}
     finally{this.busy=false;this.saveTask=null;if(generation!==this.generation&&!this.failure)this.draw();}
   }
@@ -238,12 +243,12 @@ export class App{
     if(this.view==='stickers'){const earned=this.data.events.some(e=>e.kind==='sticker'&&e.payload?.theme===this.pack.sceneId);this.root.append(node('h1','我们的小小纪念'),image(earned?this.memoryImage():'illustrations/cloud.svg','', 'sticker'),node('p',this.pack.title),node('p',earned?'这次相伴已经收藏。':'还没有这段相伴的贴纸。听一个词或参与一次互动，就可能留下纪念。'));return;}
     const nav=node('nav',undefined,'chapter-nav');for(const [id]of this.visibleModules()){const b=button(this.moduleLabel(id),()=>this.open(id),id===this.moduleId?'active':'');if(id===this.moduleId)b.setAttribute('aria-current','page');nav.append(b);}this.root.append(nav,speedControls(this));
     this.body=node('section');this.body.id='stage';this.root.append(this.body);const s=this.stateFor(this.moduleId);
-    const c={app:this,pack:this.pack,body:this.body,messageNode:this.status,active:()=>this.generation===generation,message:text=>this.message(text),redraw:()=>this.draw(),pause:()=>this.pause(),play:id=>this.playAsset(id),sequence:segments=>this.sequence(segments),word:id=>this.word(id),assetImage:(id,alt)=>this.assetImage(id,alt),hearWord:w=>this.hearWord(w),guide:id=>this.guide(id),complete:()=>this.complete(),lock:()=>this.body.querySelectorAll('button').forEach(b=>{if(b.textContent!=='暂停声音')b.disabled=true;}),emit:(kind,payload)=>this.emit(kind,payload,undefined,payload.mode==='story_listen'?()=>{if(s.scene.id===payload.stepId&&s.fragment>=s.scene.segments.length&&s.heard.size===payload.heard.length)s.saved=true;}:null)};
+    const c={app:this,pack:this.pack,body:this.body,messageNode:this.status,active:()=>this.generation===generation,message:text=>this.message(text),redraw:()=>this.draw(),pause:()=>this.pause(),play:id=>this.playAsset(id),sequence:segments=>this.sequence(segments),word:id=>this.word(id),assetImage:(id,alt)=>this.assetImage(id,alt),hearWord:w=>this.hearWord(w),guide:id=>this.guide(id),complete:()=>this.complete(),lock:()=>this.body.querySelectorAll('button').forEach(b=>{if(b.textContent!=='暂停声音')b.disabled=true;}),emit:(kind,payload)=>this.emit(kind,payload,undefined,payload.mode==='story_listen'?()=>{const story=s.story??s;if(story.scene.id===payload.stepId&&story.fragment>=story.scene.segments.length&&story.heard.size===payload.heard.length)story.saved=true;}:null)};
     if(this.moduleId==='dialogue'&&this.integratedInteractions&&pendingInteractionGame(this.pack,s,this.stateFor('game'))){
       const game=this.stateFor('game'),round=this.pack.modules.dialogue[s.index],answer=round.options.find(o=>o.id===s.selection);
       const bridge=node('aside',undefined,'notice interaction-bridge');bridge.append(node('b','一起试试看'),node('p',answer.followUp.map(line=>line.text).join(' ')));this.body.append(bridge);
       renderGame({...c,advanceGame:()=>this.advanceInteractionGame(s,game),complete:()=>this.advanceInteractionGame(s,game)},game);
-    }else ({story:renderStory,dialogue:renderDialogue,game:renderGame,summary:renderSummary})[this.moduleId](c,s);
+    }else ({story:renderStory,dialogue:renderDialogue,game:renderGame,summary:renderSummary,lesson:renderLesson})[this.moduleId](c,s);
     if(this.busy)this.body.querySelectorAll('button').forEach(b=>{if(b.textContent!=='暂停声音')b.disabled=true;});
   }
   drawHome(toolbar){
@@ -253,7 +258,7 @@ export class App{
     if(first.illustration){art.className+=' content-home-scene'+(this.pack.sceneId==='tidy'?' tidy-home-scene':'');const picture=this.assetImage(first.illustration,this.pack.title);picture.className='picnic-illustration';art.append(picture);}
     else if(first.templateId==='picnic-meadow')art.append(image('picnic-sketch.svg','Momo 的生活小发现','picnic-illustration'));
     else{art.className+=' tidy-home-scene';art.append(this.assetImage(first.characters[0],this.pack.title));const toys=node('div',undefined,'home-toys');for(const word of this.pack.words)toys.append(this.assetImage(word.image,word.cn));art.append(toys);}hero.append(copy,art);this.root.append(hero);
-    const cards=node('div',undefined,'cards');for(const [id]of this.visibleModules()){const b=button('',()=>this.open(id),'activity');b.append(node('b',this.moduleLabel(id)),node('small',this.states.has(id)?'继续上次 →':'一起看看 →'));cards.append(b);}this.root.append(cards,this.status);
+    const cards=node('div',undefined,'cards');for(const [id]of this.visibleModules()){const b=button('',()=>this.open(id),'activity');b.append(node('b',id==='lesson'?'开始这节课':this.moduleLabel(id)),node('small',this.states.has(id)?'继续上次 →':'一起看看 →'));cards.append(b);}this.root.append(cards,this.status);
     if(this.data.notices?.length){const notes=node('details',undefined,'notice');notes.append(node('summary','给家长的说明'));for(const text of this.data.notices)notes.append(node('p',text));this.root.append(notes);}
     this.root.append(toolbar);
   }
