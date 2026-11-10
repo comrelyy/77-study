@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "sceneId": "weather",
-  "contentVersion": "0.1.2",
+  "contentVersion": "0.1.3",
   "status": "draft",
   "compatibleFrom": [
     "0.1.0",
-    "0.1.1"
+    "0.1.1",
+    "0.1.2"
   ],
   "title": "和 Momo 看天气",
   "stickerId": "weather.sticker",
@@ -757,6 +758,65 @@
       "id": "weather.game.image",
       "kind": "image",
       "path": "illustrations/scenes/weather-game.svg"
+    },
+    {
+      "id": "weather.lesson.review.en.cup.container.image",
+      "kind": "image",
+      "path": "illustrations/cup.svg"
+    },
+    {
+      "id": "weather.lesson.review.en.cup.container.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.cup.audio.wav",
+      "text": "cup",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.lesson.review.en.egg.food.image",
+      "kind": "image",
+      "path": "illustrations/egg.svg"
+    },
+    {
+      "id": "weather.lesson.review.en.egg.food.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.egg.audio.wav",
+      "text": "egg",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.lesson.review.en.milk.drink.image",
+      "kind": "image",
+      "path": "illustrations/milk.svg"
+    },
+    {
+      "id": "weather.lesson.review.en.milk.drink.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/v0-1-0/breakfast.milk.audio.wav",
+      "text": "milk",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "weather.lesson.bridge.audio",
+      "kind": "audio",
+      "path": "audio/weather/lesson/bridge-87669c27.wav",
+      "text": "Yum, all done. What is the weather like today?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
     }
   ],
   "words": [
@@ -1447,6 +1507,32 @@
           "en.cloud.weather",
           "en.rain.weather",
           "en.umbrella.object"
+        ],
+        "review": [
+          {
+            "id": "weather.lesson.review.en.cup.container",
+            "text": "cup",
+            "cn": "杯子",
+            "image": "weather.lesson.review.en.cup.container.image",
+            "audio": "weather.lesson.review.en.cup.container.audio",
+            "from": "吃早餐"
+          },
+          {
+            "id": "weather.lesson.review.en.egg.food",
+            "text": "egg",
+            "cn": "鸡蛋",
+            "image": "weather.lesson.review.en.egg.food.image",
+            "audio": "weather.lesson.review.en.egg.food.audio",
+            "from": "吃早餐"
+          },
+          {
+            "id": "weather.lesson.review.en.milk.drink",
+            "text": "milk",
+            "cn": "牛奶",
+            "image": "weather.lesson.review.en.milk.drink.image",
+            "audio": "weather.lesson.review.en.milk.drink.audio",
+            "from": "吃早餐"
+          }
         ]
       },
       {
@@ -1512,6 +1598,11 @@
         "id": "weather.lesson.end",
         "kind": "end"
       }
-    ]
+    ],
+    "bridge": {
+      "text": "Yum, all done. What is the weather like today?",
+      "cn": "真好吃，吃完了。今天天气怎么样？",
+      "audio": "weather.lesson.bridge.audio"
+    }
   }
 }

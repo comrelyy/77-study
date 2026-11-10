@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "sceneId": "washing",
-  "contentVersion": "0.2.2",
+  "contentVersion": "0.2.3",
   "status": "draft",
   "compatibleFrom": [
     "0.2.0",
-    "0.2.1"
+    "0.2.1",
+    "0.2.2"
   ],
   "title": "和 Momo 洗漱啦",
   "stickerId": "washing.sticker",
@@ -796,6 +797,17 @@
       "source": null,
       "rights": null,
       "reviewed": false
+    },
+    {
+      "id": "washing.lesson.bridge.audio",
+      "kind": "audio",
+      "path": "audio/washing/lesson/bridge-d03cfdec.wav",
+      "text": "Good morning, Momo! Time to wake up.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
     }
   ],
   "words": [
@@ -1517,6 +1529,11 @@
         "id": "washing.lesson.end",
         "kind": "end"
       }
-    ]
+    ],
+    "bridge": {
+      "text": "Good morning, Momo! Time to wake up.",
+      "cn": "早上好，Momo！该起床啦。",
+      "audio": "washing.lesson.bridge.audio"
+    }
   }
 }

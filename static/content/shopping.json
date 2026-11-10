@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "sceneId": "shopping",
-  "contentVersion": "0.2.2",
+  "contentVersion": "0.2.3",
   "status": "draft",
   "compatibleFrom": [
     "0.2.0",
-    "0.2.1"
+    "0.2.1",
+    "0.2.2"
   ],
   "title": "和 Momo 逛小商店",
   "stickerId": "shopping.sticker",
@@ -752,6 +753,65 @@
       "source": null,
       "rights": null,
       "reviewed": false
+    },
+    {
+      "id": "shopping.lesson.review.en.ball.toy.image",
+      "kind": "image",
+      "path": "illustrations/ball.svg"
+    },
+    {
+      "id": "shopping.lesson.review.en.ball.toy.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.ball.audio.wav",
+      "text": "ball",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.lesson.review.en.bird.animal.image",
+      "kind": "image",
+      "path": "illustrations/bird.svg"
+    },
+    {
+      "id": "shopping.lesson.review.en.bird.animal.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.bird.audio.wav",
+      "text": "bird",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.lesson.review.en.flower.plant.image",
+      "kind": "image",
+      "path": "illustrations/flower.svg"
+    },
+    {
+      "id": "shopping.lesson.review.en.flower.plant.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.flower.audio.wav",
+      "text": "flower",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.lesson.bridge.audio",
+      "kind": "audio",
+      "path": "audio/shopping/lesson/bridge-3709780b.wav",
+      "text": "Oh no, no more bananas. Let us go to the shop.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
     }
   ],
   "words": [
@@ -1420,6 +1480,32 @@
           "en.banana.fruit",
           "en.bag.container",
           "en.coin.money"
+        ],
+        "review": [
+          {
+            "id": "shopping.lesson.review.en.ball.toy",
+            "text": "ball",
+            "cn": "球",
+            "image": "shopping.lesson.review.en.ball.toy.image",
+            "audio": "shopping.lesson.review.en.ball.toy.audio",
+            "from": "逛公园"
+          },
+          {
+            "id": "shopping.lesson.review.en.bird.animal",
+            "text": "bird",
+            "cn": "小鸟",
+            "image": "shopping.lesson.review.en.bird.animal.image",
+            "audio": "shopping.lesson.review.en.bird.animal.audio",
+            "from": "逛公园"
+          },
+          {
+            "id": "shopping.lesson.review.en.flower.plant",
+            "text": "flower",
+            "cn": "花",
+            "image": "shopping.lesson.review.en.flower.plant.image",
+            "audio": "shopping.lesson.review.en.flower.plant.audio",
+            "from": "逛公园"
+          }
         ]
       },
       {
@@ -1485,6 +1571,11 @@
         "id": "shopping.lesson.end",
         "kind": "end"
       }
-    ]
+    ],
+    "bridge": {
+      "text": "Oh no, no more bananas. Let us go to the shop.",
+      "cn": "哎呀，香蕉吃完了。我们去商店吧。",
+      "audio": "shopping.lesson.bridge.audio"
+    }
   }
 }

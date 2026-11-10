@@ -14,7 +14,8 @@ function auditPack(pack,manifest,{staticRoot=path.join(root,'static')}={}){
   const entries=manifest?.entries||[];
   for(const sound of audio){
     if(!sound.valid)errors.push(sound.id+': '+sound.error);
-    const source=entries.find(e=>e.id===sound.id&&e.path===sound.path);
+    // Review cards re-register another scene's file under a lesson id, so they match the manifest by path.
+    const source=entries.find(e=>(e.id===sound.id||sound.id.includes('.lesson.review.'))&&e.path===sound.path);
     sound.provenanceMatches=Boolean(source&&source.text===sound.text&&source.sha256===sound.sha256&&source.voice&&source.voice!=='unknown');
     if(!sound.provenanceMatches)errors.push(sound.id+': generated transcript/hash/voice provenance does not match');
     sound.voice=source?.voice||'unknown';
@@ -37,11 +38,13 @@ function auditPack(pack,manifest,{staticRoot=path.join(root,'static')}={}){
 function generate(){
   const catalog=JSON.parse(fs.readFileSync(path.join(root,'static/content/catalog.json'),'utf8'));
   const ids=[...new Set([...(catalog.previewScenes||[]),...catalog.releasedScenes])];
+  const manifestFile=id=>path.join(root,'static/audio',id==='picnic'?'s4-manifest.json':'s4-'+id+'-manifest.json');
+  const readManifest=id=>fs.existsSync(manifestFile(id))?JSON.parse(fs.readFileSync(manifestFile(id),'utf8')):null;
+  const everyEntry=ids.flatMap(id=>readManifest(id)?.entries||[]);
   const scenes=ids.map(id=>{
     const p=JSON.parse(fs.readFileSync(path.join(root,'static',catalog.scenes[id]),'utf8'));
-    const file=path.join(root,'static/audio',id==='picnic'?'s4-manifest.json':'s4-'+id+'-manifest.json');
-    const manifest=fs.existsSync(file)?JSON.parse(fs.readFileSync(file,'utf8')):null;
-    return auditPack(p,manifest);
+    const manifest=readManifest(id);
+    return auditPack(p,manifest&&{...manifest,entries:everyEntry});
   });
   const occurrences=new Map();
   for(const s of scenes)for(const w of s.words){const item=occurrences.get(w.id)||{...w,scenes:[]};item.scenes.push(s.id);occurrences.set(w.id,item);}

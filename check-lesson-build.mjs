@@ -111,3 +111,13 @@ test('built catalog packs carry lessons; only park and birthday have quiz/reply'
     if(id==='park')assert.equal(p.lesson.reviewed,false);
   }
 });
+
+test('words step with review cards validates; missing review assets and bridge text mismatch are rejected',()=>{
+  const {lessonLink}=require('./route-build.cjs'),byId=Object.fromEntries(catalog.route.map(r=>[r.id,require('./static/content/'+r.id+'.json')]));
+  const fresh=()=>clone(finalizeLesson(park,null,null,lessonLink(catalog,byId,'park')).pack),errs=p=>validate(p,{exists:()=>true}).errors;
+  assert.deepEqual(errs(fresh()),[]);
+  let p=fresh(),r=p.lesson.steps[0].review[0];
+  p.assets=p.assets.filter(a=>a.id!==r.audio);assert(errs(p).some(e=>e.includes(r.audio)),'missing review audio');
+  p=fresh();p.lesson.steps[0].review[0].id=park.words[0].id;assert(errs(p).some(e=>e.includes('duplicate ID')),'review id clashes with word');
+  p=fresh();p.lesson.bridge.text='Changed.';assert(errs(p).some(e=>e.includes('bridge')),'bridge text mismatch');
+});

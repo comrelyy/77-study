@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "sceneId": "park",
-  "contentVersion": "0.2.2",
+  "contentVersion": "0.2.3",
   "status": "draft",
   "compatibleFrom": [
     "0.2.0",
-    "0.2.1"
+    "0.2.1",
+    "0.2.2"
   ],
   "title": "和 Momo 逛公园",
   "stickerId": "park.sticker",
@@ -759,6 +760,54 @@
       "path": "illustrations/scenes/park-game.svg"
     },
     {
+      "id": "park.lesson.review.en.seat.furniture.image",
+      "kind": "image",
+      "path": "illustrations/seat.svg"
+    },
+    {
+      "id": "park.lesson.review.en.seat.furniture.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.seat.audio.wav",
+      "text": "seat",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.lesson.review.en.bag.container.image",
+      "kind": "image",
+      "path": "illustrations/bag.svg"
+    },
+    {
+      "id": "park.lesson.review.en.bag.container.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.bag.audio.wav",
+      "text": "bag",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.lesson.review.en.ticket.travel.image",
+      "kind": "image",
+      "path": "illustrations/ticket.svg"
+    },
+    {
+      "id": "park.lesson.review.en.ticket.travel.audio",
+      "kind": "audio",
+      "path": "audio/transport/v0-1-0/transport.ticket.audio.wav",
+      "text": "ticket",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "park.lesson.wrong.f4c4f2dc.audio",
       "kind": "audio",
       "path": "audio/park/lesson/f4c4f2dc.wav",
@@ -820,6 +869,17 @@
       "text": "Goodbye, ball!",
       "language": "en-US",
       "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.lesson.bridge.audio",
+      "kind": "audio",
+      "path": "audio/park/lesson/bridge-39a6f335.wav",
+      "text": "Here is our stop. The park is so green!",
+      "language": "en-US",
+      "role": "momo",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -1513,6 +1573,32 @@
           "en.flower.plant",
           "en.bird.animal",
           "en.ball.toy"
+        ],
+        "review": [
+          {
+            "id": "park.lesson.review.en.seat.furniture",
+            "text": "seat",
+            "cn": "座位",
+            "image": "park.lesson.review.en.seat.furniture.image",
+            "audio": "park.lesson.review.en.seat.furniture.audio",
+            "from": "坐公共汽车"
+          },
+          {
+            "id": "park.lesson.review.en.bag.container",
+            "text": "bag",
+            "cn": "袋子",
+            "image": "park.lesson.review.en.bag.container.image",
+            "audio": "park.lesson.review.en.bag.container.audio",
+            "from": "坐公共汽车"
+          },
+          {
+            "id": "park.lesson.review.en.ticket.travel",
+            "text": "ticket",
+            "cn": "车票",
+            "image": "park.lesson.review.en.ticket.travel.image",
+            "audio": "park.lesson.review.en.ticket.travel.audio",
+            "from": "坐公共汽车"
+          }
         ]
       },
       {
@@ -1687,6 +1773,11 @@
         "id": "park.lesson.end",
         "kind": "end"
       }
-    ]
+    ],
+    "bridge": {
+      "text": "Here is our stop. The park is so green!",
+      "cn": "到站啦。公园好绿呀！",
+      "audio": "park.lesson.bridge.audio"
+    }
   }
 }

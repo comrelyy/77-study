@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "sceneId": "transport",
-  "contentVersion": "0.1.2",
+  "contentVersion": "0.1.3",
   "status": "draft",
   "compatibleFrom": [
     "0.1.0",
-    "0.1.1"
+    "0.1.1",
+    "0.1.2"
   ],
   "title": "和 Momo 坐公共汽车",
   "stickerId": "transport.sticker",
@@ -757,6 +758,65 @@
       "id": "transport.game.image",
       "kind": "image",
       "path": "illustrations/scenes/transport-game.svg"
+    },
+    {
+      "id": "transport.lesson.review.en.umbrella.object.image",
+      "kind": "image",
+      "path": "illustrations/umbrella.svg"
+    },
+    {
+      "id": "transport.lesson.review.en.umbrella.object.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.umbrella.audio.wav",
+      "text": "umbrella",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.lesson.review.en.rain.weather.image",
+      "kind": "image",
+      "path": "illustrations/rain.svg"
+    },
+    {
+      "id": "transport.lesson.review.en.rain.weather.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.rain.audio.wav",
+      "text": "rain",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.lesson.review.en.cloud.weather.image",
+      "kind": "image",
+      "path": "illustrations/cloud.svg"
+    },
+    {
+      "id": "transport.lesson.review.en.cloud.weather.audio",
+      "kind": "audio",
+      "path": "audio/weather/v0-1-0/weather.cloud.audio.wav",
+      "text": "cloud",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "transport.lesson.bridge.audio",
+      "kind": "audio",
+      "path": "audio/transport/lesson/bridge-19e35042.wav",
+      "text": "The sun is out. Let us take the bus!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
     }
   ],
   "words": [
@@ -1447,6 +1507,32 @@
           "en.ticket.travel",
           "en.bag.container",
           "en.seat.furniture"
+        ],
+        "review": [
+          {
+            "id": "transport.lesson.review.en.umbrella.object",
+            "text": "umbrella",
+            "cn": "雨伞",
+            "image": "transport.lesson.review.en.umbrella.object.image",
+            "audio": "transport.lesson.review.en.umbrella.object.audio",
+            "from": "看天气"
+          },
+          {
+            "id": "transport.lesson.review.en.rain.weather",
+            "text": "rain",
+            "cn": "雨",
+            "image": "transport.lesson.review.en.rain.weather.image",
+            "audio": "transport.lesson.review.en.rain.weather.audio",
+            "from": "看天气"
+          },
+          {
+            "id": "transport.lesson.review.en.cloud.weather",
+            "text": "cloud",
+            "cn": "云",
+            "image": "transport.lesson.review.en.cloud.weather.image",
+            "audio": "transport.lesson.review.en.cloud.weather.audio",
+            "from": "看天气"
+          }
         ]
       },
       {
@@ -1512,6 +1598,11 @@
         "id": "transport.lesson.end",
         "kind": "end"
       }
-    ]
+    ],
+    "bridge": {
+      "text": "The sun is out. Let us take the bus!",
+      "cn": "出太阳了。我们坐公共汽车去吧！",
+      "audio": "transport.lesson.bridge.audio"
+    }
   }
 }

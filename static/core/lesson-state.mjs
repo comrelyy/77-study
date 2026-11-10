@@ -3,7 +3,7 @@ const ANSWER_KINDS=['quiz','fill','reply','match'];
 export class LessonState{
   constructor(pack,{random=Math.random}={}){
     this.pack=pack;this.random=random;this.practiceId=null;
-    this.steps=pack.lesson.steps.filter(x=>pack.lesson.reviewed||!x.review);
+    this.steps=pack.lesson.steps.filter(x=>pack.lesson.reviewed||x.review!==true);
     this.index=0;this.enter();
   }
   get step(){return this.steps[this.index];}

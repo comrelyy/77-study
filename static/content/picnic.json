@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "sceneId": "picnic",
-  "contentVersion": "0.4.2",
+  "contentVersion": "0.4.3",
   "status": "draft",
   "compatibleFrom": [
     "0.4.0",
-    "0.4.1"
+    "0.4.1",
+    "0.4.2"
   ],
   "title": "和 Momo 去野餐",
   "stickerId": "picnic.sticker",
@@ -892,6 +893,65 @@
       "source": null,
       "rights": null,
       "reviewed": false
+    },
+    {
+      "id": "picnic.lesson.review.en.ball.toy.image",
+      "kind": "image",
+      "path": "illustrations/ball.svg"
+    },
+    {
+      "id": "picnic.lesson.review.en.ball.toy.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.ball.audio.wav",
+      "text": "ball",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.lesson.review.en.bird.animal.image",
+      "kind": "image",
+      "path": "illustrations/bird.svg"
+    },
+    {
+      "id": "picnic.lesson.review.en.bird.animal.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.bird.audio.wav",
+      "text": "bird",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.lesson.review.en.flower.plant.image",
+      "kind": "image",
+      "path": "illustrations/flower.svg"
+    },
+    {
+      "id": "picnic.lesson.review.en.flower.plant.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.flower.audio.wav",
+      "text": "flower",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "picnic.lesson.bridge.audio",
+      "kind": "audio",
+      "path": "audio/picnic/lesson/bridge-a912c667.wav",
+      "text": "Let us sit under the tree and eat.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
     }
   ],
   "words": [
@@ -1670,6 +1730,32 @@
           "en.banana.fruit",
           "en.bread.food",
           "en.milk.drink"
+        ],
+        "review": [
+          {
+            "id": "picnic.lesson.review.en.ball.toy",
+            "text": "ball",
+            "cn": "球",
+            "image": "picnic.lesson.review.en.ball.toy.image",
+            "audio": "picnic.lesson.review.en.ball.toy.audio",
+            "from": "逛公园"
+          },
+          {
+            "id": "picnic.lesson.review.en.bird.animal",
+            "text": "bird",
+            "cn": "小鸟",
+            "image": "picnic.lesson.review.en.bird.animal.image",
+            "audio": "picnic.lesson.review.en.bird.animal.audio",
+            "from": "逛公园"
+          },
+          {
+            "id": "picnic.lesson.review.en.flower.plant",
+            "text": "flower",
+            "cn": "花",
+            "image": "picnic.lesson.review.en.flower.plant.image",
+            "audio": "picnic.lesson.review.en.flower.plant.audio",
+            "from": "逛公园"
+          }
         ]
       },
       {
@@ -1735,6 +1821,11 @@
         "id": "picnic.lesson.end",
         "kind": "end"
       }
-    ]
+    ],
+    "bridge": {
+      "text": "Let us sit under the tree and eat.",
+      "cn": "我们坐到树下吃东西吧。",
+      "audio": "picnic.lesson.bridge.audio"
+    }
   }
 }

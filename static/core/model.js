@@ -87,10 +87,24 @@
       else{
         if(steps[0].kind!=='words')error('lesson','first step must be words');
         if(steps.at(-1).kind!=='end')error('lesson','last step must be end');
+        if(l.bridge!==undefined){
+          const b=l.bridge;
+          if(!b||typeof b!=='object'||typeof b.text!=='string'||!b.text.trim()||typeof b.cn!=='string'||!b.cn.trim())error('lesson','bridge needs text and cn');
+          else{asset(b.audio,'audio','lesson.bridge');if(assets.get(b.audio)?.text!==b.text)error('lesson','bridge audio text mismatch');}
+        }
         for(const s of steps){
           const at=typeof s.id==='string'?s.id:'lesson';identity(s.id,at);
           if(!['words','story','quiz','fill','reply','game','match','end'].includes(s.kind)){error(at,'unknown step kind '+s.kind);continue;}
           if(s.kind==='words'||s.kind==='match'){if(!Array.isArray(s.words)||!s.words.length)error(at,'expected words');for(const w of list(s.words))word(w,at);}
+          if(s.kind==='words'&&s.review!==undefined){
+            if(!Array.isArray(s.review))error(at,'expected review list');
+            for(const r of list(s.review)){
+              if(!r||typeof r!=='object'){error(at,'invalid review card');continue;}
+              identity(r.id,at);
+              if(typeof r.text!=='string'||!r.text.trim()||typeof r.cn!=='string'||!r.cn.trim())error(at,'review card needs text and cn');
+              asset(r.image,'image',at);asset(r.audio,'audio',at);
+            }
+          }
           if(s.kind==='story'&&!list(m.story).some(x=>x.id===s.storyId))error(at,'invalid story reference '+s.storyId);
           if(s.kind==='quiz'||s.kind==='fill'){
             if(!Array.isArray(s.options)||!s.options.length)error(at,'expected options');

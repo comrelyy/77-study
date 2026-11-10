@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "sceneId": "tidy",
-  "contentVersion": "0.5.2",
+  "contentVersion": "0.5.3",
   "status": "draft",
   "compatibleFrom": [
     "0.5.0",
-    "0.5.1"
+    "0.5.1",
+    "0.5.2"
   ],
   "title": "和 Momo 整理玩具",
   "stickerId": "tidy.sticker",
@@ -744,6 +745,65 @@
       "source": null,
       "rights": null,
       "reviewed": false
+    },
+    {
+      "id": "tidy.lesson.review.en.spoon.utensil.image",
+      "kind": "image",
+      "path": "illustrations/spoon.svg"
+    },
+    {
+      "id": "tidy.lesson.review.en.spoon.utensil.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.spoon.audio.wav",
+      "text": "spoon",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.lesson.review.en.tomato.food.image",
+      "kind": "image",
+      "path": "illustrations/tomato.svg"
+    },
+    {
+      "id": "tidy.lesson.review.en.tomato.food.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.tomato.audio.wav",
+      "text": "tomato",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.lesson.review.en.bowl.container.image",
+      "kind": "image",
+      "path": "illustrations/bowl.svg"
+    },
+    {
+      "id": "tidy.lesson.review.en.bowl.container.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.bowl.audio.wav",
+      "text": "bowl",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "tidy.lesson.bridge.audio",
+      "kind": "audio",
+      "path": "audio/tidy/lesson/bridge-1911956d.wav",
+      "text": "Yummy! But look, our toys are everywhere.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
     }
   ],
   "words": [
@@ -1415,6 +1475,32 @@
           "en.ball.toy",
           "en.car.toy",
           "en.teddy.toy"
+        ],
+        "review": [
+          {
+            "id": "tidy.lesson.review.en.spoon.utensil",
+            "text": "spoon",
+            "cn": "勺子",
+            "image": "tidy.lesson.review.en.spoon.utensil.image",
+            "audio": "tidy.lesson.review.en.spoon.utensil.audio",
+            "from": "一起做点心"
+          },
+          {
+            "id": "tidy.lesson.review.en.tomato.food",
+            "text": "tomato",
+            "cn": "番茄",
+            "image": "tidy.lesson.review.en.tomato.food.image",
+            "audio": "tidy.lesson.review.en.tomato.food.audio",
+            "from": "一起做点心"
+          },
+          {
+            "id": "tidy.lesson.review.en.bowl.container",
+            "text": "bowl",
+            "cn": "碗",
+            "image": "tidy.lesson.review.en.bowl.container.image",
+            "audio": "tidy.lesson.review.en.bowl.container.audio",
+            "from": "一起做点心"
+          }
         ]
       },
       {
@@ -1478,6 +1564,11 @@
         "id": "tidy.lesson.end",
         "kind": "end"
       }
-    ]
+    ],
+    "bridge": {
+      "text": "Yummy! But look, our toys are everywhere.",
+      "cn": "真好吃！可是你看，玩具到处都是。",
+      "audio": "tidy.lesson.bridge.audio"
+    }
   }
 }

@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "sceneId": "breakfast",
-  "contentVersion": "0.2.2",
+  "contentVersion": "0.2.3",
   "status": "draft",
   "compatibleFrom": [
     "0.2.0",
-    "0.2.1"
+    "0.2.1",
+    "0.2.2"
   ],
   "title": "和 Momo 吃早餐",
   "stickerId": "breakfast.sticker",
@@ -796,6 +797,65 @@
       "source": null,
       "rights": null,
       "reviewed": false
+    },
+    {
+      "id": "breakfast.lesson.review.en.hat.clothing.image",
+      "kind": "image",
+      "path": "illustrations/hat.svg"
+    },
+    {
+      "id": "breakfast.lesson.review.en.hat.clothing.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.hat.audio.wav",
+      "text": "hat",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.lesson.review.en.shoes.clothing.image",
+      "kind": "image",
+      "path": "illustrations/shoes.svg"
+    },
+    {
+      "id": "breakfast.lesson.review.en.shoes.clothing.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.shoes.audio.wav",
+      "text": "shoes",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.lesson.review.en.socks.clothing.image",
+      "kind": "image",
+      "path": "illustrations/socks.svg"
+    },
+    {
+      "id": "breakfast.lesson.review.en.socks.clothing.audio",
+      "kind": "audio",
+      "path": "audio/dressing/v0-1-0/dressing.socks.audio.wav",
+      "text": "socks",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "breakfast.lesson.bridge.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/lesson/bridge-5a223214.wav",
+      "text": "Shoes on, hat on. I am hungry!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
     }
   ],
   "words": [
@@ -1452,6 +1512,32 @@
           "en.milk.drink",
           "en.egg.food",
           "en.cup.container"
+        ],
+        "review": [
+          {
+            "id": "breakfast.lesson.review.en.hat.clothing",
+            "text": "hat",
+            "cn": "帽子",
+            "image": "breakfast.lesson.review.en.hat.clothing.image",
+            "audio": "breakfast.lesson.review.en.hat.clothing.audio",
+            "from": "准备出门"
+          },
+          {
+            "id": "breakfast.lesson.review.en.shoes.clothing",
+            "text": "shoes",
+            "cn": "鞋子",
+            "image": "breakfast.lesson.review.en.shoes.clothing.image",
+            "audio": "breakfast.lesson.review.en.shoes.clothing.audio",
+            "from": "准备出门"
+          },
+          {
+            "id": "breakfast.lesson.review.en.socks.clothing",
+            "text": "socks",
+            "cn": "袜子",
+            "image": "breakfast.lesson.review.en.socks.clothing.image",
+            "audio": "breakfast.lesson.review.en.socks.clothing.audio",
+            "from": "准备出门"
+          }
         ]
       },
       {
@@ -1517,6 +1603,11 @@
         "id": "breakfast.lesson.end",
         "kind": "end"
       }
-    ]
+    ],
+    "bridge": {
+      "text": "Shoes on, hat on. I am hungry!",
+      "cn": "鞋子穿好、帽子戴好。我饿啦！",
+      "audio": "breakfast.lesson.bridge.audio"
+    }
   }
 }

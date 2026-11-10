@@ -6,6 +6,7 @@ const semver=v=>String(v).split('.').map(Number);
 const cmp=(a,b)=>{const x=semver(a),y=semver(b);for(let i=0;i<3;i++)if(x[i]!==y[i])return x[i]>y[i]?1:-1;return 0;};
 const sha8=t=>crypto.createHash('sha1').update(t).digest('hex').slice(0,8);
 const esc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+const {lessonLink}=require('./route-build.cjs');
 const OLD='题目基于旧内容，需重新生成';
 
 function stripLesson(pack){
@@ -42,7 +43,21 @@ function findFill(pack,words){
   return null;
 }
 
-function buildLesson(basePack,overlay){
+// Review cards reuse another scene's word and files, registered as lesson-layer assets.
+function reviewCards(sid,link,assets){
+  const cards=[];
+  for(const r of link&&link.review||[]){
+    const src=link.packs[r.sceneId],w=src.words.find(x=>x.id===r.wordId),id=sid+'.lesson.review.'+w.id;
+    for(const k of ['image','audio']){
+      const a=src.assets.find(x=>x.id===w[k]);
+      assets.push({...a,id:id+'.'+k});
+    }
+    cards.push({id,text:w.text,cn:w.cn,image:id+'.image',audio:id+'.audio',from:src.title.replace(/^和 Momo /,'')});
+  }
+  return cards;
+}
+
+function buildLesson(basePack,overlay,link=null){
   const pack=stripLesson(basePack),sid=pack.sceneId,warnings=[],assets=[],m=pack.modules;
   const lessonWords=m.summary.map(id=>pack.words.find(w=>w.id===id)).filter(Boolean),ids=lessonWords.map(w=>w.id);
   let ov=overlay||null;
@@ -50,6 +65,8 @@ function buildLesson(basePack,overlay){
   const wid=v=>lessonWords.find(w=>w.id===v||w.text.toLowerCase()===String(v).toLowerCase()).id;
   const quizzes=ov?[...(ov.quiz||[])].sort((a,b)=>a.afterScene-b.afterScene):[];
   const steps=[{id:sid+'.lesson.words',kind:'words',words:ids}];
+  const review=reviewCards(sid,link,assets);
+  if(review.length)steps[0].review=review;
   let k=0;
   m.story.forEach((s,i)=>{
     steps.push({id:sid+'.lesson.story.'+(i+1),kind:'story',storyId:s.id});
@@ -69,11 +86,17 @@ function buildLesson(basePack,overlay){
     steps.push({id:sid+'.lesson.reply',kind:'reply',review:true,rounds});
   }
   steps.push({id:sid+'.lesson.game',kind:'game'},{id:sid+'.lesson.match',kind:'match',words:ids},{id:sid+'.lesson.end',kind:'end'});
-  return {lesson:{schemaVersion:1,baseVersion:pack.contentVersion,reviewed:!!(ov&&ov.reviewed===true),steps},assets,warnings};
+  const lesson={schemaVersion:1,baseVersion:pack.contentVersion,reviewed:!!(ov&&ov.reviewed===true),steps};
+  if(link&&link.bridge){
+    const {text,cn}=link.bridge,audio=sid+'.lesson.bridge.audio';
+    assets.push({id:audio,kind:'audio',path:'audio/'+sid+'/lesson/bridge-'+sha8(text)+'.wav',text,language:'en-US',role:'momo',source:null,rights:null,reviewed:false});
+    lesson.bridge={text,cn,audio};
+  }
+  return {lesson,assets,warnings};
 }
 
-function finalizeLesson(basePack,overlay,previousPack){
-  const base=stripLesson(basePack),{lesson,assets,warnings}=buildLesson(base,overlay);
+function finalizeLesson(basePack,overlay,previousPack,link=null){
+  const base=stripLesson(basePack),{lesson,assets,warnings}=buildLesson(base,overlay,link);
   const pack={...base,assets:[...base.assets,...assets],lesson};
   const rest=p=>{const c=clone(p);delete c.contentVersion;delete c.compatibleFrom;return c;};
   if(previousPack){
@@ -96,8 +119,10 @@ if(require.main===module){
   const {validate}=require('./static/core/model.js');
   const file=path.join(__dirname,'static/content',id+'.json'),ovFile=path.join(__dirname,'content-lesson',id+'.json');
   const read=f=>JSON.parse(fs.readFileSync(f,'utf8'));
+  const catalog=read(path.join(__dirname,'static/content/catalog.json'));
+  const packsById=Object.fromEntries((catalog.route||[]).map(r=>[r.id,read(path.join(__dirname,'static/content',r.id+'.json'))]));
   const previous=read(file),overlay=fs.existsSync(ovFile)?read(ovFile):null;
-  const {pack,warnings}=finalizeLesson(previous,overlay,previous);
+  const {pack,warnings}=finalizeLesson(previous,overlay,previous,lessonLink(catalog,packsById,id));
   const result=validate(pack,{exists:p=>p.includes('/lesson/')||fs.existsSync(path.join(__dirname,'static',p))});
   if(result.errors.length){console.error(result.errors.join('\n'));process.exit(1);}
   if(!same(pack,previous)){

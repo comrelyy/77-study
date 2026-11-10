@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "sceneId": "cooking",
-  "contentVersion": "0.1.2",
+  "contentVersion": "0.1.3",
   "status": "draft",
   "compatibleFrom": [
     "0.1.0",
-    "0.1.1"
+    "0.1.1",
+    "0.1.2"
   ],
   "title": "和 Momo 一起做点心",
   "stickerId": "cooking.sticker",
@@ -796,6 +797,65 @@
       "source": null,
       "rights": null,
       "reviewed": false
+    },
+    {
+      "id": "cooking.lesson.review.en.seed.plant.image",
+      "kind": "image",
+      "path": "illustrations/seed.svg"
+    },
+    {
+      "id": "cooking.lesson.review.en.seed.plant.audio",
+      "kind": "audio",
+      "path": "audio/gardening/v0-1-0/gardening.seed.audio.wav",
+      "text": "seed",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "cooking.lesson.review.en.pot.garden.image",
+      "kind": "image",
+      "path": "illustrations/pot.svg"
+    },
+    {
+      "id": "cooking.lesson.review.en.pot.garden.audio",
+      "kind": "audio",
+      "path": "audio/gardening/v0-1-0/gardening.pot.audio.wav",
+      "text": "pot",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "cooking.lesson.review.en.coin.money.image",
+      "kind": "image",
+      "path": "illustrations/coin.svg"
+    },
+    {
+      "id": "cooking.lesson.review.en.coin.money.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.coin.audio.wav",
+      "text": "coin",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "cooking.lesson.bridge.audio",
+      "kind": "audio",
+      "path": "audio/cooking/lesson/bridge-bd979170.wav",
+      "text": "The flowers have water. Now let us make a snack.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
     }
   ],
   "words": [
@@ -1452,6 +1512,32 @@
           "en.tomato.food",
           "en.spoon.utensil",
           "en.bread.food"
+        ],
+        "review": [
+          {
+            "id": "cooking.lesson.review.en.seed.plant",
+            "text": "seed",
+            "cn": "种子",
+            "image": "cooking.lesson.review.en.seed.plant.image",
+            "audio": "cooking.lesson.review.en.seed.plant.audio",
+            "from": "照顾小花"
+          },
+          {
+            "id": "cooking.lesson.review.en.pot.garden",
+            "text": "pot",
+            "cn": "花盆",
+            "image": "cooking.lesson.review.en.pot.garden.image",
+            "audio": "cooking.lesson.review.en.pot.garden.audio",
+            "from": "照顾小花"
+          },
+          {
+            "id": "cooking.lesson.review.en.coin.money",
+            "text": "coin",
+            "cn": "硬币",
+            "image": "cooking.lesson.review.en.coin.money.image",
+            "audio": "cooking.lesson.review.en.coin.money.audio",
+            "from": "逛小商店"
+          }
         ]
       },
       {
@@ -1517,6 +1603,11 @@
         "id": "cooking.lesson.end",
         "kind": "end"
       }
-    ]
+    ],
+    "bridge": {
+      "text": "The flowers have water. Now let us make a snack.",
+      "cn": "小花浇过水了。现在我们做点心吧。",
+      "audio": "cooking.lesson.bridge.audio"
+    }
   }
 }

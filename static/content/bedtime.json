@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "sceneId": "bedtime",
-  "contentVersion": "0.2.2",
+  "contentVersion": "0.2.3",
   "status": "draft",
   "compatibleFrom": [
     "0.2.0",
-    "0.2.1"
+    "0.2.1",
+    "0.2.2"
   ],
   "title": "和 Momo 道晚安",
   "stickerId": "bedtime.sticker",
@@ -786,6 +787,65 @@
       "source": null,
       "rights": null,
       "reviewed": false
+    },
+    {
+      "id": "bedtime.lesson.review.en.car.toy.image",
+      "kind": "image",
+      "path": "illustrations/car.svg"
+    },
+    {
+      "id": "bedtime.lesson.review.en.car.toy.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.car.audio.wav",
+      "text": "car",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "bedtime.lesson.review.en.spoon.utensil.image",
+      "kind": "image",
+      "path": "illustrations/spoon.svg"
+    },
+    {
+      "id": "bedtime.lesson.review.en.spoon.utensil.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.spoon.audio.wav",
+      "text": "spoon",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "bedtime.lesson.review.en.tomato.food.image",
+      "kind": "image",
+      "path": "illustrations/tomato.svg"
+    },
+    {
+      "id": "bedtime.lesson.review.en.tomato.food.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.tomato.audio.wav",
+      "text": "tomato",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "bedtime.lesson.bridge.audio",
+      "kind": "audio",
+      "path": "audio/bedtime/lesson/bridge-a9cef513.wav",
+      "text": "What a big day. Time for bed, Momo.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
     }
   ],
   "words": [
@@ -1435,6 +1495,32 @@
           "en.bed.furniture",
           "en.lamp.object",
           "en.teddy.toy"
+        ],
+        "review": [
+          {
+            "id": "bedtime.lesson.review.en.car.toy",
+            "text": "car",
+            "cn": "小汽车",
+            "image": "bedtime.lesson.review.en.car.toy.image",
+            "audio": "bedtime.lesson.review.en.car.toy.audio",
+            "from": "整理玩具"
+          },
+          {
+            "id": "bedtime.lesson.review.en.spoon.utensil",
+            "text": "spoon",
+            "cn": "勺子",
+            "image": "bedtime.lesson.review.en.spoon.utensil.image",
+            "audio": "bedtime.lesson.review.en.spoon.utensil.audio",
+            "from": "一起做点心"
+          },
+          {
+            "id": "bedtime.lesson.review.en.tomato.food",
+            "text": "tomato",
+            "cn": "番茄",
+            "image": "bedtime.lesson.review.en.tomato.food.image",
+            "audio": "bedtime.lesson.review.en.tomato.food.audio",
+            "from": "一起做点心"
+          }
         ]
       },
       {
@@ -1500,6 +1586,11 @@
         "id": "bedtime.lesson.end",
         "kind": "end"
       }
-    ]
+    ],
+    "bridge": {
+      "text": "What a big day. Time for bed, Momo.",
+      "cn": "今天真充实。该睡觉啦，Momo。",
+      "audio": "bedtime.lesson.bridge.audio"
+    }
   }
 }

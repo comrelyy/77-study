@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "sceneId": "birthday",
-  "contentVersion": "0.1.3",
+  "contentVersion": "0.1.4",
   "status": "draft",
   "compatibleFrom": [
     "0.1.0",
     "0.1.1",
-    "0.1.2"
+    "0.1.2",
+    "0.1.3"
   ],
   "generatedBy": "momo_agent",
   "title": "生日会",
@@ -694,6 +695,54 @@
       "reviewed": false
     },
     {
+      "id": "birthday.lesson.review.en.car.toy.image",
+      "kind": "image",
+      "path": "illustrations/car.svg"
+    },
+    {
+      "id": "birthday.lesson.review.en.car.toy.audio",
+      "kind": "audio",
+      "path": "audio/tidy/tidy.car.audio.wav",
+      "text": "car",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "birthday.lesson.review.en.spoon.utensil.image",
+      "kind": "image",
+      "path": "illustrations/spoon.svg"
+    },
+    {
+      "id": "birthday.lesson.review.en.spoon.utensil.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.spoon.audio.wav",
+      "text": "spoon",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "birthday.lesson.review.en.tomato.food.image",
+      "kind": "image",
+      "path": "illustrations/tomato.svg"
+    },
+    {
+      "id": "birthday.lesson.review.en.tomato.food.audio",
+      "kind": "audio",
+      "path": "audio/cooking/v0-1-0/cooking.tomato.audio.wav",
+      "text": "tomato",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "birthday.lesson.wrong.febef6a7.audio",
       "kind": "audio",
       "path": "audio/birthday/lesson/febef6a7.wav",
@@ -755,6 +804,17 @@
       "text": "I like the hat.",
       "language": "en-US",
       "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "birthday.lesson.bridge.audio",
+      "kind": "audio",
+      "path": "audio/birthday/lesson/bridge-332f3fb7.wav",
+      "text": "The room is tidy. Surprise! It is a party!",
+      "language": "en-US",
+      "role": "momo",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -1397,6 +1457,32 @@
           "en.cup.container",
           "en.ball.toy",
           "en.teddy.toy"
+        ],
+        "review": [
+          {
+            "id": "birthday.lesson.review.en.car.toy",
+            "text": "car",
+            "cn": "小汽车",
+            "image": "birthday.lesson.review.en.car.toy.image",
+            "audio": "birthday.lesson.review.en.car.toy.audio",
+            "from": "整理玩具"
+          },
+          {
+            "id": "birthday.lesson.review.en.spoon.utensil",
+            "text": "spoon",
+            "cn": "勺子",
+            "image": "birthday.lesson.review.en.spoon.utensil.image",
+            "audio": "birthday.lesson.review.en.spoon.utensil.audio",
+            "from": "一起做点心"
+          },
+          {
+            "id": "birthday.lesson.review.en.tomato.food",
+            "text": "tomato",
+            "cn": "番茄",
+            "image": "birthday.lesson.review.en.tomato.food.image",
+            "audio": "birthday.lesson.review.en.tomato.food.audio",
+            "from": "一起做点心"
+          }
         ]
       },
       {
@@ -1571,6 +1657,11 @@
         "id": "birthday.lesson.end",
         "kind": "end"
       }
-    ]
+    ],
+    "bridge": {
+      "text": "The room is tidy. Surprise! It is a party!",
+      "cn": "房间收拾好了。惊喜！有派对！",
+      "audio": "birthday.lesson.bridge.audio"
+    }
   }
 }

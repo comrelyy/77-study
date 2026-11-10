@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "sceneId": "gardening",
-  "contentVersion": "0.1.2",
+  "contentVersion": "0.1.3",
   "status": "draft",
   "compatibleFrom": [
     "0.1.0",
-    "0.1.1"
+    "0.1.1",
+    "0.1.2"
   ],
   "title": "和 Momo 照顾小花",
   "stickerId": "gardening.sticker",
@@ -796,6 +797,65 @@
       "source": null,
       "rights": null,
       "reviewed": false
+    },
+    {
+      "id": "gardening.lesson.review.en.coin.money.image",
+      "kind": "image",
+      "path": "illustrations/coin.svg"
+    },
+    {
+      "id": "gardening.lesson.review.en.coin.money.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.coin.audio.wav",
+      "text": "coin",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "gardening.lesson.review.en.banana.fruit.image",
+      "kind": "image",
+      "path": "illustrations/banana.svg"
+    },
+    {
+      "id": "gardening.lesson.review.en.banana.fruit.audio",
+      "kind": "audio",
+      "path": "audio/picnic/picnic.banana.audio.wav",
+      "text": "banana",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "gardening.lesson.review.en.apple.fruit.image",
+      "kind": "image",
+      "path": "illustrations/apple.svg"
+    },
+    {
+      "id": "gardening.lesson.review.en.apple.fruit.audio",
+      "kind": "audio",
+      "path": "audio/picnic/picnic.apple.audio.wav",
+      "text": "apple",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "gardening.lesson.bridge.audio",
+      "kind": "audio",
+      "path": "audio/gardening/lesson/bridge-17574e5c.wav",
+      "text": "We got some seeds too! Let us plant them.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
     }
   ],
   "words": [
@@ -1452,6 +1512,32 @@
           "en.seed.plant",
           "en.water.drink",
           "en.flower.plant"
+        ],
+        "review": [
+          {
+            "id": "gardening.lesson.review.en.coin.money",
+            "text": "coin",
+            "cn": "硬币",
+            "image": "gardening.lesson.review.en.coin.money.image",
+            "audio": "gardening.lesson.review.en.coin.money.audio",
+            "from": "逛小商店"
+          },
+          {
+            "id": "gardening.lesson.review.en.banana.fruit",
+            "text": "banana",
+            "cn": "香蕉",
+            "image": "gardening.lesson.review.en.banana.fruit.image",
+            "audio": "gardening.lesson.review.en.banana.fruit.audio",
+            "from": "去野餐"
+          },
+          {
+            "id": "gardening.lesson.review.en.apple.fruit",
+            "text": "apple",
+            "cn": "苹果",
+            "image": "gardening.lesson.review.en.apple.fruit.image",
+            "audio": "gardening.lesson.review.en.apple.fruit.audio",
+            "from": "去野餐"
+          }
         ]
       },
       {
@@ -1517,6 +1603,11 @@
         "id": "gardening.lesson.end",
         "kind": "end"
       }
-    ]
+    ],
+    "bridge": {
+      "text": "We got some seeds too! Let us plant them.",
+      "cn": "我们还买了种子！去种下吧。",
+      "audio": "gardening.lesson.bridge.audio"
+    }
   }
 }

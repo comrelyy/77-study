@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "sceneId": "dressing",
-  "contentVersion": "0.2.2",
+  "contentVersion": "0.2.3",
   "status": "draft",
   "compatibleFrom": [
     "0.2.0",
-    "0.2.1"
+    "0.2.1",
+    "0.2.2"
   ],
   "title": "和 Momo 准备出门",
   "stickerId": "dressing.sticker",
@@ -779,6 +780,65 @@
       "id": "dressing.game.image",
       "kind": "image",
       "path": "illustrations/scenes/dressing-game.svg"
+    },
+    {
+      "id": "dressing.lesson.review.en.toothbrush.wash.image",
+      "kind": "image",
+      "path": "illustrations/toothbrush.svg"
+    },
+    {
+      "id": "dressing.lesson.review.en.toothbrush.wash.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.toothbrush.audio.wav",
+      "text": "toothbrush",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.lesson.review.en.towel.wash.image",
+      "kind": "image",
+      "path": "illustrations/towel.svg"
+    },
+    {
+      "id": "dressing.lesson.review.en.towel.wash.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.towel.audio.wav",
+      "text": "towel",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.lesson.review.en.soap.wash.image",
+      "kind": "image",
+      "path": "illustrations/soap.svg"
+    },
+    {
+      "id": "dressing.lesson.review.en.soap.wash.audio",
+      "kind": "audio",
+      "path": "audio/washing/v0-1-0/washing.soap.audio.wav",
+      "text": "soap",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "dressing.lesson.bridge.audio",
+      "kind": "audio",
+      "path": "audio/dressing/lesson/bridge-06217f31.wav",
+      "text": "Clean hands, clean face. Now let us get dressed.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
     }
   ],
   "words": [
@@ -1483,6 +1543,32 @@
           "en.socks.clothing",
           "en.shoes.clothing",
           "en.hat.clothing"
+        ],
+        "review": [
+          {
+            "id": "dressing.lesson.review.en.toothbrush.wash",
+            "text": "toothbrush",
+            "cn": "牙刷",
+            "image": "dressing.lesson.review.en.toothbrush.wash.image",
+            "audio": "dressing.lesson.review.en.toothbrush.wash.audio",
+            "from": "洗漱啦"
+          },
+          {
+            "id": "dressing.lesson.review.en.towel.wash",
+            "text": "towel",
+            "cn": "毛巾",
+            "image": "dressing.lesson.review.en.towel.wash.image",
+            "audio": "dressing.lesson.review.en.towel.wash.audio",
+            "from": "洗漱啦"
+          },
+          {
+            "id": "dressing.lesson.review.en.soap.wash",
+            "text": "soap",
+            "cn": "肥皂",
+            "image": "dressing.lesson.review.en.soap.wash.image",
+            "audio": "dressing.lesson.review.en.soap.wash.audio",
+            "from": "洗漱啦"
+          }
         ]
       },
       {
@@ -1548,6 +1634,11 @@
         "id": "dressing.lesson.end",
         "kind": "end"
       }
-    ]
+    ],
+    "bridge": {
+      "text": "Clean hands, clean face. Now let us get dressed.",
+      "cn": "手洗干净、脸也洗干净了。我们穿衣服吧。",
+      "audio": "dressing.lesson.bridge.audio"
+    }
   }
 }

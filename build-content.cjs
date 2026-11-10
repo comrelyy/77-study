@@ -3,7 +3,7 @@ const {validate}=require('./static/core/model.js');
 const {seasons,createPack,enhanceExisting}=require('./launch-content.cjs');
 const extras=require('./extra-themes.cjs').addExtraThemes();
 const {applyNarrative,applyGames}=require('./content-v2.cjs');
-const {finalizeLesson,stripLesson}=require('./lesson-build.cjs');
+const {finalizeLesson,stripLesson}=require('./lesson-build.cjs'),{lessonLink}=require('./route-build.cjs');
 const packs=[];
 // Archive every current package before regeneration, including the six new themes.
 const existingCatalog=require('./static/content/catalog.json');
@@ -24,6 +24,7 @@ for(const id of ['picnic','tidy']){
   packs.push(enhanceExisting(require('./tidy-content.cjs').completeTidy(require('./dialogue-content.cjs').applyDialogue(source))));
 }
 packs.push(...[...seasons,...extras].map(createPack));
+const previousPacks=new Map();
 for(const pack of packs){
   applyNarrative(pack);applyGames(pack);
   // Reuse only unchanged spoken content. Changed lines get new versioned paths;
@@ -37,10 +38,17 @@ for(const pack of packs){
       if(old)asset.path=old.path;
     }
   }
+  previousPacks.set(pack,previous);
+}
+// Second pass: review cards copy paths from the other packs, so every pack's audio paths must be settled first.
+const routeCatalog=JSON.parse(fs.readFileSync(path.join(__dirname,'static/content/catalog.json'),'utf8'));
+const stripped=Object.fromEntries(packs.map(p=>[p.sceneId,stripLesson(p)]));
+for(const [i,pack] of packs.entries()){
+  const previous=previousPacks.get(pack);
   const overlayPath=path.join(__dirname,'content-lesson',pack.sceneId+'.json');
   const overlay=fs.existsSync(overlayPath)?JSON.parse(fs.readFileSync(overlayPath,'utf8')):null;
-  const finalized=finalizeLesson(stripLesson(pack),overlay,previous);
-  packs[packs.indexOf(pack)]=finalized.pack;
+  const finalized=finalizeLesson(stripLesson(pack),overlay,previous,lessonLink(routeCatalog,stripped,pack.sceneId));
+  packs[i]=finalized.pack;
   for(const w of finalized.warnings)console.warn('lesson '+pack.sceneId+': '+w);
 }
 for(const pack of packs)fs.writeFileSync(path.join(__dirname,'static/content',pack.sceneId+'.json'),JSON.stringify(pack,null,2)+'\n');
