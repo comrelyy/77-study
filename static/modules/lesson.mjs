@@ -66,7 +66,9 @@ function wordTile(c,s,id,after,showText=true){
 }
 function renderWords(c,s,wrap){
   const step=s.step;wrap.append(node('h2','先认识今天的小伙伴','lesson-title'),node('p','点图卡听一听，不用全部点完。'));
-  const grid=node('div',undefined,'word-grid');
+  const grid=node('div',undefined,'word-grid'),review=Array.isArray(step.review)?step.review:[];
+  if(review.length)wrap.append(node('p','先复习几个学过的词','review-hint'));
+  for(const r of review){const b=button('',()=>c.play(r.audio),'word-card review');b.append(c.assetImage(r.image),node('b',r.text),node('small',r.cn),node('small','复习 · 来自'+r.from,'review-from'));grid.append(b);}
   for(const id of step.words){const w=c.word(id),b=button('',async()=>{const ok=await c.hearWord(w);if(ok&&c.active()){c.redraw();c.message('听完 '+w.text+' 啦，可以再听，也可以继续。');}},'word-card');b.append(c.assetImage(w.image),node('b',w.text),node('small',w.cn));grid.append(b);}
   wrap.append(grid,footer(c,s,skipButton(c,s)),c.messageNode);
 }
@@ -142,7 +144,9 @@ function renderEnd(c,s,wrap){
   wrap.append(node('h2','这节课完成啦','lesson-title'),image(earned?c.app.memoryImage():'illustrations/cloud.svg','','sticker'),node('p',earned?'相伴纪念已收藏。':'谢谢你一起玩。'));
   const words=node('div',undefined,'lesson-end-words');
   for(const id of s.steps.find(x=>x.kind==='words').words){const w=c.word(id),item=node('span',undefined,'lesson-end-word');item.append(c.assetImage(w.image,''),node('b',w.text));words.append(item);}
-  wrap.append(words,actions(button('再玩一次',()=>c.app.open('lesson',true),'primary'),button('回首页',()=>c.app.home())),c.messageNode);
+  const next=c.app.nextScene,again=button('再玩一次',()=>c.app.open('lesson',true),next?'':'primary');
+  wrap.append(words,actions(...(next?[button('去下一站',()=>c.app.selectScene(null,next),'primary')]:[]),again,button('回首页',()=>c.app.home())),c.messageNode);
+  c.app.markCleared();
 }
 export function renderLesson(c,s){
   const step=s.step,shell=node('div',undefined,'lesson-shell'),main=node('div',undefined,'lesson-main');

@@ -37,7 +37,7 @@ test('a park lesson with one wrong answer persists answers and progress through 
     let {app,root,store}=await open();
     await app.open('lesson');assert.equal(app.failure,null,JSON.stringify(app.failure));
     // word tap (introduced) on the words step, then a full story listen (story_listen), then skip on to the fill step.
-    await root.querySelector('.word-card').fire();assert.equal(app.failure,null,JSON.stringify(app.failure));
+    await root.querySelectorAll('.word-card').find(b=>!b.className.includes('review')).fire();assert.equal(app.failure,null,JSON.stringify(app.failure));
     await click(root,'下一步 / 跳过');await click(root,'听这一幕');assert.equal(app.failure,null,JSON.stringify(app.failure));
     for(let i=0;i<6;i++){await click(root,'下一步 / 跳过');assert.equal(app.failure,null);}
     let lesson=app.stateFor('lesson');assert.equal(lesson.step.kind,'fill');
@@ -69,6 +69,7 @@ test('a park lesson with one wrong answer persists answers and progress through 
     assert(state.events.some(e=>e.kind==='introduced'&&e.payload.moduleId==='lesson'));
     assert(state.events.some(e=>e.kind==='choice'&&e.payload.mode==='story_listen'&&e.payload.moduleId==='lesson'));
     assert(state.events.some(e=>e.kind==='sticker'));
+    assert(state.events.some(e=>e.kind==='cleared'&&e.payload.sceneId==='park'),'cleared recorded');
     const progress=state.progress.find(p=>p.sceneId==='park'&&p.moduleId==='lesson');assert(progress,'lesson progress saved');assert.equal(progress.state.stepId,pack.lesson.steps.find(s=>s.kind==='end').id);
     assert.equal(state.progress.find(p=>p.moduleId==='game').state.finished,true);
     assert.equal(store.entries().length,0);assert.equal(state.pendingCount||0,0);

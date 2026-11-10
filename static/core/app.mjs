@@ -13,9 +13,9 @@ import {pendingInteractionGame} from './interaction-flow.mjs?v=integrated-202611
 const labels={story:'主题小故事',dialogue:'情景对话',game:'游戏互动',summary:'单词汇总',lesson:'这节课'};
 const guides={story:'点“听英语故事”开始。暂停后可以继续当前小段；点图卡听单词。也可以跳过或结束。',dialogue:'点一个回答，小兔就会说出来，Momo 会接着说下一句。想先听听可以点示范回答。也可以暂停、跳过或结束。',summary:'点图卡听单词。可以重听，也可以随时结束，不用点完每一张。',lesson:'跟着进度条一步步来：听一听、答一答。答错了可以再试，随时可以暂停或结束。'};
 export class App{
-  constructor({root,pack,store,player,reviewLoader,scenes=[],navigateScene,Session=globalThis.MomoPrototype.Session,storage,uuid=()=>crypto.randomUUID(),now=()=>Date.now()}){
+  constructor({root,pack,store,player,reviewLoader,scenes=[],navigateScene,nextScene=null,Session=globalThis.MomoPrototype.Session,storage,uuid=()=>crypto.randomUUID(),now=()=>Date.now()}){
     storage=storage??(store.internal?new MemoryStorage():globalThis.sessionStorage);
-    Object.assign(this,{root,pack,store,player,reviewLoader,scenes,navigateScene,Session,storage,uuid,now});this.generation=0;this.view='home';this.moduleId=null;this.states=new Map();this.seenGuides=new Set();this.daily=0;this.session=Number(storage?.getItem('picnicSeconds')||0);if(!Number.isFinite(this.session)||this.session<0)this.session=0;this.last=now();this.busy=false;this.pending=null;this.failure=null;this.data={events:[],seconds:0};this.tickBusy=false;this.ended=false;
+    Object.assign(this,{root,pack,store,player,reviewLoader,scenes,navigateScene,nextScene,Session,storage,uuid,now});this.generation=0;this.view='home';this.moduleId=null;this.states=new Map();this.seenGuides=new Set();this.daily=0;this.session=Number(storage?.getItem('picnicSeconds')||0);if(!Number.isFinite(this.session)||this.session<0)this.session=0;this.last=now();this.busy=false;this.pending=null;this.failure=null;this.data={events:[],seconds:0};this.tickBusy=false;this.ended=false;
   }
   async init(){this.availableReviewAssets=new Set();if(typeof fetch==='function')await Promise.all(this.pack.words.map(async w=>{for(const id of [w.audio,w.image]){const a=this.asset(id);try{const r=await fetch(a.path,{method:'HEAD'});if(r.ok)this.availableReviewAssets.add(a.path);}catch{}}}));this.data=await this.store.state();if(this.reviewLoader){const review=await this.reviewLoader(this.data.events);this.reviewPacks=review.packs;this.availableReviewAssets=review.available;}this.daily=this.data.seconds;this.applyState(this.data,true);if(this.data.pendingCount)this.failure={recover:true,code:this.data.recoveryError?.code,message:this.data.recoveryError?.message||'有上次记录待确认，请大人帮一下。'};if(this.store.persistent&&this.store.token)try{await this.store.release();}catch{}this.draw();if(this.data.recoveryMessage)this.message(this.data.recoveryMessage);if(this.data.recoveryError)this.scheduleRecovery(this.data.recoveryError);}
   scheduleRecovery(error){
@@ -46,7 +46,7 @@ export class App{
   pause(){this.player.stop();for(const s of this.states.values())if(s instanceof StoryState)s.pause();}
   allowed(){return this.quota?this.quota.allowed&&!this.quota.dateAnomaly:this.limitsEnabled===false||this.daily<900&&this.session<480;}
   home(){this.opening=(this.opening||0)+1;if(this.failure?.code==='other_page_active'&&!this.pending){try{if(!this.store.entries?.().length){clearTimeout(this.recoveryTimer);this.failure=null;}}catch{}}if(this.store.persistent){if(this.closingTask){this.pause();this.view='home';this.moduleId=null;this.draw();return this.closingTask;}return this.leavePersistent('home');}this.pause();this.view='home';this.moduleId=null;this.last=this.now();this.draw();}
-  async selectScene(id){
+  async selectScene(id,focus){
     if(this.switchingScene||this.failure||this.pending||!this.navigateScene||(id!==null&&!this.scenes.some(scene=>scene.id===id))||id===this.pack.sceneId)return;
     this.switchingScene=true;this.opening=(this.opening||0)+1;
     try{
@@ -55,7 +55,7 @@ export class App{
       if(this.leaving)await this.leaving;
       if(this.failure||this.pending)return;
       if(this.store.persistent)await this.leavePersistent('connecting');else{this.pause();this.generation++;}
-      if(!this.failure&&!this.pending)await this.navigateScene(id);
+      if(!this.failure&&!this.pending)await this.navigateScene(id,focus?{focus}:undefined);
     }catch(error){this.failure={recover:!!this.store.persistent,message:error.message};this.draw();}
     finally{this.switchingScene=false;}
   }
@@ -164,6 +164,12 @@ export class App{
     catch(error){this.failure={message:'这次记录还没有确认保存，请大人帮一下。',details:error.message};this.pause();this.draw();return false;}
     finally{this.busy=false;this.saveTask=null;if(generation!==this.generation&&!this.failure)this.draw();}
   }
+  async markCleared(){
+    const s=this.stateFor('lesson');if(s.clearedSaved)return true;s.clearedSaved=true;
+    const ok=await this.emit('cleared',{moduleId:'lesson'});
+    if(ok&&this.moduleId==='lesson'&&this.states.get('lesson')===s&&s.step.kind==='end'&&!this.failure)this.draw();
+    return ok;
+  }
   async retry(){if(this.retryTask)return this.retryTask;const task=this.retryNow();this.retryTask=task;try{return await task;}finally{if(this.retryTask===task)this.retryTask=null;}}
   async retryNow(){
     if(this.busy)return;
@@ -252,7 +258,7 @@ export class App{
     if(this.busy)this.body.querySelectorAll('button').forEach(b=>{if(b.textContent!=='暂停声音')b.disabled=true;});
   }
   drawHome(toolbar){
-    if(this.navigateScene)this.root.append(button('← 切换主题',()=>this.selectScene(null),'theme-back'));
+    if(this.navigateScene)this.root.append(button('← 回地图',()=>this.selectScene(null),'theme-back'));
     const hero=node('section',undefined,'hero'),copy=node('div');copy.append(node('div','MOMO’S LITTLE DISCOVERIES','eyebrow'),node('h1',this.pack.title),node('p','跟着墨墨，用自己的节奏玩完这节课。不要求记住全部单词。'));const art=node('div',undefined,'picnic-scene');
     const first=this.pack.modules.story[0];
     if(first.illustration){art.className+=' content-home-scene'+(this.pack.sceneId==='tidy'?' tidy-home-scene':'');const picture=this.assetImage(first.illustration,this.pack.title);picture.className='picnic-illustration';art.append(picture);}

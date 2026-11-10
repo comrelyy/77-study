@@ -8,9 +8,9 @@ const require=createRequire(import.meta.url),{Session}=require('./static/core/mo
 const clone=x=>JSON.parse(JSON.stringify(x));
 function button(root,label){const b=root.querySelectorAll('button').find(b=>b.textContent===label);assert(b,'missing button '+label);return b;}
 function option(root,id){const b=root.querySelectorAll('button').find(b=>b.attributes['data-id']===id);assert(b,'missing option '+id);return b;}
-async function fixture(pack,{fail=()=>false}={}){
+async function fixture(pack,{fail=()=>false,nextScene,calls=[]}={}){
   globalThis.document=documentModel();const root=new Element('main'),played=[],store=new MemoryStore();let id=0;
-  const app=new App({root,pack,store,Session,uuid:()=>String(++id),player:{stop(){},source:'local-file',async play(path){played.push(path);return !fail(path);}}});
+  const app=new App({root,pack,store,Session,nextScene,scenes:[{id:'washing'},{id:'dressing'}],navigateScene:async(id,opts)=>{calls.push([id,opts?.focus]);},uuid:()=>String(++id),player:{stop(){},source:'local-file',async play(path){played.push(path);return !fail(path);}}});
   await app.init();return {app,root,store,played};
 }
 const answers=store=>[...store.events.values()].filter(e=>e.payload.mode==='lesson_answer').map(e=>e.payload);
@@ -170,7 +170,7 @@ test('lesson game step starts from the first question even with old game progres
 
 test('tapping a word keeps the words step usable',async()=>{
   const env=await fixture(require('./static/content/park.json'));env.app.open('lesson');
-  await env.root.querySelector('.word-card').fire();assert.equal([...env.store.events.values()].filter(e=>e.kind==='introduced').length,1);
+  await env.root.querySelectorAll('.word-card').find(b=>!b.className.includes('review')).fire();assert.equal([...env.store.events.values()].filter(e=>e.kind==='introduced').length,1);
   await button(env.root,'下一步 / 跳过').fire();assert.equal(env.app.stateFor('lesson').step.kind,'story');
 });
 test('step navigation jumps anywhere and 上一步 restarts the previous step',async()=>{
@@ -183,4 +183,35 @@ test('step navigation jumps anywhere and 上一步 restarts the previous step',a
   await button(root,'填一填').fire();assert.equal(s.step.kind,'fill');assert.equal(s.done,false);assert.equal(s.attempts,0);
   await button(root,'上一步').fire();assert.equal(s.step.kind,'story');
   await button(root,'认识单词').fire();assert.equal(s.index,0);assert.equal(button(root,'上一步').disabled,true);
+});
+
+test('review card plays audio and emits nothing',async()=>{
+  const pack=require('./static/content/dressing.json'),env=await fixture(pack);env.app.open('lesson');
+  const cards=env.root.querySelectorAll('.word-card').filter(b=>b.className.includes('review')),review=pack.lesson.steps.find(s=>s.kind==='words').review;
+  assert.equal(cards.length,3);assert(env.root.textContent.includes('先复习几个学过的词'));assert(cards[0].textContent.includes('复习 · 来自'+review[0].from));
+  const before=env.store.events.size;await cards[0].fire();
+  assert.deepEqual(env.played,[env.app.asset(review[0].audio).path]);
+  assert.equal(env.store.events.size,before);assert.equal([...env.store.events.values()].filter(e=>e.kind==='introduced').length,0);
+});
+test('first scene has no review cards or hint',async()=>{
+  const env=await fixture(require('./static/content/washing.json'));env.app.open('lesson');
+  assert.equal(env.root.querySelectorAll('.word-card').filter(b=>b.className.includes('review')).length,0);assert(!env.root.textContent.includes('先复习几个学过的词'));
+});
+test('end step records cleared once per visit',async()=>{
+  const env=await fixture(require('./static/content/park.json'));env.app.open('lesson');await walk(env);
+  const cleared=()=>[...env.store.events.values()].filter(e=>e.kind==='cleared');
+  assert.equal(cleared().length,1);assert.equal(cleared()[0].payload.sceneId,'park');assert.equal(cleared()[0].payload.moduleId,'lesson');
+  env.app.draw();assert.equal(cleared().length,1);
+});
+test('end offers next stop',async()=>{
+  const calls=[],env=await fixture(require('./static/content/dressing.json'),{nextScene:'breakfast',calls});env.app.scenes.push({id:'breakfast'});env.app.open('lesson');await walk(env);
+  const play=button(env.root,'再玩一次');assert(!play.className.includes('primary'));
+  await button(env.root,'去下一站').fire();assert.deepEqual(calls,[[null,'breakfast']]);
+});
+test('end without next stop keeps replay as the main button',async()=>{
+  const env=await fixture(require('./static/content/park.json'));env.app.open('lesson');await walk(env);
+  assert(!env.root.textContent.includes('去下一站'));assert(button(env.root,'再玩一次').className.includes('primary'));
+});
+test('theme home return button says 回地图',async()=>{
+  const env=await fixture(require('./static/content/park.json'));assert.equal(env.root.querySelector('.theme-back').textContent,'← 回地图');
 });

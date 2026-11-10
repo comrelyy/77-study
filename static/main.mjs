@@ -19,7 +19,7 @@ async function boot(){
   const root=document.querySelector('#app');
   try{
     const catalog=await json('content/catalog.json'),query=new URLSearchParams(location.search);
-    const navigateScene=id=>{const url=new URL(location.href);url.searchParams.delete('dev');url.searchParams.delete('scene');if(id!==null)url.searchParams.set('scene',id);location.assign(url.href);};
+    const navigateScene=(id,{focus}={})=>{const url=new URL(location.href);url.searchParams.delete('dev');url.searchParams.delete('scene');url.searchParams.delete('focus');if(id!==null)url.searchParams.set('scene',id);if(focus)url.searchParams.set('focus',focus);location.assign(url.href);};
     const loadOptions=async()=>{
       const results=await Promise.allSettled(availableScenes(catalog).map(async id=>{
         const p=await loadPack(catalog,id),illustration=p.assets.find(a=>a.id===p.words[0].image);
