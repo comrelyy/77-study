@@ -4,7 +4,8 @@ $projectRoot = $PSScriptRoot
 if ($SceneId -notmatch '^[a-z0-9-]+$') { throw 'Invalid scene ID.' }
 $staticRoot = [IO.Path]::GetFullPath((Join-Path $projectRoot 'static'))
 $pack = Get-Content -LiteralPath (Join-Path $staticRoot ('content/' + $SceneId + '.json')) -Raw -Encoding UTF8 | ConvertFrom-Json
-$ids = @($pack.assets | Where-Object { $_.kind -eq 'audio' } | ForEach-Object { $_.id })
+# Review-word audio (.lesson.review.) points at other scenes' files; it is not synthesized or listed here.
+$ids = @($pack.assets | Where-Object { $_.kind -eq 'audio' -and $_.id -notlike '*.lesson.review.*' } | ForEach-Object { $_.id })
 $voice = New-Object -ComObject SAPI.SpVoice
 $tokens = $voice.GetVoices()
 $chosen = $null

@@ -723,6 +723,18 @@
       "volume": 100,
       "sha256": "172d018c9a6cf993e2056197b0b9751d30b6f56761293abbb4882b21686ea055",
       "provenanceStatus": "mac placeholder"
+    },
+    {
+      "id": "breakfast.lesson.bridge.audio",
+      "path": "audio/breakfast/lesson/bridge-5a223214.wav",
+      "text": "Shoes on, hat on. I am hungry!",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Samantha (macOS say)",
+      "rate": 150,
+      "volume": 100,
+      "sha256": "4b19f6d1f960040ca7a13d2b10417d8138fe753e9a1e87278b428fc646f4bfb9",
+      "provenanceStatus": "mac placeholder"
     }
   ]
 }

@@ -723,6 +723,18 @@
       "volume": 100,
       "sha256": "07414296c3cd1d33aa05ab29cd8c94d3fa2fc67425e0ce036f971765d4a6b7ed",
       "provenanceStatus": "mac placeholder"
+    },
+    {
+      "id": "gardening.lesson.bridge.audio",
+      "path": "audio/gardening/lesson/bridge-17574e5c.wav",
+      "text": "We got some seeds too! Let us plant them.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Samantha (macOS say)",
+      "rate": 150,
+      "volume": 100,
+      "sha256": "6857b71f1f943cfe3489fcd494b48cdc01c795458f7ed0bd778702759cc0f055",
+      "provenanceStatus": "mac placeholder"
     }
   ]
 }

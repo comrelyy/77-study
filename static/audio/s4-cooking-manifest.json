@@ -723,6 +723,18 @@
       "volume": 100,
       "sha256": "57762880fc723752ebb383ca6c169bc902ebaf6909097fd910cb08989c540a8b",
       "provenanceStatus": "mac placeholder"
+    },
+    {
+      "id": "cooking.lesson.bridge.audio",
+      "path": "audio/cooking/lesson/bridge-bd979170.wav",
+      "text": "The flowers have water. Now let us make a snack.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Samantha (macOS say)",
+      "rate": 150,
+      "volume": 100,
+      "sha256": "b11d4efb0d43a4a230dde49ccc096cb5c049020062b20bac87d345e0e67a1b06",
+      "provenanceStatus": "mac placeholder"
     }
   ]
 }

@@ -675,6 +675,18 @@
       "volume": 100,
       "sha256": "da9813c638d2449dc4caed8dc92800c79713037917e4185398b6c8158f2ae45e",
       "provenanceStatus": "mac placeholder"
+    },
+    {
+      "id": "transport.lesson.bridge.audio",
+      "path": "audio/transport/lesson/bridge-19e35042.wav",
+      "text": "The sun is out. Let us take the bus!",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Samantha (macOS say)",
+      "rate": 150,
+      "volume": 100,
+      "sha256": "5a29df065d967b2424d4b9870ee0c8135d5375decbb7f4bf1e14854095ec3735",
+      "provenanceStatus": "mac placeholder"
     }
   ]
 }

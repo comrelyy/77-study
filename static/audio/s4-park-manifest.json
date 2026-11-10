@@ -675,6 +675,18 @@
       "volume": 100,
       "sha256": "2e96056f33f73f7a9a320b0cf79b5238a5859f64b08d8dee84193027b945dcab",
       "provenanceStatus": "mac placeholder"
+    },
+    {
+      "id": "park.lesson.bridge.audio",
+      "path": "audio/park/lesson/bridge-39a6f335.wav",
+      "text": "Here is our stop. The park is so green!",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Samantha (macOS say)",
+      "rate": 150,
+      "volume": 100,
+      "sha256": "7e96df1483f4176e419e016ea5f9ad36b465070e6f7bbba235e6a6b092cd647e",
+      "provenanceStatus": "mac placeholder"
     }
   ]
 }

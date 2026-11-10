@@ -699,6 +699,18 @@
       "volume": 100,
       "sha256": "31704e05c7d17cf10dec234fc3c840fcb78a8ec1ccb7ef3547e25dd300133f48",
       "provenanceStatus": "mac placeholder"
+    },
+    {
+      "id": "dressing.lesson.bridge.audio",
+      "path": "audio/dressing/lesson/bridge-06217f31.wav",
+      "text": "Clean hands, clean face. Now let us get dressed.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Samantha (macOS say)",
+      "rate": 150,
+      "volume": 100,
+      "sha256": "86f365d0c2c2abf14422493edb9363a98022061331a83d97c44f118636eedc12",
+      "provenanceStatus": "mac placeholder"
     }
   ]
 }

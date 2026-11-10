@@ -1,7 +1,7 @@
 """Synthesize temporary macOS `say` audio for story extra lines and order-card phrases.
 
 Hand-written themes are voiced with Windows Zira. Until that run happens, missing
-`.more` / `.label.` audio is filled with Samantha so the theme still opens on a Mac.
+`.more` / `.label.` / `.lesson.bridge.` audio is filled with Samantha so the theme still opens on a Mac.
 Each file is recorded in the theme's s4 manifest with provenanceStatus
 'mac placeholder'; make-s4-audio.ps1 re-synthesizes those entries on Windows.
 Usage: python3 scripts/mac-placeholder-audio.py
@@ -33,7 +33,7 @@ def main():
         if pack.get("generatedBy"):
             continue
         missing = [a for a in pack["assets"] if a["kind"] == "audio"
-                   and (".more" in a["id"] or ".label." in a["id"]) and not (STATIC / a["path"]).exists()]
+                   and (".more" in a["id"] or ".label." in a["id"] or ".lesson.bridge." in a["id"]) and not (STATIC / a["path"]).exists()]
         if not missing:
             continue
         path = manifest_path(scene_id)

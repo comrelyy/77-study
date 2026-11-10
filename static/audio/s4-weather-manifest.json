@@ -675,6 +675,18 @@
       "volume": 100,
       "sha256": "1c5452f138245ce339c6b8f29ed5a0063b14d34607c36a8e11f52e2306dc18cb",
       "provenanceStatus": "mac placeholder"
+    },
+    {
+      "id": "weather.lesson.bridge.audio",
+      "path": "audio/weather/lesson/bridge-87669c27.wav",
+      "text": "Yum, all done. What is the weather like today?",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Samantha (macOS say)",
+      "rate": 150,
+      "volume": 100,
+      "sha256": "3c0a808336f0a32b04261f95c84e0d88bff492e9cf7ff35eb89dbba0c03210b1",
+      "provenanceStatus": "mac placeholder"
     }
   ]
 }

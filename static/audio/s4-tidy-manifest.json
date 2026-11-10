@@ -676,6 +676,18 @@
       "volume": 100,
       "sha256": "a836aa23c9390cb3212eaa2c8c8c7709855c0db52f6d417781582f6af71d5007",
       "provenanceStatus": "mac placeholder"
+    },
+    {
+      "id": "tidy.lesson.bridge.audio",
+      "path": "audio/tidy/lesson/bridge-1911956d.wav",
+      "text": "Yummy! But look, our toys are everywhere.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Samantha (macOS say)",
+      "rate": 150,
+      "volume": 100,
+      "sha256": "3f4d380f3a5a1fe96ff6a1dfe3d91919f25db8d865d0a5c5e5a7eccd712ebc84",
+      "provenanceStatus": "mac placeholder"
     }
   ]
 }

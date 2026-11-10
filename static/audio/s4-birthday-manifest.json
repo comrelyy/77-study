@@ -689,6 +689,17 @@
       "rate": 165,
       "volume": 100,
       "sha256": "b53b04b682bc048ed41f0fb5d69e71aeee1413d047ac450f0cabb62fdc90c62a"
+    },
+    {
+      "id": "birthday.lesson.bridge.audio",
+      "path": "audio/birthday/lesson/bridge-332f3fb7.wav",
+      "text": "The room is tidy. Surprise! It is a party!",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Samantha (macOS say)",
+      "rate": 150,
+      "volume": 100,
+      "sha256": "ba06ffad364b178ae7b499a9e347eebd2ce8807569ce3f91771c2133aab539dd"
     }
   ]
 }

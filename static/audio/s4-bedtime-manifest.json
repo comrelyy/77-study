@@ -711,6 +711,18 @@
       "volume": 100,
       "sha256": "f4df09bd37fcc314c4182b6691c4d5f369556144573e0dba33486a69dc5149fd",
       "provenanceStatus": "mac placeholder"
+    },
+    {
+      "id": "bedtime.lesson.bridge.audio",
+      "path": "audio/bedtime/lesson/bridge-a9cef513.wav",
+      "text": "What a big day. Time for bed, Momo.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Samantha (macOS say)",
+      "rate": 150,
+      "volume": 100,
+      "sha256": "8147ab599d59df5ae26b7ba085e71ece2014ccbdbcf685924250c5928eb5ddfb",
+      "provenanceStatus": "mac placeholder"
     }
   ]
 }

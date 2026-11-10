@@ -723,6 +723,18 @@
       "volume": 100,
       "sha256": "6b823db58eece955e783d74303758edb57cc8824ca9d4cbbbd595aa231ad8f84",
       "provenanceStatus": "mac placeholder"
+    },
+    {
+      "id": "washing.lesson.bridge.audio",
+      "path": "audio/washing/lesson/bridge-d03cfdec.wav",
+      "text": "Good morning, Momo! Time to wake up.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Samantha (macOS say)",
+      "rate": 150,
+      "volume": 100,
+      "sha256": "d563b8f4860f88953f49260c74d821bfc0c08bb95ffbefc987d84477badecd5f",
+      "provenanceStatus": "mac placeholder"
     }
   ]
 }

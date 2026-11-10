@@ -50,6 +50,8 @@
 3. 读音：
    - 智能体生成的主题：`python -m momo_agent quiz-audio <id>` 合成缺的文件。
    - 手写主题（无 `generatedBy`）：只能在 **Windows** 上用 `make-s4-audio.ps1 -SceneId <id>`（Zira 声音）合成；`quiz-audio` 在非 Windows 上对手写主题拒绝执行并提示该命令。
+   - 过场读音（id 含 `.lesson.bridge.`，路径 `audio/<id>/lesson/bridge-<sha8>.wav`）：手写主题先在 Mac 上跑 `.venv/bin/python scripts/mac-placeholder-audio.py` 生成占位（清单标 `mac placeholder`），之后在 Windows 上 `make-s4-audio.ps1` 会删掉占位并重新合成；birthday 由 `python -m momo_agent quiz-audio birthday` 合成。
+   - 复习词读音（id 含 `.lesson.review.`）：借用来源关已有的文件，不重新合成；`make-s4-audio.ps1` 跳过这类资源，也不写进本关清单。
 
 ## 检查
 

@@ -819,6 +819,18 @@
       "volume": 100,
       "sha256": "5d9bd678690713ebf5bfff3200921f7ede7d39798c9df344f65eeda72ebaac2b",
       "provenanceStatus": "mac placeholder"
+    },
+    {
+      "id": "picnic.lesson.bridge.audio",
+      "path": "audio/picnic/lesson/bridge-a912c667.wav",
+      "text": "Let us sit under the tree and eat.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Samantha (macOS say)",
+      "rate": 150,
+      "volume": 100,
+      "sha256": "ab2ee67556324b09e2513f26775e7e5c464c77f80178839924079573f98c8ee0",
+      "provenanceStatus": "mac placeholder"
     }
   ]
 }

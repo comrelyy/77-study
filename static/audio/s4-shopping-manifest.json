@@ -675,6 +675,18 @@
       "volume": 100,
       "sha256": "1268b04d1d58e4ddcae89cd6b21389a6fedae87b1619244bebe0b91255b1dfc7",
       "provenanceStatus": "mac placeholder"
+    },
+    {
+      "id": "shopping.lesson.bridge.audio",
+      "path": "audio/shopping/lesson/bridge-3709780b.wav",
+      "text": "Oh no, no more bananas. Let us go to the shop.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Samantha (macOS say)",
+      "rate": 150,
+      "volume": 100,
+      "sha256": "048c34a7ed350e97f6c7110f6db654de2ee9ace937f4ce73ddb2875b43bfd53f",
+      "provenanceStatus": "mac placeholder"
     }
   ]
 }
