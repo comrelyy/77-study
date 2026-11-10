@@ -78,6 +78,13 @@ class Storage:
             if 'sceneId' in pack:
                 self.packs[pack['sceneId']] = pack
         self.backup_path = self.migrate()
+        self.backfill_cleared()
+
+    def backfill_cleared(self):
+        with self.connect() as c:
+            for row in c.execute("SELECT scene,version,state FROM progress WHERE module='lesson'").fetchall():
+                if str(json.loads(row['state']).get('stepId')).endswith('.lesson.end'):
+                    c.execute('INSERT OR IGNORE INTO events VALUES(?,?,?,?,?)',('cleared-'+row['scene'],self.day(self.now()),'cleared',canonical(dict(sceneId=row['scene'],moduleId='lesson',contentVersion=row['version'])),self.now()))
 
     def content_pack(self, scene, version, archive=False):
         if not isinstance(scene,str) or not re.fullmatch(r'[a-z][a-z0-9-]*',scene) or not isinstance(version,str) or not re.fullmatch(r'\d+\.\d+\.\d+',version):
@@ -410,7 +417,7 @@ class Storage:
             raise ServiceError('invalid_operation','提交内容无效')
         operation_id = identifier(op.get('id'))
         kind,payload = op.get('kind'),op.get('payload')
-        if kind not in ('introduced','choice','end','checkpoint') or not isinstance(payload,dict) or len(canonical(op))>128000:
+        if kind not in ('introduced','choice','end','checkpoint','cleared') or not isinstance(payload,dict) or len(canonical(op))>128000:
             raise ServiceError('invalid_operation','提交类型或内容无效')
         digest=fingerprint(op)
         now=self.now()
@@ -441,7 +448,7 @@ class Storage:
             if kind!='end' and (not proof or confirmed/1000<proof['started']-.5 or confirmed/1000>min(proof['expires'],proof['revoked'] if proof['revoked'] is not None else proof['expires'])+.5):
                 raise ServiceError('invalid_confirmation','确认不属于有效活动页',409)
             day=self.day(confirmed/1000)
-            if kind not in ('end','checkpoint'):
+            if kind not in ('end','checkpoint','cleared'):
                 cutoff=[x for x in (segment['exhausted_at'],) if x is not None]
                 daily=c.execute('SELECT exhausted_at FROM daily_status WHERE day=?',(day,)).fetchone()
                 if daily:
@@ -465,7 +472,9 @@ class Storage:
             elif kind=='checkpoint':
                 raise ServiceError('missing_progress','缺少进度内容')
             sticker=False
-            if kind!='checkpoint':
+            if kind=='cleared':
+                c.execute('INSERT OR IGNORE INTO events VALUES(?,?,?,?,?)',('cleared-'+scene,day,'cleared',canonical(dict(payload,experienceId=experience)),confirmed/1000))
+            elif kind!='checkpoint':
                 saved=dict(payload,experienceId=experience)
                 c.execute('INSERT INTO events VALUES(?,?,?,?,?)',(operation_id,day,kind,canonical(saved),confirmed/1000))
                 if kind in ('introduced','choice'):
@@ -473,6 +482,8 @@ class Storage:
                 if kind=='end':
                     c.execute('UPDATE experiences SET ended=COALESCE(ended,?) WHERE id=?',(now,experience))
             result=dict(ok=True,id=operation_id,stickerGranted=sticker,revision=revision,progressConflict=progress_conflict,contentUpdated=historical)
+            if kind=='cleared':
+                result['cleared']=True
             c.execute('INSERT INTO operations VALUES(?,?,?,?,?)',(operation_id,digest,kind,canonical(result),now))
             return dict(result,quota=self.quota(c,now))
 
