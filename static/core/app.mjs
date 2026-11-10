@@ -167,6 +167,7 @@ export class App{
   async markCleared(){
     const s=this.stateFor('lesson');if(s.clearedSaved)return true;s.clearedSaved=true;
     const ok=await this.emit('cleared',{moduleId:'lesson'});
+    if(!ok&&this.pending?.operation.kind!=='cleared')s.clearedSaved=false;
     if(ok&&this.moduleId==='lesson'&&this.states.get('lesson')===s&&s.step.kind==='end'&&!this.failure)this.draw();
     return ok;
   }

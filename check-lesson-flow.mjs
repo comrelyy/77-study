@@ -215,3 +215,12 @@ test('end without next stop keeps replay as the main button',async()=>{
 test('theme home return button says 回地图',async()=>{
   const env=await fixture(require('./static/content/park.json'));assert.equal(env.root.querySelector('.theme-back').textContent,'← 回地图');
 });
+test('cleared dropped by the busy guard is retried on the next draw',async()=>{
+  const env=await fixture(require('./static/content/park.json'));env.app.open('lesson');await walk(env);
+  const cleared=()=>[...env.store.events.values()].filter(e=>e.kind==='cleared');
+  for(const [k,e] of [...env.store.events])if(e.kind==='cleared')env.store.events.delete(k);
+  env.app.stateFor('lesson').clearedSaved=false;env.app.busy=true;
+  assert.equal(await env.app.markCleared(),false);assert.equal(cleared().length,0);
+  env.app.busy=false;env.app.draw();await new Promise(r=>setTimeout(r));
+  assert.equal(cleared().length,1);env.app.draw();await new Promise(r=>setTimeout(r));assert.equal(cleared().length,1);
+});
