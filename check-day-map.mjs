@@ -81,3 +81,12 @@ test('narrow: tapping a level reveals the card action; desktop does not scroll',
   const desk=drawNarrow(['washing'],{},900);assert(!desk.root.querySelector('.map-sheet').className.includes('narrow'));
   await desk.root.querySelectorAll('.map-level')[0].fire();assert.equal(desk.scrolls.length,0);
 });
+test('a pack that failed to load is a disabled unavailable stop and later stops stay locked',async()=>{
+  const partial={...packs};delete partial.washing;const lv=mapLevels(order,catalog,partial);
+  assert.equal(lv.length,13);assert.equal(lv[0].unavailable,true);assert.equal(lv[0].title,'washing');
+  const {root,card,go}=draw([],{levels:lv});
+  assert.deepEqual(root.querySelectorAll('.map-level').map(b=>b.attributes['data-state']).slice(0,3),['current','locked','locked']);
+  assert(card().textContent.includes('这一站暂时打不开'));assert(go().disabled);
+  await go().fire();
+  await root.querySelectorAll('.map-level')[1].fire();assert.equal(go().textContent,'还没解锁');assert(go().disabled);
+});

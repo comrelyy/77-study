@@ -17,8 +17,10 @@ export function clearedFrom(snapshot,pendingOps=[]){
 
 export function mapLevels(order,catalog,packs){
   const route=new Map((catalog.route||[]).map(r=>[r.id,r])),learned=new Set();
-  return order.filter(id=>packs[id]).map(id=>{
-    const pack=packs[id],path=asset=>pack.assets.find(a=>a.id===asset)?.path||null,step=pack.lesson?.steps?.find(s=>s.kind==='words');
+  return order.map(id=>{
+    const pack=packs[id];
+    if(!pack)return {id,title:route.get(id)?.title||id,band:route.get(id)?.band??0,icon:route.get(id)?.icon?'illustrations/'+route.get(id).icon+'.svg':null,unavailable:true,bridge:null,review:[],words:[]};
+    const path=asset=>pack.assets.find(a=>a.id===asset)?.path||null,step=pack.lesson?.steps?.find(s=>s.kind==='words');
     const own=(step?.words||pack.words.map(w=>w.id)).map(wid=>pack.words.find(w=>w.id===wid)).filter(Boolean);
     const words=own.map(w=>({text:w.text,image:path(w.image),seen:learned.has(w.text)}));
     for(const w of own)learned.add(w.text);
@@ -86,8 +88,8 @@ export function renderDayMap(root,{levels,states,focusId=null,notice=null,enterS
     words.append(...lv.words.map(w=>chip(w,w.seen?'见过':'',w.seen?' seen':'')));
     let review=node('p','第一站，还没有学过的词','map-empty');
     if(lv.review.length){review=node('div',undefined,'map-words');review.append(...lv.review.map(r=>chip(r,r.from)));}
-    const go=button(GO[st],()=>{if(st!=='locked')enterScene(lv.id);},'map-go'+(st==='locked'?'':' primary'));go.disabled=st==='locked';
-    card.replaceChildren(node('p','第 '+(sel+1)+' 站 · '+BANDS[lv.band]+' · '+WHERE[st],'map-where'),node('h2',lv.title),node('h3','先复习学过的词'),review,node('h3','这一站的词'),words,go);
+    const off=st==='locked'||lv.unavailable,go=button(lv.unavailable?'暂时打不开':GO[st],()=>{if(!off)enterScene(lv.id);},'map-go'+(off?'':' primary'));go.disabled=off;
+    card.replaceChildren(node('p','第 '+(sel+1)+' 站 · '+BANDS[lv.band]+' · '+(lv.unavailable?'这一站暂时打不开':WHERE[st]),'map-where'),node('h2',lv.title),node('h3','先复习学过的词'),review,node('h3','这一站的词'),words,go);
   }
 
   let g,buttons=[],momo,bubble,walking=false;
@@ -113,7 +115,7 @@ export function renderDayMap(root,{levels,states,focusId=null,notice=null,enterS
       const st=states[i].state,b=button('',()=>{if(walking)return;sel=i;for(const [k,x] of buttons.entries())x.className='map-level'+(k===sel?' sel':'');drawCard();if(g.narrow)card.scrollIntoView?.({block:'end',behavior:reduceMotion?'instant':'smooth'});},'map-level'+(i===sel?' sel':''));
       b.setAttribute('data-state',st);b.setAttribute('aria-label','第'+(i+1)+'站 '+lv.title+'，'+{done:'已走过',current:'下一站',locked:'还没解锁'}[st]);
       b.style.left=pct(g.pts[i][0],g.W);b.style.top=pct(g.pts[i][1],g.H);b.style.setProperty?.('--map-band','var(--map-b'+lv.band+')');
-      const ring=node('span',undefined,'map-ring');ring.append(image(lv.icon,'','map-icon'));
+      const ring=node('span',undefined,'map-ring');if(lv.icon)ring.append(image(lv.icon,'','map-icon'));
       if(st!=='current'){const mark=node('span',undefined,st==='done'?'map-star':'map-lock');mark.innerHTML=st==='done'?STAR:LOCK;ring.append(mark);}
       b.append(ring,node('span',lv.title,'map-level-title'),node('span',(i+1)+' · '+BANDS[lv.band],'map-level-time'));return b;
     });

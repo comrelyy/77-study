@@ -58,7 +58,7 @@ test('every theme walks the lesson to the end',async()=>{
     const word=pack.modules.summary.length?env.root.textContent.includes(pack.words.find(w=>w.id===pack.modules.summary[0]).text):true;assert(word,pack.sceneId+' end lists words');
     const events=[...env.store.events.values()];
     assert(events.some(e=>e.payload.moduleId==='game'),pack.sceneId+' game events keep moduleId game');
-    await button(env.root,'回首页').fire();assert.equal(env.app.view,'home');
+    assert(button(env.root,'回地图'));
     env.app.open('lesson',true);assert.equal(env.app.stateFor('lesson').index,0);
   }
 });
@@ -223,4 +223,18 @@ test('cleared dropped by the busy guard is retried on the next draw',async()=>{
   assert.equal(await env.app.markCleared(),false);assert.equal(cleared().length,0);
   env.app.busy=false;env.app.draw();await new Promise(r=>setTimeout(r));
   assert.equal(cleared().length,1);env.app.draw();await new Promise(r=>setTimeout(r));assert.equal(cleared().length,1);
+});
+test('next stop retries a dropped cleared save before navigating',async()=>{
+  const calls=[],env=await fixture(require('./static/content/dressing.json'),{nextScene:'breakfast',calls});env.app.scenes.push({id:'breakfast'});env.app.open('lesson');await walk(env);
+  const cleared=()=>[...env.store.events.values()].filter(e=>e.kind==='cleared');
+  for(const [k,e] of [...env.store.events])if(e.kind==='cleared')env.store.events.delete(k);
+  env.app.stateFor('lesson').clearedSaved=false;env.app.busy=true;
+  assert.equal(await env.app.markCleared(),false);env.app.busy=false;assert.equal(cleared().length,0);
+  const seen=[];const nav=env.app.navigateScene;env.app.navigateScene=(...a)=>{seen.push(cleared().length);return nav(...a);};
+  await button(env.root,'去下一站').fire();
+  assert.deepEqual(seen,[1]);assert.equal(cleared().length,1);assert.deepEqual(calls,[[null,'breakfast']]);
+});
+test('map button leaves the lesson end page for the map',async()=>{
+  const calls=[],env=await fixture(require('./static/content/park.json'),{calls});env.app.open('lesson');await walk(env);
+  await button(env.root,'回地图').fire();assert.deepEqual(calls,[[null,undefined]]);
 });

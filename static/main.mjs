@@ -18,7 +18,7 @@ async function loadPack(catalog,id){
 }
 async function readCleared(){
   const pending=[];
-  try{for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(!key?.startsWith('momo.v3.pending.'))continue;const entry=JSON.parse(localStorage.getItem(key));if(entry?.type==='operation'&&entry.body?.operation)pending.push(entry.body.operation);}}catch{}
+  try{for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(!key?.startsWith('momo.v3.pending.'))continue;try{const entry=JSON.parse(localStorage.getItem(key));if(entry?.type==='operation'&&entry.body?.operation)pending.push(entry.body.operation);}catch{}}}catch{}
   try{const response=await fetch('/api/v3/state',{cache:'no-store'});if(!response.ok)throw Error('state');return {cleared:clearedFrom(await response.json(),pending),failed:false};}
   catch{return {cleared:clearedFrom(null,pending),failed:true};}
 }
@@ -32,8 +32,9 @@ async function boot(){
       document.querySelector('#records').hidden=true;document.querySelector('#stickers').hidden=true;document.body.classList.add('map-mode');
       const results=await Promise.allSettled(order.map(id=>loadPack(catalog,id))),packs={};
       results.forEach((result,i)=>{if(result.status==='fulfilled')packs[order[i]]=result.value;});
-      const levels=mapLevels(order,catalog,packs),ids=levels.map(l=>l.id),focus=query.get('focus');
+      const levels=mapLevels(order,catalog,packs),ids=order,focus=query.get('focus');
       renderDayMap(root,{levels,states:levelStates(ids,cleared,unlock),focusId:ids.includes(focus)?focus:null,notice,enterScene:navigateScene,playAudio:path=>{new Audio(path).play().catch(()=>{});},reduceMotion:matchMedia('(prefers-reduced-motion: reduce)').matches});
+      if(query.has('focus')){try{const url=new URL(location.href);url.searchParams.delete('focus');history.replaceState(null,'',url.href);}catch{}}
     };
     const loadOptions=async()=>{
       const results=await Promise.allSettled(availableScenes(catalog).map(async id=>{
