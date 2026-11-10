@@ -49,5 +49,72 @@
     "weather",
     "gardening",
     "bedtime"
+  ],
+  "route": [
+    {
+      "id": "washing",
+      "band": 0,
+      "icon": "toothbrush"
+    },
+    {
+      "id": "dressing",
+      "band": 0,
+      "icon": "shirt"
+    },
+    {
+      "id": "breakfast",
+      "band": 0,
+      "icon": "egg"
+    },
+    {
+      "id": "weather",
+      "band": 1,
+      "icon": "sun"
+    },
+    {
+      "id": "transport",
+      "band": 1,
+      "icon": "bus"
+    },
+    {
+      "id": "park",
+      "band": 1,
+      "icon": "tree"
+    },
+    {
+      "id": "picnic",
+      "band": 2,
+      "icon": "basket"
+    },
+    {
+      "id": "shopping",
+      "band": 3,
+      "icon": "bag"
+    },
+    {
+      "id": "gardening",
+      "band": 3,
+      "icon": "flower"
+    },
+    {
+      "id": "cooking",
+      "band": 4,
+      "icon": "pot"
+    },
+    {
+      "id": "tidy",
+      "band": 4,
+      "icon": "car"
+    },
+    {
+      "id": "birthday",
+      "band": 5,
+      "icon": "cup"
+    },
+    {
+      "id": "bedtime",
+      "band": 5,
+      "icon": "bed"
+    }
   ]
 }
