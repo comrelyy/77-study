@@ -4,7 +4,8 @@ import fs from 'node:fs';
 import {createRequire} from 'node:module';
 import {availableScenes,chooseScene} from './static/core/catalog.mjs';
 import {App} from './static/core/app.mjs';
-import {renderThemeSelection} from './static/core/theme-selection.mjs';
+import {renderDayMap,mapLevels} from './static/core/day-map.mjs';
+import {routeOrder,levelStates} from './static/core/route.mjs';
 import {MemoryStore} from './static/core/store.mjs';
 import {loadReviewSources} from './static/core/review-sources.mjs';
 import {Element,documentModel} from './tests/fake-dom.mjs';
@@ -13,7 +14,7 @@ const packs=Object.values(catalog.scenes).map(file=>require('./static/'+file));
 const scenes=[picnic,tidy].map(p=>({id:p.sceneId,title:p.title,image:p.assets.find(a=>a.id===p.words[0].image).path}));
 async function fixture(pack=picnic){globalThis.document=documentModel();const root=new Element('main'),calls=[];let id=0;const app=new App({root,pack,scenes,navigateScene:async id=>calls.push(id),store:new MemoryStore(),player:{stop(){},async play(){return true;}},Session,uuid:()=>String(++id)});await app.init();return {app,root,calls};}
 test('normal previews, internal examples, and releases have separate entry rules',()=>{
-  assert.deepEqual(new Set(availableScenes(catalog)),new Set(['dressing','washing','breakfast','cooking','tidy','picnic','park','transport','shopping','weather','gardening','bedtime']));
+  assert.deepEqual(new Set(availableScenes(catalog)),new Set(['dressing','washing','breakfast','cooking','tidy','picnic','park','transport','shopping','weather','gardening','bedtime','birthday']));
   assert.deepEqual(chooseScene(catalog,null,'tidy'),{id:'tidy',internal:false});
   assert.deepEqual(chooseScene(catalog,'tidy'),{id:'tidy',internal:true});
   assert.throws(()=>chooseScene(catalog,null,'unknown'));
@@ -26,16 +27,17 @@ test('all selectable themes have real local images and valid non-silent audio',(
     assert(pack.assets.every(a=>pending(a)||fs.existsSync('static/'+a.path)));const audio=require('./audio-validation.cjs').inspectPack(pack,'static').filter(a=>!pending(a));assert(audio.length>0&&audio.every(a=>a.valid));}
   assert.deepEqual(new Set(tidy.modules.story.map(s=>s.mainWord)),new Set(tidy.words.map(w=>w.id)));
 });
-test('theme selection is a separate page with no activity modules',async()=>{
-  globalThis.document=documentModel();const root=new Element('main'),calls=[];
-  renderThemeSelection(root,scenes,id=>calls.push(id));
-  assert.equal(root.querySelectorAll('.theme-choice').length,2);
+test('the day map is a separate page with no activity modules',async()=>{
+  globalThis.document=documentModel();const root=new Element('main'),calls=[],order=routeOrder(catalog);
+  const levels=mapLevels(order,catalog,Object.fromEntries(order.map(id=>[id,require('./static/'+catalog.scenes[id])])));
+  renderDayMap(root,{levels,states:levelStates(order,new Set()),enterScene:id=>calls.push(id),playAudio:()=>{}});
+  assert.equal(root.querySelectorAll('.map-level').length,order.length);
   assert(!root.querySelector('.hero'));assert(!root.querySelector('.activity'));
-  await root.querySelectorAll('.theme-choice')[1].fire();assert.deepEqual(calls,['tidy']);
+  await root.querySelector('.map-go').fire();assert.deepEqual(calls,['washing']);
 });
 test('theme home has a return to selection and keeps exit controls below parent notes',async()=>{
   const {app,root,calls}=await fixture();app.data.notices=['说明'];app.draw();
-  assert.equal(root.querySelectorAll('.theme-choice').length,0);assert(root.querySelector('.hero'));assert.equal(root.querySelectorAll('.activity').length,1);assert(root.textContent.includes('开始这节课'));assert(!root.querySelectorAll('.activity').some(b=>/情景互动|游戏互动|主题小故事|单词汇总/.test(b.textContent)));
+  assert.equal(root.querySelectorAll('.map-level').length,0);assert(root.querySelector('.hero'));assert.equal(root.querySelectorAll('.activity').length,1);assert(root.textContent.includes('开始这节课'));assert(!root.querySelectorAll('.activity').some(b=>/情景互动|游戏互动|主题小故事|单词汇总/.test(b.textContent)));
   const notes=root.children.findIndex(e=>e.tagName==='details');assert(root.children[notes+1].className.includes('home-actions'));
   await root.querySelector('.theme-back').fire();assert.deepEqual(calls,[null]);
 });

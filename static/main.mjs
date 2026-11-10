@@ -1,6 +1,7 @@
 import {loadReviewSources} from './core/review-sources.mjs?v=themes-20261031';
 import {App} from './core/app.mjs?v=segment-cn-20261109b';
-import {renderThemeSelection} from './core/theme-selection.mjs?v=theme-page-20261031';
+import {renderDayMap,clearedFrom,mapLevels} from './core/day-map.mjs';
+import {routeOrder,levelStates,canEnter} from './core/route.mjs';
 import {MemoryStore} from './core/store.mjs';
 import {PersistentStore} from './core/persistent-store.mjs?v=reload-handover-20261103';
 import {BrowserActivity} from './core/browser-activity.mjs?v=reload-handover-20261103';
@@ -15,11 +16,25 @@ async function loadPack(catalog,id){
   const validation=MomoPrototype.validate(pack,{strict:catalog.mode==='release'});if(validation.errors.length)throw Error(validation.errors.join('; '));
   return pack;
 }
+async function readCleared(){
+  const pending=[];
+  try{for(let i=0;i<localStorage.length;i++){const key=localStorage.key(i);if(!key?.startsWith('momo.v3.pending.'))continue;const entry=JSON.parse(localStorage.getItem(key));if(entry?.type==='operation'&&entry.body?.operation)pending.push(entry.body.operation);}}catch{}
+  try{const response=await fetch('/api/v3/state',{cache:'no-store'});if(!response.ok)throw Error('state');return {cleared:clearedFrom(await response.json(),pending),failed:false};}
+  catch{return {cleared:clearedFrom(null,pending),failed:true};}
+}
 async function boot(){
   const root=document.querySelector('#app');
   try{
     const catalog=await json('content/catalog.json'),query=new URLSearchParams(location.search);
-    const navigateScene=id=>{const url=new URL(location.href);url.searchParams.delete('dev');url.searchParams.delete('scene');if(id!==null)url.searchParams.set('scene',id);location.assign(url.href);};
+    const navigateScene=(id,opts)=>{const url=new URL(location.href);for(const key of ['dev','scene','focus'])url.searchParams.delete(key);if(id!==null)url.searchParams.set('scene',id);else if(opts?.focus)url.searchParams.set('focus',opts.focus);location.assign(url.href);};
+    const order=routeOrder(catalog),unlock={unlockAll:catalog.mode==='development'&&query.get('unlock')==='all'};
+    const showMap=async(cleared,notice)=>{
+      document.querySelector('#records').hidden=true;document.querySelector('#stickers').hidden=true;document.body.classList.add('map-mode');
+      const results=await Promise.allSettled(order.map(id=>loadPack(catalog,id))),packs={};
+      results.forEach((result,i)=>{if(result.status==='fulfilled')packs[order[i]]=result.value;});
+      const levels=mapLevels(order,catalog,packs),ids=levels.map(l=>l.id),focus=query.get('focus');
+      renderDayMap(root,{levels,states:levelStates(ids,cleared,unlock),focusId:ids.includes(focus)?focus:null,notice,enterScene:navigateScene,playAudio:path=>{new Audio(path).play().catch(()=>{});},reduceMotion:matchMedia('(prefers-reduced-motion: reduce)').matches});
+    };
     const loadOptions=async()=>{
       const results=await Promise.allSettled(availableScenes(catalog).map(async id=>{
         const p=await loadPack(catalog,id),illustration=p.assets.find(a=>a.id===p.words[0].image);
@@ -27,17 +42,16 @@ async function boot(){
       }));
       return results.filter(result=>result.status==='fulfilled').map(result=>result.value);
     };
-    if(!query.has('dev')&&!query.has('scene')){
-      document.querySelector('#records').hidden=true;document.querySelector('#stickers').hidden=true;
-      renderThemeSelection(root,await loadOptions(),navigateScene);return;
-    }
+    if(!query.has('dev')&&!query.has('scene')){const {cleared,failed}=await readCleared();await showMap(cleared,failed?'进度暂时读不到，先从第一站开始':null);return;}
     const selected=chooseScene(catalog,query.get('dev'),query.get('scene'));
+    if(!selected.internal){const {cleared,failed}=await readCleared();if(!canEnter(order,cleared,selected.id,unlock)){await showMap(cleared,failed?'进度暂时读不到，先从第一站开始':'先走完前面的路才能来');return;}}
+    const nextScene=selected.internal?null:order[order.indexOf(selected.id)+1]??null;
     const pack=await loadPack(catalog,selected.id);
     if(!selected.internal){if((await missingBootAssets(pack,async path=>(await fetch(path,{method:'HEAD'})).ok)).length)throw Error('主题本地图片或声音不完整');}
     if(catalog.mode==='development'){const notice=node('p',selected.internal?'内部演示 · 记录仅保留在本页':'开发体验版 · 不限体验时长，使用时间与记录由本机保存','migration-banner');document.body.insertBefore(notice,root);}
     const scenes=selected.internal?[]:await loadOptions();
     const player=new MomoAudio.Player({fallback:(text,done,rate=1)=>{if(!('speechSynthesis'in window)){done(false);return ()=>{};}const u=new SpeechSynthesisUtterance(text);u.lang=/[\u3400-\u9fff]/.test(text)?'zh-CN':'en-US';u.rate=.8*rate;u.onend=()=>done(true);u.onerror=()=>done(false);speechSynthesis.speak(u);return ()=>speechSynthesis.cancel();}});
-    const app=new App({root,pack,scenes,navigateScene,reviewLoader:events=>loadReviewSources({catalog,current:pack,events,internal:selected.internal,validate:(...args)=>MomoPrototype.validate(...args)}),store:selected.internal?new MemoryStore():new PersistentStore({activity:new BrowserActivity()}),player});
+    const app=new App({root,pack,scenes,navigateScene,nextScene,reviewLoader:events=>loadReviewSources({catalog,current:pack,events,internal:selected.internal,validate:(...args)=>MomoPrototype.validate(...args)}),store:selected.internal?new MemoryStore():new PersistentStore({activity:new BrowserActivity()}),player});
     app.limitsEnabled=catalog.mode!=='development';await app.init();
     document.querySelector('#records').addEventListener('click',()=>app.records());document.querySelector('#stickers').addEventListener('click',()=>app.stickers());
     document.querySelector('header a').addEventListener('click',event=>{event.preventDefault();app.selectScene(null);});
