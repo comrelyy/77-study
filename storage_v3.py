@@ -66,8 +66,9 @@ CREATE TABLE IF NOT EXISTS diagnostics(id INTEGER PRIMARY KEY,kind TEXT NOT NULL
 
 
 class Storage:
-    def __init__(self, db, content_root, now=time.time, limits_enabled=True):
+    def __init__(self, db, content_root, now=time.time, limits_enabled=True, preview=False):
         self.path = Path(db).resolve()
+        self.preview = preview
         self.content_root = Path(content_root)
         self.now = now
         self.limits_enabled = limits_enabled
@@ -231,7 +232,11 @@ class Storage:
         with self.connect() as c:
             c.execute('BEGIN IMMEDIATE')
             self.observe_day(c, self.now())
-            return self.snapshot(c, self.now())
+            result = self.snapshot(c, self.now())
+        # Each preview boot has a fresh database; the page clears browser records left by earlier boots.
+        if self.preview:
+            result['previewId'] = self.instance_id
+        return result
 
     def require_lease(self, c, body, now):
         row = c.execute('SELECT * FROM lease WHERE id=1').fetchone()

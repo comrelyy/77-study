@@ -31,6 +31,8 @@
 
 打开 http://127.0.0.1:8765 。仅监听本机；家庭库为 data.sqlite3，禁止对家庭库运行故障、清除测试。
 
+预览改用 `python app.py --preview`：每次启动用全新临时库（不碰家庭库），页面打开时自动清掉浏览器里上一次预览留下的待确认记录和活动凭据，避免「体验编号无效」卡住。
+
 ```powershell
 node check.cjs
 node content-audit.cjs

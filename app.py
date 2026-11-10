@@ -1,4 +1,4 @@
-import json, sqlite3, time, math, argparse
+import json, sqlite3, time, math, argparse, tempfile
 from datetime import datetime
 from pathlib import Path
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
@@ -87,7 +87,11 @@ class Handler(SimpleHTTPRequestHandler):
 # listen backlog of 5 makes macOS reset the overflow and the theme refuses to open.
 ThreadingHTTPServer.request_queue_size=128
 
-def make_server(db=DB,port=8765):
+def make_server(db=DB,port=8765,preview=False):
+    if preview:
+        # Preview never touches the household database: every boot starts from an empty temporary one.
+        temp=tempfile.TemporaryDirectory(prefix='momoplanet-preview-')
+        db=Path(temp.name)/'preview.sqlite3'
     # Bind first: a second launch must not migrate the DB while the old server owns the port.
     server=ThreadingHTTPServer(('127.0.0.1',port),Handler)
     try:
@@ -98,18 +102,25 @@ def make_server(db=DB,port=8765):
                 raise ServiceError('migration_preflight_failed','数据库副本验证未通过，原库未升级')
         content_root=ROOT/'static'/'content'
         catalog=json.loads((content_root/'catalog.json').read_text(encoding='utf-8'))
-        server.storage=Storage(db,content_root,limits_enabled=catalog.get('mode')!='development')
+        server.storage=Storage(db,content_root,limits_enabled=catalog.get('mode')!='development',preview=preview)
     except Exception:
         server.server_close()
         raise
+    if preview:
+        close=server.server_close
+        def server_close():
+            close()
+            temp.cleanup()
+        server.server_close=server_close
     return server
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--db',type=Path,default=DB)
     parser.add_argument('--port',type=int,default=8765)
+    parser.add_argument('--preview',action='store_true',help='temporary database; browser records from earlier previews are cleared')
     args=parser.parse_args()
-    server=make_server(args.db,args.port)
+    server=make_server(args.db,args.port,args.preview)
     print('Momo Planet: http://127.0.0.1:'+str(server.server_address[1]),flush=True)
     if server.storage.backup_path: print('Database backup: '+server.storage.backup_path,flush=True)
     try: server.serve_forever()

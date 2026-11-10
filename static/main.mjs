@@ -8,6 +8,7 @@ import {BrowserActivity} from './core/browser-activity.mjs?v=reload-handover-202
 import {node,button} from './core/dom.mjs';
 import {missingBootAssets} from './core/boot-assets.mjs';
 import {chooseScene,availableScenes} from './core/catalog.mjs?v=themes-20261031';
+import {resetPreviewLeftovers} from './core/preview-reset.mjs?v=preview-reset-20261110';
 async function json(path){const response=await fetch(path,{cache:'no-store'});if(!response.ok)throw Error('内容文件读取失败');return response.json();}
 async function loadPack(catalog,id){
   const path=Object.hasOwn(catalog.scenes,id)?catalog.scenes[id]:null;
@@ -25,6 +26,7 @@ async function readCleared(){
 async function boot(){
   const root=document.querySelector('#app');
   try{
+    try{const response=await fetch('/api/v3/state',{cache:'no-store'});if(response.ok)resetPreviewLeftovers(await response.json(),[localStorage,sessionStorage]);}catch{}
     const catalog=await json('content/catalog.json'),query=new URLSearchParams(location.search);
     const navigateScene=(id,opts)=>{const url=new URL(location.href);for(const key of ['dev','scene','focus'])url.searchParams.delete(key);if(id!==null)url.searchParams.set('scene',id);else if(opts?.focus)url.searchParams.set('focus',opts.focus);location.assign(url.href);};
     const order=routeOrder(catalog),unlock={unlockAll:catalog.mode==='development'&&query.get('unlock')==='all'};
