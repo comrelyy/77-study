@@ -29,6 +29,8 @@ def quiz_repo(tmp: str, *scenes: str) -> Path:
     """A throwaway repo with the files lesson-build needs; the real repo is never written."""
     root = make_repo(tmp)
     shutil.copy(ROOT / "lesson-build.cjs", root / "lesson-build.cjs")
+    for helper in ("route-build.cjs", "route-bridges.cjs"):
+        shutil.copy(ROOT / helper, root / helper)
     (root / "static/core").mkdir(parents=True)
     shutil.copy(ROOT / "static/core/model.js", root / "static/core/model.js")
     (root / "content-lesson").mkdir()

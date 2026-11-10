@@ -15,7 +15,11 @@ const packs=availableScenes(catalog).map(id=>require('./static/'+catalog.scenes[
 test('audio provenance rejects a changed transcript, hash or unknown synthesis voice',()=>{
   const {auditPack}=require('./content-audit.cjs');
   const p=packs.find(p=>p.sceneId==='dressing');
-  const manifest=require('./static/audio/s4-dressing-manifest.json');
+  const own=require('./static/audio/s4-dressing-manifest.json');
+  // Review cards borrow other scenes' audio, so (like content-audit generate) match against every scene's manifest.
+  const fs=require('node:fs');
+  const everyEntry=fs.readdirSync('./static/audio').filter(f=>/^s4(-.+)?-manifest\.json$/.test(f)).flatMap(f=>JSON.parse(fs.readFileSync('./static/audio/'+f,'utf8')).entries);
+  const manifest={...own,entries:[...own.entries,...everyEntry.filter(e=>!own.entries.includes(e))]};
   assert.equal(auditPack(p,manifest).technicalStatus,'passed');
   for(const [field,value]of [['text','different words'],['sha256','0'.repeat(64)],['voice','unknown']]){
     const changed=structuredClone(manifest);changed.entries[0][field]=value;

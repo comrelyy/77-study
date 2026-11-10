@@ -1,14 +1,14 @@
 import {node,button,image,actions} from './dom.mjs?v=content-v2';
 import {speedControls,observationForm} from './enhancements.mjs';
 import {StoryState} from './story-state.mjs';
-import {LessonState} from './lesson-state.mjs?v=segment-cn-20261109b';
+import {LessonState} from './lesson-state.mjs?v=day-map-20261110';
 import {MemoryStorage} from './store.mjs';
 import {serializeProgress,restoreProgress} from './progress.mjs?v=lesson-20261110';
 import {renderStory} from '../modules/story.mjs?v=segment-cn-20261109b';
 import {renderDialogue} from '../modules/dialogue.mjs?v=integrated-20261103';
 import {renderGame} from '../modules/game.mjs?v=segment-cn-20261109b';
 import {renderSummary} from '../modules/summary.mjs';
-import {renderLesson} from '../modules/lesson.mjs?v=segment-cn-20261109b';
+import {renderLesson} from '../modules/lesson.mjs?v=day-map-20261110';
 import {pendingInteractionGame} from './interaction-flow.mjs?v=integrated-20261103';
 const labels={story:'主题小故事',dialogue:'情景对话',game:'游戏互动',summary:'单词汇总',lesson:'这节课'};
 const guides={story:'点“听英语故事”开始。暂停后可以继续当前小段；点图卡听单词。也可以跳过或结束。',dialogue:'点一个回答，小兔就会说出来，Momo 会接着说下一句。想先听听可以点示范回答。也可以暂停、跳过或结束。',summary:'点图卡听单词。可以重听，也可以随时结束，不用点完每一张。',lesson:'跟着进度条一步步来：听一听、答一答。答错了可以再试，随时可以暂停或结束。'};

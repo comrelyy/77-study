@@ -22,6 +22,10 @@ class ValidatePackTest(unittest.TestCase):
 
     def test_park_with_audit(self):
         manifest = json.loads((STATIC / "audio/s4-park-manifest.json").read_text("utf-8"))
+        # Review cards borrow other scenes' audio, so match against every scene's manifest (as content-audit does).
+        for other in sorted((STATIC / "audio").glob("s4*-manifest.json")):
+            if other.name != "s4-park-manifest.json":
+                manifest["entries"] += json.loads(other.read_text("utf-8"))["entries"]
         self.assertEqual(validate_pack(park(), STATIC, manifest), [])
 
     def test_bad_image_reference(self):

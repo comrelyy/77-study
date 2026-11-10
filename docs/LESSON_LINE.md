@@ -88,3 +88,9 @@
 4. 在 Windows 上为手写主题合成题目读音。
 
 用户侧待办：补模型 Key 后对 12 个手写主题逐个 `python -m momo_agent quiz <id>`，预览后 `quiz-approve`；在 Windows 对补过题的手写主题运行 `make-s4-audio.ps1 -SceneId <id>`；Windows Chrome 实机走一遍至少一个主题。
+
+## 地图关联（2026-11-10）
+
+- 第 2 关起，`words` 步骤开头多 3 张复习卡（`step.review`，由 `lesson-build.cjs` 按 `route-build.cjs` 的规则写入课程层）：取前面关卡学过、本关 `modules.summary` 没有的词，最近学到的先复习；只点读，不发 `introduced`，不进填空、配对、结束页。第 1 关没有复习卡。
+- `lesson.bridge` 是关与关之间的过场（文字与读音，读音在 `audio/<id>/lesson/bridge-*.wav`）；复习与过场的资源 id 含 `.lesson.`，不改基础内容与 `lesson.baseVersion`。Mac 上过场读音是占位声音，birthday 走 `quiz-audio`。`make-s4-audio.ps1` 合成时跳过 `.lesson.review.`。
+- 走到 `end` 步骤时记录 `cleared`（该关通过）；结束页多一个「去下一站」，回到 `/?focus=<下一关>`。返回按钮为「← 回地图」。

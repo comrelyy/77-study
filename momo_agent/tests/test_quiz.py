@@ -259,12 +259,14 @@ class QuizCommandTest(unittest.TestCase):
             self.assertEqual(code, 0, out)
             self.assertEqual(sorted(t for t, _ in spoken), sorted(
                 ["I want a cup.", "I see a hat.", "Let us hug the teddy.", "I kick the ball.", "My cup is blue.",
-                 "I like the hat."]))
-            self.assertTrue(all(role == "bunny" for _, role in spoken))
+                 "I like the hat.", "The room is tidy. Surprise! It is a party!", "car", "spoon", "tomato"]))
+            # the route bridge and the review words borrowed from earlier scenes (absent from this temp repo) are
+            # synthesised too; the quiz lines themselves are spoken by the bunny
+            self.assertTrue(all(role == "bunny" for t, role in spoken if t.endswith(".") and t != "The room is tidy. Surprise! It is a party!"))
             self.assertNotIn("make-s4-audio.ps1", out)
             manifest = json.loads((root / "static/audio/s4-birthday-manifest.json").read_text("utf-8"))
             lesson = [e for e in manifest["entries"] if "/lesson/" in e["path"]]
-            self.assertEqual(len(lesson), 6)
+            self.assertEqual(len(lesson), 7)  # 6 quiz lines + the route bridge
             self.assertEqual(len({e["id"] for e in manifest["entries"]}), len(manifest["entries"]))
             # a second run finds nothing missing
             spoken.clear()
