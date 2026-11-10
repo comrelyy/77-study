@@ -110,7 +110,7 @@ export function renderDayMap(root,{levels,states,focusId=null,notice=null,enterS
     sheet.className='map-sheet'+(g.narrow?' narrow':'');sheet.style.aspectRatio=g.W+' / '+g.H;
     const art=node('div',undefined,'map-art');art.innerHTML=drawing(g,levels,states,rec,all);
     buttons=levels.map((lv,i)=>{
-      const st=states[i].state,b=button('',()=>{if(walking)return;sel=i;for(const [k,x] of buttons.entries())x.className='map-level'+(k===sel?' sel':'');drawCard();},'map-level'+(i===sel?' sel':''));
+      const st=states[i].state,b=button('',()=>{if(walking)return;sel=i;for(const [k,x] of buttons.entries())x.className='map-level'+(k===sel?' sel':'');drawCard();if(g.narrow)card.scrollIntoView?.({block:'end',behavior:reduceMotion?'instant':'smooth'});},'map-level'+(i===sel?' sel':''));
       b.setAttribute('data-state',st);b.setAttribute('aria-label','第'+(i+1)+'站 '+lv.title+'，'+{done:'已走过',current:'下一站',locked:'还没解锁'}[st]);
       b.style.left=pct(g.pts[i][0],g.W);b.style.top=pct(g.pts[i][1],g.H);b.style.setProperty?.('--map-band','var(--map-b'+lv.band+')');
       const ring=node('span',undefined,'map-ring');ring.append(image(lv.icon,'','map-icon'));
@@ -136,6 +136,8 @@ export function renderDayMap(root,{levels,states,focusId=null,notice=null,enterS
     requestAnimationFrame(step);
   }
   drawMap();drawCard();
+  // Narrow: the route is ~1500px tall, so bring the selected level to the middle of the screen.
+  if(g.narrow)buttons[sel]?.scrollIntoView?.({block:'center',behavior:'instant'});
   if(focus>=0&&focus===rec&&rec>0&&states[rec-1].state==='done')walk();
   if(typeof window!=='undefined')window.addEventListener('resize',()=>{if(walking)return;const narrow=sheet.clientWidth<620;if(narrow!==g.narrow)drawMap();else placeBubble();});
 }

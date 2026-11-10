@@ -62,3 +62,22 @@ test('locked scene url renders map with notice',()=>{
   assert.equal(root.querySelectorAll('.map-level').length,13);
   assert(!draw(['washing']).root.querySelector('.map-notice'));
 });
+function drawNarrow(cleared,opts={},width=358){
+  const doc=documentModel(),scrolls=[];globalThis.document={createElement:tag=>{const e=doc.createElement(tag);e.clientWidth=width;e.style.setProperty=()=>{};e.scrollIntoView=o=>scrolls.push([e,o]);return e;}};
+  const root=new Element('main');renderDayMap(root,{levels,states:levelStates(order,new Set(cleared)),enterScene:()=>{},playAudio:()=>{},...opts});
+  return {root,scrolls};
+}
+test('narrow: selected level is scrolled into view once, centred',()=>{
+  const {root,scrolls}=drawNarrow(order.slice(0,8));
+  assert(root.querySelector('.map-sheet').className.includes('narrow'));
+  assert.equal(scrolls.length,1);assert.equal(scrolls[0][0],root.querySelectorAll('.map-level')[8]);
+  assert.equal(scrolls[0][1].block,'center');
+  assert.equal(drawNarrow(order.slice(0,8),{reduceMotion:true}).scrolls[0][1].behavior,'instant');
+});
+test('narrow: tapping a level reveals the card action; desktop does not scroll',async()=>{
+  const {root,scrolls}=drawNarrow(['washing']);scrolls.length=0;
+  await root.querySelectorAll('.map-level')[0].fire();
+  assert.equal(scrolls.length,1);assert.equal(scrolls[0][0],root.querySelector('.map-card'));
+  const desk=drawNarrow(['washing'],{},900);assert(!desk.root.querySelector('.map-sheet').className.includes('narrow'));
+  await desk.root.querySelectorAll('.map-level')[0].fire();assert.equal(desk.scrolls.length,0);
+});
