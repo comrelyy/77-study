@@ -1,7 +1,7 @@
 """Command line: python -m momo_agent generate <topic> [--fixtures file] [--overwrite] | register | eval [--suite file]
   | quiz <id> [--fixtures file] | quiz-approve <id> | quiz-audio <id> | day-plan <topic> [--fixtures file] [--overwrite]
   | day-draw <dayId> [--fixtures file] | day-redraw <dayId> <word> [--note text] [--fixtures file] | day-picture-approve <dayId> <word>
-  | day-build <dayId> [--fixtures file]"""
+  | day-build <dayId> [--fixtures file] | day-approve <dayId>"""
 import argparse
 import asyncio
 import json
@@ -16,7 +16,7 @@ from momo_agent.evaluate import format_report, run_suite
 from momo_agent.guard import Budget, BudgetExceeded, TopicRejected, clean_topic
 from momo_agent.memory import MEMORY_FILE, Memory
 from momo_agent.llm import NoStructuredOutput, make_model
-from momo_agent import pictures, quiz as quiz_mod, tts
+from momo_agent import dayapprove, pictures, quiz as quiz_mod, tts
 from momo_agent.pipeline import LessonInvalid, SceneIdConflict, generate_lesson
 from momo_agent.quiz import write_quiz
 from momo_agent.register import register
@@ -210,7 +210,7 @@ def _draw_command(args, repo: Repo, work) -> int:
             work(day, make_model("illustrator", fixtures, budget))
         finally:  # pictures drawn before a failure are already on disk, so keep their records
             save_day(repo, day)
-            pictures._unapprove_placeholder(repo, args.day_id)
+            dayapprove.unapprove_day(repo, args.day_id)
     except BudgetExceeded:
         print("已达到模型费用上限，停止生成，已画好的图保留为待审。")
         print(budget.summary())
@@ -254,6 +254,7 @@ def day_picture_approve_command(args, repo: Repo) -> int:
         print(f"Error: {err}")
         return 1
     save_day(repo, day)
+    dayapprove.write_snapshot(repo, args.day_id)
     print(f"{args.word} 的图已通过。")
     return 0
 
@@ -297,6 +298,20 @@ def day_build_command(args, repo: Repo) -> int:
     return 0
 
 
+def day_approve_command(args, repo: Repo) -> int:
+    try:
+        dayapprove.approve_day(repo, args.day_id)
+    except FileNotFoundError:
+        print(f"找不到这一天：{args.day_id}，请先运行：python -m momo_agent day-plan <主题>")
+        return 1
+    except RuntimeError as err:
+        print(f"还不能批准 {args.day_id}：")
+        print(err)
+        return 1
+    print(f"{args.day_id} 已批准，孩子的地图上能看到了。")
+    return 0
+
+
 def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
     parser = argparse.ArgumentParser(prog="momo_agent")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -328,6 +343,9 @@ def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
     dpa = sub.add_parser("day-picture-approve", help="approve one drawn picture (a person's decision)")
     dpa.add_argument("day_id")
     dpa.add_argument("word")
+    da = sub.add_parser("day-approve", help="put a built day on the child's map (a person's decision)")
+    da.add_argument("day_id")
+
     db = sub.add_parser("day-build", help="generate the planned levels of a day and register it, not approved")
     db.add_argument("day_id")
     db.add_argument("--fixtures", help="fixtures json for the fake model: illustrator, and story/dialogue/quiz per scene id")
@@ -353,6 +371,8 @@ def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
         return day_redraw_command(args, repo)
     if args.command == "day-picture-approve":
         return day_picture_approve_command(args, repo)
+    if args.command == "day-approve":
+        return day_approve_command(args, repo)
     if args.command == "day-build":
         return day_build_command(args, repo)
     if args.command == "quiz-audio":

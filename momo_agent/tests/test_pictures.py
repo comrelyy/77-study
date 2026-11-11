@@ -6,7 +6,7 @@ import json
 import unittest
 from pathlib import Path
 
-from momo_agent import pictures
+from momo_agent import dayapprove, pictures
 from momo_agent.__main__ import main
 from momo_agent.dayplan import DayPlan, load_day, new_day_data, save_day
 from momo_agent.fake_model import FixtureModel
@@ -189,7 +189,7 @@ class UnapproveTest(unittest.TestCase):
     def test_no_entry_is_a_noop(self):
         with temp_repo() as repo:
             before = (repo.root / "static/content/catalog.json").read_bytes()
-            pictures._unapprove_placeholder(repo, "zoo-day")
+            dayapprove.unapprove_day(repo, "zoo-day")
             self.assertEqual((repo.root / "static/content/catalog.json").read_bytes(), before)
 
     def test_existing_entry_is_unapproved(self):
@@ -197,7 +197,7 @@ class UnapproveTest(unittest.TestCase):
             data = self.catalog(repo)
             data["days"].append({"id": "zoo-day", "title": "x", "approved": True, "route": []})
             (repo.root / "static/content/catalog.json").write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", "utf-8")
-            pictures._unapprove_placeholder(repo, "zoo-day")
+            dayapprove.unapprove_day(repo, "zoo-day")
             days = {d["id"]: d for d in self.catalog(repo)["days"]}
             self.assertFalse(days["zoo-day"]["approved"])
             self.assertTrue(days["everyday"]["approved"])

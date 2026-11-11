@@ -1,6 +1,5 @@
 """Draw word pictures a day needs but the repo lacks, in the house style; code checks them, a person approves each one."""
 import hashlib
-import json
 import re
 import xml.etree.ElementTree as ET
 
@@ -126,16 +125,6 @@ def _write(repo: Repo, word: str, svg: str) -> str:
 
 def _pending(day: dict) -> set[str]:
     return {w for w, entry in day["pictures"].items() if entry["status"] == "pending"}
-
-
-def _unapprove_placeholder(repo: Repo, day_id: str) -> None:
-    """Set the catalog entry of this day to not approved; nothing to do while the day is not registered (Task 6 replaces this)."""
-    path = repo.root / "static/content/catalog.json"
-    catalog = json.loads(path.read_text("utf-8"))
-    for entry in catalog.get("days", []):
-        if entry["id"] == day_id and entry.get("approved") is not False:
-            entry["approved"] = False
-            path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", "utf-8")
 
 
 async def draw_missing(day: dict, repo: Repo, model) -> list[str]:

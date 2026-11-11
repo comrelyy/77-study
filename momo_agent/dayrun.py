@@ -5,7 +5,7 @@ import asyncio
 import hashlib
 import json
 
-from momo_agent import pictures
+from momo_agent import dayapprove, pictures
 from momo_agent.dayplan import DayLevel, DayPlan, check_day_plan, load_day, save_day
 from momo_agent.guard import Budget
 from momo_agent.llm import make_model
@@ -111,7 +111,7 @@ def build_day(day_id: str, repo: Repo, fixtures: dict | None, budget: Budget) ->
     errors = check_day_plan(plan, repo, overwrite=True)  # the plan may have been edited by hand since day-plan
     if errors:
         raise LessonInvalid(errors)
-    pictures._unapprove_placeholder(repo, day_id)  # off the child's map before any level is touched
+    dayapprove.unapprove_day(repo, day_id)  # off the child's map before any level is touched
     regenerated = []
     try:
         drawn = asyncio.run(pictures.draw_missing(day, repo, make_model("illustrator", fixtures, budget)))
@@ -142,5 +142,5 @@ def build_day(day_id: str, repo: Repo, fixtures: dict | None, budget: Budget) ->
                 print(run_lesson_build(sid, repo), end="")
     finally:  # pictures and finished levels are on disk even after a failure, so keep their records
         save_day(repo, day)
-        pictures._unapprove_placeholder(repo, day_id)
+        dayapprove.unapprove_day(repo, day_id)
     return {"regenerated": regenerated, "drawn": drawn, "removed_pictures": removed}
