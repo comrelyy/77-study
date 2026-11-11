@@ -1,6 +1,7 @@
 import contextlib
 import io
 import json
+import re
 import unittest
 
 from momo_agent import dayapprove, pictures, quiz
@@ -204,6 +205,21 @@ class DayApproveTest(unittest.TestCase):
             self.assertEqual(build(repo)["regenerated"], [SCENES[2]])
             self.assertTrue(any("kite" in p for p in dayapprove.approval_problems(repo, "zoo-day")))
 
+    def test_redraw_refreshes_the_story_scenes_of_the_built_levels(self):
+        with temp_repo() as repo:
+            built(repo)
+            pack = repo.load_pack(SCENES[0])
+            kite = next(w["id"] for w in pack["words"] if w["text"] == "kite")
+            scene = next(s for s in pack["modules"]["story"] if s["mainWord"] == kite)
+            image = repo.root / "static" / next(a["path"] for a in pack["assets"] if a["id"] == scene["illustration"])
+            new_svg = PICTURES[2]["svg"].strip()
+            body = re.sub(r"^[\s\S]*?<svg\b[^>]*>", "", new_svg).removesuffix("</svg>")
+            self.assertNotIn(body, image.read_text("utf-8"))
+            fixtures = repo.root / "redraw.json"
+            fixtures.write_text(json.dumps({"illustrator": PICTURES[2:3]}), "utf-8")
+            code, text = run(repo, "day-redraw", "zoo-day", "kite", "--fixtures", str(fixtures))
+            self.assertEqual(code, 0, text)
+            self.assertIn(body, image.read_text("utf-8"))
 
     def test_new_quiz_of_a_day_level_takes_the_approval_back(self):
         with temp_repo() as repo:

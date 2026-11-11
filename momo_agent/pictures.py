@@ -145,7 +145,9 @@ async def redraw(day: dict, word: str, note: str | None, repo: Repo, model) -> N
     """Draw a picture of this day again (the note tells the model what to change); it needs a new review."""
     if word not in day["pictures"]:
         raise RuntimeError(f"{word} 不是这一天画的图，不能重画")
-    cn = next(c["cn"] for level in day["plan"]["levels"] for c in level["words"] if c["text"] == word)
+    cn = next((c["cn"] for level in day["plan"]["levels"] for c in level["words"] if c["text"] == word), None)
+    if cn is None:
+        raise RuntimeError(f"{word} 已不在这一天的计划里，不能重画（先运行 day-build 清掉不再用的图）")
     svg = await draw_word(word, cn, repo, model, note, exclude=_pending(day) | {word})
     day["pictures"][word] = {"status": "pending", "sha256": _write(repo, word, svg), "note": note}
 

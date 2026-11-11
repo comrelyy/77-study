@@ -21,7 +21,7 @@ from momo_agent.pipeline import LessonInvalid, SceneIdConflict, generate_lesson
 from momo_agent.quiz import write_quiz
 from momo_agent.register import register
 from momo_agent.repo import Repo
-from momo_agent.scenes import write_lesson
+from momo_agent.scenes import refresh_scene_images, write_lesson
 from momo_agent.vocab import LessonRefused
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -252,6 +252,11 @@ def day_draw_command(args, repo: Repo) -> int:
 def day_redraw_command(args, repo: Repo) -> int:
     def work(day, model):
         asyncio.run(pictures.redraw(day, args.word, args.note, repo, model))
+        listed = repo.scene_ids()
+        for level in day["plan"]["levels"]:  # built story scenes carry the old picture inside them
+            sid = level["scene_id"]
+            if sid in listed and (repo.root / "static/content" / f"{sid}.json").exists():
+                refresh_scene_images(sid, repo)
         print(f"{args.word} 已重画，待审。")
     return _draw_command(args, repo, work)
 
@@ -303,7 +308,7 @@ def day_build_command(args, repo: Repo) -> int:
         print("计划不再用、已删掉的待审图：" + "，".join(result["removed_pictures"]))
     print(f"{args.day_id} 已登记为未批准，孩子的地图上还看不到。下一步：")
     print("  1. 用一次性数据库打开审阅页逐关看过（不要用 data.sqlite3）：")
-    print("     .venv/bin/python app.py --db /tmp/preview.sqlite3 --port 8766，再打开 /dev/content-review.html")
+    print("     python3 app.py --preview --port 8766，再打开 /dev/content-review.html")
     print(f"  2. 每张新图看过后：python -m momo_agent day-picture-approve {args.day_id} <词>")
     print("  3. 每关题目看过后：python -m momo_agent quiz-approve <关>")
     print(f"  4. 整天看过后：python -m momo_agent day-approve {args.day_id}")

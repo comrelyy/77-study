@@ -272,6 +272,7 @@ class BuildDayTest(unittest.TestCase):
                 code = main(["day-build", "zoo-day", "--fixtures", str(fixtures)], root=repo.root)
             self.assertEqual(code, 0, out.getvalue())
             self.assertIn("day-approve zoo-day", out.getvalue())
+            self.assertIn("python3 app.py --preview --port 8766", out.getvalue())
             register(repo)
             cat = catalog(repo)
             for sid in SCENES:
