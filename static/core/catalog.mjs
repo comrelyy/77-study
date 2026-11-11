@@ -5,6 +5,7 @@ export function chooseScene(catalog,requested,scene=null){
   const id=catalog.mode==='release'?catalog.releasedScenes[0]:catalog.previewScene;if(!id||!catalog.scenes[id])throw Error('No validated scene is available');return {id,internal:false};
 }
 export function availableScenes(catalog){
-  const ids=catalog.mode==='development'?[...(catalog.previewScenes||[]),catalog.previewScene,...catalog.releasedScenes]:catalog.releasedScenes;
-  return [...new Set(ids.filter(Boolean))].filter(id=>Object.hasOwn(catalog.scenes,id));
+  const days=catalog.days||[],held=new Set(days.filter(d=>d.approved!==true).flatMap(d=>d.route.map(r=>r.id)));
+  const ids=catalog.mode==='development'?[...(catalog.previewScenes||[]),catalog.previewScene,...catalog.releasedScenes,...days.filter(d=>d.approved===true).flatMap(d=>d.route.map(r=>r.id))]:catalog.releasedScenes;
+  return [...new Set(ids.filter(Boolean))].filter(id=>!held.has(id)&&Object.hasOwn(catalog.scenes,id));
 }

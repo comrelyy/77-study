@@ -1,7 +1,12 @@
 import {availableScenes} from './catalog.mjs';
+export const flatRoute=catalog=>(catalog.days||[]).flatMap(d=>d.route.map(r=>({...r,dayId:d.id})));
+export function mapDays(catalog){
+  const open=availableScenes(catalog);
+  return (catalog.days||[]).filter(d=>d.approved===true).map(d=>({id:d.id,title:d.title,route:d.route.filter(r=>open.includes(r.id))})).filter(d=>d.route.length);
+}
 export function routeOrder(catalog){
-  const open=availableScenes(catalog),ids=(catalog.route||[]).map(r=>r.id);
-  return [...ids.filter(id=>open.includes(id)),...open.filter(id=>!ids.includes(id))];
+  const open=availableScenes(catalog),ids=mapDays(catalog).flatMap(d=>d.route.map(r=>r.id)),all=flatRoute(catalog).map(r=>r.id);
+  return [...ids,...open.filter(id=>!all.includes(id))];
 }
 export function levelStates(order,cleared,{unlockAll=false}={}){
   let seen=false;

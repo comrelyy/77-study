@@ -120,9 +120,11 @@ if(require.main===module){
   const file=path.join(__dirname,'static/content',id+'.json'),ovFile=path.join(__dirname,'content-lesson',id+'.json');
   const read=f=>JSON.parse(fs.readFileSync(f,'utf8'));
   const catalog=read(path.join(__dirname,'static/content/catalog.json'));
-  const packsById=Object.fromEntries((catalog.route||[]).map(r=>[r.id,read(path.join(__dirname,'static/content',r.id+'.json'))]));
+  const packsById=Object.fromEntries((catalog.days||[]).flatMap(d=>d.route).filter(r=>fs.existsSync(path.join(__dirname,'static/content',r.id+'.json'))).map(r=>[r.id,read(path.join(__dirname,'static/content',r.id+'.json'))]));
+  const daysDir=path.join(__dirname,'content-days'),extraBridges={};
+  if(fs.existsSync(daysDir))for(const f of fs.readdirSync(daysDir).filter(f=>f.endsWith('.json')))for(const l of read(path.join(daysDir,f)).plan?.levels||[])extraBridges[l.scene_id]={text:l.bridge_en,cn:l.bridge_cn};
   const previous=read(file),overlay=fs.existsSync(ovFile)?read(ovFile):null;
-  const {pack,warnings}=finalizeLesson(previous,overlay,previous,lessonLink(catalog,packsById,id));
+  const {pack,warnings}=finalizeLesson(previous,overlay,previous,lessonLink(catalog,packsById,id,extraBridges));
   const result=validate(pack,{exists:p=>p.includes('/lesson/')||fs.existsSync(path.join(__dirname,'static',p))});
   if(result.errors.length){console.error(result.errors.join('\n'));process.exit(1);}
   if(!same(pack,previous)){

@@ -113,7 +113,7 @@ test('built catalog packs carry lessons; only park and birthday have quiz/reply'
 });
 
 test('words step with review cards validates; missing review assets and bridge text mismatch are rejected',()=>{
-  const {lessonLink}=require('./route-build.cjs'),byId=Object.fromEntries(catalog.route.map(r=>[r.id,require('./static/content/'+r.id+'.json')]));
+  const {lessonLink}=require('./route-build.cjs'),byId=Object.fromEntries(catalog.days[0].route.map(r=>[r.id,require('./static/content/'+r.id+'.json')]));
   const fresh=()=>clone(finalizeLesson(park,null,null,lessonLink(catalog,byId,'park')).pack),errs=p=>validate(p,{exists:()=>true}).errors;
   assert.deepEqual(errs(fresh()),[]);
   let p=fresh(),r=p.lesson.steps[0].review[0];

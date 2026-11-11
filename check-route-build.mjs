@@ -5,7 +5,7 @@ const require=createRequire(import.meta.url);
 const {routeLinks,lessonLink}=require('./route-build.cjs'),bridges=require('./route-bridges.cjs');
 const {finalizeLesson,stripLesson}=require('./lesson-build.cjs'),{validate}=require('./static/core/model.js');
 const catalog=require('./static/content/catalog.json');
-const packsById=Object.fromEntries(catalog.route.map(r=>[r.id,require('./static/content/'+r.id+'.json')]));
+const packsById=Object.fromEntries(catalog.days[0].route.map(r=>[r.id,require('./static/content/'+r.id+'.json')]));
 const links=routeLinks(catalog,packsById);
 const texts=(id)=>links[id].review.map(r=>packsById[r.sceneId].words.find(w=>w.id===r.wordId).text);
 const clone=x=>JSON.parse(JSON.stringify(x));
@@ -15,14 +15,14 @@ test('review words follow the nearest-first rule',()=>{
   assert.deepEqual(texts('dressing'),['toothbrush','towel','soap']);
   assert.deepEqual(texts('park'),['seat','bag','ticket']);
   for(const w of ['hat','cup','ball','teddy'])assert(!texts('birthday').includes(w),w);
-  for(const {id} of catalog.route){
+  for(const {id} of catalog.days[0].route){
     const own=packsById[id].words.map(w=>w.text);
     assert(links[id].review.length<=3);
     assert(!texts(id).some(t=>own.includes(t)),id);
   }
 });
 test('every level has its bridge text',()=>{
-  assert.deepEqual(Object.keys(links),catalog.route.map(r=>r.id));
+  assert.deepEqual(Object.keys(links),catalog.days[0].route.map(r=>r.id));
   for(const id of Object.keys(links))assert.deepEqual(links[id].bridge,bridges[id],id);
   assert.equal(lessonLink(catalog,packsById,'nope'),null);
 });

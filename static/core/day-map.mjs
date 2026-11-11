@@ -1,4 +1,5 @@
 import {node,button,image} from './dom.mjs';
+import {flatRoute} from './route.mjs';
 
 const BANDS=['清晨','上午','中午','下午','傍晚','晚上'];
 const WHERE={done:'走过啦，可以再玩一次',current:'下一站',locked:'先走完前面的路才能来'};
@@ -16,7 +17,7 @@ export function clearedFrom(snapshot,pendingOps=[]){
 }
 
 export function mapLevels(order,catalog,packs){
-  const route=new Map((catalog.route||[]).map(r=>[r.id,r])),learned=new Set();
+  const route=new Map(flatRoute(catalog).map(r=>[r.id,r])),learned=new Set();
   return order.map(id=>{
     const pack=packs[id];
     if(!pack)return {id,title:route.get(id)?.title||id,band:route.get(id)?.band??0,icon:route.get(id)?.icon?'illustrations/'+route.get(id).icon+'.svg':null,unavailable:true,bridge:null,review:[],words:[]};
