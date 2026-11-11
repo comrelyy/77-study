@@ -31,26 +31,64 @@ def level_key(level: DayLevel) -> str:
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
 
+def _own_levels(day: dict, repo: Repo) -> set[str]:
+    """Every level this day has or had: the plan, the recorded keys and the day's route in the catalog."""
+    route = {level_id for level_id, owner in repo.day_of_scene().items() if owner == day["dayId"]}
+    return {level["scene_id"] for level in day["plan"]["levels"]} | set(day["levels"]) | route
+
+
+def _words_used_elsewhere(day: dict, repo: Repo) -> set[str]:
+    """Words of other days' plans and of every pack that is not one of this day's levels."""
+    words = set()
+    for plan_file in (repo.root / "content-days").glob("*.json"):
+        other = json.loads(plan_file.read_text("utf-8"))
+        if other["dayId"] != day["dayId"]:
+            words |= {card["text"] for level in other["plan"]["levels"] for card in level["words"]}
+    own = _own_levels(day, repo)
+    for pack_file in (repo.root / "static/content").glob("*.json"):
+        if pack_file.name != "catalog.json" and pack_file.stem not in own:
+            words |= {w["text"] for w in json.loads(pack_file.read_text("utf-8")).get("words", [])}
+    return words
+
+
 def _remove_dropped_pictures(day: dict, repo: Repo) -> list[str]:
-    """Delete pictures this day drew that are still pending and that the plan no longer uses; approved ones stay."""
+    """Delete pictures this day drew that are still pending and that the plan no longer uses; approved ones stay.
+
+    A dropped word another day or theme still uses keeps its file; only this day's record of it goes."""
     used = {card["text"] for level in day["plan"]["levels"] for card in level["words"]}
+    dropped = [w for w, entry in day["pictures"].items() if entry["status"] == "pending" and w not in used]
+    elsewhere = _words_used_elsewhere(day, repo) if dropped else set()
     removed = []
-    for word, entry in list(day["pictures"].items()):
-        if entry["status"] == "pending" and word not in used:
+    for word in dropped:
+        del day["pictures"][word]
+        if word not in elsewhere:
             (repo.root / f"static/illustrations/{word}.svg").unlink(missing_ok=True)
-            del day["pictures"][word]
             removed.append(word)
     return removed
 
 
-def _register_day(plan: DayPlan, repo: Repo) -> None:
-    """List every level and the day (in plan order) in the catalog; the day is never approved here."""
+def _register_day(day: dict, plan: DayPlan, repo: Repo) -> None:
+    """List every level and the day (in plan order) in the catalog; the day is never approved here.
+
+    Levels the plan no longer has leave scenes and developmentScenes (their files stay) and are recorded in
+    droppedLevels, so register() never puts them in previewScenes."""
     path = repo.root / "static/content/catalog.json"
     catalog = json.loads(path.read_text("utf-8"))
-    for level in plan.levels:
-        catalog["scenes"][level.scene_id] = f"content/{level.scene_id}.json"
-        if level.scene_id not in catalog["developmentScenes"]:
-            catalog["developmentScenes"].append(level.scene_id)
+    planned = [level.scene_id for level in plan.levels]
+    old = next((d for d in catalog.get("days", []) if d["id"] == plan.day_id), {"route": []})
+    for sid in [r["id"] for r in old["route"]] + list(day["levels"]):
+        if sid not in planned:
+            catalog["scenes"].pop(sid, None)
+            catalog["developmentScenes"] = [s for s in catalog["developmentScenes"] if s != sid]
+            day["levels"].pop(sid, None)
+            if sid not in day.setdefault("droppedLevels", []):
+                day["droppedLevels"].append(sid)
+    if "droppedLevels" in day:
+        day["droppedLevels"] = [s for s in day["droppedLevels"] if s not in planned]
+    for sid in planned:
+        catalog["scenes"][sid] = f"content/{sid}.json"
+        if sid not in catalog["developmentScenes"]:
+            catalog["developmentScenes"].append(sid)
     entry = {"id": plan.day_id, "title": plan.title, "approved": False,
              "route": [{"id": lv.scene_id, "band": lv.band, "icon": lv.words[0].text} for lv in plan.levels]}
     days = catalog.setdefault("days", [])
@@ -73,6 +111,7 @@ def build_day(day_id: str, repo: Repo, fixtures: dict | None, budget: Budget) ->
     errors = check_day_plan(plan, repo, overwrite=True)  # the plan may have been edited by hand since day-plan
     if errors:
         raise LessonInvalid(errors)
+    pictures._unapprove_placeholder(repo, day_id)  # off the child's map before any level is touched
     regenerated = []
     try:
         drawn = asyncio.run(pictures.draw_missing(day, repo, make_model("illustrator", fixtures, budget)))
@@ -90,7 +129,7 @@ def build_day(day_id: str, repo: Repo, fixtures: dict | None, budget: Budget) ->
             write_lesson(pack, repo)
             day["levels"].pop(sid, None)
             regenerated.append(sid)
-        _register_day(plan, repo)  # before the pictures: load_pack finds a level through the catalog
+        _register_day(day, plan, repo)  # before the pictures: load_pack finds a level through the catalog
         for level in plan.levels:
             refresh_scene_images(level.scene_id, repo)
         for level in plan.levels:  # every level: a neighbour's change can move its bridge and review words

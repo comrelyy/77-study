@@ -4,10 +4,12 @@ import io
 import json
 import re
 import unittest
+from unittest import mock
 
 from momo_agent import pictures
 from momo_agent.__main__ import main
 from momo_agent.dayplan import DayPlan, load_day, new_day_data, save_day
+from momo_agent import dayrun
 from momo_agent.dayrun import build_day, level_context, level_key
 from momo_agent.dialogue import dialogue_request
 from momo_agent.guard import Budget
@@ -81,6 +83,16 @@ def set_word(repo: Repo, level: int, index: int, text: str) -> None:
 
 
 SCENES = [level["scene_id"] for level in ZOO["levels"]]
+
+
+def day_entry(repo: Repo) -> dict:
+    return next(d for d in catalog(repo)["days"] if d["id"] == "zoo-day")
+
+
+def set_approved(repo: Repo, approved: bool) -> None:
+    cat = catalog(repo)
+    next(d for d in cat["days"] if d["id"] == "zoo-day")["approved"] = approved
+    (repo.root / "static/content/catalog.json").write_text(json.dumps(cat, ensure_ascii=False, indent=2) + "\n", "utf-8")
 
 
 class LevelHelpersTest(unittest.TestCase):
@@ -205,6 +217,50 @@ class BuildDayTest(unittest.TestCase):
             day = load_day(repo, "zoo-day")
             self.assertNotIn("kite", day["pictures"])
             self.assertEqual(day["pictures"]["drum"]["status"], "approved")
+
+    def test_approved_day_leaves_the_map_before_any_level_is_rebuilt(self):
+        with temp_repo() as repo:
+            saved_day(repo)
+            build(repo)
+            set_approved(repo, True)
+            set_word(repo, 2, 0, WORDS[20])
+            seen = []
+            real = dayrun.generate_from_plan
+
+            async def spy(*args, **kwargs):
+                seen.append(day_entry(repo)["approved"])
+                return await real(*args, **kwargs)
+            with mock.patch("momo_agent.dayrun.generate_from_plan", new=spy):
+                self.assertEqual(build(repo)["regenerated"], [SCENES[2]])
+            self.assertEqual(seen, [False])
+
+    def test_dropped_pending_picture_another_day_plans_keeps_its_file(self):
+        with temp_repo() as repo:
+            saved_day(repo, WORDS[:19] + ["kite"])
+            build(repo, drawings=1)
+            other = json.loads(json.dumps(ZOO).replace("zoo-", "park-"))
+            other["levels"][0]["words"][0]["text"] = "kite"
+            save_day(repo, new_day_data(DayPlan.model_validate(other), "公园"))
+            set_word(repo, 4, 3, WORDS[20])
+            self.assertEqual(build(repo)["removed_pictures"], [])
+            self.assertTrue((repo.root / "static/illustrations/kite.svg").exists())
+            self.assertNotIn("kite", load_day(repo, "zoo-day")["pictures"])
+
+    def test_renamed_level_leaves_the_catalog_and_stays_off_the_map(self):
+        with temp_repo() as repo:
+            saved_day(repo)
+            build(repo)
+            day = load_day(repo, "zoo-day")
+            day["plan"]["levels"][4]["scene_id"] = "zoo-night"
+            save_day(repo, day)
+            self.assertEqual(build(repo)["regenerated"], ["zoo-night"])
+            register(repo)
+            cat = catalog(repo)
+            for listing in ("scenes", "developmentScenes", "previewScenes"):
+                self.assertNotIn(SCENES[4], cat[listing], listing)
+            self.assertIn("zoo-night", cat["developmentScenes"])
+            self.assertNotIn(SCENES[4], load_day(repo, "zoo-day")["levels"])
+            self.assertTrue((repo.root / f"static/content/{SCENES[4]}.json").exists())  # files are kept
 
     def test_cli_build_then_register_keeps_day_levels_out_of_preview(self):
         with temp_repo() as repo:
