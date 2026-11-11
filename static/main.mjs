@@ -1,4 +1,4 @@
-import {loadReviewSources} from './core/review-sources.mjs?v=themes-20261031';
+import {loadReviewSources} from './core/review-sources.mjs?v=days-zoo-20261111';
 import {App} from './core/app.mjs?v=day-map-20261110';
 import {clearedFrom,mapLevels} from './core/day-map.mjs?v=days-zoo-20261111';
 import {diaryDays,renderDiary} from './core/diary.mjs?v=days-zoo-20261111';
@@ -8,7 +8,7 @@ import {PersistentStore} from './core/persistent-store.mjs?v=reload-handover-202
 import {BrowserActivity} from './core/browser-activity.mjs?v=reload-handover-20261103';
 import {node,button} from './core/dom.mjs';
 import {missingBootAssets} from './core/boot-assets.mjs';
-import {chooseScene,availableScenes} from './core/catalog.mjs?v=themes-20261031';
+import {chooseScene,availableScenes} from './core/catalog.mjs?v=days-zoo-20261111';
 import {resetPreviewLeftovers} from './core/preview-reset.mjs?v=preview-reset-20261110';
 async function json(path){const response=await fetch(path,{cache:'no-store'});if(!response.ok)throw Error('内容文件读取失败');return response.json();}
 async function loadPack(catalog,id){

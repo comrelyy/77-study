@@ -50,3 +50,15 @@ test('single approved day renders exactly like before',()=>{
   assert.equal(tabs().length,0);assert.equal(root.querySelectorAll('button').filter(b=>!b.className.includes('map-')).length,0);
   assert.equal(root.querySelectorAll('.map-level').length,13);assert.equal(h1(),'第 1 天 · 普通的一天');
 });
+test('a playable level in no day is the last station of the last page, and the diary does not end before it',()=>{
+  const extra={...two,scenes:{...two.scenes,extra:base.scenes.picnic},previewScenes:[...two.previewScenes,'extra']};
+  const {days,root,bubble}=draw(extra,ALL);
+  assert.deepEqual(days.at(-1).levels.map(l=>l.id),['zoo-gate','zoo-lion','extra']);assert.equal(days.at(-1).done,false);
+  const stops=root.querySelectorAll('.map-level');assert.equal(stops.length,3);assert.equal(stops[2].attributes['data-state'],'current');
+  assert.notEqual(bubble()?.textContent,END);
+});
+test('clicking a day tab during the page-turn delay cancels the turn',async()=>{
+  const d=draw(two,EVERY,{focusId:'zoo-gate',reduceMotion:false,turnDelay:10});
+  await d.tabs()[0].fire();await new Promise(r=>setTimeout(r,40));
+  assert.equal(d.h1(),'第 1 天 · 普通的一天');
+});

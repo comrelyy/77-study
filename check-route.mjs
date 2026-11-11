@@ -41,3 +41,8 @@ test('unapproved days stay off the map and cannot be entered',()=>{
   assert.deepEqual(routeOrder(ok),[...ORDER,'zoo-gate']);assert(availableScenes(ok).includes('zoo-gate'));
   assert.deepEqual(flatRoute(zoo).map(r=>r.dayId).at(-1),'zoo');
 });
+test('modules changed for the days feature are imported with the new cache version',async()=>{
+  const {readdir,readFile}=await import('node:fs/promises');const dir=new URL('./static/',import.meta.url),files=(await readdir(dir,{recursive:true})).filter(f=>f.endsWith('.mjs')&&!f.startsWith('content'));
+  const bad=[];for(const f of files)for(const m of (await readFile(new URL(f,dir),'utf8')).matchAll(/from\s+'([^']*\/(?:catalog|route|day-map|diary)\.mjs[^']*)'/g))if(!m[1].endsWith('?v=days-zoo-20261111'))bad.push(f+': '+m[1]);
+  assert.deepEqual(bad,[]);
+});

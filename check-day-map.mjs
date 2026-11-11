@@ -90,3 +90,7 @@ test('a pack that failed to load is a disabled unavailable stop and later stops 
   await go().fire();
   await root.querySelectorAll('.map-level')[1].fire();assert.equal(go().textContent,'还没解锁');assert(go().disabled);
 });
+test('drawing the map again keeps one resize handler',()=>{
+  const listeners=[];globalThis.window={addEventListener:(n,f)=>listeners.push([n,f]),removeEventListener:(n,f)=>{const i=listeners.findIndex(l=>l[0]===n&&l[1]===f);if(i>=0)listeners.splice(i,1);}};
+  try{draw([]);draw([]);draw(['washing']);assert.equal(listeners.filter(l=>l[0]==='resize').length,1);}finally{delete globalThis.window;}
+});

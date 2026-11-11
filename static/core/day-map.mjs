@@ -4,6 +4,7 @@ import {flatRoute} from './route.mjs?v=days-zoo-20261111';
 const BANDS=['清晨','上午','中午','下午','傍晚','晚上'];
 const WHERE={done:'走过啦，可以再玩一次',current:'下一站',locked:'先走完前面的路才能来'};
 const GO={done:'再玩一次',current:'出发',locked:'还没解锁'};
+let onResize=null;
 const GOODNIGHT='晚安，Momo。今天的路都走完啦！';
 const SPEAKER='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M18.5 6.5a8 8 0 0 1 0 11"/></svg>';
 const LOCK='<svg viewBox="-10 -12 20 26"><path d="M-6 0v-5a6 6 0 0 1 12 0v5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="-8" y="0" width="16" height="12" rx="3" fill="#fffaf0" stroke="currentColor" stroke-width="2"/></svg>';
@@ -142,5 +143,5 @@ export function renderDayMap(root,{levels,states,focusId=null,notice=null,enterS
   // Narrow: the route is ~1500px tall, so bring the selected level to the middle of the screen.
   if(g.narrow)buttons[sel]?.scrollIntoView?.({block:'center',behavior:'instant'});
   if(focus>=0&&focus===rec&&rec>0&&states[rec-1].state==='done')walk();
-  if(typeof window!=='undefined')window.addEventListener('resize',()=>{if(walking)return;const narrow=sheet.clientWidth<620;if(narrow!==g.narrow)drawMap();else placeBubble();});
+  if(typeof window!=='undefined'){window.removeEventListener('resize',onResize);onResize=()=>{if(walking)return;const narrow=sheet.clientWidth<620;if(narrow!==g.narrow)drawMap();else placeBubble();};window.addEventListener('resize',onResize);}// one map on screen: one handler
 }
