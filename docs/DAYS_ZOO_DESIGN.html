@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Momo 的日记 · 设计</title>
+<style>
+  :root{
+    --bg:#f6f7fb; --panel:#ffffff; --ink:#1a1d29; --muted:#5b6172; --line:#e6e8f0;
+    --brand:#7c3aed; --brand-soft:#f3eefe; --ok:#0d9488; --warn:#d97706; --bad:#dc2626;
+    --ok-soft:#e6f7f4; --warn-soft:#fdf3e3; --bad-soft:#fdeaea;
+    --shadow:0 1px 2px rgba(20,20,40,.04),0 8px 24px rgba(20,20,40,.06);
+    --grad:linear-gradient(120deg,#7c3aed,#c026d3); --code:#f3f4f9;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#0d0f17; --panel:#161a26; --ink:#eceefb; --muted:#9aa1b8; --line:#252a3a;
+      --brand:#a78bfa; --brand-soft:#1e1a33; --ok:#2dd4bf; --warn:#fbbf24; --bad:#f87171;
+      --ok-soft:#0f2b28; --warn-soft:#2e2410; --bad-soft:#2e1618;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.5);
+      --grad:linear-gradient(120deg,#a78bfa,#e879f9); --code:#10131d;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0d0f17; --panel:#161a26; --ink:#eceefb; --muted:#9aa1b8; --line:#252a3a;
+    --brand:#a78bfa; --brand-soft:#1e1a33; --ok:#2dd4bf; --warn:#fbbf24; --bad:#f87171;
+    --ok-soft:#0f2b28; --warn-soft:#2e2410; --bad-soft:#2e1618;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.5);
+    --grad:linear-gradient(120deg,#a78bfa,#e879f9); --code:#10131d;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+  a{color:var(--brand);text-decoration:none}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--code);padding:1px 6px;border-radius:5px;font-size:.9em;border:1px solid var(--line);overflow-wrap:anywhere}
+  header.top{background:var(--grad);color:#fff;padding:46px 0 38px}
+  .eyebrow{font-size:13px;letter-spacing:.14em;opacity:.9;font-weight:600}
+  header.top h1{margin:.35em 0 .2em;font-size:clamp(24px,4vw,36px);line-height:1.2;font-weight:800}
+  header.top p{margin:.2em 0 0;font-size:16px;max-width:64ch;opacity:.95}
+  .theme-toggle{position:fixed;top:12px;right:12px;z-index:20;background:var(--panel);color:var(--ink);
+    border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer;box-shadow:var(--shadow);font-weight:600}
+  nav.toc{margin:24px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+  nav.toc a{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px}
+  main{padding:30px 0 70px}
+  section{margin:0 0 40px;scroll-margin-top:16px}
+  h2{font-size:21px;margin:0 0 10px;font-weight:800}
+  h3{font-size:17px;font-weight:800;margin:22px 0 8px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:16px 18px;overflow-wrap:anywhere}
+  .grid{display:grid;gap:14px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .grid>*{min-width:0}
+  @media (max-width:760px){.g2{grid-template-columns:1fr}}
+  ul{padding-left:20px;margin:6px 0}
+  li{margin:3px 0}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel);box-shadow:var(--shadow)}
+  th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--brand-soft);color:var(--brand);font-weight:800;font-size:13px;white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  .callout{border-left:4px solid var(--brand);background:var(--brand-soft);border-radius:0 12px 12px 0;padding:12px 16px;margin:14px 0}
+  .callout.warn{border-color:var(--warn);background:var(--warn-soft)}
+  .callout.bad{border-color:var(--bad);background:var(--bad-soft)}
+  .callout .h{font-weight:800;margin-bottom:4px;display:block}
+  .tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:700;border:1px solid}
+  .t-user{color:var(--ok);border-color:var(--ok);background:var(--ok-soft)}
+  .t-mine{color:var(--warn);border-color:var(--warn);background:var(--warn-soft)}
+  footer{color:var(--muted);font-size:13px;padding:0 0 40px}
+</style>
+</head>
+<body>
+<button class="theme-toggle" id="themeBtn" type="button">🌓 主题</button>
+<header class="top"><div class="wrap">
+  <div class="eyebrow">设计文档 · 2026-11-11 · 77-study（墨墨星球）</div>
+  <h1>Momo 的日记：走完一天，翻到「去动物园」</h1>
+  <p>现在的地图是「Momo 的一天」，13 关走完就结束了。这次让地图可以一天一页往后翻：第 1 天就是现有 13 关；第 2 天围绕一件特别的事——去动物园。新的一天由 momo_agent 整天生成（含补画缺的图），用户审完才出现在地图上。做到孩子能在地图上从第 1 天翻到第 2 天、把动物园这天玩完。</p>
+  <nav class="toc">
+    <a href="#why">1 为什么</a><a href="#goals">2 目标</a><a href="#now">3 现状</a><a href="#map">4 地图</a><a href="#agent">5 生成流程</a><a href="#review">6 审核</a><a href="#calls">7 我的决定</a><a href="#builder">8 留给实现者</a><a href="#accept">9 验收</a>
+  </nav>
+</div></header>
+<main><div class="wrap">
+
+<section id="why">
+  <h2>1. 为什么做</h2>
+  <div class="panel">
+    <p>13 关全部通过后，地图只显示「Momo 的一天走完啦」，后面没有路了。用户希望内容能一直往后长，且主要靠 momo_agent 生成、用户审核，而不是每一关都手工写。</p>
+    <p><b>成功的样子</b>：孩子在第 1 天的「睡前」关通过后，纸页翻过去，看到第 2 天「去动物园」的新地图，Momo 站在第一站；一路玩到这天结束，Momo 回家睡觉。顶部日记本标签能翻回第 1 天重玩。</p>
+  </div>
+</section>
+
+<section id="goals">
+  <h2>2. 目标 / 非目标 / 反目标</h2>
+  <div class="grid g2">
+    <div class="panel"><h3 style="margin-top:0">目标</h3><ul>
+      <li><span class="tag t-user">用户定</span> 扩展方式：一天一张地图，往后翻「第 N 天」；第 1 天＝现有 13 关原样。</li>
+      <li><span class="tag t-user">用户定</span> 新的一天以「一件特别的事」为主线；第一个是「去动物园」。</li>
+      <li><span class="tag t-user">用户定</span> 内容由 momo_agent 生成，用户审。</li>
+      <li><span class="tag t-user">用户定</span> 缺图由 momo_agent 补画，作为生成流程里的一步。</li>
+      <li><span class="tag t-user">用户定</span> 地图形式选 A：一天一页，顶部日记本标签，走完一天翻页。</li>
+      <li><span class="tag t-user">用户定</span> 本轮完成线：孩子能在地图上从第 1 天翻到第 2 天并玩完动物园这天（开发模式）。</li>
+    </ul></div>
+    <div class="panel"><h3 style="margin-top:0">非目标</h3><ul>
+      <li>不正式发布：<code>releasedScenes</code> 仍为空。注意孩子机器本身就是开发模式，所以与孩子隔离靠的是 §6 的「批准一天」闸门，不靠开发模式。</li>
+      <li>不做第 3 天；流程能复用即可，不为多天批量生产做额外工具。</li>
+      <li>不改第 1 天的关卡顺序、内容、过场与复习词。</li>
+      <li>不做分支路线、星级、计时排名（沿用地图设计的非目标）。</li>
+      <li>不做自动出图的模型接入（如图像生成接口）；图仍是代码手写的 SVG，只是改由 agent 写。</li>
+    </ul>
+    <h3>反目标（做到了也算失败）</h3><ul>
+      <li>没审过的内容或图出现在孩子能走到的地图上。</li>
+      <li>新图明显不是现有铅笔线＋水彩风格，和第 1 天放在一起很违和。</li>
+      <li>已有的通关记录、解锁状态、断点续玩因为改成多天而丢失或错乱。</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="now">
+  <h2>3. 现状（实现依据）</h2>
+  <div class="tablewrap"><table>
+    <tr><th>部分</th><th>现在怎么做</th><th>位置</th></tr>
+    <tr><td>地图路线</td><td><code>catalog.route</code>：13 项 <code>{id, band, icon}</code>，band 0–5 是时段；地图组件按 route 画一条路</td><td><code>static/content/catalog.json</code>、<code>static/core/day-map.mjs</code>、<code>static/core/route.mjs</code></td></tr>
+    <tr><td>解锁</td><td>第 1 关始终开；第 n 关在第 n−1 关通过（cleared）后开；通过的关可重玩</td><td><code>route.mjs</code> 的 <code>levelStates/canEnter</code>；后端 <code>cleared</code> 事件</td></tr>
+    <tr><td>全部走完</td><td>没有推荐站，显示 <code>GOODNIGHT</code>「晚安，Momo。今天的路都走完啦！」</td><td><code>day-map.mjs:6</code></td></tr>
+    <tr><td>过场与复习词</td><td>过场台词手写在 <code>route-bridges.cjs</code>；复习词构建时按 route 计算（前面学过、本关没有的 3 个，越近越先），写入课程层，可剥离重算</td><td><code>route-bridges.cjs</code>、<code>route-build.cjs</code></td></tr>
+    <tr><td>momo_agent 生成</td><td><code>generate &lt;主题&gt;</code> 一次一关：选 4 个词 → 故事 → 对话 → 组装校验，自查不过最多重写 2 次；<code>quiz</code> 出题（reviewed=false），<code>quiz-approve</code> 由人标记通过；<code>quiz-audio</code> 合成读音；<code>register</code> 把生成的关加进 <code>previewScenes</code></td><td><code>momo_agent/</code></td></tr>
+    <tr><td>词与图</td><td>选词只能用已有插画的词（<code>repo.illustrated_words()</code>），凑不够 4 个有图的词就拒绝生成。可当词用的图 38 张（排除角色图 momo/bunny/fox/turtle、wave 和带连字符的文件），动物只有 bird；fox、bunny、turtle 是角色图（360 viewBox），不是词图</td><td><code>momo_agent/vocab.py</code>、<code>static/illustrations/</code></td></tr>
+    <tr><td>插画规范</td><td>每个词一张 <code>120×120</code> SVG：根 <code>&lt;svg viewBox="0 0 120 120" fill="none"&gt;</code>，内含一个 <code>&lt;g stroke="#75604c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"&gt;</code>，水彩色块用一组柔和色，现有词图共约 32 种颜色（色板须从现有<b>词图</b>统计，不含角色图）。参考源 <code>draw-content-assets.cjs</code></td><td><code>static/illustrations/*.svg</code></td></tr>
+    <tr><td>故事场景图</td><td>agent 已能自动拼：固定地面背景＋嵌入词图，不需要另画</td><td><code>momo_agent/scenes.py</code></td></tr>
+    <tr><td>上地图的口径</td><td><code>routeOrder</code> 会把所有能进入（previewScenes）但不在 route 里的关接到地图末尾；所以 <code>register</code> 加进 previewScenes 就等于上了地图，审阅页也按 previewScenes 列关</td><td><code>route.mjs</code>、<code>momo_agent/register.py</code>、<code>static/dev/content-review.mjs</code></td></tr>
+    <tr><td>孩子用的模式</td><td>家里孩子实际运行的也是开发模式（<code>catalog.mode=development</code>，<code>releasedScenes</code> 为空，第 1 天也走 previewScenes）；generate 提示审完后把 <code>static/</code> 拷到孩子机器上。所以「开发模式可见」≠ 与孩子隔离</td><td><code>catalog.json</code>、<code>momo_agent/__main__.py:79</code></td></tr>
+    <tr><td>预览</td><td><code>python app.py --preview</code> 每次启动用临时库并清浏览器旧记录（2026-11-10 已合入）</td><td><code>app.py</code></td></tr>
+  </table></div>
+</section>
+
+<section id="map">
+  <h2>4. 地图：一天一页（方案 A）</h2>
+  <div class="panel">
+    <h3 style="margin-top:0">4.1 数据</h3>
+    <ul>
+      <li>目录里把「一条路」改为「按天分组」：每天 <code>{id, title, route:[{id, band, icon}]}</code>。第 1 天 id 例如 <code>everyday</code>、标题「普通的一天」，route 就是现在的 13 项，顺序不变。</li>
+      <li>通关记录仍按关（sceneId）记，<b>不需要改后端和数据库</b>；已有的通关状态原样有效。</li>
+      <li>一个关只能属于一天（构建时校验）。</li>
+    </ul>
+    <h3>4.2 解锁</h3>
+    <ul>
+      <li>天与天首尾相接，当作一条长路线判断解锁：第 N+1 天第 1 关在第 N 天最后一关通过后解锁。现有「一关一关」的规则不变。</li>
+      <li>复习词按「所有天依次连起来」的顺序计算，所以第 2 天第 1 关会复习第 1 天末尾学过的词。第 1 天各关的复习词结果不变。</li>
+    </ul>
+    <h3>4.3 看到的样子</h3>
+    <ul>
+      <li>地图顶部一排日记本标签：「第 1 天 ✓」「第 2 天 · 去动物园」。只显示已经解锁的天；最后一个可见标签后面放一个灰色「下一天…」占位（没有更多天时不放）。</li>
+      <li>打开首页时默认翻到「当前天」：第一个还有未通过关的天；全部走完则停在最后一天。</li>
+      <li>每张地图仍是清晨→夜晚的时段上色，路线终点仍是回家睡觉的小房子和月亮；Momo 站在推荐站，头顶对话框是过场台词。地图组件按当天的 route 画，画法不变。</li>
+      <li><b>翻页</b>：一天的最后一关通过、回到地图时，先在当天终点显示晚安，然后纸页翻到下一天（若有）。减少动态时直接切换。没有下一天时显示「Momo 的日记写到这里啦，新的一天还在写」。</li>
+      <li>点标签可翻回任意已解锁的天重玩；重玩不撤销通过。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="agent">
+  <h2>5. 生成流程：momo_agent 生成一整天</h2>
+  <div class="panel">
+    <p>用户给一个题目（「去动物园」），agent 依次跑下面几步。每一步都沿用现有做法：模型写草稿 → 程序检查 → 不过就把问题告诉模型重写，最多 2 次 → 还不过就停下并说明原因。</p>
+    <h3 style="margin-top:0">5.1 拆一天（新）</h3>
+    <ul>
+      <li>输出一份「一天计划」：天的 id 与中文标题；5–7 个关，按「出发 → 路上 → 到了 → 玩 → 回家」排序；每关给 sceneId、中文标题、时段 band（从早到晚、不倒退）、4 个具体可指认的词（英文＋中文）、一句到达时的过场台词（英文＋中文，像现有 <code>route-bridges.cjs</code> 那样交代上一站到这一站）。</li>
+      <li>第 1 关的过场负责「早上起床，今天要去……」；没有单独的起床/睡前关（见 §7 决定 1）。</li>
+      <li>允许用已有插画的词（如 bus、ticket、banana、bird），也允许新词；新词交给下一步画图。一天内词不重复；和以前的天重复的词允许但要少。</li>
+      <li>禁止用角色名做词：momo、bunny、fox、turtle（以及其他在 <code>NOT_WORDS</code> 里的名字），否则画词图会覆盖角色图。计划检查拦住，让模型换词。</li>
+      <li>计划先写盘，用户可以直接改计划文件再继续往下跑。已生成过的天再改计划时，只重跑计划内容有变化的关（及新增的缺图），其余关保留。</li>
+    </ul>
+    <h3>5.2 补图（新）</h3>
+    <ul>
+      <li>对计划里所有没有插画的词，画图 agent 按 §3 的插画规范写 120×120 SVG。提示里给它几张现有插画原文作样例。</li>
+      <li>程序检查（不过则重画，最多 2 次）：根节点和 viewBox 符合规范；只用 path/circle/ellipse/rect/line/polyline/polygon/g 等基础形状；不得有 style、class、script、image、外链、text；颜色只能来自现有插画用过的色板（警告即失败）；描边色和线宽与规范一致；文件大小在合理上限内；能被浏览器渲染出非空图形。</li>
+      <li>新图写进 <code>static/illustrations/&lt;词&gt;.svg</code>，同时在一份插画审核清单里记为「待审」。待审的图可以被后续生成步骤使用，但所在的天在图通过前不能上地图（§6）。</li>
+      <li>图被退回时，用户用一条命令重画单张，可附一句意见（如「长颈鹿脖子太短」），意见会带进重画提示。</li>
+    </ul>
+    <h3>5.3 逐关生成</h3>
+    <ul>
+      <li>每关沿用现有 <code>generate</code> 的故事、对话、组装、校验，但词直接取自一天计划（不再自己选词），并告诉它这一天的前后关，让故事顺着这一天走。</li>
+      <li>然后每关跑出题（reviewed=false）与读音合成，与现在一样。</li>
+    </ul>
+    <h3>5.4 挂到地图</h3>
+    <ul>
+      <li>把这一天写进目录的天列表，过场台词写进按天的过场源，重跑现有的课程构建（过场读音、复习词）。</li>
+      <li>天在用户批准前不出现在地图上（§6）。为此要把「能加载」和「上地图」拆开：未批准天的关可以被审阅页和开发入口加载，但不能被 <code>routeOrder</code> 接到地图末尾，也不能从孩子的首页走到。地图只画「已批准的天」里的关。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="review">
+  <h2>6. 审核</h2>
+  <div class="panel">
+    <ul>
+      <li><b>一页审一天</b>：在现有逐幕审阅页（<code>/dev/content-review.html</code>）上加按天查看：这一天的计划、所有新图（大图并排，标注待审/通过）、每关的故事、对话、题目，能试听读音。</li>
+      <li><b>批准是人的决定</b>，沿用 <code>quiz-approve</code> 的做法用命令完成：可以逐张通过图、逐关通过题目；最后「批准这一天」——只有这一天所有新图都通过、所有关的题目都通过时才允许，批准后这一天才出现在地图上。</li>
+      <li>任何一处被重新生成（改计划、重画图、重生成某关），这一天回到未批准状态。</li>
+      <li>批准状态写在 <code>static/</code> 里随内容一起走（拷到孩子机器上的就是这份），浏览器端按它过滤。</li>
+      <li>第 1 天视为已批准，不受新闸门约束（其中 birthday、park 的题目目前仍是 reviewed=false，维持现状）。</li>
+    </ul>
+    <div class="callout warn"><span class="h">已知风险</span>模型手写 SVG 质量波动大，第一次很可能要退回多张图重画。审图页和单张重画命令要顺手，这是本轮工作量的大头之一。</div>
+  </div>
+</section>
+
+<section id="calls">
+  <h2>7. 我做的决定（用户可推翻）</h2>
+  <div class="tablewrap"><table>
+    <tr><th>#</th><th>决定</th><th>理由</th></tr>
+    <tr><td>1</td><td>新的一天不设单独的「起床」「睡前」关；开头靠第 1 关的过场台词，结尾靠地图终点的小房子和月亮</td><td>讨论时我提过「首尾各一个只复习的日常关」，但现在每关都是「一节课一条线」，必须有新词；做零新词的关要改课程结构，不值得</td></tr>
+    <tr><td>2</td><td>每天 5–7 关（不含首尾日常关）</td><td>和之前说的 6–8 关（含首尾）一致；3–6 岁孩子一天不宜太长，生产也快</td></tr>
+    <tr><td>3</td><td>天与天按顺序连成一条长路线来算解锁和复习词</td><td>不用改后端，第 1 天的结果保持不变</td></tr>
+    <tr><td>4</td><td>标签只显示已解锁的天，外加一个「下一天…」占位</td><td>不剧透、不让孩子点进看不了的页面</td></tr>
+    <tr><td>5</td><td>新图先写进插画目录、记为待审；天批准前不上地图</td><td>后续生成步骤需要用到图；用「天是否批准」把关，比把图放在别处再搬更简单</td></tr>
+    <tr><td>6</td><td>禁止角色名（bunny、fox、turtle 等）作为词</td><td>这些文件名已被角色图占用，允许的话要改一串按文件名取图的逻辑</td></tr>
+    <tr><td>7</td><td>改计划后只重跑有变化的关</td><td>保留已审过的其他关，审图/重画不必整天重来</td></tr>
+    <tr><td>8</td><td>批准状态放在 static/ 内容里，浏览器端过滤；第 1 天视为已批准</td><td>孩子机器也是开发模式，闸门必须随内容走</td></tr>
+    <tr><td>9</td><td>读音沿用现有方式（Mac 上占位合成，Windows 上 SAPI）</td><td>本轮完成线是能玩通，不是发布</td></tr>
+  </table></div>
+</section>
+
+<section id="builder">
+  <h2>8. 留给实现者</h2>
+  <div class="panel"><ul>
+    <li>目录里天列表的具体字段名与迁移方式（保留 <code>route</code> 作兼容，或全部改用按天结构并同步改检查脚本），前提是第 1 天的顺序、过场、复习词结果不变。</li>
+    <li>一天计划、插画审核清单、天批准状态各自存放的文件位置与格式。</li>
+    <li>新命令的名字与参数（如拆一天、补图、重画单张、批准图、批准一天），以及是否提供一条「整天跑完」的总命令。</li>
+    <li>SVG 检查的具体阈值（文件大小上限、空图判定方式）。</li>
+    <li>翻页动画的具体做法，须保留减少动态时的直接切换。</li>
+    <li>大模型调用的提供方与模型沿用 momo_agent 现有配置；测试用现有假模型夹具。</li>
+  </ul></div>
+</section>
+
+<section id="accept">
+  <h2>9. 验收</h2>
+  <div class="tablewrap"><table>
+    <tr><th>#</th><th>条件</th><th>怎么验</th></tr>
+    <tr><td>1</td><td>第 1 天的 13 关顺序、过场、复习词与改动前完全一致；已有通关记录照常生效</td><td>构建产物对比；现有地图、路线检查通过</td></tr>
+    <tr><td>2</td><td>momo_agent 能从「去动物园」生成一天计划、补齐缺图、生成每关内容与题目读音；每步检查不过会重写/重画，最终失败时给出原因</td><td>假模型夹具的自动测试覆盖成功与失败路径；真模型实跑一次</td></tr>
+    <tr><td>3</td><td>未批准的天不出现在地图上；图或题目没全部通过时不能批准；重生成任何部分会撤销批准</td><td>自动测试</td></tr>
+    <tr><td>4</td><td>用户在审阅页审完动物园这天，按需重画后批准</td><td>用户操作</td></tr>
+    <tr><td>5</td><td>在 <code>--preview</code> 下：走完第 1 天 → 翻页到第 2 天 → 依次玩完动物园所有关 → 显示日记写到这里；标签可翻回第 1 天重玩</td><td>Playwright 走查桌面与手机宽度、浅色与深色、减少动态</td></tr>
+    <tr><td>6</td><td>全量检查失败项不多于 master 基线</td><td><code>node check.cjs</code>、<code>python -m unittest</code>、momo_agent 测试，与 master 对比</td></tr>
+  </table></div>
+  <p style="margin-top:10px">闭合标准：以上 6 条在本地开发模式达成并合入 master 即本轮完成；不含正式发布。</p>
+</section>
+
+</div></main>
+<footer><div class="wrap">示意图（选 A 时）：<code>aios/diagram/.superpowers/brainstorm/30571-1794376297/content/day-switch.html</code>。上一版地图设计：<code>2026-11-10-momo-day-map-design.html</code>。</div></footer>
+<script>
+(function(){
+  var btn=document.getElementById('themeBtn');
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    var dark=cur?cur==='dark':(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches);
+    document.documentElement.setAttribute('data-theme',dark?'light':'dark');
+  });
+})();
+</script>
+</body>
+</html>
