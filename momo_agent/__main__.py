@@ -16,6 +16,7 @@ from momo_agent.memory import MEMORY_FILE, Memory
 from momo_agent.llm import NoStructuredOutput, make_model
 from momo_agent import pictures, quiz as quiz_mod, tts
 from momo_agent.pipeline import LessonInvalid, SceneIdConflict, generate_lesson
+from momo_agent.quiz import write_quiz
 from momo_agent.register import register
 from momo_agent.repo import Repo
 from momo_agent.scenes import write_lesson
@@ -89,24 +90,6 @@ def generate(args, repo: Repo) -> int:
     return 0
 
 
-WINDOWS_AUDIO_HINT = ("手写主题的题目读音请在 Windows 上运行："
-                      "powershell -NoProfile -ExecutionPolicy Bypass -File .\\make-s4-audio.ps1 -SceneId {}")
-
-
-def write_quiz(scene_id: str, fixtures: dict | None, budget: Budget, repo: Repo) -> None:
-    """Quiz flow shared by `quiz` and `generate`: draft, overlay (unreviewed), lesson build, missing audio."""
-    pack = repo.load_pack(scene_id)
-    draft = asyncio.run(quiz_mod.generate_quiz(pack, make_model("quiz", fixtures, budget)))
-    quiz_mod.write_overlay(pack, draft, repo)
-    print(quiz_mod.run_lesson_build(scene_id, repo), end="")
-    pack = repo.load_pack(scene_id)
-    if pack.get("generatedBy") == "momo_agent":
-        written = tts.render_missing_audio(pack, repo.root / "static")
-        print(f"Synthesised {len(written)} lesson audio files.")
-    else:
-        print(WINDOWS_AUDIO_HINT.format(scene_id))
-
-
 def quiz_command(args, repo: Repo) -> int:
     fixtures = json.loads(Path(args.fixtures).read_text("utf-8")) if args.fixtures else None
     if fixtures and os.environ.get("MOMO_LLM_PROVIDER", "fake") != "fake":
@@ -153,7 +136,7 @@ def quiz_audio_command(args, repo: Repo) -> int:
         return 1
     pack = repo.load_pack(args.scene_id)
     if pack.get("generatedBy") != "momo_agent" and sys.platform != "win32":
-        print(WINDOWS_AUDIO_HINT.format(args.scene_id))
+        print(quiz_mod.WINDOWS_AUDIO_HINT.format(args.scene_id))
         return 1
     try:
         written = tts.render_missing_audio(pack, repo.root / "static")

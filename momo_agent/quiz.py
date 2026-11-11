@@ -1,6 +1,7 @@
 """Lesson line: the quiz agent writes comprehension questions and one wrong reply per dialogue round.
 
 The agent only writes content-lesson/<sceneId>.json with reviewed=false; a person approves it by hand."""
+import asyncio
 import json
 import re
 import subprocess
@@ -9,12 +10,17 @@ from pathlib import Path
 from agentscope.agent import Agent, ReActConfig
 from pydantic import BaseModel
 
+from momo_agent import tts
+from momo_agent.guard import Budget
+from momo_agent.llm import make_model
 from momo_agent.pipeline import write_checked
 from momo_agent.repo import Repo
 
 MAX_QUESTION_CHARS = 30
 MAX_REPLY_WORDS = 8
 MAX_OPTIONS = 3
+WINDOWS_AUDIO_HINT = ("手写主题的题目读音请在 Windows 上运行："
+                      "powershell -NoProfile -ExecutionPolicy Bypass -File .\\make-s4-audio.ps1 -SceneId {}")
 
 QUIZ_PROMPT = """You write quiz questions for a picture-story lesson for children aged 3 to 6 learning English.
 You get the 6 scenes, the dialogue rounds (each with a question and the right answer) and the lesson words.
@@ -176,3 +182,17 @@ def approve(scene_id: str, repo: Repo) -> None:
     except BaseException:
         path.write_text(previous, encoding="utf-8")
         raise
+
+
+def write_quiz(scene_id: str, fixtures: dict | None, budget: Budget, repo: Repo) -> None:
+    """Quiz flow shared by `quiz`, `generate` and `day-build`: draft, overlay (unreviewed), lesson build, missing audio."""
+    pack = repo.load_pack(scene_id)
+    draft = asyncio.run(generate_quiz(pack, make_model("quiz", fixtures, budget)))
+    write_overlay(pack, draft, repo)
+    print(run_lesson_build(scene_id, repo), end="")
+    pack = repo.load_pack(scene_id)
+    if pack.get("generatedBy") == "momo_agent":
+        written = tts.render_missing_audio(pack, repo.root / "static")
+        print(f"Synthesised {len(written)} lesson audio files.")
+    else:
+        print(WINDOWS_AUDIO_HINT.format(scene_id))
