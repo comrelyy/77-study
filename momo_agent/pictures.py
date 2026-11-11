@@ -9,7 +9,7 @@ from pydantic import BaseModel
 
 from momo_agent.guard import topic_request
 from momo_agent.pipeline import write_checked
-from momo_agent.repo import Repo
+from momo_agent.repo import NOT_WORDS, Repo
 
 PREFIX = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">'
           '<g stroke="#75604c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">')
@@ -105,6 +105,8 @@ async def draw_word(word: str, cn: str, repo: Repo, model, note: str | None = No
     """Draw one word; send style problems back to the model (at most 2 rewrites), else raise LessonInvalid."""
     if not re.fullmatch(r"[a-z]+", word):
         raise RuntimeError(f"词 {word!r} 必须是小写字母 [a-z]+")
+    if word in NOT_WORDS:
+        raise RuntimeError(f"{word} 是角色或装饰图，不能画成词图")
     palette = word_palette(repo, exclude)
     agent = Agent(name="illustrator", system_prompt=ILLUSTRATOR_PROMPT, model=model, react_config=ReActConfig(max_iters=3))
     draft = await write_checked(agent, _request(word, cn, note, palette, _sample_pictures(repo, exclude)), PictureDraft,

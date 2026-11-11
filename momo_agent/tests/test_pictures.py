@@ -161,9 +161,25 @@ class ReviewTest(unittest.TestCase):
 
     def test_redraw_refuses_word_not_in_day(self):
         with temp_repo() as repo:
+            fake = model()
             with self.assertRaises(RuntimeError):
-                asyncio.run(pictures.redraw(zoo_day(), "apple", "x", repo, model()))
-            self.assertEqual(len(model().calls), 0)
+                asyncio.run(pictures.redraw(zoo_day(), "apple", "x", repo, fake))
+            self.assertEqual(len(fake.calls), 0)
+
+    def test_character_pictures_are_never_drawn_over(self):
+        with temp_repo() as repo:
+            path = repo.root / "static/illustrations/fox.svg"
+            before = path.read_bytes()
+            day = zoo_day()
+            day["plan"]["levels"][0]["words"][0] = {"text": "fox", "cn": "狐狸"}
+            fake = model(1)
+            with self.assertRaisesRegex(RuntimeError, "fox"):
+                asyncio.run(pictures.draw_missing(day, repo, fake))
+            day["pictures"]["fox"] = {"status": "pending", "sha256": "x", "note": None}
+            with self.assertRaisesRegex(RuntimeError, "fox"):
+                asyncio.run(pictures.redraw(day, "fox", None, repo, fake))
+            self.assertEqual(fake.calls, [])
+            self.assertEqual(path.read_bytes(), before)
 
 
 class UnapproveTest(unittest.TestCase):
