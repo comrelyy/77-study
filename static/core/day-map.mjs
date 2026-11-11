@@ -69,12 +69,12 @@ function drawing(g,levels,states,rec,all){
   return s+'</svg>';
 }
 
-export function renderDayMap(root,{levels,states,focusId=null,notice=null,enterScene,playAudio,reduceMotion=false}){
+export function renderDayMap(root,{levels,states,focusId=null,notice=null,enterScene,playAudio,reduceMotion=false,heading='Momo 的一天',goodnight=GOODNIGHT}){
   const all=states.length>0&&states.every(s=>s.state==='done'),rec=states.findIndex(s=>s.state==='current');
   const focus=levels.findIndex(l=>l.id===focusId);let sel=focus>=0?focus:rec>=0?rec:levels.length-1;
   const done=states.filter(s=>s.state==='done').length;
   const head=node('div',undefined,'map-head'),title=node('div');
-  title.append(node('h1','Momo 的一天'),node('p','陪 Momo 从早上走到晚上，一站一站往前走'));
+  title.append(node('h1',heading),node('p','陪 Momo 从早上走到晚上，一站一站往前走'));
   const progress=node('div','已走过 ','map-progress');progress.append(node('b',String(done)),node('span',' / '+levels.length+' 站'));
   head.append(title,progress);
   const sheet=node('div',undefined,'map-sheet'),card=node('aside',undefined,'map-card'),layout=node('div',undefined,'map-layout');
@@ -123,7 +123,7 @@ export function renderDayMap(root,{levels,states,focusId=null,notice=null,enterS
     momo=image('illustrations/momo.svg','','map-momo');momo.style.width=pct(g.momo,g.W);
     const at=all?(g.homeEnd||g.pts[g.pts.length-1]):g.pts[Math.max(rec,0)];momoAt(at[0],at[1]);
     bubble=null;const bridge=all?null:levels[rec]?.bridge;
-    if(all)bubble=node('div',GOODNIGHT,'map-bubble map-goodnight');
+    if(all)bubble=node('div',goodnight,'map-bubble map-goodnight');
     else if(bridge){bubble=node('div',undefined,'map-bubble');const speak=button('',()=>playAudio(bridge.audio),'map-speak');speak.setAttribute('aria-label','听这句');speak.innerHTML=SPEAKER;
       bubble.append(node('span',bridge.text,'map-en'),speak,node('span',bridge.cn,'map-cn'));}
     sheet.replaceChildren(art,...buttons,momo,...(bubble?[bubble]:[]));placeBubble();

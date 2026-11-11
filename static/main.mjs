@@ -1,7 +1,8 @@
 import {loadReviewSources} from './core/review-sources.mjs?v=themes-20261031';
 import {App} from './core/app.mjs?v=day-map-20261110';
-import {renderDayMap,clearedFrom,mapLevels} from './core/day-map.mjs?v=day-map-20261110';
-import {routeOrder,levelStates,canEnter} from './core/route.mjs?v=day-map-20261110';
+import {clearedFrom,mapLevels} from './core/day-map.mjs?v=days-zoo-20261111';
+import {diaryDays,renderDiary} from './core/diary.mjs?v=days-zoo-20261111';
+import {routeOrder,canEnter} from './core/route.mjs?v=days-zoo-20261111';
 import {MemoryStore} from './core/store.mjs';
 import {PersistentStore} from './core/persistent-store.mjs?v=reload-handover-20261103';
 import {BrowserActivity} from './core/browser-activity.mjs?v=reload-handover-20261103';
@@ -35,7 +36,7 @@ async function boot(){
       const results=await Promise.allSettled(order.map(id=>loadPack(catalog,id))),packs={};
       results.forEach((result,i)=>{if(result.status==='fulfilled')packs[order[i]]=result.value;});
       const levels=mapLevels(order,catalog,packs),ids=order,focus=query.get('focus');
-      renderDayMap(root,{levels,states:levelStates(ids,cleared,unlock),focusId:ids.includes(focus)?focus:null,notice,enterScene:navigateScene,playAudio:path=>{new Audio(path).play().catch(()=>{});},reduceMotion:matchMedia('(prefers-reduced-motion: reduce)').matches});
+      renderDiary(root,{days:diaryDays(catalog,ids,cleared,levels,unlock),focusId:ids.includes(focus)?focus:null,notice,enterScene:navigateScene,playAudio:path=>{new Audio(path).play().catch(()=>{});},reduceMotion:matchMedia('(prefers-reduced-motion: reduce)').matches});
       if(query.has('focus')){try{const url=new URL(location.href);url.searchParams.delete('focus');history.replaceState(null,'',url.href);}catch{}}
     };
     const loadOptions=async()=>{

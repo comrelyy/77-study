@@ -54,3 +54,10 @@
 @media(max-width:900px){.map-layout{grid-template-columns:1fr}.map-sheet{width:100%}.map-head h1{font-size:32px}}
 @media(max-width:520px){.map-head{flex-direction:column;align-items:flex-start;gap:6px}.map-bubble{font-size:14px}.map-level-title{font-size:17px}}
 @media(prefers-reduced-motion:reduce){.map-bubble{transition:none}#app .map-level:hover:not(:disabled){transform:none}}
+.diary-tabs{display:flex;gap:8px;margin:0 4px 12px;padding:2px 2px 8px;overflow-x:auto;max-width:100%;scrollbar-width:thin}
+#app .diary-tab{flex:0 0 auto;padding:7px 16px;white-space:nowrap;background:#fffaf0;color:var(--ink);border:1.6px solid var(--map-pencil);border-radius:var(--sketch-radius);box-shadow:2px 3px 0 #00000014;font:17px 'KaiTi','STKaiti','Kaiti SC',serif;letter-spacing:1px}
+#app .diary-tab.sel{background:#fbf0d8;border-color:var(--map-sage-deep);box-shadow:0 3px 0 #ebcd83}
+#app .diary-tab:disabled{background:transparent;color:var(--map-pencil);border-style:dashed;box-shadow:none;opacity:1}
+.diary-page.diary-turn{animation:diary-turn .7s ease-out;transform-origin:left center}
+@keyframes diary-turn{from{opacity:0;transform:perspective(900px) rotateY(-14deg) translateX(-18px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.diary-page.diary-turn{animation:none}}
