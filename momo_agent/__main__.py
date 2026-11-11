@@ -1,5 +1,6 @@
 """Command line: python -m momo_agent generate <topic> [--fixtures file] [--overwrite] | register | eval [--suite file]
-  | quiz <id> [--fixtures file] | quiz-approve <id> | quiz-audio <id> | day-plan <topic> [--fixtures file] [--overwrite]"""
+  | quiz <id> [--fixtures file] | quiz-approve <id> | quiz-audio <id> | day-plan <topic> [--fixtures file] [--overwrite]
+  | day-draw <dayId> [--fixtures file] | day-redraw <dayId> <word> [--note text] [--fixtures file] | day-picture-approve <dayId> <word>"""
 import argparse
 import asyncio
 import json
@@ -8,12 +9,12 @@ import subprocess
 import sys
 from pathlib import Path
 
-from momo_agent.dayplan import day_file, new_day_data, plan_day, save_day
+from momo_agent.dayplan import day_file, load_day, new_day_data, plan_day, save_day
 from momo_agent.evaluate import format_report, run_suite
 from momo_agent.guard import Budget, BudgetExceeded, TopicRejected, clean_topic
 from momo_agent.memory import MEMORY_FILE, Memory
 from momo_agent.llm import NoStructuredOutput, make_model
-from momo_agent import quiz as quiz_mod, tts
+from momo_agent import pictures, quiz as quiz_mod, tts
 from momo_agent.pipeline import LessonInvalid, SceneIdConflict, generate_lesson
 from momo_agent.register import register
 from momo_agent.repo import Repo
@@ -202,6 +203,76 @@ def day_plan_command(args, repo: Repo) -> int:
     return 0
 
 
+def _load_day_or_say(args, repo: Repo) -> dict | None:
+    try:
+        return load_day(repo, args.day_id)
+    except FileNotFoundError:
+        print(f"找不到这一天：{args.day_id}，请先运行：python -m momo_agent day-plan <主题>")
+        return None
+
+
+def _draw_command(args, repo: Repo, work) -> int:
+    """Shared by day-draw and day-redraw: run `work(day, model)`, then save the day and take the day's approval back."""
+    day = _load_day_or_say(args, repo)
+    if day is None:
+        return 1
+    fixtures = json.loads(Path(args.fixtures).read_text("utf-8")) if args.fixtures else None
+    if fixtures and os.environ.get("MOMO_LLM_PROVIDER", "fake") != "fake":
+        print("Note: --fixtures is only used when MOMO_LLM_PROVIDER is fake.")
+    budget = Budget.from_env()
+    try:
+        try:
+            work(day, make_model("illustrator", fixtures, budget))
+        finally:  # pictures drawn before a failure are already on disk, so keep their records
+            save_day(repo, day)
+            pictures._unapprove_placeholder(repo, args.day_id)
+    except BudgetExceeded:
+        print("已达到模型费用上限，停止生成，已画好的图保留为待审。")
+        print(budget.summary())
+        return 1
+    except LessonInvalid as err:
+        print("图没有通过检查：")
+        for line in err.errors:
+            print(f"  {line}")
+        return 1
+    except (NoStructuredOutput, RuntimeError) as err:
+        print(f"Error: {err}")
+        return 1
+    print(budget.summary())
+    return 0
+
+
+def day_draw_command(args, repo: Repo) -> int:
+    def work(day, model):
+        drawn = asyncio.run(pictures.draw_missing(day, repo, model))
+        print("新画的词（待审，看过再通过）：" + "，".join(drawn) if drawn else "没有缺图的词。")
+    code = _draw_command(args, repo, work)
+    if code == 0:
+        print(f"逐张看过后运行：python -m momo_agent day-picture-approve {args.day_id} <词>")
+    return code
+
+
+def day_redraw_command(args, repo: Repo) -> int:
+    def work(day, model):
+        asyncio.run(pictures.redraw(day, args.word, args.note, repo, model))
+        print(f"{args.word} 已重画，待审。")
+    return _draw_command(args, repo, work)
+
+
+def day_picture_approve_command(args, repo: Repo) -> int:
+    day = _load_day_or_say(args, repo)
+    if day is None:
+        return 1
+    try:
+        pictures.approve_picture(day, args.word, repo)
+    except RuntimeError as err:
+        print(f"Error: {err}")
+        return 1
+    save_day(repo, day)
+    print(f"{args.word} 的图已通过。")
+    return 0
+
+
 def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
     parser = argparse.ArgumentParser(prog="momo_agent")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -222,6 +293,17 @@ def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
     dp.add_argument("topic")
     dp.add_argument("--fixtures", help="fixtures json for the fake model (MOMO_LLM_PROVIDER=fake)")
     dp.add_argument("--overwrite", action="store_true", help="replace a day plan written before")
+    dd = sub.add_parser("day-draw", help="draw the planned words that have no picture yet (pending your review)")
+    dd.add_argument("day_id")
+    dd.add_argument("--fixtures", help="fixtures json for the fake model (MOMO_LLM_PROVIDER=fake)")
+    dr = sub.add_parser("day-redraw", help="draw one of the day's pictures again")
+    dr.add_argument("day_id")
+    dr.add_argument("word")
+    dr.add_argument("--note", help="what to change, in your own words")
+    dr.add_argument("--fixtures", help="fixtures json for the fake model (MOMO_LLM_PROVIDER=fake)")
+    dpa = sub.add_parser("day-picture-approve", help="approve one drawn picture (a person's decision)")
+    dpa.add_argument("day_id")
+    dpa.add_argument("word")
     sub.add_parser("register", help="list generated themes in the catalog again")
     args = parser.parse_args(argv)
     repo = Repo(root)
@@ -238,6 +320,12 @@ def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
         return quiz_approve_command(args, repo)
     if args.command == "day-plan":
         return day_plan_command(args, repo)
+    if args.command == "day-draw":
+        return day_draw_command(args, repo)
+    if args.command == "day-redraw":
+        return day_redraw_command(args, repo)
+    if args.command == "day-picture-approve":
+        return day_picture_approve_command(args, repo)
     if args.command == "quiz-audio":
         return quiz_audio_command(args, repo)
     return generate(args, repo)
