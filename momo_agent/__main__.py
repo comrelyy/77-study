@@ -64,7 +64,6 @@ def generate(args, repo: Repo) -> int:
         print(f"Error: {err}")
         return 1
     register(repo)
-    _unapprove_owner_day(repo, pack["sceneId"])  # --overwrite may have replaced a level of a day
     try:
         write_quiz(pack["sceneId"], fixtures, budget, repo)
     except (BudgetExceeded, LessonInvalid, NoStructuredOutput, RuntimeError, subprocess.CalledProcessError) as err:
@@ -94,7 +93,7 @@ def generate(args, repo: Repo) -> int:
 
 
 def _unapprove_owner_day(repo: Repo, scene_id: str) -> None:
-    """A level of a generated day changed: take that whole day off the child's map (day 1 has no gate)."""
+    """A level's quiz changed: take its generated day off the child's map (day 1 has no gate)."""
     owner = repo.day_of_scene().get(scene_id)
     if owner not in (None, "everyday"):
         dayapprove.unapprove_day(repo, owner)

@@ -201,6 +201,21 @@ class DayApproveTest(unittest.TestCase):
             run(repo, "quiz", "picnic", "--fixtures", str(ROOT / "momo_agent/fixtures/birthday.json"))
             self.assertIs(next(d for d in catalog(repo)["days"] if d["id"] == "everyday")["approved"], True)
 
+    def test_generate_refuses_a_level_of_a_generated_day(self):
+        with temp_repo() as repo:
+            self.approved_day(repo)
+            fx = json.loads((ROOT / "momo_agent/fixtures/birthday.json").read_text("utf-8"))
+            fx["planner"][-1]["scene_id"] = SCENES[1]
+            fixtures = repo.root / "generate.json"
+            fixtures.write_text(json.dumps(fx), "utf-8")
+            pack_file = repo.root / f"static/content/{SCENES[1]}.json"
+            before = pack_file.read_bytes()
+            code, text = run(repo, "generate", "生日会", "--fixtures", str(fixtures), "--overwrite")
+            self.assertEqual(code, 1, text)
+            self.assertIn("day-build zoo-day", text)
+            self.assertEqual(pack_file.read_bytes(), before)
+            self.assertIs(day_entry(repo)["approved"], True)
+
     def test_draw_command_refreshes_the_snapshot(self):
         with temp_repo() as repo:
             saved_day(repo)

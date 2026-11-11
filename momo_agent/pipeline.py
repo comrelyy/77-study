@@ -60,6 +60,9 @@ async def generate_lesson(topic: str, repo: Repo, model_for: Callable[[str], obj
                           rewrites: dict[str, int] | None = None, used_words: dict[str, str] | None = None) -> dict:
     topic = clean_topic(topic)  # before any model is built
     plan = await plan_words(topic, repo, model_for("planner"), used_words)
+    owner = repo.day_of_scene().get(plan.scene_id)
+    if owner not in (None, "everyday"):  # before anything is written
+        raise SceneIdConflict(f"{plan.scene_id} 是 {owner} 的一关，生成的天只能用 day-plan / day-build {owner} 改")
     return await generate_from_plan(plan, repo, model_for, overwrite, rewrites)
 
 
