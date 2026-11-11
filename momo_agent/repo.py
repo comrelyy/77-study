@@ -19,6 +19,9 @@ class Repo:
     def scene_ids(self) -> set[str]:
         return set(self._catalog()["scenes"])
 
+    def day_ids(self) -> set[str]:
+        return {day["id"] for day in self._catalog().get("days", [])}
+
     def load_pack(self, scene_id: str) -> dict:
         path = self.root / "static" / self._catalog()["scenes"][scene_id]
         return json.loads(path.read_text("utf-8"))

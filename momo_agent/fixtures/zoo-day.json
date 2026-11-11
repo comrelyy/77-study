@@ -1,0 +1,149 @@
+{
+  "day_planner": [
+    {
+      "__tool__": "list_illustrated_words",
+      "input": {}
+    },
+    {
+      "day_id": "zoo-day",
+      "title": "去动物园的一天",
+      "levels": [
+        {
+          "scene_id": "zoo-morning",
+          "title": "和 Momo 早上出发",
+          "goal": "起床，准备去动物园",
+          "function": "I can see … / Your turn.",
+          "band": 0,
+          "words": [
+            {
+              "text": "bed",
+              "cn": "床"
+            },
+            {
+              "text": "shirt",
+              "cn": "衬衫"
+            },
+            {
+              "text": "shoes",
+              "cn": "鞋子"
+            },
+            {
+              "text": "bag",
+              "cn": "书包"
+            }
+          ],
+          "bridge_en": "Today we go to the zoo.",
+          "bridge_cn": "今天我们去动物园。"
+        },
+        {
+          "scene_id": "zoo-road",
+          "title": "和 Momo 去动物园的路上",
+          "goal": "坐车去动物园",
+          "function": "I can see … / Your turn.",
+          "band": 0,
+          "words": [
+            {
+              "text": "bus",
+              "cn": "公共汽车"
+            },
+            {
+              "text": "car",
+              "cn": "小汽车"
+            },
+            {
+              "text": "ticket",
+              "cn": "票"
+            },
+            {
+              "text": "tree",
+              "cn": "树"
+            }
+          ],
+          "bridge_en": "We ride the bus.",
+          "bridge_cn": "我们坐公共汽车。"
+        },
+        {
+          "scene_id": "zoo-gate",
+          "title": "和 Momo 到了动物园",
+          "goal": "在大门口买票",
+          "function": "I can see … / Your turn.",
+          "band": 1,
+          "words": [
+            {
+              "text": "map",
+              "cn": "地图"
+            },
+            {
+              "text": "gate",
+              "cn": "大门"
+            },
+            {
+              "text": "sign",
+              "cn": "路牌"
+            },
+            {
+              "text": "hat",
+              "cn": "帽子"
+            }
+          ],
+          "bridge_en": "Let us go in!",
+          "bridge_cn": "我们进去吧！"
+        },
+        {
+          "scene_id": "zoo-animals",
+          "title": "和 Momo 看动物",
+          "goal": "认识动物园里的动物",
+          "function": "I can see … / Your turn.",
+          "band": 2,
+          "words": [
+            {
+              "text": "lion",
+              "cn": "狮子"
+            },
+            {
+              "text": "monkey",
+              "cn": "猴子"
+            },
+            {
+              "text": "zebra",
+              "cn": "斑马"
+            },
+            {
+              "text": "giraffe",
+              "cn": "长颈鹿"
+            }
+          ],
+          "bridge_en": "Look at the big animals!",
+          "bridge_cn": "看那些大动物！"
+        },
+        {
+          "scene_id": "zoo-home",
+          "title": "和 Momo 回家",
+          "goal": "累了，回家吧",
+          "function": "I can see … / Your turn.",
+          "band": 3,
+          "words": [
+            {
+              "text": "balloon",
+              "cn": "气球"
+            },
+            {
+              "text": "cake",
+              "cn": "蛋糕"
+            },
+            {
+              "text": "pillow",
+              "cn": "枕头"
+            },
+            {
+              "text": "moon",
+              "cn": "月亮"
+            }
+          ],
+          "bridge_en": "Goodbye, zoo. See you soon!",
+          "bridge_cn": "再见，动物园，下次见！"
+        }
+      ]
+    }
+  ]
+}

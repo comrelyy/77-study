@@ -1,5 +1,5 @@
 """Command line: python -m momo_agent generate <topic> [--fixtures file] [--overwrite] | register | eval [--suite file]
-  | quiz <id> [--fixtures file] | quiz-approve <id> | quiz-audio <id>"""
+  | quiz <id> [--fixtures file] | quiz-approve <id> | quiz-audio <id> | day-plan <topic> [--fixtures file] [--overwrite]"""
 import argparse
 import asyncio
 import json
@@ -8,8 +8,9 @@ import subprocess
 import sys
 from pathlib import Path
 
+from momo_agent.dayplan import day_file, new_day_data, plan_day, save_day
 from momo_agent.evaluate import format_report, run_suite
-from momo_agent.guard import Budget, BudgetExceeded, TopicRejected
+from momo_agent.guard import Budget, BudgetExceeded, TopicRejected, clean_topic
 from momo_agent.memory import MEMORY_FILE, Memory
 from momo_agent.llm import NoStructuredOutput, make_model
 from momo_agent import quiz as quiz_mod, tts
@@ -162,6 +163,48 @@ def quiz_audio_command(args, repo: Repo) -> int:
     return 0
 
 
+def day_plan_command(args, repo: Repo) -> int:
+    fixtures = json.loads(Path(args.fixtures).read_text("utf-8")) if args.fixtures else None
+    if fixtures and os.environ.get("MOMO_LLM_PROVIDER", "fake") != "fake":
+        print("Note: --fixtures is only used when MOMO_LLM_PROVIDER is fake.")
+    budget = Budget.from_env()
+    try:
+        topic = clean_topic(args.topic)
+        plan = asyncio.run(plan_day(topic, repo, make_model("day_planner", fixtures, budget), overwrite=True))
+        path = day_file(repo, plan.day_id)
+        if (path.exists() or plan.day_id in repo.day_ids()) and not args.overwrite:  # the plan names its own day_id
+            print(f"{path.relative_to(repo.root)} 已经存在（或目录里已有这一天），要重做请加 --overwrite。")
+            return 1
+        save_day(repo, new_day_data(plan, topic))
+    except BudgetExceeded:
+        print("已达到模型费用上限，停止生成，没有写入任何文件。")
+        print(budget.summary())
+        return 1
+    except TopicRejected as err:
+        print(f"主题不能用：{err}")
+        return 1
+    except LessonInvalid as err:
+        print("Day plan not written:")
+        for line in err.errors:
+            print(f"  {line}")
+        return 1
+    except (NoStructuredOutput, RuntimeError) as err:
+        print(f"Error: {err}")
+        return 1
+    have = set(repo.illustrated_words())
+    print(f"{plan.title}（{plan.day_id}）共 {len(plan.levels)} 关：")
+    missing = []
+    for number, level in enumerate(plan.levels, 1):
+        print(f"  {number}. {level.title}（{level.scene_id}，band {level.band}）："
+              + " ".join(card.text for card in level.words))
+        missing += [card.text for card in level.words if card.text not in have]
+    if missing:
+        print("缺图的词（下一步要画）：" + "，".join(missing))
+    print(budget.summary())
+    print(f"已写入 {path.relative_to(repo.root)}")
+    return 0
+
+
 def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
     parser = argparse.ArgumentParser(prog="momo_agent")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -178,6 +221,10 @@ def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
     qa.add_argument("scene_id")
     qd = sub.add_parser("quiz-audio", help="synthesise missing lesson audio for a theme")
     qd.add_argument("scene_id")
+    dp = sub.add_parser("day-plan", help="plan a whole day of 5-7 linked levels (writes content-days/<dayId>.json)")
+    dp.add_argument("topic")
+    dp.add_argument("--fixtures", help="fixtures json for the fake model (MOMO_LLM_PROVIDER=fake)")
+    dp.add_argument("--overwrite", action="store_true", help="replace a day plan written before")
     sub.add_parser("register", help="list generated themes in the catalog again")
     args = parser.parse_args(argv)
     repo = Repo(root)
@@ -192,6 +239,8 @@ def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
         return quiz_command(args, repo)
     if args.command == "quiz-approve":
         return quiz_approve_command(args, repo)
+    if args.command == "day-plan":
+        return day_plan_command(args, repo)
     if args.command == "quiz-audio":
         return quiz_audio_command(args, repo)
     return generate(args, repo)
