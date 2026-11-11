@@ -1,6 +1,7 @@
 """Command line: python -m momo_agent generate <topic> [--fixtures file] [--overwrite] | register | eval [--suite file]
   | quiz <id> [--fixtures file] | quiz-approve <id> | quiz-audio <id> | day-plan <topic> [--fixtures file] [--overwrite]
-  | day-draw <dayId> [--fixtures file] | day-redraw <dayId> <word> [--note text] [--fixtures file] | day-picture-approve <dayId> <word>"""
+  | day-draw <dayId> [--fixtures file] | day-redraw <dayId> <word> [--note text] [--fixtures file] | day-picture-approve <dayId> <word>
+  | day-build <dayId> [--fixtures file]"""
 import argparse
 import asyncio
 import json
@@ -10,6 +11,7 @@ import sys
 from pathlib import Path
 
 from momo_agent.dayplan import day_file, load_day, new_day_data, plan_day, save_day
+from momo_agent.dayrun import build_day
 from momo_agent.evaluate import format_report, run_suite
 from momo_agent.guard import Budget, BudgetExceeded, TopicRejected, clean_topic
 from momo_agent.memory import MEMORY_FILE, Memory
@@ -256,6 +258,45 @@ def day_picture_approve_command(args, repo: Repo) -> int:
     return 0
 
 
+def day_build_command(args, repo: Repo) -> int:
+    if _load_day_or_say(args, repo) is None:
+        return 1
+    fixtures = json.loads(Path(args.fixtures).read_text("utf-8")) if args.fixtures else None
+    if fixtures and os.environ.get("MOMO_LLM_PROVIDER", "fake") != "fake":
+        print("Note: --fixtures is only used when MOMO_LLM_PROVIDER is fake.")
+    budget = Budget.from_env()
+    try:
+        result = build_day(args.day_id, repo, fixtures, budget)
+    except BudgetExceeded:
+        print("已达到模型费用上限，停止生成。已写好的关和图保留，再运行一次会接着做没做完的关。")
+        print(budget.summary())
+        return 1
+    except LessonRefused as err:
+        print("有词还没有图，先运行 day-draw 或改计划：" + "，".join(err.missing))
+        return 2
+    except (SceneIdConflict, LessonInvalid) as err:
+        print("这一天没有生成完：")
+        for line in getattr(err, "errors", [str(err)]):
+            print(f"  {line}")
+        return 1
+    except (NoStructuredOutput, RuntimeError, subprocess.CalledProcessError) as err:
+        print(f"Error: {err}")
+        return 1
+    print(budget.summary())
+    print("重新生成的关：" + ("，".join(result["regenerated"]) or "没有（计划没变）"))
+    if result["drawn"]:
+        print("新画的词（待审）：" + "，".join(result["drawn"]))
+    if result["removed_pictures"]:
+        print("计划不再用、已删掉的待审图：" + "，".join(result["removed_pictures"]))
+    print(f"{args.day_id} 已登记为未批准，孩子的地图上还看不到。下一步：")
+    print("  1. 用一次性数据库打开审阅页逐关看过（不要用 data.sqlite3）：")
+    print("     .venv/bin/python app.py --db /tmp/preview.sqlite3 --port 8766，再打开 /dev/content-review.html")
+    print(f"  2. 每张新图看过后：python -m momo_agent day-picture-approve {args.day_id} <词>")
+    print("  3. 每关题目看过后：python -m momo_agent quiz-approve <关>")
+    print(f"  4. 整天看过后：python -m momo_agent day-approve {args.day_id}")
+    return 0
+
+
 def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
     parser = argparse.ArgumentParser(prog="momo_agent")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -287,6 +328,9 @@ def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
     dpa = sub.add_parser("day-picture-approve", help="approve one drawn picture (a person's decision)")
     dpa.add_argument("day_id")
     dpa.add_argument("word")
+    db = sub.add_parser("day-build", help="generate the planned levels of a day and register it, not approved")
+    db.add_argument("day_id")
+    db.add_argument("--fixtures", help="fixtures json for the fake model: illustrator, and story/dialogue/quiz per scene id")
     sub.add_parser("register", help="list generated themes in the catalog again")
     args = parser.parse_args(argv)
     repo = Repo(root)
@@ -309,6 +353,8 @@ def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
         return day_redraw_command(args, repo)
     if args.command == "day-picture-approve":
         return day_picture_approve_command(args, repo)
+    if args.command == "day-build":
+        return day_build_command(args, repo)
     if args.command == "quiz-audio":
         return quiz_audio_command(args, repo)
     return generate(args, repo)

@@ -10,7 +10,7 @@ from momo_agent.repo import Repo
 
 ROOT = Path(__file__).resolve().parents[2]
 SKIP_NAMES = {".git", ".venv", "reports", "__pycache__", ".superpowers"}
-SKIP_PATHS = {"static/audio", "static/content/archive"}
+SKIP_PATHS = {"static/content/archive"}  # static/audio is copied (never linked): lesson-build checks review-word audio
 
 
 @contextlib.contextmanager
@@ -29,12 +29,14 @@ def _ignore(directory, names):
 
 
 def _silence(text, role, out):
-    """Write 0.1 s of 22050 Hz 16-bit mono silence to `out` and report fixed voice settings."""
+    """Write 0.1 s of 22050 Hz 16-bit mono near-silence to `out` and report fixed voice settings.
+
+    The samples alternate +1/-1, not 0: the audio check (audio-validation.cjs) rejects all-zero files as silent."""
     with wave.open(str(out), "wb") as wav:
         wav.setnchannels(1)
         wav.setsampwidth(2)
         wav.setframerate(22050)
-        wav.writeframes(b"\x00\x00" * 2205)
+        wav.writeframes(b"\x01\x00\xff\xff" * 1102 + b"\x01\x00")
     return {"voice": "test", "rate": 150, "volume": 100}
 
 

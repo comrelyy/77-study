@@ -80,3 +80,17 @@ def write_lesson(pack: dict, repo: Repo) -> list[Path]:
             shutil.move(src, dest)
             written.append(dest)
     return written
+
+
+def refresh_scene_images(scene_id: str, repo: Repo) -> list[Path]:
+    """Draw the theme's scene pictures again from the current word pictures; the pack and the models are not touched."""
+    pack = repo.load_pack(scene_id)
+    asset_path = {a["id"]: a["path"] for a in pack["assets"]}
+    word_text = {w["id"]: w["text"] for w in pack["words"]}
+    written = []
+    for scene in pack["modules"]["story"]:
+        svg, _ = render_scene(word_text[scene["mainWord"]], repo)
+        path = repo.root / "static" / asset_path[scene["illustration"]]
+        path.write_text(svg, "utf-8")
+        written.append(path)
+    return written

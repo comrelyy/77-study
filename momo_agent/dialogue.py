@@ -4,7 +4,7 @@ from agentscope.message import UserMsg
 from pydantic import BaseModel
 
 from momo_agent.llm import structured
-from momo_agent.story import StoryDraft
+from momo_agent.story import StoryDraft, day_context
 from momo_agent.vocab import WordPlan
 
 ROUND_COUNT = 6
@@ -68,13 +68,13 @@ def dialogue_agent(model) -> Agent:
     )
 
 
-def dialogue_request(plan: WordPlan, story: StoryDraft) -> str:
+def dialogue_request(plan: WordPlan, story: StoryDraft, context: str | None = None) -> str:
     words = [card.text for card in plan.words]
     lines = "\n".join(
         f"{i}. {s.narration} Momo: {s.momo_line} Lulu: {s.bunny_line}"
         for i, s in enumerate(story.scenes, 1)
     )
-    return f"Theme: {plan.title}\nGoal: {plan.goal}\nWords: {', '.join(words)}\nStory:\n{lines}"
+    return f"Theme: {plan.title}\nGoal: {plan.goal}\nWords: {', '.join(words)}\nStory:\n{lines}" + day_context(context)
 
 
 async def write_dialogue(plan: WordPlan, story: StoryDraft, model) -> DialogueDraft:

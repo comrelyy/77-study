@@ -12,7 +12,7 @@ from momo_agent.llm import structured
 from momo_agent.repo import Repo
 from momo_agent.story import StoryDraft, check_story, story_agent, story_request
 from momo_agent.validate import validate_pack
-from momo_agent.vocab import plan_words
+from momo_agent.vocab import WORD_COUNT, LessonRefused, WordPlan, check_words, plan_words
 
 MAX_REWRITES = 2
 
@@ -60,14 +60,23 @@ async def generate_lesson(topic: str, repo: Repo, model_for: Callable[[str], obj
                           rewrites: dict[str, int] | None = None, used_words: dict[str, str] | None = None) -> dict:
     topic = clean_topic(topic)  # before any model is built
     plan = await plan_words(topic, repo, model_for("planner"), used_words)
+    return await generate_from_plan(plan, repo, model_for, overwrite, rewrites)
+
+
+async def generate_from_plan(plan: WordPlan, repo: Repo, model_for: Callable[[str], object], overwrite: bool = False,
+                             rewrites: dict[str, int] | None = None, context: str | None = None) -> dict:
+    """Story, dialogue and pack for words already chosen; every one of the 4 words must have a picture."""
+    have, missing = check_words(plan, repo.illustrated_words())
+    if missing or len(have) != WORD_COUNT:
+        raise LessonRefused(missing, [c.text for c in have])
     check_scene_id(plan.scene_id, repo, overwrite)
     words = [card.text for card in plan.words]
     story = await write_checked(
-        story_agent(model_for("story")), story_request(plan, repo), StoryDraft,
+        story_agent(model_for("story")), story_request(plan, repo, context), StoryDraft,
         lambda d: check_story(d, words), "story", rewrites,
     )
     dialogue = await write_checked(
-        dialogue_agent(model_for("dialogue")), dialogue_request(plan, story), DialogueDraft,
+        dialogue_agent(model_for("dialogue")), dialogue_request(plan, story, context), DialogueDraft,
         lambda d: check_dialogue(d, words), "dialogue", rewrites,
     )
     pack = assemble_pack(plan, story, dialogue, repo)
