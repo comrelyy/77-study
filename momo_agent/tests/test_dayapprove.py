@@ -6,8 +6,8 @@ import unittest
 from momo_agent import dayapprove, pictures, quiz
 from momo_agent.__main__ import main
 from momo_agent.dayplan import load_day, save_day
-from momo_agent.tests.daykit import quiet_audio, temp_repo
-from momo_agent.tests.test_dayrun import PICTURES, SCENES, build, day_entry, saved_day, set_word
+from momo_agent.tests.daykit import ROOT, quiet_audio, temp_repo
+from momo_agent.tests.test_dayrun import PICTURES, SCENES, ZOO, build, catalog, day_entry, day_fixtures, saved_day, set_word
 
 
 def built(repo, drawings=1):
@@ -131,6 +131,86 @@ class DayApproveTest(unittest.TestCase):
             self.assertEqual(set(first), {"sceneId", "title", "band", "words", "bridge"})
             self.assertEqual(first["words"][0], "kite")
             self.assertEqual(set(first["bridge"]), {"text", "cn"})
+
+    def approved_day(self, repo):
+        built(repo)
+        approve_everything(repo)
+        dayapprove.approve_day(repo, "zoo-day")
+        self.assertIs(day_entry(repo)["approved"], True)
+
+    def test_missing_pack_file_is_one_problem(self):
+        with temp_repo() as repo:
+            built(repo)
+            approve_everything(repo)
+            (repo.root / f"static/content/{SCENES[1]}.json").unlink()
+            problems = dayapprove.approval_problems(repo, "zoo-day")
+            self.assertEqual(len(problems), 1)
+            self.assertIn(SCENES[1], problems[0])
+            self.assertIn("内容包不存在", problems[0])
+
+    def test_edited_plan_is_one_problem(self):
+        with temp_repo() as repo:
+            built(repo)
+            approve_everything(repo)
+            day = load_day(repo, "zoo-day")
+            day["plan"]["levels"][3]["title"] = "改过的标题"
+            save_day(repo, day)
+            problems = dayapprove.approval_problems(repo, "zoo-day")
+            self.assertEqual(len(problems), 1)
+            self.assertIn(SCENES[3], problems[0])
+            self.assertIn("和现在的计划不一致", problems[0])
+
+    def test_level_missing_from_catalog_route_is_one_problem(self):
+        with temp_repo() as repo:
+            built(repo)
+            approve_everything(repo)
+            path = repo.root / "static/content/catalog.json"
+            data = catalog(repo)
+            day = next(d for d in data["days"] if d["id"] == "zoo-day")
+            day["route"] = [r for r in day["route"] if r["id"] != SCENES[2]]
+            path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", "utf-8")
+            problems = dayapprove.approval_problems(repo, "zoo-day")
+            self.assertEqual(len(problems), 1)
+            self.assertIn(SCENES[2], problems[0])
+            self.assertIn("还没有生成进目录", problems[0])
+
+    def test_new_plan_takes_the_approval_back(self):
+        with temp_repo() as repo:
+            self.approved_day(repo)
+            fixtures = ROOT / "momo_agent/fixtures/zoo-day.json"
+            code, text = run(repo, "day-plan", "去动物园", "--fixtures", str(fixtures), "--overwrite")
+            self.assertEqual(code, 0, text)
+            self.assertIs(day_entry(repo)["approved"], False)
+            snapshot = json.loads((repo.root / "static/dev/days/zoo-day.json").read_text("utf-8"))
+            self.assertIs(snapshot["approved"], False)
+            self.assertEqual(snapshot["pictures"], {})  # the new plan starts with no pictures
+
+    def test_new_quiz_of_a_day_level_takes_the_approval_back(self):
+        with temp_repo() as repo:
+            self.approved_day(repo)
+            fixtures = repo.root / "quiz-fixtures.json"
+            fixtures.write_text(json.dumps(day_fixtures(load_day(repo, "zoo-day"))[SCENES[1]]), "utf-8")
+            code, text = run(repo, "quiz", SCENES[1], "--fixtures", str(fixtures))
+            self.assertEqual(code, 0, text)
+            self.assertIs(day_entry(repo)["approved"], False)
+            snapshot = json.loads((repo.root / "static/dev/days/zoo-day.json").read_text("utf-8"))
+            self.assertIs(snapshot["approved"], False)
+
+    def test_quiz_of_an_everyday_level_leaves_everyday_approved(self):
+        with temp_repo() as repo:
+            run(repo, "quiz", "picnic", "--fixtures", str(ROOT / "momo_agent/fixtures/birthday.json"))
+            self.assertIs(next(d for d in catalog(repo)["days"] if d["id"] == "everyday")["approved"], True)
+
+    def test_draw_command_refreshes_the_snapshot(self):
+        with temp_repo() as repo:
+            saved_day(repo)
+            set_word(repo, 0, 0, "kite")
+            fixtures = repo.root / "draw.json"
+            fixtures.write_text(json.dumps({"illustrator": PICTURES[1:2]}), "utf-8")
+            code, text = run(repo, "day-draw", "zoo-day", "--fixtures", str(fixtures))
+            self.assertEqual(code, 0, text)
+            snapshot = json.loads((repo.root / "static/dev/days/zoo-day.json").read_text("utf-8"))
+            self.assertEqual(snapshot["pictures"]["kite"]["status"], "pending")
 
 
 if __name__ == "__main__":

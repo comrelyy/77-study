@@ -64,6 +64,7 @@ def generate(args, repo: Repo) -> int:
         print(f"Error: {err}")
         return 1
     register(repo)
+    _unapprove_owner_day(repo, pack["sceneId"])  # --overwrite may have replaced a level of a day
     try:
         write_quiz(pack["sceneId"], fixtures, budget, repo)
     except (BudgetExceeded, LessonInvalid, NoStructuredOutput, RuntimeError, subprocess.CalledProcessError) as err:
@@ -92,6 +93,13 @@ def generate(args, repo: Repo) -> int:
     return 0
 
 
+def _unapprove_owner_day(repo: Repo, scene_id: str) -> None:
+    """A level of a generated day changed: take that whole day off the child's map (day 1 has no gate)."""
+    owner = repo.day_of_scene().get(scene_id)
+    if owner not in (None, "everyday"):
+        dayapprove.unapprove_day(repo, owner)
+
+
 def quiz_command(args, repo: Repo) -> int:
     fixtures = json.loads(Path(args.fixtures).read_text("utf-8")) if args.fixtures else None
     if fixtures and os.environ.get("MOMO_LLM_PROVIDER", "fake") != "fake":
@@ -100,6 +108,7 @@ def quiz_command(args, repo: Repo) -> int:
         print(f"找不到主题：{args.scene_id}")
         return 1
     budget = Budget.from_env()
+    _unapprove_owner_day(repo, args.scene_id)  # the new quiz is not reviewed yet
     try:
         write_quiz(args.scene_id, fixtures, budget, repo)
     except BudgetExceeded:
@@ -159,6 +168,7 @@ def day_plan_command(args, repo: Repo) -> int:
         plan = asyncio.run(plan_day(topic, repo, make_model("day_planner", fixtures, budget), args.overwrite))
         path = day_file(repo, plan.day_id)
         save_day(repo, new_day_data(plan, topic))
+        dayapprove.unapprove_day(repo, plan.day_id)  # a new plan must be built and approved again
     except BudgetExceeded:
         print("已达到模型费用上限，停止生成，没有写入任何文件。")
         print(budget.summary())
