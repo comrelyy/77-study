@@ -166,7 +166,10 @@ def day_plan_command(args, repo: Repo) -> int:
         topic = clean_topic(args.topic)
         plan = asyncio.run(plan_day(topic, repo, make_model("day_planner", fixtures, budget), args.overwrite))
         path = day_file(repo, plan.day_id)
-        save_day(repo, new_day_data(plan, topic))
+        data = new_day_data(plan, topic)
+        if path.exists():  # a new plan keeps the review records: day-build compares them with it
+            data = {**load_day(repo, plan.day_id), **{k: data[k] for k in ("title", "topic", "plan")}}
+        save_day(repo, data)
         dayapprove.unapprove_day(repo, plan.day_id)  # a new plan must be built and approved again
     except BudgetExceeded:
         print("已达到模型费用上限，停止生成，没有写入任何文件。")

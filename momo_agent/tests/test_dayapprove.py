@@ -7,7 +7,7 @@ from momo_agent import dayapprove, pictures, quiz
 from momo_agent.__main__ import main
 from momo_agent.dayplan import load_day, save_day
 from momo_agent.tests.daykit import ROOT, quiet_audio, temp_repo
-from momo_agent.tests.test_dayrun import PICTURES, SCENES, ZOO, build, catalog, day_entry, day_fixtures, saved_day, set_word
+from momo_agent.tests.test_dayrun import PICTURES, SCENES, WORDS, ZOO, build, catalog, day_entry, day_fixtures, saved_day, set_word
 
 
 def built(repo, drawings=1):
@@ -183,7 +183,27 @@ class DayApproveTest(unittest.TestCase):
             self.assertIs(day_entry(repo)["approved"], False)
             snapshot = json.loads((repo.root / "static/dev/days/zoo-day.json").read_text("utf-8"))
             self.assertIs(snapshot["approved"], False)
-            self.assertEqual(snapshot["pictures"], {})  # the new plan starts with no pictures
+            self.assertEqual(snapshot["pictures"]["kite"]["status"], "approved")  # review records stay with the day
+
+    def test_replanning_keeps_the_review_records(self):
+        with temp_repo() as repo:
+            built(repo)  # kite drawn, still pending
+            day = load_day(repo, "zoo-day")
+            day["droppedLevels"] = ["zoo-old"]
+            save_day(repo, day)
+            plan = json.loads(json.dumps(day["plan"]))
+            plan["levels"][2]["words"][0]["text"] = WORDS[20]  # one level changes
+            fixtures = repo.root / "replan.json"
+            fixtures.write_text(json.dumps({"day_planner": [plan]}), "utf-8")
+            code, text = run(repo, "day-plan", "去动物园", "--fixtures", str(fixtures), "--overwrite")
+            self.assertEqual(code, 0, text)
+            day = load_day(repo, "zoo-day")
+            self.assertEqual(day["plan"], plan)
+            self.assertEqual(day["pictures"]["kite"]["status"], "pending")
+            self.assertEqual(day["droppedLevels"], ["zoo-old"])
+            self.assertEqual(build(repo)["regenerated"], [SCENES[2]])
+            self.assertTrue(any("kite" in p for p in dayapprove.approval_problems(repo, "zoo-day")))
+
 
     def test_new_quiz_of_a_day_level_takes_the_approval_back(self):
         with temp_repo() as repo:
