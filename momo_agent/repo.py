@@ -22,6 +22,10 @@ class Repo:
     def day_ids(self) -> set[str]:
         return {day["id"] for day in self._catalog().get("days", [])}
 
+    def day_of_scene(self) -> dict[str, str]:
+        """Which catalog day each level (scene id) belongs to."""
+        return {level["id"]: day["id"] for day in self._catalog().get("days", []) for level in day.get("route", [])}
+
     def load_pack(self, scene_id: str) -> dict:
         path = self.root / "static" / self._catalog()["scenes"][scene_id]
         return json.loads(path.read_text("utf-8"))

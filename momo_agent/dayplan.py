@@ -79,17 +79,20 @@ def _check_day_id(plan: DayPlan, repo: Repo, overwrite: bool) -> list[str]:
     if day_id == "everyday":
         return ["day_id 不能是 everyday（普通的一天）"]
     if not overwrite and (day_id in repo.day_ids() or day_file(repo, day_id).exists()):
-        return [f"day_id {day_id} 已经有这一天了"]
+        return [f"day_id {day_id} 已经有这一天了，要重做请加 --overwrite"]
     return []
 
 
-def _check_level(level: DayLevel, repo: Repo, overwrite: bool) -> list[str]:
+def _check_level(level: DayLevel, day_id: str, repo: Repo, overwrite: bool) -> list[str]:
     name = f"关 {level.scene_id}"
     errors = []
     try:
         check_scene_id(level.scene_id, repo, overwrite)
     except SceneIdConflict as err:
         errors.append(f"{name}: {err}")
+    owner = repo.day_of_scene().get(level.scene_id)
+    if owner is not None and owner != day_id:
+        errors.append(f"{name}: scene_id {level.scene_id} 已属于另一天 {owner}，一个关只能属于一天")
     for field in ("title", "goal", "bridge_en", "bridge_cn"):
         if not getattr(level, field).strip():
             errors.append(f"{name}: {field} 不能为空")
@@ -114,7 +117,7 @@ def check_day_plan(plan: DayPlan, repo: Repo, overwrite: bool = False) -> list[s
         errors.append(f"关数必须是 {MIN_LEVELS} 到 {MAX_LEVELS}，现在 {len(plan.levels)}")
     seen_scenes, seen_words = set(), set()
     for level in plan.levels:
-        errors += _check_level(level, repo, overwrite)
+        errors += _check_level(level, plan.day_id, repo, overwrite)
         if level.scene_id in seen_scenes:
             errors.append(f"scene_id {level.scene_id} 在全天重复")
         seen_scenes.add(level.scene_id)

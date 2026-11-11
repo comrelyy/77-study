@@ -61,6 +61,27 @@ class CheckDayPlanTest(TempRepoCase):
         self.assertTrue(any("zoo-day" in e for e in self.errors()))
         self.assertEqual(self.errors(overwrite=True), [])
 
+    def patch_catalog(self, change):
+        path = self.root / "static/content/catalog.json"
+        catalog = json.loads(path.read_text("utf-8"))
+        change(catalog)
+        path.write_text(json.dumps(catalog, ensure_ascii=False), "utf-8")
+
+    def test_day_id_in_catalog_without_file(self):
+        self.patch_catalog(lambda c: c["days"].append({"id": "zoo-day", "title": "x", "route": []}))
+        self.assertFalse(day_file(self.repo, "zoo-day").exists())
+        self.assertTrue(any("zoo-day" in e for e in self.errors()))
+
+    def test_scene_of_another_day_always_refused(self):
+        for overwrite in (False, True):
+            errors = self.errors(lambda d: d["levels"][0].update(scene_id="birthday"), overwrite=overwrite)
+            self.assertTrue(any("birthday" in e and "另一天" in e for e in errors), overwrite)
+
+    def test_scene_of_same_day_allowed_on_replan(self):
+        self.patch_catalog(lambda c: c["days"].append(
+            {"id": "zoo-day", "title": "x", "route": [{"id": "zoo-morning", "band": 0, "icon": "bed"}]}))
+        self.assertEqual(self.errors(overwrite=True), [])
+
     def test_level_count(self):
         self.assertTrue(any("关数" in e for e in self.errors(lambda d: d["levels"].pop())))
 
@@ -135,9 +156,11 @@ class PlanDayAsyncTest(unittest.IsolatedAsyncioTestCase):
 
 class DayPlanCommandTest(TempRepoCase):
     def run_cmd(self, *extra):
+        fixtures = self.root / "fx.json"  # the plan three times: a refused day_id costs the rewrites
+        fixtures.write_text(json.dumps({"day_planner": [zoo_dict()] * 3}), "utf-8")
         out = io.StringIO()
         with contextlib.redirect_stdout(out):
-            code = main(["day-plan", "去动物园", "--fixtures", str(ZOO), *extra], root=self.root)
+            code = main(["day-plan", "去动物园", "--fixtures", str(fixtures), *extra], root=self.root)
         return code, out.getvalue()
 
     def test_writes_plan_file_and_lists_missing_pictures(self):

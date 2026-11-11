@@ -170,11 +170,8 @@ def day_plan_command(args, repo: Repo) -> int:
     budget = Budget.from_env()
     try:
         topic = clean_topic(args.topic)
-        plan = asyncio.run(plan_day(topic, repo, make_model("day_planner", fixtures, budget), overwrite=True))
+        plan = asyncio.run(plan_day(topic, repo, make_model("day_planner", fixtures, budget), args.overwrite))
         path = day_file(repo, plan.day_id)
-        if (path.exists() or plan.day_id in repo.day_ids()) and not args.overwrite:  # the plan names its own day_id
-            print(f"{path.relative_to(repo.root)} 已经存在（或目录里已有这一天），要重做请加 --overwrite。")
-            return 1
         save_day(repo, new_day_data(plan, topic))
     except BudgetExceeded:
         print("已达到模型费用上限，停止生成，没有写入任何文件。")
