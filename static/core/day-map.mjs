@@ -1,5 +1,5 @@
 import {node,button,image} from './dom.mjs';
-import {flatRoute} from './route.mjs?v=days-zoo-20261111';
+import {flatRoute} from './route.mjs?v=diary-tabs-20261112';
 
 const BANDS=['清晨','上午','中午','下午','傍晚','晚上'];
 const WHERE={done:'走过啦，可以再玩一次',current:'下一站',locked:'先走完前面的路才能来'};

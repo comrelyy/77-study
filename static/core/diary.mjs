@@ -1,6 +1,6 @@
 import {node,button} from './dom.mjs';
-import {mapDays,levelStates} from './route.mjs?v=days-zoo-20261111';
-import {renderDayMap} from './day-map.mjs?v=days-zoo-20261111';
+import {mapDays,levelStates} from './route.mjs?v=diary-tabs-20261112';
+import {renderDayMap} from './day-map.mjs?v=diary-tabs-20261112';
 
 const END='Momo 的日记写到这里啦，新的一天还在写';
 export function diaryDays(catalog,order,cleared,levels,opts){
@@ -25,7 +25,7 @@ export function renderDiary(root,{days,focusId=null,notice=null,enterScene,playA
     const d=days[i];
     page.className='diary-page';
     renderDayMap(page,{levels:d.levels,states:d.states,focusId:first&&d.levels.some(l=>l.id===focusId)?focusId:null,notice:first?notice:null,enterScene,playAudio,reduceMotion,heading:label(d),goodnight:i===days.length-1&&d.done?END:undefined});
-    tabs.children.forEach(t=>{if(t.dayIndex!==undefined){t.className='diary-tab'+(t.dayIndex===i?' sel':'');t.setAttribute('aria-current',t.dayIndex===i?'true':'false');}});
+    for(const t of tabs.children)if(t.dayIndex!==undefined){t.className='diary-tab'+(t.dayIndex===i?' sel':'');t.setAttribute('aria-current',t.dayIndex===i?'true':'false');}
   };
   const shown=days.map((d,i)=>d.unlocked?i:-1).filter(i=>i>=0);
   for(const i of shown){const b=button(days[i].done?'第 '+(i+1)+' 天 ✓':label(days[i]),()=>{clearTimeout(turn);show(i,false);},'diary-tab');b.dayIndex=i;tabs.append(b);}

@@ -1,6 +1,6 @@
 ﻿import {reviewWords} from './enhancements.mjs';
 
-import {availableScenes} from './catalog.mjs?v=days-zoo-20261111';
+import {availableScenes} from './catalog.mjs?v=diary-tabs-20261112';
 // Review is restricted to published content and explicitly listed development previews.
 // Internal examples never become family review sources.
 export async function loadReviewSources({catalog,current,events,internal=false,fetcher=(...args)=>globalThis.fetch(...args),validate}){

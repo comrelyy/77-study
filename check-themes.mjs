@@ -38,7 +38,7 @@ test('the day map is a separate page with no activity modules',async()=>{
 test('theme home has a return to selection and keeps exit controls below parent notes',async()=>{
   const {app,root,calls}=await fixture();app.data.notices=['说明'];app.draw();
   assert.equal(root.querySelectorAll('.map-level').length,0);assert(root.querySelector('.hero'));assert.equal(root.querySelectorAll('.activity').length,1);assert(root.textContent.includes('开始这节课'));assert(!root.querySelectorAll('.activity').some(b=>/情景互动|游戏互动|主题小故事|单词汇总/.test(b.textContent)));
-  const notes=root.children.findIndex(e=>e.tagName==='details');assert(root.children[notes+1].className.includes('home-actions'));
+  const notes=[...root.children].findIndex(e=>e.tagName==='details');assert(root.children[notes+1].className.includes('home-actions'));
   await root.querySelector('.theme-back').fire();assert.deepEqual(calls,[null]);
 });
 test('theme switching waits for checkpoint, flush, and release; repeated clicks do not navigate twice',async()=>{

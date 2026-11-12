@@ -1,14 +1,14 @@
-import {loadReviewSources} from './core/review-sources.mjs?v=days-zoo-20261111';
+import {loadReviewSources} from './core/review-sources.mjs?v=diary-tabs-20261112';
 import {App} from './core/app.mjs?v=day-map-20261110';
-import {clearedFrom,mapLevels} from './core/day-map.mjs?v=days-zoo-20261111';
-import {diaryDays,renderDiary} from './core/diary.mjs?v=days-zoo-20261111';
-import {routeOrder,canEnter} from './core/route.mjs?v=days-zoo-20261111';
+import {clearedFrom,mapLevels} from './core/day-map.mjs?v=diary-tabs-20261112';
+import {diaryDays,renderDiary} from './core/diary.mjs?v=diary-tabs-20261112';
+import {routeOrder,canEnter} from './core/route.mjs?v=diary-tabs-20261112';
 import {MemoryStore} from './core/store.mjs';
 import {PersistentStore} from './core/persistent-store.mjs?v=reload-handover-20261103';
 import {BrowserActivity} from './core/browser-activity.mjs?v=reload-handover-20261103';
 import {node,button} from './core/dom.mjs';
 import {missingBootAssets} from './core/boot-assets.mjs';
-import {chooseScene,availableScenes} from './core/catalog.mjs?v=days-zoo-20261111';
+import {chooseScene,availableScenes} from './core/catalog.mjs?v=diary-tabs-20261112';
 import {resetPreviewLeftovers} from './core/preview-reset.mjs?v=preview-reset-20261110';
 async function json(path){const response=await fetch(path,{cache:'no-store'});if(!response.ok)throw Error('内容文件读取失败');return response.json();}
 async function loadPack(catalog,id){

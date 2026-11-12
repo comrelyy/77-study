@@ -1,4 +1,4 @@
-import {availableScenes} from './catalog.mjs?v=days-zoo-20261111';
+import {availableScenes} from './catalog.mjs?v=diary-tabs-20261112';
 export const flatRoute=catalog=>(catalog.days||[]).flatMap(d=>d.route.map(r=>({...r,dayId:d.id})));
 export function mapDays(catalog){
   const open=availableScenes(catalog);
