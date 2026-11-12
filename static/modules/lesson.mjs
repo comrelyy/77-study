@@ -102,7 +102,7 @@ function renderStoryRun(c,s,wrap){
   const back=button('上一步',()=>moveTo(c,s,s.storyFirst-1)),resume=button('接着听故事',()=>v.start(false),'primary story-resume');
   const next=button('下一步 / 跳过',()=>moveTo(c,s,s.storyLast+1)),pause=button('暂停声音',()=>{v.stop();c.pause();c.app.checkpoint('lesson');});
   rules.set(back,()=>s.storyFirst===0);
-  const finished=()=>s.index===s.storyLast&&s.story.fragment>=s.story.scene.segments.length&&s.story.saved,waiting=()=>s.step.kind==='quiz'&&!s.canContinue();
+  const finished=()=>s.index===s.storyLast&&(s.story?s.story.fragment>=s.story.scene.segments.length&&s.story.saved:s.canContinue()),waiting=()=>s.step.kind==='quiz'&&!s.canContinue();
   // emit() disables every button while saving; sync() puts the page back once a save settles.
   v.sync=()=>{if(!c.active())return;resume.hidden=v.playing||finished()||waiting();next.className=finished()?'primary':'';for(const b of c.app.body.querySelectorAll('button'))if(b!==pause)b.disabled=c.app.busy||(rules.get(b)?.()??false);};
   v.mark=el=>{for(const x of wrap.querySelectorAll('.current-fragment'))x.className=x.className.replace(' current-fragment','');if(el){el.className+=' current-fragment';el.scrollIntoView?.({block:'center',behavior:reducedMotion()?'auto':'smooth'});}};

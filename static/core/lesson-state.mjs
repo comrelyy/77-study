@@ -4,9 +4,9 @@ export class LessonState{
   constructor(pack,{random=Math.random}={}){
     this.pack=pack;this.random=random;this.practiceId=null;
     this.steps=pack.lesson.steps.filter(x=>pack.lesson.reviewed||x.review!==true);
-    // The story run: first to last story step, with any quiz between; it shows as one page.
+    // The story run: first story step through the consecutive story/quiz steps after it (quizzes stay in place); one page.
     this.storyFirst=this.steps.findIndex(x=>x.kind==='story');this.storyLast=this.storyFirst;
-    for(let i=this.storyFirst;i>=0&&i<this.steps.length&&['story','quiz'].includes(this.steps[i].kind);i++)if(this.steps[i].kind==='story')this.storyLast=i;
+    while(this.storyFirst>=0&&['story','quiz'].includes(this.steps[this.storyLast+1]?.kind))this.storyLast++;
     this.index=0;this.enter();
   }
   inStory(index=this.index){return this.storyFirst>=0&&index>=this.storyFirst&&index<=this.storyLast;}

@@ -18,7 +18,7 @@ async function fixture(pack,{fail=()=>false,nextScene,calls=[],manual=false}={})
 async function answerQuiz(root,s,id=s.correctId()){
   const at=s.step.id,box=root.querySelectorAll('.lesson-quiz').find(q=>q.attributes['data-step']===at);assert(box,'missing quiz '+at);
   await option(box,id).fire();await button(box,'找到了').fire();
-  if(s.step.id===at&&s.canContinue())await button(root,'继续').fire();
+  if(s.step.id===at&&s.canContinue()&&!s.inStory())await button(root,'继续').fire();
 }
 const pathOf=(pack,id)=>pack.assets.find(a=>a.id===id).path;
 const linePaths=(pack,from=0,fragment=0)=>pack.modules.story.slice(from).flatMap((sc,i)=>sc.segments.slice(i?0:fragment).map(x=>pathOf(pack,x.audio)));
@@ -37,7 +37,7 @@ async function toStep(env,kind){
   const {app,root}=env;
   for(let i=0;i<200&&app.stateFor('lesson').step.kind!==kind;i++){
     const s=app.stateFor('lesson');
-    if(['words','story'].includes(s.step.kind))await button(root,'下一步 / 跳过').fire();
+    if(['words','story'].includes(s.step.kind)||s.inStory()&&s.canContinue())await button(root,'下一步 / 跳过').fire();
     else if(s.step.kind==='quiz')await answerQuiz(root,s);
     else if(s.step.kind==='fill'){await option(root,s.correctId()).fire();await button(root,'继续').fire();}
     else throw Error('cannot pass '+s.step.kind+' on the way to '+kind);
@@ -48,7 +48,7 @@ async function walk(env,seen=[]){
   const {app,root}=env;let guard=0;
   while(!root.textContent.includes('这节课完成啦')&&guard++<300){
     const s=app.stateFor('lesson'),step=s.step;seen.push(step.kind);
-    if(['words','story'].includes(step.kind))await button(root,'下一步 / 跳过').fire();
+    if(['words','story'].includes(step.kind)||s.inStory()&&s.canContinue())await button(root,'下一步 / 跳过').fire();
     else if(step.kind==='quiz')await answerQuiz(root,s);
     else if(step.kind==='fill'||step.kind==='reply'){await option(root,s.correctId()).fire();assert(s.done,step.id+' not done');await button(root,'继续').fire();}
     else if(step.kind==='match'){
@@ -88,7 +88,7 @@ test('reviewed park shows quiz and reply',async()=>{
       const round=step.rounds[s.roundIndex],dlg=pack.modules.dialogue.find(d=>d.id===round.dialogueId),right=dlg.options.find(o=>o.id===round.answer);
       assert(root.textContent.includes(right.text));assert(root.textContent.includes(round.wrong.text));texts.add('reply');
     }
-    if(['words','story'].includes(step.kind))await button(root,'下一步 / 跳过').fire();
+    if(['words','story'].includes(step.kind)||s.inStory()&&s.canContinue())await button(root,'下一步 / 跳过').fire();
     else if(step.kind==='quiz')await answerQuiz(root,s);
     else if(['fill','reply'].includes(step.kind)){await option(root,s.correctId()).fire();await button(root,'继续').fire();}
     else if(step.kind==='match'){while(!s.done){const t=s.target;await option(root,t).fire();}await button(root,'继续').fire();}
@@ -259,7 +259,7 @@ test('lesson state groups the story run from the first to the last story step',a
   const park=require('./static/content/park.json'),s=new LessonState(park);
   assert.deepEqual([s.storyFirst,s.storyLast],[1,6]);assert(s.inStory(1)&&s.inStory(6)&&!s.inStory(0)&&!s.inStory(7));
   const reviewed=clone(park);reviewed.lesson.reviewed=true;const r=new LessonState(reviewed);
-  assert.deepEqual([r.storyFirst,r.storyLast],[1,8]);assert.equal(r.steps[3].kind,'quiz');assert(r.inStory(3));assert.equal(r.steps[9].kind,'quiz');assert(!r.inStory(9),'a quiz after the last scene keeps its own page');
+  assert.deepEqual([r.storyFirst,r.storyLast],[1,9]);assert.equal(r.steps[3].kind,'quiz');assert(r.inStory(3));assert.equal(r.steps[9].kind,'quiz');assert(r.inStory(9),'a quiz right after the last scene stays in place on the story page');assert.equal(r.steps[10].kind,'fill');assert(!r.inStory(10));
 });
 test('the story run is one 故事 nav entry that restarts from the title',async()=>{
   const pack=require('./static/content/park.json'),env=await fixture(pack),{app,root}=env;app.open('lesson');
@@ -351,11 +351,20 @@ test('从头听 restarts from the title',async()=>{
   const pack=require('./static/content/park.json'),env=await fixture(pack);env.app.open('lesson');await button(env.root,'下一步 / 跳过').fire();
   env.played.length=0;await button(env.root,'从头听').fire();assert.deepEqual(env.played,[pathOf(pack,pack.lesson.title.audio),...linePaths(pack)]);
 });
-test('the quiz after the last scene keeps its own page with select then 找到了',async()=>{
+test('the quiz right after the last scene sits inline after scene 6; the chain stops there and 下一步 leaves to fill',async()=>{
   const pack=clone(require('./static/content/park.json'));pack.lesson.reviewed=true;
-  const env=await fixture(pack),{app,root}=env;app.open('lesson');const s=app.stateFor('lesson');s.goTo(s.storyLast+1);app.draw();
-  assert.equal(s.step.id,'park.lesson.quiz.3');assert(!root.querySelector('.story-divider'));
-  await option(root,s.step.answer).fire();assert.equal(answers(env.store).length,0);
-  await button(root,'找到了').fire();assert(s.done);await button(root,'继续').fire();assert.equal(s.step.kind,'fill');
-  await button(root,'上一步').fire();assert.equal(s.step.kind,'quiz');await button(root,'上一步').fire();assert.equal(s.index,s.storyLast);
+  const env=await fixture(pack),{app,root,store}=env;app.open('lesson');const s=app.stateFor('lesson');
+  s.goTo(s.steps.findIndex(x=>x.id==='park.lesson.quiz.2')+1);app.draw();assert.equal(s.step.storyId,pack.modules.story[4].id);
+  assert(root.querySelector('.story-divider'),'still the story page');
+  const boxes=root.querySelectorAll('.lesson-quiz').map(q=>q.attributes['data-step']);assert.deepEqual(boxes,['park.lesson.quiz.1','park.lesson.quiz.2','park.lesson.quiz.3']);
+  const kids=[...root.querySelector('.lesson-story').children],last=kids.findIndex(k=>k.attributes?.['data-step']==='park.lesson.quiz.3');
+  assert.equal(last,kids.length-1,'quiz.3 comes after scene 6 lines');
+  await button(root,'接着听故事').fire();
+  assert.equal(s.step.id,'park.lesson.quiz.3','the chain stops at the trailing quiz');assert(button(root,'故事').className.includes('current'));
+  assert(button(root,'接着听故事').hidden);
+  await answerQuiz(root,s);assert.equal(s.step.id,'park.lesson.quiz.3');assert(s.done);
+  assert.deepEqual(answers(store).map(a=>[a.stepId,a.correct]),[['park.lesson.quiz.3',true]]);
+  assert(button(root,'接着听故事').hidden,'finished');assert(button(root,'下一步 / 跳过').className.includes('primary'));
+  await button(root,'下一步 / 跳过').fire();assert.equal(s.step.kind,'fill');
+  await button(root,'上一步').fire();assert.equal(s.index,s.storyLast);assert.equal(s.step.id,'park.lesson.quiz.3');assert(root.querySelector('.story-divider'));
 });
