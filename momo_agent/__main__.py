@@ -1,5 +1,5 @@
 """Command line: python -m momo_agent generate <topic> [--fixtures file] [--overwrite] | register | eval [--suite file]
-  | quiz <id> [--fixtures file] | quiz-approve <id> | quiz-audio <id> | day-plan <topic> [--fixtures file] [--overwrite]
+  | quiz <id> [--fixtures file] | quiz-approve <id> | quiz-audio <id> [--all] | day-plan <topic> [--fixtures file] [--overwrite]
   | day-draw <dayId> [--fixtures file] | day-redraw <dayId> <word> [--note text] [--fixtures file] | day-picture-approve <dayId> <word>
   | day-build <dayId> [--fixtures file] | day-approve <dayId>"""
 import argparse
@@ -145,11 +145,8 @@ def quiz_audio_command(args, repo: Repo) -> int:
         print(f"找不到主题：{args.scene_id}")
         return 1
     pack = repo.load_pack(args.scene_id)
-    if pack.get("generatedBy") != "momo_agent" and sys.platform != "win32":
-        print(quiz_mod.WINDOWS_AUDIO_HINT.format(args.scene_id))
-        return 1
     try:
-        written = tts.render_missing_audio(pack, repo.root / "static")
+        written = tts.render_missing_audio(pack, repo.root / "static", everything=args.all)
     except RuntimeError as err:
         print(f"Error: {err}")
         return 1
@@ -343,8 +340,9 @@ def main(argv: list[str] | None = None, root: Path = ROOT) -> int:
     qz.add_argument("--fixtures", help="fixtures json for the fake model (MOMO_LLM_PROVIDER=fake)")
     qa = sub.add_parser("quiz-approve", help="mark a theme's quiz as reviewed (a person's decision)")
     qa.add_argument("scene_id")
-    qd = sub.add_parser("quiz-audio", help="synthesise missing lesson audio for a theme")
+    qd = sub.add_parser("quiz-audio", help="synthesise a theme's missing audio with Kokoro")
     qd.add_argument("scene_id")
+    qd.add_argument("--all", action="store_true", help="voice every audio file of the theme again")
     dp = sub.add_parser("day-plan", help="plan a whole day of 5-7 linked levels (writes content-days/<dayId>.json)")
     dp.add_argument("topic")
     dp.add_argument("--fixtures", help="fixtures json for the fake model (MOMO_LLM_PROVIDER=fake)")

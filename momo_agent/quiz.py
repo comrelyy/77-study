@@ -19,8 +19,6 @@ from momo_agent.repo import Repo
 MAX_QUESTION_CHARS = 30
 MAX_REPLY_WORDS = 8
 MAX_OPTIONS = 3
-WINDOWS_AUDIO_HINT = ("手写主题的题目读音请在 Windows 上运行："
-                      "powershell -NoProfile -ExecutionPolicy Bypass -File .\\make-s4-audio.ps1 -SceneId {}")
 
 QUIZ_PROMPT = """You write quiz questions for a picture-story lesson for children aged 3 to 6 learning English.
 You get the 6 scenes, the dialogue rounds (each with a question and the right answer) and the lesson words.
@@ -191,8 +189,5 @@ def write_quiz(scene_id: str, fixtures: dict | None, budget: Budget, repo: Repo)
     write_overlay(pack, draft, repo)
     print(run_lesson_build(scene_id, repo), end="")
     pack = repo.load_pack(scene_id)
-    if pack.get("generatedBy") == "momo_agent":
-        written = tts.render_missing_audio(pack, repo.root / "static")
-        print(f"Synthesised {len(written)} lesson audio files.")
-    else:
-        print(WINDOWS_AUDIO_HINT.format(scene_id))
+    written = tts.render_missing_audio(pack, repo.root / "static")
+    print(f"Synthesised {len(written)} lesson audio files.")

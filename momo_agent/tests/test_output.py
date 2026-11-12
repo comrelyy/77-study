@@ -2,13 +2,14 @@ import contextlib
 import io
 import json
 import shutil
-import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from momo_agent.__main__ import main
 from momo_agent.register import register
+from momo_agent.tests import daykit
 from momo_agent.repo import Repo
 from momo_agent.scenes import render_scene
 from momo_agent.validate import validate_pack
@@ -40,10 +41,9 @@ def quiz_repo(tmp: str, *scenes: str) -> Path:
             shutil.copy(src, root / "content-lesson" / f"{scene}.json")
     audio = ROOT / "static/audio"
     (root / "static/audio").mkdir(exist_ok=True)
-    for scene in scenes:
-        manifest = audio / f"s4-{scene}-manifest.json"
-        if manifest.exists():
-            shutil.copy(manifest, root / "static/audio" / manifest.name)
+    # every theme voices its missing lesson audio into its manifest, so all manifests are needed
+    for manifest in audio.glob("s4-*manifest.json"):
+        shutil.copy(manifest, root / "static/audio" / manifest.name)
     return root
 
 
@@ -63,7 +63,7 @@ class RenderSceneTest(unittest.TestCase):
         self.assertEqual(hotspot, {"x": 160 / 600, "y": 210 / 280})
 
 
-@unittest.skipUnless(sys.platform == "darwin", "macOS say only")
+@mock.patch("momo_agent.tts.synthesize", new=daykit.silence)
 class EndToEndTest(unittest.TestCase):
     def test_birthday_generate_and_register(self):
         with tempfile.TemporaryDirectory() as tmp:

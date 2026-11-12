@@ -14,9 +14,17 @@ from momo_agent.__main__ import main
 from momo_agent.fake_model import FixtureModel
 from momo_agent.quiz import QuizDraft
 from momo_agent.repo import Repo
+from momo_agent.tests import daykit
 from momo_agent.tests.test_output import FIXTURES, ROOT, make_repo, quiz_repo
 
 PARK_FIXTURE = FIXTURES / "park-quiz.json"
+
+
+def setUpModule():
+    # every theme now voices its missing audio on any platform; tests use the silent stub, never the model
+    patcher = mock.patch("momo_agent.tts.synthesize", new=daykit.silence)
+    patcher.start()
+    unittest.addModuleCleanup(patcher.stop)
 
 
 def run(root: Path, *argv: str) -> tuple[int, str]:
@@ -105,7 +113,7 @@ class QuizCommandTest(unittest.TestCase):
             kinds = [s["kind"] for s in pack["lesson"]["steps"]]
             self.assertIn("quiz", kinds)
             self.assertIn("reply", kinds)
-            self.assertIn("make-s4-audio.ps1", out)
+            self.assertIn("lesson audio files", out)
             self.assertIn("python -m momo_agent quiz-approve park", out)
 
     def test_generation_never_approves(self):
@@ -121,7 +129,6 @@ class QuizCommandTest(unittest.TestCase):
             pack = json.loads((root / "static/content/park.json").read_text("utf-8"))
             self.assertIs(pack["lesson"]["reviewed"], False)
 
-    @unittest.skipUnless(sys.platform == "darwin", "macOS say only")
     def test_generate_also_writes_quiz_overlay(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = quiz_repo(tmp)
@@ -137,7 +144,6 @@ class QuizCommandTest(unittest.TestCase):
             self.assertTrue(lesson_audio)
             self.assertTrue(all((root / "static" / a["path"]).exists() for a in lesson_audio))
 
-    @unittest.skipUnless(sys.platform == "darwin", "macOS say only")
     def test_generate_never_approves(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = quiz_repo(tmp)
@@ -147,7 +153,6 @@ class QuizCommandTest(unittest.TestCase):
             self.assertEqual(code, 0, out)
             self.assertIs(json.loads(stale.read_text("utf-8"))["reviewed"], False)
 
-    @unittest.skipUnless(sys.platform == "darwin", "macOS say only")
     def test_generate_quiz_failure_keeps_theme_and_exits_1(self):
         fx = json.loads((FIXTURES / "birthday.json").read_text("utf-8"))
         fx["quiz"] = []
@@ -227,13 +232,14 @@ class QuizCommandTest(unittest.TestCase):
             self.assertEqual(code, 1)
             self.assertIn("nowhere", out)
 
-    def test_quiz_audio_refuses_handwritten_on_mac(self):
+    def test_quiz_audio_voices_handwritten_themes_on_any_platform(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = quiz_repo(tmp, "park")
-            with mock.patch("momo_agent.__main__.sys.platform", "darwin"):
-                code, out = run(root, "quiz-audio", "park")
-            self.assertEqual(code, 1)
-            self.assertIn("make-s4-audio.ps1", out)
+            for platform in ("darwin", "win32"):
+                with mock.patch("sys.platform", platform):
+                    code, out = run(root, "quiz-audio", "park")
+                self.assertEqual(code, 0, out)
+                self.assertIn("Synthesised", out)
 
     def test_agent_theme_quiz_synthesises_only_missing_audio(self):
         spoken = []

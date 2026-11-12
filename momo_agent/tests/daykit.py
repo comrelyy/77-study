@@ -28,7 +28,7 @@ def _ignore(directory, names):
     return {n for n in names if n in SKIP_NAMES or (rel / n).as_posix() in SKIP_PATHS}
 
 
-def _silence(text, role, out):
+def silence(text, role, out):
     """Write 0.1 s of 22050 Hz 16-bit mono near-silence to `out` and report fixed voice settings.
 
     The samples alternate +1/-1, not 0: the audio check (audio-validation.cjs) rejects all-zero files as silent."""
@@ -42,6 +42,6 @@ def _silence(text, role, out):
 
 @contextlib.contextmanager
 def quiet_audio():
-    """Replace tts.synthesize with the silent stub: never calls `say`."""
-    with mock.patch("momo_agent.tts.synthesize", side_effect=_silence) as patched:
+    """Replace tts.synthesize with the silent stub: never loads the Kokoro model."""
+    with mock.patch("momo_agent.tts.synthesize", side_effect=silence) as patched:
         yield patched
