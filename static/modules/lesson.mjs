@@ -82,11 +82,13 @@ const reducedMotion=()=>globalThis.matchMedia?.('(prefers-reduced-motion: reduce
 function renderStoryRun(c,s,wrap){
   const title=c.pack.lesson.title,list=node('div',undefined,'lesson-story'),bubbles=new Map(),rules=new Map(),quizzes=new Map();
   const v={c,run:0,playing:false};mine(s).view=v;wrap.className+=' lesson-story-page';
+  // Restored progress does not keep 'saved': a fully heard scene whose story_listen the records already hold is done, not resent.
+  const st=s.story;if(st&&!st.saved&&st.fragment>=st.scene.segments.length&&c.app.data.events.some(e=>e.payload?.mode==='story_listen'&&e.payload.stepId===st.scene.id))st.saved=true;
   const heading=node('h2',title?.text||c.pack.title,'lesson-title');wrap.append(heading);if(title)wrap.append(node('p',c.pack.title,'lesson-title-cn'));
   for(let j=s.storyFirst;j<=s.storyLast;j++){
     const step=s.steps[j];
     if(step.kind==='quiz'){
-      const after={right:()=>c.play(c.word(step.answer).audio).then(()=>goOn(c,s,step)),reveal:()=>c.play(c.word(step.answer).audio).then(()=>goOn(c,s,step))};
+      const after={right:()=>goOn(c,s,step),reveal:()=>goOn(c,s,step)};
       const q=quizPicks(c,s,step,j,after,rules);quizzes.set(j,q);list.append(q);continue;
     }
     const scene=c.pack.modules.story.find(x=>x.id===step.storyId),divider=node('figure',undefined,'lesson-scene story-divider');
@@ -101,11 +103,13 @@ function renderStoryRun(c,s,wrap){
   wrap.append(list);
   const back=button('上一步',()=>moveTo(c,s,s.storyFirst-1)),resume=button('接着听故事',()=>v.start(false),'primary story-resume');
   const next=button('下一步 / 跳过',()=>moveTo(c,s,s.storyLast+1)),pause=button('暂停声音',()=>{v.stop();c.pause();c.app.checkpoint('lesson');});
+  const controls=actions(back,resume,button('从头听',()=>moveTo(c,s,s.storyFirst)),next,pause,button('听听怎么玩',()=>c.guide('lesson')));
   rules.set(back,()=>s.storyFirst===0);
   const finished=()=>s.index===s.storyLast&&(s.story?s.story.fragment>=s.story.scene.segments.length&&s.story.saved:s.canContinue()),waiting=()=>s.step.kind==='quiz'&&!s.canContinue();
   // emit() disables every button while saving; sync() puts the page back once a save settles.
   v.sync=()=>{if(!c.active())return;resume.hidden=v.playing||finished()||waiting();next.className=finished()?'primary':'';for(const b of c.app.body.querySelectorAll('button'))if(b!==pause)b.disabled=c.app.busy||(rules.get(b)?.()??false);};
-  v.mark=el=>{for(const x of wrap.querySelectorAll('.current-fragment'))x.className=x.className.replace(' current-fragment','');if(el){el.className+=' current-fragment';el.scrollIntoView?.({block:'center',behavior:reducedMotion()?'auto':'smooth'});}};
+  // A waiting quiz is aligned to sit just above the sticky footer, so its 找到了 is never under it on short phones.
+  v.mark=el=>{for(const x of wrap.querySelectorAll('.current-fragment'))x.className=x.className.replace(' current-fragment','');if(el){el.className+=' current-fragment';const quiz=el.className.includes('lesson-quiz');if(quiz)el.style.scrollMarginBottom=((controls.offsetHeight||0)+12)+'px';el.scrollIntoView?.({block:quiz?'end':'center',behavior:reducedMotion()?'auto':'smooth'});}};
   v.stop=()=>{v.run++;s.story?.pause();v.playing=false;v.sync();};
   v.start=async withTitle=>{
     if(!c.active())return false;
@@ -123,11 +127,12 @@ function renderStoryRun(c,s,wrap){
       }
     }finally{if(run===v.run)v.playing=false;v.sync();}
   };
-  wrap.append(actions(back,resume,button('从头听',()=>moveTo(c,s,s.storyFirst)),next,pause,button('听听怎么玩',()=>c.guide('lesson'))),c.messageNode);
+  wrap.append(controls,c.messageNode);
   v.sync();
 }
-// After an inline quiz is answered (or revealed) the story carries on by itself.
-function goOn(c,s,step){const v=mine(s).view;if(v&&v.c.active()&&s.step===step&&s.canContinue())return v.start(false);}
+// After an inline quiz is answered (or revealed) the answer word plays and the story carries on by itself,
+// unless pause or a tapped line stopped the view (v.stop bumps run) while the word played.
+function goOn(c,s,step){const v=mine(s).view,run=v?.run;return c.play(c.word(step.answer).audio).then(()=>{if(v&&v.run===run&&v.c.active()&&s.step===step&&s.canContinue())return v.start(false);});}
 // Picture quiz: a tap speaks the word and selects it; only 找到了 submits through choose().
 function quizPicks(c,s,step,j,after,rules){
   const u=mine(s),here=()=>s.index===j,blocked=()=>!here()||s.done||s.revealed,picked=()=>u.pick?.step===step.id?u.pick.id:null;

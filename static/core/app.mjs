@@ -187,7 +187,7 @@ export class App{
   guide(id){
     if(id==='dialogue'&&this.integratedInteractions&&pendingInteractionGame(this.pack,this.stateFor('dialogue'),this.stateFor('game')))id='game';
     if(!this.body||this.busy||this.failure)return;const notice=node('aside',undefined,'notice module-guide');notice.setAttribute('aria-label','玩法示范');
-    const text=id==='game'?(this.pack.modules.game.instructions||(this.pack.modules.game.type==='listen-pack'?'先听完要找的词，再点对应图片。Momo示范不替你提交，可以跳过或结束。':'先点一件物品，再点一个收纳区。可以换选，不用拖动，也可以跳过或结束。')):guides[id];
+    const text=id==='game'?(this.pack.modules.game.instructions||(this.pack.modules.game.type==='listen-pack'?'先听听要找什么，再点图片听一听，选好了点“找到了”。Momo示范不替你提交，可以跳过或结束。':'先点一件物品，再点一个收纳区。可以换选，不用拖动，也可以跳过或结束。')):guides[id];
     notice.append(this.assetImage(this.pack.modules.story[0].characters[0]),node('p',text),button('♫ 听玩法',async()=>{const generation=this.generation;const ok=await this.player.play(null,text,{allowFallback:true});if(generation===this.generation)this.message(ok?'玩法说明听完啦。':'说明声音暂不可用，可以看图、跳过或结束。');}),button('知道啦 / 跳过示范',()=>{this.pause();notice.remove();}));this.body.querySelector('.module-guide')?.remove();this.body.prepend(notice);
   }
   complete(){this.pause();if(this.store.persistent)this.leavePersistent('complete');else{this.view='complete';this.draw();}}

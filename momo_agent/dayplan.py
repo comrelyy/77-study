@@ -45,7 +45,7 @@ class DayLevel(BaseModel):
     function: str
     band: int
     words: list[WordCard]
-    title_en: str
+    title_en: str = ""
     bridge_en: str
     bridge_cn: str
 

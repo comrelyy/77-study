@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
   "sceneId": "shopping",
-  "contentVersion": "0.2.4",
+  "contentVersion": "0.2.5",
   "status": "draft",
   "compatibleFrom": [
     "0.2.0",
     "0.2.1",
     "0.2.2",
-    "0.2.3"
+    "0.2.3",
+    "0.2.4"
   ],
   "title": "和 Momo 逛小商店",
   "stickerId": "shopping.sticker",
@@ -1418,7 +1419,7 @@
     "game": {
       "type": "listen-pack",
       "title": "听清单，把需要的东西找出来",
-      "instructions": "先完整听完要找的词，再点对应图片。可以重听、请人示范、跳过或结束。",
+      "instructions": "先听听要找什么，再点图片听一听，选好了点“找到了”。可以重听、请人示范、跳过或结束。",
       "questions": [
         {
           "id": "shopping.game.1",

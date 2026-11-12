@@ -123,6 +123,12 @@ class CheckDayPlanTest(TempRepoCase):
             errors = self.errors(lambda d: d["levels"][0].update({field: "  "}))
             self.assertTrue(any(field in e for e in errors), field)
 
+    def test_older_plan_without_title_en_loads_and_is_reported(self):
+        plan = plan_with(lambda d: [level.pop("title_en") for level in d["levels"]])
+        self.assertEqual(plan.levels[0].title_en, "")
+        errors = check_day_plan(plan, self.repo)
+        self.assertTrue(any("title_en" in e for e in errors))
+
     def test_bridge_en_length(self):
         errors = self.errors(lambda d: d["levels"][0].update(bridge_en="x" * 81))
         self.assertTrue(any("bridge_en" in e for e in errors))

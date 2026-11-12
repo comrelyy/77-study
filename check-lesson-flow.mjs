@@ -8,9 +8,10 @@ const require=createRequire(import.meta.url),{Session}=require('./static/core/mo
 const clone=x=>JSON.parse(JSON.stringify(x));
 function button(root,label){const b=root.querySelectorAll('button').find(b=>b.textContent===label);assert(b,'missing button '+label);return b;}
 function option(root,id){const b=root.querySelectorAll('button').find(b=>b.attributes['data-id']===id);assert(b,'missing option '+id);return b;}
-async function fixture(pack,{fail=()=>false,nextScene,calls=[],manual=false}={}){
-  globalThis.document=documentModel();const root=new Element('main'),played=[],store=new MemoryStore(),waiting=[];let id=0;
-  const player={stop(){for(const r of waiting.splice(0))r(false);},source:'local-file',play(path){played.push(path);if(!manual)return Promise.resolve(!fail(path));return new Promise(r=>waiting.push(r));}};
+async function fixture(pack,{fail=()=>false,nextScene,calls=[],manual=false,store=new MemoryStore()}={}){
+  globalThis.document=documentModel();const root=new Element('main'),played=[],waiting=[];let id=0;
+  // Like core/player.js: a new play() stops the previous one, which resolves false.
+  const player={stop(){for(const r of waiting.splice(0))r(false);},source:'local-file',play(path){player.stop();played.push(path);if(!manual)return Promise.resolve(!fail(path));return new Promise(r=>waiting.push(r));}};
   const app=new App({root,pack,store,Session,nextScene,scenes:[{id:'washing'},{id:'dressing'}],navigateScene:async(id,opts)=>{calls.push([id,opts?.focus]);},uuid:()=>String(++id),player});
   await app.init();return {app,root,store,played,waiting};
 }
@@ -367,4 +368,37 @@ test('the quiz right after the last scene sits inline after scene 6; the chain s
   assert(button(root,'接着听故事').hidden,'finished');assert(button(root,'下一步 / 跳过').className.includes('primary'));
   await button(root,'下一步 / 跳过').fire();assert.equal(s.step.kind,'fill');
   await button(root,'上一步').fire();assert.equal(s.index,s.storyLast);assert.equal(s.step.id,'park.lesson.quiz.3');assert(root.querySelector('.story-divider'));
+});
+// Plays every pending sound to the end until the condition holds (manual player).
+async function drive(env,condition,label){for(let i=0;i<400&&!condition();i++){if(env.waiting.length)env.waiting.shift()(true);await new Promise(r=>setTimeout(r));}assert(condition(),label);}
+async function atFirstQuiz(){
+  const pack=clone(require('./static/content/park.json'));pack.lesson.reviewed=true;
+  const env=await fixture(pack,{manual:true}),{app,root}=env;app.open('lesson');const s=app.stateFor('lesson');
+  const chain=button(root,'下一步 / 跳过').fire();await drive(env,()=>s.step.kind==='quiz'&&!env.waiting.length,'chain reaches quiz.1');await chain;
+  const quiz=s.step,tap=option(root,quiz.answer).fire();await until(()=>env.waiting.length===1);env.waiting.shift()(true);await tap;
+  env.played.length=0;const found=button(root,'找到了').fire();await until(()=>env.waiting.length===1,'answer word plays');
+  assert.deepEqual(env.played,[pathOf(pack,app.word(quiz.answer).audio)]);return {...env,pack,s,quiz,found};
+}
+test('暂停声音 while the answer word plays after an inline quiz stops the story there',async()=>{
+  const {app,root,s,quiz,found,played,waiting}=await atFirstQuiz();
+  await button(root,'暂停声音').fire();await new Promise(r=>setTimeout(r,5));const extra=played.slice(1);app.player.stop();await found;
+  assert.deepEqual(extra,[],'nothing more plays');assert.equal(waiting.length,0);
+  assert.equal(s.step,quiz);assert(!button(root,'接着听故事').hidden,'接着听故事 offered');
+  const again=button(root,'接着听故事').fire();await until(()=>waiting.length===1);assert.equal(played[1],app.asset(app.pack.modules.story[2].segments[0].audio).path);app.player.stop();await again;
+});
+test('tapping a story line while the answer word plays plays only that line',async()=>{
+  const {app,root,s,quiz,found,played,waiting}=await atFirstQuiz(),line=app.pack.modules.story[0].segments[1];
+  const tap=root.querySelectorAll('.lesson-bubble')[1].fire();await new Promise(r=>setTimeout(r,5));
+  assert.deepEqual(played.slice(1),[app.asset(line.audio).path],'only the tapped line plays');assert.equal(waiting.length,1,'and it is still playing');
+  waiting.shift()(true);await tap;await new Promise(r=>setTimeout(r,5));const extra=played.slice(2);app.player.stop();await found;
+  assert.deepEqual(extra,[],'the story did not start again');assert.equal(s.step,quiz);
+});
+test('reload after the whole story was heard: no 接着听故事, 下一步 is primary, story_listen is not sent again',async()=>{
+  const {serializeProgress,restoreProgress}=await import('./static/core/progress.mjs');
+  const pack=require('./static/content/park.json'),first=await fixture(pack);first.app.open('lesson');await button(first.root,'下一步 / 跳过').fire();
+  const s1=first.app.stateFor('lesson');assert.equal(s1.index,s1.storyLast);assert.equal(listens(first.store).length,6);
+  const record={...serializeProgress(pack,'lesson',s1),compatible:true},env=await fixture(pack,{store:first.store}),{app,root}=env;
+  assert(restoreProgress(pack,'lesson',app.stateFor('lesson'),record));app.open('lesson');
+  assert(button(root,'接着听故事').hidden,'nothing left to resume');assert(button(root,'下一步 / 跳过').className.includes('primary'));
+  assert.equal(env.played.length,0);assert.equal(listens(env.store).length,6);
 });

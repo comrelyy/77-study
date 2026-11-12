@@ -93,7 +93,7 @@ function applyGames(pack){
     const illustration=id+'.game.image';pack.assets.push({id:illustration,kind:'image',path:'illustrations/scenes/'+id+'-game.svg'});
     const xy=({dressing:[[.19,.32],[.81,.76],[.25,.81],[.79,.26]],park:[[.19,.43],[.8,.75],[.47,.20],[.5,.8]],weather:[[.18,.20],[.74,.22],[.32,.68],[.79,.76]],transport:[[.68,.30],[.22,.26],[.79,.79],[.24,.77]]})[id];
     pack.modules.game={type:'scene-find',title:'在'+({dressing:'出门的小房间',park:'公园',weather:'天气观察角',transport:'车站'}[id])+'里找一找',
-      instructions:'先听完英语，再在大图里找对应物品。可以重听、请朋友示范或跳过。',illustration,
+      instructions:'先听听要找什么，再点大图里的东西听一听，选好了点“找到了”。可以重听、请朋友示范或跳过。',illustration,
       hotspots:pack.words.map((w,i)=>({word:w.id,x:xy[i][0],y:xy[i][1]})),
       questions:pack.words.map((w,i)=>({id:id+'.game.'+(i+1),target:w.id,options:pack.words.map(w=>w.id)}))};
   }

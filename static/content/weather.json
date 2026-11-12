@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
   "sceneId": "weather",
-  "contentVersion": "0.1.4",
+  "contentVersion": "0.1.5",
   "status": "draft",
   "compatibleFrom": [
     "0.1.0",
     "0.1.1",
     "0.1.2",
-    "0.1.3"
+    "0.1.3",
+    "0.1.4"
   ],
   "title": "和 Momo 看天气",
   "stickerId": "weather.sticker",
@@ -1423,7 +1424,7 @@
     "game": {
       "type": "scene-find",
       "title": "在天气观察角里找一找",
-      "instructions": "先听完英语，再在大图里找对应物品。可以重听、请朋友示范或跳过。",
+      "instructions": "先听听要找什么，再点大图里的东西听一听，选好了点“找到了”。可以重听、请朋友示范或跳过。",
       "illustration": "weather.game.image",
       "hotspots": [
         {

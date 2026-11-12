@@ -9,6 +9,6 @@ def build_listen_pack(words: list[str]) -> dict:
     return {
         "type": "listen-pack",
         "title": "听清单，把需要的东西找出来",
-        "instructions": "先完整听完要找的词，再点对应图片。可以重听、请人示范、跳过或结束。",
+        "instructions": "先听听要找什么，再点图片听一听，选好了点“找到了”。可以重听、请人示范、跳过或结束。",
         "questions": [{"target": word, "options": list(words)} for word in words],
     }

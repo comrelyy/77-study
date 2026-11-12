@@ -134,7 +134,7 @@ function createPack(spec){
   p.words=spec.keys.map(key=>{const [id,text,cn,file]=words[key],image=spec.id+'.'+key+'.image';p.assets.push({id:image,kind:'image',path:'illustrations/'+file+'.svg'});return {id,text,cn,image,audio:audio(p,spec.id+'.'+key,text)};});
   story(p,spec.story);
   p.modules.dialogue=spec.dialogue.map(([q,cn,...replies],i)=>{const id=spec.id+'.dialogue.'+(i+1);return {id,cn,question:[{id:id+'.question',text:q,audio:audio(p,id+'.question',q)}],options:replies.map(([text,cn,follow,wi],j)=>{const oid=id+'.reply.'+(j+1);return {id:oid,text,cn,image:p.words[wi].image,audio:audio(p,oid,text,'bunny'),followUp:[{id:oid+'.follow',text:follow,audio:audio(p,oid+'.follow',follow)}]};})};});
-  const g=p.modules.game={type:spec.zones?'select-place':'listen-pack',title:spec.gameTitle,instructions:spec.zones?'先选物品，再点合适的位置。可以换选，请人示范、跳过或结束。':'先完整听完要找的词，再点对应图片。可以重听、请人示范、跳过或结束。',
+  const g=p.modules.game={type:spec.zones?'select-place':'listen-pack',title:spec.gameTitle,instructions:spec.zones?'先选物品，再点合适的位置。可以换选，请人示范、跳过或结束。':'先听听要找什么，再点图片听一听，选好了点“找到了”。可以重听、请人示范、跳过或结束。',
     questions:p.words.map((w,i)=>({id:spec.id+'.game.'+(i+1),target:w.id,options:p.words.map(w=>w.id),...(spec.zones?{zone:spec.id+'.zone.'+spec.destinations[i]}:{})}))};
   if(spec.zones)g.zones=spec.zones.map((label,i)=>({id:spec.id+'.zone.'+i,label}));
   if(spec.collection)g.collectionImage='illustrations/'+spec.collection+'.svg';
