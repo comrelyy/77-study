@@ -30,9 +30,11 @@ test('every theme alternates actual one-click conversation with its game tasks a
         }else if(pack.modules.game.type==='scene-find'){
           await button(root,'听听要找什么').fire();
           await root.querySelectorAll('button').find(b=>b.attributes['aria-label']==='选择'+app.word(q.target).cn).fire();
+          await button(root,'找到了').fire();
         }else if(pack.modules.game.type==='listen-pack'){
           await button(root,'听听要找什么').fire();
           await root.querySelectorAll('button').find(b=>b.attributes['aria-label']===app.word(q.target).cn).fire();
+          await button(root,'找到了').fire();
         }else{
           await root.querySelectorAll('button').find(b=>b.attributes['aria-label']===app.word(q.target).cn).fire();
           await button(root,'放到'+pack.modules.game.zones.find(z=>z.id===q.zone).label).fire();
@@ -79,7 +81,7 @@ test('restoring a conversation in its sorting task preserves partial work and re
 test('two fast game-continue clicks cannot skip the next task or dialogue',async()=>{
   const pack=require('./static/content/dressing.json'),{app,root,store}=await fixture(pack);await answer(root);
   const game=app.stateFor('game'),q=pack.modules.game.questions[0];await button(root,'听听要找什么').fire();
-  await root.querySelectorAll('button').find(b=>b.attributes['aria-label']==='选择'+app.word(q.target).cn).fire();
+  await root.querySelectorAll('button').find(b=>b.attributes['aria-label']==='选择'+app.word(q.target).cn).fire();await button(root,'找到了').fire();
   const next=button(root,'继续');await Promise.all([next.fire(),next.fire()]);
   assert.equal(game.index,1);assert.equal(app.stateFor('dialogue').index,1);assert.equal(store.events.size,2);
 });

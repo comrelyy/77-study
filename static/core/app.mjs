@@ -6,7 +6,7 @@ import {MemoryStorage} from './store.mjs';
 import {serializeProgress,restoreProgress} from './progress.mjs?v=lesson-20261110';
 import {renderStory} from '../modules/story.mjs?v=segment-cn-20261109b';
 import {renderDialogue} from '../modules/dialogue.mjs?v=integrated-20261103';
-import {renderGame} from '../modules/game.mjs?v=segment-cn-20261109b';
+import {renderGame} from '../modules/game.mjs?v=story-one-step-20261112';
 import {renderSummary} from '../modules/summary.mjs';
 import {renderLesson} from '../modules/lesson.mjs?v=story-one-step-20261112';
 import {pendingInteractionGame} from './interaction-flow.mjs?v=integrated-20261103';

@@ -55,7 +55,7 @@ test('a park lesson with one wrong answer persists answers and progress through 
     {
       const game=app.stateFor('game'),q=pack.modules.game.questions[game.index];
       await click(root,'听听要找什么');
-      await root.querySelectorAll('button').find(b=>b.attributes['aria-label']==='选择'+app.word(q.target).cn).fire();
+      await root.querySelectorAll('button').find(b=>b.attributes['aria-label']==='选择'+app.word(q.target).cn).fire();await click(root,'找到了');
       assert.equal(app.failure,null,JSON.stringify(app.failure));assert(game.done);await click(root,'继续');
     }
     lesson=app.stateFor('lesson');assert.equal(lesson.step.kind,'match');

@@ -28,8 +28,8 @@ const answers=store=>[...store.events.values()].filter(e=>e.payload.mode==='less
 async function playGameQuestion(app,root,pack){
   const game=app.stateFor('game'),g=pack.modules.game,q=g.questions[game.index];
   if(g.type==='story-order'){for(const word of q.solution)await button(root,q.labels[word]).fire();await button(root,'故事排好了').fire();}
-  else if(g.type==='scene-find'){await button(root,'听听要找什么').fire();await root.querySelectorAll('button').find(b=>b.attributes['aria-label']==='选择'+app.word(q.target).cn).fire();}
-  else if(g.type==='listen-pack'){await button(root,'听听要找什么').fire();await root.querySelectorAll('button').find(b=>b.attributes['aria-label']===app.word(q.target).cn).fire();}
+  else if(g.type==='scene-find'){await button(root,'听听要找什么').fire();await root.querySelectorAll('button').find(b=>b.attributes['aria-label']==='选择'+app.word(q.target).cn).fire();await button(root,'找到了').fire();}
+  else if(g.type==='listen-pack'){await button(root,'听听要找什么').fire();await root.querySelectorAll('button').find(b=>b.attributes['aria-label']===app.word(q.target).cn).fire();await button(root,'找到了').fire();}
   else{await root.querySelectorAll('button').find(b=>b.attributes['aria-label']===app.word(q.target).cn).fire();await button(root,'放到'+g.zones.find(z=>z.id===q.zone).label).fire();}
   assert(game.done);await button(root,'继续').fire();
 }
