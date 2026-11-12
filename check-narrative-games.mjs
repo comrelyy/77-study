@@ -65,6 +65,16 @@ for(const [name,pack,label] of [['scene-find',findPack,w=>'选择'+w.cn],['liste
     await found().fire();assert(s.done);assert.equal(store.events.size,1);
     const n=played.length,events=store.events.size;await tile(wrong).fire();assert.equal(played.length,n+1);assert.equal(played.at(-1),path(wrong));assert.equal(s.selection,q.target);assert(s.done);assert.equal(store.events.size,events);
   });
+  test(name+': a tapped picture shows its English word; 听听要找什么 and 找到了 share one button row',async()=>{
+    const {root,app,s}=await hearFixture(pack),q=pack.modules.game.questions[0],tile=id=>root.querySelectorAll('button').find(b=>b.attributes['aria-label']===label(app.word(id))),tags=()=>root.querySelectorAll('.word-tag');
+    const wrong=q.options.find(o=>o!==q.target),row=root.querySelectorAll('.scene-controls').find(r=>[...r.children].some(b=>b.textContent==='找到了'));
+    assert(row&&[...row.children].some(b=>b.textContent==='听听要找什么'),'both buttons in one row');
+    assert.equal(tags().length,0);
+    await tile(wrong).fire();assert.deepEqual(tags().map(t=>t.textContent),[app.word(wrong).text]);assert(tile(wrong).querySelector('.word-tag'));
+    await tile(q.target).fire();assert.deepEqual(tags().map(t=>t.textContent),[app.word(q.target).text]);assert(tile(q.target).querySelector('.word-tag'));
+    await click(root,'听听要找什么');assert(s.heard);assert(tile(q.target).querySelector('.word-tag'),'the word stays after a redraw');
+    await click(root,'找到了');assert(s.done);await tile(wrong).fire();assert.deepEqual(tags().map(t=>t.textContent),[app.word(wrong).text],'after done a tap still shows the word');
+  });
   test(name+': 找到了 on a wrong selection keeps the wrong-answer path',async()=>{
     const {root,app,store,s}=await hearFixture(pack),q=pack.modules.game.questions[0],wrong=q.options.find(o=>o!==q.target);
     await click(root,'听听要找什么');await root.querySelectorAll('button').find(b=>b.attributes['aria-label']===label(app.word(wrong))).fire();await click(root,'找到了');

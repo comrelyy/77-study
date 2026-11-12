@@ -1,7 +1,10 @@
 import {node,button,actions} from '../core/dom.mjs';
 // Tap = hear that word and select it in place (a redraw would cut the sound); only 「找到了」 submits.
+// The tapped picture shows its English word (one tag at a time); on a redraw it sits on the selection.
+export const wordTag=w=>node('span',w.text,'word-tag');
 export function tapHear(c,s,id,items,found){
   const w=c.word(id);
+  for(const [x,b] of items){b.querySelector('.word-tag')?.remove();if(x===id)b.append(wordTag(w));}
   if(s.select(id)){for(const [x,b] of items){const on=x===id;b.setAttribute('aria-pressed',String(on));b.className=b.className.replace(/ (highlight|demo-hotspot)/g,'')+(on?' highlight':'');b.querySelector?.('small')?.remove();if(on&&b.className.includes('food-tile'))b.append(node('small','✓ 已选中'));}found.disabled=s.busy||s.done;c.app.checkpoint('game');}
   return w.audio?c.play(w.audio):undefined;
 }
@@ -22,9 +25,9 @@ export function renderNovelGame(c,s){
     const undo=button('撤回最后一步',()=>{if(s.undoSequence()){c.redraw();c.app.checkpoint('game');}});undo.disabled=s.done||s.busy||!s.sequence.length;wrap.append(actions(confirm,undo));
   }else{
     const items=[],prompt=targetPrompt(c,s,q),found=foundButton(c,s,prompt);
-    const listen=button('听听要找什么',()=>prompt(),'primary');listen.disabled=s.busy||s.done;wrap.append(listen,found);
+    const listen=button('听听要找什么',()=>prompt(),'primary');listen.disabled=s.busy||s.done;wrap.append(actions(listen,found));
     const canvas=node('div',undefined,'find-scene');canvas.setAttribute('aria-label','在场景里找一找');const art=c.assetImage(game.illustration,'');art.className='find-scene-art';canvas.append(art);
-    for(const h of game.hotspots.filter(h=>q.options.includes(h.word))){const w=c.word(h.word),b=button('',()=>tapHear(c,s,h.word,items,found),'game-hotspot'+(s.selection===h.word?(s.demoUsed&&h.word===q.target?' demo-hotspot':' highlight'):''));items.push([h.word,b]);b.setAttribute('aria-label','选择'+w.cn);b.setAttribute('aria-pressed',String(s.selection===h.word));b.style.left=(h.x*100)+'%';b.style.top=(h.y*100)+'%';b.disabled=s.busy;canvas.append(b);}wrap.append(canvas);
+    for(const h of game.hotspots.filter(h=>q.options.includes(h.word))){const w=c.word(h.word),b=button('',()=>tapHear(c,s,h.word,items,found),'game-hotspot'+(s.selection===h.word?(s.demoUsed&&h.word===q.target?' demo-hotspot':' highlight'):''));items.push([h.word,b]);b.setAttribute('aria-label','选择'+w.cn);b.setAttribute('aria-pressed',String(s.selection===h.word));b.style.left=(h.x*100)+'%';b.style.top=(h.y*100)+'%';b.disabled=s.busy;if(s.selection===h.word)b.append(wordTag(w));canvas.append(b);}wrap.append(canvas);
   }
   wrap.append(actions(button('听听怎么玩',()=>{s.help('instructions');c.guide('game');c.app.checkpoint('game');}),button('请朋友示范',()=>{if(s.help('demo')){c.pause();c.redraw();c.app.checkpoint('game');c.app.message(ordering?'朋友排好了一个顺序。可以撤回重排，点确认才保存。':'朋友把目标圈出来了。请先听完，再自己点“找到了”。');}}),button('暂停声音',()=>{c.pause();c.app.checkpoint('game');}),button(s.done?'继续':'先跳过',()=>{c.pause();if(c.advanceGame)return c.advanceGame();if(s.next()){c.redraw();c.app.checkpoint('game');}else c.complete();})),c.messageNode);
   if(s.done)c.messageNode.textContent=ordering?'故事接起来啦！也可以回去再听听。':'找到了！谢谢你仔细观察。';

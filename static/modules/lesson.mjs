@@ -1,5 +1,5 @@
 import {node,button,image,actions} from '../core/dom.mjs';
-import {renderGame} from './game.mjs?v=story-one-step-20261112';
+import {renderGame} from './game.mjs?v=game-word-tag-20261112';
 const ui=new WeakMap();
 const speakers={narrator:'故事',momo:'Momo 墨墨',bunny:'Lulu 露露',fox:'Fifi 菲菲',turtle:'Toto 托托'};
 const openCn=new Set();
