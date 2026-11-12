@@ -14,8 +14,8 @@ MODEL_FILES = {
 }
 RELEASE_URL = "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/"
 DOWNLOAD_HINT = "找不到 Kokoro 模型，请先运行：python scripts/download-kokoro.py"
-VOICES = {"narrator": ("af_heart", 1.0), "momo": ("af_bella", 1.0), "bunny": ("af_nova", 1.05),
-          "fox": ("am_puck", 1.1), "turtle": ("bm_george", 0.85)}
+VOICES = {"narrator": ("af_heart", 1.0), "narrator-male": ("am_michael", 1.0), "momo": ("af_bella", 1.0),
+          "bunny": ("af_nova", 1.05), "fox": ("am_puck", 1.1), "turtle": ("bm_george", 0.85)}
 WORD_SPEED = 0.9  # a single word read on its own, slow enough to hear clearly
 RATE = 22050  # same 16-bit mono format as every existing file, so players and checks are unchanged
 _engine = None
@@ -56,8 +56,29 @@ def synthesize(text: str, role: str, out: Path) -> dict:
     return {"voice": f"Kokoro {voice}", "rate": speed, "volume": 100}
 
 
-def _entry(asset: dict, out: Path) -> dict:
-    info = synthesize(asset["text"], asset["role"], out)
+def level_index(scene_id: str, root: Path) -> int:
+    """Position of a level in its day: the catalog route, else the day plan that is still being built; else 0."""
+    catalog = Path(root) / "static/content/catalog.json"
+    for day in json.loads(catalog.read_text("utf-8")).get("days", []) if catalog.exists() else []:
+        ids = [r["id"] for r in day["route"]]
+        if scene_id in ids:
+            return ids.index(scene_id)
+    for path in sorted((Path(root) / "content-days").glob("*.json")):
+        ids = [level["scene_id"] for level in json.loads(path.read_text("utf-8"))["plan"]["levels"]]
+        if scene_id in ids:
+            return ids.index(scene_id)
+    return 0
+
+
+def voice_role(asset: dict, scene_id: str, static_root: Path) -> str:
+    """The narrator alternates level by level along each day: odd levels female, even levels male."""
+    if asset["role"] == "narrator" and level_index(scene_id, Path(static_root).parent) % 2:
+        return "narrator-male"
+    return asset["role"]
+
+
+def _entry(asset: dict, out: Path, voice: str | None = None) -> dict:
+    info = synthesize(asset["text"], voice or asset["role"], out)
     return {
         "id": asset["id"], "path": asset["path"], "text": asset["text"],
         "language": asset["language"], "role": asset["role"], **info,
@@ -74,7 +95,7 @@ def render_audio(pack: dict, static_root: Path) -> dict:
             continue
         out = static_root / asset["path"]
         out.parent.mkdir(parents=True, exist_ok=True)
-        entries.append(_entry(asset, out))
+        entries.append(_entry(asset, out, voice_role(asset, pack["sceneId"], static_root)))
     manifest = {
         "schemaVersion": 1, "sceneId": pack["sceneId"], "contentVersion": pack["contentVersion"],
         "generatedAt": datetime.now(timezone.utc).isoformat(),
@@ -117,7 +138,7 @@ def render_missing_audio(pack: dict, static_root: Path, everything: bool = False
         if not manifest_path.exists():
             raise RuntimeError(f"找不到音频清单 {name}，无法登记新合成的题目读音。")
         out.parent.mkdir(parents=True, exist_ok=True)
-        done[asset["path"]] = _entry(asset, out)
+        done[asset["path"]] = _entry(asset, out, voice_role(asset, pack["sceneId"], static_root))
         entries.append(done[asset["path"]])
         written.append(out)
     if entries:

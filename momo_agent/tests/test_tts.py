@@ -58,6 +58,43 @@ class SynthesizeTest(unittest.TestCase):
             ("af_bella", 1.0), ("af_bella", 0.9)])
 
 
+class NarratorAlternatesTest(unittest.TestCase):
+    """Narrator: 1st, 3rd... level of a day female, 2nd, 4th... male; other roles never change."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        (self.root / "static/content").mkdir(parents=True)
+        (self.root / "static/audio").mkdir()
+        (self.root / "static/content/catalog.json").write_text(json.dumps({"days": [
+            {"id": "everyday", "route": [{"id": "washing"}, {"id": "dressing"}, {"id": "breakfast"}]}]}), "utf-8")
+        (self.root / "content-days").mkdir()
+        (self.root / "content-days/zoo.json").write_text(json.dumps({"plan": {"levels": [
+            {"scene_id": "zoo-gate"}, {"scene_id": "zoo-lion"}]}}), "utf-8")
+
+    def voices(self, sid):
+        asset = {"role": "narrator"}
+        return tts.voice_role(asset, sid, self.root / "static"), tts.voice_role({"role": "momo"}, sid, self.root / "static")
+
+    def test_route_and_day_plan_positions(self):
+        self.assertEqual([self.voices(s)[0] for s in ("washing", "dressing", "breakfast", "zoo-gate", "zoo-lion", "nowhere")],
+                         ["narrator", "narrator-male", "narrator", "narrator", "narrator-male", "narrator"])
+        self.assertEqual(self.voices("dressing")[1], "momo")
+        self.assertEqual(tts.voice_for("Momo wakes up.", "narrator-male"), ("am_michael", 1.0))
+
+    def test_manifest_keeps_the_narrator_role_with_the_male_voice(self):
+        (self.root / "static/audio/s4-dressing-manifest.json").write_text(json.dumps({"entries": []}), "utf-8")
+        pack = {"sceneId": "dressing", "contentVersion": "1.0.0", "assets": [
+            {"id": "d.n", "kind": "audio", "path": "audio/dressing/n.wav", "text": "Momo gets dressed.",
+             "language": "en-US", "role": "narrator"}]}
+        roles = []
+        with mock.patch.object(tts, "synthesize", lambda t, r, out: roles.append(r) or fake_synth(t, r, out)):
+            tts.render_missing_audio(pack, self.root / "static")
+        entry = json.loads((self.root / "static/audio/s4-dressing-manifest.json").read_text("utf-8"))["entries"][0]
+        self.assertEqual((roles, entry["role"]), (["narrator-male"], "narrator"))
+
+
 class ModelTest(unittest.TestCase):
     def test_missing_model_names_the_download_script(self):
         with tempfile.TemporaryDirectory() as tmp, mock.patch.object(tts, "MODEL_DIR", Path(tmp)), \
