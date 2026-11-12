@@ -48,13 +48,14 @@ node s5-release.cjs
 
 ## 音频与维护
 
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\make-s4-audio.ps1
-powershell -NoProfile -ExecutionPolicy Bypass -File .\make-s4-audio.ps1 -SceneId dressing
+```bash
+python scripts/download-kokoro.py                 # 只需一次：Kokoro 模型（约 120MB）存到 ~/.cache/momo-kokoro
+python -m momo_agent quiz-audio dressing          # 合成该主题缺的读音
+python -m momo_agent quiz-audio dressing --all    # 该主题全部读音重新合成
 node check-s4-audio.cjs
 ```
 
-使用 Windows SAPI 离线合成，重复执行保留来源条目及文件哈希；声音和素材仍需人工审阅。开发系统语音回退不能证明离线交付通过。
+使用 Kokoro（kokoro-onnx）离线合成，Mac 与 Windows 相同；Windows 上 `make-s4-audio.ps1 -SceneId <id> [-All]` 转调同一命令。只播放的电脑不需要安装 Kokoro。声音和素材仍需人工审阅；开发系统语音回退不能证明离线交付通过。
 
 内容源为 `launch-content.cjs`、`extra-themes.cjs`、`content-v2.cjs`，运行 `node build-content.cjs` 重建主题和场景图；修改文稿时同步提升内容版本并生成新声音路径，不能让旧音频冒充新文稿。
 

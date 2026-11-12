@@ -48,10 +48,9 @@
 1. 生成：`python -m momo_agent quiz <id>`（已有主题补题），`python -m momo_agent generate <topic>` 新主题时也同时写题目。输出 `reviewed:false`，**智能体流程永不设置 `reviewed`**。
 2. 预览后由人运行 `python -m momo_agent quiz-approve <id>`，这是唯一把 `lesson.reviewed` 置为 `true` 的途径（题目源过期时拒绝批准）。
 3. 读音：
-   - 智能体生成的主题：`python -m momo_agent quiz-audio <id>` 合成缺的文件。
-   - 手写主题（无 `generatedBy`）：只能在 **Windows** 上用 `make-s4-audio.ps1 -SceneId <id>`（Zira 声音）合成；`quiz-audio` 在非 Windows 上对手写主题拒绝执行并提示该命令。
-   - 过场读音（id 含 `.lesson.bridge.`，路径 `audio/<id>/lesson/bridge-<sha8>.wav`）：手写主题先在 Mac 上跑 `.venv/bin/python scripts/mac-placeholder-audio.py` 生成占位（清单标 `mac placeholder`），之后在 Windows 上 `make-s4-audio.ps1` 会删掉占位并重新合成；birthday 由 `python -m momo_agent quiz-audio birthday` 合成。
-   - 复习词读音（id 含 `.lesson.review.`）：借用来源关已有的文件，不重新合成；`make-s4-audio.ps1` 跳过这类资源，也不写进本关清单。
+   - 所有主题（手写或智能体生成）：`python -m momo_agent quiz-audio <id>` 用 Kokoro 合成缺的文件，Mac/Windows 相同；Windows 也可用 `make-s4-audio.ps1 -SceneId <id>`（转调同一命令）。首次合成前运行 `python scripts/download-kokoro.py`。
+   - 过场读音（id 含 `.lesson.bridge.`，路径 `audio/<id>/lesson/bridge-<sha8>.wav`）同上合成。
+   - 复习词读音（id 含 `.lesson.review.`）：借用来源关已有的文件；`quiz-audio --all` 整关重配时跳过，由来源关重配，清单里指向同一文件的条目会自动跟上新哈希。
 
 ## 检查
 
@@ -87,10 +86,10 @@
 3. 用真实模型为 12 个手写主题生成题目（目前只有 park、birthday 有题目源，且都是 `reviewed:false`）。
 4. 在 Windows 上为手写主题合成题目读音。
 
-用户侧待办：补模型 Key 后对 12 个手写主题逐个 `python -m momo_agent quiz <id>`，预览后 `quiz-approve`；在 Windows 对补过题的手写主题运行 `make-s4-audio.ps1 -SceneId <id>`；Windows Chrome 实机走一遍至少一个主题。
+用户侧待办：补模型 Key 后对 12 个手写主题逐个 `python -m momo_agent quiz <id>`，预览后 `quiz-approve`；对补过题的主题运行 `python -m momo_agent quiz-audio <id>`；Windows Chrome 实机走一遍至少一个主题。
 
 ## 地图关联（2026-11-10）
 
 - 第 2 关起，`words` 步骤开头多 3 张复习卡（`step.review`，由 `lesson-build.cjs` 按 `route-build.cjs` 的规则写入课程层）：取前面关卡学过、本关 `modules.summary` 没有的词，最近学到的先复习；只点读，不发 `introduced`，不进填空、配对、结束页。第 1 关没有复习卡。
-- `lesson.bridge` 是关与关之间的过场（文字与读音，读音在 `audio/<id>/lesson/bridge-*.wav`）；复习与过场的资源 id 含 `.lesson.`，不改基础内容与 `lesson.baseVersion`。Mac 上过场读音是占位声音，birthday 走 `quiz-audio`。`make-s4-audio.ps1` 合成时跳过 `.lesson.review.`。
+- `lesson.bridge` 是关与关之间的过场（文字与读音，读音在 `audio/<id>/lesson/bridge-*.wav`）；复习与过场的资源 id 含 `.lesson.`，不改基础内容与 `lesson.baseVersion`。过场读音与其他读音一样由 `quiz-audio` 合成；`quiz-audio --all` 跳过 `.lesson.review.`。
 - 走到 `end` 步骤时记录 `cleared`（该关通过）；结束页多一个「去下一站」，回到 `/?focus=<下一关>`。返回按钮为「← 回地图」。
