@@ -38,8 +38,10 @@ test('a park lesson with one wrong answer persists answers and progress through 
     await app.open('lesson');assert.equal(app.failure,null,JSON.stringify(app.failure));
     // word tap (introduced) on the words step, then a full story listen (story_listen), then skip on to the fill step.
     await root.querySelectorAll('.word-card').find(b=>!b.className.includes('review')).fire();assert.equal(app.failure,null,JSON.stringify(app.failure));
-    await click(root,'下一步 / 跳过');await click(root,'听这一幕');assert.equal(app.failure,null,JSON.stringify(app.failure));
-    for(let i=0;i<6;i++){await click(root,'下一步 / 跳过');assert.equal(app.failure,null);}
+    // 下一步 into the one-page story reads the whole story aloud; each scene saves its own story_listen.
+    await click(root,'下一步 / 跳过');assert.equal(app.failure,null,JSON.stringify(app.failure));
+    assert.equal(app.stateFor('lesson').index,app.stateFor('lesson').storyLast);
+    await click(root,'下一步 / 跳过');assert.equal(app.failure,null);
     let lesson=app.stateFor('lesson');assert.equal(lesson.step.kind,'fill');
     const fill=lesson.step,wrong=fill.options.find(o=>o!==fill.answer);
     await pick(root,wrong);assert.equal(app.failure,null,JSON.stringify(app.failure));assert.equal(lesson.attempts,1);
@@ -67,7 +69,7 @@ test('a park lesson with one wrong answer persists answers and progress through 
     assert.equal(answers.filter(a=>a.payload.stepId===pack.lesson.steps.find(s=>s.kind==='match').id&&a.payload.correct).length,pack.lesson.steps.find(s=>s.kind==='match').words.length);
     assert.equal(state.events.filter(e=>e.kind==='choice'&&e.payload.moduleId==='game').length,1);
     assert(state.events.some(e=>e.kind==='introduced'&&e.payload.moduleId==='lesson'));
-    assert(state.events.some(e=>e.kind==='choice'&&e.payload.mode==='story_listen'&&e.payload.moduleId==='lesson'));
+    assert.deepEqual(state.events.filter(e=>e.kind==='choice'&&e.payload.mode==='story_listen'&&e.payload.moduleId==='lesson').map(e=>e.payload.stepId).sort(),pack.modules.story.map(s=>s.id).sort());
     assert(state.events.some(e=>e.kind==='sticker'));
     assert(state.events.some(e=>e.kind==='cleared'&&e.payload.sceneId==='park'),'cleared recorded');
     const progress=state.progress.find(p=>p.sceneId==='park'&&p.moduleId==='lesson');assert(progress,'lesson progress saved');assert.equal(progress.state.stepId,pack.lesson.steps.find(s=>s.kind==='end').id);

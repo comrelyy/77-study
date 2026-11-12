@@ -12,23 +12,27 @@ function cnToggle(seg,target){
 function mine(s){if(!ui.has(s))ui.set(s,{wrong:null});return ui.get(s);}
 function advance(c,s){
   const at=s.index;
-  return ()=>{if(s.index!==at||!c.active())return;c.pause();if(s.next()){c.redraw();c.app.body.scrollIntoView?.({block:'start'});c.app.checkpoint('lesson');}};
+  return ()=>{if(s.index!==at||!c.active())return;return moveTo(c,s,at+1);};
 }
 function progressBar(s){
   const bar=node('div',undefined,'lesson-progress'),fill=node('b'),ratio=s.steps.length>1?s.index/(s.steps.length-1):1;
   fill.style.width=Math.round(ratio*100)+'%';bar.setAttribute('role','progressbar');bar.setAttribute('aria-valuemin','0');bar.setAttribute('aria-valuemax','100');bar.setAttribute('aria-valuenow',String(Math.round(ratio*100)));bar.setAttribute('aria-label','这节课的进度');bar.append(fill);return bar;
 }
-function moveTo(c,s,index){
+// Entering the story run by a tap reads it aloud (from the title when entering at its start); resume/reload never does.
+async function moveTo(c,s,index){
   if(!c.active()||c.app.advancingLesson)return;
-  c.pause();if(s.goTo(index)){c.redraw();c.app.body.scrollIntoView?.({block:'start'});c.app.checkpoint('lesson');}
+  c.pause();if(!s.goTo(index))return;c.redraw();c.app.body.scrollIntoView?.({block:'start'});
+  const view=mine(s).view;if(!await c.app.checkpoint('lesson'))return;
+  if(view&&view===mine(s).view&&view.c.active())return view.start(index===s.storyFirst);
 }
 const stepNames={words:'认识单词',quiz:'小问题',fill:'填一填',reply:'接一句',game:'小游戏',match:'配一配',end:'完成'};
 function stepNav(c,s){
   const nav=node('nav',undefined,'lesson-steps'),list=node('ol');nav.setAttribute('aria-label','这节课的步骤');
   for(const [i,step] of s.steps.entries()){
-    const name=step.kind==='story'?c.pack.modules.story.find(x=>x.id===step.storyId).title:stepNames[step.kind];
-    const b=button(name,()=>moveTo(c,s,i),i===s.index?'current':i<s.index?'passed':'');
-    if(i===s.index)b.setAttribute('aria-current','step');
+    if(s.inStory(i)&&i!==s.storyFirst)continue;
+    const story=s.inStory(i),current=story?s.inStory():i===s.index,passed=story?s.index>s.storyLast:i<s.index;
+    const b=button(story?'故事':stepNames[step.kind],()=>moveTo(c,s,i),current?'current':passed?'passed':'');
+    if(current)b.setAttribute('aria-current','step');
     const li=node('li');li.append(b);list.append(li);
   }
   nav.append(list);return nav;
@@ -72,30 +76,75 @@ function renderWords(c,s,wrap){
   for(const id of step.words){const w=c.word(id),b=button('',async()=>{const ok=await c.hearWord(w);if(ok&&c.active()){c.redraw();c.message('听完 '+w.text+' 啦，可以再听，也可以继续。');}},'word-card');b.append(c.assetImage(w.image),node('b',w.text),node('small',w.cn));grid.append(b);}
   wrap.append(grid,footer(c,s,skipButton(c,s)),c.messageNode);
 }
-function renderStory(c,s,wrap){
-  const story=s.story,scene=story.scene,list=node('div',undefined,'lesson-story');
-  wrap.append(node('h2',scene.title,'lesson-title'));
-  for(const [i,seg] of scene.segments.entries()){
-    const b=button('',()=>{story.pause();c.pause();return c.play(seg.audio);},'lesson-bubble'+(seg.speaker==='narrator'?' narrator':'')+(i===story.fragment?' current-fragment':''));
-    if(seg.speaker&&seg.speaker!=='narrator'&&seg.speaker in speakers)b.append(image('illustrations/'+seg.speaker+'.svg',speakers[seg.speaker],'lesson-avatar'));
-    const text=node('span',undefined,'lesson-bubble-text');text.append(node('small',speakers[seg.speaker]||seg.speaker||'','story-speaker'),node('span',seg.text));b.append(text);
-    const line=node('div',undefined,'lesson-line');line.append(b);if(seg.cn)line.append(cnToggle(seg,text));list.append(line);
+const reducedMotion=()=>globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+// One page for the whole story run. The read-aloud chain moves s.index scene by scene without redrawing,
+// so checkpoints, heard and story_listen stay per real step; any redraw ends the chain through c.active().
+function renderStoryRun(c,s,wrap){
+  const title=c.pack.lesson.title,list=node('div',undefined,'lesson-story'),bubbles=new Map(),rules=new Map(),quizzes=new Map();
+  const v={c,run:0,playing:false};mine(s).view=v;wrap.className+=' lesson-story-page';
+  const heading=node('h2',title?.text||c.pack.title,'lesson-title');wrap.append(heading);if(title)wrap.append(node('p',c.pack.title,'lesson-title-cn'));
+  for(let j=s.storyFirst;j<=s.storyLast;j++){
+    const step=s.steps[j];
+    if(step.kind==='quiz'){
+      const after={right:()=>c.play(c.word(step.answer).audio).then(()=>goOn(c,s,step)),reveal:()=>c.play(c.word(step.answer).audio).then(()=>goOn(c,s,step))};
+      const q=quizPicks(c,s,step,j,after,rules);quizzes.set(j,q);list.append(q);continue;
+    }
+    const scene=c.pack.modules.story.find(x=>x.id===step.storyId),divider=node('figure',undefined,'lesson-scene story-divider');
+    if(scene.illustration)divider.append(c.assetImage(scene.illustration,scene.title));divider.append(node('figcaption',scene.title));list.append(divider);
+    for(const [k,seg] of scene.segments.entries()){
+      const b=button('',()=>{v.stop();c.pause();return c.play(seg.audio);},'lesson-bubble'+(seg.speaker==='narrator'?' narrator':'')+(j===s.index&&k===s.story.fragment?' current-fragment':''));
+      if(seg.speaker&&seg.speaker!=='narrator'&&seg.speaker in speakers)b.append(image('illustrations/'+seg.speaker+'.svg',speakers[seg.speaker],'lesson-avatar'));
+      const text=node('span',undefined,'lesson-bubble-text');text.append(node('small',speakers[seg.speaker]||seg.speaker||'','story-speaker'),node('span',seg.text));b.append(text);
+      const line=node('div',undefined,'lesson-line');line.append(b);if(seg.cn)line.append(cnToggle(seg,text));list.append(line);bubbles.set(seg.id,b);
+    }
   }
   wrap.append(list);
-  async function startStory(){
-    if(!c.active())return;c.pause();if(story.saved||story.fragment>=scene.segments.length)story.replay();listen.disabled=true;
-    const playing=story.play(seg=>{list.querySelectorAll('.lesson-bubble').forEach((p,i)=>p.className=p.className.replace(' current-fragment','')+(scene.segments[i]===seg?' current-fragment':''));return c.play(seg.audio);},snapshot=>c.emit('choice',{mode:'story_listen',...snapshot}),()=>c.app.checkpoint('lesson'));
-    const run=story.run,ok=await playing;
-    if(c.active()&&run===story.run){c.redraw();c.message(ok?'这一幕听完啦，可以重听，也可以继续。':'声音暂未播放完成。可以点“听这一幕”再试，也可以继续。');}
+  const back=button('上一步',()=>moveTo(c,s,s.storyFirst-1)),resume=button('接着听故事',()=>v.start(false),'primary story-resume');
+  const next=button('下一步 / 跳过',()=>moveTo(c,s,s.storyLast+1)),pause=button('暂停声音',()=>{v.stop();c.pause();c.app.checkpoint('lesson');});
+  rules.set(back,()=>s.storyFirst===0);
+  const finished=()=>s.index===s.storyLast&&s.story.fragment>=s.story.scene.segments.length&&s.story.saved,waiting=()=>s.step.kind==='quiz'&&!s.canContinue();
+  // emit() disables every button while saving; sync() puts the page back once a save settles.
+  v.sync=()=>{if(!c.active())return;resume.hidden=v.playing||finished()||waiting();next.className=finished()?'primary':'';for(const b of c.app.body.querySelectorAll('button'))if(b!==pause)b.disabled=c.app.busy||(rules.get(b)?.()??false);};
+  v.mark=el=>{for(const x of wrap.querySelectorAll('.current-fragment'))x.className=x.className.replace(' current-fragment','');if(el){el.className+=' current-fragment';el.scrollIntoView?.({block:'center',behavior:reducedMotion()?'auto':'smooth'});}};
+  v.stop=()=>{v.run++;s.story?.pause();v.playing=false;v.sync();};
+  v.start=async withTitle=>{
+    if(!c.active())return false;
+    const run=++v.run,live=()=>c.active()&&run===v.run;v.playing=true;v.sync();c.pause();
+    try{
+      if(withTitle&&title){v.mark(heading);if(!await c.play(title.audio)||!live())return false;}
+      for(;;){
+        if(s.step.kind==='quiz'&&!s.canContinue()){v.mark(quizzes.get(s.index));c.message('先回答这个小问题，答完故事会接着讲。');return false;}
+        if(s.step.kind==='story'){
+          const ok=await s.story.play(seg=>{if(!live())return false;v.mark(bubbles.get(seg.id));return c.play(seg.audio);},snapshot=>c.emit('choice',{mode:'story_listen',...snapshot}),()=>c.app.checkpoint('lesson'));
+          v.sync();if(!ok||!live())return false;
+        }
+        if(s.index>=s.storyLast){v.mark(null);c.message('故事听完啦！可以从头听，也可以点“下一步”。');return true;}
+        s.goTo(s.index+1);if(!await c.app.checkpoint('lesson')||!live())return false;
+      }
+    }finally{if(run===v.run)v.playing=false;v.sync();}
+  };
+  wrap.append(actions(back,resume,button('从头听',()=>moveTo(c,s,s.storyFirst)),next,pause,button('听听怎么玩',()=>c.guide('lesson'))),c.messageNode);
+  v.sync();
+}
+// After an inline quiz is answered (or revealed) the story carries on by itself.
+function goOn(c,s,step){const v=mine(s).view;if(v&&v.c.active()&&s.step===step&&s.canContinue())return v.start(false);}
+// Picture quiz: a tap speaks the word and selects it; only 找到了 submits through choose().
+function quizPicks(c,s,step,j,after,rules){
+  const u=mine(s),here=()=>s.index===j,blocked=()=>!here()||s.done||s.revealed,picked=()=>u.pick?.step===step.id?u.pick.id:null;
+  const box=node('div',undefined,'lesson-quiz'),pics=node('div',undefined,'lesson-picks'),tiles=[];box.setAttribute('data-step',step.id);
+  const found=button('找到了',()=>{const id=picked();if(!id||blocked())return;u.pick=null;return choose(c,s,id,after);},'primary lesson-found');
+  const mark=()=>{for(const [x,t] of tiles){const on=picked()===x;t.setAttribute('aria-pressed',String(on));t.className=t.className.replace(' lesson-selected','')+(on?' lesson-selected':'');}found.disabled=blocked()||!picked();};
+  for(const id of step.options){
+    const w=c.word(id),cls=here()?optionClass('lesson-pick',s,id):'lesson-pick'+(j<s.index&&id===step.answer?' lesson-right':'');
+    const b=button('',()=>{if(blocked())return;u.pick={step:step.id,id};mark();c.pause();return w.audio?c.play(w.audio):true;},cls);
+    b.setAttribute('data-id',id);b.append(c.assetImage(w.image,''),node('b',w.text));b.disabled=blocked();rules?.set(b,blocked);tiles.push([id,b]);pics.append(b);
   }
-  const listen=button(story.fragment&&story.fragment<scene.segments.length?'继续这一幕':'听这一幕',startStory,'primary');
-  wrap.append(footer(c,s,listen,skipButton(c,s)),c.messageNode);
+  rules?.set(found,()=>blocked()||!picked());mark();
+  box.append(node('h3',step.question,'lesson-question'),node('p','点图听一听，选好了点“找到了”。'),pics,actions(found));return box;
 }
 function renderQuiz(c,s,wrap){
   const step=s.step,after={right:()=>c.play(c.word(step.answer).audio),reveal:()=>c.play(c.word(step.answer).audio)};
-  wrap.append(node('h2',step.question,'lesson-question'),node('p','点你觉得对的图。'));
-  const pics=node('div',undefined,'lesson-picks');for(const id of step.options)pics.append(wordTile(c,s,id,after));
-  wrap.append(pics,footer(c,s,...(s.canContinue()?[continueButton(c,s)]:[])),c.messageNode);
+  wrap.append(quizPicks(c,s,step,s.index,after),footer(c,s,...(s.canContinue()?[continueButton(c,s)]:[])),c.messageNode);
 }
 function segmentOf(c,id){for(const story of c.pack.modules.story){const seg=story.segments.find(x=>x.id===id);if(seg)return seg;}return null;}
 function renderFill(c,s,wrap){
@@ -149,7 +198,7 @@ function renderEnd(c,s,wrap){
   c.app.markCleared();
 }
 export function renderLesson(c,s){
-  const step=s.step,shell=node('div',undefined,'lesson-shell'),main=node('div',undefined,'lesson-main');
+  mine(s).view=null;const step=s.step,shell=node('div',undefined,'lesson-shell'),main=node('div',undefined,'lesson-main');
   shell.append(stepNav(c,s),main);c.body.append(shell);c={...c,body:main};
   if(step.kind==='game'){
     c.body.append(progressBar(s));
@@ -168,6 +217,7 @@ export function renderLesson(c,s){
     renderGame({...c,inLesson:true,advanceGame:finish,complete:finish},game);return;
   }
   const wrap=node('section',undefined,'center lesson');wrap.append(progressBar(s));
-  ({words:renderWords,story:renderStory,quiz:renderQuiz,fill:renderFill,reply:renderReply,match:renderMatch,end:renderEnd})[step.kind](c,s,wrap);
+  if(s.inStory()){renderStoryRun(c,s,wrap);c.body.append(wrap);return;}
+  ({words:renderWords,quiz:renderQuiz,fill:renderFill,reply:renderReply,match:renderMatch,end:renderEnd})[step.kind](c,s,wrap);
   c.body.append(wrap);
 }

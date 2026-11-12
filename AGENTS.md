@@ -2,7 +2,7 @@
 
 - 2026-11-03 刷新误报多页占用已修复：保留浏览器 Web Lock 与服务端写租约两层互斥，刷新通过已保存的旧凭据安全交接，禁止用无条件抢锁或清空家庭库绕过。卸载须同步入队最后计时/待保存进度并立即发释放请求，不能等待其他网络请求；退役文档不得重新 acquire。重连与恢复计时器须合并，恢复不自动播音。修改相关生命周期后运行 `check-reload.mjs`、`check-reload-http.mjs` 与统一检查。原因、验证和实机未验范围见 `docs/RELOAD_HANDOVER_FIX.md`。
 
-- 2026-11-03 最新交互决定：对话与小游戏整合为“情景互动”，选回答即提交、接话并进入下一句，不再显示“就这样回答”。当前主题首页三个入口，数据层原有四moduleId与历史不合并；恢复小游戏需保留finished和部分排序。故事“重听这一幕”必须真的开始播放，不能只重置进度。此决定替代旧的预听后二次确认流程；进入/恢复页面仍不自动播音。验证运行 `check-story-playback.mjs`、`check-integrated-interaction.mjs`、`check-integrated-http.mjs` 及统一检查。见 `docs/INTERACTION_INTEGRATION.md`。
+- 2026-11-03 最新交互决定：对话与小游戏整合为“情景互动”，选回答即提交、接话并进入下一句，不再显示“就这样回答”。当前主题首页三个入口，数据层原有四moduleId与历史不合并；恢复小游戏需保留finished和部分排序。故事“重听这一幕”必须真的开始播放，不能只重置进度。此决定替代旧的预听后二次确认流程；进入/恢复页面仍不自动播音（2026-11-12 例外：课程里点击进入一页式「故事」会自动从标题读到底，恢复不自动播，见 `docs/LESSON_LINE.md`）。验证运行 `check-story-playback.mjs`、`check-integrated-interaction.mjs`、`check-integrated-http.mjs` 及统一检查。见 `docs/INTERACTION_INTEGRATION.md`。
 
 - 2026-11-03 后续用户要求故事更完整、角色互动更多，游戏更多样、减少重复点选。当前为十二主题、四种玩法开发预览，最新范围见 `docs/CONTENT_V2.md`；内容源增加 `content-v2.cjs` 和 `extra-themes.cjs`，游戏渲染增加 `static/modules/game-novel.mjs`。新记录模式 `scene_find_game`、`story_order_game` 必须通过前后端验证，不能仅用 UI 模拟宣布保存完成。运行 `node check-narrative-games.mjs` 和统一检查；旧八主题记录保留历史，不作为最新交付体量。
 

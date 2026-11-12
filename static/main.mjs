@@ -1,5 +1,5 @@
 import {loadReviewSources} from './core/review-sources.mjs?v=diary-tabs-20261112';
-import {App} from './core/app.mjs?v=day-map-20261110';
+import {App} from './core/app.mjs?v=story-one-step-20261112';
 import {clearedFrom,mapLevels} from './core/day-map.mjs?v=diary-tabs-20261112';
 import {diaryDays,renderDiary} from './core/diary.mjs?v=diary-tabs-20261112';
 import {routeOrder,canEnter} from './core/route.mjs?v=diary-tabs-20261112';
