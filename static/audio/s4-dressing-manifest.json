@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "sceneId": "dressing",
   "contentVersion": "0.2.0",
-  "generatedAt": "2026-11-02T22:30:52.4302452Z",
-  "source": "Windows SAPI offline synthesis",
+  "generatedAt": "2026-11-12T07:18:19.503156+00:00",
+  "source": "Kokoro offline speech synthesis (kokoro-onnx, kokoro-v1.0 int8)",
   "purpose": "S4 local synthesis; listening and rights review pending",
   "rightsStatus": "pending review",
   "reviewed": false,
@@ -14,10 +14,10 @@
       "text": "shirt",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "240cb29cea0518aac5c0a3bb1e24327bb080e66da947115363c4763609dae866"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "25fdc78158f34cb2434271dd9f91fdd653ce9a38c78d882fd180680ed0b19814"
     },
     {
       "id": "dressing.socks.audio",
@@ -25,10 +25,10 @@
       "text": "socks",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "8e6b62562f212b1e1bc4eef376d8d6d4fd6f58e4a16fa5d4f4ba859237c64926"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "ab5d39507b723e623330d30df56692577492f4f8757ad4c07e484cdf8ac84dd3"
     },
     {
       "id": "dressing.shoes.audio",
@@ -36,10 +36,10 @@
       "text": "shoes",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "7ec945e73e269cb4956fa13834277d6121f5fb185518ad541859c801fbd5f794"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "5f49c82bca8d2e359bd1f5adf23b685792abbeca387f99e280d723248883bb72"
     },
     {
       "id": "dressing.hat.audio",
@@ -47,10 +47,10 @@
       "text": "hat",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c92959b80e7c3882c363a5e6bafdce14aa00302016218ee566b03e949ac68208"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "0fd36c6e6dc04d46b1e5765c6c420df4fa9a4cc251ba8e926f2a02122e9359f5"
     },
     {
       "id": "dressing.dialogue.1.question.audio",
@@ -58,10 +58,10 @@
       "text": "Shall we get ready for our walk?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "12aa0b0ba8995c17d8940c0d01985f3ccf9d4b9b237360a9668b296f01f5758b"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "45ee11cc4791731f6dcbed7e59c69fde7c0bff9214373ccd9e910bbf9ae17f25"
     },
     {
       "id": "dressing.dialogue.1.reply.1.audio",
@@ -69,10 +69,10 @@
       "text": "Yes! I need my shirt.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "58df45e39c4576e7e699b4477f4c2db68c8041d2b27b0475206c325f26272d5e"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "04d0c21ee0ce53547c7c700d386f7dbc3a4bbc920995bfb87dcad08cc5e19e6f"
     },
     {
       "id": "dressing.dialogue.1.reply.1.follow.audio",
@@ -80,10 +80,10 @@
       "text": "Here is your shirt. Let us get dressed.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "6c8240f5660895521bd57b65fd592798e0094e2d23ede6ec581077381cd38353"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "b0d5cb5d24f5bf819f386d3ec30002f57c6773edbfce160fd00709d39221dd83"
     },
     {
       "id": "dressing.dialogue.1.reply.2.audio",
@@ -91,10 +91,10 @@
       "text": "Help me, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "d4476f6b40d8da66c7e3826341a9cf410608de14be8247160c16d30b7d163f8b"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "d423e8c1e97a877e9c7c4744b2aebc9201d9fb49b98d1641410ab9f7c777de29"
     },
     {
       "id": "dressing.dialogue.1.reply.2.follow.audio",
@@ -102,10 +102,10 @@
       "text": "Of course. We can get ready together.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "919438588c7b10a486c340558b55aa9ef44f7fbaa577b4189df27f1fb46c520f"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "7daae25c10a338c0f1f6d1b293e481e9069543cc234c27d5515217b29e5225aa"
     },
     {
       "id": "dressing.dialogue.2.question.audio",
@@ -113,10 +113,10 @@
       "text": "Where is the other sock?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1193fc3e441cea530a95a6a70641b19892b83c42a199bff41a065105b6aebdcd"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "515ebefbb99043d90d74062cb695620ec4ad573ca90d34ccd007cf7ba35903c0"
     },
     {
       "id": "dressing.dialogue.2.reply.1.audio",
@@ -124,10 +124,10 @@
       "text": "Under the chair!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "285e95fd8b24ab34fbb87ca764f6da39ef68ecd66a9ae8d7681ace9dc25ffb09"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "e9dbfc0794d52db171670012e7a1de0fb6938e206f162b075a698e15cd225e26"
     },
     {
       "id": "dressing.dialogue.2.reply.1.follow.audio",
@@ -135,10 +135,10 @@
       "text": "You found it. Now we have two socks.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "cf9cb5397ffda1ec2e7b3e4ac34d8424932b73e9c24d42ffc056d657c428bb30"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "a7f3c200401ef5d36aa6f76e72a6265fbcb4c8e903b1f8cbd62259a52bba4e65"
     },
     {
       "id": "dressing.dialogue.2.reply.2.audio",
@@ -146,10 +146,10 @@
       "text": "Let us look together.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "e3b5e41834d6a1b7d1541e74f7911b4b3e9a3544f9c8d2afe7ff318c92ac1410"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "d0bb738c6216eac1c8f0db1aa61fef9f670063eb330196e5f28ed03a474a0823"
     },
     {
       "id": "dressing.dialogue.2.reply.2.follow.audio",
@@ -157,10 +157,10 @@
       "text": "I will look beside the chair.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "a4c6e028460049a7afaddd5db1b132550c0e809c76b46b1350594cfaa54fd01b"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "f33aad3cdf585e2dee6e84f8e31bbb51751f442bbf3adaddd8512c1aceb423e8"
     },
     {
       "id": "dressing.dialogue.3.question.audio",
@@ -168,10 +168,10 @@
       "text": "Are your shoes comfortable?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "b3780f3043dbb5c110d531927c08f61e0831c4910bd399ddefa5b2caa1b18ee8"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d0f8d62b07c58d94da0d636f1611139fe8b2443e93d15ac0a3f966c6548d4f03"
     },
     {
       "id": "dressing.dialogue.3.reply.1.audio",
@@ -179,10 +179,10 @@
       "text": "These feel funny.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "710c6f6a08b0517a99e7090fbb2bd1be03ec24d3e6ae0c644e34619bb01b6fef"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "78ca526d55e63d30287cf4d26343c413fde9ad0d379d7370d9485a4e657cefe2"
     },
     {
       "id": "dressing.dialogue.3.reply.1.follow.audio",
@@ -190,10 +190,10 @@
       "text": "Let us check which shoe goes on each foot.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "29d779b2e9962ecf1934331b908e8a4c9b8aa7f718a805fc198a6e4b84547ff7"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "06356f2f393bd7386379b053b9d6b5261f82a1c638403a8bf6bd81d274f93344"
     },
     {
       "id": "dressing.dialogue.3.reply.2.audio",
@@ -201,10 +201,10 @@
       "text": "Help me swap them, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "1aec333b277ec281fb9c740f86a53f46b6bc4433b39ad4cb6a0580268389da2d"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "4ab9a284b72a9b588cff3b4774217ae6f188f9235a8dc4db7027b08e8865de2d"
     },
     {
       "id": "dressing.dialogue.3.reply.2.follow.audio",
@@ -212,10 +212,10 @@
       "text": "I can help. We can try again.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "adae6b92a0b94ced1a1f95d73f405925af9cdcccecffce30ff26573136fc52c2"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "4db88d07f4759f01d20832972b3a3864d8f8f516adfd299675cec628c6d7acd3"
     },
     {
       "id": "dressing.dialogue.4.question.audio",
@@ -223,10 +223,10 @@
       "text": "Would you like your hat?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "2311b1f4dabf9ebefa900c987dfe66f7606ac1eefe5e264c96394dcc72e3792c"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "242522e4867117c74e7cde89f07b2ca79cd6c7256a8d53df33ece03bb31ce8fc"
     },
     {
       "id": "dressing.dialogue.4.reply.1.audio",
@@ -234,10 +234,10 @@
       "text": "Yes, my hat, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "ddb760aea59aea622d917ee2da63c48679d058aec5a1b9423cd4304fb41c4e95"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "9d8a6679387561f626d866d831d2f95227bd6cf51d7f21ecb83d9ce96c8a65b3"
     },
     {
       "id": "dressing.dialogue.4.reply.1.follow.audio",
@@ -245,10 +245,10 @@
       "text": "Here it is. Shall I help you?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "d6c82f9498d4fa3f569e08b7260593c27981d70b0ab963fb6f0736bd931e96bc"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "ad72067304c6689548a5ced47fe3aecf6284bb92780bbf16ee309010a52d35bc"
     },
     {
       "id": "dressing.dialogue.4.reply.2.audio",
@@ -256,10 +256,10 @@
       "text": "I can put it on.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "f15bdba8cb3876e0c0986f7bd848aa6b5baf957c649b72a6c54708e5db87082d"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "014d6e887b446221e6bdbbaa24d5de5e1853b519814b3e13c7c4977f39d6b889"
     },
     {
       "id": "dressing.dialogue.4.reply.2.follow.audio",
@@ -267,10 +267,10 @@
       "text": "Go ahead. I am here if you need help.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "8d0fd9aca6ef7a1d346672d61b6121c0a7f999028630ff826e405fd75c842405"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "dc235f6094c8b17d107fcd75032567ccb7197da370a552884bfbe14e813a0e9f"
     },
     {
       "id": "dressing.dialogue.5.question.audio",
@@ -278,10 +278,10 @@
       "text": "Shall we check before we go?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "83515822f089857fe7ec4790b6360574fc4f2e84b37c7d21eaa61b000b8d6b43"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "74d964495e4663791a1d2a525aa8d98f6b4d573bf45a3d59c370df5bc570a8dd"
     },
     {
       "id": "dressing.dialogue.5.reply.1.audio",
@@ -289,10 +289,10 @@
       "text": "Shirt, socks, shoes, and hat!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "2bfea308d9865dc2340b23803895255755901ce4b9425a7d5dd89e2f3dd641de"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "cdea075fadee9147fc2300bad9245e9d45d867cf0a14a50268363abaf1c6d73e"
     },
     {
       "id": "dressing.dialogue.5.reply.1.follow.audio",
@@ -300,10 +300,10 @@
       "text": "Everything is ready for our walk.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "eb4759157ffbcf46b5598a9733d4155cdf46cfe011bb81c44d8dbc6e61d946d4"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "eb78c6df58e95484771e797f1970e5016b0f93cda7f786b8c4b03c912bce970d"
     },
     {
       "id": "dressing.dialogue.5.reply.2.audio",
@@ -311,10 +311,10 @@
       "text": "My shoes need help.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "c5ede8897543afea15e3d3aee2abc8a2a1ce3ff58b1afa1260ed24089649b2eb"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "4f7b096841b88b428c1b0afa82b9292ce01f08343d3dab8cbd21473fbd937fd4"
     },
     {
       "id": "dressing.dialogue.5.reply.2.follow.audio",
@@ -322,10 +322,10 @@
       "text": "We can stop and fix them first.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c01c77ec56f5efef1815dfa8e4b4cb038bcf41bcd0f2dfab08ea861a20478fa1"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "b18c53db8631c2956ac804aed555ea7dddfc0030b7ef658c5a6a72edbcf90266"
     },
     {
       "id": "dressing.dialogue.6.question.audio",
@@ -333,10 +333,10 @@
       "text": "Are you ready to open the door?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c72e48723d0abea0d4fa2e2ca812e517e1fcd92766ca5a9a2f0b9106a6da2183"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "bde87d3ddeadbe44facb14b83bf8628e77f47c5be7e70161c286ee1e2faf398d"
     },
     {
       "id": "dressing.dialogue.6.reply.1.audio",
@@ -344,10 +344,10 @@
       "text": "Yes! Let us go together.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "e358547ebb430a8bb1cfe33e2c14c9d3528a9c9a0c4ba8c4f0767fae3f42c559"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "8c51fc3c98e740a79ea9ae074ad0973fe21a9908eea4f4a2ae0d4728f9ffdd96"
     },
     {
       "id": "dressing.dialogue.6.reply.1.follow.audio",
@@ -355,10 +355,10 @@
       "text": "Let us ask our grown-up to come too.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "da71cb7ea03e7acd87f1ee4c4479ff02edf4981fcd66f57289ced6ba70ddac8a"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "b3d11bb60448e9b7445dc62c2355b594885c096732ca909ccd77e97c27dac523"
     },
     {
       "id": "dressing.dialogue.6.reply.2.audio",
@@ -366,10 +366,10 @@
       "text": "Please wait for me.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "fda5207268992d6a9fd6b20425101c6027178712581d655260bb282b8f0aeadd"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "536280aaea89581b51059e3fea0c0dc641116a8cc5bdb2aae77a05625cca905c"
     },
     {
       "id": "dressing.dialogue.6.reply.2.follow.audio",
@@ -377,10 +377,10 @@
       "text": "We can wait. Take your time.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "6b5bcc95b42b4dd2ba3349ee683c743e288e6640da6f0eef0083adb8cf589d12"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d8c5154f0b55fbed86912f4cb95d66cb75c16fd7c40592708317b4bd65369263"
     },
     {
       "id": "dressing.story.1.intro.audio",
@@ -388,10 +388,10 @@
       "text": "The wind taps the window.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "2dc247b38e818d1f3f02a5937a0f1dfd4af26b0c8b0588f9383ae2502eb81b5a"
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "fec9c2d826e7b71e7c8d5078b329f1e146f1b06ea12656f5f6b3213899fcd8e5"
     },
     {
       "id": "dressing.story.1.item.audio",
@@ -399,10 +399,10 @@
       "text": "Let us go out! Where is my shirt?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "8e6c1ad173d65afc933651c3c16c3d2914cc3057686cf07bc5b626b04f6e0a6c"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "ebe05bb2e21d40d63f6ecbeff03abb64cf8c5dda5d0441c60dcfbf537a0586d3"
     },
     {
       "id": "dressing.story.1.reply.audio",
@@ -410,175 +410,10 @@
       "text": "Here it is. I will bring mine too.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "44d2ce57e16bad805fcf44f8ad482dbac09640ea3071290f58714b332a7cd8db"
-    },
-    {
-      "id": "dressing.story.2.intro.audio",
-      "path": "audio/dressing/v0-2-0/dressing.story.2.intro.audio.wav",
-      "text": "One sock is missing.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "701944a60ce053d4b564833e0a55c7411b479dc087cff707deb1d6486eebd8a9"
-    },
-    {
-      "id": "dressing.story.2.item.audio",
-      "path": "audio/dressing/v0-2-0/dressing.story.2.item.audio.wav",
-      "text": "I have one sock. Where is the other?",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "794da5c3498fbcd6c3a85a67a9ff29a324d39746d0f6f6c4297e95a2f9b6e28e"
-    },
-    {
-      "id": "dressing.story.2.reply.audio",
-      "path": "audio/dressing/v0-2-0/dressing.story.2.reply.audio.wav",
-      "text": "Look under the chair. There it is!",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "ee13d6d46fafa54a397f50a4acefa5316ecc238c92ca31c5a24eef430665f9b8"
-    },
-    {
-      "id": "dressing.story.3.intro.audio",
-      "path": "audio/dressing/v0-2-0/dressing.story.3.intro.audio.wav",
-      "text": "Momo tries a few steps.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "f2b7f09edae8fea27d4f285adfdb4e6d1674f1d61cce170082e078334f242dba"
-    },
-    {
-      "id": "dressing.story.3.item.audio",
-      "path": "audio/dressing/v0-2-0/dressing.story.3.item.audio.wav",
-      "text": "My shoes feel funny.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "e646d94cef4ecfd3f643e3c76ec72390ab2e1a9cee26f245a42effa40354746b"
-    },
-    {
-      "id": "dressing.story.3.reply.audio",
-      "path": "audio/dressing/v0-2-0/dressing.story.3.reply.audio.wav",
-      "text": "Let us swap them. Try walking again.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "526dd3252c9ea175142d3cc241549f3c23e67d582f42bf91c11128271e13449a"
-    },
-    {
-      "id": "dressing.story.4.intro.audio",
-      "path": "audio/dressing/v0-2-0/dressing.story.4.intro.audio.wav",
-      "text": "Lulu brings the hat.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "848adfe61eeb57e220e1d37d0ae223c3c5e896101306c41623604a3387e79d97"
-    },
-    {
-      "id": "dressing.story.4.item.audio",
-      "path": "audio/dressing/v0-2-0/dressing.story.4.item.audio.wav",
-      "text": "Would you like some help?",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "cf15a6bc9b7150576a7e77066bc261ce4c1f5120f691f93045566dfe80ee0be1"
-    },
-    {
-      "id": "dressing.story.4.reply.audio",
-      "path": "audio/dressing/v0-2-0/dressing.story.4.reply.audio.wav",
-      "text": "I will try first. Please stay here.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "cf2d218f5eb628086c133eb4fe4098242d7cb2bff673e86832c9a71a8fc2634b"
-    },
-    {
-      "id": "dressing.story.5.intro.audio",
-      "path": "audio/dressing/v0-2-0/dressing.story.5.intro.audio.wav",
-      "text": "Lulu pulls at a sleeve.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "36962156f78e5448b52b7fbd00a39de08f18810cec05f7ae5eb8b188c2e51426"
-    },
-    {
-      "id": "dressing.story.5.item.audio",
-      "path": "audio/dressing/v0-2-0/dressing.story.5.item.audio.wav",
-      "text": "My shirt is stuck. Help me, please.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "278e2628704dfa760a68c6de2ab122a66bd22751df778880d5c465a08370d04c"
-    },
-    {
-      "id": "dressing.story.5.reply.audio",
-      "path": "audio/dressing/v0-2-0/dressing.story.5.reply.audio.wav",
-      "text": "I can hold it. Pull gently.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "0daadaef418f2142efe49ec07fc76c35e259f844f34a380e91a1d24a84833bb5"
-    },
-    {
-      "id": "dressing.story.6.intro.audio",
-      "path": "audio/dressing/v0-2-0/dressing.story.6.intro.audio.wav",
-      "text": "Both friends stand by the door.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "7dc720b5576744ca31768ef98331fa5bd0d546d83e0a8a4f4006f6ff12aaaf49"
-    },
-    {
-      "id": "dressing.story.6.item.audio",
-      "path": "audio/dressing/v0-2-0/dressing.story.6.item.audio.wav",
-      "text": "Shirt, socks, shoes, hat. Ready?",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "f6e342cb31f6f2ced3a9be2f99bf801e1c78335ae66d4bb1d8badd1937e777be"
-    },
-    {
-      "id": "dressing.story.6.reply.audio",
-      "path": "audio/dressing/v0-2-0/dressing.story.6.reply.audio.wav",
-      "text": "Ready! Let us walk together.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "a10cccc3c1f2c0e448298e3f57a1a76467fed841dbc9b80e3f9364d0237d7861"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "4b4691b46dd5cec342b4cb373f12d33908e1505e55a2fd9fe7c0efafb7244e64"
     },
     {
       "id": "dressing.story.1.more1.audio",
@@ -586,11 +421,10 @@
       "text": "Thank you! Is it cold outside?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "9ccd24836d8ed1514733355ea331d3b9adf77cf3135fba7f209d21f984a1a340",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "313983c20b9523d41851e44d4b0a4b24d512a09a153f8dcf1529a318e2faa885"
     },
     {
       "id": "dressing.story.1.more2.audio",
@@ -598,11 +432,43 @@
       "text": "A little windy. Let us get dressed.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "b98d8069119a39237715ef7c0dc858bebbee25f4799ce4fe8c4a2bdae60ff696",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "5e5f537a3438bff10e43b4969e04018c01e1822f344b29b2c09ab385d4fe4731"
+    },
+    {
+      "id": "dressing.story.2.intro.audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.2.intro.audio.wav",
+      "text": "One sock is missing.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "266ecd43dc3e002ef3398fb5ef36f75d46dfe0ef9f9edfa9d9a494213293d53b"
+    },
+    {
+      "id": "dressing.story.2.item.audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.2.item.audio.wav",
+      "text": "I have one sock. Where is the other?",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "b8ac704414a33d54d940a66487306ce33c8a03fe641fffeaa9f28bfe91f785ac"
+    },
+    {
+      "id": "dressing.story.2.reply.audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.2.reply.audio.wav",
+      "text": "Look under the chair. There it is!",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "245fd6d6113fea3fa2eb6897414ec684712f8c23d33bee1f034201b3dec15d6a"
     },
     {
       "id": "dressing.story.2.more1.audio",
@@ -610,11 +476,43 @@
       "text": "Two socks. Now my feet are warm.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "cb0c1777a8d48861f13eb9b944011015985c43c6e18ddb8a6181e7b3b9c67ddc",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "e248ff41b2388a9c1c46f89394c5617d8e848d7b2fc07bc229a2ca87bce5527e"
+    },
+    {
+      "id": "dressing.story.3.intro.audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.3.intro.audio.wav",
+      "text": "Momo tries a few steps.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "07561c166302a4faefa7405d7e5b59d57e32c09e47f5cee93a9348005b42547d"
+    },
+    {
+      "id": "dressing.story.3.item.audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.3.item.audio.wav",
+      "text": "My shoes feel funny.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "9e6a2883aa49e9f9eb135139cd7f92c7a5eb5fe20ad36cd02acc302ee05066e2"
+    },
+    {
+      "id": "dressing.story.3.reply.audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.3.reply.audio.wav",
+      "text": "Let us swap them. Try walking again.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "264554ee20635416b3c42e5322aa1cf682e0fa1b67b56b82af5ee66fba213622"
     },
     {
       "id": "dressing.story.3.more1.audio",
@@ -622,11 +520,10 @@
       "text": "Oh! Left and right were mixed up.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "73b471dbb09ecfd6aa68c92cbc3329678cea6bacfa77f83abd20c883069bc78e",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "796e6291e3331b35af4ff9b5f0f5f9cc090c131e608dbffaabaf9337f0f78d8d"
     },
     {
       "id": "dressing.story.3.more2.audio",
@@ -634,11 +531,43 @@
       "text": "Now they look right. Can you walk?",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "1918d0af1b65dbb16e6f9bc981108f7619c0b64445f354d0dd237220f8927f96",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "71db7ddcf7b6490ab4b2e84d7f54d92daae37b392c796d25434ddc2efc5de732"
+    },
+    {
+      "id": "dressing.story.4.intro.audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.4.intro.audio.wav",
+      "text": "Lulu brings the hat.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "600ec708090c2ec9ca115352694d8262208d35fe66766c12fa478b18b8ae454a"
+    },
+    {
+      "id": "dressing.story.4.item.audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.4.item.audio.wav",
+      "text": "Would you like some help?",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "1b3cf9be1c7cfe2a874c65dccaa6a852af33fc6c2e2a53e2f9651238e5e7dcf2"
+    },
+    {
+      "id": "dressing.story.4.reply.audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.4.reply.audio.wav",
+      "text": "I will try first. Please stay here.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "91c7a3d522b2ac95292f32bbe852a6bda015f85bfed92e7128f7982f78446b44"
     },
     {
       "id": "dressing.story.4.more1.audio",
@@ -646,11 +575,10 @@
       "text": "Look! The hat is on my head.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "dd5eee2c49417e3da12d9952e7c67c065113e06076d4f18784f677704fa6f3c7",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "e16a9854cf0f6697cd226c00535854c486e4ec8f7616d3940484911ca09b4afa"
     },
     {
       "id": "dressing.story.4.more2.audio",
@@ -658,11 +586,43 @@
       "text": "Well done. You did it yourself!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "82c7d43a62e3991f6438d1c729b5ce0f6fc33c0536f805a002f186616776baad",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "cd953cb62fb9c4da9cc3ea9f843d4a5989db96b5931a56f42616feafac318cc2"
+    },
+    {
+      "id": "dressing.story.5.intro.audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.5.intro.audio.wav",
+      "text": "Lulu pulls at a sleeve.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "eacd4628a2be9ba6ead0af862288f4f19adffc1e9472077d2b27d31b56a4ef72"
+    },
+    {
+      "id": "dressing.story.5.item.audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.5.item.audio.wav",
+      "text": "My shirt is stuck. Help me, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "b98f65e0d3715bde6d32db65696bae239db28f7c1e0d675669013fe519339db5"
+    },
+    {
+      "id": "dressing.story.5.reply.audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.5.reply.audio.wav",
+      "text": "I can hold it. Pull gently.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "bd76513f93b3e7ea30fd7ac3112cd58d3e7de847c172cb3d0813e72e1c953393"
     },
     {
       "id": "dressing.story.5.more1.audio",
@@ -670,11 +630,43 @@
       "text": "It is out. Thank you, Momo!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "4a7c5ccfd2f607909a3bdd6f85325b183fd2175737ac8976a86158361966c3b9",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "98c096b825d6299a078433008842cd0f15d8f488021ff91a33dd5c0311241cd4"
+    },
+    {
+      "id": "dressing.story.6.intro.audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.6.intro.audio.wav",
+      "text": "Both friends stand by the door.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2be9304adf0d1e6629134cd4aacf368fdf394230d2adfd7e540211a3cb341575"
+    },
+    {
+      "id": "dressing.story.6.item.audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.6.item.audio.wav",
+      "text": "Shirt, socks, shoes, hat. Ready?",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "f26883899abcde115c38aa4aebd7f8b68b828cde3a4044360e1dbd753f52dcfd"
+    },
+    {
+      "id": "dressing.story.6.reply.audio",
+      "path": "audio/dressing/v0-2-0/dressing.story.6.reply.audio.wav",
+      "text": "Ready! Let us walk together.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "adbbe92baae0ca0b5dc307d0abd539c731faaed4773a5ea92581b654a044e83d"
     },
     {
       "id": "dressing.story.6.more1.audio",
@@ -682,11 +674,10 @@
       "text": "Do not forget your hat, Momo.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "b265ba95f4fb720209f5effc8b288ae54e153832637a381a84c7d9d1fd366f94",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "47b6dab1c1a7327f9d16b0e2b88f1e0b226e3f09f6a01fa1339b2a467b3c0c13"
     },
     {
       "id": "dressing.story.6.more2.audio",
@@ -694,11 +685,10 @@
       "text": "It is on my head. Let us go!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "31704e05c7d17cf10dec234fc3c840fcb78a8ec1ccb7ef3547e25dd300133f48",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "41770ec850dbc6cae12bb6bbfdabe1a0f1d797b8ec096681a230e4f3dd826eec"
     },
     {
       "id": "dressing.lesson.bridge.audio",
@@ -706,11 +696,10 @@
       "text": "Clean hands, clean face. Now let us get dressed.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "86f365d0c2c2abf14422493edb9363a98022061331a83d97c44f118636eedc12",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "556f8208e380370759d0a753e24997ff6c11094f1e1d60f5187892090d318b3f"
     }
   ]
 }

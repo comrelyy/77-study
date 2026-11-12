@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "sceneId": "birthday",
   "contentVersion": "0.1.0",
-  "generatedAt": "2026-11-06T12:47:09.807532+00:00",
-  "source": "Local offline speech synthesis",
+  "generatedAt": "2026-11-12T07:20:06.650134+00:00",
+  "source": "Kokoro offline speech synthesis (kokoro-onnx, kokoro-v1.0 int8)",
   "purpose": "Local synthesis; listening and rights review pending",
   "rightsStatus": "pending review",
   "reviewed": false,
@@ -14,10 +14,10 @@
       "text": "hat",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
       "volume": 100,
-      "sha256": "81de3e98d3e2291d5b974eca1803dbefcf30a6cc76ddce6682a02a9ff232ffd3"
+      "sha256": "0fd36c6e6dc04d46b1e5765c6c420df4fa9a4cc251ba8e926f2a02122e9359f5"
     },
     {
       "id": "birthday.cup.audio",
@@ -25,10 +25,10 @@
       "text": "cup",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
       "volume": 100,
-      "sha256": "43690e7637c8b4ce1e706435a075ba59c2687da06bcd6db805c7da5b04ddf906"
+      "sha256": "87b9c4d912ad721261ac12ba006e4fd87d164b05eb19cb08aa788a9e55e1ece3"
     },
     {
       "id": "birthday.ball.audio",
@@ -36,10 +36,10 @@
       "text": "ball",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
       "volume": 100,
-      "sha256": "2cf25bae2510c9801df6e90ed1c4d7576199b68cc7f0260ca54e192e11cf9ff2"
+      "sha256": "d3ebe13096e3f11d39220018d9583a8971f0f7d021e3bd89b64aff92f7145198"
     },
     {
       "id": "birthday.teddy.audio",
@@ -47,10 +47,10 @@
       "text": "teddy",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
       "volume": 100,
-      "sha256": "370a828fef0671d0efe45146082d47bf74f3925225383366cae5032bfde0bb34"
+      "sha256": "c47cf50afa7306e1b33662449336525669594a84ca5c710bf47f34e2b6344534"
     },
     {
       "id": "birthday.story.1.intro.audio",
@@ -58,10 +58,10 @@
       "text": "Momo and Lulu come to the birthday party.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "c3b96a3861ca5203218929c727ddaf1ed3ff81220cfaa9bc04916be86ca4a3a1"
+      "sha256": "dfaff9f8213b3acae62fecd3d9dfc20f0ca6176c8d3f54eb98da7a68294e0d3f"
     },
     {
       "id": "birthday.story.1.item.audio",
@@ -69,10 +69,10 @@
       "text": "Look at my new hat!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "4c0e8a923afa1f50248bdf82a69f8d1b5dc1ed7893888277054574741791a9bc"
+      "sha256": "1b6a57c7cbfbb7f7fc85a60f1ac21ff7dc23e78b57e05f9b1ef2dbdf689d73b4"
     },
     {
       "id": "birthday.story.1.reply.audio",
@@ -80,10 +80,10 @@
       "text": "It is a yellow hat. I like it.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "b956ddbc3182b9ff2ad6c59a80248c03c56679fce7c31c95ea26d8b77cbe88b4"
+      "sha256": "a412146e58a25faf0bab13fc15a1a428796796c8f558580b68b74ebbca3d0102"
     },
     {
       "id": "birthday.story.2.intro.audio",
@@ -91,10 +91,10 @@
       "text": "Lulu pours juice into a cup.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "553ffa8fa7fa7d79d1fab5324f0bf7955ff98bdd079dc4d55698077c0aa255fb"
+      "sha256": "3d7537961c98a3aec4e89798d434dfb7b0f1e1cddd5295fa78eed5b1c6b67c0c"
     },
     {
       "id": "birthday.story.2.item.audio",
@@ -102,10 +102,10 @@
       "text": "Can I hold the cup?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "920b52a4605be8b684923054370fb7edb8a7f667ad387854ac27f91f0daa68ad"
+      "sha256": "9ebc5da0c2c020cb9f356753c81d6e7a04d82522af2b3a6001d72eabbec6f479"
     },
     {
       "id": "birthday.story.2.reply.audio",
@@ -113,10 +113,10 @@
       "text": "Yes, you can. Be gentle with it.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "ba60eb1a5f369f99c44e8a50644ddb4db5fce85e10b13ca2b65f8c5a7701a6eb"
+      "sha256": "50575fd872cb6fb20a785c69a3b24f719f8396a495a0f4468dcc0696f6ae5119"
     },
     {
       "id": "birthday.story.3.intro.audio",
@@ -124,10 +124,10 @@
       "text": "The friends play on the grass.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "b3abde8923ef4b852022f71917740c9e061a21b5ce01ac61a9f39ca49dfed144"
+      "sha256": "d7ccda355810ad3d448d500a937d1a44a6a5c573c940af9394ed056af94b73e8"
     },
     {
       "id": "birthday.story.3.item.audio",
@@ -135,10 +135,10 @@
       "text": "I kick the ball to you.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "32cd23afe904692d4d20aa663a38cbc3ba6b59ac9dd395844ab091fd5bb49938"
+      "sha256": "9339e99881f62bc6bc723d7b52bc6e5ba842320206e48d2145b31716c2bb8f54"
     },
     {
       "id": "birthday.story.3.reply.audio",
@@ -146,10 +146,10 @@
       "text": "I catch the ball. Hooray!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "086ace9004b559f73a7635d879714a91b79f24f8ac68c3820bd13ec72ea0d10a"
+      "sha256": "d0e3cecbf7d6a521ad1405d8f640ebeaf67a1a1126d9d7336b6952a48680cd8d"
     },
     {
       "id": "birthday.story.4.intro.audio",
@@ -157,10 +157,10 @@
       "text": "A teddy sits under the table.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "841dcd69c7a57fe74cb421a7d2c6f6f66669ee42dcc5bf70d6a678cbc6770631"
+      "sha256": "fece68a801feb569c217ea2bf5119d827674d07eae603d3a75f4a048897c5c50"
     },
     {
       "id": "birthday.story.4.item.audio",
@@ -168,10 +168,10 @@
       "text": "Look, a little teddy!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "36f318b46c8c01e97e1265c9943a337e5da0fcca2e7a84c90863015e14a87668"
+      "sha256": "29724e00e29a379823b778b9ec9d75c128a87e451abb07b6f8cb5159a8141f79"
     },
     {
       "id": "birthday.story.4.reply.audio",
@@ -179,10 +179,10 @@
       "text": "Hug the teddy gently.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "5a0b39d7ba7ef954c8317f79cf0eadc393b9e22f8f09fcb594fc69c01f9f31f6"
+      "sha256": "b8cd20e3105c301e6fb86666240256ce5cda5b4188d3a4d359ae53a3aa086122"
     },
     {
       "id": "birthday.story.5.intro.audio",
@@ -190,10 +190,10 @@
       "text": "Everyone sings a happy song.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "85d7c7599b8f7d8a6ed429416e1814184fe25a2d90045264ec25dfec1a9c6318"
+      "sha256": "9e0ccafa1fd189671295424a25dc5825fdd13ee89ba942a1c213d04cd17d0525"
     },
     {
       "id": "birthday.story.5.item.audio",
@@ -201,10 +201,10 @@
       "text": "Happy birthday! You are four now.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "7f66e2b2a8a8e041732026470874bcb4811287028876a149b68c833d4c9de4ff"
+      "sha256": "770717db09ec5eec5e27746c7eb7fe3038687beed39b710c5c0657e5403e201c"
     },
     {
       "id": "birthday.story.5.reply.audio",
@@ -212,10 +212,10 @@
       "text": "I wear my hat. I am four years old.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "c58fcc55f8ec5825e81170e43e68b0e9e6fb7e762192bbd6d148c6b3ba96b776"
+      "sha256": "084cf4c9b8989cbad4c0feb1ac271398c0e4791c9f02a14d0b8b28b7cd3738e8"
     },
     {
       "id": "birthday.story.6.intro.audio",
@@ -223,10 +223,10 @@
       "text": "The party is over and the sun goes down.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "1badfc51b20287b852c5e39036d4e3b8b01a52af629cdfe5734b64ec85f3ab83"
+      "sha256": "0b3438b111441be6a9576785b82a43436394772f331d9284d788b0d0e509e85c"
     },
     {
       "id": "birthday.story.6.item.audio",
@@ -234,10 +234,10 @@
       "text": "Thank you for the nice day.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "91a6266c2c249dc96f381121d4dbf4ed86e5c85a99f1883d13ef478368de9531"
+      "sha256": "28d45468f5975c5bfeb774de6068d64c41d18ea708b7a9de747bbdedc2d953a5"
     },
     {
       "id": "birthday.story.6.reply.audio",
@@ -245,10 +245,10 @@
       "text": "Keep your ball, my good friend.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "39fcbf3491057f46b5d4b94a652898a2ed8292cd077b2d887110f0ed643cc505"
+      "sha256": "97a05fa275b9eec66bd743740778db07f090d2f3583b9ef41d3f20e707396ee7"
     },
     {
       "id": "birthday.dialogue.1.question.audio",
@@ -256,10 +256,10 @@
       "text": "What do you want to wear?",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "aaa98562cb5f7a12bb8a1701419165521231b2f8e166d8561ca99706bbaf000a"
+      "sha256": "39ccdb98b293704da447a1af039a602a8f148fda4ae3c5cb77bce5111049fa45"
     },
     {
       "id": "birthday.dialogue.1.reply.1.audio",
@@ -267,10 +267,10 @@
       "text": "I want to wear the hat.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "d00de9e9bf9d518c91194c155d566b6c22968194ac8f88d0d3120c65c0cb0667"
+      "sha256": "17d95acc0340e297dcd4183fb8a47b08708de5eb243b11e7be13f18cca90c917"
     },
     {
       "id": "birthday.dialogue.1.reply.1.follow.audio",
@@ -278,10 +278,10 @@
       "text": "The hat looks great on you!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "ffc6ef4e307e04ce4bc47a56526906348556af212409fe5265bc33d5d15cb97d"
+      "sha256": "6d5af1c18fb5735083148d8c5267dbfb25bf3cd579933ced4d61cfd3fa2cf31e"
     },
     {
       "id": "birthday.dialogue.1.reply.2.audio",
@@ -289,10 +289,10 @@
       "text": "The hat, please.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "59ea4d266451b4902f49e37ad852823b9919e33332ff135b8fe587e18428cc48"
+      "sha256": "c26d2fb43d8645552be34301bbe0839cdf6e9889abb547d6785193303be5efbc"
     },
     {
       "id": "birthday.dialogue.1.reply.2.follow.audio",
@@ -300,10 +300,10 @@
       "text": "Yes, put it on your head.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "ece236b87b04b41bc36591efde34cda8cf3183f0eaee595e63968c286b61ac6d"
+      "sha256": "ee5a1e9bc4e4e2148c84e36f0d9bcee792a4a98ffd8432ac9fac4a32319185cc"
     },
     {
       "id": "birthday.dialogue.2.question.audio",
@@ -311,10 +311,10 @@
       "text": "What is in the cup?",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "2ea23c3b2816478e7ced14655196db247d890435e5984ec01338c73f540be32f"
+      "sha256": "ff45c014b82f0e9f9c0434a4edc43a3b4fab1fb52a1f8643f11c98323c23693b"
     },
     {
       "id": "birthday.dialogue.2.reply.1.audio",
@@ -322,10 +322,10 @@
       "text": "There is juice.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "825033806528277a32b2bb198b6d574c9b0be0c4cc62cb1c64336d58dedfbdbd"
+      "sha256": "7d6f9a42c37eb86b4e8a2eecc2066b945e0a1dd50cd74614326db3ba0a0d964a"
     },
     {
       "id": "birthday.dialogue.2.reply.1.follow.audio",
@@ -333,10 +333,10 @@
       "text": "Yummy! Drink it slowly.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "1413fadcd7a8f7dd71ce7e033144064acae80e0e16769482b4166b8b3b144136"
+      "sha256": "64447887083a806ce982f1b8672076f024caa5f48d1daa669f3d61d4ebeb6844"
     },
     {
       "id": "birthday.dialogue.2.reply.2.audio",
@@ -344,10 +344,10 @@
       "text": "I see juice in the cup.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "8368d89b6ae34f3d8dcaba42a54bcd0e70761fd5fe96b167ad6121db60bb8239"
+      "sha256": "b722e790c9e4fddaaffa7ffe9d830e63f76a30ee2c9a5d999727ebd4318b7ab1"
     },
     {
       "id": "birthday.dialogue.2.reply.2.follow.audio",
@@ -355,10 +355,10 @@
       "text": "Hold the cup with two hands.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "7591138c7b5c2c86bc11a5a6c46c631bccd32c8a9be173a62e6cc86b6edbaa0e"
+      "sha256": "5f956c494e0b51c7b8177fb8149b27d7f7e6fc3aff1372fc27bdb7b1f60be8fc"
     },
     {
       "id": "birthday.dialogue.2.reply.3.audio",
@@ -366,10 +366,10 @@
       "text": "There is milk.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "07e8dc3a7f5b7e10794d3f36abc035f6ae5b0cbd846aaebfcd76544a320abf52"
+      "sha256": "822a3030378034586af917f8bdf70446531bbcc94dfc722533c548aa6931f7df"
     },
     {
       "id": "birthday.dialogue.2.reply.3.follow.audio",
@@ -377,10 +377,10 @@
       "text": "Milk is good for you.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "367d13e3669705af4edcda9b14181fe874505e812a3ad48216c5ceedaacefcde"
+      "sha256": "ea826f848a90a077e296678756ec8ad96d5a2b28404909af7952b9e50b33cf16"
     },
     {
       "id": "birthday.dialogue.3.question.audio",
@@ -388,10 +388,10 @@
       "text": "What shall we play?",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "8c9c0de4e7100eed285176f5aa86a1ca55bf658fde409c39b5e43886b1dea5ab"
+      "sha256": "38176cc0c59ce508a2ab7009b1d39368e0116c8a4a7fdbd3ec5bd52fe108a72b"
     },
     {
       "id": "birthday.dialogue.3.reply.1.audio",
@@ -399,10 +399,10 @@
       "text": "We can play with the ball.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "9e61619b86521ca331a37dece88c33e45c074a0ac9a2d0e9c0b348857f1239c0"
+      "sha256": "91a814e8437fe1a53aaf8811e09a1b8dd49310486d997dfd0c1aff4fef963de8"
     },
     {
       "id": "birthday.dialogue.3.reply.1.follow.audio",
@@ -410,10 +410,10 @@
       "text": "Great! I will catch it.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "5a88a30f58d6a08f5f494ce83b7dcd21447a1d2bcad42309cf2e7a717c000a3a"
+      "sha256": "37b03b7be00f9f9a2235f01f100e614595cf607fead60d252352258bfd05c09c"
     },
     {
       "id": "birthday.dialogue.3.reply.2.audio",
@@ -421,10 +421,10 @@
       "text": "We can roll the ball.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "3a4043cd128bd621c638b7f0e1146e0d7656cee9df806ed4987cba913b5332ac"
+      "sha256": "74abd4afbe878403d6a1dc8264cb5d4f3f6cfeb7c1172b8c9568839bf9d1cb58"
     },
     {
       "id": "birthday.dialogue.3.reply.2.follow.audio",
@@ -432,10 +432,10 @@
       "text": "Here it comes. Roll, roll, roll!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "445afad14e67bd02f9fdc46f46079c1eb0e5953ec02f1895958f89c96f89500b"
+      "sha256": "4e2e8861c0de4c2e86d308d7db93252b022c16375e658b5ebf74b81e49fd89e1"
     },
     {
       "id": "birthday.dialogue.4.question.audio",
@@ -443,10 +443,10 @@
       "text": "Who do you want to hug?",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "2fd8b77b95a06a60655faf874d0b2832b2f1f23b61373fdb57cb3c7ce223dfa4"
+      "sha256": "335ee422eb888237857c8736ee93db9a6f45576778c3576f4ec0a94754b829db"
     },
     {
       "id": "birthday.dialogue.4.reply.1.audio",
@@ -454,10 +454,10 @@
       "text": "I hug the teddy.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "3d0af81284a3a0e80dc74264b300e607d4590271699f96b51574a5f9a198f36d"
+      "sha256": "5d0975fffa1840ec2d12003a40c93ffafa5eba102b94c830e27933609205d36e"
     },
     {
       "id": "birthday.dialogue.4.reply.1.follow.audio",
@@ -465,10 +465,10 @@
       "text": "The teddy likes a gentle hug.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "0f60c1807c15b1ad20e1c18c48d596381cd4af5e3657ed4822bf70418a8d6e82"
+      "sha256": "c1f496d7c6c123cff6e0aa942c835dd983dd009873d5e82dc7e5ed850545ca71"
     },
     {
       "id": "birthday.dialogue.4.reply.2.audio",
@@ -476,10 +476,10 @@
       "text": "I want the teddy.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "8018c1e3a26d5a687cad498d68499d212a6e879622b65d7db28b5be83533df04"
+      "sha256": "1a5dfa2e0a64177044c7e3e2aee5164c69f825e521a117460da59cedd624fad7"
     },
     {
       "id": "birthday.dialogue.4.reply.2.follow.audio",
@@ -487,10 +487,10 @@
       "text": "Here you are. Hug it softly.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "b565db34a15d9955aac5697dcb28fe22ffb4b864b9452d1e8d929bae969443ef"
+      "sha256": "b9eba36fa2aa73ac3737655ab5dd5968ad900aed53a5b6f8b8275e1c119686fe"
     },
     {
       "id": "birthday.dialogue.5.question.audio",
@@ -498,10 +498,10 @@
       "text": "What color is your hat?",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "451ad627ec26100216c0cfa8813a876a78ae7a490c6209138ab9f310725a8780"
+      "sha256": "4b40c8112af1a4106de11f557d5163f93f236861cd4672783aa26cfcad37a530"
     },
     {
       "id": "birthday.dialogue.5.reply.1.audio",
@@ -509,10 +509,10 @@
       "text": "My hat is yellow.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "0d316c5cdb8f99c5b73018d673986409873038d314a1fa90a8babefe6eb467e2"
+      "sha256": "5484c287d1778d4736ead6d70d944cc440f7cf9c4e16a6bf2ea8d9156a311ef1"
     },
     {
       "id": "birthday.dialogue.5.reply.1.follow.audio",
@@ -520,10 +520,10 @@
       "text": "Yellow is a lovely color.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "e3e14f688dd59bb09a1819495d54ee670c7cbccd2c92ec806dfb508cea1b5c20"
+      "sha256": "59eed5ec1447ae9c02dee9f8d438609ea7e8d914bd8cc5021e70bee4a7e9010a"
     },
     {
       "id": "birthday.dialogue.5.reply.2.audio",
@@ -531,10 +531,10 @@
       "text": "It is green and yellow.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "04104bef51e2449eaa9f169212c95be46358416cf7e81efea261dacdebf8c3fb"
+      "sha256": "341fc9fa06c1109f0ed0c2abf5d93fb0943f5a73f10d9c1faa512644ea3344bf"
     },
     {
       "id": "birthday.dialogue.5.reply.2.follow.audio",
@@ -542,10 +542,10 @@
       "text": "Green and yellow look nice.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "cb3b6fefdb7fd174f8502bc019e21324a8f7f8bd523950c0bead5983b724c0c8"
+      "sha256": "85d2624eb6355be10e5776623808035b95fe0445c48f183dd507fa2e05384b6a"
     },
     {
       "id": "birthday.dialogue.6.question.audio",
@@ -553,10 +553,10 @@
       "text": "What do you like best today?",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "edc0982a980514adc1ae5127c7989ff7d77d633c71118bc0ce00fd27079d1cd1"
+      "sha256": "c290e496e87b07ba00377da8248b2a3997c8a85725cc9f920ce4ecda16e2da9f"
     },
     {
       "id": "birthday.dialogue.6.reply.1.audio",
@@ -564,10 +564,10 @@
       "text": "I like the ball.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "8fcd1260dd086ef1b21ebd0e6c595bd93b6941de68a5f23c97def7698d97a298"
+      "sha256": "5b5ea6ee373d7b7fab90b6e1e2f091856aaeada219d86eec84a2c1db3e5060cc"
     },
     {
       "id": "birthday.dialogue.6.reply.1.follow.audio",
@@ -575,10 +575,10 @@
       "text": "Me too! It is round and fun.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "1276512343a52e49b33c1c7bc9f2c2cc792b1783499a5f5a5f964b871dc3e30c"
+      "sha256": "bef1df2af4c8cb24eea523e9957843ace5b648b3bdb2e3713d792e6878659c39"
     },
     {
       "id": "birthday.dialogue.6.reply.2.audio",
@@ -586,10 +586,10 @@
       "text": "I like the cup.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "4248fbd6a1aadf2b4423f8affa0ac5979800e2e59b73a240eda60e71dd0115d3"
+      "sha256": "d95cbc485c1b130fa9038d721a3411db8a35e7626ad6771523914bece6c28fc4"
     },
     {
       "id": "birthday.dialogue.6.reply.2.follow.audio",
@@ -597,10 +597,10 @@
       "text": "Nice cup! Drink your juice.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "da7db80634c1a4a80be20b40ecbc08dc9abcf015e038130fdddf16b8e6fc6f5f"
+      "sha256": "3bcefc8d5321d1bfe1892c3563c458a514b448e85120f7e04c87e1dc8b9ec4c8"
     },
     {
       "id": "birthday.dialogue.6.reply.3.audio",
@@ -608,10 +608,10 @@
       "text": "I like the teddy.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "6e8e32bb749f436d2b92711864d4e0d18b92cfb0bf2254f386f721b8c667a31b"
+      "sha256": "9859502028bc7ee9766bbfa2af1ebf68232b482bac8ecbb7b6b6c4f60981d760"
     },
     {
       "id": "birthday.dialogue.6.reply.3.follow.audio",
@@ -619,10 +619,10 @@
       "text": "The teddy is a good friend.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "5f0336fb54e3ad2244d37e15b12d94646063830b2b49d384e7e6072580ed41a3"
+      "sha256": "ab2844900ede6050a636c30e312856e63337a66280004f5216f3c37b90aa11d1"
     },
     {
       "id": "birthday.lesson.wrong.febef6a7.audio",
@@ -630,10 +630,10 @@
       "text": "I want a cup.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "af63ffe1abbb7bedaa7013ad8ffded66154a8232682217d19c736d850d0ac757"
+      "sha256": "23cbe8450e5c5e696e4c1f7bbed8e2ffe3be367cf75e61bbd0e93cef48943314"
     },
     {
       "id": "birthday.lesson.wrong.11e4440f.audio",
@@ -641,10 +641,10 @@
       "text": "I see a hat.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "7b3be0a769649ee39dde989e9d515f40e47060671e410ed543c6616a0640ccfb"
+      "sha256": "5abaceeeff1619c7550968912791047d3a822f2292f0bae1afef62c075e52d5c"
     },
     {
       "id": "birthday.lesson.wrong.00b1aec1.audio",
@@ -652,10 +652,10 @@
       "text": "Let us hug the teddy.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "11e13c3a9f49be0a1f11cdf6be89af915c587ad9bbdc660bfcbe4d4103723db3"
+      "sha256": "13a20ab2b9e71099ffc5d9d6900dda654067ce394e71d8b442b447dd55aa24c8"
     },
     {
       "id": "birthday.lesson.wrong.7a6d8bc0.audio",
@@ -663,10 +663,10 @@
       "text": "I kick the ball.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "644da3e82fd16e78ab45a9f9d9a1f4c37f7767e832b00826709b24bb699c6b79"
+      "sha256": "08c643893821b6d3439038ff49213628e5a49e8f9f70ec87091157614cc7d529"
     },
     {
       "id": "birthday.lesson.wrong.1bd9bf90.audio",
@@ -674,10 +674,10 @@
       "text": "My cup is blue.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "e1ea3d30b1236d7230561d756fe43ec50fdd0aa2e3d70afe14a6d10182c26db7"
+      "sha256": "7cecbf1aa39dd60aa9c3382193f0c0d9989a10cf92f9fa8995b158411f39dc3f"
     },
     {
       "id": "birthday.lesson.wrong.1585f1a7.audio",
@@ -685,10 +685,10 @@
       "text": "I like the hat.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "b53b04b682bc048ed41f0fb5d69e71aeee1413d047ac450f0cabb62fdc90c62a"
+      "sha256": "709dd9f853ecfd3359dc0dcef8b94e8119c672e7ba169e792f7441de31f97dd5"
     },
     {
       "id": "birthday.lesson.bridge.audio",
@@ -696,10 +696,10 @@
       "text": "The room is tidy. Surprise! It is a party!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "ba06ffad364b178ae7b499a9e347eebd2ce8807569ce3f91771c2133aab539dd"
+      "sha256": "45fb781d650f72725d9d41dfa9c3aaa19a31d55c9553f88229a296756e71665f"
     }
   ]
 }

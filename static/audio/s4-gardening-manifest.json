@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "sceneId": "gardening",
   "contentVersion": "0.1.0",
-  "generatedAt": "2026-11-02T22:31:12.2710636Z",
-  "source": "Windows SAPI offline synthesis",
+  "generatedAt": "2026-11-12T07:09:31.919843+00:00",
+  "source": "Kokoro offline speech synthesis (kokoro-onnx, kokoro-v1.0 int8)",
   "purpose": "S4 local synthesis; listening and rights review pending",
   "rightsStatus": "pending review",
   "reviewed": false,
@@ -14,10 +14,10 @@
       "text": "pot",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "9bbab1b42f71b660a51cff8be0480959f872b7e02c40d0a3b49c82dc53ae0b7e"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "f53af433ffd5ff44742a73419d12e85707fef051bf5fadda11584fb66f011e0f"
     },
     {
       "id": "gardening.seed.audio",
@@ -25,10 +25,10 @@
       "text": "seed",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "dbdeea19d08d088afc36bea5cf2e188fb3d7e302f6819049949ab4f0573614c0"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "2cbdf53699d7ba540b429493884faff6b89cbe8f6d5e0eecc64b722c4162b739"
     },
     {
       "id": "gardening.water.audio",
@@ -36,10 +36,10 @@
       "text": "water",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "f15405db8f5b7f1df002de40c3adeb1650d994b03e16c41703db8c93fe48da56"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "6fa91604c48b7f3176d1167be82005c1c3d7d63f7f32630fda819a48787982b2"
     },
     {
       "id": "gardening.flower.audio",
@@ -47,10 +47,10 @@
       "text": "flower",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "0392a5296f79a26877a8558a499b72331946fbfead41fc54b7d92c715ea424c5"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "ae97ce7c3612a56a32070c694bf0cf77bad609bce9b6b5c6ee1c2051535c0fe2"
     },
     {
       "id": "gardening.dialogue.1.question.audio",
@@ -58,10 +58,10 @@
       "text": "What could grow in this pot?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "918e8e40c95f1ccdb5a05f1028b7661e5ef775a3567632d072a3ff15563de3bb"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "0edb65610a14e57a34e57bf0df43f54d7e84088b00cfbd35d4e4160d5602a17e"
     },
     {
       "id": "gardening.dialogue.1.reply.1.audio",
@@ -69,10 +69,10 @@
       "text": "A little flower.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "d07f37a998a838b00eb97f88dcd9aabdf205eea94002e381d728ee0f7a3cc2ba"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "8dd3b12e024dd7ea2baeb5a9aa06f6e68ad096315dcbe282098c651b7795014a"
     },
     {
       "id": "gardening.dialogue.1.reply.1.follow.audio",
@@ -80,10 +80,10 @@
       "text": "Let us start with a seed.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "eb51cd6caddf8d446fd023aa823202a37832e45700869935c1729027d4bdc211"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "8f8c1b2322ab551bb65c9705c74d08ac10ab4118f811c89d3fb2f5d88654b8e9"
     },
     {
       "id": "gardening.dialogue.1.reply.2.audio",
@@ -91,10 +91,10 @@
       "text": "Can you show me?",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "416e562099dd42ab3a280ccb558b858801b9732e6c54c1da510376e4342c63c6"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "5cdf31c8e3ff4e50aa7cfd3e5c3708ed9a090af90f6cee24bebd0b54a3120115"
     },
     {
       "id": "gardening.dialogue.1.reply.2.follow.audio",
@@ -102,10 +102,10 @@
       "text": "We will make room in the soil.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "593677253e660cd1b46be1cb0885e9069aa594bd7b00c606150aab879ee0d6f9"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "8a308d26179e75f62189704d33178b3385113fbb4dda225863e3fd5a133921f3"
     },
     {
       "id": "gardening.dialogue.2.question.audio",
@@ -113,10 +113,10 @@
       "text": "Where shall we put the seed?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "97791c9ed66adf3e4c33a88eb63deb7045711281eb8933ab2fe919254aeea790"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "35875dddbad37c3d5ac9361759bbfbccd31346916c47cda5990c83cc4a1eb085"
     },
     {
       "id": "gardening.dialogue.2.reply.1.audio",
@@ -124,10 +124,10 @@
       "text": "In the soil.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "64eedd66190a8439a17261c402e96ee76dbc4a17023b9d835f4dff6e4a605681"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "b2947f3668b51a5d1b0bef023515a103986bd902ff5afe614348cc322a04623e"
     },
     {
       "id": "gardening.dialogue.2.reply.1.follow.audio",
@@ -135,10 +135,10 @@
       "text": "Gently. Then cover it with a little soil.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "5ab4ab332d0d03252e741f41b40d47f77e065dfc29dffc1ca2b415b13deaf77a"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "c54d34e32524ff32c1aaedfd6cf71c3c01a9bd4d7ffce7108716ddd5179cd9dd"
     },
     {
       "id": "gardening.dialogue.2.reply.2.audio",
@@ -146,10 +146,10 @@
       "text": "Please help me hold it.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "272e644d68b843748788b1c7a8c8a1d93287f26abb81623d75153d52f1f5fbd3"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "f5e085ee71c486b3a9559f1d9311e97c9793cbb5fe38e645b892c33ee03c6a0f"
     },
     {
       "id": "gardening.dialogue.2.reply.2.follow.audio",
@@ -157,10 +157,10 @@
       "text": "We can do this together.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1417c6422598c51789b9f22b57b358f23e83c9fee07df48fe2f45343073ea119"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2944e975257e8af26038a8c684ecef4c58d43642678bbe66ff5f13b984c5cd0e"
     },
     {
       "id": "gardening.dialogue.3.question.audio",
@@ -168,10 +168,10 @@
       "text": "How much water shall we pour?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "e4b6e05121913d2b1568d913b668fe4f05d13fdbf111d4976dad6fee27a5f259"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "0d9e6605912e29a930d3ea480359ff91187a2c4bfbc001be6d9b57834ebf2b00"
     },
     {
       "id": "gardening.dialogue.3.reply.1.audio",
@@ -179,10 +179,10 @@
       "text": "Just a little.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "c458bb14b32c523f7a103552d6c86db231e665b82877695d72c367e8c83890a9"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "27d9c56078165ade03a64f278b4614243596f5d52044bd28f1acb9b1fd24f9d7"
     },
     {
       "id": "gardening.dialogue.3.reply.1.follow.audio",
@@ -190,10 +190,10 @@
       "text": "Pour slowly. We can stop when ready.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "fa01b23f90b2190cd93babd570091a0f14d2eb6a4f0678c819a30cad8725e322"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "3bbb4b363001a8462bb98c4383f6e63175b158385055a06aef502cb2d2d28491"
     },
     {
       "id": "gardening.dialogue.3.reply.2.audio",
@@ -201,10 +201,10 @@
       "text": "Show me, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "96f5d9bedbdf2da949d481e5d552bc23b341124fbfbe7ae4149bb771cf71d261"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "385768c46f0c82ea75f1cf6b483492bca6363ef0c35a3256a6aa62baca77ddbe"
     },
     {
       "id": "gardening.dialogue.3.reply.2.follow.audio",
@@ -212,10 +212,10 @@
       "text": "Watch me pour a little water.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "b0414fd222874ef81454d104c3266214ad736586f4a0295f5c04baa12e97b71e"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "77429011a31aa265e6d191a314bc80c6d57906676d6c09226be0121443b44046"
     },
     {
       "id": "gardening.dialogue.4.question.audio",
@@ -223,10 +223,10 @@
       "text": "Can we see a flower today?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1000a19c611f651654ada6141b1570ab3277cf180b5334f76ad48b767e34c73f"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "397d8c10a944515942190978e907bdf08748848d5f36ea0ae4eafc4e033b6e17"
     },
     {
       "id": "gardening.dialogue.4.reply.1.audio",
@@ -234,10 +234,10 @@
       "text": "Not yet. We can wait.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "b277823e67f4928c85effd389a4b976a73c297c23ac997a6a6f55e1a61f08a26"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "8088cf095a9aeeb1ee6de2ea1b414aa5bf163c6492892e64905e21b596da95d7"
     },
     {
       "id": "gardening.dialogue.4.reply.1.follow.audio",
@@ -245,10 +245,10 @@
       "text": "Growing takes more than one afternoon.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "bb8bed75ae456e5e0795511bda91b40764bb9ab78681d268a3e070a12459d3dc"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "560db7f9777b87c00470457357210e984e6abcd2471642237d4509fbad2f65a5"
     },
     {
       "id": "gardening.dialogue.4.reply.2.audio",
@@ -256,10 +256,10 @@
       "text": "I want to see it now.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "b6cd2b332d5d3eb2b95f25ca2fd9b69992ffa9e553892be21898bbff9cb06746"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "90ccdee24648876c1cbaea7cdae904e03fe51d12f0258b8e6cba990b16102130"
     },
     {
       "id": "gardening.dialogue.4.reply.2.follow.audio",
@@ -267,10 +267,10 @@
       "text": "Waiting can feel hard. I will wait with you.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "3ee94cbc941abd986b0490ebf63af32dcd4e2ab2621f8bd7541ae261bf2fbec8"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "9713f10aa7166ff6889eb8fc599f0c0b3809ec380fcb5844041c37052812114f"
     },
     {
       "id": "gardening.dialogue.5.question.audio",
@@ -278,10 +278,10 @@
       "text": "Many days have passed. What do you see?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "3b64938171827d0dc61ee8c415c07ac4b02345595519d2b6338440bdc2ab0539"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "c548c5088b582150a73f17c28deb8ea7e93326fc682d657788e48f8b17a4181c"
     },
     {
       "id": "gardening.dialogue.5.reply.1.audio",
@@ -289,10 +289,10 @@
       "text": "Our flower is here!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "1203b54f7d4649825431c8ca3df1af29d8e73b95d5865bd2a2e96bc7ecaf026a"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "730405bc1961c375677b166b280b046da683d458080c9444afaf61a76dcba80c"
     },
     {
       "id": "gardening.dialogue.5.reply.1.follow.audio",
@@ -300,10 +300,10 @@
       "text": "The little seed has grown.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "d6df6997eaee34e152d5305cd32147d14f62428e09babd20d5dc7e7a04f7f1e7"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d8959d9a9a37b270ab69524ddf7777cdafcc17309d416b70a5f63b6f1f2e42b2"
     },
     {
       "id": "gardening.dialogue.5.reply.2.audio",
@@ -311,10 +311,10 @@
       "text": "Come and look with me.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "650edcd8c4b6ea2777f4eded7605aa89c04a321938412eee9de8445836d70f55"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "c036f8b9d0b07243d67439fba221dc79b91540c238d5b96360e398c17601bd21"
     },
     {
       "id": "gardening.dialogue.5.reply.2.follow.audio",
@@ -322,10 +322,10 @@
       "text": "I am coming. Let us look closely.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "db2bd91401b6575728f45520f323d3d59edfe552ba6078cd1781ea66092d175a"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "3d7706be6f4a384c5c540fec6cbdf8cda21d6885a5df40bf38a04f8f76655303"
     },
     {
       "id": "gardening.dialogue.6.question.audio",
@@ -333,10 +333,10 @@
       "text": "Who will check the pot tomorrow?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1b0fc8b74b33d85a02320a3c529fb7c7f1f65d50063727dd0792af1d8e8397b3"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "60d4cf27da57c3de4a532ae5d4425ab660f214a25d4008889a13650bbb10f5c1"
     },
     {
       "id": "gardening.dialogue.6.reply.1.audio",
@@ -344,10 +344,10 @@
       "text": "My turn tomorrow!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "19857cffab757d005291e9e61735fd93a2601e45049b25c353a91825e9165e75"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "0cd4b07542d956d0e2e09960a510c34d549d58ce62901bf345e53c408c00efe9"
     },
     {
       "id": "gardening.dialogue.6.reply.1.follow.audio",
@@ -355,10 +355,10 @@
       "text": "I checked today. We can take turns.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "487cb1c41872b465d3e912c0b38d421e95a3cbd69a630e27c4e9381ef40a8cb1"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "f24310f36e689d54fb6320602dbccdd9079cea96ed9c31b8a93d8b8a489ddbe2"
     },
     {
       "id": "gardening.dialogue.6.reply.2.audio",
@@ -366,10 +366,10 @@
       "text": "Let us make a plan.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "84047bf4fc0195bf9cb7d1a44b498f87fa08af5bbfe040f109028de431cd12c9"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "6d47c89833cae05b76a6238df5da700cfe829b9ad341ce92c753739aeaa6ff1d"
     },
     {
       "id": "gardening.dialogue.6.reply.2.follow.audio",
@@ -377,10 +377,10 @@
       "text": "We can share the job.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "8e0c120e466cd8478bb1efa8bcb7052dbd709d02c0ac9fe77f015e5193b79f3d"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d56c3851b14b2360d768fab4a88652b2d724a496b3a0cb11260cb1f105f07836"
     },
     {
       "id": "gardening.story.1.intro.audio",
@@ -388,10 +388,10 @@
       "text": "Momo and Lulu find an empty pot.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c02c73864267bdafea6b6f399f75a69165e329e57495e0d2c271b01882008d95"
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "c658718553ebe1acf3bc4b50335afecb5320a368964098d3531d98a6c4785032"
     },
     {
       "id": "gardening.story.1.item.audio",
@@ -399,10 +399,10 @@
       "text": "What could grow in this pot?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "918e8e40c95f1ccdb5a05f1028b7661e5ef775a3567632d072a3ff15563de3bb"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "0edb65610a14e57a34e57bf0df43f54d7e84088b00cfbd35d4e4160d5602a17e"
     },
     {
       "id": "gardening.story.1.reply.audio",
@@ -410,175 +410,10 @@
       "text": "Let us try a little seed.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "4f61de6c093acd273d811397796176cd52877acf74ecf58c14c3193eaf4817cc"
-    },
-    {
-      "id": "gardening.story.2.intro.audio",
-      "path": "audio/gardening/v0-1-0/gardening.story.2.intro.audio.wav",
-      "text": "A seed rests in Momo's hand.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "9811a3b218cc19fab9570b997070b787397af822bf533c7a291cb26da9c93c29"
-    },
-    {
-      "id": "gardening.story.2.item.audio",
-      "path": "audio/gardening/v0-1-0/gardening.story.2.item.audio.wav",
-      "text": "This seed is so small!",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "abe3c074999b219981562c004a68b0d3ba55686e8f7cfa0fa731ab1763e262ee"
-    },
-    {
-      "id": "gardening.story.2.reply.audio",
-      "path": "audio/gardening/v0-1-0/gardening.story.2.reply.audio.wav",
-      "text": "Make a little space in the soil for it.",
-      "language": "en-US",
-      "role": "turtle",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -3,
-      "volume": 90,
-      "sha256": "3036da688fdf31ab530097c9c462c6b61e85d10f1bf332cff7518c3f65946732"
-    },
-    {
-      "id": "gardening.story.3.intro.audio",
-      "path": "audio/gardening/v0-1-0/gardening.story.3.intro.audio.wav",
-      "text": "Fifi brings water to the pot.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "3fab8bd0e3a80e0532e7a552b7401d7a2862caa061a800242bd1a5d28800e1bf"
-    },
-    {
-      "id": "gardening.story.3.item.audio",
-      "path": "audio/gardening/v0-1-0/gardening.story.3.item.audio.wav",
-      "text": "Shall I pour it all in?",
-      "language": "en-US",
-      "role": "fox",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": 0,
-      "volume": 90,
-      "sha256": "463345b23173dd6838469b1af0c61e7c0771911119145970dd65333a5ea35d27"
-    },
-    {
-      "id": "gardening.story.3.reply.audio",
-      "path": "audio/gardening/v0-1-0/gardening.story.3.reply.audio.wav",
-      "text": "Just a little. Pour slowly.",
-      "language": "en-US",
-      "role": "turtle",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -3,
-      "volume": 90,
-      "sha256": "f0ece969a124fffb543dc63e69709bb74c11051114ff9fcdaab9b2e5915e88cd"
-    },
-    {
-      "id": "gardening.story.4.intro.audio",
-      "path": "audio/gardening/v0-1-0/gardening.story.4.intro.audio.wav",
-      "text": "Momo checks the pot that afternoon.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c0afbae125f15bb496ee9799e28fa126c987836dbc75e7fce2b60e428fdbbb23"
-    },
-    {
-      "id": "gardening.story.4.item.audio",
-      "path": "audio/gardening/v0-1-0/gardening.story.4.item.audio.wav",
-      "text": "I cannot see a flower yet.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "4da9c8b8ac80bb493987a55b56a1561127a71de6e4b7f780365dce048f2b463a"
-    },
-    {
-      "id": "gardening.story.4.reply.audio",
-      "path": "audio/gardening/v0-1-0/gardening.story.4.reply.audio.wav",
-      "text": "Growing takes time. We can check another day.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "6cc80625a60f36db718c8cf480e60b79c86589774d5e7a2b79c04ebab56c401a"
-    },
-    {
-      "id": "gardening.story.5.intro.audio",
-      "path": "audio/gardening/v0-1-0/gardening.story.5.intro.audio.wav",
-      "text": "Many days pass. A flower finally opens.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "e165cfbe5bd89504091c2860ef2dc5632248fa9dca0dc1f19e3913a94da063d2"
-    },
-    {
-      "id": "gardening.story.5.item.audio",
-      "path": "audio/gardening/v0-1-0/gardening.story.5.item.audio.wav",
-      "text": "Look! Our flower is here!",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "798fa5d0ad4b30e7bd5426922888a2671373ad4dd0e14d82879b04899d721b28"
-    },
-    {
-      "id": "gardening.story.5.reply.audio",
-      "path": "audio/gardening/v0-1-0/gardening.story.5.reply.audio.wav",
-      "text": "The little seed really grew.",
-      "language": "en-US",
-      "role": "fox",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": 0,
-      "volume": 90,
-      "sha256": "62847252cdc852ead7d60d1d763e34446f4b658f81822a9d269a7629926cd1bb"
-    },
-    {
-      "id": "gardening.story.6.intro.audio",
-      "path": "audio/gardening/v0-1-0/gardening.story.6.intro.audio.wav",
-      "text": "The friends make a plan for the pot.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "727bc02433ed06cfc45082d65e30c35d01858f615208803a2ad19cb51bd4f7ce"
-    },
-    {
-      "id": "gardening.story.6.item.audio",
-      "path": "audio/gardening/v0-1-0/gardening.story.6.item.audio.wav",
-      "text": "I can check it today.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c67834de0b1050969a011297f73a9fe86ac206bbf544fd4e37fb1544e8e12dff"
-    },
-    {
-      "id": "gardening.story.6.reply.audio",
-      "path": "audio/gardening/v0-1-0/gardening.story.6.reply.audio.wav",
-      "text": "I can check tomorrow. We will take turns.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "538c303c5e9efe33acdb4f9e6307bbac248fe7ee54521061004cfb8b2f56b9d8"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "e1fd51e14f26e0dc346973b4aa95b2073c67bbb6b0af60647d126003de896586"
     },
     {
       "id": "gardening.story.1.more1.audio",
@@ -586,11 +421,10 @@
       "text": "Where can we find a seed?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "0f9c2ca611d1304748e9f6c76a70226822de1e7029dde82637724488dc2619af",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "4f3c3c5760559a54cde2d9b38a53dfaa1d8d622163a6b4aa4bb2716f3d713295"
     },
     {
       "id": "gardening.story.1.more2.audio",
@@ -598,11 +432,43 @@
       "text": "Our grown-up has some.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "057b5ba69d872d30f83e8c0d99d99e4fab5ee2395ca3b36909a62a176124b82f",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "cdbba9455a469f1eabb95b73cee575dc4575f7d3bf32cf2b457c51618c5e437d"
+    },
+    {
+      "id": "gardening.story.2.intro.audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.2.intro.audio.wav",
+      "text": "A seed rests in Momo's hand.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "a5410c75cf22e6b38afe76374a52205cb9fa510e28cc8b666e618f3a5c1f81f9"
+    },
+    {
+      "id": "gardening.story.2.item.audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.2.item.audio.wav",
+      "text": "This seed is so small!",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "33eb45f9f40e9a11486139977ef9126378c3952c90d76a677eb314d78a1c9001"
+    },
+    {
+      "id": "gardening.story.2.reply.audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.2.reply.audio.wav",
+      "text": "Make a little space in the soil for it.",
+      "language": "en-US",
+      "role": "turtle",
+      "voice": "Kokoro bm_george",
+      "rate": 0.85,
+      "volume": 100,
+      "sha256": "c915e40e1de2cce935b5a3dfe21617fe25308340c3eb6094516483e1da25894f"
     },
     {
       "id": "gardening.story.2.more1.audio",
@@ -610,11 +476,43 @@
       "text": "I put it in gently.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "b2816531ea77de5c3f8b9e9574934bcf192e18ff2b087e9ad6300c7aa2572669",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "e9159b036d6f4d398df4b58499f8e50ca69b6f943dce2d0ffa9c33417b5756cf"
+    },
+    {
+      "id": "gardening.story.3.intro.audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.3.intro.audio.wav",
+      "text": "Fifi brings water to the pot.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "05530361ea9f55e7032df2945c734932f17c7d2392cdf9c2fe911f0d11782aac"
+    },
+    {
+      "id": "gardening.story.3.item.audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.3.item.audio.wav",
+      "text": "Shall I pour it all in?",
+      "language": "en-US",
+      "role": "fox",
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
+      "volume": 100,
+      "sha256": "dc084d855e2800c85cd743fbe5c80549625831f85645debc30aa073a12d38ee5"
+    },
+    {
+      "id": "gardening.story.3.reply.audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.3.reply.audio.wav",
+      "text": "Just a little. Pour slowly.",
+      "language": "en-US",
+      "role": "turtle",
+      "voice": "Kokoro bm_george",
+      "rate": 0.85,
+      "volume": 100,
+      "sha256": "f5ea75362d2a91c96246a38c12ab679817ea770061015aa42e05bd8ab929ad1c"
     },
     {
       "id": "gardening.story.3.more1.audio",
@@ -622,11 +520,10 @@
       "text": "Okay. Just a little.",
       "language": "en-US",
       "role": "fox",
-      "voice": "Samantha (macOS say)",
-      "rate": 175,
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
       "volume": 100,
-      "sha256": "3bf09f66867a611d9bed43ef84c784efe207b82e80d9fd358545e8c21a168041",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "03fb4249ec69d8f6c72df704fc8bf4be2b87a8212fc0ad8ce151c64aa3070693"
     },
     {
       "id": "gardening.story.3.more2.audio",
@@ -634,11 +531,43 @@
       "text": "Good. The soil is wet now.",
       "language": "en-US",
       "role": "turtle",
-      "voice": "Samantha (macOS say)",
-      "rate": 135,
+      "voice": "Kokoro bm_george",
+      "rate": 0.85,
       "volume": 100,
-      "sha256": "b3f04022ad06ce0ba02ffefffd85ac2694680663c97efb7f129ee398e64fc890",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "713bf4ac90f13ddb4c5f6b5a755c3a4cb02e715d1e4d013c13d4b318ee8a2d19"
+    },
+    {
+      "id": "gardening.story.4.intro.audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.4.intro.audio.wav",
+      "text": "Momo checks the pot that afternoon.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "b0a7ddbd1b832fdfef0906adacb0064158f37f269d1ad80dea476256d97c6275"
+    },
+    {
+      "id": "gardening.story.4.item.audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.4.item.audio.wav",
+      "text": "I cannot see a flower yet.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "bcfb515fc2414498f63b55ea9c502c51fe44593317a525c62f3ff8100cb53c51"
+    },
+    {
+      "id": "gardening.story.4.reply.audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.4.reply.audio.wav",
+      "text": "Growing takes time. We can check another day.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "3e3ab34a3c5f33bd9a403d2297d16571aee2e1f8446d1e9e7fb85ea26aa50d12"
     },
     {
       "id": "gardening.story.4.more1.audio",
@@ -646,11 +575,43 @@
       "text": "Okay. I will wait.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "ca7ceaea1bf04aeeb68e19561a90810a4d71510e9d452a17922b2904cc372963",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "7054bd7a19c5a5c8d593b23eb360191454514f6603403e51f8cb957e0458036b"
+    },
+    {
+      "id": "gardening.story.5.intro.audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.5.intro.audio.wav",
+      "text": "Many days pass. A flower finally opens.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "0f6ad4aa53ae4aeb2b80327f7a61e173719a6c34771e6b1266a56adffb656c75"
+    },
+    {
+      "id": "gardening.story.5.item.audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.5.item.audio.wav",
+      "text": "Look! Our flower is here!",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "e4a967db767eb8b8a113ac1ef525065256c46ad19f524431b30a62633a3e484d"
+    },
+    {
+      "id": "gardening.story.5.reply.audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.5.reply.audio.wav",
+      "text": "The little seed really grew.",
+      "language": "en-US",
+      "role": "fox",
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
+      "volume": 100,
+      "sha256": "91c7cc5e7f9af48c291decf18204bc7fc81ad93a9235f04389423db9abe8d931"
     },
     {
       "id": "gardening.story.5.more1.audio",
@@ -658,11 +619,10 @@
       "text": "It is so pretty!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "77140d53e7fa3f14b4da397888a34d49c6cd70988ff0f638e6b6e855e3bb7af3",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "27f06bf49d052bd6803101f5ab5dacdccaf9accc8bba48b3354eaeceaca81fa3"
     },
     {
       "id": "gardening.story.5.more2.audio",
@@ -670,11 +630,43 @@
       "text": "We waited, and now it is here.",
       "language": "en-US",
       "role": "fox",
-      "voice": "Samantha (macOS say)",
-      "rate": 175,
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
       "volume": 100,
-      "sha256": "339e80d6ed6ae311f8a6e01ea1780ef1357420671805d6ff8f1cc1df27c1e118",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "171733725ca8e29c4fc701bbccd9732c5d33fab7ebba9ec99e1b78cf009b4029"
+    },
+    {
+      "id": "gardening.story.6.intro.audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.6.intro.audio.wav",
+      "text": "The friends make a plan for the pot.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "4eb0eaf4090732d2c2da73576eb8eb39f4bcba7322b8db2483d63b93d5b70722"
+    },
+    {
+      "id": "gardening.story.6.item.audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.6.item.audio.wav",
+      "text": "I can check it today.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "186914a115d2f712086a66b369034dfce8261ff3bbcfb10fcc82013c7c60968a"
+    },
+    {
+      "id": "gardening.story.6.reply.audio",
+      "path": "audio/gardening/v0-1-0/gardening.story.6.reply.audio.wav",
+      "text": "I can check tomorrow. We will take turns.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "704506c56078219cdfac120c11b2d71411dcc57539ae37b2c576b7e3f84bcfc1"
     },
     {
       "id": "gardening.story.6.more1.audio",
@@ -682,11 +674,10 @@
       "text": "Good plan. Our flower will be happy.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "cf92bb910665967811e4d2050eb52df17505dd6dc6c6bcbad72cfd6f35aafc0c",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "ab029ea870d3c1a316802c2a84f42d3765fa55ef34c988541d48d13d31ba7631"
     },
     {
       "id": "gardening.game.1.label.pot.audio",
@@ -694,11 +685,10 @@
       "text": "get the pot",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "a9bf699c9ca3b74eda49c0289f359add3179d989cb405534bb4393b37f075be1",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "a049a28d30ab9c38537be16235b2459cc6ac71fee981ae2254aa9532ccf069c6"
     },
     {
       "id": "gardening.game.1.label.seed.audio",
@@ -706,11 +696,10 @@
       "text": "plant the seed",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "abaa50a2add4eacab668fd02d0a15b481483805a571963ce6b5cf07bb6b3cbfa",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "019b5f956bddaae14b4e91ee4ed6cb6e7560b587fe1393d51020093fd1a0b717"
     },
     {
       "id": "gardening.game.1.label.water.audio",
@@ -718,11 +707,10 @@
       "text": "add a little water",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "07414296c3cd1d33aa05ab29cd8c94d3fa2fc67425e0ce036f971765d4a6b7ed",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "f0c14a2c8815f006aa807075b0fcb508b906d489a4c2c967322ff3c74b7c26d8"
     },
     {
       "id": "gardening.lesson.bridge.audio",
@@ -730,11 +718,10 @@
       "text": "We got some seeds too! Let us plant them.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "6857b71f1f943cfe3489fcd494b48cdc01c795458f7ed0bd778702759cc0f055",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "2a672b964e81366990f791449c18ebf8fd016592bcf03d1530e415149065241a"
     }
   ]
 }

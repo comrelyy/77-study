@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "sceneId": "shopping",
   "contentVersion": "0.2.0",
-  "generatedAt": "2026-11-02T22:31:07.0226443Z",
-  "source": "Windows SAPI offline synthesis",
+  "generatedAt": "2026-11-12T07:19:24.015299+00:00",
+  "source": "Kokoro offline speech synthesis (kokoro-onnx, kokoro-v1.0 int8)",
   "purpose": "S4 local synthesis; listening and rights review pending",
   "rightsStatus": "pending review",
   "reviewed": false,
@@ -14,10 +14,10 @@
       "text": "apple",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "85fb8690579ff2df094b2df500a454ae7f1cb2c176a972ad48305b8a4bd1245b"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "41312cb90a13cd129d3487bbf850fc3caab457bd6f4f2b287d313094d9f1af21"
     },
     {
       "id": "shopping.banana.audio",
@@ -25,10 +25,10 @@
       "text": "banana",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "4e7b248c4558ecb04f1f1a2b9bb300a2ea4ba74f23e74f20ed3cac3b16586e39"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "41a3ed7c34bac8fdb2d015a8fcd68f49d54a3cb98467f21d3d9bb242ab5d8faa"
     },
     {
       "id": "shopping.bag.audio",
@@ -36,10 +36,10 @@
       "text": "bag",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "81bcc204bed9cfc5b0b261b6e686b60d5a5a66feb1c476909d8673d586138915"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "caab29012dd16972bc97de9302154d70e4075f894c0a10dc0fb5cd929d48db44"
     },
     {
       "id": "shopping.coin.audio",
@@ -47,10 +47,10 @@
       "text": "coin",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "ea7fa09663ce3acb24b3034f7059f96d216622e207b1afd4ed36d57fe553790f"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "bc61f55ed6cbb063baa0497ee1d41bc16cff798be7af14dd042fcfd5f0c46dff"
     },
     {
       "id": "shopping.dialogue.1.question.audio",
@@ -58,10 +58,10 @@
       "text": "What shall we bring to the shop?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "81eae2366d648d15dfb885b0f5d57ef377e1463cf79e9a8322823e8868c522a8"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "b8b906a5dae30a0d4654f9df67d2bc0acd67d79283138bf26a8a5c96395a0e27"
     },
     {
       "id": "shopping.dialogue.1.reply.1.audio",
@@ -69,10 +69,10 @@
       "text": "Our bag, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "7fa33ff4f61987d53ec0cb7028b791ecaf06066060c99d5c83902ea49d9978b8"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "52c17775e9bb03b094e90e688d0e5bbd9dcd7265c878a783b68252db02ddcf86"
     },
     {
       "id": "shopping.dialogue.1.reply.1.follow.audio",
@@ -80,10 +80,10 @@
       "text": "We can use it to carry our fruit.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "7a5892fa7732847d10d2645cc2ab5401a3783d54942d207b83e527af09094e0d"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "be7cb35f53013b4f46fa64239bb533c64c5b1d3acce8997c192d887a960926bd"
     },
     {
       "id": "shopping.dialogue.1.reply.2.audio",
@@ -91,10 +91,10 @@
       "text": "Help me read the list.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "a423f02700844e42b2490174f59db7e425d8dac237008a5100b126a4548c9d07"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "963fe89b7c44c9869cfa367190a4aca9cda47bd32fb81cda2bac1ae64d02dcf8"
     },
     {
       "id": "shopping.dialogue.1.reply.2.follow.audio",
@@ -102,10 +102,10 @@
       "text": "Let us read it with our grown-up.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "f9a335c928c3f4c572a923aeb11a4b8fbddbe71eb4862ebacf14a83e70f09f5e"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "cf0be0d3587e833e3088391406b3aea736deb88146ffd38c98b144329e487321"
     },
     {
       "id": "shopping.dialogue.2.question.audio",
@@ -113,10 +113,10 @@
       "text": "What fruit would you like first?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "9ce328ab62132fdf7e065c8bb2a2963c9f59d71abde475113f129973f7d691b1"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "7f5e9ecce8d2744d530f2ae2a356e84485f3a3b37269de717aa0fef3f694f19d"
     },
     {
       "id": "shopping.dialogue.2.reply.1.audio",
@@ -124,10 +124,10 @@
       "text": "An apple, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "a47629cca3d085e3fce2cfc874b25f7eb13069f944d1b208eaa5970d8c116a9d"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "4acc53ba807d851e6fffddc3bab72d8774fd808654194d9a42d18e5aaffafb8d"
     },
     {
       "id": "shopping.dialogue.2.reply.1.follow.audio",
@@ -135,10 +135,10 @@
       "text": "Let us choose one apple from the shelf.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "16e25397f7aafd65c66fc13237585f06bf60619080277a78826f8879f3f054ac"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d36ce42e7a236cdb72c6271faabd598957118e4a1b71a3050edb8dc8fec8413a"
     },
     {
       "id": "shopping.dialogue.2.reply.2.audio",
@@ -146,10 +146,10 @@
       "text": "A banana, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "34b8d61ec9b6a95a6d9bed70bdd19aa0588ac12993ababfbb61e623236052c4b"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "2e613e744e98e28b0214de96b53a149ccea756576db78088ecbfd713c81c3130"
     },
     {
       "id": "shopping.dialogue.2.reply.2.follow.audio",
@@ -157,10 +157,10 @@
       "text": "Let us look on the next shelf.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "9eabc661ac6544c2ca0cd9a2b09aa537bb84094c0927e8a62735e4dcf22e97e6"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d443974cb4e6deb2a967d0b14337bd036fa9d7e93713ef19e17b4180cbb18e18"
     },
     {
       "id": "shopping.dialogue.3.question.audio",
@@ -168,10 +168,10 @@
       "text": "How many apples are on our list?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "7ed9b36551776a6c1df475f8f95d5131f6388dd5a1cff053779feee5dd039ee7"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "9055f11945f6ba35415afa26a2af5815707b16834eb780512ed412e08024e4d9"
     },
     {
       "id": "shopping.dialogue.3.reply.1.audio",
@@ -179,10 +179,10 @@
       "text": "One apple, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "d7fe9f6a2f8d6881db6ffaf2244b1ee0ea4dc2a847a1fb8972d70263e97e61b5"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "998346a14a6840c9c4f77530ca7a18f7ec7013be68ef698a8f4ba73496fad6c9"
     },
     {
       "id": "shopping.dialogue.3.reply.1.follow.audio",
@@ -190,10 +190,10 @@
       "text": "One apple. That is what our list says.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "37c9fad211e3893210f2ea20a4f9c2f6998ff88675ecd3c4bcc477f642c53ee2"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "7c26fccdf754c340ea4814de8912242e71fb5e834c24b3930e34a3156aafba9f"
     },
     {
       "id": "shopping.dialogue.3.reply.2.audio",
@@ -201,10 +201,10 @@
       "text": "Let us check together.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "de4151f107f76a7a1ba99892926147d282a3ffb350d1e2c054231a5eee9fb0e7"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "c6c140defda7a47cdcbb48bd81d50c11ce0041676efa2f5c39433b2175017a8d"
     },
     {
       "id": "shopping.dialogue.3.reply.2.follow.audio",
@@ -212,10 +212,10 @@
       "text": "Our grown-up can help us read the list.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "622b8bac707b7124e96b276bde0f58b9832d8117f50efd9f60cdf141b2e2a2e8"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "f3e2bb475ef002d3a4e2fded03ed3bfac0608b6acef975bfa118f138efd00480"
     },
     {
       "id": "shopping.dialogue.4.question.audio",
@@ -223,10 +223,10 @@
       "text": "Have we found the banana?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "73f49aafeec35b6ff5aa2690bd046ce82adfce6d18cc215c1c09520c0f10b6b8"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "7c3f75fcd7a1daab1db90a4c55c8e900cb8a3315ab07fae81b1ba282862e53f4"
     },
     {
       "id": "shopping.dialogue.4.reply.1.audio",
@@ -234,10 +234,10 @@
       "text": "Yes, here it is.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "8323c2f69cedeb948d9acb4f83a346ab4329ac0b58fa8d15badb9e314529f8c1"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "231a062a6083f77042d588b271b4ce268adf34c54c615de9419cddcee199e107"
     },
     {
       "id": "shopping.dialogue.4.reply.1.follow.audio",
@@ -245,10 +245,10 @@
       "text": "We have both kinds of fruit now.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "26c700cc0898d89324393b7a8be85a2e9632b2f15d7854778f1a9cb13c5e587f"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "71105b1e373ccaaf123def51a19f54ee1582526defffaad2d94960cac4bbbd26"
     },
     {
       "id": "shopping.dialogue.4.reply.2.audio",
@@ -256,10 +256,10 @@
       "text": "Please help me find it.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "1f9e6a18f09aa3961b2e39a311103a30089216a4ee5710e9bc133fb11bd30253"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "728277f9b1a77292b1796f09a970c152a807be7d3fe5d258bbdd0bd6a8684831"
     },
     {
       "id": "shopping.dialogue.4.reply.2.follow.audio",
@@ -267,10 +267,10 @@
       "text": "Look beside the apples. I will help you.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "e668c28503eddd0f121c3f3d3debb0b80060716d08782a58679a7abf33972606"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "21f9222900ffabe448c0247662040b0e6732cf4d344aa45e71107d5785df6139"
     },
     {
       "id": "shopping.dialogue.5.question.audio",
@@ -278,10 +278,10 @@
       "text": "Who will keep the coin for paying?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "17afb58c8599761e2221ea7df72baecc3ed49831d674f71348a7b153bdc0de9d"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "6bc31c3f1d0c59dc8a74c59e6defaf4de49f3219cade2cdc7ffcd1f927a36420"
     },
     {
       "id": "shopping.dialogue.5.reply.1.audio",
@@ -289,10 +289,10 @@
       "text": "Our grown-up will.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "5aa5e100c89c7464db10b2e5a7233f803f1bbd5753147d5c1a38e04492d9a594"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "264e0569fee3a627c80257f385f01a3cf8232d3179ea09aee188b7157cb7b08f"
     },
     {
       "id": "shopping.dialogue.5.reply.1.follow.audio",
@@ -300,10 +300,10 @@
       "text": "We can watch our grown-up pay.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "4dbe5b94109fbf427bacdf276325267e23d24bed66fe2698b891f3cff803576f"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "1871c415c7eb26cae68d9c560cf7fbefd038b515f97f35fe1003a9f7f331b6ca"
     },
     {
       "id": "shopping.dialogue.5.reply.2.audio",
@@ -311,10 +311,10 @@
       "text": "Let us ask our grown-up.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "3fb8eb5153528233d378280212efbe1f1730c8ed682edb7c784f5f1036737319"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "65d70f499fc68dad746adad4e4851073f43be863f255342c7df805703bfe234a"
     },
     {
       "id": "shopping.dialogue.5.reply.2.follow.audio",
@@ -322,10 +322,10 @@
       "text": "They will help us pay the shopkeeper.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "93828e32f16416a2f43038c42d91b715def015650b4180600961329771166540"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "fcdcd938138f12f4b2263a787a460d17505d226abc807d680f1fca5d7b77625f"
     },
     {
       "id": "shopping.dialogue.6.question.audio",
@@ -333,10 +333,10 @@
       "text": "What shall we say to the shopkeeper?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "9854a4e68f548f4be85a7e79b1ccbe6e020c8cacca5ee2e9e77431126aeded03"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "4017b0d04975cb85f338739e9713cc188da6c84c51747aae63999ed9e8e16245"
     },
     {
       "id": "shopping.dialogue.6.reply.1.audio",
@@ -344,10 +344,10 @@
       "text": "Thank you. Goodbye!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "2d5e3fcf8cef26470b05101ef4480477c667703525b07bb0e919e8e57674b9ab"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "3c023ce30e9374f63d2c8e8bed78221e52b839534628dd1d3b7374d29d8b8ca6"
     },
     {
       "id": "shopping.dialogue.6.reply.1.follow.audio",
@@ -355,10 +355,10 @@
       "text": "Let us carry our bag home together.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "ae205f537d721f51c7e1d07bdc850cf1b4bffefff6c4c91aa9ea419b253049ef"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "6d8e9087ac180d858b7ac7926961bf6f634e049b54219edc2ccead7421b322cb"
     },
     {
       "id": "shopping.dialogue.6.reply.2.audio",
@@ -366,10 +366,10 @@
       "text": "Thank you for the fruit!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "6d793708f49519d4dab9d9cd9fd95b2d3bebb1aa52907dca53cf703518327d13"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "352ae6b203b495d8b8ec5cbd3887adbbed41d2176dadcb0254ad472649e63301"
     },
     {
       "id": "shopping.dialogue.6.reply.2.follow.audio",
@@ -377,10 +377,10 @@
       "text": "The fruit is ready to share at home.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "29700aa900cb2c9032ecb941469e4594ea39d9a040f0ec135efe48fd3ca08103"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "40f4369c032340b134a75437504f0b64420e91334d8773bf0237d4117c990109"
     },
     {
       "id": "shopping.story.1.intro.audio",
@@ -388,10 +388,10 @@
       "text": "Momo picks up the shopping bag.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "e63030cf7b38bd0658d8d75674302fe87ca726f4b377037a689961889c31f754"
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "a43c23bcfd51680f96d697bc8494b6f1580f86ac0efb159aa672f7f43ecf55c0"
     },
     {
       "id": "shopping.story.1.item.audio",
@@ -399,10 +399,10 @@
       "text": "Let us buy lots of fruit!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "02d84eb765f69d0e673f4304166e99345abfb353dede90f5c5077e3b1c538fb1"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "776374cbdfc3a18cdc55361f4923041d0aa12aa80660cbe737baabac14cd6fc9"
     },
     {
       "id": "shopping.story.1.reply.audio",
@@ -410,175 +410,10 @@
       "text": "First, let us read our list.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "02685bddc8e4b9b28846a38b1244b358ff80b59b8ce686fd199123d9a6d5b8a8"
-    },
-    {
-      "id": "shopping.story.2.intro.audio",
-      "path": "audio/shopping/v0-2-0/shopping.story.2.intro.audio.wav",
-      "text": "There are many apples on the shelf.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "54b492034856d2b3cfff5bc5fc8980c78da5a87930bf7099acecd38b4456de4c"
-    },
-    {
-      "id": "shopping.story.2.item.audio",
-      "path": "audio/shopping/v0-2-0/shopping.story.2.item.audio.wav",
-      "text": "Two apples? Three?",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "752bb6ea5d99d35abcef458e5624ff8ae6578b725d817fb2a481155052ed26d6"
-    },
-    {
-      "id": "shopping.story.2.reply.audio",
-      "path": "audio/shopping/v0-2-0/shopping.story.2.reply.audio.wav",
-      "text": "Our list says one. Let us choose one.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "46ee7e99cdf1fac125b0dd689ef1d39c796abbe16ed397cee6466364be90cd7f"
-    },
-    {
-      "id": "shopping.story.3.intro.audio",
-      "path": "audio/shopping/v0-2-0/shopping.story.3.intro.audio.wav",
-      "text": "The banana shelf looks empty at first.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "f3eb21e118a637643b548a18c035537f0c0e79a21e481bb3ddd13ea17a4310f9"
-    },
-    {
-      "id": "shopping.story.3.item.audio",
-      "path": "audio/shopping/v0-2-0/shopping.story.3.item.audio.wav",
-      "text": "I cannot find a banana.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "8e70ac450ee8194c53d0147bc9462ce52f4f496e4d29778a40e25fcb8bcc402c"
-    },
-    {
-      "id": "shopping.story.3.reply.audio",
-      "path": "audio/shopping/v0-2-0/shopping.story.3.reply.audio.wav",
-      "text": "Look beside the apples. There is one!",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "35c49e073d4292a0c7e9ed221836cc4c7ed5ef4f94e936220e798fe2a318199e"
-    },
-    {
-      "id": "shopping.story.4.intro.audio",
-      "path": "audio/shopping/v0-2-0/shopping.story.4.intro.audio.wav",
-      "text": "A grown-up keeps the coin for paying.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "f4e4949136f4f03033e7164f23818c71566e36a54cb259348bb9c47be52f7364"
-    },
-    {
-      "id": "shopping.story.4.item.audio",
-      "path": "audio/shopping/v0-2-0/shopping.story.4.item.audio.wav",
-      "text": "Is it our turn?",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "9f5ba6ced0d9b14affba0c925eb2ce7ef5a251df58c2efc68529ef9b0321e1cc"
-    },
-    {
-      "id": "shopping.story.4.reply.audio",
-      "path": "audio/shopping/v0-2-0/shopping.story.4.reply.audio.wav",
-      "text": "Not yet. We can wait here together.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "79feb72a45ef9edaa671697c5f4509455ab36924de137ee84adeff99cbc475f5"
-    },
-    {
-      "id": "shopping.story.5.intro.audio",
-      "path": "audio/shopping/v0-2-0/shopping.story.5.intro.audio.wav",
-      "text": "The fruit goes into the bag.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "7b4aec07e446483ec0b3356a880b63df6e7a9d5e55f633003d87e2b06340116c"
-    },
-    {
-      "id": "shopping.story.5.item.audio",
-      "path": "audio/shopping/v0-2-0/shopping.story.5.item.audio.wav",
-      "text": "This bag feels heavy.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "74ef31c3268fffc3d17f45eb3742ed23f3abe6a2f4dc562a3530ff03241ea7cb"
-    },
-    {
-      "id": "shopping.story.5.reply.audio",
-      "path": "audio/shopping/v0-2-0/shopping.story.5.reply.audio.wav",
-      "text": "I can help you carry it.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "4cd9ffccdf07c54d815a2511291814891217c30404bf5e57c8402ee76780a632"
-    },
-    {
-      "id": "shopping.story.6.intro.audio",
-      "path": "audio/shopping/v0-2-0/shopping.story.6.intro.audio.wav",
-      "text": "The friends arrive home with their fruit.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "48ce6e0f2b03c759e19967992076cea99c3f82a33ab26497a33facd5aa1a38f1"
-    },
-    {
-      "id": "shopping.story.6.item.audio",
-      "path": "audio/shopping/v0-2-0/shopping.story.6.item.audio.wav",
-      "text": "One apple and one banana. We did it!",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "3513c58cd9cccde29d3903116b7335ab9f4ca35af67abae9fb81a243b7a16ed3"
-    },
-    {
-      "id": "shopping.story.6.reply.audio",
-      "path": "audio/shopping/v0-2-0/shopping.story.6.reply.audio.wav",
-      "text": "Now let us share them.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "490429955ed93c440f8703a21d06201f573522cdd49e356169b7535c77e2d68b"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "c0c679e7cfed55ccd4e505632f231b08a7f55edffd146db8319bff2ba861655e"
     },
     {
       "id": "shopping.story.1.more1.audio",
@@ -586,11 +421,10 @@
       "text": "What is on our list?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "63321f834cae90499a63598d7f4636a110d6ba0e9c029e10035ae921348bf312",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "6a235b8d30082e3697e8a7f52741cf6f76b80258a402ef48abfc1a5331e7e458"
     },
     {
       "id": "shopping.story.1.more2.audio",
@@ -598,11 +432,43 @@
       "text": "An apple and a banana.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "3edeaf5a36dc313d68ed046d8e249db7f86041d20b39fa21a87f989c6c77ed6f",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "80de72c0485d47271b1b7fb57fec2b3cfe08a4e33f4eb663bc35f53b17a4f759"
+    },
+    {
+      "id": "shopping.story.2.intro.audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.2.intro.audio.wav",
+      "text": "There are many apples on the shelf.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "4739bfef333b9240d6efa8d2d446dff39cde44d38bec50c3667acb9f2975f889"
+    },
+    {
+      "id": "shopping.story.2.item.audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.2.item.audio.wav",
+      "text": "Two apples? Three?",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "01e30b68532ac1d0afa80855161c9c3213dae904bcef981741cc17f23c98dc9d"
+    },
+    {
+      "id": "shopping.story.2.reply.audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.2.reply.audio.wav",
+      "text": "Our list says one. Let us choose one.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "a80e6f5cce75904dfb2d14f816c31e5ff1845fc6e969d1f188b2441d51f4efc5"
     },
     {
       "id": "shopping.story.2.more1.audio",
@@ -610,11 +476,43 @@
       "text": "This one looks good.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "343c56de04c46e5b46116136ecf74d6d481014a527cec3a7e86d569bf237b0ea",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "838ec0202316ceb2a00783522a7872f062cf1befde054c8a423c4214eaa6272e"
+    },
+    {
+      "id": "shopping.story.3.intro.audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.3.intro.audio.wav",
+      "text": "The banana shelf looks empty at first.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "fc0fedbe39f243be76c008add72d8b2858dda7f3d09550d1603b894b3181fb1b"
+    },
+    {
+      "id": "shopping.story.3.item.audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.3.item.audio.wav",
+      "text": "I cannot find a banana.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "e2e1dd450d9b6376319d2441f40c48573b38ba580612ad0a712be0581de4e36c"
+    },
+    {
+      "id": "shopping.story.3.reply.audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.3.reply.audio.wav",
+      "text": "Look beside the apples. There is one!",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "862324391e71ca14d27a2347aeda5e92e5659ea9673c31d3d00e6dc83c825ac6"
     },
     {
       "id": "shopping.story.3.more1.audio",
@@ -622,11 +520,43 @@
       "text": "You have good eyes, Momo!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "edad4afdd24b975a4e4923ed7dbc8e97614582feff9f5b559a1640b25240a62f",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "4c35981cc108d1db0cb0f493bf119f2b0e907fb61854b6442e4975713b425fe1"
+    },
+    {
+      "id": "shopping.story.4.intro.audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.4.intro.audio.wav",
+      "text": "A grown-up keeps the coin for paying.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "103cb3b737c039127d87a2eb8d3889ec5ece781340189bed1316abddd2c965a1"
+    },
+    {
+      "id": "shopping.story.4.item.audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.4.item.audio.wav",
+      "text": "Is it our turn?",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "4d1310927c66183f317a32770c60a080970cb2b82db6d8893cbf97bdbd498ca6"
+    },
+    {
+      "id": "shopping.story.4.reply.audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.4.reply.audio.wav",
+      "text": "Not yet. We can wait here together.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "5bbdaf6a58def34af06455e13bc997a7b34839ffac05a292694a30e13b6314b1"
     },
     {
       "id": "shopping.story.4.more1.audio",
@@ -634,11 +564,10 @@
       "text": "Now it is our turn.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "1600d003305492bd5c99a6db36827fbc100448babc92fb034d70cac1d39819e3",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "1a3a1ea6e5156e1e339fed7620003999db91a9a767ef1acd0c71565775a0c9f6"
     },
     {
       "id": "shopping.story.4.more2.audio",
@@ -646,11 +575,43 @@
       "text": "Thank you for waiting with me.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "787d73bb48f8ce3f72235a229a55dc74529a4c08d72e9b719c5f0d596a4456c2",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "42b2ebef88e2989d89b27e714e27dd9871dd458eea4aae84c1081084e6795b31"
+    },
+    {
+      "id": "shopping.story.5.intro.audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.5.intro.audio.wav",
+      "text": "The fruit goes into the bag.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "dee443e0ceb8ca5a3146f06db67a88e194402ffcc73bf0caab34b923101951e7"
+    },
+    {
+      "id": "shopping.story.5.item.audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.5.item.audio.wav",
+      "text": "This bag feels heavy.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "6dc1a7475629f5ce02b05dd22b715cfb3faf90baec1f4a6f8745b1625af43daf"
+    },
+    {
+      "id": "shopping.story.5.reply.audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.5.reply.audio.wav",
+      "text": "I can help you carry it.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "82b2a63041b0251363ce9cf318666c1be73e61071641717cf1613b9a49418d19"
     },
     {
       "id": "shopping.story.5.more1.audio",
@@ -658,11 +619,43 @@
       "text": "Thank you. It is easy with two.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "2db8920ab225ae27504f277effa932da37fa8c404ade36beb4da86651a4587de",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "5176601274dace18d4d8520e67c1ef03ceabc40dd869de0887e174bf7f952702"
+    },
+    {
+      "id": "shopping.story.6.intro.audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.6.intro.audio.wav",
+      "text": "The friends arrive home with their fruit.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "b0617a8612414217b139181d4f25d21066b3ade4204e6010ae7b5977d185112c"
+    },
+    {
+      "id": "shopping.story.6.item.audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.6.item.audio.wav",
+      "text": "One apple and one banana. We did it!",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "e8cfb5d4439acbb1030d24eade260a38acd357537b1cbdcc9cdadfeee898d4cb"
+    },
+    {
+      "id": "shopping.story.6.reply.audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.6.reply.audio.wav",
+      "text": "Now let us share them.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "f7463231bb1fbf5439e375b9f8830144a5f826f4bb21190575b5f2a04e17887e"
     },
     {
       "id": "shopping.story.6.more1.audio",
@@ -670,11 +663,10 @@
       "text": "Here is your half.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "1268b04d1d58e4ddcae89cd6b21389a6fedae87b1619244bebe0b91255b1dfc7",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "70c0aca16f4750dd26ed8993a637619138c4b585e5bc334f7252da53ddd2b249"
     },
     {
       "id": "shopping.lesson.bridge.audio",
@@ -682,11 +674,10 @@
       "text": "Oh no, no more bananas. Let us go to the shop.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "048c34a7ed350e97f6c7110f6db654de2ee9ace937f4ce73ddb2875b43bfd53f",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "5c6b7d68e9e340b7cb06b95215db4ada40834910d2b72af20f2ecce0f92695ac"
     }
   ]
 }

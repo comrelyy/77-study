@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "sceneId": "park",
   "contentVersion": "0.2.0",
-  "generatedAt": "2026-11-02T22:31:02.8851245Z",
-  "source": "Windows SAPI offline synthesis",
+  "generatedAt": "2026-11-12T07:19:03.309294+00:00",
+  "source": "Kokoro offline speech synthesis (kokoro-onnx, kokoro-v1.0 int8)",
   "purpose": "S4 local synthesis; listening and rights review pending",
   "rightsStatus": "pending review",
   "reviewed": false,
@@ -14,10 +14,10 @@
       "text": "tree",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "bd3df8b03be13b2e17129b8eb770c102ed7eff90dc5e94d3e3f227c8ad1754c1"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "7b2fa6d68e1ada628764a657875cabbacc0cb30d5549c003a90af3d9682b1962"
     },
     {
       "id": "park.flower.audio",
@@ -25,10 +25,10 @@
       "text": "flower",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "0392a5296f79a26877a8558a499b72331946fbfead41fc54b7d92c715ea424c5"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "ae97ce7c3612a56a32070c694bf0cf77bad609bce9b6b5c6ee1c2051535c0fe2"
     },
     {
       "id": "park.bird.audio",
@@ -36,10 +36,10 @@
       "text": "bird",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "b40a90af7272ccc66cbbf809cd2df1ec200b791d81c1b15c393e153231f24767"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "4e70c3b7531b0be79a178e21946647fb58fbedc36e71bf4681951725a261b380"
     },
     {
       "id": "park.ball.audio",
@@ -47,10 +47,10 @@
       "text": "ball",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c5399982204437136f351eb08c08ae26ce67a00a647118a8e86b9d31dec97fe9"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "d3ebe13096e3f11d39220018d9583a8971f0f7d021e3bd89b64aff92f7145198"
     },
     {
       "id": "park.dialogue.1.question.audio",
@@ -58,10 +58,10 @@
       "text": "What can you see above us?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "06c54713d2a0cddbb5f1aa36fe48750ed2bd2e657d013e972d98155767e205cb"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "212a20608d2538d3cd758a0eb26dc653f855f7b9b094f92168cb42f641d92d80"
     },
     {
       "id": "park.dialogue.1.reply.1.audio",
@@ -69,10 +69,10 @@
       "text": "I can see a tree.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "aaa7c8c39efb19a48f080ad900b8d02db4e162c209603c672697d82be173da7a"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "2bdca7e8110e06617dc5028e08189df076450aabb532bc2d05cfb62aebdb9a5f"
     },
     {
       "id": "park.dialogue.1.reply.1.follow.audio",
@@ -80,10 +80,10 @@
       "text": "Its leaves make a shady spot for us.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "69bad6c7fe8fc53fcdb101817f70722dfdd9062aca90fc583bd3c8db429b4214"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "fdbc8b905f79b1b519bdb68fcb0748b8c18421a036994b683cf7c2142b69aa53"
     },
     {
       "id": "park.dialogue.1.reply.2.audio",
@@ -91,10 +91,10 @@
       "text": "Let us look together.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "e3b5e41834d6a1b7d1541e74f7911b4b3e9a3544f9c8d2afe7ff318c92ac1410"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "d0bb738c6216eac1c8f0db1aa61fef9f670063eb330196e5f28ed03a474a0823"
     },
     {
       "id": "park.dialogue.1.reply.2.follow.audio",
@@ -102,10 +102,10 @@
       "text": "Look up beside me. There are green leaves.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "0337dc123e29ac6da26a22a623f9e587b4543ea03ae7bc8408d4aecccb4182cc"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "f1c06d8ea272203f826ebf4fe4ef89a15c495a552206f421e8a2d345bca3b7de"
     },
     {
       "id": "park.dialogue.2.question.audio",
@@ -113,10 +113,10 @@
       "text": "Shall we look at this flower?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "88963a77f5a6845ba89184b195acc5c1190ab8371fadabd75142a93897ea5878"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "12d8f6cf1affa3d7a77baeeda314f1fca4fbd5b11ca0278a8cfb3a9f9fbd493e"
     },
     {
       "id": "park.dialogue.2.reply.1.audio",
@@ -124,10 +124,10 @@
       "text": "Yes! Leave it growing.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "a1bc4654440176e3c32fad440417ab0b77cf489887aed2d3970c0d1c3e74fe2e"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "acbf3906891eb32ad0183db3708231e5b05519efa79cc3753113197af911e8a4"
     },
     {
       "id": "park.dialogue.2.reply.1.follow.audio",
@@ -135,10 +135,10 @@
       "text": "We can enjoy it without picking it.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "5b142e9fcc8337063483d50301002205fb1853b3f6477eb10d6c9dbc9a25c158"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "660ad3e71be4aff5a0ad137b0292b3ff5f6e00f3957fe38b1831149ae8ef08f4"
     },
     {
       "id": "park.dialogue.2.reply.2.audio",
@@ -146,10 +146,10 @@
       "text": "Let us look from here.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "2cc441dc999b321e50f0af11eb1c0981b8eb51769ed48233c3006e556e542b0d"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "0e653c0c7d0fc7c9eb43eb35a5e7553837624a88d3f6cd81545e249e7150ed53"
     },
     {
       "id": "park.dialogue.2.reply.2.follow.audio",
@@ -157,10 +157,10 @@
       "text": "This is a good place to look.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "f0b7ab2d6b1ec764438a9b5e42f3ae9abfe8449caa1b41eaca93ada9376df79e"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "ff5336b5a6850098b188737d576ccccbe145a665e849e0e4428f2cc14a90ad6e"
     },
     {
       "id": "park.dialogue.3.question.audio",
@@ -168,10 +168,10 @@
       "text": "Can you hear the bird?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "11e8f394702aeef547a5371c790a29078ea45665f4c432984a27ab81ddf4f9c4"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "5b10fb24e6a5051c6f177df920a9b01f9a69581d40b94cddc95597af7b006e41"
     },
     {
       "id": "park.dialogue.3.reply.1.audio",
@@ -179,10 +179,10 @@
       "text": "Yes! Up in the tree.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "8cd07e05e9fab59adc5d636e9f55192f154f0682267742d8aadb78fa21273397"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "9239fc77ddb96d002bb919a1fb4ee0a8b752c7206709bd34a6285c4389668ed1"
     },
     {
       "id": "park.dialogue.3.reply.1.follow.audio",
@@ -190,10 +190,10 @@
       "text": "Let us stay quiet and listen.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "46181b4ea5adf9b52bed2895f1e2f5df914ab72b79e78c267affc58d5f722980"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d73b6460e0d222912d6a1349fb3ab42941ca2b595db9ac7a5f8bf384f24b54a5"
     },
     {
       "id": "park.dialogue.3.reply.2.audio",
@@ -201,10 +201,10 @@
       "text": "Please wait. I am listening.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "acf9e2fb2eeb52c0bb3b36718c2672cefcc55a5fbd9327fe592f9f143f865029"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "6886918cc70494b94ed1893f767f7c2416264c6968305d87bbde515637c5a6c2"
     },
     {
       "id": "park.dialogue.3.reply.2.follow.audio",
@@ -212,10 +212,10 @@
       "text": "We can listen together for a moment.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "8841417e604bb59fbf314a1ed64f53823af9e77d810c92cc818a2126fca51772"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "19530f0c052bead629b24a1d7310c54f42a86eb0bc962cd13eb4cec46688d0f7"
     },
     {
       "id": "park.dialogue.4.question.audio",
@@ -223,10 +223,10 @@
       "text": "Would you like to roll the ball?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c824b0e803034a0b16305893b7abbc7141b234f9dd9d2ead91fd68a199d1b400"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "04424c4a290ace51ff8203c0a40e24939d3cdf84d2da2100216b54db2311e75f"
     },
     {
       "id": "park.dialogue.4.reply.1.audio",
@@ -234,10 +234,10 @@
       "text": "Yes! My turn, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "882011955fba7e9cd845c19db72f7ac90d36b0443f0ecd42812d1bc496e8c234"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "102dbf1ca6957bb00c907dabfca38719854be5539a83680b83d6c3d90ea88811"
     },
     {
       "id": "park.dialogue.4.reply.1.follow.audio",
@@ -245,10 +245,10 @@
       "text": "Here comes the ball. Roll it back when ready.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "cb42515450a0f302ee93a85b5821ddd2ea19ee712bc27bfb8950418d011bd2e1"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "ea2b469ae1da836bf4e8f8204f3f9e55cf917a84da6eb7ba0cb9bd7a7d07ac21"
     },
     {
       "id": "park.dialogue.4.reply.2.audio",
@@ -256,10 +256,10 @@
       "text": "You go first.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "4ff47bb47a04d03c2235091124b926550d4364728ac76ba8de2047e4364ced0b"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "cadb0722eb6f72dbd385b2e0e77be184658a22eb4d8402d55fb8257da340cd14"
     },
     {
       "id": "park.dialogue.4.reply.2.follow.audio",
@@ -267,10 +267,10 @@
       "text": "I will roll it gently towards you.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1f6fbbacf63d3bf5318f6e6665be6bd34c607a092ea797409008d98f2b452478"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "20ae8d63acb554df64d1af016249b68c793a946165b095ab3b070824fee3968c"
     },
     {
       "id": "park.dialogue.5.question.audio",
@@ -278,10 +278,10 @@
       "text": "Our ball rolled away. What can we do?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "2a7b18da4a261826918a7d2da4a6e65fbf7f81333ce31aa3e767f05c78ce0e10"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "94cede7f9101a72a93217920bf24279d41cd01e2af05a8dafc770ca44f931f36"
     },
     {
       "id": "park.dialogue.5.reply.1.audio",
@@ -289,10 +289,10 @@
       "text": "Ask our grown-up for help.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "905529e0a9e3a9ea9afd297754a6e4f85dace379c9e392b8d3b2ea37bba341ff"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "266f3243a0cf6b129e4b91d38708c1f8205539ccd0b61005ec4a052da37fe832"
     },
     {
       "id": "park.dialogue.5.reply.1.follow.audio",
@@ -300,10 +300,10 @@
       "text": "We will stay here together while they help.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "10a15274c78d618860b6243dcf57454cfb009102d5af92b388524be9304334c8"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "252e68f8d0a5ba69c3e81a0834d8f5144a9dd0c807f4c4208eef6e99e019441b"
     },
     {
       "id": "park.dialogue.5.reply.2.audio",
@@ -311,10 +311,10 @@
       "text": "Please stay with me.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "b0c0b0c9a4272591a702f72508dc563eea36d6db759d4ab645ca15ed4c081edc"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "44b1c75afbc5a9186000fb5b666138bba5d67150a869c1f3a693600dffe4b7bb"
     },
     {
       "id": "park.dialogue.5.reply.2.follow.audio",
@@ -322,10 +322,10 @@
       "text": "I will stay beside you.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "3be4b3d1648f066315958700ef1f9e8a6d932d0f070b3d0d2bf894bc23d155ab"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "0497aaa574b265db61faf0407db1fafe1ede6ea89326deacac671679df147048"
     },
     {
       "id": "park.dialogue.6.question.audio",
@@ -333,10 +333,10 @@
       "text": "What shall we say before we leave?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "aa77a680a2e03cabdd005b19d9517736a622695b92211bccd39611888df87acc"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2572111990c05a8d294a61177932cb714a28b21b019fc466161b75777768af93"
     },
     {
       "id": "park.dialogue.6.reply.1.audio",
@@ -344,10 +344,10 @@
       "text": "Goodbye, bird!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "cd39cd60478c05589c65dbf9f53cc353a8586233f93ddc14e88edcb573e51dd3"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "0ac3d6238d26d35f6dc6df7006a08f37dcf181e83eb6ef05dc44d67806cda02c"
     },
     {
       "id": "park.dialogue.6.reply.1.follow.audio",
@@ -355,10 +355,10 @@
       "text": "We can visit the park another day.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "d6115d9622cb2a035d086611e85e2589721143a1bce68f2da35c6bb395c2ffb1"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "cbaa69c6201029fe107b604068a1b4af859f2f153609a93a795bd742c42218c8"
     },
     {
       "id": "park.dialogue.6.reply.2.audio",
@@ -366,10 +366,10 @@
       "text": "Goodbye, tree and flower!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "b146a78716080fcefe4d25a56acdb2565baf1978b869dd831ab116325601aef1"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "3900b1cb7a7fd50ba2589582fc5f10b1f8b41da5aa2244d4b1b775c36d750c88"
     },
     {
       "id": "park.dialogue.6.reply.2.follow.audio",
@@ -377,10 +377,10 @@
       "text": "Thank you for a lovely afternoon.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "ebe3de51e6278f247ecf840502ba35578aa3b662b6c08dbdb011b1e00f3412e6"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "b7cd8148eb88a7d1f3a36cc582dd36294f4be46a87b37450078ec227951757bb"
     },
     {
       "id": "park.story.1.intro.audio",
@@ -388,10 +388,10 @@
       "text": "The friends arrive at the park.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "bb6edefc7cb20ae7a26f69c2d9be2d0cfd37a127b14457042c7467fc7a9ed8ae"
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "a36f348ba1d5df6a5505ee5c89cfbf05e3832f71b671143cc5e47caef33e6bc9"
     },
     {
       "id": "park.story.1.item.audio",
@@ -399,10 +399,10 @@
       "text": "It is sunny. Where can we sit?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "3d553acb58db883345d042982534dc7b1cd07c7c15fb3f8f53a4246758444d35"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "a8c123c9d7737261befa250c7becb1778ef949241faf93d09faef45b2d1ca49c"
     },
     {
       "id": "park.story.1.reply.audio",
@@ -410,175 +410,10 @@
       "text": "Under this tree. There is shade.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "94496181bd92c0f305e35d9776c2343b6f2ab34cef32294c29b7f245a318b934"
-    },
-    {
-      "id": "park.story.2.intro.audio",
-      "path": "audio/park/v0-2-0/park.story.2.intro.audio.wav",
-      "text": "A flower grows beside the path.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "f600824a7e441516b8e475a5eceda6f3b1529834577b081117d3db67f758c56f"
-    },
-    {
-      "id": "park.story.2.item.audio",
-      "path": "audio/park/v0-2-0/park.story.2.item.audio.wav",
-      "text": "Can we take it home?",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "31af374477417693ea30049225edda972ddf2fabe3f4378c1e3c0c9b9838e1de"
-    },
-    {
-      "id": "park.story.2.reply.audio",
-      "path": "audio/park/v0-2-0/park.story.2.reply.audio.wav",
-      "text": "Let it grow. We can visit again.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "b7f4c5af69cd89f7f8dfdc6eaf9011956264fce2cbb7e53fe8dd2167155616f9"
-    },
-    {
-      "id": "park.story.3.intro.audio",
-      "path": "audio/park/v0-2-0/park.story.3.intro.audio.wav",
-      "text": "A bird sings in the tree.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c5bcbdfdd46ff9bed035697d95c19c5022595192b4b66593d13f1b75f79b10b2"
-    },
-    {
-      "id": "park.story.3.item.audio",
-      "path": "audio/park/v0-2-0/park.story.3.item.audio.wav",
-      "text": "Can you hear that?",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "97ca40607a27c86669fbcea3a22c44d308c8d92abf83a58ff47a81ff35b58b00"
-    },
-    {
-      "id": "park.story.3.reply.audio",
-      "path": "audio/park/v0-2-0/park.story.3.reply.audio.wav",
-      "text": "Yes! Let us be quiet and listen.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "5414e923a75ceda591bbcee43cd82fe8ecd740a76bcffb71d8cd29aa3ec165df"
-    },
-    {
-      "id": "park.story.4.intro.audio",
-      "path": "audio/park/v0-2-0/park.story.4.intro.audio.wav",
-      "text": "Momo holds the ball for a long time.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "73d88d56a7b34bad7d2dd1ac84fc54492d2b75f39dea075459754ba3f58ee5d7"
-    },
-    {
-      "id": "park.story.4.item.audio",
-      "path": "audio/park/v0-2-0/park.story.4.item.audio.wav",
-      "text": "May I have a turn?",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "6d25bad9e6b31cd2ff706538132a74e4c4a5cfa0543581d4695a3939eabdd13d"
-    },
-    {
-      "id": "park.story.4.reply.audio",
-      "path": "audio/park/v0-2-0/park.story.4.reply.audio.wav",
-      "text": "Yes. I roll it to you. Your turn!",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "bf74e631d675cdb1c79f6afb027ddd7b2912f4dc9aa20080f2adc5fba852af81"
-    },
-    {
-      "id": "park.story.5.intro.audio",
-      "path": "audio/park/v0-2-0/park.story.5.intro.audio.wav",
-      "text": "The ball rolls beside the path.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "bc4dba13e587e648a61a81563aa97b667cb151ec6a5971490303c083ca228cb1"
-    },
-    {
-      "id": "park.story.5.item.audio",
-      "path": "audio/park/v0-2-0/park.story.5.item.audio.wav",
-      "text": "I want to run after it!",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "b990a3c8c7d78844ffb71ed513e432612a62401d1bc7cfd514f32a4cbdf5ce76"
-    },
-    {
-      "id": "park.story.5.reply.audio",
-      "path": "audio/park/v0-2-0/park.story.5.reply.audio.wav",
-      "text": "Stay with me. Let us ask for help.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "f589254068af322b460b51f2438892362563607346d05ceb39192ae52d8d8dcd"
-    },
-    {
-      "id": "park.story.6.intro.audio",
-      "path": "audio/park/v0-2-0/park.story.6.intro.audio.wav",
-      "text": "It is time to leave the park.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "cfdf20b4f51a52f356107f2b71549aef794dfd85d6185111d0e1b86eaf15135c"
-    },
-    {
-      "id": "park.story.6.item.audio",
-      "path": "audio/park/v0-2-0/park.story.6.item.audio.wav",
-      "text": "Goodbye, bird. Goodbye, tree!",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1ef5f6bd47832046d04fed3d2e64cdc60af5d345b0712e02b8c6a95ef7252c5c"
-    },
-    {
-      "id": "park.story.6.reply.audio",
-      "path": "audio/park/v0-2-0/park.story.6.reply.audio.wav",
-      "text": "We can bring our ball another day.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "9536d2acfb51049be44ab35cee5e766c524dfcec9518f7d12416294c3743f51a"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "297b939792e09078ac98a0f1d57b8e748f93a8290c18944dc81e1f9513057987"
     },
     {
       "id": "park.story.1.more1.audio",
@@ -586,11 +421,43 @@
       "text": "Ah, it is cool here.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "bfea43b5da4ab70ccbef7316a049d971f2640441d06112e2e89e09b7e5783729",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "ca6b2f6488078a8650899f1e861eb6c78be544563367b413e92a843ac61314f4"
+    },
+    {
+      "id": "park.story.2.intro.audio",
+      "path": "audio/park/v0-2-0/park.story.2.intro.audio.wav",
+      "text": "A flower grows beside the path.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "9b24a1d65e4505cdd2694c6f54213f391f44c821ad18cc8817d7138760fbe7a9"
+    },
+    {
+      "id": "park.story.2.item.audio",
+      "path": "audio/park/v0-2-0/park.story.2.item.audio.wav",
+      "text": "Can we take it home?",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "547ca3f5134861cf4d5155b1c520e2cb58a88aba89cc00cee5ba7cbc2fff7474"
+    },
+    {
+      "id": "park.story.2.reply.audio",
+      "path": "audio/park/v0-2-0/park.story.2.reply.audio.wav",
+      "text": "Let it grow. We can visit again.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "93dc89e630d1e2491a336e16e0154924bbcc34608d7087c0ca29646f2ade0cfd"
     },
     {
       "id": "park.story.2.more1.audio",
@@ -598,11 +465,43 @@
       "text": "Okay. Goodbye, little flower.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "8448a6de00ac7eca8d4fb5cdb0e354d5362b9cc5760f4c698bd2f5b31daac150",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "a4fa7961929557924f8023476ca65a8520b68af53209202a19d5016be92c9d5f"
+    },
+    {
+      "id": "park.story.3.intro.audio",
+      "path": "audio/park/v0-2-0/park.story.3.intro.audio.wav",
+      "text": "A bird sings in the tree.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "9b4ef50d790582e2da9c63b066661876ea05f69fe989ff690df23f6e3783738f"
+    },
+    {
+      "id": "park.story.3.item.audio",
+      "path": "audio/park/v0-2-0/park.story.3.item.audio.wav",
+      "text": "Can you hear that?",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "e2bef6e734320a8a8bea749021fb56b557877b1c7c1dcb80190c346a1bddfd70"
+    },
+    {
+      "id": "park.story.3.reply.audio",
+      "path": "audio/park/v0-2-0/park.story.3.reply.audio.wav",
+      "text": "Yes! Let us be quiet and listen.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "5a641c3bec0daee83cadbd89078a1d871569725aa402221cf8c154bafd0c3a08"
     },
     {
       "id": "park.story.3.more1.audio",
@@ -610,11 +509,10 @@
       "text": "What a pretty song!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "09b5751f4e6a7c370dae64d80eed1c8a9140edd154530e5445f8c83bb81c121d",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "0f0f43780b7fb842ed8eae55eb6d54f0b8bb57811a1b8bfb582d6dffb16559ee"
     },
     {
       "id": "park.story.3.more2.audio",
@@ -622,11 +520,43 @@
       "text": "I think the bird is happy.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "aa8ded29011e71b5907085ed7b569fe194f61015a2908bf358c224bc21b1ef32",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "22ac2249afdcf056136dc642d4f33f918768b2fc4cbec7d57fd7b3a7a3346222"
+    },
+    {
+      "id": "park.story.4.intro.audio",
+      "path": "audio/park/v0-2-0/park.story.4.intro.audio.wav",
+      "text": "Momo holds the ball for a long time.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "22392d8704e86f2be6251b6917a5f43df826f5aebba07c127078c014120d0fad"
+    },
+    {
+      "id": "park.story.4.item.audio",
+      "path": "audio/park/v0-2-0/park.story.4.item.audio.wav",
+      "text": "May I have a turn?",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "0d415bdecfa0a6ca24af8515ab3ebe72bfbc86ddf66d48373d3ba1d8be2a5fda"
+    },
+    {
+      "id": "park.story.4.reply.audio",
+      "path": "audio/park/v0-2-0/park.story.4.reply.audio.wav",
+      "text": "Yes. I roll it to you. Your turn!",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "0afdd12abfa86405a9859e90a4ea82b002884641cd119344f51e3602e846b6ea"
     },
     {
       "id": "park.story.4.more1.audio",
@@ -634,11 +564,43 @@
       "text": "Thank you! I roll it back to you.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "7e18c0023841fa21a14e4cea9a486f612fc4daac9f3f1cab479583281c40098b",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "43a9f1728b1dc89f41bfcc4708a6bfd98f9ae396ffd01a6aec63faefd5ef6e85"
+    },
+    {
+      "id": "park.story.5.intro.audio",
+      "path": "audio/park/v0-2-0/park.story.5.intro.audio.wav",
+      "text": "The ball rolls beside the path.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "743f5ed112185df173c6e1993f884ea1dc3483783e420b9d004089862f06a732"
+    },
+    {
+      "id": "park.story.5.item.audio",
+      "path": "audio/park/v0-2-0/park.story.5.item.audio.wav",
+      "text": "I want to run after it!",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "9614782764f156f86189218b96981407d6af970c7b78a361ede5118d864dde35"
+    },
+    {
+      "id": "park.story.5.reply.audio",
+      "path": "audio/park/v0-2-0/park.story.5.reply.audio.wav",
+      "text": "Stay with me. Let us ask for help.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "2423a97cf3087342ab3ca624bd10cf94a077b064c33f5afc8a013816e5d55c93"
     },
     {
       "id": "park.story.5.more1.audio",
@@ -646,11 +608,10 @@
       "text": "Okay. I will stay with you.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "b73ee93465d372fe8fbfa449f4b46c1551102b9aedcc96b6d6e3c531ffab7bd3",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "c9290b64993a675169c75176d35665e66509f668af75fca9c6f949411eaa5910"
     },
     {
       "id": "park.story.5.more2.audio",
@@ -658,11 +619,43 @@
       "text": "Thank you. Our grown-up can get it.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "f9b55a8ab84285fe8e312ddd151f7d78874f5a734301edbb5cbf5d7a5ff9076e",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "f16d45651252212e2592ba285273e7ca74b40c798742f57e8d94f75085bb0f57"
+    },
+    {
+      "id": "park.story.6.intro.audio",
+      "path": "audio/park/v0-2-0/park.story.6.intro.audio.wav",
+      "text": "It is time to leave the park.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2c95443d11712c92b677a585fe7052acb033eb8773f57cb77567b8cd54a5c576"
+    },
+    {
+      "id": "park.story.6.item.audio",
+      "path": "audio/park/v0-2-0/park.story.6.item.audio.wav",
+      "text": "Goodbye, bird. Goodbye, tree!",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d35b121c43717630e89ed158ee28f3eda6fd4436c86577fc657946fe020c989c"
+    },
+    {
+      "id": "park.story.6.reply.audio",
+      "path": "audio/park/v0-2-0/park.story.6.reply.audio.wav",
+      "text": "We can bring our ball another day.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "4d616d01a32df54785d51ac800b82441a88833210739c70f961c04cdb3e96e28"
     },
     {
       "id": "park.story.6.more1.audio",
@@ -670,11 +663,76 @@
       "text": "Yes. See you next time, park!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "2e96056f33f73f7a9a320b0cf79b5238a5859f64b08d8dee84193027b945dcab",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "d40ec46693d28c66f7706e3f20cbd0ff2301368877960f4b064bb51aa640c066"
+    },
+    {
+      "id": "park.lesson.wrong.f4c4f2dc.audio",
+      "path": "audio/park/lesson/f4c4f2dc.wav",
+      "text": "I want my ball.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "a386645c864be46f5336db1bb561f90444514a96ee27b8c27200225f683b6dcc"
+    },
+    {
+      "id": "park.lesson.wrong.3f7b80af.audio",
+      "path": "audio/park/lesson/3f7b80af.wav",
+      "text": "I hear a bird.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "f05f0900df4abfcc77b97bd856c75e5e8669cd6636378083adb178c3c96ae750"
+    },
+    {
+      "id": "park.lesson.wrong.9e0b617d.audio",
+      "path": "audio/park/lesson/9e0b617d.wav",
+      "text": "I am under the tree.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "d0160087d5a84eb0a77aac20979bbc7177c1053d66fd69e80db72644d5d5c6c2"
+    },
+    {
+      "id": "park.lesson.wrong.ba1617e8.audio",
+      "path": "audio/park/lesson/ba1617e8.wav",
+      "text": "I like the flower.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "2856fda63e400e73504805ec5310fdfe3f58a89d340f884cfd21684a420317f5"
+    },
+    {
+      "id": "park.lesson.wrong.834c6790.audio",
+      "path": "audio/park/lesson/834c6790.wav",
+      "text": "Look at the tree.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "579d8b9571067e5a6547ccff09abea8ba3949f3d992e52afa1cef32902158abd"
+    },
+    {
+      "id": "park.lesson.wrong.3929b42b.audio",
+      "path": "audio/park/lesson/3929b42b.wav",
+      "text": "Goodbye, ball!",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "a36698e6bd8d0d349c5f8c19974e7d8a96efd1dae90cc5b3234c998ad6b7f6e1"
     },
     {
       "id": "park.lesson.bridge.audio",
@@ -682,11 +740,10 @@
       "text": "Here is our stop. The park is so green!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "7e96df1483f4176e419e016ea5f9ad36b465070e6f7bbba235e6a6b092cd647e",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "333a2af37b8b3925c32ea9eb052b41abdb80cdae620c877bf69692dd73232bf8"
     }
   ]
 }

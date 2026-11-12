@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "sceneId": "washing",
   "contentVersion": "0.2.0",
-  "generatedAt": "2026-11-02T22:30:54.0111168Z",
-  "source": "Windows SAPI offline synthesis",
+  "generatedAt": "2026-11-12T07:06:47.586156+00:00",
+  "source": "Kokoro offline speech synthesis (kokoro-onnx, kokoro-v1.0 int8)",
   "purpose": "S4 local synthesis; listening and rights review pending",
   "rightsStatus": "pending review",
   "reviewed": false,
@@ -14,10 +14,10 @@
       "text": "water",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "f15405db8f5b7f1df002de40c3adeb1650d994b03e16c41703db8c93fe48da56"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "6fa91604c48b7f3176d1167be82005c1c3d7d63f7f32630fda819a48787982b2"
     },
     {
       "id": "washing.soap.audio",
@@ -25,10 +25,10 @@
       "text": "soap",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "11af008e9fe70ec4abed1280a2effe119c7cbdff15efea69e8880b6486986c90"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "08a0b152f8004d5c636b419b6854829800f283aa5d5e103f5cf7ea03a6e7f2e6"
     },
     {
       "id": "washing.towel.audio",
@@ -36,10 +36,10 @@
       "text": "towel",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "135280ae027bda4d9b03cf93686bd94b734dd29e66aaf431127da577f34d13a6"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "becf0b1ea56f172072454c2039c2d48690ced2ed7914cb8fcfa15f732222179a"
     },
     {
       "id": "washing.toothbrush.audio",
@@ -47,10 +47,10 @@
       "text": "toothbrush",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "4c28d9ed5e02037d50df03f833e0b25be57ea013babbbae11d44ceefb56cd70b"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "958c527f10c8babcfd8c86452ebc71b1b5adf01b73ee78f3e54186b00547c640"
     },
     {
       "id": "washing.dialogue.1.question.audio",
@@ -58,10 +58,10 @@
       "text": "Shall we wash our muddy hands?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "45159f2c080a62deb03febc8b60f77b2f685be05959204db15e0ebe9d15bde26"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "026c1bdeb26be16f2c0716960f5ba7a6985ad1eadb3e28cbeba2e73ace171ca2"
     },
     {
       "id": "washing.dialogue.1.reply.1.audio",
@@ -69,10 +69,10 @@
       "text": "Yes, some water, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "21a0c7608a5b78dbc8c74f06f5c0b0562ce530c38af6f0b5d86d94692b4ad266"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "1c79a2e130c334759332a1f1239c980f54e865136955898ef409b142053b75bd"
     },
     {
       "id": "washing.dialogue.1.reply.1.follow.audio",
@@ -80,10 +80,10 @@
       "text": "Let us ask our grown-up to check the water.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "398601e2806615594643a315f1bd6345bee399e49faddfe2cbcd1fbb4c88530f"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2c7fdb34e0bd681c9b777f45a18bec299bad82c3b52ce86d608468b3c01b7080"
     },
     {
       "id": "washing.dialogue.1.reply.2.audio",
@@ -91,10 +91,10 @@
       "text": "Please help me reach.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "674831b50aaa45b0ecf61cf9437ce42be25d320dd3d9f089bf0ac94e352a1bc6"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "55d8a2b0235cd61f4d83cb98ba7e2eb5c3126638ed7ab17034a9e5aa8f540b66"
     },
     {
       "id": "washing.dialogue.1.reply.2.follow.audio",
@@ -102,10 +102,10 @@
       "text": "I will call our grown-up to help.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "5147de144acbf80db034ead4235179ec47cfa2aada2c15b0e2677fb03a478792"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d6d815dd6b44d4ef5a2449f1b6d2b57545bd4ffdb5b60122ac89bb3d02b98b72"
     },
     {
       "id": "washing.dialogue.2.question.audio",
@@ -113,10 +113,10 @@
       "text": "What do we need for the bubbles?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "5f2e647c2356df175d079182e66a666d865111b56e0d3ef92d2b5767886fd17a"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "78a287b36033f57d8dde75096aa97bf55bcc7f2049aa3bb37c9410ef5b603fd5"
     },
     {
       "id": "washing.dialogue.2.reply.1.audio",
@@ -124,10 +124,10 @@
       "text": "A little soap, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "72b1c1627e4dc5198c143ed213d69324f95b25fc2d81cc1d2b1e757d373c1b47"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "dcdb447d166afbb1cd5e52aac974afe4c386590282832fba887106d512183f3b"
     },
     {
       "id": "washing.dialogue.2.reply.1.follow.audio",
@@ -135,10 +135,10 @@
       "text": "Rub your hands together with the soap.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c34ce613e358fbe9c3ed13aceca8bc2a132f6f66b83a7483a337b0a1a95d19ec"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "a385488e6a618e7e44731eb5ef1837c3d98cd83f0d8d02a989decaedbaf648f4"
     },
     {
       "id": "washing.dialogue.2.reply.2.audio",
@@ -146,10 +146,10 @@
       "text": "Can you show me?",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "416e562099dd42ab3a280ccb558b858801b9732e6c54c1da510376e4342c63c6"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "5cdf31c8e3ff4e50aa7cfd3e5c3708ed9a090af90f6cee24bebd0b54a3120115"
     },
     {
       "id": "washing.dialogue.2.reply.2.follow.audio",
@@ -157,10 +157,10 @@
       "text": "Watch my hands. We can rub them together.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "40b63461462fa14ca2e98be27b859f086a44d8466939c46e7c3457f3f265e714"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "10692735ed36e07452ade820615516d00138e58ab2c9444262cfe4f8b1f2f69a"
     },
     {
       "id": "washing.dialogue.3.question.audio",
@@ -168,10 +168,10 @@
       "text": "How does the water feel?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "85f947fa220692e6d7079c1a2adfb2cae60baefb3d8dcd38ad107ec6f751169f"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "8b28edd9e227608f49c89882125d59891850baab9a52ed456e2c2598aab3cd62"
     },
     {
       "id": "washing.dialogue.3.reply.1.audio",
@@ -179,10 +179,10 @@
       "text": "It feels comfortable.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "e7596470f4b763c44348c874b94fe11f0a050052f4ced628a145829d509a4dc8"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "3cd324bd1b1ee07d1be2953659ec2800b4c4f2fc4aed71f1d062c7059cc2f58a"
     },
     {
       "id": "washing.dialogue.3.reply.1.follow.audio",
@@ -190,10 +190,10 @@
       "text": "Good. We can rinse the bubbles away.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "660bc68c26b5cea0d7e820cd452280646c4a13a7fa272a2eb9b3236591232089"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "cc6c9e06d0ab7b78a82b1c5136e87edb9e3e9ea12e1711539804c268339f006c"
     },
     {
       "id": "washing.dialogue.3.reply.2.audio",
@@ -201,10 +201,10 @@
       "text": "It feels too hot.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "91e8eb7c9c3dd1042b5c45556dcb05c206b47251fae6bb03869a1e6f88a1c4d2"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "ecfc5d12cd1b1d049a0d926ebbd49b1fe94a6566e76ee52fe270ba09ed145e6d"
     },
     {
       "id": "washing.dialogue.3.reply.2.follow.audio",
@@ -212,10 +212,10 @@
       "text": "Stop and ask our grown-up for help.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "a17d70a944fe8626d690d1d307cbb9204884ed239bf8cc98ff8dc01c48e3e82a"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "64d453b438b125396305036bf46da4d2be3cc2840faf97856b0aaf1c7d27c80b"
     },
     {
       "id": "washing.dialogue.4.question.audio",
@@ -223,10 +223,10 @@
       "text": "Where can we dry our hands?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "464958c4ad2c451e94508f207fa7e64c9eefb2c7034fceb856713ec38e29e9d1"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "c4272b959653f1a99edba17f1fa1c69b598f767f6c7a84c88aafab8ff1b8dd49"
     },
     {
       "id": "washing.dialogue.4.reply.1.audio",
@@ -234,10 +234,10 @@
       "text": "With the towel.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "fb869526216d361a64e569ca04e88ff4e4d07a91493c86398cf7635675e79fbe"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "a7b9a7e0d10f520938ceac387a66b1e4c5d7d0cd108b1a3400ef4aee0c399c12"
     },
     {
       "id": "washing.dialogue.4.reply.1.follow.audio",
@@ -245,10 +245,10 @@
       "text": "Here it is. Pat your hands dry.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "0769581205f5596e90b9898bfe25bab84b21753fc6166fa84fa4a4d469a948dc"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "9f95c2e1fa7712205907acf70ca70ff349a1928e7c0e4fc1431e7d5989034a11"
     },
     {
       "id": "washing.dialogue.4.reply.2.audio",
@@ -256,10 +256,10 @@
       "text": "My hands are still wet.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "ba6d69b8150f01177034bfff5a8951447b3819906694acc7b36edd01be3e5d4b"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "f72e5813866c75822da8c6689351dcccc7c0d3f63cdc5fe02aeda56fe5d483bd"
     },
     {
       "id": "washing.dialogue.4.reply.2.follow.audio",
@@ -267,10 +267,10 @@
       "text": "We can use the towel again.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "41b64bc30e35b77921304188a2d3223d4c997b7758046c5833d3337e84bba23a"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "1483dad3a9face9ca94c07ba18299f4b4a88f3b20ca2125fbf6cbda8643c848e"
     },
     {
       "id": "washing.dialogue.5.question.audio",
@@ -278,10 +278,10 @@
       "text": "Where does the towel go now?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "d6c356c1ea052c2b3202f8ed545a160e309c13ee3773d63070d3d59ba820ad98"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "ed3f92af7d889a1a64b8a2872d14b4b294b229c4bdece99f6c1e7b193c4bdcde"
     },
     {
       "id": "washing.dialogue.5.reply.1.audio",
@@ -289,10 +289,10 @@
       "text": "Back on the hook.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "29078ca594c5441549423f1358c6622953e25f765a9425575b204e4b456a27c4"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "f0cdda55f9828f8126c210245b081698e71cdc6e18f561c3c0ec4d4aaf478ce8"
     },
     {
       "id": "washing.dialogue.5.reply.1.follow.audio",
@@ -300,10 +300,10 @@
       "text": "Yes. We leave it hanging to dry.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "5ea91ef256d3a71531429470017cffd715c8600b90e6d4fcb201a45bbd291aaf"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "7289f24686290c31bad4cca33fb45426cef21281918b1aaad7a0c7ee885ead74"
     },
     {
       "id": "washing.dialogue.5.reply.2.audio",
@@ -311,10 +311,10 @@
       "text": "Help me hang it, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "d5b3b4758b6f83e36ab380a5d9af9583e128c7f001637f600b261dce269ea3b0"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "6107746bd1b06a9b70f924bf7d989f01569c402536dfce52801c71624683b9e7"
     },
     {
       "id": "washing.dialogue.5.reply.2.follow.audio",
@@ -322,10 +322,10 @@
       "text": "I can help you reach the hook.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "76165f0e0c4d44abafe3a95eee9e61edc84c379ad18ac7c73f62f321d3fe309b"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "33e67e28854c7f30d42962d69eac8a7fe57a44a9d3a4e5ed867f91d56e0a19a1"
     },
     {
       "id": "washing.dialogue.6.question.audio",
@@ -333,10 +333,10 @@
       "text": "Is your toothbrush ready?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "b8e7f0e4e0643a1221e5d8e5235d1d873fb031bd9943e0ce6c9ec43598b10b93"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "f11c16051cc003277fab998479beebcfd82eaf1d71d7d5dfaa8503735ebe0923"
     },
     {
       "id": "washing.dialogue.6.reply.1.audio",
@@ -344,10 +344,10 @@
       "text": "Yes! Help me brush, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "821ef03a9827ac6f99b86b1444a38bae8d0dd88cc0b1dd0aa74cc6298a111971"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "eabe8efec9c2ab00056ed51f797923d9545bab585759aaa7c69227b9711bc1f0"
     },
     {
       "id": "washing.dialogue.6.reply.1.follow.audio",
@@ -355,10 +355,10 @@
       "text": "Let us ask our grown-up to help.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "baa7ebdc73747c1b25a7505585f9f476e07f2a0d6e7a1f605ba5e011227b9fdc"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "286c22737f9e05fe5f10a4aeed415bc45a96951794cb4c4b630c3179c7b22a72"
     },
     {
       "id": "washing.dialogue.6.reply.2.audio",
@@ -366,10 +366,10 @@
       "text": "Please wait a moment.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "12b12156babf9223758743021109c5d2ff03bd17b6467862a6404c8733fee451"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "6f065a74fdb66c0922e51dc22aa9ac1d232973658b7a120acc71359a4c85db3e"
     },
     {
       "id": "washing.dialogue.6.reply.2.follow.audio",
@@ -377,10 +377,10 @@
       "text": "We can take a moment before brushing.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "2a094c394ec1bd38cc89f8ab4cf97a3bc1f736f4f57c06e6ae276e931a1d4977"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2bbd7d9e6eed3b81316a183732232c291bfdf84df1c39eb713fb8154789784a7"
     },
     {
       "id": "washing.story.1.intro.audio",
@@ -388,10 +388,10 @@
       "text": "The friends come home with muddy hands.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "6320b0349c5886cedaf00d58a1c2b022a4099034b5a5826df193c791774d7f49"
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "3c425fd2afb00a7d588d6f158374f83697d2a5ff03114778754265b111fdd1b1"
     },
     {
       "id": "washing.story.1.item.audio",
@@ -399,10 +399,10 @@
       "text": "Look at my hands!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c7ae61a6738ca42b47bd45a4639942241cdae18f1777280683017ea11447adc6"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "03010ccce9a31c377a54ff3671bef3a44b08e5858a6d5ceed7d57440abdccc04"
     },
     {
       "id": "washing.story.1.reply.audio",
@@ -410,175 +410,10 @@
       "text": "Mine too. Let us wash them.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "9f44e0178b61079f980aa967c1bdbc30bdf1b941b505ec2e66e1c965d0bbed4b"
-    },
-    {
-      "id": "washing.story.2.intro.audio",
-      "path": "audio/washing/v0-2-0/washing.story.2.intro.audio.wav",
-      "text": "Momo picks up the soap.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "a2a3732390b73eafa2d1f549323805fd1cd45967106b962237441fef685c7bd6"
-    },
-    {
-      "id": "washing.story.2.item.audio",
-      "path": "audio/washing/v0-2-0/washing.story.2.item.audio.wav",
-      "text": "I cannot make bubbles.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "b6cc5865d746bef618e897ea8745a0fcfc54fb98fe6d8b433445c2bc7ca6cfc5"
-    },
-    {
-      "id": "washing.story.2.reply.audio",
-      "path": "audio/washing/v0-2-0/washing.story.2.reply.audio.wav",
-      "text": "Rub both hands together. Like this.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "3ca5c43c1ad98462404c629d14a9222876394076a212783aeee0df9190693ddf"
-    },
-    {
-      "id": "washing.story.3.intro.audio",
-      "path": "audio/washing/v0-2-0/washing.story.3.intro.audio.wav",
-      "text": "Little bubbles slide towards the sink.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "4bd9d9b29c9e77c2050839230eedcc418629df5935aab7a10608d20e252c265a"
-    },
-    {
-      "id": "washing.story.3.item.audio",
-      "path": "audio/washing/v0-2-0/washing.story.3.item.audio.wav",
-      "text": "The bubbles are going away!",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "d7e540d9c65dd0336a3e41b790878f28d625ef4f59f43bf7339f3e0ace8f46ec"
-    },
-    {
-      "id": "washing.story.3.reply.audio",
-      "path": "audio/washing/v0-2-0/washing.story.3.reply.audio.wav",
-      "text": "Yes. Now turn off the water.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "93c9102d524baf8ed43bc11079443d36887b1640f13fdc35a806755ff61f4de6"
-    },
-    {
-      "id": "washing.story.4.intro.audio",
-      "path": "audio/washing/v0-2-0/washing.story.4.intro.audio.wav",
-      "text": "There is one towel beside the sink.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "99480a2ffd643d7917be4c988e3e899063dac93104b12815ca73daae12826f5b"
-    },
-    {
-      "id": "washing.story.4.item.audio",
-      "path": "audio/washing/v0-2-0/washing.story.4.item.audio.wav",
-      "text": "Your turn first. I can wait.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "d5a0a7336b3803ae1ef77d7baa06ab1997f5085d6d2e11c2bcbc31bf436a93fa"
-    },
-    {
-      "id": "washing.story.4.reply.audio",
-      "path": "audio/washing/v0-2-0/washing.story.4.reply.audio.wav",
-      "text": "Thank you. Now it is your turn.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "728f2739fc0c699c85310972e23f44b7f65ef36238bbb1830f438cec23e2e53a"
-    },
-    {
-      "id": "washing.story.5.intro.audio",
-      "path": "audio/washing/v0-2-0/washing.story.5.intro.audio.wav",
-      "text": "Two toothbrushes wait in a cup.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "dbd8a2a6ff1344a08bbedcb0f44813e142c96d46bb26c7470853980cc13c9800"
-    },
-    {
-      "id": "washing.story.5.item.audio",
-      "path": "audio/washing/v0-2-0/washing.story.5.item.audio.wav",
-      "text": "Is this your toothbrush?",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "6bb10ebcaa02dac9bbf9aa1b0d3617eca0c8f096ff68e9e0646178fa4a10e038"
-    },
-    {
-      "id": "washing.story.5.reply.audio",
-      "path": "audio/washing/v0-2-0/washing.story.5.reply.audio.wav",
-      "text": "Yes. That one is yours.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "18ee0155da239f6b61eac5444c06bcc7dc462fb5968944557db8c669c0dba408"
-    },
-    {
-      "id": "washing.story.6.intro.audio",
-      "path": "audio/washing/v0-2-0/washing.story.6.intro.audio.wav",
-      "text": "The sink is clean again.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "bb299780f5f1de8435265833a306a99129f5bf28937e72f8e2770e26b1339856"
-    },
-    {
-      "id": "washing.story.6.item.audio",
-      "path": "audio/washing/v0-2-0/washing.story.6.item.audio.wav",
-      "text": "Soap here, toothbrush there. All done?",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "cd48eff560e014bffcd734069160f1bafc5273fe54615f08b78e5a888ace1517"
-    },
-    {
-      "id": "washing.story.6.reply.audio",
-      "path": "audio/washing/v0-2-0/washing.story.6.reply.audio.wav",
-      "text": "The towel needs its hook. Now we are done!",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "ad74a00e8b3a518a25c740e7f38a4bdfc7551f7c225bf4ef57d70215c27514a4"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "690950cf936ba4a47c357e976eea194a9096f80908d746e98f46dbf37c766f6f"
     },
     {
       "id": "washing.story.1.more1.audio",
@@ -586,11 +421,10 @@
       "text": "Where is the soap?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "b3b6a324926b1a7a844a62c8520548b7839b68007deaadedf1a5cc01b779b35c",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "b16c8930278708091fad2080e8c839057f3ae62205e4377749eba29c7a85524f"
     },
     {
       "id": "washing.story.1.more2.audio",
@@ -598,11 +432,43 @@
       "text": "It is by the sink.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "cecbcf11400700ccc7390fcf5dff57d436cbeaa1c70dfe36e2bb41b34455b5fe",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "3f048084645cf102e491d15223849eb1eab2a71e89ad3f354da69f5a79065d01"
+    },
+    {
+      "id": "washing.story.2.intro.audio",
+      "path": "audio/washing/v0-2-0/washing.story.2.intro.audio.wav",
+      "text": "Momo picks up the soap.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d1c6594610123b4986c1e95c4b5be590dad4f42eb36e3d20cb3daa501e860606"
+    },
+    {
+      "id": "washing.story.2.item.audio",
+      "path": "audio/washing/v0-2-0/washing.story.2.item.audio.wav",
+      "text": "I cannot make bubbles.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "50e1473531dd39920ea04e660b8eba72b137125507791b060c38b8fcf7038414"
+    },
+    {
+      "id": "washing.story.2.reply.audio",
+      "path": "audio/washing/v0-2-0/washing.story.2.reply.audio.wav",
+      "text": "Rub both hands together. Like this.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "6333ecc74a3c22dec8a92af6246641c2fdd4f02768b83ca29ca778445262c71a"
     },
     {
       "id": "washing.story.2.more1.audio",
@@ -610,11 +476,43 @@
       "text": "Look! Lots of bubbles now.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "4d8fe711c54a4fd310f79895807b40f61a3b0a55c84d697178bcb1f13d2c35da",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "e8862fc2cbee48c73a7037c248eed2679f65cda2ce7c9d7d886bc32b31765cd7"
+    },
+    {
+      "id": "washing.story.3.intro.audio",
+      "path": "audio/washing/v0-2-0/washing.story.3.intro.audio.wav",
+      "text": "Little bubbles slide towards the sink.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "865f9ee49add517c356f7b3c8ec09c2b99db93f5d378f53f69f0b4cdcb530a23"
+    },
+    {
+      "id": "washing.story.3.item.audio",
+      "path": "audio/washing/v0-2-0/washing.story.3.item.audio.wav",
+      "text": "The bubbles are going away!",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d882adbddf185f1797e11103fcd09ee977d370c07593e8fbc544671111edd5cc"
+    },
+    {
+      "id": "washing.story.3.reply.audio",
+      "path": "audio/washing/v0-2-0/washing.story.3.reply.audio.wav",
+      "text": "Yes. Now turn off the water.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "568a6ac520f1f6d77702c238f25c6d529037432da455242489380ee8375b634c"
     },
     {
       "id": "washing.story.3.more1.audio",
@@ -622,11 +520,10 @@
       "text": "I turned it off. Is that right?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "19b954d8309eaf4033d1a0b411f268c127cda2acb49e2de38a2e3c9cc05f8db6",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "ade90d6d93a915c20f826554d8bc25fb8eb28f325693005268dea90ca01d7ab0"
     },
     {
       "id": "washing.story.3.more2.audio",
@@ -634,11 +531,43 @@
       "text": "Yes. We save water that way.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "42167913e63ad99af366d615b6598acc1e800fbd8316844e273b561767f6e124",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "849720342917eb5378941487efb80a72009efb97c54cce6a1d830524e8db6f25"
+    },
+    {
+      "id": "washing.story.4.intro.audio",
+      "path": "audio/washing/v0-2-0/washing.story.4.intro.audio.wav",
+      "text": "There is one towel beside the sink.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "3e92e395ca42866c38fcf23ba0c177145b83a16881dc14a85d0b60ac33957735"
+    },
+    {
+      "id": "washing.story.4.item.audio",
+      "path": "audio/washing/v0-2-0/washing.story.4.item.audio.wav",
+      "text": "Your turn first. I can wait.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "7f9e8db2c7326e990a5a54d2067bfdfa7d0a75a1d4bf5b9b5d61ec8b16829714"
+    },
+    {
+      "id": "washing.story.4.reply.audio",
+      "path": "audio/washing/v0-2-0/washing.story.4.reply.audio.wav",
+      "text": "Thank you. Now it is your turn.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "56cad8f62e386af8d32be4a5eddbb38132fe80863124c8ef9b2a4ebd6be80121"
     },
     {
       "id": "washing.story.4.more1.audio",
@@ -646,11 +575,43 @@
       "text": "My hands are dry too.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "3e8566e76f8235992e1b9cd35b97e5801976cd2023f1cf5724c6f94a4e807c13",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "20a14163055b945178d0862ce92d72f0825ab95262d067ac9965d527000347e8"
+    },
+    {
+      "id": "washing.story.5.intro.audio",
+      "path": "audio/washing/v0-2-0/washing.story.5.intro.audio.wav",
+      "text": "Two toothbrushes wait in a cup.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "ed03e93ec15b4faa8690a108d85b0a871bee2f8f7c33e92fd020ad5d866103be"
+    },
+    {
+      "id": "washing.story.5.item.audio",
+      "path": "audio/washing/v0-2-0/washing.story.5.item.audio.wav",
+      "text": "Is this your toothbrush?",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "15d7be21e39a37608d8d2ed4b45935b1c3b2c34d542c86b33ee7a25371434656"
+    },
+    {
+      "id": "washing.story.5.reply.audio",
+      "path": "audio/washing/v0-2-0/washing.story.5.reply.audio.wav",
+      "text": "Yes. That one is yours.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "577cc7d7d8f1c67e47ca681e84ff02362904e5f418a2b29978761f521f3bda8e"
     },
     {
       "id": "washing.story.5.more1.audio",
@@ -658,11 +619,10 @@
       "text": "Mine is the blue one.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "39a7d470c077b89f2f6e98a3c61ba8fd880e3ab60a7ce48e1dbbffd33dfbef3d",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "f2e400feb947aeec9837865c2094d0ef914e0cd172a98fd7e1dc61f3792c6090"
     },
     {
       "id": "washing.story.5.more2.audio",
@@ -670,11 +630,43 @@
       "text": "And mine is the pink one.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "0e36f9e8aa81e408414e0f65dc4291d1bdc5d4507bddf1c0e0ee2a19380d74a8",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "7c6365173e0474fadebea08a80e629da7c262fcd1f10bf20bbd46abd8afe64b5"
+    },
+    {
+      "id": "washing.story.6.intro.audio",
+      "path": "audio/washing/v0-2-0/washing.story.6.intro.audio.wav",
+      "text": "The sink is clean again.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "21740a789a24152c5ff0ac78d8d6f0f0d91aea7717f36572fb85ed89398b36b3"
+    },
+    {
+      "id": "washing.story.6.item.audio",
+      "path": "audio/washing/v0-2-0/washing.story.6.item.audio.wav",
+      "text": "Soap here, toothbrush there. All done?",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "7aab957f484d3f019721592a75e77ebabefa7c4944182f14513a4416171c5e38"
+    },
+    {
+      "id": "washing.story.6.reply.audio",
+      "path": "audio/washing/v0-2-0/washing.story.6.reply.audio.wav",
+      "text": "The towel needs its hook. Now we are done!",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "1198ee91a9f0fc762131dfc713f0485ddce6b249fa665b5672c663284c0de3dc"
     },
     {
       "id": "washing.story.6.more1.audio",
@@ -682,11 +674,10 @@
       "text": "Our hands are clean. Shall we go and play?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "1e5b210e80c7193dd5f98e074db0a99d39a58682115bf9f2f4c9cc3518bdb5e4",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "1142d6130b93defe3e70d855c9197a6a61c4fec30c5b6f6510f76373dcd52387"
     },
     {
       "id": "washing.game.1.label.soap.audio",
@@ -694,11 +685,10 @@
       "text": "rub the soap",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "1d77ee94f098d564c66eabeb5766ad4b5525156c8c6a07fa691690b4a51d5e54",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "fc8d55116488ebb1149245ef889329a50c67fc07cb6606a6851fd8f3fee511e2"
     },
     {
       "id": "washing.game.1.label.water.audio",
@@ -706,11 +696,10 @@
       "text": "rinse the bubbles",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "0fe14caa99c88a5c8f63c1fa3316d38c6e910847f293ef576ece741ed08d8456",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "303e73e5bda19f94aae2cab9382537cbe5cbb4908e62e132b892f9e189068121"
     },
     {
       "id": "washing.game.1.label.towel.audio",
@@ -718,11 +707,10 @@
       "text": "dry our hands",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "6b823db58eece955e783d74303758edb57cc8824ca9d4cbbbd595aa231ad8f84",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "480e870fbd5aaf7d0ebb2122e5ce7d93b540df6a7f1b741be062558b2acde642"
     },
     {
       "id": "washing.lesson.bridge.audio",
@@ -730,11 +718,10 @@
       "text": "Good morning, Momo! Time to wake up.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "d563b8f4860f88953f49260c74d821bfc0c08bb95ffbefc987d84477badecd5f",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "cab07bb8fd868c3dbd2771daf96aa950d6667f508d790d06cc1eeffcf654e457"
     }
   ]
 }

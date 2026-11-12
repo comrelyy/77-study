@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "sceneId": "transport",
   "contentVersion": "0.1.0",
-  "generatedAt": "2026-11-02T22:31:05.3887576Z",
-  "source": "Windows SAPI offline synthesis",
+  "generatedAt": "2026-11-12T07:08:51.495061+00:00",
+  "source": "Kokoro offline speech synthesis (kokoro-onnx, kokoro-v1.0 int8)",
   "purpose": "S4 local synthesis; listening and rights review pending",
   "rightsStatus": "pending review",
   "reviewed": false,
@@ -14,10 +14,10 @@
       "text": "bus",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "90120eeee9edd3229241336c1e51aa546b802bb5e4a630125458ad5f9f02c417"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "6d32e8af8a23c1b0b57d486c69b07f54a80b99a4708196b8044cfd5e9b2ecae2"
     },
     {
       "id": "transport.ticket.audio",
@@ -25,10 +25,10 @@
       "text": "ticket",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "cf31ff716853e502877eb2b2d57c38f65629673b2c8d4f68bf4912334c79070c"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "bde102bd87325c423152ebd204ed582a07d1610bd0d38e57c17855b2f6c1a3f2"
     },
     {
       "id": "transport.bag.audio",
@@ -36,10 +36,10 @@
       "text": "bag",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "81bcc204bed9cfc5b0b261b6e686b60d5a5a66feb1c476909d8673d586138915"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "caab29012dd16972bc97de9302154d70e4075f894c0a10dc0fb5cd929d48db44"
     },
     {
       "id": "transport.seat.audio",
@@ -47,10 +47,10 @@
       "text": "seat",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "81fbc8c9710d74d7fa36ce36165a7877d9be5681eecaf69a756f2007e5e2a09a"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "8c94bc92729f865b0d5ea4d0e58a48c23a3238c5828d351b2c8e6081352dd774"
     },
     {
       "id": "transport.dialogue.1.question.audio",
@@ -58,10 +58,10 @@
       "text": "Is our bus here yet?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "bd8cd79f31c2b4dc83fadb29cf78ddfe46d12e56a3845d44dfaf752787e22c6e"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2f5b265bfa5c63fae6b9730c967eda90944dc71f37e521e7cd3c31f8d2bd60ba"
     },
     {
       "id": "transport.dialogue.1.reply.1.audio",
@@ -69,10 +69,10 @@
       "text": "Not yet. Let us wait.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "df9558dd6e65d9afd02e54dd54f557845e6928477b7f27dce7cd3f84c0f1bf16"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "f771b851fbaca95f540a962525848ec075ca7843c998856ff896e0f4faee5989"
     },
     {
       "id": "transport.dialogue.1.reply.1.follow.audio",
@@ -80,10 +80,10 @@
       "text": "We can wait together at the stop.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "e7b2570b5200c45b52eff1baa12f9a905d3086c5a64d96cf19f72f2d1093a054"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "360e2252b5f682e9998f8bae0987a8b9d8f3e30774e8106c6c94bd8af9dd24fe"
     },
     {
       "id": "transport.dialogue.1.reply.2.audio",
@@ -91,10 +91,10 @@
       "text": "Please stay with me.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "b0c0b0c9a4272591a702f72508dc563eea36d6db759d4ab645ca15ed4c081edc"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "44b1c75afbc5a9186000fb5b666138bba5d67150a869c1f3a693600dffe4b7bb"
     },
     {
       "id": "transport.dialogue.1.reply.2.follow.audio",
@@ -102,10 +102,10 @@
       "text": "I will stay beside you.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "3be4b3d1648f066315958700ef1f9e8a6d932d0f070b3d0d2bf894bc23d155ab"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "0497aaa574b265db61faf0407db1fafe1ede6ea89326deacac671679df147048"
     },
     {
       "id": "transport.dialogue.2.question.audio",
@@ -113,10 +113,10 @@
       "text": "Where is your ticket?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "73c608a65da9e51238ac58c2006685bb54f8c8fec4af25454393b8d876c84ef9"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "9b9d83bdf38c67f7e4c85b2a2be39eb1ca6f88bfbe99db6c55896e7756318b67"
     },
     {
       "id": "transport.dialogue.2.reply.1.audio",
@@ -124,10 +124,10 @@
       "text": "In my bag.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "4865d7913d51e127726f4af49ada658cf29e4607774e79dba02b3224a48c20df"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "e0b6d4ed44e40f6380495e9014e425991b1b0c88767e883e5b847f6707c81184"
     },
     {
       "id": "transport.dialogue.2.reply.1.follow.audio",
@@ -135,10 +135,10 @@
       "text": "Check the small pocket.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "0d3a37f578fcd2c7983cbfe96eef683b605abd0f045e1290549c79e7206c4828"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "fc4293bf915d02330ea76bc8fef4f53a9b26f2150bc4925f34c321327601ee0a"
     },
     {
       "id": "transport.dialogue.2.reply.2.audio",
@@ -146,10 +146,10 @@
       "text": "Please help me look.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "a95af224e144118918771a1d7f8a9d9b0e040b8450b9b4f4bbf72042893fa202"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "a6a02d3c0ed60a62fa721bf806f0f10b7cb0f6b2d3230326a23f321fbfea30e2"
     },
     {
       "id": "transport.dialogue.2.reply.2.follow.audio",
@@ -157,10 +157,10 @@
       "text": "Take your time. We can look together.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "052ce92d6f20a161d23251e25b382af1aaad22e4e74b9abc17907d77afa4a702"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "91d3e26ab3a3536f6ffdc362e6c5baa944192f04a069de97c89b0df5f04deaa1"
     },
     {
       "id": "transport.dialogue.3.question.audio",
@@ -168,10 +168,10 @@
       "text": "The bus is here. Have we got everything?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "3f2a8f049856bbafd4c5e4e5960326a0aad306b1ffd72a21888cc439b64e6948"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "a9f43de18abf90e038aeeed401a3fa2bd69f04aa870cd311230c1cd069fb4e93"
     },
     {
       "id": "transport.dialogue.3.reply.1.audio",
@@ -179,10 +179,10 @@
       "text": "Our bag and ticket!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "8421838133f7778b321d69dccce4a01a8cba720d36e08da2bfa405b889a7a800"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "77a234d06b1c12e2191ab4c5f78af0672f96bea6855b34b475c18182236958ee"
     },
     {
       "id": "transport.dialogue.3.reply.1.follow.audio",
@@ -190,10 +190,10 @@
       "text": "Now we can go with our grown-up.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "17ca53b91a5d363909e7fd77163ab345a152c039fb1d10d71364e534dae1c390"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "7d31538b86b30e347c2dfeb6adf415539c9746cb35591b72686c2ca352b153a4"
     },
     {
       "id": "transport.dialogue.3.reply.2.audio",
@@ -201,10 +201,10 @@
       "text": "Wait for my bag, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "39c6fea2ecceecb84d585085e849f7a31e4e22b4d39465c51b1f5584db83c387"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "5693884dc0ebd3f6ab8d6df2f4f88bc6a44e6d1285ff970ca9a908b69d5e95fd"
     },
     {
       "id": "transport.dialogue.3.reply.2.follow.audio",
@@ -212,10 +212,10 @@
       "text": "We can wait while you pick it up.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1f6b8a90d0a14251b773ad78f9a23636029b0d1ff0e018a8ec99c94573d89719"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "ac7150635d3a53c291386c0f459b3d977e8d1866af4c5645084fb3e5f5aee8a5"
     },
     {
       "id": "transport.dialogue.4.question.audio",
@@ -223,10 +223,10 @@
       "text": "Is this seat free?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "238b7037c86dad86ab92f93af7a3127bf395b43f2075286c58d4d66e15d164ce"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "1405958ec208253ba5b87285caad147e88a630f21e0898eb1e44eb92e151dc0b"
     },
     {
       "id": "transport.dialogue.4.reply.1.audio",
@@ -234,10 +234,10 @@
       "text": "Yes. Sit here, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "1bef232e32df8659bd3d51d69bc6d827cd2981c50db1d6efc45ed258efd5365a"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "dc433aaf58bd1d89ca63f5f9a8afc201a94841d5fa9abe6b848973bd52905fcd"
     },
     {
       "id": "transport.dialogue.4.reply.1.follow.audio",
@@ -245,10 +245,10 @@
       "text": "Thank you. We can sit beside each other.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "d85692910e3d0d545f54bb4d2d11d5a3385ebd621ed6c108d283b46a3cb7e7d1"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "c51b6d91036b441320a140f475e0793e27dcd6bb28bc00de37b261c4c9337809"
     },
     {
       "id": "transport.dialogue.4.reply.2.audio",
@@ -256,10 +256,10 @@
       "text": "Let us ask first.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "6acf750945e64636388af9524e8078ddb9ac07964fcc67ae39915b9fc8cffc7e"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "6dfcc143037af8d56d014ca96a9a635db47a01f1608ff8e10381486abe206b02"
     },
     {
       "id": "transport.dialogue.4.reply.2.follow.audio",
@@ -267,10 +267,10 @@
       "text": "Good idea. Ask before we sit.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "da5d491b3fccb9d971ad06f4831be2585f9a87d0c6f6de98437c277cbaf54181"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "7a64cec966db12e59edaf6048263cb9b54307fa305fbab24eb070b0e79163ad4"
     },
     {
       "id": "transport.dialogue.5.question.audio",
@@ -278,10 +278,10 @@
       "text": "Where can we keep our bag?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "ea0a3ca6bfa5fd7ce58ed06f5f8f75c84b3fbf4a1a60dc72e70a324a17c5c0e9"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d1b27426586194a21aac4c6fa2f37fac1048f574c08ed42bb082835ec871c0d9"
     },
     {
       "id": "transport.dialogue.5.reply.1.audio",
@@ -289,10 +289,10 @@
       "text": "Beside our feet.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "4d0d918e641c54c4f902b675ddebff30631d8e209f3db8ee20540806f2e953dc"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "8ec480ae6c7893b08811056051f8322ff371ea72b8b9ce181d9e1108a0b2b7b9"
     },
     {
       "id": "transport.dialogue.5.reply.1.follow.audio",
@@ -300,10 +300,10 @@
       "text": "Then the aisle will stay clear.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "fd804bf4e65e538e6385b8efe9c2ec1cfa0a8415261b2ad170c9aca6d01ffbb6"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "1e4b327ebeebaf1b37886f66b441678e96f26a4fae4070dc7fee42861411c558"
     },
     {
       "id": "transport.dialogue.5.reply.2.audio",
@@ -311,10 +311,10 @@
       "text": "Help me move it, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "81dfaed7499268b3336c6d4dc7a18093df4c79b0c72d17fd9f5d268efd0ae7c1"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "5a85b5803cc10591dcf11f4e70edec0bf3c46877ed78f65c1f44d3f11ce6cc01"
     },
     {
       "id": "transport.dialogue.5.reply.2.follow.audio",
@@ -322,10 +322,10 @@
       "text": "We can move it together.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "9e45492b3be272c3050217ca2b5e95c0abeff4c79bc71add2d45aa2c12e10641"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "95608de26c18ad75ceddf46396587abe44963f16a8ebf6023c8f5a59af577f78"
     },
     {
       "id": "transport.dialogue.6.question.audio",
@@ -333,10 +333,10 @@
       "text": "The bus has stopped. Shall we leave?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "36293718d0b313622a344576397b860f90f3a9126fb15b534f18223f540885ba"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2c00ec3441e70f9fc99c5d8dff9d071f506dee39fbdac74d35f7f5a73851de6b"
     },
     {
       "id": "transport.dialogue.6.reply.1.audio",
@@ -344,10 +344,10 @@
       "text": "Yes, with our grown-up.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "af27427b217ae81993b63d7c8d6831fc902ccff767ee5064f080d8bc082bbed0"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "e2770c8b1e35b2eb103b356e4da61fc807eeb5f790dded6f42cc3db1dea1db9c"
     },
     {
       "id": "transport.dialogue.6.reply.1.follow.audio",
@@ -355,10 +355,10 @@
       "text": "Take your bag and ticket with you.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "b7d21b4f288f59729375bf7d06b8859e5e2dc66db1b6d8028ec0c7bc29028ceb"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "57a71b4b6e3ecc5cdf07c8d7fb5ded8cae38285981633a1b4f8ad31a3bf0f2c8"
     },
     {
       "id": "transport.dialogue.6.reply.2.audio",
@@ -366,10 +366,10 @@
       "text": "Please wait for me.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "fda5207268992d6a9fd6b20425101c6027178712581d655260bb282b8f0aeadd"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "536280aaea89581b51059e3fea0c0dc641116a8cc5bdb2aae77a05625cca905c"
     },
     {
       "id": "transport.dialogue.6.reply.2.follow.audio",
@@ -377,10 +377,10 @@
       "text": "We will stay together.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "d914ec0d99bf06b76cdd32d0fe491bdb73070f865d5abad3d16857bbb4794282"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2fa2c0f2f6e5d9fdb9ca99a2029c24d4da86a3c4544217b6aa5b27ccbb1a7fbd"
     },
     {
       "id": "transport.story.1.intro.audio",
@@ -388,10 +388,10 @@
       "text": "Momo and Lulu arrive at the bus stop.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "cf1cce4458484b12786a5a95c578481f7820d9f752e90a9fe2afce4be1fb04aa"
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "3e7ea6d9ada78581a04b50e43928f7f59c70ef7a7fb195779f69a217898df8b3"
     },
     {
       "id": "transport.story.1.item.audio",
@@ -399,10 +399,10 @@
       "text": "Is our bus here yet?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "bd8cd79f31c2b4dc83fadb29cf78ddfe46d12e56a3845d44dfaf752787e22c6e"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2f5b265bfa5c63fae6b9730c967eda90944dc71f37e521e7cd3c31f8d2bd60ba"
     },
     {
       "id": "transport.story.1.reply.audio",
@@ -410,175 +410,10 @@
       "text": "Not yet. Let us wait together.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "4205857b9ff22fa331360db653d44bb4fb768966ac6b7b7ca5aaa413b940ade5"
-    },
-    {
-      "id": "transport.story.2.intro.audio",
-      "path": "audio/transport/v0-1-0/transport.story.2.intro.audio.wav",
-      "text": "Momo looks inside the bag.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "de4455ba442b9376d981ee5c1be96b6c4e3d3905ee54324b137ed9ab139db345"
-    },
-    {
-      "id": "transport.story.2.item.audio",
-      "path": "audio/transport/v0-1-0/transport.story.2.item.audio.wav",
-      "text": "I cannot find my ticket.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "7e5d682159bdd46b97224bb1a45ce404ce8c4e17f0c9bb41d4086a23d7d9763d"
-    },
-    {
-      "id": "transport.story.2.reply.audio",
-      "path": "audio/transport/v0-1-0/transport.story.2.reply.audio.wav",
-      "text": "Check the small pocket. Take your time.",
-      "language": "en-US",
-      "role": "turtle",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -3,
-      "volume": 90,
-      "sha256": "39b90c1f019424760163f6917404d0a623cf097721ccef97e9f738e3baddf0ce"
-    },
-    {
-      "id": "transport.story.3.intro.audio",
-      "path": "audio/transport/v0-1-0/transport.story.3.intro.audio.wav",
-      "text": "The bus arrives at the stop.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c9ebeb191c530193fe0ccfe3c2b16ee17dbfa0787df6687fb4505fd7a28ca004"
-    },
-    {
-      "id": "transport.story.3.item.audio",
-      "path": "audio/transport/v0-1-0/transport.story.3.item.audio.wav",
-      "text": "Our bus is here! Let us go!",
-      "language": "en-US",
-      "role": "fox",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": 0,
-      "volume": 90,
-      "sha256": "20aa2eee59b9a44b0c325d955b848599f4e5944a0a40c5b80fed4f51177c8fb7"
-    },
-    {
-      "id": "transport.story.3.reply.audio",
-      "path": "audio/transport/v0-1-0/transport.story.3.reply.audio.wav",
-      "text": "Wait. We need our bag too.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "25f7158c92bfa5ce1db673f4c084a8363f32409b6d6b2962249c28ee91a81d49"
-    },
-    {
-      "id": "transport.story.4.intro.audio",
-      "path": "audio/transport/v0-1-0/transport.story.4.intro.audio.wav",
-      "text": "The friends step onto the bus with their grown-up.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "5fcd7dc66eb8c7aa18389fe7dfe9d7562768178f1ea601c678c1a26659ec68b6"
-    },
-    {
-      "id": "transport.story.4.item.audio",
-      "path": "audio/transport/v0-1-0/transport.story.4.item.audio.wav",
-      "text": "Is this seat free?",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "238b7037c86dad86ab92f93af7a3127bf395b43f2075286c58d4d66e15d164ce"
-    },
-    {
-      "id": "transport.story.4.reply.audio",
-      "path": "audio/transport/v0-1-0/transport.story.4.reply.audio.wav",
-      "text": "Yes. Let us sit beside each other.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "cf4aea66999db9d79fcded61d37a07edc41e0339ce71bea583766df0f472b4f7"
-    },
-    {
-      "id": "transport.story.5.intro.audio",
-      "path": "audio/transport/v0-1-0/transport.story.5.intro.audio.wav",
-      "text": "A bag is in the aisle.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "8b88ee14b5e3d8abb5709eae5f21986f305ebd4cf01a81b4cf318e335dc4bc9d"
-    },
-    {
-      "id": "transport.story.5.item.audio",
-      "path": "audio/transport/v0-1-0/transport.story.5.item.audio.wav",
-      "text": "Where can I put my bag?",
-      "language": "en-US",
-      "role": "fox",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": 0,
-      "volume": 90,
-      "sha256": "6942dd204ed0ac25791339366c8a686ed3cc09adee79f0d4b229113ad9def22c"
-    },
-    {
-      "id": "transport.story.5.reply.audio",
-      "path": "audio/transport/v0-1-0/transport.story.5.reply.audio.wav",
-      "text": "Keep it beside your feet. Leave the aisle clear.",
-      "language": "en-US",
-      "role": "turtle",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -3,
-      "volume": 90,
-      "sha256": "3cd39b4e63ef8515bf424c9e800ecad695fd0c0222d6cbdef1363d053921929a"
-    },
-    {
-      "id": "transport.story.6.intro.audio",
-      "path": "audio/transport/v0-1-0/transport.story.6.intro.audio.wav",
-      "text": "The bus stops at their destination.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "49dea5435dfdb62c7c57f47d89a6b2a71a73ada44ede62ed7f914feb2f965519"
-    },
-    {
-      "id": "transport.story.6.item.audio",
-      "path": "audio/transport/v0-1-0/transport.story.6.item.audio.wav",
-      "text": "Our stop! Bag and ticket ready?",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "4509c3c26e7b86ce5b035cd7f7b134be449bd095f6937ce598d7d415b514341d"
-    },
-    {
-      "id": "transport.story.6.reply.audio",
-      "path": "audio/transport/v0-1-0/transport.story.6.reply.audio.wav",
-      "text": "Ready. Let us leave with our grown-up.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "fb9cae242d29c538844cf44e9b497e37432ceeb2880e8e9a327858fe68b2bb16"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "260165d99186aa5be78349c49adaad2410670e45ab181daa6cea81a7edc2ebcb"
     },
     {
       "id": "transport.story.1.more1.audio",
@@ -586,11 +421,10 @@
       "text": "How long do we wait?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "02ff11c0aa4fbf03cfb4a5945b12b0368a513930513015f4002601e9bcb533f3",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "72b672ce516622fb3d03e93c24d935ea2a7cc270b76c4e3c4185fdd3485e3f70"
     },
     {
       "id": "transport.story.1.more2.audio",
@@ -598,11 +432,43 @@
       "text": "Not long. Look down the road.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "c1de0d76038a5e8a8c0ac99c5302ec679b80eab6f99bae8ae8dd8f57405d34a1",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "b45bfd5158761aca99f28ce8f632ee1f152d1256a3c0b61e3264014a4d8efb02"
+    },
+    {
+      "id": "transport.story.2.intro.audio",
+      "path": "audio/transport/v0-1-0/transport.story.2.intro.audio.wav",
+      "text": "Momo looks inside the bag.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "aa6ef33dab925357faa17172ce921313cddf8232f32c2da4aba9575f40ec5e9e"
+    },
+    {
+      "id": "transport.story.2.item.audio",
+      "path": "audio/transport/v0-1-0/transport.story.2.item.audio.wav",
+      "text": "I cannot find my ticket.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "6170c3a93d216488b15ade06dfd51350c9504cd254dbf1e1fe9e9f4965a791f3"
+    },
+    {
+      "id": "transport.story.2.reply.audio",
+      "path": "audio/transport/v0-1-0/transport.story.2.reply.audio.wav",
+      "text": "Check the small pocket. Take your time.",
+      "language": "en-US",
+      "role": "turtle",
+      "voice": "Kokoro bm_george",
+      "rate": 0.85,
+      "volume": 100,
+      "sha256": "c5caef3dd553d073ba70942e0930290337991351eecaf21f922300ab44e0cb91"
     },
     {
       "id": "transport.story.2.more1.audio",
@@ -610,11 +476,43 @@
       "text": "Here it is! Thank you, Toto.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "27401f99437a6f4df52aabe3d6276f17c7e79963a5ed26b291cfa445b748690a",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "20f6456db8f87af71359a6c1ebfaec8c70db63ec419abae66a48610f9afe2797"
+    },
+    {
+      "id": "transport.story.3.intro.audio",
+      "path": "audio/transport/v0-1-0/transport.story.3.intro.audio.wav",
+      "text": "The bus arrives at the stop.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "e75ba57cedca0824d981da32d0dfb72d7aa198d26c6097487cbbbdae5787ef01"
+    },
+    {
+      "id": "transport.story.3.item.audio",
+      "path": "audio/transport/v0-1-0/transport.story.3.item.audio.wav",
+      "text": "Our bus is here! Let us go!",
+      "language": "en-US",
+      "role": "fox",
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
+      "volume": 100,
+      "sha256": "a1222cb73817e7420bf2d3bef2a5a805c55f3b6fb6aa85a2fef50fc7168833fa"
+    },
+    {
+      "id": "transport.story.3.reply.audio",
+      "path": "audio/transport/v0-1-0/transport.story.3.reply.audio.wav",
+      "text": "Wait. We need our bag too.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "ea59569f8f8e1e3461714cb5e8f5116e7822b0a595d77edc5ad3457a96d0467e"
     },
     {
       "id": "transport.story.3.more1.audio",
@@ -622,11 +520,43 @@
       "text": "Oh yes. Here is our bag.",
       "language": "en-US",
       "role": "fox",
-      "voice": "Samantha (macOS say)",
-      "rate": 175,
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
       "volume": 100,
-      "sha256": "a56a8c6bc1a9580aa3a5a8271ec1fd5014e3ca73ade6a835be6084767be9d4fa",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "4b52cee19b68af2172e48505cacfdcb166a85d62f9d4dcc3fbaa882bc201fdd7"
+    },
+    {
+      "id": "transport.story.4.intro.audio",
+      "path": "audio/transport/v0-1-0/transport.story.4.intro.audio.wav",
+      "text": "The friends step onto the bus with their grown-up.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "7ab889be56236acad66c1fa8da78492d74238c4b147946ff6f4a31d2b72d0798"
+    },
+    {
+      "id": "transport.story.4.item.audio",
+      "path": "audio/transport/v0-1-0/transport.story.4.item.audio.wav",
+      "text": "Is this seat free?",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "1405958ec208253ba5b87285caad147e88a630f21e0898eb1e44eb92e151dc0b"
+    },
+    {
+      "id": "transport.story.4.reply.audio",
+      "path": "audio/transport/v0-1-0/transport.story.4.reply.audio.wav",
+      "text": "Yes. Let us sit beside each other.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "0f98d9f88bd0e39834d6c7c4552138c4e433156f9b569bd0c58ce46f8cebe1cc"
     },
     {
       "id": "transport.story.4.more1.audio",
@@ -634,11 +564,10 @@
       "text": "I can see out of the window.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "b61ba2f528db1c547a86041f5695dd4f6370d92be6c6fe993c878e9b3a1fe1cb",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "e7a8449cde82aa13f0fa622c66c8286a971e9275b060433ff3de573cc500a925"
     },
     {
       "id": "transport.story.4.more2.audio",
@@ -646,11 +575,43 @@
       "text": "Look! A big tree.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "ac4a1d56623434f1bc4014df7f4f7accb8454319dc89abca0132b7d5d6fb1098",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "10b8fb6cd2054a246a7ac484d055c5c6d808e4b6c1d2cf8591954afbdb90c74f"
+    },
+    {
+      "id": "transport.story.5.intro.audio",
+      "path": "audio/transport/v0-1-0/transport.story.5.intro.audio.wav",
+      "text": "A bag is in the aisle.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "af9e3b957de69869073fd9a052c44a8889cfd84a96af2257d533cdcb627cd738"
+    },
+    {
+      "id": "transport.story.5.item.audio",
+      "path": "audio/transport/v0-1-0/transport.story.5.item.audio.wav",
+      "text": "Where can I put my bag?",
+      "language": "en-US",
+      "role": "fox",
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
+      "volume": 100,
+      "sha256": "040097fc9d8d2855b7abf58f53a4f72811e14a2aea1e7d8aa5bfe804dc3adb6c"
+    },
+    {
+      "id": "transport.story.5.reply.audio",
+      "path": "audio/transport/v0-1-0/transport.story.5.reply.audio.wav",
+      "text": "Keep it beside your feet. Leave the aisle clear.",
+      "language": "en-US",
+      "role": "turtle",
+      "voice": "Kokoro bm_george",
+      "rate": 0.85,
+      "volume": 100,
+      "sha256": "17e7f7259071ea68d6f5eef52d94edd01097ce093ae1ecff7fd72fa57793fb22"
     },
     {
       "id": "transport.story.5.more1.audio",
@@ -658,11 +619,43 @@
       "text": "Okay. Now people can walk by.",
       "language": "en-US",
       "role": "fox",
-      "voice": "Samantha (macOS say)",
-      "rate": 175,
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
       "volume": 100,
-      "sha256": "5209fcc57a167bbf00734533479e3aa3043f4fde3b1abb0217b87bd8d7098889",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "85b1d65efc641865d956d2afa39148fabd510341960330246065853b8e8f0fae"
+    },
+    {
+      "id": "transport.story.6.intro.audio",
+      "path": "audio/transport/v0-1-0/transport.story.6.intro.audio.wav",
+      "text": "The bus stops at their destination.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "b0c9ced75f2ceb6a053dfb0d2d25fb1227252f3aeda887cc6c669077a31400c8"
+    },
+    {
+      "id": "transport.story.6.item.audio",
+      "path": "audio/transport/v0-1-0/transport.story.6.item.audio.wav",
+      "text": "Our stop! Bag and ticket ready?",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "a2356f7f5a6b5fa23a78cbe6b4fdf6e7c5617452625ba89e8544df18805c5785"
+    },
+    {
+      "id": "transport.story.6.reply.audio",
+      "path": "audio/transport/v0-1-0/transport.story.6.reply.audio.wav",
+      "text": "Ready. Let us leave with our grown-up.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "168a26f1fc010abb63b236d795c9f254519d9c6d553981395f790486acaf34b4"
     },
     {
       "id": "transport.story.6.more1.audio",
@@ -670,11 +663,10 @@
       "text": "Thank you, bus driver!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "da9813c638d2449dc4caed8dc92800c79713037917e4185398b6c8158f2ae45e",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "868af440f4cbf36abba5c24ace623f3eea7978758a9aa9913f06a0850218b401"
     },
     {
       "id": "transport.lesson.bridge.audio",
@@ -682,11 +674,10 @@
       "text": "The sun is out. Let us take the bus!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "5a29df065d967b2424d4b9870ee0c8135d5375decbb7f4bf1e14854095ec3735",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "a07dc936e0a863fe621714b252f9d1a68de461fcdcf068182fb6817968033981"
     }
   ]
 }

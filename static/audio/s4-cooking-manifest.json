@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "sceneId": "cooking",
   "contentVersion": "0.1.0",
-  "generatedAt": "2026-11-02T22:30:58.1587262Z",
-  "source": "Windows SAPI offline synthesis",
+  "generatedAt": "2026-11-12T07:19:45.491019+00:00",
+  "source": "Kokoro offline speech synthesis (kokoro-onnx, kokoro-v1.0 int8)",
   "purpose": "S4 local synthesis; listening and rights review pending",
   "rightsStatus": "pending review",
   "reviewed": false,
@@ -14,10 +14,10 @@
       "text": "bowl",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "ec08d1697d6d8dd061d417cee2b4156ff12d5169f17e81f17a9c78396ff2cc0f"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "b23209db6d01b5a453c265c88a5401c57de8649009ff9b15453c9ea1c7cbcb27"
     },
     {
       "id": "cooking.tomato.audio",
@@ -25,10 +25,10 @@
       "text": "tomato",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "ccdb45e42e72cea24cf0d4de8ebddd4b1069971ccdc1a92ead6080375a3f55b1"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "27685ffa91a5d07d78391f7337e22230e0cd588cb7d382f1e83e5ee1b3ab9e38"
     },
     {
       "id": "cooking.spoon.audio",
@@ -36,10 +36,10 @@
       "text": "spoon",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "8e71e52710c9b56db9ebfb4149968a18af90f1bc910197a2d2a1b3c841305a29"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "8ee2202e18d802a08347d8a03642b7dfd30819fa46be51a75061716aa2e4a48a"
     },
     {
       "id": "cooking.bread.audio",
@@ -47,10 +47,10 @@
       "text": "bread",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "72156f2618976f8165f046a3d25ccc5ac718b2a012cfec62991783aeb4032d47"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "327f2f5d483788f173a36b0a8ae8eedfd9c64cb81d5b377fbc78115b5c18dcac"
     },
     {
       "id": "cooking.dialogue.1.question.audio",
@@ -58,10 +58,10 @@
       "text": "What shall we make for our friends?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "82bcd5aa208d6e2ec761583f8d20581ff7138463794c59e2b4dd6e11a17a02f1"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "3c46fed600806d9e160a20a4b4d0df3266ff8cdd67038d401abe0f01335720e7"
     },
     {
       "id": "cooking.dialogue.1.reply.1.audio",
@@ -69,10 +69,10 @@
       "text": "A snack to share!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "41e739c9502507d11cfa2fa70f6362e8ad56dcc8415b43d8cc597fae3c21fa3d"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "d67c821260a7b1cec00b0e76f5c0740a2ee4cb64d986031de457bb8be23eb244"
     },
     {
       "id": "cooking.dialogue.1.reply.1.follow.audio",
@@ -80,10 +80,10 @@
       "text": "Let us find a bowl first.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1ab695bb477aa26a7d9f4dc93ba02d302efa5db0342d9a66f48e80b4db4b3601"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "f6973c83ff72e57652f534cf1efd6d715b2910a093125da1bd0f7364835ecc1b"
     },
     {
       "id": "cooking.dialogue.1.reply.2.audio",
@@ -91,10 +91,10 @@
       "text": "Please help me choose.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "441ee6e1431c2b05855638af68d562d9d87a1ca3e36082594f6cfdcc81de5dfc"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "b3a6b1229f41957977e62c50470b38fe0901985a86a62288e14df36c1ac08d7b"
     },
     {
       "id": "cooking.dialogue.1.reply.2.follow.audio",
@@ -102,10 +102,10 @@
       "text": "We can look at the ingredients together.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "7cb46aaf4b7a0f35af851ebd1d01d39d3f719aa43c3117aa91de463c6e170224"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "5b26eef5ed3bf68de62a11acd726fc7f71cca77e9b818370d936d7c2df2a84a7"
     },
     {
       "id": "cooking.dialogue.2.question.audio",
@@ -113,10 +113,10 @@
       "text": "Where can we put the tomato?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "194580250f9f9c24055f95aa852746aeda0564de7aece4e051193e77c90d3840"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "b791233e946ff2a4a6d334bc9abeb5a1f80f950dab5c80db2691f0ab88ae1817"
     },
     {
       "id": "cooking.dialogue.2.reply.1.audio",
@@ -124,10 +124,10 @@
       "text": "In the bowl.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "3d7289e1dbfbf5bb189a73cc87e212eff263e664757d7b6bb32fed78af0ad54d"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "e460ee17af7e1445ddbcebc6f5e29e26282af8bce556f4287d1b1faf1b791eba"
     },
     {
       "id": "cooking.dialogue.2.reply.1.follow.audio",
@@ -135,10 +135,10 @@
       "text": "Yes. Put it in gently.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "edd660f025cd524c2b4435de226f74550280bb5e6b924c4067ab0dc19263cfc6"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "65f5b8fda63926b02e259120d9117cf1cb8cdbcee6a378fa6def3ce9425343e5"
     },
     {
       "id": "cooking.dialogue.2.reply.2.audio",
@@ -146,10 +146,10 @@
       "text": "Please hold it for me.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "08b327e709d3a61feca747b0ec5e10bbe32c7d7c5cb9e39856dc59d8a15e90b3"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "9547e87254df7a0e7860083d85133c740363708e8045e174098a0425daeee2ba"
     },
     {
       "id": "cooking.dialogue.2.reply.2.follow.audio",
@@ -157,10 +157,10 @@
       "text": "I will hold the bowl while you put it in.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "a50dd42a386b9a044febf6e85efa11688646fa07c9271b89cf1e75e75f643695"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d6a04cb8ec90835117311cfba3cd0fedb434fbde7827eb69d19f02a100cccebb"
     },
     {
       "id": "cooking.dialogue.3.question.audio",
@@ -168,10 +168,10 @@
       "text": "What can we use for mixing?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c58ef045a8922e11a188429ca40e1a80a15a7b4dca14868fcee2514a89992731"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "caa1adaa237871fe58cab55c0361b11bd8ca5a61362db40d62bce55e29bac213"
     },
     {
       "id": "cooking.dialogue.3.reply.1.audio",
@@ -179,10 +179,10 @@
       "text": "The spoon, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "1c9acea8139b5c4c5ac873fdefbbecd3a67a1568e29914fa944c721a37694a34"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "cc400ef4852fd28f0b900388e86f1f0ba7ff3e99d5994cbd0f74120fa4672262"
     },
     {
       "id": "cooking.dialogue.3.reply.1.follow.audio",
@@ -190,10 +190,10 @@
       "text": "Here it is. Try a slow circle.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "f6701df3b6e6cdab1268f6efd5a36d35a22112a158903bf506a33365009cdc43"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "f4db971910ecc1cf57522591b7f35cd2dbd8beefc86c0dfad572c5163691c740"
     },
     {
       "id": "cooking.dialogue.3.reply.2.audio",
@@ -201,10 +201,10 @@
       "text": "Show me, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "96f5d9bedbdf2da949d481e5d552bc23b341124fbfbe7ae4149bb771cf71d261"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "385768c46f0c82ea75f1cf6b483492bca6363ef0c35a3256a6aa62baca77ddbe"
     },
     {
       "id": "cooking.dialogue.3.reply.2.follow.audio",
@@ -212,10 +212,10 @@
       "text": "I can stir slowly while you hold the bowl.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "91f4cfc77be8b0e92967c03f9a77b4e0d190a5abf102a292f6b6188fb9452ae4"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "03e2c5f0341cdaf53220279328fd4e7e7b34da775109a7575b606ebc8fd088e5"
     },
     {
       "id": "cooking.dialogue.4.question.audio",
@@ -223,10 +223,10 @@
       "text": "Shall we share the bread?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "ddc8507c90dcb3d5a18d4436eb411f09d2f733fb210fd9a18e1192afe8efd5ae"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "9f577cc1d2b0fb3492a791161040e062ac7c8a57d94f1047d50b439e046b2425"
     },
     {
       "id": "cooking.dialogue.4.reply.1.audio",
@@ -234,10 +234,10 @@
       "text": "One piece for each friend.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "a0415ae5dd167d7755e9a0555c654ca8c72180814614e4458c6d3cba1c3e4372"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "0437515e14dfb0c8bf42b636ad494ff743bd1b6c45210ec905637e5211fa92c8"
     },
     {
       "id": "cooking.dialogue.4.reply.1.follow.audio",
@@ -245,10 +245,10 @@
       "text": "Let us make sure everyone has some.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "fe977b6bb497db499d0237199ff90d9018d01b10dd9da7fe2bf07267e97a239c"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "7a890703007481d872ce634be98aa8d1492b9bdde13b733be4e36e0816e46c00"
     },
     {
       "id": "cooking.dialogue.4.reply.2.audio",
@@ -256,10 +256,10 @@
       "text": "I will help you share.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "89d497a5e223b9c69f6d84a432895617820ebfc700e53cdf7390ceb18d166090"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "c68a82f80156f1602b1a0546516fd52b9720f8ad35377ac7f3a0c9130cb3283d"
     },
     {
       "id": "cooking.dialogue.4.reply.2.follow.audio",
@@ -267,10 +267,10 @@
       "text": "Thank you. We can do it together.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1d20003cdb88bf8f5cd7b3887bba89a523e6d4d7f33076f374f970227b9b1962"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "1919ff46eb62a2fe4d2147f513247effe9d7cd229a874a31a05ca28f316b2548"
     },
     {
       "id": "cooking.dialogue.5.question.audio",
@@ -278,10 +278,10 @@
       "text": "The food almost spilled. What can we do?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1069e6161ec8ccf57db79b7090b447700aed46291bd8be24d61cb8471b97c601"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "6c8a9a1c305159f228f2c6136c33756cd1d4ed91f7595def7552eec0401f3122"
     },
     {
       "id": "cooking.dialogue.5.reply.1.audio",
@@ -289,10 +289,10 @@
       "text": "Mix more slowly.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "7689c3675cf45292c5408147cee2662be21fdae98d4a289f7e2ed1acc9c9d618"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "f2d70521391edcf5a45b7d5b6bf96588fa5b509764d34622051f7a735c66eb8e"
     },
     {
       "id": "cooking.dialogue.5.reply.1.follow.audio",
@@ -300,10 +300,10 @@
       "text": "Yes. I can help hold the bowl.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "803869cd17405d28d2f2f19c8f7464feba3c8fef6218be1e5cb7f385f8fbf159"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "fa2dae8728b4fca4ad89de8eef3340c8dd7afef256937004e8aa00fad5055bfb"
     },
     {
       "id": "cooking.dialogue.5.reply.2.audio",
@@ -311,10 +311,10 @@
       "text": "Please hold the bowl.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "8d968613c429fbb3d6cbbdd16ae28ef77806579defde8c9bd382134cde118dc3"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "175c830140080ee9e7decb58a84a94aa51a6347b7dafd6abbaf0f4f983d69526"
     },
     {
       "id": "cooking.dialogue.5.reply.2.follow.audio",
@@ -322,10 +322,10 @@
       "text": "I will hold it steady for you.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "89df470902c9b75f49a7df4c84f9a7b7ebe9039663b65d2136e60b5e02eea3f7"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "4f836b2ab570ceb6f088dcb792baf94d0b17340a78fa05cea96f30bab61a9e60"
     },
     {
       "id": "cooking.dialogue.6.question.audio",
@@ -333,10 +333,10 @@
       "text": "Our snack is ready. Would you like some?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "34354b8d8be398953a25b72404e1d77b21890667b991f09be481ba65f0595fd9"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "153e50f4a85b21eec4d5e2bf07db7c5d33e26efff735d6442c2e5bfc74f2b623"
     },
     {
       "id": "cooking.dialogue.6.reply.1.audio",
@@ -344,10 +344,10 @@
       "text": "Yes, please!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "b5bca9727f8c5b7cd34349db169c3a2126d62569a14b6dc16abf648f05bf82e3"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "1910f85473c13a72110f1d9221be5410a55dfa9ff14a3440c9d4e39f7c52f6a0"
     },
     {
       "id": "cooking.dialogue.6.reply.1.follow.audio",
@@ -355,10 +355,10 @@
       "text": "Here is a little for you.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "41a2e7bdbc3c84a893bec0477a7445f3569c5ad12517a23f90105d24543b67a8"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "efefa0cbe75a69feb9c7a8941f31a982d76b37dbf06a6d6409d587ed654aa6e6"
     },
     {
       "id": "cooking.dialogue.6.reply.2.audio",
@@ -366,10 +366,10 @@
       "text": "Not now, thank you.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "04bfbf98990df4609e203176d3525c0d9d64fa659951e150d75458697f48e7b8"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "e9494ac41040fa9c5829f7cb1cc655b190c233fad3b0f412cd69b03bbb581fed"
     },
     {
       "id": "cooking.dialogue.6.reply.2.follow.audio",
@@ -377,10 +377,10 @@
       "text": "That is okay. You can join us later.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "6302045867019edc2159ad95ea3e209d54a16657bcb8b48591a36c8ae76c740c"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "838ccb4a24dcd3ff9e5dcfe600b9cda63fd6d40e87c1c19e24e2f772f9132117"
     },
     {
       "id": "cooking.story.1.intro.audio",
@@ -388,10 +388,10 @@
       "text": "Momo and Lulu are making a snack.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "71625ed8ad9706bf585556d8294807392d051b01cbc1b76ed24f51c0d0f0c1d4"
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "0a457e232f85144f7e7cf94fa8386aa94297918384fc1402d7b6fd695c364e43"
     },
     {
       "id": "cooking.story.1.item.audio",
@@ -399,10 +399,10 @@
       "text": "Can we make something to share?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "8130f5962ffcaa6922abc14890f0e5bd9778c0e69c05628203cb89bb53ec7a2d"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "6bff36a9afb9e138b0011c162b62cee000ff6b7b8711b816da31197a40a37781"
     },
     {
       "id": "cooking.story.1.reply.audio",
@@ -410,175 +410,10 @@
       "text": "Yes! Let us find a bowl.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "4baa5d1cc19377cf7948582c85027db92a3bc8c43ef32980f302d78f69e317b9"
-    },
-    {
-      "id": "cooking.story.2.intro.audio",
-      "path": "audio/cooking/v0-1-0/cooking.story.2.intro.audio.wav",
-      "text": "A tomato rolls across the table.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "7a3abd8d25b899295f31412f87478a95f5b91851a25ddfb63586fa193f42939a"
-    },
-    {
-      "id": "cooking.story.2.item.audio",
-      "path": "audio/cooking/v0-1-0/cooking.story.2.item.audio.wav",
-      "text": "Our tomato is rolling away!",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "e5f981dce8d1058980b84bd7778ffafaca570a16b7cabe6e55f18f5eea812801"
-    },
-    {
-      "id": "cooking.story.2.reply.audio",
-      "path": "audio/cooking/v0-1-0/cooking.story.2.reply.audio.wav",
-      "text": "I have it! Let us put it in the bowl.",
-      "language": "en-US",
-      "role": "fox",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": 0,
-      "volume": 90,
-      "sha256": "10a0035093c6782f7688f6059cf932f401c157191bf074883ecf9f6e4de91571"
-    },
-    {
-      "id": "cooking.story.3.intro.audio",
-      "path": "audio/cooking/v0-1-0/cooking.story.3.intro.audio.wav",
-      "text": "The spoon is under a cloth.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "2bbca7eb8fb1a1c4cc1f58c02e29fbeaa7d5be7cb8ffd1a53cf895c99c128ad2"
-    },
-    {
-      "id": "cooking.story.3.item.audio",
-      "path": "audio/cooking/v0-1-0/cooking.story.3.item.audio.wav",
-      "text": "We need a spoon for mixing.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "a4594ec162aac71d748a0c32036821cfe35e8dcd5d1884cd772cf344d81dbc4a"
-    },
-    {
-      "id": "cooking.story.3.reply.audio",
-      "path": "audio/cooking/v0-1-0/cooking.story.3.reply.audio.wav",
-      "text": "Lift the cloth. Here it is.",
-      "language": "en-US",
-      "role": "turtle",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -3,
-      "volume": 90,
-      "sha256": "61d824534d6b6eb178b6de209321a474026ee56f69a11937be0027891f47af80"
-    },
-    {
-      "id": "cooking.story.4.intro.audio",
-      "path": "audio/cooking/v0-1-0/cooking.story.4.intro.audio.wav",
-      "text": "There is bread on the plate.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "2397276c0c13020269fc42e58e1bac2f1d7fec1652d768328e2fc1560d925d6c"
-    },
-    {
-      "id": "cooking.story.4.item.audio",
-      "path": "audio/cooking/v0-1-0/cooking.story.4.item.audio.wav",
-      "text": "One piece for me and one for you.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "02c35229509f4e298da8b1fef443294bc74788087fb785dddfdd80f2e58f99a9"
-    },
-    {
-      "id": "cooking.story.4.reply.audio",
-      "path": "audio/cooking/v0-1-0/cooking.story.4.reply.audio.wav",
-      "text": "And one for Lulu and Toto!",
-      "language": "en-US",
-      "role": "fox",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": 0,
-      "volume": 90,
-      "sha256": "7eda090242c73a548f07b757020e40cb7fbe5240a4372d7ce4bf975411199d68"
-    },
-    {
-      "id": "cooking.story.5.intro.audio",
-      "path": "audio/cooking/v0-1-0/cooking.story.5.intro.audio.wav",
-      "text": "Fifi stirs too quickly.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "7dd201be1f85ea2bd38c8cb56fa5662992c3a07326fc9353d1e3c0bd331215a6"
-    },
-    {
-      "id": "cooking.story.5.item.audio",
-      "path": "audio/cooking/v0-1-0/cooking.story.5.item.audio.wav",
-      "text": "Oops! It almost fell out.",
-      "language": "en-US",
-      "role": "fox",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": 0,
-      "volume": 90,
-      "sha256": "b74bbed5e8a39f0e1b94902f981e247df7a2e7129c3588eee01a00439c4484fd"
-    },
-    {
-      "id": "cooking.story.5.reply.audio",
-      "path": "audio/cooking/v0-1-0/cooking.story.5.reply.audio.wav",
-      "text": "Try a slow circle. I will hold the bowl.",
-      "language": "en-US",
-      "role": "turtle",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -3,
-      "volume": 90,
-      "sha256": "4f5136537886eb38ac40efbd649e9e702753cc171856cd5e6e21aa3899b9c481"
-    },
-    {
-      "id": "cooking.story.6.intro.audio",
-      "path": "audio/cooking/v0-1-0/cooking.story.6.intro.audio.wav",
-      "text": "The bowl is ready on the table.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "a78c74b44e1dd1cdcc2308074d3bf66b35a5677b5f7fc5e2f7ccbb8e2854035d"
-    },
-    {
-      "id": "cooking.story.6.item.audio",
-      "path": "audio/cooking/v0-1-0/cooking.story.6.item.audio.wav",
-      "text": "We all helped. Would you like some?",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "958d59a7868886811651f2053283a2c89ca502d7de9223ee96b6873ab180ef87"
-    },
-    {
-      "id": "cooking.story.6.reply.audio",
-      "path": "audio/cooking/v0-1-0/cooking.story.6.reply.audio.wav",
-      "text": "Yes, please. Let us share!",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "8cfe5cee45f1968dbd4055a3f542c5691e902e3f81ba78bc8c56d22fc516f216"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "e3ae9e4d5f9259fe0311f821ac7f81c5bdc8fa92e51edec42dd1eaacab76eb17"
     },
     {
       "id": "cooking.story.1.more1.audio",
@@ -586,11 +421,10 @@
       "text": "Here is a big bowl.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "0f60ebc200e845e29f7d3e701d0bec837befedebb54a2c5d81ab32558a783d39",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "e2de8c4987475efd176dc55e9d7346fa0e5922d6fc67f5ece1b8aa1fb971dae3"
     },
     {
       "id": "cooking.story.1.more2.audio",
@@ -598,11 +432,43 @@
       "text": "Good. Now what shall we put in it?",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "a6d8f1c1673390c8f81a8eb2a40a30649ad62a98e034549f5e2d10e2bf24e713",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "2eb916406147600621722f0b2cb5723ea4db19e6ecd64a3b1c8f6c5a6598d7a3"
+    },
+    {
+      "id": "cooking.story.2.intro.audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.2.intro.audio.wav",
+      "text": "A tomato rolls across the table.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "98147b77e771d938b85069a8e0f89dc54e4ce843ed71aec194cc9f1589cb577c"
+    },
+    {
+      "id": "cooking.story.2.item.audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.2.item.audio.wav",
+      "text": "Our tomato is rolling away!",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "9536d36635bda406f3c2864287cabf20a5b1aaa526ef2e9914be2ba64b51b18a"
+    },
+    {
+      "id": "cooking.story.2.reply.audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.2.reply.audio.wav",
+      "text": "I have it! Let us put it in the bowl.",
+      "language": "en-US",
+      "role": "fox",
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
+      "volume": 100,
+      "sha256": "07669121062bf74ad1a3df65ee746cce8d1d29f56b04d1038266e7ed6783045d"
     },
     {
       "id": "cooking.story.2.more1.audio",
@@ -610,11 +476,43 @@
       "text": "Thank you, Fifi. That was quick!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "6331e1b0a37eab33d887e610dafc75b94528eb50975c8e836e59f39aec34f85e",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "782799ce227dd20d55526873b8bb6c89edf8d3e3a524b7ac7ce93c49f11db559"
+    },
+    {
+      "id": "cooking.story.3.intro.audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.3.intro.audio.wav",
+      "text": "The spoon is under a cloth.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "04512675cd222ac331cd061925c612e7d8f6a8f92a120246fa653bf5d989378c"
+    },
+    {
+      "id": "cooking.story.3.item.audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.3.item.audio.wav",
+      "text": "We need a spoon for mixing.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "d2f4bbc35ba9ef250bedbfc43b5dab4fa0fdd9d4f0360017b6506fcfe5ad24e6"
+    },
+    {
+      "id": "cooking.story.3.reply.audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.3.reply.audio.wav",
+      "text": "Lift the cloth. Here it is.",
+      "language": "en-US",
+      "role": "turtle",
+      "voice": "Kokoro bm_george",
+      "rate": 0.85,
+      "volume": 100,
+      "sha256": "e59c5299bd637cd65ec16be94a1afbad251c586451918e82f0bc0daae0ca024c"
     },
     {
       "id": "cooking.story.3.more1.audio",
@@ -622,11 +520,43 @@
       "text": "Thank you, Toto. Now we can mix.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "38ac76e160bc0c9c5e3edd50164b1bae1474d0aa10261ef0e95ecd54f5c904b2",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "c5d974b3953f4c18ccc949a718d156fd315889afd691a02c94335badc09f68b8"
+    },
+    {
+      "id": "cooking.story.4.intro.audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.4.intro.audio.wav",
+      "text": "There is bread on the plate.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "07b2897d81002a66f131141b4eaff19abc0dce870db649feaf68a0cc375f8e0e"
+    },
+    {
+      "id": "cooking.story.4.item.audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.4.item.audio.wav",
+      "text": "One piece for me and one for you.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "6d0240536ba980c3f3a8ea61e7dd9242567ad3f543cbab98dd25f91933169b2f"
+    },
+    {
+      "id": "cooking.story.4.reply.audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.4.reply.audio.wav",
+      "text": "And one for Lulu and Toto!",
+      "language": "en-US",
+      "role": "fox",
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
+      "volume": 100,
+      "sha256": "fa03447e58ce48e07f81fb494249347719d396222ab94b8476dbd5ec65431596"
     },
     {
       "id": "cooking.story.4.more1.audio",
@@ -634,11 +564,10 @@
       "text": "Oh yes. One for everyone!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "140a6c32d3070c0c873065adc195c1b346f7a84089843f2cbe4ba045b4af675c",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "8809fa2b5c3c524c59ee863af127dab323691d6fd0a8bec1bd787531c293c2e1"
     },
     {
       "id": "cooking.story.4.more2.audio",
@@ -646,11 +575,43 @@
       "text": "Now nobody is left out.",
       "language": "en-US",
       "role": "fox",
-      "voice": "Samantha (macOS say)",
-      "rate": 175,
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
       "volume": 100,
-      "sha256": "7c223330931ef183fc8b58520710eb540c8fe9698f523885259bcad3bffe18bb",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "05da4605a7b4c64da6cc0355f4e76796497b288135423005ea4568a44383058f"
+    },
+    {
+      "id": "cooking.story.5.intro.audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.5.intro.audio.wav",
+      "text": "Fifi stirs too quickly.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "614425b303a2f94a8b70733ed960f601ea32f84c2c577336c72d5a6a00bd095b"
+    },
+    {
+      "id": "cooking.story.5.item.audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.5.item.audio.wav",
+      "text": "Oops! It almost fell out.",
+      "language": "en-US",
+      "role": "fox",
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
+      "volume": 100,
+      "sha256": "1ebbf5db0fe96be889ca665db5d1d52c627d8a52e25f07b35da7e34569434b8b"
+    },
+    {
+      "id": "cooking.story.5.reply.audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.5.reply.audio.wav",
+      "text": "Try a slow circle. I will hold the bowl.",
+      "language": "en-US",
+      "role": "turtle",
+      "voice": "Kokoro bm_george",
+      "rate": 0.85,
+      "volume": 100,
+      "sha256": "ec56fabc63ad26216b6629ec61069b163bdfd1e59473b2f1ba440baaf97954fa"
     },
     {
       "id": "cooking.story.5.more1.audio",
@@ -658,11 +619,10 @@
       "text": "Slow and round. Like this?",
       "language": "en-US",
       "role": "fox",
-      "voice": "Samantha (macOS say)",
-      "rate": 175,
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
       "volume": 100,
-      "sha256": "0004d5181492453f0288de3187b2fd380ee4576bb98837775cc6744c7b40c787",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "141fa00c7db0d2673aea72e83f793c179c684137deeb3c425e038b5580cad177"
     },
     {
       "id": "cooking.story.5.more2.audio",
@@ -670,11 +630,43 @@
       "text": "Yes. That looks just right.",
       "language": "en-US",
       "role": "turtle",
-      "voice": "Samantha (macOS say)",
-      "rate": 135,
+      "voice": "Kokoro bm_george",
+      "rate": 0.85,
       "volume": 100,
-      "sha256": "ab7cbdf02c84a9c4180d0a799755cd339ab3d44195aebba2f757ce6f36003af1",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "b2f0b2e33d6f24badba4157edc79764e86eb95deb45816eca73328b7347bb28b"
+    },
+    {
+      "id": "cooking.story.6.intro.audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.6.intro.audio.wav",
+      "text": "The bowl is ready on the table.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "6b68a12e09c516c3b2e234cea9e5a171e7516702e01856a99741038497e9ff4d"
+    },
+    {
+      "id": "cooking.story.6.item.audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.6.item.audio.wav",
+      "text": "We all helped. Would you like some?",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "cf79d6f05b8a6dec332065c62adff2ee0d3f0b3ea43f94a65855f8421671df5e"
+    },
+    {
+      "id": "cooking.story.6.reply.audio",
+      "path": "audio/cooking/v0-1-0/cooking.story.6.reply.audio.wav",
+      "text": "Yes, please. Let us share!",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "4c0bb7a930208c6a5fe866d7a0653f3cde276d408483d2c0282907a7d3c05924"
     },
     {
       "id": "cooking.story.6.more1.audio",
@@ -682,11 +674,10 @@
       "text": "Here you are. I hope you like it.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "c53d1a7e4fd86b6ffe8ea5e417f981027fb7d777509e6c8d4d5519c0d59483a1",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "e53a6f5e7e56d034a0899143becf4cefa41ec56608d3889365113a889137fb97"
     },
     {
       "id": "cooking.game.1.label.bowl.audio",
@@ -694,11 +685,10 @@
       "text": "get the bowl",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "371ff30b542ac7c69266d504403e571fd7f4bb68d88841ca40604fca254cb839",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "ec133dc704da19aac518179ca7879a9a5a3bef7a3a22f57d7e4a89a98c01370a"
     },
     {
       "id": "cooking.game.1.label.tomato.audio",
@@ -706,11 +696,10 @@
       "text": "add the tomato",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "0c27536fa774b27cd5d8b63fe343879db31a55acda85bf601e09f50f75309e30",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "fb9e7701547fb9d680ad960a92feb5fa9dbd236f5fae22c7779fe09fd2b8d62b"
     },
     {
       "id": "cooking.game.1.label.spoon.audio",
@@ -718,11 +707,10 @@
       "text": "stir with the spoon",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "57762880fc723752ebb383ca6c169bc902ebaf6909097fd910cb08989c540a8b",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "087848d2c8a2a37e9950b00962993ae76e98c1f675ac7075f0ca096555873a8c"
     },
     {
       "id": "cooking.lesson.bridge.audio",
@@ -730,11 +718,10 @@
       "text": "The flowers have water. Now let us make a snack.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "b11d4efb0d43a4a230dde49ccc096cb5c049020062b20bac87d345e0e67a1b06",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "25c1e7b8d88ae5ad2099e1ac69cb491eeafb40398f4d5df7b993950a88e01cd7"
     }
   ]
 }

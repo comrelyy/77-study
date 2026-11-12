@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "sceneId": "weather",
   "contentVersion": "0.1.0",
-  "generatedAt": "2026-11-02T22:31:09.7145266Z",
-  "source": "Windows SAPI offline synthesis",
+  "generatedAt": "2026-11-12T07:18:40.924608+00:00",
+  "source": "Kokoro offline speech synthesis (kokoro-onnx, kokoro-v1.0 int8)",
   "purpose": "S4 local synthesis; listening and rights review pending",
   "rightsStatus": "pending review",
   "reviewed": false,
@@ -14,10 +14,10 @@
       "text": "sun",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "f5cc98b2f0d7b43a994efffb41bd654dd5c0c4403e5de585f0459581ca8e8e69"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "50f42ba722e77f23da590daac83d7d3644f37955f89356096ae2f9488b8a47d4"
     },
     {
       "id": "weather.cloud.audio",
@@ -25,10 +25,10 @@
       "text": "cloud",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "8b2ae9f3af26ee6199595da69846eb9a73a11d04a56f8e3e1e75f73fdeffc388"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "305d6208e3ec48d6de7da96206575748e482ae53e7a609a5d76093efe7df695b"
     },
     {
       "id": "weather.rain.audio",
@@ -36,10 +36,10 @@
       "text": "rain",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "58aeed87c95c019b26a35aa118447d11a010cf36dfd8c43af6fc6f785b26af6d"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "e2a9b6bfc7d0feea24328165b8164160004f163cbb5057f7effcf8a10ee6a7c2"
     },
     {
       "id": "weather.umbrella.audio",
@@ -47,10 +47,10 @@
       "text": "umbrella",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "ba6689f7af87d63adb9d1704802e7969c924e220d87dd6d03ba264e7a7af417c"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "e0323ffbc018e1f86b4c38443574f5a32d7656fb5897a172178b9a734b030126"
     },
     {
       "id": "weather.dialogue.1.question.audio",
@@ -58,10 +58,10 @@
       "text": "What can you see outside?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "9176c7664b4ad088481095823a8ac29ca748c822a7f5a8e311a77076236bfd59"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "aaf74d1cf1a8197a9adb9249c3fe0dc905a637c3745ecf5030134f2e4097c739"
     },
     {
       "id": "weather.dialogue.1.reply.1.audio",
@@ -69,10 +69,10 @@
       "text": "I can see the sun.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "663b3d69183c9323ee3d5c1519054bda623f0cc7b1e347677480b34a4a6e847e"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "734a45fd20fda5c01b3d919dee5f3f95897faaf6e6fc56361761db61390ec790"
     },
     {
       "id": "weather.dialogue.1.reply.1.follow.audio",
@@ -80,10 +80,10 @@
       "text": "Let us look at the rest of the sky.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "ccb554209d98a9edcd0057430636f32fad869f378383bbfd5562290256df0823"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "29f30e24ceeba62be052bfd038eecdcc569f15c835a59ff49f434f804e1ab1e4"
     },
     {
       "id": "weather.dialogue.1.reply.2.audio",
@@ -91,10 +91,10 @@
       "text": "A cloud is coming.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "9970cbf8564a16c254443c0c138fa479668cf57a634569e084c3166e7cd4b3b1"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "bc2ab86f1a116b815b40b3e38d0dce6829215da1bd68ac23e50d496fc6657536"
     },
     {
       "id": "weather.dialogue.1.reply.2.follow.audio",
@@ -102,10 +102,10 @@
       "text": "Watch how it moves.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "3e56648dcb7f17d1cf0b1daf9e7c7213a1b589d4aed8e04dce99ab385f2c12b5"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "7fc69215b0dc52b2efb43e4c868964e0f5fa658917fe6da2773f7eeb8959bb47"
     },
     {
       "id": "weather.dialogue.2.question.audio",
@@ -113,10 +113,10 @@
       "text": "What does that cloud look like?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1c3e27171b41711ce15ebb17953d0a32e63ef5fd66c5af87e041d48a81909861"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "908bc438c80dc0ee449599361e0e03af10fce58433b627160b0de0c341c2d602"
     },
     {
       "id": "weather.dialogue.2.reply.1.audio",
@@ -124,10 +124,10 @@
       "text": "A little boat!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "34470da5999e665eac7b1dcbf695a3418131770bd11219965b0dd004a0c37967"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "6abdf9bfba1633f86a7e62632f1fe0193825beabbb7bde55a48da59000e80e20"
     },
     {
       "id": "weather.dialogue.2.reply.1.follow.audio",
@@ -135,10 +135,10 @@
       "text": "I can imagine that too.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "16d944323df4fddbadb984c0968c03a2b90ea34473d87e4ad4e4ca2d151aeb2a"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "cbfaecdee2a5c3c6ec8563a4e21c79624b722112c88018e3893e2c12a90fc53f"
     },
     {
       "id": "weather.dialogue.2.reply.2.audio",
@@ -146,10 +146,10 @@
       "text": "A sleepy turtle!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "f4c9f81acd58e4441e7700b09fcfb09f9cc9fa0e518d290fb869907528519e1c"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "960e9045ac1371ae633512a27a399a7b9c6987fbaf72a911aa3f33a18a03c26d"
     },
     {
       "id": "weather.dialogue.2.reply.2.follow.audio",
@@ -157,10 +157,10 @@
       "text": "We can have different ideas.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "771390baae2a09a56b39078a0a07eb0bd2de4c9d3d2fe4f07b20dfbb266de2ff"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "4ba430e1b6adecff6428734593ed61b012562ae29779fa69a31bec84d137ee57"
     },
     {
       "id": "weather.dialogue.3.question.audio",
@@ -168,10 +168,10 @@
       "text": "What is tapping the window?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "b8c9f0bca6d36a1e6ea14fb616d0f172ca42eea9f7492d6a6bad4a0a326114fa"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "8960e4c11feb023c47cd662c023071eb6baf45cd8fbaed807b1c6fb442018bce"
     },
     {
       "id": "weather.dialogue.3.reply.1.audio",
@@ -179,10 +179,10 @@
       "text": "It is rain.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "b00506fde2f5bb0614554e87e4cfc073ac7bdf0c86cdc0ae055f4a8053b16856"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "23c088cff3f94aeadcde47447c9a7cf37dc693dd44b2ea710de2c8cd8f57c731"
     },
     {
       "id": "weather.dialogue.3.reply.1.follow.audio",
@@ -190,10 +190,10 @@
       "text": "We may need a different plan.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "52ae77927c65434f5007806983de2aa5fcbc6182f72b085319fbf638e0c1c415"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d37d852255a1657c3258680633ce833a3a9513da4a12fff17aff104967b9d0f5"
     },
     {
       "id": "weather.dialogue.3.reply.2.audio",
@@ -201,10 +201,10 @@
       "text": "Let us listen together.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "3eabb74b2e9b7868b25fa78ed084184b4496e43e47463e08d985108235020df5"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "a02e87be053db3b574093f35af41157813f6e23b80d454556163e1ec8b93b0fc"
     },
     {
       "id": "weather.dialogue.3.reply.2.follow.audio",
@@ -212,10 +212,10 @@
       "text": "Tiny drops are tapping the glass.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "8529f8f933977ad3ec6b638ca0ddb0e76e677a1e6cf8b7d91c204ed0e63b31bc"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "cee7e620f7206cd1dcf396594ea02f7338f5735dc052f761e9c14a7a6a216d9d"
     },
     {
       "id": "weather.dialogue.4.question.audio",
@@ -223,10 +223,10 @@
       "text": "What could we bring for the rain?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "48064c113b54d1a2f2b2fd8018ac4ff57b1efa64b766140e72dde005fa2425d0"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "0a54e0e8bf14e7a4d7a7366431c306dbfb75ae65bbeb0be1b9f154753397ba7c"
     },
     {
       "id": "weather.dialogue.4.reply.1.audio",
@@ -234,10 +234,10 @@
       "text": "An umbrella, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "5050bcfbe0b12f524a3b7b649cb97bed39cf64bf9a63068303472bb1575220f2"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "d4fa8ef0046ccc355230a56e6eebc876857c35ccadec7b610fe654b69d2744da"
     },
     {
       "id": "weather.dialogue.4.reply.1.follow.audio",
@@ -245,10 +245,10 @@
       "text": "Ask our grown-up to help you open it.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "4e6d49c39c23c95683ecd5bb343abfd2a37485adb57e7719cfdd1e0888087400"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "acf70a7c4886a8a406a087844befb053207e9b6d52678b3c159028124335106e"
     },
     {
       "id": "weather.dialogue.4.reply.2.audio",
@@ -256,10 +256,10 @@
       "text": "Let us stay inside.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "1fd2602fd0777baedd018dd0f2bf994e8645326655aad5251e89527c3ebc915c"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "6c0b4545602953130fa2bf4f2a115625215f72534bb196ab5447427ff6e99975"
     },
     {
       "id": "weather.dialogue.4.reply.2.follow.audio",
@@ -267,10 +267,10 @@
       "text": "We can tell a story while we wait.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "b662004165a193289f819db6ba5e1e779b27bd48dbe9c9cab633acecb8b2bce7"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "95f1e086504d4bd5d82cbcbe6133c242e7b8e0280b3686e550050b758f033f7a"
     },
     {
       "id": "weather.dialogue.5.question.audio",
@@ -278,10 +278,10 @@
       "text": "You wanted to go out. How do you feel?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "de1a82e2a6217e9274c3a038801d87986a81d1665043f87e8ab2251c5be51444"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "a7fcee956cb73413505e672f28302acf4171d1f9aa59cb92d7c04d2fd4c9ea42"
     },
     {
       "id": "weather.dialogue.5.reply.1.audio",
@@ -289,10 +289,10 @@
       "text": "I feel disappointed.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "b6de0a8e91748dd8e86dab1ee7bc68972d92b61b921b5015be0e3782d3e274a4"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "9a00a9fe012fa90405218ce6215a195655e003e3d4dcb978e510a393e9bae692"
     },
     {
       "id": "weather.dialogue.5.reply.1.follow.audio",
@@ -300,10 +300,10 @@
       "text": "I understand. I can sit with you.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1dbb5d5bbf737f9399c19d9611cb3684911dd0c5d3f4d385e09772a8b3cffac4"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "c55ff12abb042384089afa0f5cc2d5c1ffffda78ec76311c8822bc1209bf0b90"
     },
     {
       "id": "weather.dialogue.5.reply.2.audio",
@@ -311,10 +311,10 @@
       "text": "Tell me a story, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "57bc7ad6dfb75c9bd571c1cc97a7bdf3b1a73882328b146f2642875d6bc148de"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "c82a8469510961b066a7d8393a38badf0786bb9f7486515ce07aedddd4e6835f"
     },
     {
       "id": "weather.dialogue.5.reply.2.follow.audio",
@@ -322,10 +322,10 @@
       "text": "Let us make up a rainy-day story.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "21b0497cd8e788bc7630ee9ac3ae5934e08391e12535451e6e035f6866a92509"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2018ce712597332822f747f158b84b0e54f2ebb298f93f6c55b9b92eada9361f"
     },
     {
       "id": "weather.dialogue.6.question.audio",
@@ -333,10 +333,10 @@
       "text": "The rain has stopped. What shall we do?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "89e390b7a62293beddb4f2e5d85ae7ea21883f0f1e15b1ce84bf09aa6a830a28"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "f8ceff4c2bdf485e816a1d73c38669e5cb38cf1e5457bd4bf9faa5bc3466f115"
     },
     {
       "id": "weather.dialogue.6.reply.1.audio",
@@ -344,10 +344,10 @@
       "text": "Check with our grown-up first.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "625e07c2fef8028f4716191d08bcd716af394753fca157d45b7663579f544780"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "b15e183f4561f60639ba0b9245956b5dbc600f3250fbc6f0aa52db1a8467ef1b"
     },
     {
       "id": "weather.dialogue.6.reply.1.follow.audio",
@@ -355,10 +355,10 @@
       "text": "Then we can decide together.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "b7e8791bb0a0ec0bc24290b13fabe02655d9fae556b56962dc1b4b11f1df3f77"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "6215f839c729a20494764f842419cf9a167ad2678e247b368adb35a3954464d2"
     },
     {
       "id": "weather.dialogue.6.reply.2.audio",
@@ -366,10 +366,10 @@
       "text": "Finish our story first!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "85237f52260eaf43b418971a79dd2cdd525252b280d78a62d2b8fdce07a1e579"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "999856712375844ab9e18c6d0b52a5f8263640ef346fbe112f81053cb212d259"
     },
     {
       "id": "weather.dialogue.6.reply.2.follow.audio",
@@ -377,10 +377,10 @@
       "text": "Yes. There is no hurry.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "962d078dd228a15f63e46efb983f92dae0909fd70ff4d7c24cb808f2429684e9"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "c138a029ec85d1415b2ed7744d4f8d1bf7c68966bfb1166a7de75d0f4854fe33"
     },
     {
       "id": "weather.story.1.intro.audio",
@@ -388,10 +388,10 @@
       "text": "Momo and Lulu want to play outside.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "09cad85aa66fac513372678bb6eba66c3f8b9d18e35168bf546c874017761a23"
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "5d0210be05c3ec3a99e3533556b366fcfa74270d3332dde465460b4620a068bb"
     },
     {
       "id": "weather.story.1.item.audio",
@@ -399,10 +399,10 @@
       "text": "I can see the sun!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "04fb1ebcc9bd5f2ba26758492cd853447e42b2306a2e146578396c65f98e0b74"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "f1edf0731ec2bce7dda8a99a4f53aca9ffaab99bea42db4a4eb9f2bd8f4d5a72"
     },
     {
       "id": "weather.story.1.reply.audio",
@@ -410,175 +410,10 @@
       "text": "Let us look at the whole sky.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "35edfb33d59ec647a2ec14c119cc09545fe1faf02b05eb791a471a9c498c77ab"
-    },
-    {
-      "id": "weather.story.2.intro.audio",
-      "path": "audio/weather/v0-1-0/weather.story.2.intro.audio.wav",
-      "text": "A cloud drifts across the sky.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "da118e4fc9bf679a916f12420e0abf7405d78d008d5a1015e6cbbe984e196838"
-    },
-    {
-      "id": "weather.story.2.item.audio",
-      "path": "audio/weather/v0-1-0/weather.story.2.item.audio.wav",
-      "text": "That cloud looks like a little boat.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c0227a636f85e3564211748d2f0a4bbfc458861f38ac3d6bb6cf32f1e78e179b"
-    },
-    {
-      "id": "weather.story.2.reply.audio",
-      "path": "audio/weather/v0-1-0/weather.story.2.reply.audio.wav",
-      "text": "I think it looks like a turtle!",
-      "language": "en-US",
-      "role": "fox",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": 0,
-      "volume": 90,
-      "sha256": "28824a501e3e5617f056cc9941aae4446cb2979c495ada9f741153ed296f66fb"
-    },
-    {
-      "id": "weather.story.3.intro.audio",
-      "path": "audio/weather/v0-1-0/weather.story.3.intro.audio.wav",
-      "text": "Little drops tap the window.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "5983bd092f90db7218a078ad63a334cab2fb49d9d8cb845573932f8c0e7c9a01"
-    },
-    {
-      "id": "weather.story.3.item.audio",
-      "path": "audio/weather/v0-1-0/weather.story.3.item.audio.wav",
-      "text": "Is that rain?",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "4b45f0e342793d88076cedfa04782952ea03144d705a9b97d1396a58e6b6104f"
-    },
-    {
-      "id": "weather.story.3.reply.audio",
-      "path": "audio/weather/v0-1-0/weather.story.3.reply.audio.wav",
-      "text": "Yes. Let us change our plan.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "0920e1cca4301a50f170cc0a9f7aea25c91234d8b3c66159e1d84d0c88b0b247"
-    },
-    {
-      "id": "weather.story.4.intro.audio",
-      "path": "audio/weather/v0-1-0/weather.story.4.intro.audio.wav",
-      "text": "Fifi runs towards the door.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "0189b4416fbe5d934c7ec035eb743276a900ebb9d27eb3a266a951631d5889cd"
-    },
-    {
-      "id": "weather.story.4.item.audio",
-      "path": "audio/weather/v0-1-0/weather.story.4.item.audio.wav",
-      "text": "Wait! Where is your umbrella?",
-      "language": "en-US",
-      "role": "turtle",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -3,
-      "volume": 90,
-      "sha256": "fd016f8e8533da86c3401a87888240c2ce917ef029d81778bbfc2961e850c4e9"
-    },
-    {
-      "id": "weather.story.4.reply.audio",
-      "path": "audio/weather/v0-1-0/weather.story.4.reply.audio.wav",
-      "text": "Thank you. I nearly forgot it.",
-      "language": "en-US",
-      "role": "fox",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": 0,
-      "volume": 90,
-      "sha256": "a0c9eec560da62987ccfdc9a98ef20d5327e3745729a16d9f176091c137a0a57"
-    },
-    {
-      "id": "weather.story.5.intro.audio",
-      "path": "audio/weather/v0-1-0/weather.story.5.intro.audio.wav",
-      "text": "The friends stay inside while it rains.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "dd6af011688cc1e23192faa250d10b972054ac66adcb372923046c27a085a28b"
-    },
-    {
-      "id": "weather.story.5.item.audio",
-      "path": "audio/weather/v0-1-0/weather.story.5.item.audio.wav",
-      "text": "I wanted to play outside.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "a1f8f75585b0f43580ff5e1e4c7081ae232dc0f3f3ee88e2cbe3958bbdfd1212"
-    },
-    {
-      "id": "weather.story.5.reply.audio",
-      "path": "audio/weather/v0-1-0/weather.story.5.reply.audio.wav",
-      "text": "I know. Shall we tell a rainy-day story?",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "a6c64a1ff12351db8fb64315af283a22a747e3a50e244b67c4e2976f16ee3f2f"
-    },
-    {
-      "id": "weather.story.6.intro.audio",
-      "path": "audio/weather/v0-1-0/weather.story.6.intro.audio.wav",
-      "text": "The rain stops and sunlight returns.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "822b0e98f543869e737cb27a1480a2c91846c557c857b551d1d875e1b50b716b"
-    },
-    {
-      "id": "weather.story.6.item.audio",
-      "path": "audio/weather/v0-1-0/weather.story.6.item.audio.wav",
-      "text": "The sun is back!",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "20430b1243d564233709f8f9a6721d7c214f0f77feceb203bb72bca0fe897eda"
-    },
-    {
-      "id": "weather.story.6.reply.audio",
-      "path": "audio/weather/v0-1-0/weather.story.6.reply.audio.wav",
-      "text": "Let us check with our grown-up before we go.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "907b5a1b6bfcf37b75666072c17b21a993417459e980ae519c9c6d762583b968"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "8478d7cff0b771e3cd4179341095007ed91c08623c7a4ca39d180baf6cd43c53"
     },
     {
       "id": "weather.story.1.more1.audio",
@@ -586,11 +421,43 @@
       "text": "Blue sky, and a big sun!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "4a83acaeaec8734b4913657f84a71b47e569f59b5cd9ad6594f5f41bce7b531d",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "085acc2e6fd07cef82db06e7126b0a24cc8e6b6161f18f4e7a041920b9172dcb"
+    },
+    {
+      "id": "weather.story.2.intro.audio",
+      "path": "audio/weather/v0-1-0/weather.story.2.intro.audio.wav",
+      "text": "A cloud drifts across the sky.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "7c50179a03714c93de91487d7115ebcb527048c0743505bf64d4ed415d11e790"
+    },
+    {
+      "id": "weather.story.2.item.audio",
+      "path": "audio/weather/v0-1-0/weather.story.2.item.audio.wav",
+      "text": "That cloud looks like a little boat.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "0c297acd23fcd542b7dc97e011f279357f9a284ac73da1893aedf529247b4fa6"
+    },
+    {
+      "id": "weather.story.2.reply.audio",
+      "path": "audio/weather/v0-1-0/weather.story.2.reply.audio.wav",
+      "text": "I think it looks like a turtle!",
+      "language": "en-US",
+      "role": "fox",
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
+      "volume": 100,
+      "sha256": "c8f3839ce542afe4ed5a018a89efaf5cfbff810c8e992e5fa77cb8dc85f0eeaf"
     },
     {
       "id": "weather.story.2.more1.audio",
@@ -598,11 +465,10 @@
       "text": "We can both be right.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "ce5efe2a4b29b6baa31150694c530cb4dbc9197d1a4f751124f0b2add95bcd37",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "7b40f243673f8a1d43199089123ccfce4b24b9915fc4ecaa004c41f4408b6b30"
     },
     {
       "id": "weather.story.2.more2.audio",
@@ -610,11 +476,43 @@
       "text": "Look, it is moving away.",
       "language": "en-US",
       "role": "fox",
-      "voice": "Samantha (macOS say)",
-      "rate": 175,
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
       "volume": 100,
-      "sha256": "91bce3a82b5c8df0eacffc4f436fc4e4ebeccbbc4f6fb073d6f02533b0d8e9aa",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "f85036e0e774019fe50014e657aad617259e1a4fe78779f2f06d80b83d8e5aac"
+    },
+    {
+      "id": "weather.story.3.intro.audio",
+      "path": "audio/weather/v0-1-0/weather.story.3.intro.audio.wav",
+      "text": "Little drops tap the window.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "8f14fd47bd7168565ff525e09db68def6b1870ba5e960b5a64eda94cc417c9ad"
+    },
+    {
+      "id": "weather.story.3.item.audio",
+      "path": "audio/weather/v0-1-0/weather.story.3.item.audio.wav",
+      "text": "Is that rain?",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d196d5ed84ceaa6003ef14a870bba732af8bd7fa214bc4dc7eeffed4fd6823c7"
+    },
+    {
+      "id": "weather.story.3.reply.audio",
+      "path": "audio/weather/v0-1-0/weather.story.3.reply.audio.wav",
+      "text": "Yes. Let us change our plan.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "3486aabe6aa116b75f391798cd3c1d3ba63ccdf605353cf213ca346eb5dafdb3"
     },
     {
       "id": "weather.story.3.more1.audio",
@@ -622,11 +520,43 @@
       "text": "Okay. We can play inside today.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "3d028fa456bf05e2877547d056807cff8f33dae2e763078d439095bb4f59c1d1",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "5e20dc747d3fa1d2be8bbb1a7c9dcd4cb7048170e4e6c1cb615852db0e8f8055"
+    },
+    {
+      "id": "weather.story.4.intro.audio",
+      "path": "audio/weather/v0-1-0/weather.story.4.intro.audio.wav",
+      "text": "Fifi runs towards the door.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "ec24fc20b60fb7c977b13252ad29bf24493b790f578f3248de77802d8a15ee1a"
+    },
+    {
+      "id": "weather.story.4.item.audio",
+      "path": "audio/weather/v0-1-0/weather.story.4.item.audio.wav",
+      "text": "Wait! Where is your umbrella?",
+      "language": "en-US",
+      "role": "turtle",
+      "voice": "Kokoro bm_george",
+      "rate": 0.85,
+      "volume": 100,
+      "sha256": "a8b2d9f57cd562684443fc06ab22c5771b195ccb194731c9c086a7da65054d15"
+    },
+    {
+      "id": "weather.story.4.reply.audio",
+      "path": "audio/weather/v0-1-0/weather.story.4.reply.audio.wav",
+      "text": "Thank you. I nearly forgot it.",
+      "language": "en-US",
+      "role": "fox",
+      "voice": "Kokoro am_puck",
+      "rate": 1.1,
+      "volume": 100,
+      "sha256": "f621475a93b9ef74f422522eafa724b73feb079c2e68ccb3ef02bfa096e08006"
     },
     {
       "id": "weather.story.4.more1.audio",
@@ -634,11 +564,43 @@
       "text": "Here it is, by the door.",
       "language": "en-US",
       "role": "turtle",
-      "voice": "Samantha (macOS say)",
-      "rate": 135,
+      "voice": "Kokoro bm_george",
+      "rate": 0.85,
       "volume": 100,
-      "sha256": "bc22d0ab0bac18654f304b004418ad30f1dd3498c696ecbc10da459e40e5abc1",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "2bcd2012c649bdd33d73d26e89fbe5908c9aa14d4e274b3e1b0520a3674ffc05"
+    },
+    {
+      "id": "weather.story.5.intro.audio",
+      "path": "audio/weather/v0-1-0/weather.story.5.intro.audio.wav",
+      "text": "The friends stay inside while it rains.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "9220c4d96784630c16b2d26d0a562a6ecab24815585bb9c44f4bf4e1f90c3951"
+    },
+    {
+      "id": "weather.story.5.item.audio",
+      "path": "audio/weather/v0-1-0/weather.story.5.item.audio.wav",
+      "text": "I wanted to play outside.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "6d4012961b475df898c8ed527d74133d8461b5f0fde67fc182e2334e61aba68b"
+    },
+    {
+      "id": "weather.story.5.reply.audio",
+      "path": "audio/weather/v0-1-0/weather.story.5.reply.audio.wav",
+      "text": "I know. Shall we tell a rainy-day story?",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "f93f33f72bc8304c5db5b8bed1d604d7236be2a99126a33b13b0ca93a9848f01"
     },
     {
       "id": "weather.story.5.more1.audio",
@@ -646,11 +608,10 @@
       "text": "Yes! A story about a little cloud.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "af5407357108522daacf987d3b30f1fe74cbef7521d3bbf833931c1a807d1f4a",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "2ab3f41fee96865498c7a8c360dfaa7e097c2b1abd2745e2d6be0c5e608cf23a"
     },
     {
       "id": "weather.story.5.more2.audio",
@@ -658,11 +619,43 @@
       "text": "You start. I will listen.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "e304699030a4134a1cf62d21f8fdee01843eed0c773c2d8a261cd22a89fb3320",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "53bd20c1dbac0170a5605cef085c75ef90c6ae14b338d24f7ac063cbdcf37abf"
+    },
+    {
+      "id": "weather.story.6.intro.audio",
+      "path": "audio/weather/v0-1-0/weather.story.6.intro.audio.wav",
+      "text": "The rain stops and sunlight returns.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2b411f3237e4e74998fc634818022ae3495a443a8d24e68b831d4cc1a24a7655"
+    },
+    {
+      "id": "weather.story.6.item.audio",
+      "path": "audio/weather/v0-1-0/weather.story.6.item.audio.wav",
+      "text": "The sun is back!",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d58985c7c45a8572e43c8898e4b17ed458ce56a2a598f43adaf5d0a65c062ebe"
+    },
+    {
+      "id": "weather.story.6.reply.audio",
+      "path": "audio/weather/v0-1-0/weather.story.6.reply.audio.wav",
+      "text": "Let us check with our grown-up before we go.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "d1a10212d044948dca33de26ecc62bef6bb9d945c3480bb30dfb97ef14be27d3"
     },
     {
       "id": "weather.story.6.more1.audio",
@@ -670,11 +663,10 @@
       "text": "Okay. I will ask now.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "1c5452f138245ce339c6b8f29ed5a0063b14d34607c36a8e11f52e2306dc18cb",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "d1c58fc6ac7264ae990b149fe1622aaf5b59b8f2c964d5eacc6091ae2f9442a9"
     },
     {
       "id": "weather.lesson.bridge.audio",
@@ -682,11 +674,10 @@
       "text": "Yum, all done. What is the weather like today?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "3c0a808336f0a32b04261f95c84e0d88bff492e9cf7ff35eb89dbba0c03210b1",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "58d3258601c078a9944efef011d7fac8ef0bf73edf84c06b232de0f3229dde08"
     }
   ]
 }

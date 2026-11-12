@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "sceneId": "picnic",
   "contentVersion": "0.4.0",
-  "generatedAt": "2026-11-02T22:31:01.3087485Z",
-  "source": "Windows SAPI offline synthesis",
+  "generatedAt": "2026-11-12T07:05:44.389115+00:00",
+  "source": "Kokoro offline speech synthesis (kokoro-onnx, kokoro-v1.0 int8)",
   "purpose": "S4 local synthesis; listening and rights review pending",
   "rightsStatus": "pending review",
   "reviewed": false,
@@ -25,10 +25,10 @@
       "text": "banana",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "4e7b248c4558ecb04f1f1a2b9bb300a2ea4ba74f23e74f20ed3cac3b16586e39"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "41a3ed7c34bac8fdb2d015a8fcd68f49d54a3cb98467f21d3d9bb242ab5d8faa"
     },
     {
       "id": "picnic.bread.audio",
@@ -36,10 +36,10 @@
       "text": "bread",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "72156f2618976f8165f046a3d25ccc5ac718b2a012cfec62991783aeb4032d47"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "327f2f5d483788f173a36b0a8ae8eedfd9c64cb81d5b377fbc78115b5c18dcac"
     },
     {
       "id": "picnic.milk.audio",
@@ -47,10 +47,10 @@
       "text": "milk",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "3294c13cd8f26da46cf42c3497e2657a1b3c743265b1d8811b2dad0d0765562b"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "8168eeaf0193ed232f20d2eed2ab5b1ce339f1d16acadf81e78a56fbd5f340dd"
     },
     {
       "id": "picnic.dialogue.1.question.audio",
@@ -58,10 +58,10 @@
       "text": "Hello, Bunny! Shall we have a picnic?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "bdff6b618728baf858af497035c9bef453cec199ced3470bce20f8747da1bead"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "1bef4f8ed3aa0ce4d0a2101c98c4d11fb0bbf953c6a2a861292ce12a0ef4209f"
     },
     {
       "id": "picnic.dialogue.1.reply.1.audio",
@@ -69,10 +69,10 @@
       "text": "Yes! Let us have a picnic.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "4aa6263b7fda4b540c23deb5391212a526bda0318022e649520c30a47a4c9e41"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "7f0ba4442583f48e508ef4541a65c4e3263990d425d4906495375690d6c9626d"
     },
     {
       "id": "picnic.dialogue.1.reply.1.follow.audio",
@@ -80,10 +80,10 @@
       "text": "Great! I brought our basket.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "0e12ad432918248a1286a3749e935edfc802dc23213bab69a75fd0f8abd7bf61"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "18bde41c3fd373b60d18f820b3871deaac0d328f158901e780aa0c15598ba0ca"
     },
     {
       "id": "picnic.dialogue.1.reply.2.audio",
@@ -91,10 +91,10 @@
       "text": "Can I join you?",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "75c47f393b40e67fcbcf2af3d253eb24e7052a010bc9d5eb987d95d2947724d9"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "a53f0cfc933f413c175781dfd634a1fc49d77a12e1d05e1c8ce6663a7369cb9c"
     },
     {
       "id": "picnic.dialogue.1.reply.2.follow.audio",
@@ -102,10 +102,10 @@
       "text": "Of course! There is room for you.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1b17330d7d159e40673d1cc730bbc3cc7dd1b8ed7d36c7bb3ed4c0bcc77e0039"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d7c3607bc2719512174a91ec3f78236f0ae8a666c7be5c8a5390c5f3a24d7d7f"
     },
     {
       "id": "picnic.dialogue.2.question.audio",
@@ -113,10 +113,10 @@
       "text": "Where shall we sit?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1a25545178efedb55ffdd3b2242fff4f77123caf2043f2769e16ded4059fc689"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2ae55e87d370e293186eecddfd605e53d8040d2a75894799eb62b3dbb8a9b5ad"
     },
     {
       "id": "picnic.dialogue.2.reply.1.audio",
@@ -124,10 +124,10 @@
       "text": "Let us sit here.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "3ded2bd21079e23ca4c35f952fd4b447d977ea6de2cc3589a75bbe5227762514"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "5b9c7d5da98250f1835b7c7d7c0d3aa68b5cd7ee0c1806fea5d2ba591940ebeb"
     },
     {
       "id": "picnic.dialogue.2.reply.1.follow.audio",
@@ -135,10 +135,10 @@
       "text": "Here is a lovely spot for our picnic.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "7f79adef9512299dde480ddab7c8d86ea6bf1eafe3e3de27b6e62e2b971ee059"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "5ece24ddec25739a42ec539a229abaa05fdb9861eed623687eda29af14f98ea4"
     },
     {
       "id": "picnic.dialogue.2.reply.2.audio",
@@ -146,10 +146,10 @@
       "text": "Next to you, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "44b09e3751563f4c9ac41125b913141e5bcb6e73126bdc5ecab702fdccc9f451"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "f9aea6160a3611ee1df166d98b2587c4f133e3d04fe0b85b204028627480b022"
     },
     {
       "id": "picnic.dialogue.2.reply.2.follow.audio",
@@ -157,10 +157,10 @@
       "text": "Come and sit beside me.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "e7c922b794199c7bbcd3956b2838ca3cb3857d975dff3aae33305989dd8acbf6"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2338a5dc988f9b874837eb4c2f5a2d730acdf6da3cef4e0f1574638971382fc9"
     },
     {
       "id": "picnic.dialogue.3.question.audio",
@@ -168,10 +168,10 @@
       "text": "What would you like from our basket?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "691624fdfeaea1b93a2fb4e9312a0cf635698998e1a2823b865d3998d6c40d2b"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "22c7cc8843eb3a0dae3f48565816d03cd10ac99a95d988f5822f8c11e6e6a508"
     },
     {
       "id": "picnic.dialogue.3.reply.1.audio",
@@ -179,10 +179,10 @@
       "text": "An apple, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "a47629cca3d085e3fce2cfc874b25f7eb13069f944d1b208eaa5970d8c116a9d"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "4acc53ba807d851e6fffddc3bab72d8774fd808654194d9a42d18e5aaffafb8d"
     },
     {
       "id": "picnic.dialogue.3.reply.1.follow.audio",
@@ -190,10 +190,10 @@
       "text": "Here is your apple.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "38bcb8794f4ac75dd1bf9fa0364ae121d0fb2debb5f5a538256e636c85a43e89"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "43947a9e3d1467d6e89e946bdf93c2bf3b11fb1659fb229a66c1d2cfd2882405"
     },
     {
       "id": "picnic.dialogue.3.reply.2.audio",
@@ -201,10 +201,10 @@
       "text": "A banana, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "34b8d61ec9b6a95a6d9bed70bdd19aa0588ac12993ababfbb61e623236052c4b"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "2e613e744e98e28b0214de96b53a149ccea756576db78088ecbfd713c81c3130"
     },
     {
       "id": "picnic.dialogue.3.reply.2.follow.audio",
@@ -212,10 +212,10 @@
       "text": "Here is your banana.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "3caf93884819c1b2efb032fa41730db4fc3f93b3ea754fc64bfdf5f37895c14f"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "c297ca6abd76ce77334efedbe4ee9e20cc37627afabbef68375442365cb81e45"
     },
     {
       "id": "picnic.dialogue.3.reply.3.audio",
@@ -223,10 +223,10 @@
       "text": "No food yet, thank you.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "3319331748e7511acf375883c8dd533476dcbed0427266efdb899455f109c3d4"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "dabc46f9e53ea587de547bfaf7ac5f0cd15d719bbcfd1be6a0bd9ffe2d9e88fe"
     },
     {
       "id": "picnic.dialogue.3.reply.3.follow.audio",
@@ -234,10 +234,10 @@
       "text": "That is okay. We can enjoy the sunshine.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "ca4f80050290d9c09f66dca42d6f2bb5f6e4d7453a350a74aeea59ca7cf07547"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "f4a266da7fc8b2c297c6e992ef5d8176a77cb99f441e972eec84b0ed1c62faff"
     },
     {
       "id": "picnic.dialogue.4.question.audio",
@@ -245,10 +245,10 @@
       "text": "Shall we share some bread, too?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c799f41b1073daf2bda86ab736eae82d01d9eafa894c14793eee9ad4ba38b32e"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "f1c7c5b1b1280c31a3bcd31cea83f0e7cc025bb34d31c778ecb9faa33b493aac"
     },
     {
       "id": "picnic.dialogue.4.reply.1.audio",
@@ -256,10 +256,10 @@
       "text": "Yes! Let us share.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "426c97d98d84aa8a26131e1b56e621ec6e60f68d0cddc7955a2923a3c73ccabe"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "ea892072da001ba8c8df42f83ec22255650dbc27bf74bf8a0368f535c5ae6986"
     },
     {
       "id": "picnic.dialogue.4.reply.1.follow.audio",
@@ -267,10 +267,10 @@
       "text": "Here is some bread for each of us.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "75407e1b7725eec64f8a015e6a7c1d891dbc56dbcabbc46428860408bac67014"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "359d17e83d1784891f07d611f1030d94b557d3be5c3b6e90509fca8b81ad32ce"
     },
     {
       "id": "picnic.dialogue.4.reply.2.audio",
@@ -278,10 +278,10 @@
       "text": "No, thank you.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "8a1dd8f87508dd27b15c49a9a6451568708f516658701cd5a05e9ae742a56fdd"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "226b586163eb5ee6ea7e6f0e5d57f96d9a91b91bbd65c1fd3786ee8292847723"
     },
     {
       "id": "picnic.dialogue.4.reply.2.follow.audio",
@@ -289,10 +289,10 @@
       "text": "That is okay. I will keep it here.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "b0c17b9a86c34fc0f073cd8cb46e421b865c31c6f5c667beb8ec3e78a189c1da"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "5075ada406830e7078f71cc30379e44ca62461a93ef9f19866cd06c36b9b8ccf"
     },
     {
       "id": "picnic.dialogue.5.question.audio",
@@ -300,10 +300,10 @@
       "text": "We have milk. Would you like a drink?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "7c2a369ab8cc753d58739dfdc0a3749c0e6c0ef6696a6dbb3d34d0a209b23b12"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "e8ec66f3fd245deb18c826e3763fd0de7511c182169c609d2b476d5e0fd8c05b"
     },
     {
       "id": "picnic.dialogue.5.reply.1.audio",
@@ -311,10 +311,10 @@
       "text": "Some milk, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "a9f2f535547a0c437e7ee09754b3fea8c09d231c800936228cdbff19ca61fbd4"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "b51d6ef9f0c9d25bfed406051aca157610e9f855476b7579cb49abeea377ba5e"
     },
     {
       "id": "picnic.dialogue.5.reply.1.follow.audio",
@@ -322,10 +322,10 @@
       "text": "Here is your milk. Take a little sip.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "f2b09b14d7b3ad624bfd8415fe78ebad7c1bf417a6d359510202837691014dcb"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "e7ba96895257ee13c36ad8965c3d895474c1c7f779d365f733cf68ab7c2ea1ac"
     },
     {
       "id": "picnic.dialogue.5.reply.2.audio",
@@ -333,10 +333,10 @@
       "text": "Not now, thank you.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "04bfbf98990df4609e203176d3525c0d9d64fa659951e150d75458697f48e7b8"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "e9494ac41040fa9c5829f7cb1cc655b190c233fad3b0f412cd69b03bbb581fed"
     },
     {
       "id": "picnic.dialogue.5.reply.2.follow.audio",
@@ -344,10 +344,10 @@
       "text": "All right. You can have a drink later.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "d3f85f47c012a48ef38d970d824fef14fa0a6a0c43b7df9ca072ffe94d4b161c"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "0f08882ebbae88a3abf20d9b442d885efe6db9fa19d0295626e3f177cad9df86"
     },
     {
       "id": "picnic.dialogue.6.question.audio",
@@ -355,10 +355,10 @@
       "text": "What shall we do after our picnic?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "cae06c4bf4eb04fa15f116b4dff38fe504f81037a7b47ac650f326d3fefbc300"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "6ee3b53a595df6846619e9d29d44f86d42554d5fbd3cb53397036859ae636e0b"
     },
     {
       "id": "picnic.dialogue.6.reply.1.audio",
@@ -366,10 +366,10 @@
       "text": "Let us play together.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "5165d50eecab200cc30c2c8302335e4036bf3851ade13fa17da91e8e13c36ec8"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "ec2e79a38e7cf57f9a9ebd2186f0f40ed5f789549d3329b883a9a9c28ca31798"
     },
     {
       "id": "picnic.dialogue.6.reply.1.follow.audio",
@@ -377,10 +377,10 @@
       "text": "Good idea! We can play after tidying up.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "8f710e6793f9b7936771732308f1a9d9b5e75d4efde5ba50a245873ad561bd90"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "eb1ef76d8a1847fd15803a454d13fce0dec339e60133a7c9505753d3a5e5d3bb"
     },
     {
       "id": "picnic.dialogue.6.reply.2.audio",
@@ -388,10 +388,10 @@
       "text": "Let us tell a story.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "0ab0ba6c9021089eb71e027e9afd3a24fff061c94f5a1c6db679d3173aba21a7"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "838edeff68d84d424498ce8a3427aa6716322d4ba04e305788b5024a7eca84a1"
     },
     {
       "id": "picnic.dialogue.6.reply.2.follow.audio",
@@ -399,10 +399,10 @@
       "text": "Lovely! I have a story to share.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "6c798bd9ce29d78dd45f6fe4e2f45f4297a1ea5e9cad9c85a1def211ae2ae62b"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "c5d190df3a28d3897bc9998d4ca4ce4480f2af4e9e1680ceac7c71bd1a1eb9db"
     },
     {
       "id": "picnic.dialogue.7.question.audio",
@@ -410,10 +410,10 @@
       "text": "Before we play, shall we tidy our picnic?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c6734de5134e1244a17c8cdaa8305dacdf9ad5a0e93710deea085a93146e6c3b"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "b53ded565060ed302b50cd25acae9222302870a6fdf16dba39a129f7e649b580"
     },
     {
       "id": "picnic.dialogue.7.reply.1.audio",
@@ -421,10 +421,10 @@
       "text": "I can carry the basket.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "764133d7974a862253f0cc17913e32f675ae8d81f7737740a1e4f73f257acd0f"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "8aeeac63824dfd2c43113edad695bdfaeea9596ae57c706b92d4103448fc151b"
     },
     {
       "id": "picnic.dialogue.7.reply.1.follow.audio",
@@ -432,10 +432,10 @@
       "text": "Thank you! I will put our food away.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "513c0f1475e8c66f8486983adc21e43c21bca56257babe3c55f324dd5f1b4b63"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "ba79d866b553de88f6328931b395a3e2f662006cc5c5c93dcc1aa4cd1014a5af"
     },
     {
       "id": "picnic.dialogue.7.reply.2.audio",
@@ -443,10 +443,10 @@
       "text": "Let us do it together.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "da4f84ee9ef51c5f8871d4c4502fbd5ba18d546bd78dd3ff9c60e08b375b80f9"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "08544883a087efb72b51e9ff4a928c2f50021ea8a80f63d8d66fac8a50f9b0da"
     },
     {
       "id": "picnic.dialogue.7.reply.2.follow.audio",
@@ -454,10 +454,10 @@
       "text": "Together we can make this spot clean.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1c43ca06fe50f2badf90673b853084ff0bf860d8782645b8f7eca7266a10ecf4"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "7695597b3b93e36e5600907fb7dc057c05e5fff9b4c31b742bc04f9e5fbe4288"
     },
     {
       "id": "picnic.dialogue.8.question.audio",
@@ -465,10 +465,10 @@
       "text": "Thank you for our picnic. Did you enjoy it?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "5374dab8a57d3d312c164ab5fddd427febeb7c2cf721599a17ae987e10d818ff"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "7f363018dafe7db7a7e79a74aecdf60b0cc5bef9b985ff9466196413ac987982"
     },
     {
       "id": "picnic.dialogue.8.reply.1.audio",
@@ -476,10 +476,10 @@
       "text": "Yes! Let us picnic again.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "1ee78048ee33e4b485cfb081d53107a2f41dc4ce418c12400094dc7f3099f77b"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "05dce4bea330f5c386c53b9e0525f3fb14f544b3a325f8e15ccd85f993b72747"
     },
     {
       "id": "picnic.dialogue.8.reply.1.follow.audio",
@@ -487,10 +487,10 @@
       "text": "I would love that. See you next time!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "786a4ae56fa4dfc275d3d719a78e83c2316fa0f674fe9900c11197f172edb3c4"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "4de7e234801af8b0034363f6eeb20811be63d850d22bd9e6670e50116b8fda79"
     },
     {
       "id": "picnic.dialogue.8.reply.2.audio",
@@ -498,10 +498,10 @@
       "text": "Thank you for sharing with me.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "8f914dc659b45e40b0fcda6b82b7fd95e032c9966382559da0a9f354cc46be32"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "779d36818a853edfbea3abcf5cd8e93559e05c59912eabea7c79ba436075a9f2"
     },
     {
       "id": "picnic.dialogue.8.reply.2.follow.audio",
@@ -509,10 +509,10 @@
       "text": "You are welcome. It is lovely sharing with you.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "3bc2035dd25499dd5d4dcfd79701a21e8217c8087705f688bd89cef938dba3a4"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "516afff4f25fbb38e5b76c5719e8e64bef29f42407a5b0aaa6b4ddea11fa9678"
     },
     {
       "id": "picnic.story.1.intro.audio",
@@ -520,10 +520,10 @@
       "text": "An apple rolls out of the picnic basket.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "ecc45d15839fb3f5152706bb053a77fa01b39887c1172d35d4e41e2701b5865b"
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2de57fb0897d631346af29f80fb4346883fdfcb85d62e68c9e82cff3ac0a37cc"
     },
     {
       "id": "picnic.story.1.item.audio",
@@ -531,10 +531,10 @@
       "text": "Oh! Our apple!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "ee48eca349cf8ab597b98c2ed60a0773693d2cf1f181c6a7b8040cc7208fa65a"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d8a8366d80e16fe04526f184bfc3d7e0baf0eed26e0997aea6a2e1569e69095d"
     },
     {
       "id": "picnic.story.1.reply.audio",
@@ -542,175 +542,10 @@
       "text": "I can catch it. Here you are.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "7fe635ea81e76683e6f3d6202a4053f65f1e0060a596336546f041c173e07d02"
-    },
-    {
-      "id": "picnic.story.2.intro.audio",
-      "path": "audio/picnic/v0-4-0/picnic.story.2.intro.audio.wav",
-      "text": "Lulu takes out a banana.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "423ae4b830ac8ef0015714e68223237309286e1fe1ceb4ff642bf5acb3e14265"
-    },
-    {
-      "id": "picnic.story.2.item.audio",
-      "path": "audio/picnic/v0-4-0/picnic.story.2.item.audio.wav",
-      "text": "Would you like this banana?",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "c2f34cc0cb00a74f047c878c6366a9070cfa91be5d3940d7ab48f67f74eb6dc9"
-    },
-    {
-      "id": "picnic.story.2.reply.audio",
-      "path": "audio/picnic/v0-4-0/picnic.story.2.reply.audio.wav",
-      "text": "Yes, please. You can have the apple.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "59c8f48df58a1f8493bddaa9251148d53d754729ef2b470b4c69c79e734e8e19"
-    },
-    {
-      "id": "picnic.story.3.intro.audio",
-      "path": "audio/picnic/v0-4-0/picnic.story.3.intro.audio.wav",
-      "text": "There is one big piece of bread.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "88dd9df2c92459ddf48fbbca03ef3c181384eacd65fe1b1aaa2049e464941435"
-    },
-    {
-      "id": "picnic.story.3.item.audio",
-      "path": "audio/picnic/v0-4-0/picnic.story.3.item.audio.wav",
-      "text": "How can we both have some?",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "4ef370b143e2bc1f7a8b6b879b8a3448ef9029a464a3b65e057b0f1c1e1f40e5"
-    },
-    {
-      "id": "picnic.story.3.reply.audio",
-      "path": "audio/picnic/v0-4-0/picnic.story.3.reply.audio.wav",
-      "text": "We can share it. Half for each of us.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "8c4ecfa5bbfe4d5e44fd00ae64acb148825b20b3320bf886bf329b2f41b49de9"
-    },
-    {
-      "id": "picnic.story.4.intro.audio",
-      "path": "audio/picnic/v0-4-0/picnic.story.4.intro.audio.wav",
-      "text": "Lulu offers Momo some milk.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "b2868e81f428e446d030af32440c989193b569fa4e66a156e2f495acb7622729"
-    },
-    {
-      "id": "picnic.story.4.item.audio",
-      "path": "audio/picnic/v0-4-0/picnic.story.4.item.audio.wav",
-      "text": "Some milk?",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "c5de876bc3fc7399b61d0b4873926327eada57f58734075944fe6c46c5807fc6"
-    },
-    {
-      "id": "picnic.story.4.reply.audio",
-      "path": "audio/picnic/v0-4-0/picnic.story.4.reply.audio.wav",
-      "text": "Not now, thank you. Maybe later.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "af64f778e82dca3de7a3c38f758aef30f0de205e05d9960c80386822421a100d"
-    },
-    {
-      "id": "picnic.story.5.intro.audio",
-      "path": "audio/picnic/v0-4-0/picnic.story.5.intro.audio.wav",
-      "text": "Lulu has been helping with the basket.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "4b7a736be9848937ff560b5d0a09f9051fafebfb96090a24954f3e6edf69dfe7"
-    },
-    {
-      "id": "picnic.story.5.item.audio",
-      "path": "audio/picnic/v0-4-0/picnic.story.5.item.audio.wav",
-      "text": "Your apple is waiting. Sit beside me.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "6abb97567cf4710919703f726caeca9cffff97f4c36c2d4e4775f924faebdf34"
-    },
-    {
-      "id": "picnic.story.5.reply.audio",
-      "path": "audio/picnic/v0-4-0/picnic.story.5.reply.audio.wav",
-      "text": "Thank you! Now we can eat together.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "43a8b07ed00c7d9eef4bcefd154305783a9f7c27c02ce247ad9c104a0a2746d8"
-    },
-    {
-      "id": "picnic.story.6.intro.audio",
-      "path": "audio/picnic/v0-4-0/picnic.story.6.intro.audio.wav",
-      "text": "The picnic is over.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "21511d1be46b259a0b8a3eb23038716b86bff11922746779307d2cbbdc5e1ecc"
-    },
-    {
-      "id": "picnic.story.6.item.audio",
-      "path": "audio/picnic/v0-4-0/picnic.story.6.item.audio.wav",
-      "text": "I will pack the bread away.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "4d0516a949cd4da9da0725ba6bcae85b855fe4e17b91d91efc52151c51aed115"
-    },
-    {
-      "id": "picnic.story.6.reply.audio",
-      "path": "audio/picnic/v0-4-0/picnic.story.6.reply.audio.wav",
-      "text": "I will carry the basket. See you, picnic spot!",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "0c4b5a05b063bcb2d62b279ed49df8c451488599812b05da79e8ac23856fe22a"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "5a114021c84f341df3e4a59e74c1dafc76b71f3377910805aeb9430d75b1cb23"
     },
     {
       "id": "picnic.story.1.more1.audio",
@@ -718,11 +553,43 @@
       "text": "Thank you, Lulu. Good catch!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "51dad72eeaad70d0892ecc2fbe826714d9aaa5efe9955fea73d9187e5d945b98",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "e28930e5f463ef5d7a132856703eac10cb66a25d73b5d65c6880b9d5cab797d1"
+    },
+    {
+      "id": "picnic.story.2.intro.audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.2.intro.audio.wav",
+      "text": "Lulu takes out a banana.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "4f173a44105384bb732ce3923b21132abdd77f02509371b5ec456fccfed98e89"
+    },
+    {
+      "id": "picnic.story.2.item.audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.2.item.audio.wav",
+      "text": "Would you like this banana?",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "3c165c93e1d02366220460b598124ca38001be8e4b8ebf75290d855f2bf4626a"
+    },
+    {
+      "id": "picnic.story.2.reply.audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.2.reply.audio.wav",
+      "text": "Yes, please. You can have the apple.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "b02a938c740a8765a48a5703993a9c048d6f7fb578437b7660df298a8772a462"
     },
     {
       "id": "picnic.story.2.more1.audio",
@@ -730,11 +597,10 @@
       "text": "Thank you. I like apples.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "ffbde5fa6932991d28096131154c346adad6ab80b76fbb528f2f92c5cf74214c",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "6e9717964f3c0bced7814b30f872425e0f5c00ee8949edc4fa3d02ffbb7d0331"
     },
     {
       "id": "picnic.story.2.more2.audio",
@@ -742,11 +608,43 @@
       "text": "And I like bananas!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "7ce3ae32095af695990f0708d4b11d01f75814ff944b10c7b0a293d3d5a38f9f",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "6cc9f376da75be9e674ac34d9cddac19b7bf781c4861b226c500e72a2b59b4e1"
+    },
+    {
+      "id": "picnic.story.3.intro.audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.3.intro.audio.wav",
+      "text": "There is one big piece of bread.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "3c6064a5c1363f29592dee84613440c2f6436e178949f40454ab904546210b7f"
+    },
+    {
+      "id": "picnic.story.3.item.audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.3.item.audio.wav",
+      "text": "How can we both have some?",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "0814397d127b844b10eb3ef9125efb97189b219ae146ad4aeaaa9a16d74ee83b"
+    },
+    {
+      "id": "picnic.story.3.reply.audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.3.reply.audio.wav",
+      "text": "We can share it. Half for each of us.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "2329a0982b1e28d05c0fbad03c9e4f88e954b572e9560d8c7d229ff4645df0ee"
     },
     {
       "id": "picnic.story.3.more1.audio",
@@ -754,11 +652,10 @@
       "text": "Good idea. One half for you.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "950452683aee1d9056b734ce7942669601c3d5caabd731cd1ba900015b1273b3",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "e5812d74f307baa6f2d2f44f9b91f240d2c8a63024297a83292c129abc9508ac"
     },
     {
       "id": "picnic.story.3.more2.audio",
@@ -766,11 +663,43 @@
       "text": "And one half for you. Thank you!",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "f57de27ef5dfe459ce8b30e29d11da7855e51fa9589d3172e3faeca3a62ccedd",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "da2a6d98e744034956c0a9063ef0875b6254e500ac081e700eb26ff14d65c7db"
+    },
+    {
+      "id": "picnic.story.4.intro.audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.4.intro.audio.wav",
+      "text": "Lulu offers Momo some milk.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "5b230a9e8503af926586cb7d7f2e0d0583d9464f86d4cbe16d37dc60060149be"
+    },
+    {
+      "id": "picnic.story.4.item.audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.4.item.audio.wav",
+      "text": "Some milk?",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "8ed423659468bce47d3b047d7adc04c07204c115ebb225b6a8a088a74bcdf641"
+    },
+    {
+      "id": "picnic.story.4.reply.audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.4.reply.audio.wav",
+      "text": "Not now, thank you. Maybe later.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "f7812c0e8017e48ef7bcdbcb88b22f0ea5120b527ded3a13893fc2a3f740e7e0"
     },
     {
       "id": "picnic.story.4.more1.audio",
@@ -778,11 +707,43 @@
       "text": "Okay. I will keep it for you.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "dece586537c642284f5108c6fffb1df80a5b6ac85fbf7756b56fce430665ab21",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "4b06bb82058c85e3eba305f76803ca5e65533f5b5fd591931ce70a53da238796"
+    },
+    {
+      "id": "picnic.story.5.intro.audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.5.intro.audio.wav",
+      "text": "Lulu has been helping with the basket.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "6c30631c450cfc64279947fc05f4e4bd579a16b75f205cacf5b87b9ea131bff9"
+    },
+    {
+      "id": "picnic.story.5.item.audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.5.item.audio.wav",
+      "text": "Your apple is waiting. Sit beside me.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "5ffc8a9df5c399f6a665aa939ba5f3c6da5d3bcf4f80594cbe6234ec124cc268"
+    },
+    {
+      "id": "picnic.story.5.reply.audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.5.reply.audio.wav",
+      "text": "Thank you! Now we can eat together.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "c0e67a0a40eb38365382828e12175eec0d84bdf834d723252a22960960ed9a91"
     },
     {
       "id": "picnic.story.5.more1.audio",
@@ -790,11 +751,43 @@
       "text": "This is a happy picnic.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "de6697e454d653c5be1702b5f26bb85bda4c38997a91750cab3559644e94ad52",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "5bb10ebb1a072c9183cb116109fd34efc0b3e3f13e2d7bb8e277cfda903fbe8d"
+    },
+    {
+      "id": "picnic.story.6.intro.audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.6.intro.audio.wav",
+      "text": "The picnic is over.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "3d4b0a467cb6489a19a3b2c68035af44fbf3eeb48d2c8e56fcffd227f97524e5"
+    },
+    {
+      "id": "picnic.story.6.item.audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.6.item.audio.wav",
+      "text": "I will pack the bread away.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "dcabde4f0bdf3263d56632a99c84ed9f96200722a5ba6ef6908c46f9905fbf8d"
+    },
+    {
+      "id": "picnic.story.6.reply.audio",
+      "path": "audio/picnic/v0-4-0/picnic.story.6.reply.audio.wav",
+      "text": "I will carry the basket. See you, picnic spot!",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "1e0f86cabbe76bab032aaa17e7f256ff1c18b7e9d3437abb5c23667e96f6aa03"
     },
     {
       "id": "picnic.story.6.more1.audio",
@@ -802,11 +795,10 @@
       "text": "Is there anything left on the grass?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "f3db5193e994fbfee72844f9f9ec305edf5bdf50da556c0da88296d4ea71d402",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "fbda7ff6a94bd585d796b4d99e754ba37ae8be6e87bf44fbd8ce0ff2c1fb4046"
     },
     {
       "id": "picnic.story.6.more2.audio",
@@ -814,11 +806,10 @@
       "text": "No. It is all clean.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "5d9bd678690713ebf5bfff3200921f7ede7d39798c9df344f65eeda72ebaac2b",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "36b426830d168d1b81ae4c2766f7a713e8ebbb1badba1fed5b13946a4d198841"
     },
     {
       "id": "picnic.lesson.bridge.audio",
@@ -826,11 +817,10 @@
       "text": "Let us sit under the tree and eat.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "ab2ee67556324b09e2513f26775e7e5c464c77f80178839924079573f98c8ee0",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "b8ce5398774d626547472e9e0bd27eb9593e01f7b0434ed445fcf156eb7b412e"
     }
   ]
 }

@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "sceneId": "breakfast",
   "contentVersion": "0.2.0",
-  "generatedAt": "2026-11-02T22:30:55.6632400Z",
-  "source": "Windows SAPI offline synthesis",
+  "generatedAt": "2026-11-12T07:07:08.252844+00:00",
+  "source": "Kokoro offline speech synthesis (kokoro-onnx, kokoro-v1.0 int8)",
   "purpose": "S4 local synthesis; listening and rights review pending",
   "rightsStatus": "pending review",
   "reviewed": false,
@@ -14,10 +14,10 @@
       "text": "bread",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "72156f2618976f8165f046a3d25ccc5ac718b2a012cfec62991783aeb4032d47"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "327f2f5d483788f173a36b0a8ae8eedfd9c64cb81d5b377fbc78115b5c18dcac"
     },
     {
       "id": "breakfast.milk.audio",
@@ -25,10 +25,10 @@
       "text": "milk",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "3294c13cd8f26da46cf42c3497e2657a1b3c743265b1d8811b2dad0d0765562b"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "8168eeaf0193ed232f20d2eed2ab5b1ce339f1d16acadf81e78a56fbd5f340dd"
     },
     {
       "id": "breakfast.egg.audio",
@@ -36,10 +36,10 @@
       "text": "egg",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "bad30d6029bb51821f50eec2539ae1ebe182f4bae380651a7830d7232f87a216"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "6f130f13fe8190116a7c389e8496ad8c681c1f14161649b9a36c9312d8b25cfc"
     },
     {
       "id": "breakfast.cup.audio",
@@ -47,10 +47,10 @@
       "text": "cup",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c00883305589cda00a3457724b5ec60f11b5eebb49ff57b44e1640b6d8493a6a"
+      "voice": "Kokoro af_bella",
+      "rate": 0.9,
+      "volume": 100,
+      "sha256": "87b9c4d912ad721261ac12ba006e4fd87d164b05eb19cb08aa788a9e55e1ece3"
     },
     {
       "id": "breakfast.dialogue.1.question.audio",
@@ -58,10 +58,10 @@
       "text": "Would you like some bread?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "3fb7ddfa95da19048f135abc43250947a52ca3986c8082ec22576b7baa3311d4"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "c70c98fc49c8448dbbb00476ac411b38f2f6d31f9439d729e3e99d59838fbe8b"
     },
     {
       "id": "breakfast.dialogue.1.reply.1.audio",
@@ -69,10 +69,10 @@
       "text": "Some bread, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "9f2753356cd87110e425a716bb670601dc31276da5345e65807dac506564bef1"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "c04a57a5475ca03aa5f1d4c3b10728128def04ae15d769a352878777f5160f25"
     },
     {
       "id": "breakfast.dialogue.1.reply.1.follow.audio",
@@ -80,10 +80,10 @@
       "text": "Here is a piece for you.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "d3b7e2970ff5f948a4e68d871a6a56b2f0ac2b6ff7a90576b27250010814a949"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "dce28d7581114c9beb66eb4638a1bb6dc7b10f7bab3b2f972aba412e35dde0c7"
     },
     {
       "id": "breakfast.dialogue.1.reply.2.audio",
@@ -91,10 +91,10 @@
       "text": "No, thank you.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "8a1dd8f87508dd27b15c49a9a6451568708f516658701cd5a05e9ae742a56fdd"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "226b586163eb5ee6ea7e6f0e5d57f96d9a91b91bbd65c1fd3786ee8292847723"
     },
     {
       "id": "breakfast.dialogue.1.reply.2.follow.audio",
@@ -102,10 +102,10 @@
       "text": "That is okay. You can choose something else.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "7b7ea08d671e9044a68b0798b1a8b3696eb1eef1e458629dcc1ca78f0d4e0aa8"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "3f2625b09c6d2137047f829b0de0c9a84bc35007f9a04b9c03bc48be06d6ba0d"
     },
     {
       "id": "breakfast.dialogue.2.question.audio",
@@ -113,10 +113,10 @@
       "text": "What would you like in your cup?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "a97d4d97d3060baee31844e033a59a1089f551a5b1b62210d7602e8167d97b88"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "5ccbea0f6a1e6e8c3904bd3bf9c7d5bcd45971e054a226bbc495df9db60f896a"
     },
     {
       "id": "breakfast.dialogue.2.reply.1.audio",
@@ -124,10 +124,10 @@
       "text": "A little milk, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "012c7b75d9f2c42929cfa0924afdf92f1e413fe4acc72edf84db5de9c831b8cd"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "1e71178771a7312fbd0b3f015c6eaeefe06974c3761bacbfa330bfc816a2ec44"
     },
     {
       "id": "breakfast.dialogue.2.reply.1.follow.audio",
@@ -135,10 +135,10 @@
       "text": "Our grown-up can help us pour it.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "0e71de76c88ff2366a601bf12c0000fb4c8a2ffd4a19bc58c487a82610f3515f"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "dcd41ef1138faed4faf39b32c99d2fd9e813469c9656fd521da51f90ff95fa03"
     },
     {
       "id": "breakfast.dialogue.2.reply.2.audio",
@@ -146,10 +146,10 @@
       "text": "No milk, thank you.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "eacd9fe36d7878acea855c2c1176bca408ff19273b67e5a5a1734ff41d1df2b9"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "4ab2790ed7ab2fcb5c828d453e15d09200e6c2835e82cef315ddb36e56644ab9"
     },
     {
       "id": "breakfast.dialogue.2.reply.2.follow.audio",
@@ -157,10 +157,10 @@
       "text": "That is okay. Tell our grown-up what you need.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c418a64698fff0b54d52eb3bdd22c87758fc07da2549f50dedb2ed6661bf7680"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "c12abcfd2995fd0482e32e4e6e3d57ca3c2401bd7daa6cde0b4295baa9b6b7ee"
     },
     {
       "id": "breakfast.dialogue.3.question.audio",
@@ -168,10 +168,10 @@
       "text": "Shall we share this bread?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "90c709fd343974d6ba1242ce0ffbe4ee802f531ce84fe4b55417a7d6e861d4c1"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "4ccfb759545492582638ba6a45672ccc8345bae9a2518f6121652b0fc22ea7a5"
     },
     {
       "id": "breakfast.dialogue.3.reply.1.audio",
@@ -179,10 +179,10 @@
       "text": "Yes, a small piece, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "a99a6bf915edc087afea96cafb7799c60b2628509ca0c44b441f3f73a7be12ad"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "fe0e2c933e4fd20428586784da9cce4113bbdf47ca6f1d45bd7a590f7d6533d8"
     },
     {
       "id": "breakfast.dialogue.3.reply.1.follow.audio",
@@ -190,10 +190,10 @@
       "text": "I will put your piece on your plate.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "eb3222cebad67f1d4f8fb5e1be79043c0e81c1c277da6747deddcda207e16233"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "17c7a9c45b50a697d12401f8f9419fe8f051ed452aa430d59a1f6ed9cc435a5d"
     },
     {
       "id": "breakfast.dialogue.3.reply.2.audio",
@@ -201,10 +201,10 @@
       "text": "I have enough, thank you.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "e41e760b7d540611da8b055c6fae833f7c1d32e59ffbcfdc761f0f91e48844fc"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "977c00088347baaa2f4c6d55ca9d359fb36e2de5ab63dc039b5292f641550fbe"
     },
     {
       "id": "breakfast.dialogue.3.reply.2.follow.audio",
@@ -212,10 +212,10 @@
       "text": "You can stop whenever you have had enough.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "7dd7f38be1a3c02b63753b13ea8cc06c688234e453bf9ce1a1c54363fd8a43e5"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "3fc87caddf2a0cb1af95526192ff4e38769982544a3ed97c7a83c385958edf43"
     },
     {
       "id": "breakfast.dialogue.4.question.audio",
@@ -223,10 +223,10 @@
       "text": "Would you like the egg now?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "ed1ef987b33cac913838715763dca82d1e0efe329e75cc84bf8b77f0dca28302"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "043f6965fe6fc1b959a74f707cd28b7c465230d490f0b38288a1e6c739f1d201"
     },
     {
       "id": "breakfast.dialogue.4.reply.1.audio",
@@ -234,10 +234,10 @@
       "text": "Is it too hot?",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "93bc9b86acab82fe722fe4bec2a958a663c0c1d7177ff039ebba93e2cbf989e2"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "bd8d9a6c31658e5eca1fac0f33a5c2d41c6dd8226723e47a473a1e546cf2a321"
     },
     {
       "id": "breakfast.dialogue.4.reply.1.follow.audio",
@@ -245,10 +245,10 @@
       "text": "Let us check with our grown-up first.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "9e13d4c40b47e3f2cdd930cb5bce0c50fd3931e07c87553b32cc6f69b73bc2e8"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "3a286be42ddf3b9737362ab47dc1dd2ecaee714fb7d33deb1bb760a313ef4851"
     },
     {
       "id": "breakfast.dialogue.4.reply.2.audio",
@@ -256,10 +256,10 @@
       "text": "I will wait a little.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "0e1a4d1dd1c769c225dedd14f5bfafaedcd297ca824bfb020111979b8dec7389"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "44595620acac5ff4aa7c12e69c3c8504a9f7e0ec44706ed78dffa83e49b0283a"
     },
     {
       "id": "breakfast.dialogue.4.reply.2.follow.audio",
@@ -267,10 +267,10 @@
       "text": "We can wait until it is comfortable to eat.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "a4cf132fa4ff2ff3236f968189812e2f6fc20f8f7cb28144ca698a5923110005"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "3a6f4278892550037e9db9909a0684ed666094efd03d04bf16d5142c7dc39cc8"
     },
     {
       "id": "breakfast.dialogue.5.question.audio",
@@ -278,10 +278,10 @@
       "text": "Can you pass the cup, please?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "04dd47c8da195bc786005534ea99f3b1ef341739dac18ebe1c300f8d4ba68ebf"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "4c6cf3634a2b943603e85490bab981965b6263dd6241f0ca4982007379e85e8d"
     },
     {
       "id": "breakfast.dialogue.5.reply.1.audio",
@@ -289,10 +289,10 @@
       "text": "Here you are.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "a14f7b48f1346cb2c012d65f65a63298c94d37742dd3058a030913ab2fe46808"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "17ec61a83784c1d650702d0c5e3622c44bc9b6f79a18e079a55c29abdb7ef603"
     },
     {
       "id": "breakfast.dialogue.5.reply.1.follow.audio",
@@ -300,10 +300,10 @@
       "text": "Thank you. I will hold it with both hands.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "e1d98721645c97325b4968b8a34034cea4d6a945c9771a391c8be02bdd362d9e"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "eae9e170bc097eb1ad283653e0cb538f11f2674862cb791adf073aa8836af758"
     },
     {
       "id": "breakfast.dialogue.5.reply.2.audio",
@@ -311,10 +311,10 @@
       "text": "Please help me carry it.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "a6f48e38655dfd0af966458b993b33193d0659067a2eed01e75aef66f12db97d"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "7509e46bacd943dd9456135ac735f2d3d90c7d3974a080141d68141bd9661b14"
     },
     {
       "id": "breakfast.dialogue.5.reply.2.follow.audio",
@@ -322,10 +322,10 @@
       "text": "Let us carry it carefully together.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "1eb24b79fe1f69a3f3bebe6ea24bcf9181fb398228e75f26613b5532fb1e55df"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "30623c40ec7eef26ca270e32bcd7ab36c9c33e829263b4d0e73e397707cea7df"
     },
     {
       "id": "breakfast.dialogue.6.question.audio",
@@ -333,10 +333,10 @@
       "text": "Have you had enough breakfast?",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "f06a854ce8b673989ad42d589ecfc17c2269ede0d6c26807767d4b87d840e6b7"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "3cf7f1a3ac55ab7f1ce97a3df63a732456508d25aeb68f640dce4251b1dfca60"
     },
     {
       "id": "breakfast.dialogue.6.reply.1.audio",
@@ -344,10 +344,10 @@
       "text": "Yes, thank you.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "e6410dfb27aa910c19f2008088da770448c326d4727a81b12a219420206700bd"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "25f19c030af73c87e115b937952fdd3671f8fad4bb559df46663b46ffea8d81d"
     },
     {
       "id": "breakfast.dialogue.6.reply.1.follow.audio",
@@ -355,10 +355,10 @@
       "text": "Let us put our things away.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "5916d7cac6c44a8eb25243304b988a24487767a31b3db598dda3e14bb71be6bf"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "f3964519c346fb55e869ddb9f4b68074e5e10527ecf2127b9f8d1406361d299e"
     },
     {
       "id": "breakfast.dialogue.6.reply.2.audio",
@@ -366,10 +366,10 @@
       "text": "A little more bread, please.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "eb8eaf52bff9181c7d83ff6968ef8e6d1fe6232b30bdb544f14c7472e61df4b7"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "edfffe543f268688bb1d978011a40690f4a13568420084d17c65973b815bec9b"
     },
     {
       "id": "breakfast.dialogue.6.reply.2.follow.audio",
@@ -377,10 +377,10 @@
       "text": "Here is another small piece.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "c4946c26cb7606cb96c21d811a798ca021b523e41848f45702e6fe2541d9e5fb"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "8b71c0d1f1f29802018f55bf55fb00791b60b0448d05c8774064ee65360012e8"
     },
     {
       "id": "breakfast.story.1.intro.audio",
@@ -388,10 +388,10 @@
       "text": "The table is almost ready.",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "6fed833d1ebac3db3b91b65e84cc803120f5a8adac73e9dbcad258a9aab54936"
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "858f36136185845ddcc624a010fc7a35eabcad84f3ba33ed60948dc4bdfae24e"
     },
     {
       "id": "breakfast.story.1.item.audio",
@@ -399,10 +399,10 @@
       "text": "Bread, egg... something is missing.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "7ee63e143b88ea24b7f1f99716a0d2d3768aa91ff9809a8cb5a7937f73da448f"
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "9c8a674f14fcbe3b47127634cd6614a652c84f90e93a2fbb1fcdb92f96900d4f"
     },
     {
       "id": "breakfast.story.1.reply.audio",
@@ -410,175 +410,10 @@
       "text": "Our cup! I will bring it.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "45c36245a819a7d2ee513a5826509d9c7cda83d8b3921c2b250a499965b89ee5"
-    },
-    {
-      "id": "breakfast.story.2.intro.audio",
-      "path": "audio/breakfast/v0-2-0/breakfast.story.2.intro.audio.wav",
-      "text": "Lulu has bread, but Momo has none.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "19dc7737683934c98b2d78465dd972fced5de37049ee86c5d5477dbf4af5383c"
-    },
-    {
-      "id": "breakfast.story.2.item.audio",
-      "path": "audio/breakfast/v0-2-0/breakfast.story.2.item.audio.wav",
-      "text": "May I have some bread?",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "b16eaea4916754e61e8404090f0d1e2f4b85339aa6779d176318bea3033e04ea"
-    },
-    {
-      "id": "breakfast.story.2.reply.audio",
-      "path": "audio/breakfast/v0-2-0/breakfast.story.2.reply.audio.wav",
-      "text": "Of course. This piece is for you.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "3c60a1e9638a802bfa3ac41ec62f436865ba0c70140b3dae684ed0def18d2787"
-    },
-    {
-      "id": "breakfast.story.3.intro.audio",
-      "path": "audio/breakfast/v0-2-0/breakfast.story.3.intro.audio.wav",
-      "text": "A grown-up helps pour the milk.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "676780e64b586b67beb5bb0ca705afc162bbdc3ccbbf29156553475f82389c44"
-    },
-    {
-      "id": "breakfast.story.3.item.audio",
-      "path": "audio/breakfast/v0-2-0/breakfast.story.3.item.audio.wav",
-      "text": "A little milk, please.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "a9621bda4aa8bfbb9caefd8bf64574ceec61fa38615b6b8027bfc28243184afa"
-    },
-    {
-      "id": "breakfast.story.3.reply.audio",
-      "path": "audio/breakfast/v0-2-0/breakfast.story.3.reply.audio.wav",
-      "text": "Say stop when you have enough.",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "85a88705777ab4f875fb417d55e4e87860512fcbef4d7069cf8725cb7348d4da"
-    },
-    {
-      "id": "breakfast.story.4.intro.audio",
-      "path": "audio/breakfast/v0-2-0/breakfast.story.4.intro.audio.wav",
-      "text": "An egg is still warm.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "04ad82b7d9b4aff69235400d4c33b6b93b30c6b7323801238d786c91b24c222f"
-    },
-    {
-      "id": "breakfast.story.4.item.audio",
-      "path": "audio/breakfast/v0-2-0/breakfast.story.4.item.audio.wav",
-      "text": "Can we eat it now?",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "53a50546e94392f70f75a9dd1ac71f82653a75902e3c911aa6e93c38efb85c10"
-    },
-    {
-      "id": "breakfast.story.4.reply.audio",
-      "path": "audio/breakfast/v0-2-0/breakfast.story.4.reply.audio.wav",
-      "text": "Let us check and wait a little.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "14cc05a5b6eb54e7de9dfd678be4a76567735db5791562d92835ed9385524004"
-    },
-    {
-      "id": "breakfast.story.5.intro.audio",
-      "path": "audio/breakfast/v0-2-0/breakfast.story.5.intro.audio.wav",
-      "text": "There is another piece of bread.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "5e7d52ab64e37e7ab1c2f72c1d52e473034851cf4a9550c6fb5c233c8c01ff91"
-    },
-    {
-      "id": "breakfast.story.5.item.audio",
-      "path": "audio/breakfast/v0-2-0/breakfast.story.5.item.audio.wav",
-      "text": "Would you like more?",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "08150b03b27ff975a8867422e8966e8461ed6cd0cf19e79f61083624c46414e3"
-    },
-    {
-      "id": "breakfast.story.5.reply.audio",
-      "path": "audio/breakfast/v0-2-0/breakfast.story.5.reply.audio.wav",
-      "text": "No, thank you. I have enough.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "d01bcf213884857eb10923b90df51a41ab91340acdf6c97654a39895e83f2880"
-    },
-    {
-      "id": "breakfast.story.6.intro.audio",
-      "path": "audio/breakfast/v0-2-0/breakfast.story.6.intro.audio.wav",
-      "text": "Breakfast is finished.",
-      "language": "en-US",
-      "role": "narrator",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "d37ed6bc535eb4d012c80cd1da69ec3d8eab35e3d8a8dc5be557835942899ca8"
-    },
-    {
-      "id": "breakfast.story.6.item.audio",
-      "path": "audio/breakfast/v0-2-0/breakfast.story.6.item.audio.wav",
-      "text": "I will carry the cup with help.",
-      "language": "en-US",
-      "role": "momo",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -2,
-      "volume": 90,
-      "sha256": "73ddac6c9acb51e7930eb3d46282b9cac8a9aeee0903e0f4877c0fdb77b6e093"
-    },
-    {
-      "id": "breakfast.story.6.reply.audio",
-      "path": "audio/breakfast/v0-2-0/breakfast.story.6.reply.audio.wav",
-      "text": "I will put the bread away. Teamwork!",
-      "language": "en-US",
-      "role": "bunny",
-      "voice": "Microsoft Zira Desktop - English (United States)",
-      "rate": -1,
-      "volume": 90,
-      "sha256": "2acd5f6eb53052afb20afbb890190f92c77b0b524b523e9699a9e5af58faf505"
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "81f52e6907c8c0a7cef7b08cb5dbe35521d1c51b7b4bb4b632b185c9fe075dca"
     },
     {
       "id": "breakfast.story.1.more1.audio",
@@ -586,11 +421,43 @@
       "text": "Thank you, Lulu. Now we have everything.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "1b8e7b2342573c54989c82a6ef94cf923e344efae3b881f6ccf987425638f12c",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "f183e1f965d2857c490dc200aa2cea80c2e572ef81ebb91b5983fca6e6c62c1a"
+    },
+    {
+      "id": "breakfast.story.2.intro.audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.2.intro.audio.wav",
+      "text": "Lulu has bread, but Momo has none.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "577f11d262f5809030d24c4b51bc722a932549b90a0e85edff5a3ec5addd5caf"
+    },
+    {
+      "id": "breakfast.story.2.item.audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.2.item.audio.wav",
+      "text": "May I have some bread?",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "339f67f68557a26f62001c36902366f66dddfb988e33edd8940fca0135423dff"
+    },
+    {
+      "id": "breakfast.story.2.reply.audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.2.reply.audio.wav",
+      "text": "Of course. This piece is for you.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "cd8bc9825c3e04c8922e37484195adc5d339831a37efe5d3e00802c015c298ff"
     },
     {
       "id": "breakfast.story.2.more1.audio",
@@ -598,11 +465,10 @@
       "text": "Thank you. It smells good.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "282321e05fc4924b82c15107fcbb0933bcb0bee0c86bc77e13a2e02c05d2fc73",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "63072b41ec9fa73aa11d2498c5dae5ba872f96872a3f29b6cad2a35126f86ad4"
     },
     {
       "id": "breakfast.story.2.more2.audio",
@@ -610,11 +476,43 @@
       "text": "You are welcome. Let us eat.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "beb807b4652cbc00ceda21fa315fb8e5ef7fe24a3289e7d2a187c26ef5e57c6a",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "0afa6e7fd9ed0e1c0c4db49d9e7cdd61b325bd6eaa3e590f0819ed7f8c22f694"
+    },
+    {
+      "id": "breakfast.story.3.intro.audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.3.intro.audio.wav",
+      "text": "A grown-up helps pour the milk.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "5cb97e266ebc2de48336bae4bf6815bfe9279813cc8561dd8965b28a74fab543"
+    },
+    {
+      "id": "breakfast.story.3.item.audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.3.item.audio.wav",
+      "text": "A little milk, please.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "0d43689816b6e79284e44e92863e2b46165309dce723d2f1b2a50acf546b69e4"
+    },
+    {
+      "id": "breakfast.story.3.reply.audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.3.reply.audio.wav",
+      "text": "Say stop when you have enough.",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "1cc95f0205645bfdf90eb6cc09f19eb4fe5f0b73934dd94223b55c1bdd111e7f"
     },
     {
       "id": "breakfast.story.3.more1.audio",
@@ -622,11 +520,43 @@
       "text": "Stop, please. That is enough.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "be70261f8a9ef9cb4503628132c63277fcbaf075c92d7fac76efbd9a721ab559",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "c84b1e68172a73612ce0b605526b3492c0516a0bd7f3b8b5c6270892cad258e5"
+    },
+    {
+      "id": "breakfast.story.4.intro.audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.4.intro.audio.wav",
+      "text": "An egg is still warm.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "86f7b01993293b068cb4162f3eb278d04be20b047909cf608ff96df536359ca1"
+    },
+    {
+      "id": "breakfast.story.4.item.audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.4.item.audio.wav",
+      "text": "Can we eat it now?",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "5461508303c13669e9cdac2e3fbe95c7391a04cf71fe94fe1da2dd95240af41b"
+    },
+    {
+      "id": "breakfast.story.4.reply.audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.4.reply.audio.wav",
+      "text": "Let us check and wait a little.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "fdf095574ce4634bafa0dc0fd778a47257c61ec2d2d69256385aadaf32631009"
     },
     {
       "id": "breakfast.story.4.more1.audio",
@@ -634,11 +564,10 @@
       "text": "Is it still hot?",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "f9744902833c6872eb140ccd7b58f89a7a38aca1cc20d32a26a80c15af37a2bf",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "8669ffa7394997de07f9cd3581810c82a25de0492808ecd92089a2315cfab823"
     },
     {
       "id": "breakfast.story.4.more2.audio",
@@ -646,11 +575,43 @@
       "text": "Just warm now. We can eat it.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "5c3a4093851445d5cccf35cd516124006278f6e59897850b008bc3dead26c49a",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "decfef87a0c983af4dc6fce97de94e6d68b377a49c8a7c8f0dd01db54bef9adc"
+    },
+    {
+      "id": "breakfast.story.5.intro.audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.5.intro.audio.wav",
+      "text": "There is another piece of bread.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "8e5c94ffe3aeaeef66ba6e3807cc2fb24882b1f23fcb6158fd70be58efecb8ed"
+    },
+    {
+      "id": "breakfast.story.5.item.audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.5.item.audio.wav",
+      "text": "Would you like more?",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "6e210ea787ddd58483e7b05e61a0ab6d171ddf6c1a68338ff1646af42a677afe"
+    },
+    {
+      "id": "breakfast.story.5.reply.audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.5.reply.audio.wav",
+      "text": "No, thank you. I have enough.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "b7598493c1b467d3066881384334f109a9e4554e0098301659021a063f5954c3"
     },
     {
       "id": "breakfast.story.5.more1.audio",
@@ -658,11 +619,43 @@
       "text": "Okay. I will save it for later.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "e2679fb74f39bed77b77d5b727dcad8c1c3862514cc32da96850303987d72536",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "8008b4582968b55a709b24bc2bb5c7502de94e4634422eb807fca198ced9722e"
+    },
+    {
+      "id": "breakfast.story.6.intro.audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.6.intro.audio.wav",
+      "text": "Breakfast is finished.",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "438a48472b2dcce4c7e3eeebda9804e6a17f36c957a3ad6c8103ae80943386ff"
+    },
+    {
+      "id": "breakfast.story.6.item.audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.6.item.audio.wav",
+      "text": "I will carry the cup with help.",
+      "language": "en-US",
+      "role": "momo",
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d6842c27b96c2eba8390417461d8c0c05f1a07b4e0aa69344b14fe9b85bbd1b0"
+    },
+    {
+      "id": "breakfast.story.6.reply.audio",
+      "path": "audio/breakfast/v0-2-0/breakfast.story.6.reply.audio.wav",
+      "text": "I will put the bread away. Teamwork!",
+      "language": "en-US",
+      "role": "bunny",
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
+      "volume": 100,
+      "sha256": "4b5cddbde736fc29a975c2f552e8e4a15a5da9736ac28555c64a6a215caa73b5"
     },
     {
       "id": "breakfast.story.6.more1.audio",
@@ -670,11 +663,10 @@
       "text": "The table is clean again.",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "b017d43a4b22e29cf0dfc1d6b7f05d6d4484a66f4714fd89e29f218327665273",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "e507b94edd6c9cea83ecaa8ad9fb26273774ac5570d6df883ba53113dfc68829"
     },
     {
       "id": "breakfast.story.6.more2.audio",
@@ -682,11 +674,10 @@
       "text": "Thank you for helping, Momo.",
       "language": "en-US",
       "role": "bunny",
-      "voice": "Samantha (macOS say)",
-      "rate": 165,
+      "voice": "Kokoro af_nova",
+      "rate": 1.05,
       "volume": 100,
-      "sha256": "c38423d448c69453ac12d8c7eb0939b08896cdc80b3fc30965e7744a339212da",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "af94a8c178765251e8848176f45f45cbc7c2bb136663b0af52a21dae9ce87996"
     },
     {
       "id": "breakfast.game.1.label.bread.audio",
@@ -694,11 +685,10 @@
       "text": "share the bread",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "bce8a0b8c04c08ac13d5eb4e2d2e4f44c5f71ec52cc5dbd63521a1c330a9e3c0",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "0ad7c55880d15d345f86f614a79fcf53d05e9c561845e2d3c24a927e13c54057"
     },
     {
       "id": "breakfast.game.1.label.egg.audio",
@@ -706,11 +696,10 @@
       "text": "put out the egg",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "7fc10b218e467975962a6398ea7fb2a41184c3307fd4ae1ba9ff7c69901829a6",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "99afb1d071b0753dff86ca4d55c4b1c63f3ea93af520227f62d1acf7c8af9be2"
     },
     {
       "id": "breakfast.game.1.label.cup.audio",
@@ -718,11 +707,10 @@
       "text": "bring the cups",
       "language": "en-US",
       "role": "narrator",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "172d018c9a6cf993e2056197b0b9751d30b6f56761293abbb4882b21686ea055",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "9ecc4941dd37674ac2de097821bad35803295cad64b7a537e74d66c1534ae2a0"
     },
     {
       "id": "breakfast.lesson.bridge.audio",
@@ -730,11 +718,10 @@
       "text": "Shoes on, hat on. I am hungry!",
       "language": "en-US",
       "role": "momo",
-      "voice": "Samantha (macOS say)",
-      "rate": 150,
+      "voice": "Kokoro af_bella",
+      "rate": 1.0,
       "volume": 100,
-      "sha256": "4b19f6d1f960040ca7a13d2b10417d8138fe753e9a1e87278b428fc646f4bfb9",
-      "provenanceStatus": "mac placeholder"
+      "sha256": "b0212914677a1f0f565140e8c30adf7ea18c4b414bb88df6f9f2800cd943dac2"
     }
   ]
 }
