@@ -1,5 +1,5 @@
 import {loadReviewSources} from './core/review-sources.mjs?v=diary-tabs-20261112';
-import {App} from './core/app.mjs?v=game-word-tag-20261112';
+import {App} from './core/app.mjs?v=lesson-rounds-20261112';
 import {clearedFrom,mapLevels} from './core/day-map.mjs?v=diary-tabs-20261112';
 import {diaryDays,renderDiary} from './core/diary.mjs?v=diary-tabs-20261112';
 import {routeOrder,canEnter} from './core/route.mjs?v=diary-tabs-20261112';

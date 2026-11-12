@@ -56,7 +56,7 @@ async function walk(env,seen=[]){
       while(!s.done){const target=s.target;await root.querySelector('.lesson-target').fire();await option(root,target).fire();}
       await button(root,'继续').fire();
     }
-    else if(step.kind==='game'){await playGameQuestion(app,root,app.pack);assert.equal(app.stateFor('lesson').step.kind,'match');assert(app.stateFor('game').finished);}
+    else if(step.kind==='game'){await playGameQuestion(app,root,app.pack);if(app.stateFor('lesson').step.kind!=='game'){assert.equal(app.stateFor('lesson').step.kind,'match');assert(app.stateFor('game').finished);}}
     else throw Error('unexpected step '+step.kind);
   }
   assert(root.textContent.includes('这节课完成啦'),'lesson did not finish');
@@ -164,6 +164,14 @@ test('wrong double click records one wrong answer',async()=>{
   const list=answers(env.store);assert.equal(list.length,1);assert.equal(list[0].correct,false);assert.equal(s.attempts,1);
 });
 
+test('listen-and-find games play every round in the lesson; other games stay one round',async()=>{
+  for(const [id,rounds] of [['dressing',4],['picnic',4],['washing',1]]){
+    const pack=require('./static/content/'+id+'.json'),env=await fixture(pack);env.app.open('lesson');await toStep(env,'game');
+    const s=env.app.stateFor('lesson');
+    for(let i=0;i<rounds;i++){assert.equal(s.step.kind,'game',id+' round '+(i+1));assert.equal(env.app.stateFor('game').index,i);await playGameQuestion(env.app,env.root,pack);}
+    assert.equal(s.step.kind,'match',id+' leaves after '+rounds);assert(env.app.stateFor('game').finished);
+  }
+});
 test('one skip leaves the game step; a finished game does not trap it',async()=>{
   for(const finished of [false,true]){
     const env=await fixture(require('./static/content/park.json'));env.app.open('lesson');await toStep(env,'fill');

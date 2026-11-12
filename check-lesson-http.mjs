@@ -51,9 +51,9 @@ test('a park lesson with one wrong answer persists answers and progress through 
     lesson=app.stateFor('lesson');assert.equal(lesson.step.id,fill.id);assert.equal(lesson.attempts,1);
     await app.open('lesson');lesson=app.stateFor('lesson');assert.equal(lesson.step.id,fill.id);assert.equal(lesson.attempts,1);
     await pick(root,fill.answer);assert.equal(app.failure,null,JSON.stringify(app.failure));await click(root,'继续');
-    // game: exactly one question, then the lesson moves on
-    {
-      const game=app.stateFor('game'),q=pack.modules.game.questions[game.index];
+    // game: park is a listen-and-find game, so every round is played, then the lesson moves on
+    for(let i=0;i<pack.modules.game.questions.length;i++){
+      const game=app.stateFor('game');assert.equal(app.stateFor('lesson').step.kind,'game');assert.equal(game.index,i);const q=pack.modules.game.questions[i];
       await click(root,'听听要找什么');
       await root.querySelectorAll('button').find(b=>b.attributes['aria-label']==='选择'+app.word(q.target).cn).fire();await click(root,'找到了');
       assert.equal(app.failure,null,JSON.stringify(app.failure));assert(game.done);await click(root,'继续');
@@ -67,7 +67,7 @@ test('a park lesson with one wrong answer persists answers and progress through 
     assert.deepEqual(answers.filter(a=>a.payload.stepId===fill.id).map(a=>[a.payload.correct,a.payload.attempt]).sort((a,b)=>a[1]-b[1]),[[false,1],[true,2]]);
     assert.equal(answers.filter(a=>a.payload.correct===false).length,1);
     assert.equal(answers.filter(a=>a.payload.stepId===pack.lesson.steps.find(s=>s.kind==='match').id&&a.payload.correct).length,pack.lesson.steps.find(s=>s.kind==='match').words.length);
-    assert.equal(state.events.filter(e=>e.kind==='choice'&&e.payload.moduleId==='game').length,1);
+    assert.equal(state.events.filter(e=>e.kind==='choice'&&e.payload.moduleId==='game').length,pack.modules.game.questions.length);
     assert(state.events.some(e=>e.kind==='introduced'&&e.payload.moduleId==='lesson'));
     assert.deepEqual(state.events.filter(e=>e.kind==='choice'&&e.payload.mode==='story_listen'&&e.payload.moduleId==='lesson').map(e=>e.payload.stepId).sort(),pack.modules.story.map(s=>s.id).sort());
     assert(state.events.some(e=>e.kind==='sticker'));

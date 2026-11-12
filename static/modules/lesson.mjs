@@ -208,7 +208,10 @@ export function renderLesson(c,s){
   if(step.kind==='game'){
     c.body.append(progressBar(s));
     if(s.freshGame){c.app.states.delete('game');s.freshGame=false;}
-    const game=c.app.stateFor('game'),finish=()=>{
+    // Listen-and-find games (find in the picture, pick for the basket) play every round: 继续 after a finished
+    // round opens the next one; 先跳过 still leaves the whole game.
+    const game=c.app.stateFor('game'),rounds=['scene-find','listen-pack'].includes(c.pack.modules.game.type),finish=()=>{
+      if(rounds&&game.done&&!c.app.advancingLesson){c.pause();if(game.next()){c.redraw();return c.app.checkpoint('game');}}
       if(c.app.advancingLesson)return;c.app.advancingLesson=true;
       return (async()=>{
         try{
