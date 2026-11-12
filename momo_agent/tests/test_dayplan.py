@@ -119,7 +119,7 @@ class CheckDayPlanTest(TempRepoCase):
         self.assertTrue(any("park" in e for e in errors))
 
     def test_required_texts(self):
-        for field in ("title", "goal", "bridge_en", "bridge_cn"):
+        for field in ("title", "goal", "title_en", "bridge_en", "bridge_cn"):
             errors = self.errors(lambda d: d["levels"][0].update({field: "  "}))
             self.assertTrue(any(field in e for e in errors), field)
 
@@ -192,3 +192,7 @@ class DayPlanCommandTest(TempRepoCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    def test_title_en_length(self):
+        errors = self.errors(lambda d: d["levels"][0].update(title_en="one two three four five six seven"))
+        self.assertTrue(any("title_en" in e for e in errors))

@@ -700,6 +700,17 @@
       "rate": 1.0,
       "volume": 100,
       "sha256": "45fb781d650f72725d9d41dfa9c3aaa19a31d55c9553f88229a296756e71665f"
+    },
+    {
+      "id": "birthday.lesson.title.audio",
+      "path": "audio/birthday/lesson/title-2329d0f6.wav",
+      "text": "A Birthday Party",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "d0c3a9bfd21d780fae71075de6835aa82577b023fa2b23e5d5ef606c50088ce7"
     }
   ]
 }

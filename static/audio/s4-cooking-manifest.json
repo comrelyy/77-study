@@ -722,6 +722,17 @@
       "rate": 1.0,
       "volume": 100,
       "sha256": "25c1e7b8d88ae5ad2099e1ac69cb491eeafb40398f4d5df7b993950a88e01cd7"
+    },
+    {
+      "id": "cooking.lesson.title.audio",
+      "path": "audio/cooking/lesson/title-ddcfe51a.wav",
+      "text": "Let's Make a Snack",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "6f29615dd50bc8dff78407535bfbdc0d000c037d886e34c487f54d0036b8891b"
     }
   ]
 }

@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "sceneId": "shopping",
-  "contentVersion": "0.2.3",
+  "contentVersion": "0.2.4",
   "status": "draft",
   "compatibleFrom": [
     "0.2.0",
     "0.2.1",
-    "0.2.2"
+    "0.2.2",
+    "0.2.3"
   ],
   "title": "和 Momo 逛小商店",
   "stickerId": "shopping.sticker",
@@ -803,6 +804,17 @@
       "reviewed": false
     },
     {
+      "id": "shopping.lesson.title.audio",
+      "kind": "audio",
+      "path": "audio/shopping/lesson/title-c6768cb6.wav",
+      "text": "At the Little Shop",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "shopping.lesson.bridge.audio",
       "kind": "audio",
       "path": "audio/shopping/lesson/bridge-3709780b.wav",
@@ -1572,6 +1584,10 @@
         "kind": "end"
       }
     ],
+    "title": {
+      "text": "At the Little Shop",
+      "audio": "shopping.lesson.title.audio"
+    },
     "bridge": {
       "text": "Oh no, no more bananas. Let us go to the shop.",
       "cn": "哎呀，香蕉吃完了。我们去商店吧。",

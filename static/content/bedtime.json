@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "sceneId": "bedtime",
-  "contentVersion": "0.2.3",
+  "contentVersion": "0.2.4",
   "status": "draft",
   "compatibleFrom": [
     "0.2.0",
     "0.2.1",
-    "0.2.2"
+    "0.2.2",
+    "0.2.3"
   ],
   "title": "和 Momo 道晚安",
   "stickerId": "bedtime.sticker",
@@ -837,6 +838,17 @@
       "reviewed": false
     },
     {
+      "id": "bedtime.lesson.title.audio",
+      "kind": "audio",
+      "path": "audio/bedtime/lesson/title-2d1b6f87.wav",
+      "text": "Good Night, Momo",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "bedtime.lesson.bridge.audio",
       "kind": "audio",
       "path": "audio/bedtime/lesson/bridge-a9cef513.wav",
@@ -1587,6 +1599,10 @@
         "kind": "end"
       }
     ],
+    "title": {
+      "text": "Good Night, Momo",
+      "audio": "bedtime.lesson.title.audio"
+    },
     "bridge": {
       "text": "What a big day. Time for bed, Momo.",
       "cn": "今天真充实。该睡觉啦，Momo。",

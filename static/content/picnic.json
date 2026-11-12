@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "sceneId": "picnic",
-  "contentVersion": "0.4.3",
+  "contentVersion": "0.4.4",
   "status": "draft",
   "compatibleFrom": [
     "0.4.0",
     "0.4.1",
-    "0.4.2"
+    "0.4.2",
+    "0.4.3"
   ],
   "title": "和 Momo 去野餐",
   "stickerId": "picnic.sticker",
@@ -943,6 +944,17 @@
       "reviewed": false
     },
     {
+      "id": "picnic.lesson.title.audio",
+      "kind": "audio",
+      "path": "audio/picnic/lesson/title-50feb6c6.wav",
+      "text": "A Picnic with Friends",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "picnic.lesson.bridge.audio",
       "kind": "audio",
       "path": "audio/picnic/lesson/bridge-a912c667.wav",
@@ -1822,6 +1834,10 @@
         "kind": "end"
       }
     ],
+    "title": {
+      "text": "A Picnic with Friends",
+      "audio": "picnic.lesson.title.audio"
+    },
     "bridge": {
       "text": "Let us sit under the tree and eat.",
       "cn": "我们坐到树下吃东西吧。",

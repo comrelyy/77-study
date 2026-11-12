@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "sceneId": "dressing",
-  "contentVersion": "0.2.3",
+  "contentVersion": "0.2.4",
   "status": "draft",
   "compatibleFrom": [
     "0.2.0",
     "0.2.1",
-    "0.2.2"
+    "0.2.2",
+    "0.2.3"
   ],
   "title": "和 Momo 准备出门",
   "stickerId": "dressing.sticker",
@@ -830,6 +831,17 @@
       "reviewed": false
     },
     {
+      "id": "dressing.lesson.title.audio",
+      "kind": "audio",
+      "path": "audio/dressing/lesson/title-e02c2a9f.wav",
+      "text": "Momo Gets Dressed",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "dressing.lesson.bridge.audio",
       "kind": "audio",
       "path": "audio/dressing/lesson/bridge-06217f31.wav",
@@ -1635,6 +1647,10 @@
         "kind": "end"
       }
     ],
+    "title": {
+      "text": "Momo Gets Dressed",
+      "audio": "dressing.lesson.title.audio"
+    },
     "bridge": {
       "text": "Clean hands, clean face. Now let us get dressed.",
       "cn": "手洗干净、脸也洗干净了。我们穿衣服吧。",

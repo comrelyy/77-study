@@ -821,6 +821,17 @@
       "rate": 1.0,
       "volume": 100,
       "sha256": "b8ce5398774d626547472e9e0bd27eb9593e01f7b0434ed445fcf156eb7b412e"
+    },
+    {
+      "id": "picnic.lesson.title.audio",
+      "path": "audio/picnic/lesson/title-50feb6c6.wav",
+      "text": "A Picnic with Friends",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "6e55ffee0d9635b21f2f8592f5998fc26af33a5fd4ff3b8fc0293fa8ee8ec74c"
     }
   ]
 }

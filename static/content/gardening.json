@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "sceneId": "gardening",
-  "contentVersion": "0.1.3",
+  "contentVersion": "0.1.4",
   "status": "draft",
   "compatibleFrom": [
     "0.1.0",
     "0.1.1",
-    "0.1.2"
+    "0.1.2",
+    "0.1.3"
   ],
   "title": "和 Momo 照顾小花",
   "stickerId": "gardening.sticker",
@@ -847,6 +848,17 @@
       "reviewed": false
     },
     {
+      "id": "gardening.lesson.title.audio",
+      "kind": "audio",
+      "path": "audio/gardening/lesson/title-67e0b69c.wav",
+      "text": "Caring for Flowers",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "gardening.lesson.bridge.audio",
       "kind": "audio",
       "path": "audio/gardening/lesson/bridge-17574e5c.wav",
@@ -1604,6 +1616,10 @@
         "kind": "end"
       }
     ],
+    "title": {
+      "text": "Caring for Flowers",
+      "audio": "gardening.lesson.title.audio"
+    },
     "bridge": {
       "text": "We got some seeds too! Let us plant them.",
       "cn": "我们还买了种子！去种下吧。",

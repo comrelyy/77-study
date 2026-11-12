@@ -722,6 +722,17 @@
       "rate": 1.0,
       "volume": 100,
       "sha256": "cab07bb8fd868c3dbd2771daf96aa950d6667f508d790d06cc1eeffcf654e457"
+    },
+    {
+      "id": "washing.lesson.title.audio",
+      "path": "audio/washing/lesson/title-a0ec4f9f.wav",
+      "text": "Momo Washes Up",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "6b486b41a410dc03717033b2b9b155850f7152f921b151d8cb3d7ebc031e03e3"
     }
   ]
 }

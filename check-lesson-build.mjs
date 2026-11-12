@@ -121,3 +121,26 @@ test('words step with review cards validates; missing review assets and bridge t
   p=fresh();p.lesson.steps[0].review[0].id=park.words[0].id;assert(errs(p).some(e=>e.includes('duplicate ID')),'review id clashes with word');
   p=fresh();p.lesson.bridge.text='Changed.';assert(errs(p).some(e=>e.includes('bridge')),'bridge text mismatch');
 });
+
+test('lesson.title comes from the title table or the link, with a narrator asset; none when unknown',()=>{
+  const crypto=require('node:crypto'),sha8=t=>crypto.createHash('sha1').update(t).digest('hex').slice(0,8);
+  const {lesson,assets}=build();
+  assert.deepEqual(lesson.title,{text:'A Day at the Park',audio:'park.lesson.title.audio'});
+  const a=assets.find(x=>x.id==='park.lesson.title.audio');
+  assert.deepEqual(a,{id:'park.lesson.title.audio',kind:'audio',path:'audio/park/lesson/title-'+sha8('A Day at the Park')+'.wav',text:'A Day at the Park',language:'en-US',role:'narrator',source:null,rights:null,reviewed:false});
+  const zoo={...clone(park),sceneId:'zoo-gate'};
+  assert.equal(buildLesson(stripLesson(zoo),null).lesson.title,undefined);
+  const r=buildLesson(stripLesson(zoo),null,{titleEn:'At the Zoo Gate',bridge:null,review:[],packs:{}});
+  assert.equal(r.lesson.title.text,'At the Zoo Gate');assert.equal(r.assets.find(x=>x.id==='zoo-gate.lesson.title.audio').role,'narrator');
+  const titles=require('./lesson-titles.cjs');
+  assert.equal(Object.keys(titles).length,13);
+  for(const p of packs)assert.equal(p.lesson.title.text,titles[p.sceneId],p.sceneId);
+});
+test('lesson.title validation: text non-empty, audio an existing audio asset with the same text',()=>{
+  const fresh=()=>clone(finalizeLesson(park,null,null).pack),errs=p=>validate(p,{exists:()=>true}).errors;
+  assert.deepEqual(errs(fresh()),[]);
+  let p=fresh();p.lesson.title.text=' ';assert(errs(p).some(e=>e.includes('title')),'blank text');
+  p=fresh();p.lesson.title.audio='nope';assert(errs(p).some(e=>e.includes('nope')||e.includes('title')),'missing audio');
+  p=fresh();p.lesson.title.text='Changed';assert(errs(p).some(e=>e.includes('title')),'text mismatch');
+  p=fresh();delete p.lesson.title;assert.deepEqual(errs(p),[]);
+});

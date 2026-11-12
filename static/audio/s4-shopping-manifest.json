@@ -678,6 +678,17 @@
       "rate": 1.0,
       "volume": 100,
       "sha256": "5c6b7d68e9e340b7cb06b95215db4ada40834910d2b72af20f2ecce0f92695ac"
+    },
+    {
+      "id": "shopping.lesson.title.audio",
+      "path": "audio/shopping/lesson/title-c6768cb6.wav",
+      "text": "At the Little Shop",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "ac6210370d595c7e04bbe30047309e188fa1d135102a365e96b6ac7285b2b252"
     }
   ]
 }

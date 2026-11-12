@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "sceneId": "tidy",
-  "contentVersion": "0.5.3",
+  "contentVersion": "0.5.4",
   "status": "draft",
   "compatibleFrom": [
     "0.5.0",
     "0.5.1",
-    "0.5.2"
+    "0.5.2",
+    "0.5.3"
   ],
   "title": "和 Momo 整理玩具",
   "stickerId": "tidy.sticker",
@@ -795,6 +796,17 @@
       "reviewed": false
     },
     {
+      "id": "tidy.lesson.title.audio",
+      "kind": "audio",
+      "path": "audio/tidy/lesson/title-05e9dbcb.wav",
+      "text": "Tidy Up the Toys",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "tidy.lesson.bridge.audio",
       "kind": "audio",
       "path": "audio/tidy/lesson/bridge-1911956d.wav",
@@ -1565,6 +1577,10 @@
         "kind": "end"
       }
     ],
+    "title": {
+      "text": "Tidy Up the Toys",
+      "audio": "tidy.lesson.title.audio"
+    },
     "bridge": {
       "text": "Yummy! But look, our toys are everywhere.",
       "cn": "真好吃！可是你看，玩具到处都是。",

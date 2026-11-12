@@ -711,6 +711,17 @@
       "rate": 1.0,
       "volume": 100,
       "sha256": "561bdc67034f745413a04fb19a2700a01893212c9a7cc611709bb5e8e6464f06"
+    },
+    {
+      "id": "bedtime.lesson.title.audio",
+      "path": "audio/bedtime/lesson/title-2d1b6f87.wav",
+      "text": "Good Night, Momo",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "ca64f1d40295561f3cc2400f1841998cc53d3aa59ba6313e09695e387f49973f"
     }
   ]
 }

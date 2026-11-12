@@ -15,6 +15,7 @@ from momo_agent.vocab import WordCard
 MIN_LEVELS, MAX_LEVELS = 5, 7
 WORDS_PER_LEVEL = 4
 MAX_BRIDGE_CHARS = 80
+MAX_TITLE_WORDS = 6
 SLUG = r"[a-z][a-z0-9-]*"
 
 DAY_PLANNER_PROMPT = """You plan one whole special day, as 5 to 7 linked tiny English lessons (levels), for children aged 3 to 6.
@@ -28,6 +29,8 @@ day_id and every scene_id are short lowercase English slugs (letters, digits, hy
 Each scene_id is unique. title, goal are Chinese: the title looks like "和 Momo 逛公园", the goal is one short sentence.
 function is the English sentence pattern the child practises, such as "I can see … / Your turn.".
 band is the difficulty from 0 (easiest) to 5; it never goes down from one level to the next.
+title_en is a short English title for the level (at most 6 words, simple words a child aged 3 to 6 knows,
+e.g. "On the Bus to the Zoo"); the child hears it read aloud when the lesson starts.
 bridge_en is one short English sentence (at most 80 characters) that leads into the next level
 (for the last level, one that closes the day); bridge_cn is its Chinese meaning.
 Use the tools to see which words already have a picture (check_word, or list_illustrated_words) and prefer those,
@@ -42,6 +45,7 @@ class DayLevel(BaseModel):
     function: str
     band: int
     words: list[WordCard]
+    title_en: str
     bridge_en: str
     bridge_cn: str
 
@@ -93,9 +97,11 @@ def _check_level(level: DayLevel, day_id: str, repo: Repo, overwrite: bool) -> l
     owner = repo.day_of_scene().get(level.scene_id)
     if owner is not None and owner != day_id:
         errors.append(f"{name}: scene_id {level.scene_id} 已属于另一天 {owner}，一个关只能属于一天")
-    for field in ("title", "goal", "bridge_en", "bridge_cn"):
+    for field in ("title", "goal", "title_en", "bridge_en", "bridge_cn"):
         if not getattr(level, field).strip():
             errors.append(f"{name}: {field} 不能为空")
+    if len(level.title_en.split()) > MAX_TITLE_WORDS:
+        errors.append(f"{name}: title_en 最多 {MAX_TITLE_WORDS} 个词，现在 {len(level.title_en.split())}")
     if len(level.bridge_en) > MAX_BRIDGE_CHARS:
         errors.append(f"{name}: bridge_en 最多 {MAX_BRIDGE_CHARS} 个字符，现在 {len(level.bridge_en)}")
     if len(level.words) != WORDS_PER_LEVEL:

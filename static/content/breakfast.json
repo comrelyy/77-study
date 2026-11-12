@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "sceneId": "breakfast",
-  "contentVersion": "0.2.3",
+  "contentVersion": "0.2.4",
   "status": "draft",
   "compatibleFrom": [
     "0.2.0",
     "0.2.1",
-    "0.2.2"
+    "0.2.2",
+    "0.2.3"
   ],
   "title": "和 Momo 吃早餐",
   "stickerId": "breakfast.sticker",
@@ -847,6 +848,17 @@
       "reviewed": false
     },
     {
+      "id": "breakfast.lesson.title.audio",
+      "kind": "audio",
+      "path": "audio/breakfast/lesson/title-11859e88.wav",
+      "text": "Breakfast Time",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "breakfast.lesson.bridge.audio",
       "kind": "audio",
       "path": "audio/breakfast/lesson/bridge-5a223214.wav",
@@ -1604,6 +1616,10 @@
         "kind": "end"
       }
     ],
+    "title": {
+      "text": "Breakfast Time",
+      "audio": "breakfast.lesson.title.audio"
+    },
     "bridge": {
       "text": "Shoes on, hat on. I am hungry!",
       "cn": "鞋子穿好、帽子戴好。我饿啦！",

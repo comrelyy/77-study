@@ -700,6 +700,17 @@
       "rate": 1.0,
       "volume": 100,
       "sha256": "556f8208e380370759d0a753e24997ff6c11094f1e1d60f5187892090d318b3f"
+    },
+    {
+      "id": "dressing.lesson.title.audio",
+      "path": "audio/dressing/lesson/title-e02c2a9f.wav",
+      "text": "Momo Gets Dressed",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "dd7f9a6225f5a44438860ea402ea2ebb3319521e5096d0bb9ce26d2dc8cac68c"
     }
   ]
 }

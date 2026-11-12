@@ -92,4 +92,5 @@
 
 - 第 2 关起，`words` 步骤开头多 3 张复习卡（`step.review`，由 `lesson-build.cjs` 按 `route-build.cjs` 的规则写入课程层）：取前面关卡学过、本关 `modules.summary` 没有的词，最近学到的先复习；只点读，不发 `introduced`，不进填空、配对、结束页。第 1 关没有复习卡。
 - `lesson.bridge` 是关与关之间的过场（文字与读音，读音在 `audio/<id>/lesson/bridge-*.wav`）；复习与过场的资源 id 含 `.lesson.`，不改基础内容与 `lesson.baseVersion`。过场读音与其他读音一样由 `quiz-audio` 合成；`quiz-audio --all` 跳过 `.lesson.review.`。
+- `lesson.title` = `{text, audio}` 是整课的英文标题（旁白 narrator 读音 `audio/<id>/lesson/title-<sha8>.wav`，资源 id `<id>.lesson.title.audio`）：手写主题与 birthday 取 `lesson-titles.cjs`，日关取 `content-days/*.json` 的 `plan.levels[].title_en`（智能体日计划必填、≤6 词）；没有标题的关不写该字段，客户端需容忍缺失。
 - 走到 `end` 步骤时记录 `cleared`（该关通过）；结束页多一个「去下一站」，回到 `/?focus=<下一关>`。返回按钮为「← 回地图」。

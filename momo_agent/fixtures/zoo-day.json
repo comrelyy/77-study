@@ -32,6 +32,7 @@
               "cn": "书包"
             }
           ],
+          "title_en": "Waking Up for the Zoo",
           "bridge_en": "Today we go to the zoo.",
           "bridge_cn": "今天我们去动物园。"
         },
@@ -59,6 +60,7 @@
               "cn": "树"
             }
           ],
+          "title_en": "On the Bus to the Zoo",
           "bridge_en": "We ride the bus.",
           "bridge_cn": "我们坐公共汽车。"
         },
@@ -86,6 +88,7 @@
               "cn": "帽子"
             }
           ],
+          "title_en": "At the Zoo Gate",
           "bridge_en": "Let us go in!",
           "bridge_cn": "我们进去吧！"
         },
@@ -113,6 +116,7 @@
               "cn": "长颈鹿"
             }
           ],
+          "title_en": "Meet the Animals",
           "bridge_en": "Look at the big animals!",
           "bridge_cn": "看那些大动物！"
         },
@@ -140,6 +144,7 @@
               "cn": "月亮"
             }
           ],
+          "title_en": "Home from the Zoo",
           "bridge_en": "Goodbye, zoo. See you soon!",
           "bridge_cn": "再见，动物园，下次见！"
         }

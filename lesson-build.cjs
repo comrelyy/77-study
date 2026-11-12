@@ -6,7 +6,7 @@ const semver=v=>String(v).split('.').map(Number);
 const cmp=(a,b)=>{const x=semver(a),y=semver(b);for(let i=0;i<3;i++)if(x[i]!==y[i])return x[i]>y[i]?1:-1;return 0;};
 const sha8=t=>crypto.createHash('sha1').update(t).digest('hex').slice(0,8);
 const esc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-const {lessonLink}=require('./route-build.cjs');
+const {lessonLink}=require('./route-build.cjs'),titles=require('./lesson-titles.cjs');
 const OLD='题目基于旧内容，需重新生成';
 
 function stripLesson(pack){
@@ -87,6 +87,12 @@ function buildLesson(basePack,overlay,link=null){
   }
   steps.push({id:sid+'.lesson.game',kind:'game'},{id:sid+'.lesson.match',kind:'match',words:ids},{id:sid+'.lesson.end',kind:'end'});
   const lesson={schemaVersion:1,baseVersion:pack.contentVersion,reviewed:!!(ov&&ov.reviewed===true),steps};
+  const titleText=link&&link.titleEn||titles[sid];
+  if(titleText){
+    const audio=sid+'.lesson.title.audio';
+    assets.push({id:audio,kind:'audio',path:'audio/'+sid+'/lesson/title-'+sha8(titleText)+'.wav',text:titleText,language:'en-US',role:'narrator',source:null,rights:null,reviewed:false});
+    lesson.title={text:titleText,audio};
+  }
   if(link&&link.bridge){
     const {text,cn}=link.bridge,audio=sid+'.lesson.bridge.audio';
     assets.push({id:audio,kind:'audio',path:'audio/'+sid+'/lesson/bridge-'+sha8(text)+'.wav',text,language:'en-US',role:'momo',source:null,rights:null,reviewed:false});
@@ -121,10 +127,10 @@ if(require.main===module){
   const read=f=>JSON.parse(fs.readFileSync(f,'utf8'));
   const catalog=read(path.join(__dirname,'static/content/catalog.json'));
   const packsById=Object.fromEntries((catalog.days||[]).flatMap(d=>d.route).filter(r=>fs.existsSync(path.join(__dirname,'static/content',r.id+'.json'))).map(r=>[r.id,read(path.join(__dirname,'static/content',r.id+'.json'))]));
-  const daysDir=path.join(__dirname,'content-days'),extraBridges={};
-  if(fs.existsSync(daysDir))for(const f of fs.readdirSync(daysDir).filter(f=>f.endsWith('.json')))for(const l of read(path.join(daysDir,f)).plan?.levels||[])extraBridges[l.scene_id]={text:l.bridge_en,cn:l.bridge_cn};
+  const daysDir=path.join(__dirname,'content-days'),extraBridges={},extraTitles={};
+  if(fs.existsSync(daysDir))for(const f of fs.readdirSync(daysDir).filter(f=>f.endsWith('.json')))for(const l of read(path.join(daysDir,f)).plan?.levels||[]){extraBridges[l.scene_id]={text:l.bridge_en,cn:l.bridge_cn};if(l.title_en)extraTitles[l.scene_id]=l.title_en;}
   const previous=read(file),overlay=fs.existsSync(ovFile)?read(ovFile):null;
-  const {pack,warnings}=finalizeLesson(previous,overlay,previous,lessonLink(catalog,packsById,id,extraBridges));
+  const {pack,warnings}=finalizeLesson(previous,overlay,previous,{...lessonLink(catalog,packsById,id,extraBridges),titleEn:extraTitles[id]});
   const result=validate(pack,{exists:p=>p.includes('/lesson/')||fs.existsSync(path.join(__dirname,'static',p))});
   if(result.errors.length){console.error(result.errors.join('\n'));process.exit(1);}
   if(!same(pack,previous)){

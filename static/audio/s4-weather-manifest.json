@@ -678,6 +678,17 @@
       "rate": 1.0,
       "volume": 100,
       "sha256": "58d3258601c078a9944efef011d7fac8ef0bf73edf84c06b232de0f3229dde08"
+    },
+    {
+      "id": "weather.lesson.title.audio",
+      "path": "audio/weather/lesson/title-803332af.wav",
+      "text": "What Is the Weather?",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "dc42958ecb94658f922b35712b03703a45dab54a1a7de22f6ff077457ce7f422"
     }
   ]
 }

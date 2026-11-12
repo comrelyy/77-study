@@ -1,0 +1,1581 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "shopping",
+  "contentVersion": "0.2.3",
+  "status": "draft",
+  "compatibleFrom": [
+    "0.2.0",
+    "0.2.1",
+    "0.2.2"
+  ],
+  "title": "和 Momo 逛小商店",
+  "stickerId": "shopping.sticker",
+  "learning": {
+    "goal": "提出购买需求、选择数量并礼貌致谢",
+    "function": "…, please. / Here you are.",
+    "revisit": [
+      "apple",
+      "banana"
+    ]
+  },
+  "assets": [
+    {
+      "id": "shopping.momo",
+      "kind": "image",
+      "path": "illustrations/momo.svg"
+    },
+    {
+      "id": "shopping.bunny",
+      "kind": "image",
+      "path": "illustrations/bunny.svg"
+    },
+    {
+      "id": "shopping.wave",
+      "kind": "image",
+      "path": "illustrations/wave.svg"
+    },
+    {
+      "id": "shopping.apple.image",
+      "kind": "image",
+      "path": "illustrations/apple.svg"
+    },
+    {
+      "id": "shopping.apple.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.apple.audio.wav",
+      "text": "apple",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.banana.image",
+      "kind": "image",
+      "path": "illustrations/banana.svg"
+    },
+    {
+      "id": "shopping.banana.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.banana.audio.wav",
+      "text": "banana",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.bag.image",
+      "kind": "image",
+      "path": "illustrations/bag.svg"
+    },
+    {
+      "id": "shopping.bag.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.bag.audio.wav",
+      "text": "bag",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.coin.image",
+      "kind": "image",
+      "path": "illustrations/coin.svg"
+    },
+    {
+      "id": "shopping.coin.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.coin.audio.wav",
+      "text": "coin",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.1.question.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.1.question.audio.wav",
+      "text": "What shall we bring to the shop?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.1.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.1.reply.1.audio.wav",
+      "text": "Our bag, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.1.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.1.reply.1.follow.audio.wav",
+      "text": "We can use it to carry our fruit.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.1.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.1.reply.2.audio.wav",
+      "text": "Help me read the list.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.1.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.1.reply.2.follow.audio.wav",
+      "text": "Let us read it with our grown-up.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.2.question.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.2.question.audio.wav",
+      "text": "What fruit would you like first?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.2.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.2.reply.1.audio.wav",
+      "text": "An apple, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.2.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.2.reply.1.follow.audio.wav",
+      "text": "Let us choose one apple from the shelf.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.2.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.2.reply.2.audio.wav",
+      "text": "A banana, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.2.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.2.reply.2.follow.audio.wav",
+      "text": "Let us look on the next shelf.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.3.question.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.3.question.audio.wav",
+      "text": "How many apples are on our list?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.3.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.3.reply.1.audio.wav",
+      "text": "One apple, please.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.3.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.3.reply.1.follow.audio.wav",
+      "text": "One apple. That is what our list says.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.3.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.3.reply.2.audio.wav",
+      "text": "Let us check together.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.3.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.3.reply.2.follow.audio.wav",
+      "text": "Our grown-up can help us read the list.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.4.question.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.4.question.audio.wav",
+      "text": "Have we found the banana?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.4.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.4.reply.1.audio.wav",
+      "text": "Yes, here it is.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.4.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.4.reply.1.follow.audio.wav",
+      "text": "We have both kinds of fruit now.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.4.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.4.reply.2.audio.wav",
+      "text": "Please help me find it.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.4.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.4.reply.2.follow.audio.wav",
+      "text": "Look beside the apples. I will help you.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.5.question.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.5.question.audio.wav",
+      "text": "Who will keep the coin for paying?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.5.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.5.reply.1.audio.wav",
+      "text": "Our grown-up will.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.5.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.5.reply.1.follow.audio.wav",
+      "text": "We can watch our grown-up pay.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.5.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.5.reply.2.audio.wav",
+      "text": "Let us ask our grown-up.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.5.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.5.reply.2.follow.audio.wav",
+      "text": "They will help us pay the shopkeeper.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.6.question.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.6.question.audio.wav",
+      "text": "What shall we say to the shopkeeper?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.6.reply.1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.6.reply.1.audio.wav",
+      "text": "Thank you. Goodbye!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.6.reply.1.follow.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.6.reply.1.follow.audio.wav",
+      "text": "Let us carry our bag home together.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.6.reply.2.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.6.reply.2.audio.wav",
+      "text": "Thank you for the fruit!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.dialogue.6.reply.2.follow.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-1-0/shopping.dialogue.6.reply.2.follow.audio.wav",
+      "text": "The fruit is ready to share at home.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.fox",
+      "kind": "image",
+      "path": "illustrations/fox.svg"
+    },
+    {
+      "id": "shopping.turtle",
+      "kind": "image",
+      "path": "illustrations/turtle.svg"
+    },
+    {
+      "id": "shopping.story.1.image",
+      "kind": "image",
+      "path": "illustrations/scenes/shopping-1.svg"
+    },
+    {
+      "id": "shopping.story.1.intro.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.1.intro.audio.wav",
+      "text": "Momo picks up the shopping bag.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.1.item.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.1.item.audio.wav",
+      "text": "Let us buy lots of fruit!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.1.reply.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.1.reply.audio.wav",
+      "text": "First, let us read our list.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.1.more1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.1.more1.audio.wav",
+      "text": "What is on our list?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.1.more2.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.1.more2.audio.wav",
+      "text": "An apple and a banana.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.2.image",
+      "kind": "image",
+      "path": "illustrations/scenes/shopping-2.svg"
+    },
+    {
+      "id": "shopping.story.2.intro.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.2.intro.audio.wav",
+      "text": "There are many apples on the shelf.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.2.item.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.2.item.audio.wav",
+      "text": "Two apples? Three?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.2.reply.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.2.reply.audio.wav",
+      "text": "Our list says one. Let us choose one.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.2.more1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.2.more1.audio.wav",
+      "text": "This one looks good.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.3.image",
+      "kind": "image",
+      "path": "illustrations/scenes/shopping-3.svg"
+    },
+    {
+      "id": "shopping.story.3.intro.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.3.intro.audio.wav",
+      "text": "The banana shelf looks empty at first.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.3.item.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.3.item.audio.wav",
+      "text": "I cannot find a banana.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.3.reply.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.3.reply.audio.wav",
+      "text": "Look beside the apples. There is one!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.3.more1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.3.more1.audio.wav",
+      "text": "You have good eyes, Momo!",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.4.image",
+      "kind": "image",
+      "path": "illustrations/scenes/shopping-4.svg"
+    },
+    {
+      "id": "shopping.story.4.intro.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.4.intro.audio.wav",
+      "text": "A grown-up keeps the coin for paying.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.4.item.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.4.item.audio.wav",
+      "text": "Is it our turn?",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.4.reply.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.4.reply.audio.wav",
+      "text": "Not yet. We can wait here together.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.4.more1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.4.more1.audio.wav",
+      "text": "Now it is our turn.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.4.more2.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.4.more2.audio.wav",
+      "text": "Thank you for waiting with me.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.5.image",
+      "kind": "image",
+      "path": "illustrations/scenes/shopping-5.svg"
+    },
+    {
+      "id": "shopping.story.5.intro.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.5.intro.audio.wav",
+      "text": "The fruit goes into the bag.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.5.item.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.5.item.audio.wav",
+      "text": "This bag feels heavy.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.5.reply.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.5.reply.audio.wav",
+      "text": "I can help you carry it.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.5.more1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.5.more1.audio.wav",
+      "text": "Thank you. It is easy with two.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.6.image",
+      "kind": "image",
+      "path": "illustrations/scenes/shopping-6.svg"
+    },
+    {
+      "id": "shopping.story.6.intro.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.6.intro.audio.wav",
+      "text": "The friends arrive home with their fruit.",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.6.item.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.6.item.audio.wav",
+      "text": "One apple and one banana. We did it!",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.6.reply.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.6.reply.audio.wav",
+      "text": "Now let us share them.",
+      "language": "en-US",
+      "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.story.6.more1.audio",
+      "kind": "audio",
+      "path": "audio/shopping/v0-2-0/shopping.story.6.more1.audio.wav",
+      "text": "Here is your half.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.lesson.review.en.ball.toy.image",
+      "kind": "image",
+      "path": "illustrations/ball.svg"
+    },
+    {
+      "id": "shopping.lesson.review.en.ball.toy.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.ball.audio.wav",
+      "text": "ball",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.lesson.review.en.bird.animal.image",
+      "kind": "image",
+      "path": "illustrations/bird.svg"
+    },
+    {
+      "id": "shopping.lesson.review.en.bird.animal.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.bird.audio.wav",
+      "text": "bird",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.lesson.review.en.flower.plant.image",
+      "kind": "image",
+      "path": "illustrations/flower.svg"
+    },
+    {
+      "id": "shopping.lesson.review.en.flower.plant.audio",
+      "kind": "audio",
+      "path": "audio/park/v0-1-0/park.flower.audio.wav",
+      "text": "flower",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "shopping.lesson.bridge.audio",
+      "kind": "audio",
+      "path": "audio/shopping/lesson/bridge-3709780b.wav",
+      "text": "Oh no, no more bananas. Let us go to the shop.",
+      "language": "en-US",
+      "role": "momo",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    }
+  ],
+  "words": [
+    {
+      "id": "en.apple.fruit",
+      "text": "apple",
+      "cn": "苹果",
+      "image": "shopping.apple.image",
+      "audio": "shopping.apple.audio"
+    },
+    {
+      "id": "en.banana.fruit",
+      "text": "banana",
+      "cn": "香蕉",
+      "image": "shopping.banana.image",
+      "audio": "shopping.banana.audio"
+    },
+    {
+      "id": "en.bag.container",
+      "text": "bag",
+      "cn": "袋子",
+      "image": "shopping.bag.image",
+      "audio": "shopping.bag.audio"
+    },
+    {
+      "id": "en.coin.money",
+      "text": "coin",
+      "cn": "硬币",
+      "image": "shopping.coin.image",
+      "audio": "shopping.coin.audio"
+    }
+  ],
+  "modules": {
+    "story": [
+      {
+        "id": "shopping.story.1",
+        "title": "1. 清单还没看呢",
+        "templateId": "daily-life",
+        "illustration": "shopping.story.1.image",
+        "characters": [
+          "shopping.momo",
+          "shopping.bunny"
+        ],
+        "mainWord": "en.bag.container",
+        "hotspots": [
+          {
+            "word": "en.bag.container",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "Momo 想买好多水果。Lulu 提醒先带上袋子，再和大人一起看清单。",
+        "segments": [
+          {
+            "id": "shopping.story.1.intro",
+            "text": "Momo picks up the shopping bag.",
+            "cn": "Momo 拿起购物袋。",
+            "speaker": "narrator",
+            "audio": "shopping.story.1.intro.audio"
+          },
+          {
+            "id": "shopping.story.1.item",
+            "text": "Let us buy lots of fruit!",
+            "cn": "我们去买好多水果吧！",
+            "speaker": "momo",
+            "audio": "shopping.story.1.item.audio"
+          },
+          {
+            "id": "shopping.story.1.reply",
+            "text": "First, let us read our list.",
+            "cn": "我们先看看购物清单。",
+            "speaker": "bunny",
+            "audio": "shopping.story.1.reply.audio"
+          },
+          {
+            "id": "shopping.story.1.more1",
+            "text": "What is on our list?",
+            "cn": "我们的清单上有什么？",
+            "speaker": "momo",
+            "audio": "shopping.story.1.more1.audio"
+          },
+          {
+            "id": "shopping.story.1.more2",
+            "text": "An apple and a banana.",
+            "cn": "一个苹果和一根香蕉。",
+            "speaker": "bunny",
+            "audio": "shopping.story.1.more2.audio"
+          }
+        ]
+      },
+      {
+        "id": "shopping.story.2",
+        "title": "2. 只要一个苹果",
+        "templateId": "daily-life",
+        "illustration": "shopping.story.2.image",
+        "characters": [
+          "shopping.momo",
+          "shopping.bunny"
+        ],
+        "mainWord": "en.apple.fruit",
+        "hotspots": [
+          {
+            "word": "en.apple.fruit",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "架子上有很多苹果。Lulu 和 Momo 对照清单，选出需要的一个。",
+        "segments": [
+          {
+            "id": "shopping.story.2.intro",
+            "text": "There are many apples on the shelf.",
+            "cn": "架子上有好多苹果。",
+            "speaker": "narrator",
+            "audio": "shopping.story.2.intro.audio"
+          },
+          {
+            "id": "shopping.story.2.item",
+            "text": "Two apples? Three?",
+            "cn": "两个苹果？三个？",
+            "speaker": "momo",
+            "audio": "shopping.story.2.item.audio"
+          },
+          {
+            "id": "shopping.story.2.reply",
+            "text": "Our list says one. Let us choose one.",
+            "cn": "清单上写着一个。我们挑一个吧。",
+            "speaker": "bunny",
+            "audio": "shopping.story.2.reply.audio"
+          },
+          {
+            "id": "shopping.story.2.more1",
+            "text": "This one looks good.",
+            "cn": "这个看起来不错。",
+            "speaker": "momo",
+            "audio": "shopping.story.2.more1.audio"
+          }
+        ]
+      },
+      {
+        "id": "shopping.story.3",
+        "title": "3. 香蕉在哪里",
+        "templateId": "daily-life",
+        "illustration": "shopping.story.3.image",
+        "characters": [
+          "shopping.bunny",
+          "shopping.momo"
+        ],
+        "mainWord": "en.banana.fruit",
+        "hotspots": [
+          {
+            "word": "en.banana.fruit",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "Lulu 一开始没看到香蕉。Momo 换个方向观察，在苹果旁边找到了。",
+        "segments": [
+          {
+            "id": "shopping.story.3.intro",
+            "text": "The banana shelf looks empty at first.",
+            "cn": "香蕉架子一开始看起来空空的。",
+            "speaker": "narrator",
+            "audio": "shopping.story.3.intro.audio"
+          },
+          {
+            "id": "shopping.story.3.item",
+            "text": "I cannot find a banana.",
+            "cn": "我找不到香蕉。",
+            "speaker": "bunny",
+            "audio": "shopping.story.3.item.audio"
+          },
+          {
+            "id": "shopping.story.3.reply",
+            "text": "Look beside the apples. There is one!",
+            "cn": "看看苹果旁边。那儿有一根！",
+            "speaker": "momo",
+            "audio": "shopping.story.3.reply.audio"
+          },
+          {
+            "id": "shopping.story.3.more1",
+            "text": "You have good eyes, Momo!",
+            "cn": "你的眼睛真尖，Momo！",
+            "speaker": "bunny",
+            "audio": "shopping.story.3.more1.audio"
+          }
+        ]
+      },
+      {
+        "id": "shopping.story.4",
+        "title": "4. 轮到我们付钱",
+        "templateId": "daily-life",
+        "illustration": "shopping.story.4.image",
+        "characters": [
+          "shopping.momo",
+          "shopping.bunny"
+        ],
+        "mainWord": "en.coin.money",
+        "hotspots": [
+          {
+            "word": "en.coin.money",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "大人保管着付款的硬币。前面还有人，两人一起等候轮到自己。",
+        "segments": [
+          {
+            "id": "shopping.story.4.intro",
+            "text": "A grown-up keeps the coin for paying.",
+            "cn": "大人拿着付钱用的硬币。",
+            "speaker": "narrator",
+            "audio": "shopping.story.4.intro.audio"
+          },
+          {
+            "id": "shopping.story.4.item",
+            "text": "Is it our turn?",
+            "cn": "轮到我们了吗？",
+            "speaker": "momo",
+            "audio": "shopping.story.4.item.audio"
+          },
+          {
+            "id": "shopping.story.4.reply",
+            "text": "Not yet. We can wait here together.",
+            "cn": "还没有。我们在这儿一起等。",
+            "speaker": "bunny",
+            "audio": "shopping.story.4.reply.audio"
+          },
+          {
+            "id": "shopping.story.4.more1",
+            "text": "Now it is our turn.",
+            "cn": "现在轮到我们了。",
+            "speaker": "momo",
+            "audio": "shopping.story.4.more1.audio"
+          },
+          {
+            "id": "shopping.story.4.more2",
+            "text": "Thank you for waiting with me.",
+            "cn": "谢谢你陪我一起等。",
+            "speaker": "bunny",
+            "audio": "shopping.story.4.more2.audio"
+          }
+        ]
+      },
+      {
+        "id": "shopping.story.5",
+        "title": "5. 袋子不要装太满",
+        "templateId": "daily-life",
+        "illustration": "shopping.story.5.image",
+        "characters": [
+          "shopping.bunny",
+          "shopping.momo"
+        ],
+        "mainWord": "en.bag.container",
+        "hotspots": [
+          {
+            "word": "en.bag.container",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "水果装好后，Lulu 觉得袋子有些重。Momo 主动帮忙，两人一起拿。",
+        "segments": [
+          {
+            "id": "shopping.story.5.intro",
+            "text": "The fruit goes into the bag.",
+            "cn": "水果装进了袋子。",
+            "speaker": "narrator",
+            "audio": "shopping.story.5.intro.audio"
+          },
+          {
+            "id": "shopping.story.5.item",
+            "text": "This bag feels heavy.",
+            "cn": "这个袋子好重。",
+            "speaker": "bunny",
+            "audio": "shopping.story.5.item.audio"
+          },
+          {
+            "id": "shopping.story.5.reply",
+            "text": "I can help you carry it.",
+            "cn": "我可以帮你一起拿。",
+            "speaker": "momo",
+            "audio": "shopping.story.5.reply.audio"
+          },
+          {
+            "id": "shopping.story.5.more1",
+            "text": "Thank you. It is easy with two.",
+            "cn": "谢谢你。两个人拿就轻松了。",
+            "speaker": "bunny",
+            "audio": "shopping.story.5.more1.audio"
+          }
+        ]
+      },
+      {
+        "id": "shopping.story.6",
+        "title": "6. 回家一起分享",
+        "templateId": "daily-life",
+        "illustration": "shopping.story.6.image",
+        "characters": [
+          "shopping.momo",
+          "shopping.bunny"
+        ],
+        "mainWord": "en.apple.fruit",
+        "hotspots": [
+          {
+            "word": "en.apple.fruit",
+            "x": 0.5,
+            "y": 0.6
+          }
+        ],
+        "translation": "回到家，朋友们检查买回的苹果和香蕉，准备一起分享。",
+        "segments": [
+          {
+            "id": "shopping.story.6.intro",
+            "text": "The friends arrive home with their fruit.",
+            "cn": "朋友们带着水果回到家。",
+            "speaker": "narrator",
+            "audio": "shopping.story.6.intro.audio"
+          },
+          {
+            "id": "shopping.story.6.item",
+            "text": "One apple and one banana. We did it!",
+            "cn": "一个苹果和一根香蕉。我们做到啦！",
+            "speaker": "momo",
+            "audio": "shopping.story.6.item.audio"
+          },
+          {
+            "id": "shopping.story.6.reply",
+            "text": "Now let us share them.",
+            "cn": "现在我们来分着吃吧。",
+            "speaker": "bunny",
+            "audio": "shopping.story.6.reply.audio"
+          },
+          {
+            "id": "shopping.story.6.more1",
+            "text": "Here is your half.",
+            "cn": "这是你的一半。",
+            "speaker": "momo",
+            "audio": "shopping.story.6.more1.audio"
+          }
+        ]
+      }
+    ],
+    "dialogue": [
+      {
+        "id": "shopping.dialogue.1",
+        "cn": "去商店要带什么呢？",
+        "question": [
+          {
+            "id": "shopping.dialogue.1.question",
+            "text": "What shall we bring to the shop?",
+            "audio": "shopping.dialogue.1.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "shopping.dialogue.1.reply.1",
+            "text": "Our bag, please.",
+            "cn": "带上我们的袋子。",
+            "image": "shopping.bag.image",
+            "audio": "shopping.dialogue.1.reply.1.audio",
+            "followUp": [
+              {
+                "id": "shopping.dialogue.1.reply.1.follow",
+                "text": "We can use it to carry our fruit.",
+                "audio": "shopping.dialogue.1.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "shopping.dialogue.1.reply.2",
+            "text": "Help me read the list.",
+            "cn": "帮我看看清单。",
+            "image": "shopping.bag.image",
+            "audio": "shopping.dialogue.1.reply.2.audio",
+            "followUp": [
+              {
+                "id": "shopping.dialogue.1.reply.2.follow",
+                "text": "Let us read it with our grown-up.",
+                "audio": "shopping.dialogue.1.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "shopping.dialogue.2",
+        "cn": "你先想拿什么水果？",
+        "question": [
+          {
+            "id": "shopping.dialogue.2.question",
+            "text": "What fruit would you like first?",
+            "audio": "shopping.dialogue.2.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "shopping.dialogue.2.reply.1",
+            "text": "An apple, please.",
+            "cn": "请给我一个苹果。",
+            "image": "shopping.apple.image",
+            "audio": "shopping.dialogue.2.reply.1.audio",
+            "followUp": [
+              {
+                "id": "shopping.dialogue.2.reply.1.follow",
+                "text": "Let us choose one apple from the shelf.",
+                "audio": "shopping.dialogue.2.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "shopping.dialogue.2.reply.2",
+            "text": "A banana, please.",
+            "cn": "请给我一根香蕉。",
+            "image": "shopping.banana.image",
+            "audio": "shopping.dialogue.2.reply.2.audio",
+            "followUp": [
+              {
+                "id": "shopping.dialogue.2.reply.2.follow",
+                "text": "Let us look on the next shelf.",
+                "audio": "shopping.dialogue.2.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "shopping.dialogue.3",
+        "cn": "清单上要几个苹果？",
+        "question": [
+          {
+            "id": "shopping.dialogue.3.question",
+            "text": "How many apples are on our list?",
+            "audio": "shopping.dialogue.3.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "shopping.dialogue.3.reply.1",
+            "text": "One apple, please.",
+            "cn": "请拿一个苹果。",
+            "image": "shopping.apple.image",
+            "audio": "shopping.dialogue.3.reply.1.audio",
+            "followUp": [
+              {
+                "id": "shopping.dialogue.3.reply.1.follow",
+                "text": "One apple. That is what our list says.",
+                "audio": "shopping.dialogue.3.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "shopping.dialogue.3.reply.2",
+            "text": "Let us check together.",
+            "cn": "我们一起检查。",
+            "image": "shopping.apple.image",
+            "audio": "shopping.dialogue.3.reply.2.audio",
+            "followUp": [
+              {
+                "id": "shopping.dialogue.3.reply.2.follow",
+                "text": "Our grown-up can help us read the list.",
+                "audio": "shopping.dialogue.3.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "shopping.dialogue.4",
+        "cn": "我们找到香蕉了吗？",
+        "question": [
+          {
+            "id": "shopping.dialogue.4.question",
+            "text": "Have we found the banana?",
+            "audio": "shopping.dialogue.4.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "shopping.dialogue.4.reply.1",
+            "text": "Yes, here it is.",
+            "cn": "找到了，在这里。",
+            "image": "shopping.banana.image",
+            "audio": "shopping.dialogue.4.reply.1.audio",
+            "followUp": [
+              {
+                "id": "shopping.dialogue.4.reply.1.follow",
+                "text": "We have both kinds of fruit now.",
+                "audio": "shopping.dialogue.4.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "shopping.dialogue.4.reply.2",
+            "text": "Please help me find it.",
+            "cn": "请帮我找一找。",
+            "image": "shopping.banana.image",
+            "audio": "shopping.dialogue.4.reply.2.audio",
+            "followUp": [
+              {
+                "id": "shopping.dialogue.4.reply.2.follow",
+                "text": "Look beside the apples. I will help you.",
+                "audio": "shopping.dialogue.4.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "shopping.dialogue.5",
+        "cn": "谁来保管付款的硬币呢？",
+        "question": [
+          {
+            "id": "shopping.dialogue.5.question",
+            "text": "Who will keep the coin for paying?",
+            "audio": "shopping.dialogue.5.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "shopping.dialogue.5.reply.1",
+            "text": "Our grown-up will.",
+            "cn": "让大人保管。",
+            "image": "shopping.coin.image",
+            "audio": "shopping.dialogue.5.reply.1.audio",
+            "followUp": [
+              {
+                "id": "shopping.dialogue.5.reply.1.follow",
+                "text": "We can watch our grown-up pay.",
+                "audio": "shopping.dialogue.5.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "shopping.dialogue.5.reply.2",
+            "text": "Let us ask our grown-up.",
+            "cn": "我们问问大人。",
+            "image": "shopping.coin.image",
+            "audio": "shopping.dialogue.5.reply.2.audio",
+            "followUp": [
+              {
+                "id": "shopping.dialogue.5.reply.2.follow",
+                "text": "They will help us pay the shopkeeper.",
+                "audio": "shopping.dialogue.5.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "shopping.dialogue.6",
+        "cn": "我们对店员说什么呢？",
+        "question": [
+          {
+            "id": "shopping.dialogue.6.question",
+            "text": "What shall we say to the shopkeeper?",
+            "audio": "shopping.dialogue.6.question.audio"
+          }
+        ],
+        "options": [
+          {
+            "id": "shopping.dialogue.6.reply.1",
+            "text": "Thank you. Goodbye!",
+            "cn": "谢谢，再见！",
+            "image": "shopping.bag.image",
+            "audio": "shopping.dialogue.6.reply.1.audio",
+            "followUp": [
+              {
+                "id": "shopping.dialogue.6.reply.1.follow",
+                "text": "Let us carry our bag home together.",
+                "audio": "shopping.dialogue.6.reply.1.follow.audio"
+              }
+            ]
+          },
+          {
+            "id": "shopping.dialogue.6.reply.2",
+            "text": "Thank you for the fruit!",
+            "cn": "谢谢你给我们水果！",
+            "image": "shopping.apple.image",
+            "audio": "shopping.dialogue.6.reply.2.audio",
+            "followUp": [
+              {
+                "id": "shopping.dialogue.6.reply.2.follow",
+                "text": "The fruit is ready to share at home.",
+                "audio": "shopping.dialogue.6.reply.2.follow.audio"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "game": {
+      "type": "listen-pack",
+      "title": "听清单，把需要的东西找出来",
+      "instructions": "先完整听完要找的词，再点对应图片。可以重听、请人示范、跳过或结束。",
+      "questions": [
+        {
+          "id": "shopping.game.1",
+          "target": "en.apple.fruit",
+          "options": [
+            "en.apple.fruit",
+            "en.banana.fruit",
+            "en.bag.container",
+            "en.coin.money"
+          ]
+        },
+        {
+          "id": "shopping.game.2",
+          "target": "en.banana.fruit",
+          "options": [
+            "en.apple.fruit",
+            "en.banana.fruit",
+            "en.bag.container",
+            "en.coin.money"
+          ]
+        },
+        {
+          "id": "shopping.game.3",
+          "target": "en.bag.container",
+          "options": [
+            "en.apple.fruit",
+            "en.banana.fruit",
+            "en.bag.container",
+            "en.coin.money"
+          ]
+        },
+        {
+          "id": "shopping.game.4",
+          "target": "en.coin.money",
+          "options": [
+            "en.apple.fruit",
+            "en.banana.fruit",
+            "en.bag.container",
+            "en.coin.money"
+          ]
+        }
+      ],
+      "collectionImage": "illustrations/basket.svg"
+    },
+    "summary": [
+      "en.apple.fruit",
+      "en.banana.fruit",
+      "en.bag.container",
+      "en.coin.money"
+    ]
+  },
+  "interaction": {
+    "gameAfterDialogue": [
+      2,
+      4,
+      5,
+      5
+    ],
+    "separateGameEntry": false
+  },
+  "lesson": {
+    "schemaVersion": 1,
+    "baseVersion": "0.2.0",
+    "reviewed": false,
+    "steps": [
+      {
+        "id": "shopping.lesson.words",
+        "kind": "words",
+        "words": [
+          "en.apple.fruit",
+          "en.banana.fruit",
+          "en.bag.container",
+          "en.coin.money"
+        ],
+        "review": [
+          {
+            "id": "shopping.lesson.review.en.ball.toy",
+            "text": "ball",
+            "cn": "球",
+            "image": "shopping.lesson.review.en.ball.toy.image",
+            "audio": "shopping.lesson.review.en.ball.toy.audio",
+            "from": "逛公园"
+          },
+          {
+            "id": "shopping.lesson.review.en.bird.animal",
+            "text": "bird",
+            "cn": "小鸟",
+            "image": "shopping.lesson.review.en.bird.animal.image",
+            "audio": "shopping.lesson.review.en.bird.animal.audio",
+            "from": "逛公园"
+          },
+          {
+            "id": "shopping.lesson.review.en.flower.plant",
+            "text": "flower",
+            "cn": "花",
+            "image": "shopping.lesson.review.en.flower.plant.image",
+            "audio": "shopping.lesson.review.en.flower.plant.audio",
+            "from": "逛公园"
+          }
+        ]
+      },
+      {
+        "id": "shopping.lesson.story.1",
+        "kind": "story",
+        "storyId": "shopping.story.1"
+      },
+      {
+        "id": "shopping.lesson.story.2",
+        "kind": "story",
+        "storyId": "shopping.story.2"
+      },
+      {
+        "id": "shopping.lesson.story.3",
+        "kind": "story",
+        "storyId": "shopping.story.3"
+      },
+      {
+        "id": "shopping.lesson.story.4",
+        "kind": "story",
+        "storyId": "shopping.story.4"
+      },
+      {
+        "id": "shopping.lesson.story.5",
+        "kind": "story",
+        "storyId": "shopping.story.5"
+      },
+      {
+        "id": "shopping.lesson.story.6",
+        "kind": "story",
+        "storyId": "shopping.story.6"
+      },
+      {
+        "id": "shopping.lesson.fill",
+        "kind": "fill",
+        "segmentId": "shopping.story.1.intro",
+        "before": "Momo picks up the shopping ",
+        "after": ".",
+        "image": "shopping.story.1.image",
+        "options": [
+          "en.apple.fruit",
+          "en.banana.fruit",
+          "en.bag.container",
+          "en.coin.money"
+        ],
+        "answer": "en.bag.container"
+      },
+      {
+        "id": "shopping.lesson.game",
+        "kind": "game"
+      },
+      {
+        "id": "shopping.lesson.match",
+        "kind": "match",
+        "words": [
+          "en.apple.fruit",
+          "en.banana.fruit",
+          "en.bag.container",
+          "en.coin.money"
+        ]
+      },
+      {
+        "id": "shopping.lesson.end",
+        "kind": "end"
+      }
+    ],
+    "bridge": {
+      "text": "Oh no, no more bananas. Let us go to the shop.",
+      "cn": "哎呀，香蕉吃完了。我们去商店吧。",
+      "audio": "shopping.lesson.bridge.audio"
+    }
+  }
+}

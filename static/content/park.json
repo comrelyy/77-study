@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "sceneId": "park",
-  "contentVersion": "0.2.3",
+  "contentVersion": "0.2.4",
   "status": "draft",
   "compatibleFrom": [
     "0.2.0",
     "0.2.1",
-    "0.2.2"
+    "0.2.2",
+    "0.2.3"
   ],
   "title": "和 Momo 逛公园",
   "stickerId": "park.sticker",
@@ -869,6 +870,17 @@
       "text": "Goodbye, ball!",
       "language": "en-US",
       "role": "bunny",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
+      "id": "park.lesson.title.audio",
+      "kind": "audio",
+      "path": "audio/park/lesson/title-0273afc4.wav",
+      "text": "A Day at the Park",
+      "language": "en-US",
+      "role": "narrator",
       "source": null,
       "rights": null,
       "reviewed": false
@@ -1774,6 +1786,10 @@
         "kind": "end"
       }
     ],
+    "title": {
+      "text": "A Day at the Park",
+      "audio": "park.lesson.title.audio"
+    },
     "bridge": {
       "text": "Here is our stop. The park is so green!",
       "cn": "到站啦。公园好绿呀！",

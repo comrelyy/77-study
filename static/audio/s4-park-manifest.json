@@ -744,6 +744,17 @@
       "rate": 1.0,
       "volume": 100,
       "sha256": "333a2af37b8b3925c32ea9eb052b41abdb80cdae620c877bf69692dd73232bf8"
+    },
+    {
+      "id": "park.lesson.title.audio",
+      "path": "audio/park/lesson/title-0273afc4.wav",
+      "text": "A Day at the Park",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro am_michael",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "aff936616b0e38bf772f4d36d350a58807349b342634a8a7117dcb608da30378"
     }
   ]
 }

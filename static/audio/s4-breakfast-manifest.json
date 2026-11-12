@@ -722,6 +722,17 @@
       "rate": 1.0,
       "volume": 100,
       "sha256": "b0212914677a1f0f565140e8c30adf7ea18c4b414bb88df6f9f2800cd943dac2"
+    },
+    {
+      "id": "breakfast.lesson.title.audio",
+      "path": "audio/breakfast/lesson/title-11859e88.wav",
+      "text": "Breakfast Time",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "f5a5bb329c9585c40126f8d6976771b3f974164391fa908cf06627941595d992"
     }
   ]
 }

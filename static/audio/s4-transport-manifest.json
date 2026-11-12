@@ -678,6 +678,17 @@
       "rate": 1.0,
       "volume": 100,
       "sha256": "a07dc936e0a863fe621714b252f9d1a68de461fcdcf068182fb6817968033981"
+    },
+    {
+      "id": "transport.lesson.title.audio",
+      "path": "audio/transport/lesson/title-c15c645f.wav",
+      "text": "On the Bus",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "1eac6a348ae7dcaaab992b9b200f388e538d42d691f0bc98f55a4e4afa3f86d4"
     }
   ]
 }

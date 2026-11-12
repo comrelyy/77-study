@@ -722,6 +722,17 @@
       "rate": 1.0,
       "volume": 100,
       "sha256": "2a672b964e81366990f791449c18ebf8fd016592bcf03d1530e415149065241a"
+    },
+    {
+      "id": "gardening.lesson.title.audio",
+      "path": "audio/gardening/lesson/title-67e0b69c.wav",
+      "text": "Caring for Flowers",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "efce054fcc61a9224f6c76c361341b79d3b8031aba30199b52d5344ada4add0e"
     }
   ]
 }

@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "sceneId": "transport",
-  "contentVersion": "0.1.3",
+  "contentVersion": "0.1.4",
   "status": "draft",
   "compatibleFrom": [
     "0.1.0",
     "0.1.1",
-    "0.1.2"
+    "0.1.2",
+    "0.1.3"
   ],
   "title": "和 Momo 坐公共汽车",
   "stickerId": "transport.sticker",
@@ -808,6 +809,17 @@
       "reviewed": false
     },
     {
+      "id": "transport.lesson.title.audio",
+      "kind": "audio",
+      "path": "audio/transport/lesson/title-c15c645f.wav",
+      "text": "On the Bus",
+      "language": "en-US",
+      "role": "narrator",
+      "source": null,
+      "rights": null,
+      "reviewed": false
+    },
+    {
       "id": "transport.lesson.bridge.audio",
       "kind": "audio",
       "path": "audio/transport/lesson/bridge-19e35042.wav",
@@ -1599,6 +1611,10 @@
         "kind": "end"
       }
     ],
+    "title": {
+      "text": "On the Bus",
+      "audio": "transport.lesson.title.audio"
+    },
     "bridge": {
       "text": "The sun is out. Let us take the bus!",
       "cn": "出太阳了。我们坐公共汽车去吧！",

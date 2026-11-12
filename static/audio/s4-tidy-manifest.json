@@ -678,6 +678,17 @@
       "rate": 1.0,
       "volume": 100,
       "sha256": "e2dff5b21cec36653595af2f0233832ecc422a6897996df5c11ca2a0a260bf43"
+    },
+    {
+      "id": "tidy.lesson.title.audio",
+      "path": "audio/tidy/lesson/title-05e9dbcb.wav",
+      "text": "Tidy Up the Toys",
+      "language": "en-US",
+      "role": "narrator",
+      "voice": "Kokoro af_heart",
+      "rate": 1.0,
+      "volume": 100,
+      "sha256": "2e7af7e43ec2e12d7349a7972c5e213632511d1d1ea2d73f9cc9fa59580cf22d"
     }
   ]
 }
